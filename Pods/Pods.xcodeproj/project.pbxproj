@@ -1,0 +1,660 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		052D7079A030A6D835914BAC772F8696 /* Pods-ZillianceTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4F67219AF6CFC60F448A97F6A24E31 /* Pods-ZillianceTests-dummy.m */; };
+		1120BC1170CF939D0E253F46779836CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		2428B2294BFAF033E195E4CF11F7E721 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		295577670B36AC4FC34D2A8498CB2C1E /* Pods-ZillianceUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA1136C0E706AD142ADA853EA0D7265 /* Pods-ZillianceUITests-dummy.m */; };
+		3FE78029C564F0EBD4E3C730841F2857 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		760EC1CE1221C55F13F696D63CFF23A2 /* Pods-ZillianceUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 74AE8BD25F2F204E3D360DAD5C244CFB /* Pods-ZillianceUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		93AB9AE6152AA3A13B99E686659B84EA /* Pods-ZillianceTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 712D311DE13768672D8765A70611EBD6 /* Pods-ZillianceTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CCA5D302069942A651460E2E5AC5DCD6 /* Pods-Zilliance-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA3DC538719ABE1055D6DC89D9DF46A /* Pods-Zilliance-dummy.m */; };
+		FBCC6CAD2C921C44ECC8B9EC7DB5D2CD /* Pods-Zilliance-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 48C5C908128A5F6DC9DDC6FC5D58D1B6 /* Pods-Zilliance-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0A3982E368525FD30D7DD5A26AC7D241 /* Pods-ZillianceUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZillianceUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		0FA3DC538719ABE1055D6DC89D9DF46A /* Pods-Zilliance-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Zilliance-dummy.m"; sourceTree = "<group>"; };
+		16AA9A3EC93104A7608C2F83761BEEEB /* Pods-Zilliance-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Zilliance-acknowledgements.plist"; sourceTree = "<group>"; };
+		184404123EB2800BFBCE1BA2C31756E2 /* Pods-ZillianceTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ZillianceTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		1A1E97DFEF408B8C6A45EB9FC60D2739 /* Pods-ZillianceUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZillianceUITests.release.xcconfig"; sourceTree = "<group>"; };
+		1A65B6BE9F7B95C5BCD2F0B9EA457725 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21504DD70D23DFF3081C96101CA33369 /* Pods-ZillianceTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZillianceTests-frameworks.sh"; sourceTree = "<group>"; };
+		233E5896D86E11967A0A1E4078EC7497 /* Pods_ZillianceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ZillianceTests.framework; path = "Pods-ZillianceTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		332A3528C67386C1800738A5E0BF4A50 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		355CC50E95C74BEAA76FCDC86B1400F8 /* Pods-Zilliance-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Zilliance-resources.sh"; sourceTree = "<group>"; };
+		3F4A7C8D49DC9B46859F72524B188C02 /* Pods-ZillianceUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZillianceUITests-resources.sh"; sourceTree = "<group>"; };
+		4004377EDD039A95851F6E7554E35A16 /* Pods-ZillianceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZillianceTests.debug.xcconfig"; sourceTree = "<group>"; };
+		420C52FF20BDFB76AF062C435BFD311F /* Pods-Zilliance-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Zilliance-acknowledgements.markdown"; sourceTree = "<group>"; };
+		48C5C908128A5F6DC9DDC6FC5D58D1B6 /* Pods-Zilliance-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Zilliance-umbrella.h"; sourceTree = "<group>"; };
+		4B22263960D28108FD229531877875B3 /* Pods-ZillianceUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-ZillianceUITests.modulemap"; sourceTree = "<group>"; };
+		5396AE1A09690C24BC641AF2AA9AFEEC /* Pods-ZillianceTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ZillianceTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		5DA1136C0E706AD142ADA853EA0D7265 /* Pods-ZillianceUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ZillianceUITests-dummy.m"; sourceTree = "<group>"; };
+		5E2C892852B44DF33F67A8644EA98005 /* Pods-Zilliance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Zilliance.release.xcconfig"; sourceTree = "<group>"; };
+		6EE2765E9DB8F964E1949569FF081845 /* Pods-Zilliance-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Zilliance-frameworks.sh"; sourceTree = "<group>"; };
+		712D311DE13768672D8765A70611EBD6 /* Pods-ZillianceTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ZillianceTests-umbrella.h"; sourceTree = "<group>"; };
+		74AE8BD25F2F204E3D360DAD5C244CFB /* Pods-ZillianceUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ZillianceUITests-umbrella.h"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A5AC02C7D2773A0DADD84530F631A1C1 /* Pods-ZillianceUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ZillianceUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		A796E4B086BD0F7CA30BB2FE4FEC4303 /* Pods_ZillianceUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ZillianceUITests.framework; path = "Pods-ZillianceUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEB826D03BB4DA845CA3C6B5CD665B4F /* Pods-Zilliance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Zilliance.debug.xcconfig"; sourceTree = "<group>"; };
+		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D05E95D0BB405976DD1D078325C2CE06 /* Pods_Zilliance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Zilliance.framework; path = "Pods-Zilliance.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4F12218EF1564DF9A4975216EC16A2A /* Pods-ZillianceTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-ZillianceTests.modulemap"; sourceTree = "<group>"; };
+		DBCBA0330DCA1E0236A54BB0433516E0 /* Pods-Zilliance.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Zilliance.modulemap"; sourceTree = "<group>"; };
+		E177ADED0127C8CCB2235DD471239098 /* Pods-ZillianceTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZillianceTests-resources.sh"; sourceTree = "<group>"; };
+		EF4A1E47DDF474564B799C95E9718316 /* Pods-ZillianceUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ZillianceUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		EFE48BD151BF45024BDD9C7DCED270FD /* Pods-ZillianceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZillianceTests.release.xcconfig"; sourceTree = "<group>"; };
+		F88381AA3255D83B3441D4BD58D94DB8 /* Pods-ZillianceUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZillianceUITests-frameworks.sh"; sourceTree = "<group>"; };
+		FE8E476B7B00F43D0C3F70E64C89B588 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF4F67219AF6CFC60F448A97F6A24E31 /* Pods-ZillianceTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ZillianceTests-dummy.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		195BE938B45034BFDC026D0331D9A055 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2428B2294BFAF033E195E4CF11F7E721 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0AC05BA53968CD12D99FAA14AD4B455 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1120BC1170CF939D0E253F46779836CB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE0D6515CADCDFDBEC9561B45E35E297 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FE78029C564F0EBD4E3C730841F2857 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5D9D3671728E62F5E7323BE41C580F61 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C81B01E6E915B9CC4E7552F53DF6E32C /* Pods-Zilliance */,
+				DD02F464ED95568D584B3CA9A6DFC0D4 /* Pods-ZillianceTests */,
+				B174722CD8C0948BC3826AA74F737BBA /* Pods-ZillianceUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				CB8CE26899819CB1E48482057DA9EC7F /* Products */,
+				5D9D3671728E62F5E7323BE41C580F61 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		B174722CD8C0948BC3826AA74F737BBA /* Pods-ZillianceUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1A65B6BE9F7B95C5BCD2F0B9EA457725 /* Info.plist */,
+				4B22263960D28108FD229531877875B3 /* Pods-ZillianceUITests.modulemap */,
+				A5AC02C7D2773A0DADD84530F631A1C1 /* Pods-ZillianceUITests-acknowledgements.markdown */,
+				EF4A1E47DDF474564B799C95E9718316 /* Pods-ZillianceUITests-acknowledgements.plist */,
+				5DA1136C0E706AD142ADA853EA0D7265 /* Pods-ZillianceUITests-dummy.m */,
+				F88381AA3255D83B3441D4BD58D94DB8 /* Pods-ZillianceUITests-frameworks.sh */,
+				3F4A7C8D49DC9B46859F72524B188C02 /* Pods-ZillianceUITests-resources.sh */,
+				74AE8BD25F2F204E3D360DAD5C244CFB /* Pods-ZillianceUITests-umbrella.h */,
+				0A3982E368525FD30D7DD5A26AC7D241 /* Pods-ZillianceUITests.debug.xcconfig */,
+				1A1E97DFEF408B8C6A45EB9FC60D2739 /* Pods-ZillianceUITests.release.xcconfig */,
+			);
+			name = "Pods-ZillianceUITests";
+			path = "Target Support Files/Pods-ZillianceUITests";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C81B01E6E915B9CC4E7552F53DF6E32C /* Pods-Zilliance */ = {
+			isa = PBXGroup;
+			children = (
+				FE8E476B7B00F43D0C3F70E64C89B588 /* Info.plist */,
+				DBCBA0330DCA1E0236A54BB0433516E0 /* Pods-Zilliance.modulemap */,
+				420C52FF20BDFB76AF062C435BFD311F /* Pods-Zilliance-acknowledgements.markdown */,
+				16AA9A3EC93104A7608C2F83761BEEEB /* Pods-Zilliance-acknowledgements.plist */,
+				0FA3DC538719ABE1055D6DC89D9DF46A /* Pods-Zilliance-dummy.m */,
+				6EE2765E9DB8F964E1949569FF081845 /* Pods-Zilliance-frameworks.sh */,
+				355CC50E95C74BEAA76FCDC86B1400F8 /* Pods-Zilliance-resources.sh */,
+				48C5C908128A5F6DC9DDC6FC5D58D1B6 /* Pods-Zilliance-umbrella.h */,
+				BEB826D03BB4DA845CA3C6B5CD665B4F /* Pods-Zilliance.debug.xcconfig */,
+				5E2C892852B44DF33F67A8644EA98005 /* Pods-Zilliance.release.xcconfig */,
+			);
+			name = "Pods-Zilliance";
+			path = "Target Support Files/Pods-Zilliance";
+			sourceTree = "<group>";
+		};
+		CB8CE26899819CB1E48482057DA9EC7F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D05E95D0BB405976DD1D078325C2CE06 /* Pods_Zilliance.framework */,
+				233E5896D86E11967A0A1E4078EC7497 /* Pods_ZillianceTests.framework */,
+				A796E4B086BD0F7CA30BB2FE4FEC4303 /* Pods_ZillianceUITests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DD02F464ED95568D584B3CA9A6DFC0D4 /* Pods-ZillianceTests */ = {
+			isa = PBXGroup;
+			children = (
+				332A3528C67386C1800738A5E0BF4A50 /* Info.plist */,
+				D4F12218EF1564DF9A4975216EC16A2A /* Pods-ZillianceTests.modulemap */,
+				184404123EB2800BFBCE1BA2C31756E2 /* Pods-ZillianceTests-acknowledgements.markdown */,
+				5396AE1A09690C24BC641AF2AA9AFEEC /* Pods-ZillianceTests-acknowledgements.plist */,
+				FF4F67219AF6CFC60F448A97F6A24E31 /* Pods-ZillianceTests-dummy.m */,
+				21504DD70D23DFF3081C96101CA33369 /* Pods-ZillianceTests-frameworks.sh */,
+				E177ADED0127C8CCB2235DD471239098 /* Pods-ZillianceTests-resources.sh */,
+				712D311DE13768672D8765A70611EBD6 /* Pods-ZillianceTests-umbrella.h */,
+				4004377EDD039A95851F6E7554E35A16 /* Pods-ZillianceTests.debug.xcconfig */,
+				EFE48BD151BF45024BDD9C7DCED270FD /* Pods-ZillianceTests.release.xcconfig */,
+			);
+			name = "Pods-ZillianceTests";
+			path = "Target Support Files/Pods-ZillianceTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		B2E440B99377C896FD62E33E6B6F911A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93AB9AE6152AA3A13B99E686659B84EA /* Pods-ZillianceTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B42EDFAF67F09EF09B53D717F29ACBE4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				760EC1CE1221C55F13F696D63CFF23A2 /* Pods-ZillianceUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAC2A3A10172CC69D0D94CAE3C4F8E7D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBCC6CAD2C921C44ECC8B9EC7DB5D2CD /* Pods-Zilliance-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		05EE5EF2C00766231DBB3EDFCC0B8D51 /* Pods-Zilliance */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AFDF59B01F6A467B88FA20C9F1AFDC23 /* Build configuration list for PBXNativeTarget "Pods-Zilliance" */;
+			buildPhases = (
+				11AD69290BB7AEC007222ECDAFFA1536 /* Sources */,
+				FE0D6515CADCDFDBEC9561B45E35E297 /* Frameworks */,
+				BAC2A3A10172CC69D0D94CAE3C4F8E7D /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Zilliance";
+			productName = "Pods-Zilliance";
+			productReference = D05E95D0BB405976DD1D078325C2CE06 /* Pods_Zilliance.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7F076109B891FB16777CBA7502D11411 /* Pods-ZillianceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7099774F786026148CDB85606CC7AE5D /* Build configuration list for PBXNativeTarget "Pods-ZillianceTests" */;
+			buildPhases = (
+				991E4C18F3E528D6E9E7463847EF9BBB /* Sources */,
+				195BE938B45034BFDC026D0331D9A055 /* Frameworks */,
+				B2E440B99377C896FD62E33E6B6F911A /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-ZillianceTests";
+			productName = "Pods-ZillianceTests";
+			productReference = 233E5896D86E11967A0A1E4078EC7497 /* Pods_ZillianceTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CF6A0857E63A880FE3ACE1EC2BE1F4EF /* Pods-ZillianceUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F1C4B5F1B40A9FE4674BB97395E350FD /* Build configuration list for PBXNativeTarget "Pods-ZillianceUITests" */;
+			buildPhases = (
+				95C8B1A004FA6FD49F07B627E26A0513 /* Sources */,
+				F0AC05BA53968CD12D99FAA14AD4B455 /* Frameworks */,
+				B42EDFAF67F09EF09B53D717F29ACBE4 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-ZillianceUITests";
+			productName = "Pods-ZillianceUITests";
+			productReference = A796E4B086BD0F7CA30BB2FE4FEC4303 /* Pods_ZillianceUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = CB8CE26899819CB1E48482057DA9EC7F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				05EE5EF2C00766231DBB3EDFCC0B8D51 /* Pods-Zilliance */,
+				7F076109B891FB16777CBA7502D11411 /* Pods-ZillianceTests */,
+				CF6A0857E63A880FE3ACE1EC2BE1F4EF /* Pods-ZillianceUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		11AD69290BB7AEC007222ECDAFFA1536 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCA5D302069942A651460E2E5AC5DCD6 /* Pods-Zilliance-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95C8B1A004FA6FD49F07B627E26A0513 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				295577670B36AC4FC34D2A8498CB2C1E /* Pods-ZillianceUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		991E4C18F3E528D6E9E7463847EF9BBB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				052D7079A030A6D835914BAC772F8696 /* Pods-ZillianceTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		156284431C64CB05C59BDA0595A1E95A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		355C65456EE5FA577E328D15818CB0FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4004377EDD039A95851F6E7554E35A16 /* Pods-ZillianceTests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ZillianceTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ZillianceTests/Pods-ZillianceTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ZillianceTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6CF6F30AA6DA5275E99D2B32F6218390 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EFE48BD151BF45024BDD9C7DCED270FD /* Pods-ZillianceTests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ZillianceTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ZillianceTests/Pods-ZillianceTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ZillianceTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A01D80228D428F77EC4FD86AD047F33C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E2C892852B44DF33F67A8644EA98005 /* Pods-Zilliance.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Zilliance/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Zilliance/Pods-Zilliance.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Zilliance;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B128A79C83A1C196458F6587833709E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A3982E368525FD30D7DD5A26AC7D241 /* Pods-ZillianceUITests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ZillianceUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ZillianceUITests/Pods-ZillianceUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ZillianceUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C382132BB6BF8CA1A911872A2062FD0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		CC64576E7AD8548D0E2B5116A0748CAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A1E97DFEF408B8C6A45EB9FC60D2739 /* Pods-ZillianceUITests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ZillianceUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ZillianceUITests/Pods-ZillianceUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ZillianceUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F8F070012CB20D6424F666E84F9F7AC5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BEB826D03BB4DA845CA3C6B5CD665B4F /* Pods-Zilliance.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Zilliance/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Zilliance/Pods-Zilliance.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Zilliance;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C382132BB6BF8CA1A911872A2062FD0D /* Debug */,
+				156284431C64CB05C59BDA0595A1E95A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7099774F786026148CDB85606CC7AE5D /* Build configuration list for PBXNativeTarget "Pods-ZillianceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				355C65456EE5FA577E328D15818CB0FD /* Debug */,
+				6CF6F30AA6DA5275E99D2B32F6218390 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AFDF59B01F6A467B88FA20C9F1AFDC23 /* Build configuration list for PBXNativeTarget "Pods-Zilliance" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8F070012CB20D6424F666E84F9F7AC5 /* Debug */,
+				A01D80228D428F77EC4FD86AD047F33C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F1C4B5F1B40A9FE4674BB97395E350FD /* Build configuration list for PBXNativeTarget "Pods-ZillianceUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B128A79C83A1C196458F6587833709E7 /* Debug */,
+				CC64576E7AD8548D0E2B5116A0748CAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

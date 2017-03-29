@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01FC8C629D821129AE1F5C39 /* Pods_ZillianceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7A740D362571F85742B547 /* Pods_ZillianceTests.framework */; };
+		1E51585B238E77BA1CAA3F72 /* Pods_ZillianceUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD551A78B0B1A451D0EC85B /* Pods_ZillianceUITests.framework */; };
+		6D62B4EDFBB711AD0B00D39E /* Pods_Zilliance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 736C6E0154BDC836D0C0D4EB /* Pods_Zilliance.framework */; };
 		E35668321E8C15BA00ED81D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35668311E8C15BA00ED81D9 /* AppDelegate.swift */; };
 		E35668341E8C15BA00ED81D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35668331E8C15BA00ED81D9 /* ViewController.swift */; };
 		E35668371E8C15BA00ED81D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E35668351E8C15BA00ED81D9 /* Main.storyboard */; };
@@ -34,6 +37,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1BD551A78B0B1A451D0EC85B /* Pods_ZillianceUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZillianceUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D5A61EEA6A77027635EDAC1 /* Pods-Zilliance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zilliance.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Zilliance/Pods-Zilliance.debug.xcconfig"; sourceTree = "<group>"; };
+		3770342A51232B23DA4673E7 /* Pods-ZillianceUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZillianceUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZillianceUITests/Pods-ZillianceUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		6023B31C79A6506116A83550 /* Pods-Zilliance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zilliance.release.xcconfig"; path = "Pods/Target Support Files/Pods-Zilliance/Pods-Zilliance.release.xcconfig"; sourceTree = "<group>"; };
+		6FED0BD8DBA2228B5E916020 /* Pods-ZillianceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZillianceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZillianceTests/Pods-ZillianceTests.debug.xcconfig"; sourceTree = "<group>"; };
+		736C6E0154BDC836D0C0D4EB /* Pods_Zilliance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zilliance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2CBE99AE0B6F1497DB66ABA /* Pods-ZillianceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZillianceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZillianceTests/Pods-ZillianceTests.release.xcconfig"; sourceTree = "<group>"; };
+		DE7A740D362571F85742B547 /* Pods_ZillianceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZillianceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E356682E1E8C15BA00ED81D9 /* Zilliance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zilliance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E35668311E8C15BA00ED81D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E35668331E8C15BA00ED81D9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +58,7 @@
 		E356684D1E8C15BA00ED81D9 /* ZillianceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZillianceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E35668511E8C15BA00ED81D9 /* ZillianceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZillianceUITests.swift; sourceTree = "<group>"; };
 		E35668531E8C15BA00ED81D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEC5A0602B35F92656E0CD4F /* Pods-ZillianceUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZillianceUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZillianceUITests/Pods-ZillianceUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D62B4EDFBB711AD0B00D39E /* Pods_Zilliance.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01FC8C629D821129AE1F5C39 /* Pods_ZillianceTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +82,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E51585B238E77BA1CAA3F72 /* Pods_ZillianceUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C16863DDD8A6468C22F4373 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2D5A61EEA6A77027635EDAC1 /* Pods-Zilliance.debug.xcconfig */,
+				6023B31C79A6506116A83550 /* Pods-Zilliance.release.xcconfig */,
+				6FED0BD8DBA2228B5E916020 /* Pods-ZillianceTests.debug.xcconfig */,
+				D2CBE99AE0B6F1497DB66ABA /* Pods-ZillianceTests.release.xcconfig */,
+				3770342A51232B23DA4673E7 /* Pods-ZillianceUITests.debug.xcconfig */,
+				FEC5A0602B35F92656E0CD4F /* Pods-ZillianceUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CC4F20BFD0C98666558B4DD6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				736C6E0154BDC836D0C0D4EB /* Pods_Zilliance.framework */,
+				DE7A740D362571F85742B547 /* Pods_ZillianceTests.framework */,
+				1BD551A78B0B1A451D0EC85B /* Pods_ZillianceUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E35668251E8C15BA00ED81D9 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +119,8 @@
 				E35668451E8C15BA00ED81D9 /* ZillianceTests */,
 				E35668501E8C15BA00ED81D9 /* ZillianceUITests */,
 				E356682F1E8C15BA00ED81D9 /* Products */,
+				5C16863DDD8A6468C22F4373 /* Pods */,
+				CC4F20BFD0C98666558B4DD6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,9 +172,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E35668561E8C15BA00ED81D9 /* Build configuration list for PBXNativeTarget "Zilliance" */;
 			buildPhases = (
+				E62C2671758F4752F2EE9B07 /* [CP] Check Pods Manifest.lock */,
 				E356682A1E8C15BA00ED81D9 /* Sources */,
 				E356682B1E8C15BA00ED81D9 /* Frameworks */,
 				E356682C1E8C15BA00ED81D9 /* Resources */,
+				AF912AD82B1A11D552E45AA7 /* [CP] Embed Pods Frameworks */,
+				CC96D57B1A0C8E46B6E821FD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +192,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E35668591E8C15BA00ED81D9 /* Build configuration list for PBXNativeTarget "ZillianceTests" */;
 			buildPhases = (
+				2547C34033AD84E194E98274 /* [CP] Check Pods Manifest.lock */,
 				E356683E1E8C15BA00ED81D9 /* Sources */,
 				E356683F1E8C15BA00ED81D9 /* Frameworks */,
 				E35668401E8C15BA00ED81D9 /* Resources */,
+				86A7359668FF68C4A057FC40 /* [CP] Embed Pods Frameworks */,
+				220460F294D733D5D1939564 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +213,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E356685C1E8C15BA00ED81D9 /* Build configuration list for PBXNativeTarget "ZillianceUITests" */;
 			buildPhases = (
+				B33A38C67DA48D941E6A42BC /* [CP] Check Pods Manifest.lock */,
 				E35668491E8C15BA00ED81D9 /* Sources */,
 				E356684A1E8C15BA00ED81D9 /* Frameworks */,
 				E356684B1E8C15BA00ED81D9 /* Resources */,
+				79A1724027275C1F76FBFEEC /* [CP] Embed Pods Frameworks */,
+				136849D793A486C74C54C9B0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -256,6 +305,144 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		136849D793A486C74C54C9B0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZillianceUITests/Pods-ZillianceUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		220460F294D733D5D1939564 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZillianceTests/Pods-ZillianceTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2547C34033AD84E194E98274 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		79A1724027275C1F76FBFEEC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZillianceUITests/Pods-ZillianceUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		86A7359668FF68C4A057FC40 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZillianceTests/Pods-ZillianceTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF912AD82B1A11D552E45AA7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Zilliance/Pods-Zilliance-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B33A38C67DA48D941E6A42BC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CC96D57B1A0C8E46B6E821FD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Zilliance/Pods-Zilliance-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E62C2671758F4752F2EE9B07 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E356682A1E8C15BA00ED81D9 /* Sources */ = {
@@ -413,6 +600,7 @@
 		};
 		E35668571E8C15BA00ED81D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D5A61EEA6A77027635EDAC1 /* Pods-Zilliance.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GFYH5G57YM;
@@ -426,6 +614,7 @@
 		};
 		E35668581E8C15BA00ED81D9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6023B31C79A6506116A83550 /* Pods-Zilliance.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GFYH5G57YM;
@@ -439,6 +628,7 @@
 		};
 		E356685A1E8C15BA00ED81D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6FED0BD8DBA2228B5E916020 /* Pods-ZillianceTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -454,6 +644,7 @@
 		};
 		E356685B1E8C15BA00ED81D9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2CBE99AE0B6F1497DB66ABA /* Pods-ZillianceTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -469,6 +660,7 @@
 		};
 		E356685D1E8C15BA00ED81D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3770342A51232B23DA4673E7 /* Pods-ZillianceUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = GFYH5G57YM;
@@ -483,6 +675,7 @@
 		};
 		E356685E1E8C15BA00ED81D9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FEC5A0602B35F92656E0CD4F /* Pods-ZillianceUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = GFYH5G57YM;
