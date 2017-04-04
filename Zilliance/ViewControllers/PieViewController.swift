@@ -71,7 +71,7 @@ class PieViewController: UIViewController {
         
     }
     
-    func loadData() {
+    private func loadData() {
         
         let activity1 = Activity()
         activity1.name = "Test"
@@ -92,6 +92,9 @@ class PieViewController: UIViewController {
     // MARK: - User Actions
     
     @IBAction func sliceAction(withActivity activity: Activity) {
-        
+        let messages = ["Edit Slice", "Fine Tune Slice", "Delete Slice"]
+        self.showActionSheet(withMessages: messages, title: "What would you like to do?") { index in
+            print(index)
+        }
     }
 }
