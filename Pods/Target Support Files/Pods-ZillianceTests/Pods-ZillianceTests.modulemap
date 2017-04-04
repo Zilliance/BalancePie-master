@@ -1,6 +1,0 @@
-framework module Pods_ZillianceTests {
-  umbrella header "Pods-ZillianceTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
