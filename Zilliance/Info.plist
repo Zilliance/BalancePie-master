@@ -24,6 +24,16 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
+    <key>UIAppFonts</key>
+    <array>
+        <string>Muli-Black.ttf</string>
+        <string>Muli-Bold.ttf</string>
+        <string>Muli-Italic.ttf</string>
+        <string>Muli-Light.ttf</string>
+        <string>Muli-Medium.ttf</string>
+        <string>Muli-Regular.ttf</string>
+        <string>Muli-Thin.ttf</string>
+    </array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
