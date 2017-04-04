@@ -99,7 +99,7 @@ class HoursProgressView: UIView {
         // Label
         
         self.filledLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.filledLabel.font = .balancePieRegularFont(ofSize: 12)
+        self.filledLabel.font = .zillianceRegularFont(ofSize: 12)
         self.filledLabel.textColor = .lightBackgroundBlue
         
         self.addSubview(self.filledLabel)
@@ -109,7 +109,7 @@ class HoursProgressView: UIView {
         // Sleep Label
         
         self.sleepLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.sleepLabel.font = .balancePieRegularFont(ofSize: 12)
+        self.sleepLabel.font = .zillianceRegularFont(ofSize: 12)
         self.sleepLabel.textColor = .lightBackgroundBlue
         self.sleepLabel.textAlignment = .right
         

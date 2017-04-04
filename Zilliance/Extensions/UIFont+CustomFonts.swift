@@ -10,31 +10,31 @@ import UIKit
 
 extension UIFont {
     
-    class func balancePieLightFont(ofSize size: (CGFloat)) -> UIFont {
-        return UIFont(name: "Roboto-Light", size: size)!
+    class func zillianceLightFont(ofSize size: (CGFloat)) -> UIFont {
+        return UIFont(name: "Muli-Light", size: size)!
     }
     
-    class func balancePieThinFont(ofSize size: (CGFloat)) -> UIFont {
-        return UIFont(name: "Roboto-Thin", size: size)!
+    class func zillianceThinFont(ofSize size: (CGFloat)) -> UIFont {
+        return UIFont(name: "Muli-Thin", size: size)!
     }
     
-    class func balancePieItalicFont(ofSize size: (CGFloat)) -> UIFont {
-        return UIFont(name: "Roboto-Italic", size: size)!
+    class func zillianceItalicFont(ofSize size: (CGFloat)) -> UIFont {
+        return UIFont(name: "Muli-Italic", size: size)!
     }
     
-    class func balancePieBlackFont(ofSize size: (CGFloat)) -> UIFont {
-        return UIFont(name: "Roboto-Black", size: size)!
+    class func zillianceBlackFont(ofSize size: (CGFloat)) -> UIFont {
+        return UIFont(name: "Muli-Black", size: size)!
     }
     
-    class func balancePieRegularFont(ofSize size: (CGFloat)) -> UIFont {
-        return UIFont(name: "Roboto-Regular", size: size)!
+    class func zillianceRegularFont(ofSize size: (CGFloat)) -> UIFont {
+        return UIFont(name: "Muli-Regular", size: size)!
     }
     
-    class func balancePieMediumFont(ofSize size: (CGFloat)) -> UIFont {
-        return UIFont(name: "Roboto-Medium", size: size)!
+    class func zillianceMediumFont(ofSize size: (CGFloat)) -> UIFont {
+        return UIFont(name: "Muli-Medium", size: size)!
     }
     
-    class func balancePieBoldFont(ofSize size: (CGFloat)) -> UIFont {
-        return UIFont(name: "Roboto-Bold", size: size)!
+    class func zillianceBoldFont(ofSize size: (CGFloat)) -> UIFont {
+        return UIFont(name: "Muli-Bold", size: size)!
     }
 }
