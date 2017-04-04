@@ -10,6 +10,23 @@
 		01FC8C629D821129AE1F5C39 /* Pods_ZillianceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7A740D362571F85742B547 /* Pods_ZillianceTests.framework */; };
 		1E51585B238E77BA1CAA3F72 /* Pods_ZillianceUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD551A78B0B1A451D0EC85B /* Pods_ZillianceUITests.framework */; };
 		6D62B4EDFBB711AD0B00D39E /* Pods_Zilliance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 736C6E0154BDC836D0C0D4EB /* Pods_Zilliance.framework */; };
+		8C3EA45A1E92E6D000F56DED /* PieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3EA4591E92E6D000F56DED /* PieView.swift */; };
+		8C3EA4611E92E7BF00F56DED /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3EA45C1E92E7BF00F56DED /* Database.swift */; };
+		8C3EA4621E92E7BF00F56DED /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3EA45D1E92E7BF00F56DED /* User.swift */; };
+		8C3EA4631E92E7BF00F56DED /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3EA45E1E92E7BF00F56DED /* Activity.swift */; };
+		8C3EA4641E92E7BF00F56DED /* ArrayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3EA45F1E92E7BF00F56DED /* ArrayDataSource.swift */; };
+		8C3EA4651E92E7BF00F56DED /* Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3EA4601E92E7BF00F56DED /* Value.swift */; };
+		8C3EA46F1E92E9D600F56DED /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3EA4671E92E9D600F56DED /* UIImage+Extensions.swift */; };
+		8C3EA4701E92E9D600F56DED /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3EA4681E92E9D600F56DED /* Int+Extensions.swift */; };
+		8C3EA4711E92E9D600F56DED /* Minutes+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3EA4691E92E9D600F56DED /* Minutes+Extensions.swift */; };
+		8C3EA4721E92E9D600F56DED /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3EA46A1E92E9D600F56DED /* String+Extensions.swift */; };
+		8C3EA4731E92E9D600F56DED /* UIColor+CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3EA46B1E92E9D600F56DED /* UIColor+CustomColors.swift */; };
+		8C3EA4741E92E9D600F56DED /* UIDevice+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3EA46C1E92E9D600F56DED /* UIDevice+Extensions.swift */; };
+		8C3EA4751E92E9D600F56DED /* UIFont+CustomFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3EA46D1E92E9D600F56DED /* UIFont+CustomFonts.swift */; };
+		8C3EA4761E92E9D600F56DED /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3EA46E1E92E9D600F56DED /* UIViewController+Extensions.swift */; };
+		8C3EA4781E92EF9C00F56DED /* HoursProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3EA4771E92EF9C00F56DED /* HoursProgressView.swift */; };
+		8C3EA47C1E92F0F100F56DED /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3EA47A1E92F0F100F56DED /* CalendarHelper.swift */; };
+		8C3EA47D1E92F0F100F56DED /* LocalNotificationsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3EA47B1E92F0F100F56DED /* LocalNotificationsHelper.swift */; };
 		E35668321E8C15BA00ED81D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35668311E8C15BA00ED81D9 /* AppDelegate.swift */; };
 		E35668341E8C15BA00ED81D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35668331E8C15BA00ED81D9 /* ViewController.swift */; };
 		E35668371E8C15BA00ED81D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E35668351E8C15BA00ED81D9 /* Main.storyboard */; };
@@ -43,6 +60,23 @@
 		6023B31C79A6506116A83550 /* Pods-Zilliance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zilliance.release.xcconfig"; path = "Pods/Target Support Files/Pods-Zilliance/Pods-Zilliance.release.xcconfig"; sourceTree = "<group>"; };
 		6FED0BD8DBA2228B5E916020 /* Pods-ZillianceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZillianceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZillianceTests/Pods-ZillianceTests.debug.xcconfig"; sourceTree = "<group>"; };
 		736C6E0154BDC836D0C0D4EB /* Pods_Zilliance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zilliance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C3EA4591E92E6D000F56DED /* PieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PieView.swift; path = CustomViews/PieView.swift; sourceTree = "<group>"; };
+		8C3EA45C1E92E7BF00F56DED /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Database.swift; path = Models/Database.swift; sourceTree = "<group>"; };
+		8C3EA45D1E92E7BF00F56DED /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = "<group>"; };
+		8C3EA45E1E92E7BF00F56DED /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Activity.swift; path = Models/Activity.swift; sourceTree = "<group>"; };
+		8C3EA45F1E92E7BF00F56DED /* ArrayDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArrayDataSource.swift; path = Models/ArrayDataSource.swift; sourceTree = "<group>"; };
+		8C3EA4601E92E7BF00F56DED /* Value.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Value.swift; path = Models/Value.swift; sourceTree = "<group>"; };
+		8C3EA4671E92E9D600F56DED /* UIImage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+Extensions.swift"; path = "Extensions/UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		8C3EA4681E92E9D600F56DED /* Int+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Int+Extensions.swift"; path = "Extensions/Int+Extensions.swift"; sourceTree = "<group>"; };
+		8C3EA4691E92E9D600F56DED /* Minutes+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Minutes+Extensions.swift"; path = "Extensions/Minutes+Extensions.swift"; sourceTree = "<group>"; };
+		8C3EA46A1E92E9D600F56DED /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Extensions.swift"; path = "Extensions/String+Extensions.swift"; sourceTree = "<group>"; };
+		8C3EA46B1E92E9D600F56DED /* UIColor+CustomColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+CustomColors.swift"; path = "Extensions/UIColor+CustomColors.swift"; sourceTree = "<group>"; };
+		8C3EA46C1E92E9D600F56DED /* UIDevice+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIDevice+Extensions.swift"; path = "Extensions/UIDevice+Extensions.swift"; sourceTree = "<group>"; };
+		8C3EA46D1E92E9D600F56DED /* UIFont+CustomFonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIFont+CustomFonts.swift"; path = "Extensions/UIFont+CustomFonts.swift"; sourceTree = "<group>"; };
+		8C3EA46E1E92E9D600F56DED /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+Extensions.swift"; path = "Extensions/UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		8C3EA4771E92EF9C00F56DED /* HoursProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HoursProgressView.swift; path = CustomViews/HoursProgressView.swift; sourceTree = "<group>"; };
+		8C3EA47A1E92F0F100F56DED /* CalendarHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarHelper.swift; path = Models/Helpers/CalendarHelper.swift; sourceTree = "<group>"; };
+		8C3EA47B1E92F0F100F56DED /* LocalNotificationsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocalNotificationsHelper.swift; path = Models/Helpers/LocalNotificationsHelper.swift; sourceTree = "<group>"; };
 		D2CBE99AE0B6F1497DB66ABA /* Pods-ZillianceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZillianceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZillianceTests/Pods-ZillianceTests.release.xcconfig"; sourceTree = "<group>"; };
 		DE7A740D362571F85742B547 /* Pods_ZillianceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZillianceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E356682E1E8C15BA00ED81D9 /* Zilliance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zilliance.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +136,60 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		8C3EA4571E92E4FD00F56DED /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				8C3EA4581E92E50600F56DED /* Pie */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		8C3EA4581E92E50600F56DED /* Pie */ = {
+			isa = PBXGroup;
+			children = (
+				8C3EA4771E92EF9C00F56DED /* HoursProgressView.swift */,
+				8C3EA4591E92E6D000F56DED /* PieView.swift */,
+			);
+			name = Pie;
+			sourceTree = "<group>";
+		};
+		8C3EA45B1E92E72200F56DED /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8C3EA4791E92F0E400F56DED /* Helpers */,
+				8C3EA45C1E92E7BF00F56DED /* Database.swift */,
+				8C3EA45D1E92E7BF00F56DED /* User.swift */,
+				8C3EA45E1E92E7BF00F56DED /* Activity.swift */,
+				8C3EA4601E92E7BF00F56DED /* Value.swift */,
+				8C3EA45F1E92E7BF00F56DED /* ArrayDataSource.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		8C3EA4661E92E9B400F56DED /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8C3EA4671E92E9D600F56DED /* UIImage+Extensions.swift */,
+				8C3EA4681E92E9D600F56DED /* Int+Extensions.swift */,
+				8C3EA4691E92E9D600F56DED /* Minutes+Extensions.swift */,
+				8C3EA46A1E92E9D600F56DED /* String+Extensions.swift */,
+				8C3EA46B1E92E9D600F56DED /* UIColor+CustomColors.swift */,
+				8C3EA46C1E92E9D600F56DED /* UIDevice+Extensions.swift */,
+				8C3EA46D1E92E9D600F56DED /* UIFont+CustomFonts.swift */,
+				8C3EA46E1E92E9D600F56DED /* UIViewController+Extensions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		8C3EA4791E92F0E400F56DED /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8C3EA47A1E92F0F100F56DED /* CalendarHelper.swift */,
+				8C3EA47B1E92F0F100F56DED /* LocalNotificationsHelper.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		CC4F20BFD0C98666558B4DD6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,8 +226,11 @@
 			isa = PBXGroup;
 			children = (
 				E35668311E8C15BA00ED81D9 /* AppDelegate.swift */,
-				E35668331E8C15BA00ED81D9 /* ViewController.swift */,
 				E35668351E8C15BA00ED81D9 /* Main.storyboard */,
+				E35668331E8C15BA00ED81D9 /* ViewController.swift */,
+				8C3EA4571E92E4FD00F56DED /* Scenes */,
+				8C3EA45B1E92E72200F56DED /* Models */,
+				8C3EA4661E92E9B400F56DED /* Extensions */,
 				E35668381E8C15BA00ED81D9 /* Assets.xcassets */,
 				E356683A1E8C15BA00ED81D9 /* LaunchScreen.storyboard */,
 				E356683D1E8C15BA00ED81D9 /* Info.plist */,
@@ -449,8 +540,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C3EA4631E92E7BF00F56DED /* Activity.swift in Sources */,
+				8C3EA47C1E92F0F100F56DED /* CalendarHelper.swift in Sources */,
+				8C3EA4751E92E9D600F56DED /* UIFont+CustomFonts.swift in Sources */,
 				E35668341E8C15BA00ED81D9 /* ViewController.swift in Sources */,
+				8C3EA4711E92E9D600F56DED /* Minutes+Extensions.swift in Sources */,
 				E35668321E8C15BA00ED81D9 /* AppDelegate.swift in Sources */,
+				8C3EA4731E92E9D600F56DED /* UIColor+CustomColors.swift in Sources */,
+				8C3EA4721E92E9D600F56DED /* String+Extensions.swift in Sources */,
+				8C3EA4651E92E7BF00F56DED /* Value.swift in Sources */,
+				8C3EA47D1E92F0F100F56DED /* LocalNotificationsHelper.swift in Sources */,
+				8C3EA4611E92E7BF00F56DED /* Database.swift in Sources */,
+				8C3EA4641E92E7BF00F56DED /* ArrayDataSource.swift in Sources */,
+				8C3EA4781E92EF9C00F56DED /* HoursProgressView.swift in Sources */,
+				8C3EA46F1E92E9D600F56DED /* UIImage+Extensions.swift in Sources */,
+				8C3EA4621E92E7BF00F56DED /* User.swift in Sources */,
+				8C3EA4761E92E9D600F56DED /* UIViewController+Extensions.swift in Sources */,
+				8C3EA45A1E92E6D000F56DED /* PieView.swift in Sources */,
+				8C3EA4701E92E9D600F56DED /* Int+Extensions.swift in Sources */,
+				8C3EA4741E92E9D600F56DED /* UIDevice+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -707,6 +815,7 @@
 				E35668581E8C15BA00ED81D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E35668591E8C15BA00ED81D9 /* Build configuration list for PBXNativeTarget "ZillianceTests" */ = {
 			isa = XCConfigurationList;
@@ -715,6 +824,7 @@
 				E356685B1E8C15BA00ED81D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E356685C1E8C15BA00ED81D9 /* Build configuration list for PBXNativeTarget "ZillianceUITests" */ = {
 			isa = XCConfigurationList;
@@ -723,6 +833,7 @@
 				E356685E1E8C15BA00ED81D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

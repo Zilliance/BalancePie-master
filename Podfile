@@ -6,6 +6,10 @@ target 'Zilliance' do
   use_frameworks!
 
   # Pods for Zilliance
+  
+  pod 'Charts', :git => 'https://github.com/danielgindi/Charts.git', :branch => 'master'
+  pod 'Realm'
+  pod 'RealmSwift'
 
   target 'ZillianceTests' do
     inherit! :search_paths
