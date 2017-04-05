@@ -8,12 +8,10 @@
 
 import UIKit
 
-class AddToCalendarViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
+class AddToCalendarViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var doneButton: UIButton!
-    @IBOutlet weak var subjectTextField: UITextField!
-    @IBOutlet weak var viewTopLayout: NSLayoutConstraint!
     @IBOutlet weak var bodyTextView: UITextView!
     
     static let kTopLayoutSeparation: CGFloat = 41
@@ -31,24 +29,22 @@ class AddToCalendarViewController: UIViewController, UITextFieldDelegate, UIText
     {
         
         //setup width and corner radius
-        for view in [subjectTextField, bodyTextView, doneButton] as [UIView]
+        for view in [self.bodyTextView, self.doneButton] as [UIView]
         {
             view.layer.cornerRadius = 6
             view.layer.borderWidth = 0.5
             view.layer.borderColor = UIColor.lightGray.cgColor
         }
         
-        //subject
-        subjectTextField.delegate = self
-        subjectTextField.returnKeyType = .next
+        // date picker
+
+        self.datePicker.layer.cornerRadius = 6
+        self.datePicker.layer.borderWidth = 0.5
+        self.datePicker.layer.borderColor = UIColor.lightGray.cgColor
         
         //body
-        bodyTextView.delegate = self
-        bodyTextView.returnKeyType = .done
-        
-        //keyboard functionality
-        NotificationCenter.default.addObserver(self, selector: #selector(AddToCalendarViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(AddToCalendarViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        self.bodyTextView.delegate = self
+        self.bodyTextView.returnKeyType = .done
         
     }
     
@@ -66,49 +62,7 @@ class AddToCalendarViewController: UIViewController, UITextFieldDelegate, UIText
         return dateFormatter.string(from: date)
     }
     
-    
-    
-    func keyboardWillShow(notification: NSNotification) {
-        
-        if (!bodyTextView.isFirstResponder)
-        {
-            return // this should only work for the body view
-        }
-        
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue, let duration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber {
-            viewTopLayout.constant = -keyboardSize.height
-            
-            UIView.animate(withDuration: duration.doubleValue, animations: {[unowned self] in
-                self.view.layoutIfNeeded()
-                
-            })
-        }
-        
-    }
-    
-    func keyboardWillHide(notification: NSNotification) {
-        
-        guard viewTopLayout.constant != AddToCalendarViewController.kTopLayoutSeparation, let duration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber  else
-        {
-            return
-        }
-        
-        viewTopLayout.constant = AddToCalendarViewController.kTopLayoutSeparation
-        
-        UIView.animate(withDuration: duration.doubleValue, animations: {[unowned self] in
-            self.view.layoutIfNeeded()
-        })
-        
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
-        DispatchQueue.main.async {[weak self] in
-            self?.bodyTextView.becomeFirstResponder()
-        }
-        
-        return true
-    }
+
     
     //simple way to hide the textview
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
@@ -131,13 +85,8 @@ class AddToCalendarViewController: UIViewController, UITextFieldDelegate, UIText
     @IBAction func onDone(_ sender: Any)
     {
         
-        guard let subject = subjectTextField.text, let body = bodyTextView.text, subject.characters.count > 0, body.characters.count > 0 else
+        guard let body = bodyTextView.text, body.characters.count > 0 else
         {
-            if (subjectTextField.text?.characters.count == 0)
-            {
-                self.showAlert(message: "Please include a title", title: "Error")
-                return
-            }
             //is this needed?
             if (bodyTextView.text.characters.count == 0)
             {
@@ -148,7 +97,7 @@ class AddToCalendarViewController: UIViewController, UITextFieldDelegate, UIText
             return
         }
         
-        CalendarHelper.addEvent(with: subject, notes: body, date: self.datePicker.date) { (success, error) in
+        CalendarHelper.addEvent(with: body, notes: nil, date: self.datePicker.date) { (success, error) in
             
             guard success else {
                 if let calendarError = error {
