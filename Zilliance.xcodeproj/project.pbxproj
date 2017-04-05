@@ -42,9 +42,9 @@
 		8C3EA4981E93F85C00F56DED /* Muli-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C3EA48A1E93F85C00F56DED /* Muli-Regular.ttf */; };
 		8C3EA4991E93F85C00F56DED /* Muli-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C3EA48B1E93F85C00F56DED /* Muli-SemiBold.ttf */; };
 		8C3EA49A1E93F85C00F56DED /* Muli-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C3EA48C1E93F85C00F56DED /* Muli-SemiBoldItalic.ttf */; };
+		8C3EA49C1E9425A600F56DED /* Pie.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C3EA49B1E9425A600F56DED /* Pie.storyboard */; };
+		8C3EA49E1E94274600F56DED /* PieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3EA49D1E94274600F56DED /* PieViewController.swift */; };
 		E35668321E8C15BA00ED81D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35668311E8C15BA00ED81D9 /* AppDelegate.swift */; };
-		E35668341E8C15BA00ED81D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35668331E8C15BA00ED81D9 /* ViewController.swift */; };
-		E35668371E8C15BA00ED81D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E35668351E8C15BA00ED81D9 /* Main.storyboard */; };
 		E35668391E8C15BA00ED81D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E35668381E8C15BA00ED81D9 /* Assets.xcassets */; };
 		E356683C1E8C15BA00ED81D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E356683A1E8C15BA00ED81D9 /* LaunchScreen.storyboard */; };
 		E35668471E8C15BA00ED81D9 /* ZillianceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35668461E8C15BA00ED81D9 /* ZillianceTests.swift */; };
@@ -107,12 +107,12 @@
 		8C3EA48A1E93F85C00F56DED /* Muli-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Muli-Regular.ttf"; path = "Fonts/Muli-Regular.ttf"; sourceTree = "<group>"; };
 		8C3EA48B1E93F85C00F56DED /* Muli-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Muli-SemiBold.ttf"; path = "Fonts/Muli-SemiBold.ttf"; sourceTree = "<group>"; };
 		8C3EA48C1E93F85C00F56DED /* Muli-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Muli-SemiBoldItalic.ttf"; path = "Fonts/Muli-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		8C3EA49B1E9425A600F56DED /* Pie.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Pie.storyboard; sourceTree = "<group>"; };
+		8C3EA49D1E94274600F56DED /* PieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PieViewController.swift; path = ViewControllers/PieViewController.swift; sourceTree = "<group>"; };
 		D2CBE99AE0B6F1497DB66ABA /* Pods-ZillianceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZillianceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZillianceTests/Pods-ZillianceTests.release.xcconfig"; sourceTree = "<group>"; };
 		DE7A740D362571F85742B547 /* Pods_ZillianceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZillianceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E356682E1E8C15BA00ED81D9 /* Zilliance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zilliance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E35668311E8C15BA00ED81D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E35668331E8C15BA00ED81D9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E35668361E8C15BA00ED81D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E35668381E8C15BA00ED81D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E356683B1E8C15BA00ED81D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E356683D1E8C15BA00ED81D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -177,6 +177,8 @@
 		8C3EA4581E92E50600F56DED /* Pie */ = {
 			isa = PBXGroup;
 			children = (
+				8C3EA49B1E9425A600F56DED /* Pie.storyboard */,
+				8C3EA49D1E94274600F56DED /* PieViewController.swift */,
 				8C3EA4771E92EF9C00F56DED /* HoursProgressView.swift */,
 				8C3EA4591E92E6D000F56DED /* PieView.swift */,
 			);
@@ -277,8 +279,6 @@
 			isa = PBXGroup;
 			children = (
 				E35668311E8C15BA00ED81D9 /* AppDelegate.swift */,
-				E35668351E8C15BA00ED81D9 /* Main.storyboard */,
-				E35668331E8C15BA00ED81D9 /* ViewController.swift */,
 				8C3EA4571E92E4FD00F56DED /* Scenes */,
 				8C3EA45B1E92E72200F56DED /* Models */,
 				8C3EA4791E92F0E400F56DED /* Helpers */,
@@ -437,12 +437,12 @@
 				E356683C1E8C15BA00ED81D9 /* LaunchScreen.storyboard in Resources */,
 				8C3EA4931E93F85C00F56DED /* Muli-ExtraLight.ttf in Resources */,
 				8C3EA49A1E93F85C00F56DED /* Muli-SemiBoldItalic.ttf in Resources */,
+				8C3EA49C1E9425A600F56DED /* Pie.storyboard in Resources */,
 				8C3EA4941E93F85C00F56DED /* Muli-ExtraLightItalic.ttf in Resources */,
 				E35668391E8C15BA00ED81D9 /* Assets.xcassets in Resources */,
 				8C3EA4961E93F85C00F56DED /* Muli-Light.ttf in Resources */,
 				8C3EA48E1E93F85C00F56DED /* Muli-BlackItalic.ttf in Resources */,
 				8C3EA4901E93F85C00F56DED /* Muli-BoldItalic.ttf in Resources */,
-				E35668371E8C15BA00ED81D9 /* Main.storyboard in Resources */,
 				8C3EA48D1E93F85C00F56DED /* Muli-Black.ttf in Resources */,
 				8C3EA4911E93F85C00F56DED /* Muli-ExtraBold.ttf in Resources */,
 			);
@@ -610,7 +610,7 @@
 				8C3EA4631E92E7BF00F56DED /* Activity.swift in Sources */,
 				8C3EA47C1E92F0F100F56DED /* CalendarHelper.swift in Sources */,
 				8C3EA4751E92E9D600F56DED /* UIFont+CustomFonts.swift in Sources */,
-				E35668341E8C15BA00ED81D9 /* ViewController.swift in Sources */,
+				8C3EA49E1E94274600F56DED /* PieViewController.swift in Sources */,
 				8C3EA4711E92E9D600F56DED /* Minutes+Extensions.swift in Sources */,
 				E35668321E8C15BA00ED81D9 /* AppDelegate.swift in Sources */,
 				8C3EA4731E92E9D600F56DED /* UIColor+CustomColors.swift in Sources */,
@@ -662,14 +662,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E35668351E8C15BA00ED81D9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E35668361E8C15BA00ED81D9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E356683A1E8C15BA00ED81D9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

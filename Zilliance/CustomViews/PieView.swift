@@ -84,7 +84,7 @@ final class PieView: UIView {
     
     // MARK: Pie Data
     
-    func load(activities pieActivities:[UserActivity], availableMinutes minutes: Int) {
+    func load(activities pieActivities:[UserActivity], availableMinutes minutes: Minutes, totalDuration duration: Minutes) {
         
         self.pieChartView.isHidden = false
         self.activities = pieActivities
@@ -93,14 +93,16 @@ final class PieView: UIView {
         
         var emptyMinutes = minutes
         
-        let durationOfSelectedActivities = Double(Database.shared.durationOfSelectedActivities)
+        let durationOfSelectedActivities = Double(duration)
         
         pieActivities.forEach { activity in
             let iconImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
             
-            iconImageView.image = activity.activity?.image
+            iconImageView.image = activity.activity.image
             iconImageView.contentMode = .center
            // iconImageView.layer.backgroundColor = UIColor.color(for: activity.state).darker(amount: 0.25).cgColor
+            // TODO: --green slice for now, change later
+            iconImageView.layer.backgroundColor = UIColor.green.darker(amount: 0.25).cgColor
             iconImageView.layer.cornerRadius = iconImageView.frame.size.height/2
             iconImageView.clipsToBounds = true
             
@@ -115,7 +117,7 @@ final class PieView: UIView {
             }
             
             yVals1.append(PieChartDataEntry(value: Double(activity.duration), label: nil, icon: image))
-           // colors.append(UIColor.color(for: activity.state))
+            colors.append(UIColor.green)
             
             emptyMinutes -= activity.duration
         }
