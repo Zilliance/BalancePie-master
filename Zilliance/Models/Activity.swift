@@ -13,7 +13,6 @@ final class Activity: Object {
     
     dynamic var name = ""
     dynamic var iconName: String?
-    dynamic var feeling: Feeling = .great
     
     /// Call updateActivityValues after changing the value of selected
     

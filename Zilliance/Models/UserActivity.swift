@@ -19,8 +19,8 @@ import RealmSwift
 
 final class UserActivity: Object {
     
-    dynamic var activity: Activity?
+    dynamic var activity: Activity!
     dynamic var duration: Int = 0
-    dynamic var values: [Value]?
+    let values = List<Value>()
     dynamic var feeling: Feeling = .great
 }

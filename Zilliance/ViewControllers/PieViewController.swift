@@ -15,8 +15,6 @@ class PieViewController: UIViewController {
     
     private let pieView = PieView()
     
-    private var activities: [Activity] = []
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupViews()
@@ -75,10 +73,15 @@ class PieViewController: UIViewController {
         
         let activity1 = Activity()
         activity1.name = "Test"
-        activity1.duration = 300
-        self.activities.append(activity1)
+        //activity1.duration = 300
         
-        self.pieView.load(activities: self.activities, availableMinutes: 140 * 60, totalDuration: 300)
+        let userActivity = UserActivity()
+        userActivity.activity = activity1
+        userActivity.duration = 300
+        
+        let activities = [userActivity]
+        
+        self.pieView.load(activities: activities, availableMinutes: 140 * 60, totalDuration: 300)
     }
     
     
@@ -91,7 +94,7 @@ class PieViewController: UIViewController {
     
     // MARK: - User Actions
     
-    @IBAction func sliceAction(withActivity activity: Activity) {
+    @IBAction func sliceAction(withActivity activity: UserActivity) {
         let messages = ["Edit Slice", "Fine Tune Slice", "Delete Slice"]
         self.showActionSheet(withMessages: messages, title: "What would you like to do?") { index in
             print(index)

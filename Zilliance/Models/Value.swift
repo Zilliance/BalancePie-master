@@ -14,7 +14,7 @@ import RealmSwift
     case bad
 }
 
-final class Value: Object {
+class Value: Object {
     dynamic var name = ""
     dynamic var iconName: String?
     dynamic var type: ValueType = .good
