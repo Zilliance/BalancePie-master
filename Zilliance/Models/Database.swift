@@ -102,9 +102,9 @@ class Database {
     
     /// Total number of active hours
     
-    var activeHours: Int {
-        return self.selectedActivities.map{$0.duration}.reduce(0,{$0+$1}) / 60
-    }
+//    var activeHours: Int {
+//        return self.selectedActivities.map{$0.duration}.reduce(0,{$0+$1}) / 60
+//    }
     
     // MARK: - Bootstrap
     

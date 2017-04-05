@@ -14,14 +14,14 @@ final class PieView: UIView {
     private var pieChartView = PieChartView()
     private let plusButton = UIButton(type: .custom)
     
-    fileprivate var activities: [Activity] = []
+    fileprivate var activities: [UserActivity] = []
     
     var emptyColor = UIColor.white
     
     fileprivate let imageMinimumSizePercentageThreshold: Double = 5
     
     var plusButtonAction: (()->())? = nil
-    var sliceAction: ((Int, Activity)->())? = nil
+    var sliceAction: ((Int, UserActivity)->())? = nil
     
     // MARK: -
     
@@ -84,7 +84,7 @@ final class PieView: UIView {
     
     // MARK: Pie Data
     
-    func load(activities pieActivities:[Activity], availableMinutes minutes: Int) {
+    func load(activities pieActivities:[UserActivity], availableMinutes minutes: Int) {
         
         self.pieChartView.isHidden = false
         self.activities = pieActivities
@@ -98,7 +98,7 @@ final class PieView: UIView {
         pieActivities.forEach { activity in
             let iconImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
             
-            iconImageView.image = activity.image
+            iconImageView.image = activity.activity?.image
             iconImageView.contentMode = .center
            // iconImageView.layer.backgroundColor = UIColor.color(for: activity.state).darker(amount: 0.25).cgColor
             iconImageView.layer.cornerRadius = iconImageView.frame.size.height/2

@@ -40,23 +40,6 @@ extension UIColor {
 }
 
 extension UIColor {
-    static func color(for state: Activity.State) -> UIColor {
-        switch state {
-        case .happyValueAligned:
-            return UIColor.pieHappyValueAligned
-        case .happyNotValueAligned:
-            return UIColor.pieHappyValueNotAligned
-        case .notHappyValueAligned:
-            return UIColor.pieUnHappyValueAligned
-        case .notHappyNotValueAligned:
-            return UIColor.pieUnHappyValueNotAligned
-        case .none:
-            return UIColor.clear
-        }
-    }
-}
-
-extension UIColor {
 
     func lighter(amount : CGFloat = 0.25) -> UIColor {
         return self.hueColorWithBrightnessAmount(amount: 1 + amount)
