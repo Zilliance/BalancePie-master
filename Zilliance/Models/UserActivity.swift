@@ -20,7 +20,7 @@ import RealmSwift
 final class UserActivity: Object {
     
     dynamic var activity: Activity!
-    dynamic var duration: Int = 0
+    dynamic var duration: Minutes = 0
     let values = List<Value>()
     dynamic var feeling: Feeling = .great
     
@@ -46,4 +46,13 @@ final class UserActivity: Object {
             return UIColor.red
         }
     }
+    
+    var goodValues: Results<Value> {
+        return self.values.filter("type == \(ValueType.good.rawValue)")
+    }
+
+    var badValues: Results<Value> {
+        return self.values.filter("type == \(ValueType.good.rawValue)")
+    }
+
 }
