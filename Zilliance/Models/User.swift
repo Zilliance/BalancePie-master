@@ -36,6 +36,10 @@ final class User: Object {
     
     let activities = List<UserActivity>()
     
+    var availableHours: Int {
+        return (24 * 7) - (self.timeSlept / 60) * 7
+    }
+    
 }
 
 extension User

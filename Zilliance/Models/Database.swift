@@ -24,16 +24,16 @@ class Database {
     
     private(set) var realm: Realm!
     
-    /// You must initialize the database before using it
+    private(set) var user: User? = nil
     
-    func initialize() -> Bool {
+    init() {
         do {
             
             // Inside your application(application:didFinishLaunchingWithOptions:)
             
             let config = Realm.Configuration(
                 schemaVersion: 1,
-
+                
                 migrationBlock: { migration, oldSchemaVersion in
                     if (oldSchemaVersion < 1) {
                         // Nothing to do!
@@ -49,67 +49,25 @@ class Database {
             // will automatically perform the migration
             
             self.realm = try Realm()
-            return true
+            
+            if let user = self.realm.objects(User.self).first
+            {
+                self.user = user
+            }
+            else
+            {
+                //first time launch, let's prepare the DB
+                self.bootstrap()
+            }
+            
+            
         } catch {
             print("realm initialization failed, aborting")
-            return false
         }
     }
-    
+
     // MARK: - Convenience queries
-    
-    /// Return User
-    var user: User {
-        return self.realm.objects(User.self).first!
-    }
-    
-    /// Returns all activities
-    
-    var activities: Results<Activity> {
-        return self.realm.objects(Activity.self)
-    }
-    
-    /// Returns all values
-    
-    var values: Results<Value> {
-        return self.realm.objects(Value.self)
-    }
-    
-    /// Returns currently selected activities
-    
-    var selectedActivities: Results<Activity> {
-        return self.realm.objects(Activity.self).filter("selected == true")
-    }
-    
-    /// Returns currently selected values
-    
-    var selectedValues: Results<Value> {
-        return self.realm.objects(Value.self).filter("selected == true")
-    }
-    
-    /// Returns the total number of minutes for selected Activities, use to calculate pie percentages
-    
-    var durationOfSelectedActivities: Int {
-        return self.selectedActivities.sum(ofProperty: "duration")
-    }
-    
-    
-    /// Total number of available hours = hours in week - hours user sleeps
-    
-    var availableHours: Int {
-        return (24 * 7) - (self.user.timeSlept / 60) * 7
-    }
-    
-    /// Total number of active hours
-    
-//    var activeHours: Int {
-//        return self.selectedActivities.map{$0.duration}.reduce(0,{$0+$1}) / 60
-//    }
-    
-    // MARK: - Bootstrap
-    
-    /// Bootstrap the database to establish default model objects immediately after initialization
-    /// The database will not be bootstrapped more than once
+
     
     func bootstrap() {
         self.bootstrapUser()
@@ -151,6 +109,8 @@ class Database {
         try! self.realm.write {
             self.realm.add(user)
         }
+        
+        self.user = user
     }
     
     private func bootstrapActivities() {
