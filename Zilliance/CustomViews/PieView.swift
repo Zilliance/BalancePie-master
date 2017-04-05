@@ -117,7 +117,7 @@ final class PieView: UIView {
             }
             
             yVals1.append(PieChartDataEntry(value: Double(userActivity.duration), label: nil, icon: image))
-            colors.append(UIColor.green)
+            colors.append(userActivity.color)
             
             emptyMinutes -= userActivity.duration
         }

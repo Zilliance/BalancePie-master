@@ -78,10 +78,18 @@ class PieViewController: UIViewController {
         let userActivity = UserActivity()
         userActivity.activity = activity1
         userActivity.duration = 300
+        userActivity.feeling = .mixed
+
+        let userActivity1 = UserActivity()
+        userActivity1.activity = activity1
+        userActivity1.duration = 600
+        userActivity1.feeling = .great
         
-        let activities = [userActivity]
+        let activities = [userActivity, userActivity1]
         
-        self.pieView.load(activities: activities, availableMinutes: 140 * 60, totalDuration: 300)
+        let totalDuration = activities.reduce(0, {$0 + $1.duration})
+        
+        self.pieView.load(activities: activities, availableMinutes: 140 * 60, totalDuration: totalDuration)
     }
     
     

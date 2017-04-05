@@ -24,7 +24,7 @@ class Database {
     
     private(set) var realm: Realm!
     
-    private(set) var user: User? = nil
+    private(set) var user: User!
     
     init() {
         do {

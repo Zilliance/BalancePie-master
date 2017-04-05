@@ -32,4 +32,18 @@ final class UserActivity: Object {
 
         return UIImage(named: iconName)
     }
+    
+    var color: UIColor {
+        switch(feeling){
+        case .neutral:
+            return UIColor.blue
+        case .lousy:
+            return UIColor.black
+        case .mixed:
+            return UIColor.green
+            
+        default:
+            return UIColor.red
+        }
+    }
 }

@@ -36,6 +36,10 @@ final class User: Object {
     
     let activities = List<UserActivity>()
     
+    var currentActivitiesDuration: Int {
+        return self.activities.reduce(0, {$0 + $1.duration})
+    }
+    
     var availableHours: Int {
         return (24 * 7) - (self.timeSlept / 60) * 7
     }
