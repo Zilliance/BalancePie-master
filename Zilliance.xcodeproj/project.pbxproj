@@ -46,6 +46,10 @@
 		8C3EA49E1E94274600F56DED /* PieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3EA49D1E94274600F56DED /* PieViewController.swift */; };
 		8CBBBE181E9558D600281C3C /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CBBBE171E9558D600281C3C /* Calendar.storyboard */; };
 		8CBBBE1A1E9576F800281C3C /* AddToCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBBBE191E9576F800281C3C /* AddToCalendarViewController.swift */; };
+		8CBBBE1D1E95890700281C3C /* AddCustom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CBBBE1C1E95890700281C3C /* AddCustom.storyboard */; };
+		8CBBBE201E958B6300281C3C /* AddActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBBBE1E1E958B6300281C3C /* AddActivityViewController.swift */; };
+		8CBBBE211E958B6300281C3C /* AddValuesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBBBE1F1E958B6300281C3C /* AddValuesViewController.swift */; };
+		8CBBBE231E95925700281C3C /* IconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBBBE221E95925700281C3C /* IconCollectionViewCell.swift */; };
 		E35668321E8C15BA00ED81D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35668311E8C15BA00ED81D9 /* AppDelegate.swift */; };
 		E35668391E8C15BA00ED81D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E35668381E8C15BA00ED81D9 /* Assets.xcassets */; };
 		E356683C1E8C15BA00ED81D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E356683A1E8C15BA00ED81D9 /* LaunchScreen.storyboard */; };
@@ -113,6 +117,10 @@
 		8C3EA49D1E94274600F56DED /* PieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PieViewController.swift; path = ViewControllers/PieViewController.swift; sourceTree = "<group>"; };
 		8CBBBE171E9558D600281C3C /* Calendar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
 		8CBBBE191E9576F800281C3C /* AddToCalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddToCalendarViewController.swift; path = ViewControllers/AddToCalendarViewController.swift; sourceTree = "<group>"; };
+		8CBBBE1C1E95890700281C3C /* AddCustom.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddCustom.storyboard; sourceTree = "<group>"; };
+		8CBBBE1E1E958B6300281C3C /* AddActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddActivityViewController.swift; path = ViewControllers/AddActivityViewController.swift; sourceTree = "<group>"; };
+		8CBBBE1F1E958B6300281C3C /* AddValuesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddValuesViewController.swift; path = ViewControllers/AddValuesViewController.swift; sourceTree = "<group>"; };
+		8CBBBE221E95925700281C3C /* IconCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IconCollectionViewCell.swift; path = CustomCells/IconCollectionViewCell.swift; sourceTree = "<group>"; };
 		D2CBE99AE0B6F1497DB66ABA /* Pods-ZillianceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZillianceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZillianceTests/Pods-ZillianceTests.release.xcconfig"; sourceTree = "<group>"; };
 		DE7A740D362571F85742B547 /* Pods_ZillianceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZillianceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E356682E1E8C15BA00ED81D9 /* Zilliance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zilliance.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -173,6 +181,7 @@
 		8C3EA4571E92E4FD00F56DED /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				8CBBBE1B1E9588E700281C3C /* AddCustom */,
 				8CBBBE161E9558A300281C3C /* Calendar */,
 				8C3EA4581E92E50600F56DED /* Pie */,
 			);
@@ -255,6 +264,17 @@
 				8CBBBE191E9576F800281C3C /* AddToCalendarViewController.swift */,
 			);
 			name = Calendar;
+			sourceTree = "<group>";
+		};
+		8CBBBE1B1E9588E700281C3C /* AddCustom */ = {
+			isa = PBXGroup;
+			children = (
+				8CBBBE1C1E95890700281C3C /* AddCustom.storyboard */,
+				8CBBBE1E1E958B6300281C3C /* AddActivityViewController.swift */,
+				8CBBBE221E95925700281C3C /* IconCollectionViewCell.swift */,
+				8CBBBE1F1E958B6300281C3C /* AddValuesViewController.swift */,
+			);
+			name = AddCustom;
 			sourceTree = "<group>";
 		};
 		CC4F20BFD0C98666558B4DD6 /* Frameworks */ = {
@@ -447,6 +467,7 @@
 				8C3EA4921E93F85C00F56DED /* Muli-ExtraBoldItalic.ttf in Resources */,
 				8C3EA4951E93F85C00F56DED /* Muli-Italic.ttf in Resources */,
 				8C3EA4971E93F85C00F56DED /* Muli-LightItalic.ttf in Resources */,
+				8CBBBE1D1E95890700281C3C /* AddCustom.storyboard in Resources */,
 				8C3EA4981E93F85C00F56DED /* Muli-Regular.ttf in Resources */,
 				8C3EA48F1E93F85C00F56DED /* Muli-Bold.ttf in Resources */,
 				E356683C1E8C15BA00ED81D9 /* LaunchScreen.storyboard in Resources */,
@@ -626,11 +647,13 @@
 				8C3EA47C1E92F0F100F56DED /* CalendarHelper.swift in Sources */,
 				8C3EA4751E92E9D600F56DED /* UIFont+CustomFonts.swift in Sources */,
 				8C3EA49E1E94274600F56DED /* PieViewController.swift in Sources */,
+				8CBBBE211E958B6300281C3C /* AddValuesViewController.swift in Sources */,
 				8C3EA4711E92E9D600F56DED /* Minutes+Extensions.swift in Sources */,
 				E35668321E8C15BA00ED81D9 /* AppDelegate.swift in Sources */,
 				8C3EA4731E92E9D600F56DED /* UIColor+CustomColors.swift in Sources */,
 				8CBBBE1A1E9576F800281C3C /* AddToCalendarViewController.swift in Sources */,
 				8C3EA4721E92E9D600F56DED /* String+Extensions.swift in Sources */,
+				8CBBBE201E958B6300281C3C /* AddActivityViewController.swift in Sources */,
 				8C3EA4651E92E7BF00F56DED /* Value.swift in Sources */,
 				0469D0AE1E944B700024EA39 /* UserActivity.swift in Sources */,
 				8C3EA47D1E92F0F100F56DED /* LocalNotificationsHelper.swift in Sources */,
@@ -643,6 +666,7 @@
 				8C3EA45A1E92E6D000F56DED /* PieView.swift in Sources */,
 				8C3EA4701E92E9D600F56DED /* Int+Extensions.swift in Sources */,
 				8C3EA4741E92E9D600F56DED /* UIDevice+Extensions.swift in Sources */,
+				8CBBBE231E95925700281C3C /* IconCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
