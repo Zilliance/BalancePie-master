@@ -88,13 +88,24 @@ class PieViewController: UIViewController {
         self.hoursProgressView.sleepHours = 40
     }
     
-    
     // MARK: - User Actions
     
     @IBAction func sliceAction(withActivity activity: Activity) {
+        
         let messages = ["Edit Slice", "Fine Tune Slice", "Delete Slice"]
-        self.showActionSheet(withMessages: messages, title: "What would you like to do?") { index in
-            print(index)
+        let actionController = UIAlertController(title: "What would you like to do?", message: nil, preferredStyle: .actionSheet)
+        for i in 0 ..< messages.count {
+            let style: UIAlertActionStyle = (i == messages.count-1) ? .destructive : .default
+            actionController.addAction(UIAlertAction(title: messages[i], style: style) { _ in
+                actionController.dismiss(animated: true, completion: nil)
+                print(i)
+            })
         }
+        
+        actionController.addAction(UIAlertAction(title: "Cancel", style: .cancel) { _ in
+            actionController.dismiss(animated: true, completion: nil)
+        })
+        
+        self.present(actionController, animated: true, completion: nil)
     }
 }
