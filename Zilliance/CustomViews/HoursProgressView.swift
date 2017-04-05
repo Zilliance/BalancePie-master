@@ -10,7 +10,7 @@ import UIKit
 
 private let hoursInAWeek = CGFloat(24 * 7)
 
-class HoursProgressView: UIView {
+final class HoursProgressView: UIView {
     private let filledLabel = UILabel()
     private let sleepLabel = UILabel()
     private let progressTrack = UIView()
