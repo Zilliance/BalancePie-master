@@ -9,16 +9,15 @@
 import Foundation
 import RealmSwift
 
-final class Value: Object {
+@objc enum ValueType: Int32 {
+    case good
+    case bad
+}
+
+class Value: Object {
     dynamic var name = ""
     dynamic var iconName: String?
-    
-    // https://github.com/realm/realm-cocoa/issues/870#issuecomment-54543539
-    // well that's a major bummer
-    
-    /// Call updateActivityValues after changing the value of selected
-    
-    dynamic var selected = false
+    dynamic var type: ValueType = .good
     
     var image: UIImage? {
         if let iconName = self.iconName {
@@ -26,10 +25,6 @@ final class Value: Object {
         } else {
             return nil
         }
-    }
-    
-    override static func ignoredProperties() -> [String] {
-        return []
     }
 
     

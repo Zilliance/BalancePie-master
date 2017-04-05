@@ -15,8 +15,6 @@ class PieViewController: UIViewController {
     
     private let pieView = PieView()
     
-    private var activities: [Activity] = []
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupViews()
@@ -75,23 +73,46 @@ class PieViewController: UIViewController {
         
         let activity1 = Activity()
         activity1.name = "Test"
-        activity1.duration = 300
-        self.activities.append(activity1)
         
-        self.pieView.load(activities: self.activities, availableMinutes: 140 * 60, totalDuration: 300)
+        let userActivity = UserActivity()
+        userActivity.activity = activity1
+        userActivity.duration = 300
+        userActivity.feeling = .mixed
+
+        let activity2 = Activity()
+        activity2.name = "Test"
+        
+        let userActivity1 = UserActivity()
+        userActivity1.activity = activity2
+        userActivity1.duration = 600
+        userActivity1.feeling = .great
+        
+        let activities = [userActivity, userActivity1]
+        
+        let totalDuration = activities.reduce(0, {$0 + $1.duration})
+        
+        let availableMinutes = Database.shared.user.availableHours * 60
+        
+        self.pieView.load(activities: activities, availableMinutes: availableMinutes, totalDuration: totalDuration)
     }
     
     
     private func refreshHours() {
-        self.hoursProgressView.availableHours = 140
-        self.hoursProgressView.activeHours = 35
-        self.hoursProgressView.sleepHours = 40
+        
+        if let user = Database.shared.user
+        {
+            self.hoursProgressView.availableHours = user.availableHours
+            self.hoursProgressView.activeHours = 35 // TODO: take it from the DB after we start to work with the DB = user?.currentActivitiesDuration / 60
+            
+            self.hoursProgressView.sleepHours = user.timeSlept / 60
+            
+        }
+        
     }
     
     // MARK: - User Actions
     
-    @IBAction func sliceAction(withActivity activity: Activity) {
-        
+    func sliceAction(withActivity activity: UserActivity) {
         let messages = ["Edit Slice", "Fine Tune Slice", "Delete Slice"]
         let actionController = UIAlertController(title: "What would you like to do?", message: nil, preferredStyle: .actionSheet)
         for i in 0 ..< messages.count {

@@ -14,14 +14,14 @@ final class PieView: UIView {
     private var pieChartView = PieChartView()
     private let plusButton = UIButton(type: .custom)
     
-    fileprivate var activities: [Activity] = []
+    fileprivate var activities: [UserActivity] = []
     
     var emptyColor = UIColor.white
     
     fileprivate let imageMinimumSizePercentageThreshold: Double = 5
     
     var plusButtonAction: (()->())? = nil
-    var sliceAction: ((Int, Activity)->())? = nil
+    var sliceAction: ((Int, UserActivity)->())? = nil
     
     // MARK: -
     
@@ -84,7 +84,7 @@ final class PieView: UIView {
     
     // MARK: Pie Data
     
-    func load(activities pieActivities:[Activity], availableMinutes minutes: Minutes, totalDuration duration: Minutes) {
+    func load(activities pieActivities:[UserActivity], availableMinutes minutes: Minutes, totalDuration duration: Minutes) {
         
         self.pieChartView.isHidden = false
         self.activities = pieActivities
@@ -95,10 +95,10 @@ final class PieView: UIView {
         
         let durationOfSelectedActivities = Double(duration)
         
-        pieActivities.forEach { activity in
+        pieActivities.forEach { userActivity in
             let iconImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
             
-            iconImageView.image = activity.image
+            iconImageView.image = userActivity.image
             iconImageView.contentMode = .center
            // iconImageView.layer.backgroundColor = UIColor.color(for: activity.state).darker(amount: 0.25).cgColor
             // TODO: --green slice for now, change later
@@ -107,7 +107,7 @@ final class PieView: UIView {
             iconImageView.clipsToBounds = true
             
             var image = UIImage.image(from: iconImageView)?.resizedImage(newSize: CGSize(width: 32, height: 32))
-            let percentage = Double(activity.duration) / durationOfSelectedActivities * 100
+            let percentage = Double(userActivity.duration) / durationOfSelectedActivities * 100
             
             // resize the image if percentage < 5%
             
@@ -116,10 +116,10 @@ final class PieView: UIView {
                 image = image?.resizedImageWithinRect(rectSize: CGSize(width: factor, height: factor))
             }
             
-            yVals1.append(PieChartDataEntry(value: Double(activity.duration), label: nil, icon: image))
-            colors.append(UIColor.green)
+            yVals1.append(PieChartDataEntry(value: Double(userActivity.duration), label: nil, icon: image))
+            colors.append(userActivity.color)
             
-            emptyMinutes -= activity.duration
+            emptyMinutes -= userActivity.duration
         }
         
         assert(emptyMinutes > 0, "the duration of the activities is greater than your available time")
