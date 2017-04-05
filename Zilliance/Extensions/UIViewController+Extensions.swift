@@ -20,21 +20,4 @@ extension UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
-    func showActionSheet(withMessages messages:[String], title: String, completion: ((Int) -> ())?=nil) {
-        let actionController = UIAlertController(title: title, message: nil, preferredStyle: .actionSheet)
-        
-        for i in 0 ..< messages.count {
-            let style: UIAlertActionStyle = (i == messages.count-1) ? .destructive : .default
-            actionController.addAction(UIAlertAction(title: messages[i], style: style) { _ in
-                actionController.dismiss(animated: true, completion: nil)
-                completion?(i)
-            })
-        }
-        
-        actionController.addAction(UIAlertAction(title: "Cancel", style: .cancel) { _ in
-            actionController.dismiss(animated: true, completion: nil)
-        })
-        
-        self.present(actionController, animated: true, completion: nil)
-    }
 }

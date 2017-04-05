@@ -73,15 +73,17 @@ class PieViewController: UIViewController {
         
         let activity1 = Activity()
         activity1.name = "Test"
-        //activity1.duration = 300
         
         let userActivity = UserActivity()
         userActivity.activity = activity1
         userActivity.duration = 300
         userActivity.feeling = .mixed
 
+        let activity2 = Activity()
+        activity2.name = "Test"
+        
         let userActivity1 = UserActivity()
-        userActivity1.activity = activity1
+        userActivity1.activity = activity2
         userActivity1.duration = 600
         userActivity1.feeling = .great
         
@@ -99,13 +101,23 @@ class PieViewController: UIViewController {
         self.hoursProgressView.sleepHours = 40
     }
     
-    
     // MARK: - User Actions
     
-    @IBAction func sliceAction(withActivity activity: UserActivity) {
+    func sliceAction(withActivity activity: UserActivity) {
         let messages = ["Edit Slice", "Fine Tune Slice", "Delete Slice"]
-        self.showActionSheet(withMessages: messages, title: "What would you like to do?") { index in
-            print(index)
+        let actionController = UIAlertController(title: "What would you like to do?", message: nil, preferredStyle: .actionSheet)
+        for i in 0 ..< messages.count {
+            let style: UIAlertActionStyle = (i == messages.count-1) ? .destructive : .default
+            actionController.addAction(UIAlertAction(title: messages[i], style: style) { _ in
+                actionController.dismiss(animated: true, completion: nil)
+                print(i)
+            })
         }
+        
+        actionController.addAction(UIAlertAction(title: "Cancel", style: .cancel) { _ in
+            actionController.dismiss(animated: true, completion: nil)
+        })
+        
+        self.present(actionController, animated: true, completion: nil)
     }
 }
