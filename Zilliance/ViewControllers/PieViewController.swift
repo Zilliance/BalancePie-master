@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PieViewController: UIViewController {
+class PieViewController: UIViewController, UIViewControllerTransitioningDelegate {
     
     private let statusBarBackgroundView = UIView()
     private let hoursProgressView = HoursProgressView()
@@ -103,9 +103,41 @@ class PieViewController: UIViewController {
     // MARK: - User Actions
     
     @IBAction func sliceAction(withActivity activity: UserActivity) {
-        let messages = ["Edit Slice", "Fine Tune Slice", "Delete Slice"]
-        self.showActionSheet(withMessages: messages, title: "What would you like to do?") { index in
-            print(index)
+//        let messages = ["Edit Slice", "Fine Tune Slice", "Delete Slice"]
+//        self.showActionSheet(withMessages: messages, title: "What would you like to do?") { index in
+//            print(index)
+//        }
+        
+        let storyboard = UIStoryboard(name: "ItemsSelection", bundle: nil)
+        if let itemsVC = storyboard.instantiateInitialViewController() as? ItemsSelectionViewController
+        {
+            itemsVC.modalPresentationStyle = .custom
+            itemsVC.transitioningDelegate = self
+            
+            itemsVC.items = ["Item 1", "Item 2", "Item 3"]
+            
+            self.present(itemsVC, animated: true, completion: nil)
+            
         }
+        
+    }
+    
+    func presentationController(forPresented presented: UIViewController,
+                                presenting: UIViewController?,
+                                source: UIViewController) -> UIPresentationController? {
+        let presentationController = HalfSizePresentationController(presentedViewController: presented,
+                                                                   presenting: presenting)
+        return presentationController
     }
 }
+
+class HalfSizePresentationController : UIPresentationController {
+    override var frameOfPresentedViewInContainerView: CGRect {
+        
+        guard let containerView = containerView else {return CGRect()}
+        
+        let height = containerView.bounds.height/2
+        return CGRect(x: 0, y: containerView.bounds.height/2, width: containerView.bounds.width, height: height)
+    }
+}
+
