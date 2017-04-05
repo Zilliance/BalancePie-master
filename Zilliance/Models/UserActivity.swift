@@ -46,4 +46,13 @@ final class UserActivity: Object {
             return UIColor.red
         }
     }
+    
+    var goodValues: List<Value> {
+        return self.values.filter("type == \(ValueType.good.rawValue)")
+    }
+
+    var badValues: List<Value> {
+        return self.values.filter("type == \(ValueType.bad.rawValue)")
+    }
+
 }
