@@ -34,6 +34,8 @@ final class User: Object {
         return self.isIntroStarted && !self.isIntroFinished
     }
     
+    let activities = List<UserActivity>()
+    
 }
 
 extension User

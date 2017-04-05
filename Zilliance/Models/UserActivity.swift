@@ -23,4 +23,13 @@ final class UserActivity: Object {
     dynamic var duration: Int = 0
     let values = List<Value>()
     dynamic var feeling: Feeling = .great
+    
+    var image: UIImage? {
+        guard let iconName = self.activity.iconName else
+        {
+            return nil
+        }
+
+        return UIImage(named: iconName)
+    }
 }
