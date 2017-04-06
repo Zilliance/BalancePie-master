@@ -163,6 +163,11 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
             
             self.present(itemsVC, animated: true, completion: nil)
             
+            itemsVC.createItemTitle = "Create a new Activity"
+            itemsVC.createNewItemAction = {
+                print("this should launch a controller to show the activity creation")
+            }
+            
         }
     }
     

@@ -42,11 +42,11 @@ class ItemsSelectionViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
 
-    @IBAction func cancelTapped(_ sender: Any) {
+    @IBAction private func cancelTapped(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func doneTapped(_ sender: Any) {
+    @IBAction private func doneTapped(_ sender: Any) {
         
         self.dismiss(animated: true, completion: nil)
         
@@ -75,7 +75,10 @@ extension ItemsSelectionViewController: UITableViewDelegate
             self.selectedItemsIndexes.remove(indexPath.row)
         }
         
-        tableView.reloadRows(at: [indexPath], with: .fade)
+        if let cell = tableView.cellForRow(at: indexPath)
+        {
+            cell.accessoryType = self.selectedItemsIndexes.contains(indexPath.row) ? .checkmark : .none
+        }
         
     }
 }
