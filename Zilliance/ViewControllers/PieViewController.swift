@@ -77,27 +77,10 @@ class PieViewController: UIViewController {
     
     private func loadData() {
         
-        let activity1 = Activity()
-        activity1.name = "Test"
-        
-        let userActivity = UserActivity()
-        userActivity.activity = activity1
-        userActivity.duration = 300
-        userActivity.feeling = .mixed
-
-        let activity2 = Activity()
-        activity2.name = "Test"
-        
-        let userActivity1 = UserActivity()
-        userActivity1.activity = activity2
-        userActivity1.duration = 800
-        userActivity1.feeling = .great
-        
-        let activities = [userActivity, userActivity1]
         
         let availableMinutes = Database.shared.user.availableHours * 60
         
-        self.pieView.load(activities: activities, availableMinutes: availableMinutes)
+        self.pieView.load(activities: Array(Database.shared.user.activities), availableMinutes: availableMinutes)
     }
     
     
@@ -130,6 +113,7 @@ class PieViewController: UIViewController {
         
         alert.addAction(UIAlertAction(title: "Delete Slice", style: .default) { _ in
             Database.shared.user.remove(userActivity: userActivity)
+            self.loadData()
             alert.dismiss(animated: true, completion: nil)
         })
         
