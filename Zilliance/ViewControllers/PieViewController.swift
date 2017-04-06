@@ -98,9 +98,16 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
     
     
     private func refreshHours() {
-        self.hoursProgressView.availableHours = 140
-        self.hoursProgressView.activeHours = 35
-        self.hoursProgressView.sleepHours = 40
+        
+        if let user = Database.shared.user
+        {
+            self.hoursProgressView.availableHours = user.availableHours
+            self.hoursProgressView.activeHours = 35 // TODO: take it from the DB after we start to work with the DB = user?.currentActivitiesDuration / 60
+            
+            self.hoursProgressView.sleepHours = user.timeSlept / 60
+            
+        }
+        
     }
     
     // MARK: - User Actions

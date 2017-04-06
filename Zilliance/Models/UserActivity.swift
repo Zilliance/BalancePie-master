@@ -52,7 +52,7 @@ final class UserActivity: Object {
     }
 
     var badValues: Results<Value> {
-        return self.values.filter("type == \(ValueType.good.rawValue)")
+        return self.values.filter("type == \(ValueType.bad.rawValue)")
     }
 
 }
