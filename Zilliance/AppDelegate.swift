@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        self.testUserActivities()
+        self.userActivitiesTestData()
         
         let rootViewController = UIStoryboard(name: "Pie", bundle: nil).instantiateInitialViewController()
         
@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     //MARK : - Test data remove later
     
-    private func testUserActivities() {
+    private func userActivitiesTestData() {
         
         let activity1 = Activity()
         activity1.name = "Test"
