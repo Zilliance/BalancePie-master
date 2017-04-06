@@ -100,7 +100,8 @@ extension ItemsSelectionViewController: UITableViewDataSource
             let cell = tableView.dequeueReusableCell(withIdentifier: "createItemCell")!
             
             cell.textLabel?.text = self.createItemTitle
-            
+            cell.selectionStyle = .none
+
             return cell
         }
         else

@@ -82,8 +82,8 @@ class Database {
     
     private var defaultActivityData: [[String: String]] {
         return [
-            ["name": "Family Time", "iconName": "btnPlus"],
-            ["name": "Kid's Activities", "iconName": "btnPlus"],
+            ["name": "Family Time", "iconName": "familyTime"],
+            ["name": "Kid's Activities", "iconName": "kids"],
             ["name": "Work", "iconName": "work"],
             ["name": "Driving", "iconName": "driving"],
             ["name": "Treatment", "iconName": "treatment"],

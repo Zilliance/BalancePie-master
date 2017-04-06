@@ -156,7 +156,14 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
             let allActivities = Database.shared.allActivities()
             for activity in allActivities
             {
-                let activityIcon = activity.iconName != nil ? UIImage(named: activity.iconName!) : nil
+                var activityIcon = activity.iconName != nil ? UIImage(named: activity.iconName!) : nil
+                
+                // just for testing adding the btnPlus
+                if (activityIcon == nil)
+                {
+                    activityIcon = UIImage(named: "btnPlus")
+                }
+                
                 let itemModel = ItemSelectionViewModel(title: activity.name, image:activityIcon)
                 itemsVC.items.append(itemModel)
             }
