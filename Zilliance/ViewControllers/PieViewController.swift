@@ -134,15 +134,33 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
             
         }
     }
+    
+    func presentationController(forPresented presented: UIViewController,
+                                presenting: UIViewController?,
+                                source: UIViewController) -> UIPresentationController? {
+        let presentationController = PartialSizePresentationController(presentedViewController: presented,
+                                                                       presenting: presenting, height: self.view.frame.size.height)
+        return presentationController
+    }
 }
 
-class HalfSizePresentationController : UIPresentationController {
+class PartialSizePresentationController : UIPresentationController {
+    
+    fileprivate var height: CGFloat = 0
+    
+    init(presentedViewController: UIViewController, presenting presentingViewController: UIViewController?, height: CGFloat) {
+        
+        super.init(presentedViewController: presentedViewController, presenting: presentingViewController)
+        
+        self.height = height
+        
+    }
+    
     override var frameOfPresentedViewInContainerView: CGRect {
         
         guard let containerView = containerView else {return CGRect()}
         
-        let height = containerView.bounds.height/2
-        return CGRect(x: 0, y: containerView.bounds.height/2, width: containerView.bounds.width, height: height)
+        return CGRect(x: 0, y: containerView.frame.size.height - self.height, width: containerView.bounds.width, height: self.height)
     }
 }
 
