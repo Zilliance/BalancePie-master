@@ -47,11 +47,11 @@ final class UserActivity: Object {
         }
     }
     
-    var goodValues: List<Value> {
+    var goodValues: Results<Value> {
         return self.values.filter("type == \(ValueType.good.rawValue)")
     }
 
-    var badValues: List<Value> {
+    var badValues: Results<Value> {
         return self.values.filter("type == \(ValueType.bad.rawValue)")
     }
 
