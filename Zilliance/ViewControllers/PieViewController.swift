@@ -126,10 +126,10 @@ class PieViewController: UIViewController {
     
     private func delete(userActivity: UserActivity) {
         
-        let alert = UIAlertController(title: "Delete Slice", message: "Deleting a slice will remove it for your pie", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Delete Slice", message: "Deleting a slice will remove it from your pie", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Delete Slice", style: .default) { _ in
-           // Database.shared.removeActivity(activity)
+            Database.shared.user.remove(userActivity: userActivity)
             alert.dismiss(animated: true, completion: nil)
         })
         
