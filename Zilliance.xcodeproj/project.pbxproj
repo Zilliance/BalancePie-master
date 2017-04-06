@@ -159,6 +159,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0469D0B71E9686570024EA39 /* ItemsSelection */ = {
+			isa = PBXGroup;
+			children = (
+				0469D0AF1E952F180024EA39 /* ItemsSelectionViewController.swift */,
+				0469D0B31E9531220024EA39 /* ItemsSelection.storyboard */,
+			);
+			name = ItemsSelection;
+			sourceTree = "<group>";
+		};
 		5C16863DDD8A6468C22F4373 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +184,7 @@
 		8C3EA4571E92E4FD00F56DED /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				0469D0B71E9686570024EA39 /* ItemsSelection */,
 				8C3EA4581E92E50600F56DED /* Pie */,
 			);
 			name = Scenes;
@@ -187,8 +197,6 @@
 				8C3EA49D1E94274600F56DED /* PieViewController.swift */,
 				8C3EA4771E92EF9C00F56DED /* HoursProgressView.swift */,
 				8C3EA4591E92E6D000F56DED /* PieView.swift */,
-				0469D0AF1E952F180024EA39 /* ItemsSelectionViewController.swift */,
-				0469D0B31E9531220024EA39 /* ItemsSelection.storyboard */,
 			);
 			name = Pie;
 			sourceTree = "<group>";
