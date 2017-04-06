@@ -31,15 +31,15 @@ class AddToCalendarViewController: UIViewController, UITextViewDelegate {
         //setup width and corner radius
         for view in [self.bodyTextView, self.doneButton] as [UIView]
         {
-            view.layer.cornerRadius = 6
-            view.layer.borderWidth = 0.5
+            view.layer.cornerRadius = App.Appearance.zillianceCornerRadius
+            view.layer.borderWidth = App.Appearance.zillianceBorderWidth
             view.layer.borderColor = UIColor.lightGray.cgColor
         }
         
         // date picker
 
-        self.datePicker.layer.cornerRadius = 6
-        self.datePicker.layer.borderWidth = 0.5
+        self.datePicker.layer.cornerRadius = App.Appearance.zillianceCornerRadius
+        self.datePicker.layer.borderWidth = App.Appearance.zillianceBorderWidth
         self.datePicker.layer.borderColor = UIColor.lightGray.cgColor
         
         //body
@@ -47,22 +47,6 @@ class AddToCalendarViewController: UIViewController, UITextViewDelegate {
         self.bodyTextView.returnKeyType = .done
         
     }
-    
-    fileprivate func formatDate(date: Date) -> String
-    {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEEE MMMM, d"
-        return dateFormatter.string(from: date)
-    }
-    
-    fileprivate func formatTime(date: Date) -> String
-    {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "h:mm a"
-        return dateFormatter.string(from: date)
-    }
-    
-
     
     //simple way to hide the textview
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {

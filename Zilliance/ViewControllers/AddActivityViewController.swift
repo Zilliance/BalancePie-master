@@ -80,14 +80,13 @@ class AddActivityViewController: UIViewController, UICollectionViewDataSource, U
         switch ((self.activityTextField.text?.characters.count)! > 0, self.selectedIconName != nil) {
         case (true, true):
             return true
-        case (false, true):
-            self.showAlert(message: "Please add an activity name", title: nil)
-            return false
         case (true, false):
             self.showAlert(message: "Please select an icon", title: nil)
             return false
-        default:
+        case (false, _):
             self.showAlert(message: "Please add an activity name", title: nil)
+            return false
+        default:
             return false
         }
     }

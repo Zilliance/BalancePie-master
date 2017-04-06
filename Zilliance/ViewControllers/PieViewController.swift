@@ -84,16 +84,14 @@ class PieViewController: UIViewController {
         
         let userActivity1 = UserActivity()
         userActivity1.activity = activity2
-        userActivity1.duration = 600
+        userActivity1.duration = 800
         userActivity1.feeling = .great
         
         let activities = [userActivity, userActivity1]
         
-        let totalDuration = activities.reduce(0, {$0 + $1.duration})
-        
         let availableMinutes = Database.shared.user.availableHours * 60
         
-        self.pieView.load(activities: activities, availableMinutes: availableMinutes, totalDuration: totalDuration)
+        self.pieView.load(activities: activities, availableMinutes: availableMinutes)
     }
     
     

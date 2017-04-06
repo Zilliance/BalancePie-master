@@ -44,6 +44,7 @@
 		8C3EA49A1E93F85C00F56DED /* Muli-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C3EA48C1E93F85C00F56DED /* Muli-SemiBoldItalic.ttf */; };
 		8C3EA49C1E9425A600F56DED /* Pie.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C3EA49B1E9425A600F56DED /* Pie.storyboard */; };
 		8C3EA49E1E94274600F56DED /* PieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3EA49D1E94274600F56DED /* PieViewController.swift */; };
+		8C4D28C41E9694F800034A20 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4D28C31E9694F800034A20 /* App.swift */; };
 		8CBBBE181E9558D600281C3C /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CBBBE171E9558D600281C3C /* Calendar.storyboard */; };
 		8CBBBE1A1E9576F800281C3C /* AddToCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBBBE191E9576F800281C3C /* AddToCalendarViewController.swift */; };
 		8CBBBE1D1E95890700281C3C /* AddCustom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CBBBE1C1E95890700281C3C /* AddCustom.storyboard */; };
@@ -115,6 +116,7 @@
 		8C3EA48C1E93F85C00F56DED /* Muli-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Muli-SemiBoldItalic.ttf"; path = "Fonts/Muli-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		8C3EA49B1E9425A600F56DED /* Pie.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Pie.storyboard; sourceTree = "<group>"; };
 		8C3EA49D1E94274600F56DED /* PieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PieViewController.swift; path = ViewControllers/PieViewController.swift; sourceTree = "<group>"; };
+		8C4D28C31E9694F800034A20 /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		8CBBBE171E9558D600281C3C /* Calendar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
 		8CBBBE191E9576F800281C3C /* AddToCalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddToCalendarViewController.swift; path = ViewControllers/AddToCalendarViewController.swift; sourceTree = "<group>"; };
 		8CBBBE1C1E95890700281C3C /* AddCustom.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddCustom.storyboard; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 		E35668301E8C15BA00ED81D9 /* Zilliance */ = {
 			isa = PBXGroup;
 			children = (
+				8C4D28C31E9694F800034A20 /* App.swift */,
 				E35668311E8C15BA00ED81D9 /* AppDelegate.swift */,
 				8C3EA4571E92E4FD00F56DED /* Scenes */,
 				8C3EA45B1E92E72200F56DED /* Models */,
@@ -651,6 +654,7 @@
 				8C3EA4711E92E9D600F56DED /* Minutes+Extensions.swift in Sources */,
 				E35668321E8C15BA00ED81D9 /* AppDelegate.swift in Sources */,
 				8C3EA4731E92E9D600F56DED /* UIColor+CustomColors.swift in Sources */,
+				8C4D28C41E9694F800034A20 /* App.swift in Sources */,
 				8CBBBE1A1E9576F800281C3C /* AddToCalendarViewController.swift in Sources */,
 				8C3EA4721E92E9D600F56DED /* String+Extensions.swift in Sources */,
 				8CBBBE201E958B6300281C3C /* AddActivityViewController.swift in Sources */,
