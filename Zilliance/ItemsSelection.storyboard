@@ -22,9 +22,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hMr-ML-zFP">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hMr-ML-zFP">
                                 <rect key="frame" x="0.0" y="61" width="375" height="314"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="createItemCell" textLabel="uCR-UJ-h4z" style="IBUITableViewCellStyleDefault" id="Atr-hB-GyZ">
@@ -44,8 +43,42 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="itemCell" textLabel="kH2-8g-FNc" style="IBUITableViewCellStyleDefault" id="NCP-w1-BcK">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="itemWithIconCell" id="QSp-uQ-Dkk" customClass="ItemWithIconCell" customModule="Zilliance" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QSp-uQ-Dkk" id="mNl-WC-Nqc">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7If-qc-hhR">
+                                                    <rect key="frame" x="15" y="5" width="34" height="34"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="34" id="Eq5-Y1-Afq"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jtj-nj-iaM">
+                                                    <rect key="frame" x="57" y="11" width="300" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Jtj-nj-iaM" firstAttribute="leading" secondItem="7If-qc-hhR" secondAttribute="trailing" constant="8" symbolic="YES" id="Ujs-Ov-9KF"/>
+                                                <constraint firstItem="7If-qc-hhR" firstAttribute="leading" secondItem="mNl-WC-Nqc" secondAttribute="leading" constant="15" id="gXE-h3-7YR"/>
+                                                <constraint firstItem="7If-qc-hhR" firstAttribute="top" secondItem="mNl-WC-Nqc" secondAttribute="top" constant="5" id="jmQ-wZ-3BT"/>
+                                                <constraint firstAttribute="bottom" secondItem="7If-qc-hhR" secondAttribute="bottom" constant="5" id="rPP-st-oT3"/>
+                                                <constraint firstItem="Jtj-nj-iaM" firstAttribute="centerY" secondItem="7If-qc-hhR" secondAttribute="centerY" id="swV-WL-Qjw"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Jtj-nj-iaM" secondAttribute="trailing" constant="10" id="uGF-8B-SYO"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="iconView" destination="7If-qc-hhR" id="3NN-fx-3pq"/>
+                                            <outlet property="label" destination="Jtj-nj-iaM" id="pas-RI-nc3"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="itemCell" textLabel="kH2-8g-FNc" style="IBUITableViewCellStyleDefault" id="NCP-w1-BcK">
+                                        <rect key="frame" x="0.0" y="116" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NCP-w1-BcK" id="Oiw-z2-hZf">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -86,8 +119,12 @@
                         <constraints>
                             <constraint firstItem="rCU-JA-q6X" firstAttribute="top" secondItem="pEP-JH-EzQ" secondAttribute="bottom" constant="20" id="1BC-wO-STF"/>
                             <constraint firstItem="rCU-JA-q6X" firstAttribute="leading" secondItem="IuA-mA-jgu" secondAttribute="leading" constant="20" id="3kl-RX-Zp2"/>
+                            <constraint firstItem="EJ2-ec-f3a" firstAttribute="top" secondItem="hMr-ML-zFP" secondAttribute="bottom" id="F6d-f8-Kg1"/>
+                            <constraint firstItem="hMr-ML-zFP" firstAttribute="leading" secondItem="IuA-mA-jgu" secondAttribute="leading" id="FnO-q5-hu9"/>
+                            <constraint firstItem="hMr-ML-zFP" firstAttribute="top" secondItem="ZMD-FX-JWf" secondAttribute="bottom" constant="11" id="QWq-ew-2xt"/>
                             <constraint firstItem="ZMD-FX-JWf" firstAttribute="top" secondItem="pEP-JH-EzQ" secondAttribute="bottom" constant="20" id="g9V-Ti-EWs"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZMD-FX-JWf" secondAttribute="trailing" id="idY-A7-Lcy"/>
+                            <constraint firstAttribute="trailing" secondItem="hMr-ML-zFP" secondAttribute="trailing" id="vxR-cJ-REs"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>

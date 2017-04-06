@@ -67,6 +67,17 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
         self.statusBarBackgroundView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0).isActive = true
         
         
+        //activities test button
+        let showActivitiesButton = UIButton()
+        showActivitiesButton.setTitle("Tap to select activities", for: .normal)
+        self.view.addSubview(showActivitiesButton)
+        showActivitiesButton.sizeToFit()
+        showActivitiesButton.translatesAutoresizingMaskIntoConstraints = false
+        showActivitiesButton.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 20).isActive = true
+        showActivitiesButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -20).isActive = true
+        
+        showActivitiesButton.addTarget(self, action: #selector(testActivitiesSelectionTapped), for: .touchUpInside)
+        
     }
     
     private func loadData() {
@@ -113,29 +124,42 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
     // MARK: - User Actions
     
     func sliceAction(withActivity activity: UserActivity) {
-//        let messages = ["Edit Slice", "Fine Tune Slice", "Delete Slice"]
-//        let actionController = UIAlertController(title: "What would you like to do?", message: nil, preferredStyle: .actionSheet)
-//        for i in 0 ..< messages.count {
-//            let style: UIAlertActionStyle = (i == messages.count-1) ? .destructive : .default
-//            actionController.addAction(UIAlertAction(title: messages[i], style: style) { _ in
-//                actionController.dismiss(animated: true, completion: nil)
-//                print(i)
-//            })
-//        }
-//        
-//        actionController.addAction(UIAlertAction(title: "Cancel", style: .cancel) { _ in
-//            actionController.dismiss(animated: true, completion: nil)
-//        })
-//        
-//        self.present(actionController, animated: true, completion: nil)
+        let messages = ["Edit Slice", "Fine Tune Slice", "Delete Slice"]
+        let actionController = UIAlertController(title: "What would you like to do?", message: nil, preferredStyle: .actionSheet)
+        for i in 0 ..< messages.count {
+            let style: UIAlertActionStyle = (i == messages.count-1) ? .destructive : .default
+            actionController.addAction(UIAlertAction(title: messages[i], style: style) { _ in
+                actionController.dismiss(animated: true, completion: nil)
+                print(i)
+            })
+        }
         
+        actionController.addAction(UIAlertAction(title: "Cancel", style: .cancel) { _ in
+            actionController.dismiss(animated: true, completion: nil)
+        })
+        
+        self.present(actionController, animated: true, completion: nil)
+        
+    }
+    
+    
+    //Mark: Items Selection Presentation with DB Activities:
+    
+    @IBAction func testActivitiesSelectionTapped()
+    {
         let storyboard = UIStoryboard(name: "ItemsSelection", bundle: nil)
         if let itemsVC = storyboard.instantiateInitialViewController() as? ItemsSelectionViewController
         {
             itemsVC.modalPresentationStyle = .custom
             itemsVC.transitioningDelegate = self
             
-            itemsVC.items = ["Item 1", "Item 2", "Item 3"]
+            let allActivities = Database.shared.allActivities()
+            for activity in allActivities
+            {
+                let activityIcon = activity.iconName != nil ? UIImage(named: activity.iconName!) : nil
+                let itemModel = ItemSelectionViewModel(title: activity.name, image:activityIcon)
+                itemsVC.items.append(itemModel)
+            }
             
             self.present(itemsVC, animated: true, completion: nil)
             
@@ -146,28 +170,9 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
                                 presenting: UIViewController?,
                                 source: UIViewController) -> UIPresentationController? {
         let presentationController = PartialSizePresentationController(presentedViewController: presented,
-                                                                       presenting: presenting, height: self.view.frame.size.height)
+                                                                       presenting: presenting, height: self.view.frame.size.height / 2.0)
         return presentationController
     }
 }
 
-class PartialSizePresentationController : UIPresentationController {
-    
-    fileprivate var height: CGFloat = 0
-    
-    init(presentedViewController: UIViewController, presenting presentingViewController: UIViewController?, height: CGFloat) {
-        
-        super.init(presentedViewController: presentedViewController, presenting: presentingViewController)
-        
-        self.height = height
-        
-    }
-    
-    override var frameOfPresentedViewInContainerView: CGRect {
-        
-        guard let containerView = containerView else {return CGRect()}
-        
-        return CGRect(x: 0, y: containerView.frame.size.height - self.height, width: containerView.bounds.width, height: self.height)
-    }
-}
 

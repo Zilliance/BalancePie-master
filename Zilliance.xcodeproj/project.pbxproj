@@ -11,6 +11,7 @@
 		0469D0AE1E944B700024EA39 /* UserActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469D0AD1E944B700024EA39 /* UserActivity.swift */; };
 		0469D0B11E952F180024EA39 /* ItemsSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469D0AF1E952F180024EA39 /* ItemsSelectionViewController.swift */; };
 		0469D0B41E9531220024EA39 /* ItemsSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0469D0B31E9531220024EA39 /* ItemsSelection.storyboard */; };
+		0469D0B61E966F710024EA39 /* PartialSizePresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469D0B51E966F710024EA39 /* PartialSizePresentationController.swift */; };
 		1E51585B238E77BA1CAA3F72 /* Pods_ZillianceUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD551A78B0B1A451D0EC85B /* Pods_ZillianceUITests.framework */; };
 		6D62B4EDFBB711AD0B00D39E /* Pods_Zilliance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 736C6E0154BDC836D0C0D4EB /* Pods_Zilliance.framework */; };
 		8C3EA45A1E92E6D000F56DED /* PieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3EA4591E92E6D000F56DED /* PieView.swift */; };
@@ -74,6 +75,7 @@
 		0469D0AD1E944B700024EA39 /* UserActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserActivity.swift; path = Models/UserActivity.swift; sourceTree = "<group>"; };
 		0469D0AF1E952F180024EA39 /* ItemsSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemsSelectionViewController.swift; path = ViewControllers/ItemsSelectionViewController.swift; sourceTree = "<group>"; };
 		0469D0B31E9531220024EA39 /* ItemsSelection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ItemsSelection.storyboard; sourceTree = "<group>"; };
+		0469D0B51E966F710024EA39 /* PartialSizePresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartialSizePresentationController.swift; sourceTree = "<group>"; };
 		1BD551A78B0B1A451D0EC85B /* Pods_ZillianceUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZillianceUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D5A61EEA6A77027635EDAC1 /* Pods-Zilliance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zilliance.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Zilliance/Pods-Zilliance.debug.xcconfig"; sourceTree = "<group>"; };
 		3770342A51232B23DA4673E7 /* Pods-ZillianceUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZillianceUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZillianceUITests/Pods-ZillianceUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 				8C3EA45F1E92E7BF00F56DED /* ArrayDataSource.swift */,
 				8C3EA47A1E92F0F100F56DED /* CalendarHelper.swift */,
 				8C3EA47B1E92F0F100F56DED /* LocalNotificationsHelper.swift */,
+				0469D0B51E966F710024EA39 /* PartialSizePresentationController.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -626,6 +629,7 @@
 				8C3EA4651E92E7BF00F56DED /* Value.swift in Sources */,
 				0469D0AE1E944B700024EA39 /* UserActivity.swift in Sources */,
 				8C3EA47D1E92F0F100F56DED /* LocalNotificationsHelper.swift in Sources */,
+				0469D0B61E966F710024EA39 /* PartialSizePresentationController.swift in Sources */,
 				8C3EA4611E92E7BF00F56DED /* Database.swift in Sources */,
 				8C3EA4641E92E7BF00F56DED /* ArrayDataSource.swift in Sources */,
 				8C3EA4781E92EF9C00F56DED /* HoursProgressView.swift in Sources */,

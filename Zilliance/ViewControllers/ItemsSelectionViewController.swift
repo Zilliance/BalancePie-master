@@ -8,11 +8,31 @@
 
 import UIKit
 
+final class ItemWithIconCell: UITableViewCell{
+    @IBOutlet var iconView: UIImageView!
+    @IBOutlet var label: UILabel!
+}
+
+struct ItemSelectionViewModel
+{
+    var image: UIImage?
+    var title: String
+    
+    init(title: String, image: UIImage? = nil) {
+        self.title = title
+        self.image = image
+    }
+    
+}
+
 class ItemsSelectionViewController: UIViewController {
 
-    var items: [String] = []
+    var items: [ItemSelectionViewModel] = []
     var createItemTitle = "Create new item"
     var selectedItemsIndexes:Set<Int> = []
+    
+    var doneAction: (([Int]) -> ())?
+    var createNewItemAction: (() -> ())?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,22 +47,24 @@ class ItemsSelectionViewController: UIViewController {
     }
     
     @IBAction func doneTapped(_ sender: Any) {
+        
         self.dismiss(animated: true, completion: nil)
+        
+        self.doneAction?(Array(self.selectedItemsIndexes))
 
     }
-    
 }
 
 extension ItemsSelectionViewController: UITableViewDelegate
 {
     
-    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        
-        
-        return indexPath.section == 0 ? nil : indexPath
-    }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if (indexPath.section == 0) //create action item
+        {
+            self.createNewItemAction?()
+            return
+        }
         
         if (!self.selectedItemsIndexes.contains(indexPath.row))
         {
@@ -80,14 +102,16 @@ extension ItemsSelectionViewController: UITableViewDataSource
         }
         else
         {
+            let item = self.items[indexPath.row]
             let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell")!
-            
-            cell.textLabel?.text = self.items[indexPath.row]
-            
-            cell.selectionStyle = .none
+
+            cell.imageView?.image = item.image
+
+            cell.textLabel?.text = item.title
             
             cell.accessoryType = self.selectedItemsIndexes.contains(indexPath.row) ? .checkmark : .none
-            
+            cell.selectionStyle = .none
+
             return cell
         }
     }

@@ -65,6 +65,11 @@ class Database {
             print("realm initialization failed, aborting")
         }
     }
+    
+    func allActivities() -> Results<Activity>
+    {
+        return self.realm.objects(Activity.self)
+    }
 
     // MARK: - Convenience queries
 
@@ -77,8 +82,8 @@ class Database {
     
     private var defaultActivityData: [[String: String]] {
         return [
-            ["name": "Family Time", "iconName": "familyTime"],
-            ["name": "Kid's Activities", "iconName": "kids"],
+            ["name": "Family Time", "iconName": "btnPlus"],
+            ["name": "Kid's Activities", "iconName": "btnPlus"],
             ["name": "Work", "iconName": "work"],
             ["name": "Driving", "iconName": "driving"],
             ["name": "Treatment", "iconName": "treatment"],
