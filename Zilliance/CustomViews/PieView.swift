@@ -84,30 +84,27 @@ final class PieView: UIView {
     
     // MARK: Pie Data
     
-    func load(activities pieActivities:[UserActivity], availableMinutes minutes: Minutes, totalDuration duration: Minutes) {
+    func load(activities pieActivities:[UserActivity], availableMinutes: Minutes) {
         
         self.pieChartView.isHidden = false
         self.activities = pieActivities
         var yVals1: [ChartDataEntry] = [ChartDataEntry]()
         var colors: [NSUIColor] = [NSUIColor]()
         
-        var emptyMinutes = minutes
-        
-        let durationOfSelectedActivities = Double(duration)
+        var emptyMinutes = availableMinutes
         
         pieActivities.forEach { userActivity in
             let iconImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
             
             iconImageView.image = userActivity.image
             iconImageView.contentMode = .center
-           // iconImageView.layer.backgroundColor = UIColor.color(for: activity.state).darker(amount: 0.25).cgColor
             // TODO: --green slice for now, change later
-            iconImageView.layer.backgroundColor = UIColor.green.darker(amount: 0.25).cgColor
+            iconImageView.layer.backgroundColor = userActivity.color.darker(amount: 0.25).cgColor
             iconImageView.layer.cornerRadius = iconImageView.frame.size.height/2
             iconImageView.clipsToBounds = true
             
             var image = UIImage.image(from: iconImageView)?.resizedImage(newSize: CGSize(width: 32, height: 32))
-            let percentage = Double(userActivity.duration) / durationOfSelectedActivities * 100
+            let percentage = Double(userActivity.duration) / Double(availableMinutes) * 100
             
             // resize the image if percentage < 5%
             

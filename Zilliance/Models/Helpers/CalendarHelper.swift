@@ -25,7 +25,7 @@ class CalendarHelper {
     ///   - title: the title of the event
     ///   - date: the date of the event
     ///   - calendarClosure: completion closure
-    class func addEvent(with title: String, notes: String, date:Date, calendarClosure: @escaping CalendarClosure) {
+    class func addEvent(with title: String, notes: String?, date:Date, calendarClosure: @escaping CalendarClosure) {
         
         let store = EKEventStore()
         
@@ -38,7 +38,11 @@ class CalendarHelper {
             let event = EKEvent(eventStore: store)
             event.title = title
             event.startDate = date
-            event.notes = notes
+            
+            if let eventNotes = notes {
+                event.notes = eventNotes
+            }
+            
             event.endDate = event.startDate.addingTimeInterval(3600) // 1 hour event
             event.calendar = store.defaultCalendarForNewEvents
             do {
