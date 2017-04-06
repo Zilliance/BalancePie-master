@@ -58,9 +58,7 @@ extension User
     
     func remove(userActivity: UserActivity) {
         try! Database.shared.realm.write {
-            if let index = self.activities.index(of: userActivity) {
-                self.activities.remove(objectAtIndex: index)
-            }
+            Database.shared.realm.delete(userActivity)
         }
     }
     
