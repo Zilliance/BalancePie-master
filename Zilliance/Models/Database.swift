@@ -73,7 +73,6 @@ class Database {
         self.bootstrapUser()
         self.bootstrapActivities()
         self.bootstrapValues()
-        self.bootstrapUserActivities()
     }
     
     private var defaultActivityData: [[String: String]] {
@@ -175,27 +174,4 @@ class Database {
         }
     }
     
-    private func bootstrapUserActivities() {
-        
-        let activity1 = Activity()
-        activity1.name = "Test"
-        
-        let userActivity = UserActivity()
-        userActivity.activity = activity1
-        userActivity.duration = 300
-        userActivity.feeling = .mixed
-        
-        let activity2 = Activity()
-        activity2.name = "Test"
-        
-        let userActivity1 = UserActivity()
-        userActivity1.activity = activity2
-        userActivity1.duration = 800
-        userActivity1.feeling = .great
-        
-        try! self.realm.write {
-            self.user.activities.append(objectsIn: [userActivity, userActivity1])
-        }
-        
-    }
 }

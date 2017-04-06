@@ -56,6 +56,12 @@ extension User
         }
     }
     
+    func add(userActivity: UserActivity) {
+        try! Database.shared.realm.write {
+            self.activities.append(userActivity)
+        }
+    }
+    
     func remove(userActivity: UserActivity) {
         try! Database.shared.realm.write {
             Database.shared.realm.delete(userActivity)
