@@ -11,7 +11,7 @@ import UIKit
 class OnboardingPageViewController: UIPageViewController {
     
     fileprivate(set) lazy var introViewControllers: [UIViewController]  = {
-        return [self.viewControllers(forId: "First"), self.viewControllers(forId: "Second"), self.viewControllers(forId: "Third")]
+        return [self.viewController(forId: "First"), self.viewController(forId: "Second"), self.viewController(forId: "Third")]
     }()
 
     override func viewDidLoad() {
@@ -26,7 +26,7 @@ class OnboardingPageViewController: UIPageViewController {
         }
     }
 
-    private func viewControllers(forId id: String) -> UIViewController {
+    private func viewController(forId id: String) -> UIViewController {
         
         return UIStoryboard.init(name: "Onboarding", bundle: nil).instantiateViewController(withIdentifier:id)
     
