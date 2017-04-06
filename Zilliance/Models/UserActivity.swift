@@ -10,14 +10,13 @@
 import Foundation
 import RealmSwift
 
-@objc enum Feeling: Int32 {
-    case great
-    case neutral
-    case lousy
-    case mixed
-}
-
 final class UserActivity: Object {
+    @objc enum Feeling: Int32 {
+        case great
+        case neutral
+        case lousy
+        case mixed
+    }
     
     dynamic var activity: Activity!
     dynamic var duration: Int = 0
@@ -35,15 +34,14 @@ final class UserActivity: Object {
     
     var color: UIColor {
         switch(feeling){
+        case .great:
+            return UIColor.red
         case .neutral:
             return UIColor.blue
         case .lousy:
             return UIColor.black
         case .mixed:
             return UIColor.green
-            
-        default:
-            return UIColor.red
         }
     }
     
