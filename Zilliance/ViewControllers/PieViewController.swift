@@ -116,7 +116,7 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
     
     private func fineTune(userActivity: UserActivity) {
 
-        //fine tune setup example. It shou
+        //fine tune setup example. It should use other view controllers
         let addStoryboard = UIStoryboard(name: "AddCustom", bundle: nil)
 
         let fineTuneStoryboard = UIStoryboard(name: "FineTuneActivity", bundle: nil)
