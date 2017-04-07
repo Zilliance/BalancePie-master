@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		01FC8C629D821129AE1F5C39 /* Pods_ZillianceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7A740D362571F85742B547 /* Pods_ZillianceTests.framework */; };
 		0469D0AE1E944B700024EA39 /* UserActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469D0AD1E944B700024EA39 /* UserActivity.swift */; };
+		04B29A631E97AB340090E52E /* ItemsSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B29A621E97AB340090E52E /* ItemsSelection.storyboard */; };
+		04B29A651E97AB4A0090E52E /* ItemsSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B29A641E97AB4A0090E52E /* ItemsSelectionViewController.swift */; };
+		04B29A671E97AB680090E52E /* PartialSizePresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B29A661E97AB680090E52E /* PartialSizePresentationController.swift */; };
 		1E51585B238E77BA1CAA3F72 /* Pods_ZillianceUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD551A78B0B1A451D0EC85B /* Pods_ZillianceUITests.framework */; };
 		6D62B4EDFBB711AD0B00D39E /* Pods_Zilliance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 736C6E0154BDC836D0C0D4EB /* Pods_Zilliance.framework */; };
 		8C3EA45A1E92E6D000F56DED /* PieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3EA4591E92E6D000F56DED /* PieView.swift */; };
@@ -77,6 +80,9 @@
 
 /* Begin PBXFileReference section */
 		0469D0AD1E944B700024EA39 /* UserActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserActivity.swift; path = Models/UserActivity.swift; sourceTree = "<group>"; };
+		04B29A621E97AB340090E52E /* ItemsSelection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ItemsSelection.storyboard; sourceTree = "<group>"; };
+		04B29A641E97AB4A0090E52E /* ItemsSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemsSelectionViewController.swift; path = ViewControllers/ItemsSelectionViewController.swift; sourceTree = "<group>"; };
+		04B29A661E97AB680090E52E /* PartialSizePresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartialSizePresentationController.swift; sourceTree = "<group>"; };
 		1BD551A78B0B1A451D0EC85B /* Pods_ZillianceUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZillianceUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D5A61EEA6A77027635EDAC1 /* Pods-Zilliance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zilliance.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Zilliance/Pods-Zilliance.debug.xcconfig"; sourceTree = "<group>"; };
 		3770342A51232B23DA4673E7 /* Pods-ZillianceUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZillianceUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZillianceUITests/Pods-ZillianceUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -167,6 +173,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04B29A611E97AB000090E52E /* ItemsSelection */ = {
+			isa = PBXGroup;
+			children = (
+				04B29A641E97AB4A0090E52E /* ItemsSelectionViewController.swift */,
+				04B29A621E97AB340090E52E /* ItemsSelection.storyboard */,
+			);
+			name = ItemsSelection;
+			sourceTree = "<group>";
+		};
 		5C16863DDD8A6468C22F4373 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +198,7 @@
 		8C3EA4571E92E4FD00F56DED /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				04B29A611E97AB000090E52E /* ItemsSelection */,
 				8CBBBE1B1E9588E700281C3C /* AddCustom */,
 				8CBBBE161E9558A300281C3C /* Calendar */,
 				8C3EA4581E92E50600F56DED /* Pie */,
@@ -231,6 +247,7 @@
 		8C3EA4791E92F0E400F56DED /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				04B29A661E97AB680090E52E /* PartialSizePresentationController.swift */,
 				8C3EA45F1E92E7BF00F56DED /* ArrayDataSource.swift */,
 				8C3EA47A1E92F0F100F56DED /* CalendarHelper.swift */,
 				8C3EA47B1E92F0F100F56DED /* LocalNotificationsHelper.swift */,
@@ -465,6 +482,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04B29A631E97AB340090E52E /* ItemsSelection.storyboard in Resources */,
 				8CBBBE181E9558D600281C3C /* Calendar.storyboard in Resources */,
 				8C3EA4991E93F85C00F56DED /* Muli-SemiBold.ttf in Resources */,
 				8C3EA4921E93F85C00F56DED /* Muli-ExtraBoldItalic.ttf in Resources */,
@@ -661,11 +679,13 @@
 				8C3EA4651E92E7BF00F56DED /* Value.swift in Sources */,
 				0469D0AE1E944B700024EA39 /* UserActivity.swift in Sources */,
 				8C3EA47D1E92F0F100F56DED /* LocalNotificationsHelper.swift in Sources */,
+				04B29A671E97AB680090E52E /* PartialSizePresentationController.swift in Sources */,
 				8C3EA4611E92E7BF00F56DED /* Database.swift in Sources */,
 				8C3EA4641E92E7BF00F56DED /* ArrayDataSource.swift in Sources */,
 				8C3EA4781E92EF9C00F56DED /* HoursProgressView.swift in Sources */,
 				8C3EA46F1E92E9D600F56DED /* UIImage+Extensions.swift in Sources */,
 				8C3EA4621E92E7BF00F56DED /* User.swift in Sources */,
+				04B29A651E97AB4A0090E52E /* ItemsSelectionViewController.swift in Sources */,
 				8C3EA4761E92E9D600F56DED /* UIViewController+Extensions.swift in Sources */,
 				8C3EA45A1E92E6D000F56DED /* PieView.swift in Sources */,
 				8C3EA4701E92E9D600F56DED /* Int+Extensions.swift in Sources */,

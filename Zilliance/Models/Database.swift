@@ -65,6 +65,11 @@ class Database {
             print("realm initialization failed, aborting")
         }
     }
+    
+    func allActivities() -> Results<Activity>
+    {
+        return self.realm.objects(Activity.self)
+    }
 
     // MARK: - Convenience queries
 

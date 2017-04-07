@@ -19,7 +19,7 @@ final class UserActivity: Object {
     }
     
     dynamic var activity: Activity!
-    dynamic var duration: Int = 0
+    dynamic var duration: Minutes = 0
     let values = List<Value>()
     dynamic var feeling: Feeling = .great
     

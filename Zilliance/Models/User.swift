@@ -15,7 +15,7 @@ final class User: Object {
     dynamic var isIntroFinished: Bool = false
 
     //daily minutes spent sleeping:
-    dynamic var timeSlept: Int = 0
+    dynamic var timeSlept: Minutes = 0
 
     func startIntro() {
         try! Database.shared.realm.write {
@@ -36,7 +36,7 @@ final class User: Object {
     
     let activities = List<UserActivity>()
     
-    var currentActivitiesDuration: Int {
+    var currentActivitiesDuration: Minutes {
         return self.activities.reduce(0, {$0 + $1.duration})
     }
     
@@ -44,12 +44,17 @@ final class User: Object {
         return (24 * 7) - (self.timeSlept / 60) * 7
     }
     
+    var availableMinutes: Minutes {
+        return (24 * 7) * 60 - self.timeSlept * 7
+    }
+
+    
 }
 
 extension User
 {
     
-    func saveTimeSlept(hours: Int, minutes: Int)
+    func saveTimeSlept(hours: Int, minutes: Minutes)
     {
         try! Database.shared.realm.write {
             self.timeSlept = hours * 60 + minutes

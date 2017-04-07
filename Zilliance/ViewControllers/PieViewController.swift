@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PieViewController: UIViewController {
+class PieViewController: UIViewController, UIViewControllerTransitioningDelegate {
     
     private enum SliceOptions: String {
         case edit = "Edit Slice"
@@ -72,6 +72,17 @@ class PieViewController: UIViewController {
         self.statusBarBackgroundView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0).isActive = true
         self.statusBarBackgroundView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0).isActive = true
         
+        
+        //activities test button
+        let showActivitiesButton = UIButton()
+        showActivitiesButton.setTitle("Tap to select activities", for: .normal)
+        self.view.addSubview(showActivitiesButton)
+        showActivitiesButton.sizeToFit()
+        showActivitiesButton.translatesAutoresizingMaskIntoConstraints = false
+        showActivitiesButton.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 20).isActive = true
+        showActivitiesButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -20).isActive = true
+        
+        showActivitiesButton.addTarget(self, action: #selector(testActivitiesSelectionTapped), for: .touchUpInside)
         
     }
     
@@ -154,5 +165,52 @@ class PieViewController: UIViewController {
         })
         
         self.present(actionController, animated: true, completion: nil)
+        
+    }
+    
+    
+    //Mark: Items Selection Presentation with DB Activities:
+    
+    @IBAction func testActivitiesSelectionTapped()
+    {
+        let storyboard = UIStoryboard(name: "ItemsSelection", bundle: nil)
+        if let itemsVC = storyboard.instantiateInitialViewController() as? ItemsSelectionViewController
+        {
+            itemsVC.modalPresentationStyle = .custom
+            itemsVC.transitioningDelegate = self
+            
+            let allActivities = Database.shared.allActivities()
+            for activity in allActivities
+            {
+                var activityIcon = activity.iconName != nil ? UIImage(named: activity.iconName!) : nil
+                
+                // just for testing adding the btnPlus
+                if (activityIcon == nil)
+                {
+                    activityIcon = UIImage(named: "btnPlus")
+                }
+                
+                let itemModel = ItemSelectionViewModel(title: activity.name, image:activityIcon)
+                itemsVC.items.append(itemModel)
+            }
+            
+            self.present(itemsVC, animated: true, completion: nil)
+            
+            itemsVC.createItemTitle = "Create a new Activity"
+            itemsVC.createNewItemAction = {
+                print("this should launch a controller to show the activity creation")
+            }
+            
+        }
+    }
+    
+    func presentationController(forPresented presented: UIViewController,
+                                presenting: UIViewController?,
+                                source: UIViewController) -> UIPresentationController? {
+        let presentationController = PartialSizePresentationController(presentedViewController: presented,
+                                                                       presenting: presenting, height: self.view.frame.size.height / 2.0)
+        return presentationController
     }
 }
+
+
