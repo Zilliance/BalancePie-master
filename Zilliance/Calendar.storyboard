@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="40o-Hi-Wew">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Muli-Regular.ttf">
+            <string>Muli-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Add To Calendar View Controller-->
+        <scene sceneID="9NS-am-6Bk">
+            <objects>
+                <viewController storyboardIdentifier="AddToCalendarViewController" id="40o-Hi-Wew" customClass="AddToCalendarViewController" customModule="Zilliance" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qS9-19-9E0"/>
+                        <viewControllerLayoutGuide type="bottom" id="fR5-MD-O98"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pxg-Ww-6Au">
+                        <rect key="frame" x="0.0" y="0.0" width="350" height="610"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GKA-A6-kPw">
+                                <rect key="frame" x="12" y="41" width="325" height="553"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fU4-zA-bar">
+                                        <rect key="frame" x="0.0" y="0.0" width="325" height="59"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Schedule It" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ad7-3F-QTC">
+                                                <rect key="frame" x="26" y="14" width="299" height="28"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="22"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EmX-BV-ZKr">
+                                                <rect key="frame" x="267" y="0.0" width="58" height="59"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="58" id="kOo-Ud-KXA"/>
+                                                </constraints>
+                                                <state key="normal" title="X"/>
+                                                <connections>
+                                                    <action selector="onClose:" destination="40o-Hi-Wew" eventType="touchUpInside" id="VeY-eV-50t"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.0" green="0.73725490199999999" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="59" id="3f7-42-VX3"/>
+                                            <constraint firstAttribute="trailing" secondItem="EmX-BV-ZKr" secondAttribute="trailing" id="qu5-Pq-ggM"/>
+                                            <constraint firstItem="EmX-BV-ZKr" firstAttribute="top" secondItem="fU4-zA-bar" secondAttribute="top" id="rWc-qj-bQL"/>
+                                            <constraint firstAttribute="bottom" secondItem="EmX-BV-ZKr" secondAttribute="bottom" id="wNi-Jb-3ae"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="maC-2E-Rqj">
+                                        <rect key="frame" x="8" y="78" width="100" height="15"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="15" id="i7F-2w-k69"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Qav-6a-v1r">
+                                        <rect key="frame" x="8" y="111" width="309" height="98"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="98" id="2n3-IL-Q2K"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxc-PB-GEU">
+                                        <rect key="frame" x="8" y="501" width="309" height="44"/>
+                                        <color key="backgroundColor" red="0.0" green="0.73725490199999999" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="Qav-4O-bOH"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="23"/>
+                                        <state key="normal" title="Add To Calendar">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onDone:" destination="40o-Hi-Wew" eventType="touchUpInside" id="q8X-3h-hrN"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date &amp; Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBf-Rg-WQ6">
+                                        <rect key="frame" x="8" y="227" width="110" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="bmI-uY-XIv"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="11"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="5TE-Dh-zm2">
+                                        <rect key="frame" x="8" y="256" width="309" height="237"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="513112832.37409902">
+                                            <!--2017-04-05 19:20:32 +0000-->
+                                        </date>
+                                    </datePicker>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="dxc-PB-GEU" firstAttribute="leading" secondItem="GKA-A6-kPw" secondAttribute="leading" constant="8" id="5Le-Q7-ySp"/>
+                                    <constraint firstItem="Qav-6a-v1r" firstAttribute="top" secondItem="maC-2E-Rqj" secondAttribute="bottom" constant="18" id="8Wm-mV-IY3"/>
+                                    <constraint firstAttribute="trailing" secondItem="fU4-zA-bar" secondAttribute="trailing" id="CBD-81-srT"/>
+                                    <constraint firstItem="maC-2E-Rqj" firstAttribute="top" secondItem="fU4-zA-bar" secondAttribute="bottom" constant="19" id="Cl0-1F-AJM"/>
+                                    <constraint firstItem="Qav-6a-v1r" firstAttribute="leading" secondItem="GKA-A6-kPw" secondAttribute="leading" constant="8" id="Ico-5X-tio"/>
+                                    <constraint firstAttribute="bottom" secondItem="dxc-PB-GEU" secondAttribute="bottom" constant="8" id="KY8-9Z-7OM"/>
+                                    <constraint firstAttribute="trailing" secondItem="5TE-Dh-zm2" secondAttribute="trailing" constant="8" id="Nay-iU-fN2"/>
+                                    <constraint firstItem="XBf-Rg-WQ6" firstAttribute="leading" secondItem="GKA-A6-kPw" secondAttribute="leading" constant="8" id="PX8-Qm-b9a"/>
+                                    <constraint firstItem="fU4-zA-bar" firstAttribute="top" secondItem="GKA-A6-kPw" secondAttribute="top" id="RnG-sK-m0Y"/>
+                                    <constraint firstAttribute="trailing" secondItem="maC-2E-Rqj" secondAttribute="trailing" constant="217" id="YmD-D1-Lg2"/>
+                                    <constraint firstAttribute="trailing" secondItem="XBf-Rg-WQ6" secondAttribute="trailing" constant="207" id="YuE-bS-RV0"/>
+                                    <constraint firstItem="5TE-Dh-zm2" firstAttribute="leading" secondItem="GKA-A6-kPw" secondAttribute="leading" constant="8" id="ae5-xO-7lP"/>
+                                    <constraint firstItem="dxc-PB-GEU" firstAttribute="top" secondItem="5TE-Dh-zm2" secondAttribute="bottom" constant="8" id="bbt-Np-jzo"/>
+                                    <constraint firstItem="5TE-Dh-zm2" firstAttribute="top" secondItem="XBf-Rg-WQ6" secondAttribute="bottom" constant="8" id="dVd-yJ-Vv3"/>
+                                    <constraint firstItem="fU4-zA-bar" firstAttribute="leading" secondItem="GKA-A6-kPw" secondAttribute="leading" id="hS5-FG-QPQ"/>
+                                    <constraint firstItem="XBf-Rg-WQ6" firstAttribute="top" secondItem="Qav-6a-v1r" secondAttribute="bottom" constant="18" id="juR-ST-hKm"/>
+                                    <constraint firstItem="maC-2E-Rqj" firstAttribute="leading" secondItem="GKA-A6-kPw" secondAttribute="leading" constant="8" id="lU1-Jz-P7q"/>
+                                    <constraint firstAttribute="trailing" secondItem="Qav-6a-v1r" secondAttribute="trailing" constant="8" id="ng0-Gi-TNI"/>
+                                    <constraint firstAttribute="trailing" secondItem="dxc-PB-GEU" secondAttribute="trailing" constant="8" id="pK5-GF-rQG"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fR5-MD-O98" firstAttribute="top" secondItem="GKA-A6-kPw" secondAttribute="bottom" constant="16" id="KId-jf-f63"/>
+                            <constraint firstItem="GKA-A6-kPw" firstAttribute="leading" secondItem="pxg-Ww-6Au" secondAttribute="leading" constant="12" id="r5L-BT-GVc"/>
+                            <constraint firstItem="GKA-A6-kPw" firstAttribute="top" secondItem="qS9-19-9E0" secondAttribute="bottom" constant="41" id="vMz-NG-LXs"/>
+                            <constraint firstAttribute="trailing" secondItem="GKA-A6-kPw" secondAttribute="trailing" constant="13" id="wcI-bZ-TEu"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="350" height="610"/>
+                    <connections>
+                        <outlet property="bodyTextView" destination="Qav-6a-v1r" id="JkY-ko-1em"/>
+                        <outlet property="datePicker" destination="5TE-Dh-zm2" id="dKq-Bf-lBa"/>
+                        <outlet property="doneButton" destination="dxc-PB-GEU" id="Gbh-Lj-WY3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gTm-IN-70x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="904" y="245.57721139430288"/>
+        </scene>
+    </scenes>
+</document>

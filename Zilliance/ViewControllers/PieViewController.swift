@@ -10,6 +10,12 @@ import UIKit
 
 class PieViewController: UIViewController, UIViewControllerTransitioningDelegate {
     
+    private enum SliceOptions: String {
+        case edit = "Edit Slice"
+        case tune = "Fine Tune Slice"
+        case delete = "Delete Slice"
+    }
+    
     private let statusBarBackgroundView = UIView()
     private let hoursProgressView = HoursProgressView()
     
@@ -82,29 +88,10 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
     
     private func loadData() {
         
-        let activity1 = Activity()
-        activity1.name = "Test"
-        
-        let userActivity = UserActivity()
-        userActivity.activity = activity1
-        userActivity.duration = 300
-        userActivity.feeling = .mixed
-
-        let activity2 = Activity()
-        activity2.name = "Test"
-        
-        let userActivity1 = UserActivity()
-        userActivity1.activity = activity2
-        userActivity1.duration = 600
-        userActivity1.feeling = .great
-        
-        let activities = [userActivity, userActivity1]
-        
-        let totalDuration = activities.reduce(0, {$0 + $1.duration})
         
         let availableMinutes = Database.shared.user.availableHours * 60
         
-        self.pieView.load(activities: activities, availableMinutes: availableMinutes, totalDuration: totalDuration)
+        self.pieView.load(activities: Array(Database.shared.user.activities), availableMinutes: availableMinutes)
     }
     
     
@@ -121,18 +108,57 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
         
     }
     
+    // MARK: Slice Options
+    
+    private func edit(userActivity: UserActivity) {
+        
+    }
+    
+    private func fineTune(userActivity: UserActivity) {
+        
+    }
+    
+    private func delete(userActivity: UserActivity) {
+        
+        let alert = UIAlertController(title: "Delete Slice", message: "Deleting a slice will remove it from your pie", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Delete Slice", style: .default) { _ in
+            Database.shared.user.remove(userActivity: userActivity)
+            self.loadData()
+            alert.dismiss(animated: true, completion: nil)
+        })
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel) { _ in
+            alert.dismiss(animated: true, completion: nil)
+        })
+        
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
     // MARK: - User Actions
     
     func sliceAction(withActivity activity: UserActivity) {
-        let messages = ["Edit Slice", "Fine Tune Slice", "Delete Slice"]
+        
         let actionController = UIAlertController(title: "What would you like to do?", message: nil, preferredStyle: .actionSheet)
-        for i in 0 ..< messages.count {
-            let style: UIAlertActionStyle = (i == messages.count-1) ? .destructive : .default
-            actionController.addAction(UIAlertAction(title: messages[i], style: style) { _ in
-                actionController.dismiss(animated: true, completion: nil)
-                print(i)
-            })
-        }
+        
+        actionController.addAction(UIAlertAction(title: SliceOptions.edit.rawValue, style: .default) { _ in
+            actionController.dismiss(animated: true, completion: nil)
+            self.edit(userActivity: activity)
+            
+        })
+        
+        actionController.addAction(UIAlertAction(title: SliceOptions.tune.rawValue, style: .default) { _ in
+            actionController.dismiss(animated: true, completion: nil)
+            self.fineTune(userActivity: activity)
+            
+        })
+        
+        actionController.addAction(UIAlertAction(title: SliceOptions.delete.rawValue, style: .destructive) { _ in
+            actionController.dismiss(animated: true, completion: nil)
+            self.delete(userActivity: activity)
+            
+        })
         
         actionController.addAction(UIAlertAction(title: "Cancel", style: .cancel) { _ in
             actionController.dismiss(animated: true, completion: nil)

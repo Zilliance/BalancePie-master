@@ -14,7 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        self.userActivitiesTestData()
         
         let rootViewController = UIStoryboard(name: "Pie", bundle: nil).instantiateInitialViewController()
         
@@ -25,5 +26,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+    //MARK : - Test data remove later
+    
+    private func userActivitiesTestData() {
+        
+        let activity1 = Activity()
+        activity1.name = "Test"
+        
+        let userActivity = UserActivity()
+        userActivity.activity = activity1
+        userActivity.duration = 300
+        userActivity.feeling = .mixed
+        Database.shared.user.add(userActivity: userActivity)
+        
+        let activity2 = Activity()
+        activity2.name = "Test"
+        
+        let userActivity1 = UserActivity()
+        userActivity1.activity = activity2
+        userActivity1.duration = 800
+        userActivity1.feeling = .great
+        Database.shared.user.add(userActivity: userActivity1)
+        
+        
+    }
 }
 
