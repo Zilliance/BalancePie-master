@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class ItemWithIconCell: UITableViewCell{
+final class ItemWithIconCell: UITableViewCell {
     @IBOutlet var iconView: UIImageView!
     @IBOutlet var label: UILabel!
 }

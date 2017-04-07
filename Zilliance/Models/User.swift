@@ -44,7 +44,7 @@ final class User: Object {
         return (24 * 7) - (self.timeSlept / 60) * 7
     }
     
-    var availableMinutes: Int {
+    var availableMinutes: Minutes {
         return (24 * 7) * 60 - self.timeSlept * 7
     }
 
