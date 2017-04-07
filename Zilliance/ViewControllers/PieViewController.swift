@@ -136,11 +136,9 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
         
         fineTuneVC.items = items
         
-        self.navigationController?.isNavigationBarHidden = false
+        let navigationFineTuneVC = UINavigationController(rootViewController: fineTuneVC)
         
-        self.navigationController?.pushViewController(fineTuneVC, animated: true)
-        //present(fineTuneVC, animated: true, completion: nil)
-        
+        present(navigationFineTuneVC, animated: true, completion: nil)
         
     }
     

@@ -44,6 +44,9 @@ final class FineTuneActivityViewController: UIViewController {
         self.scheduleButton.layer.borderColor = UIColor.lightGray.cgColor
         
         showViewController(controller: items[0].viewController)
+        
+        navigationController?.isNavigationBarHidden = true
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,6 +57,10 @@ final class FineTuneActivityViewController: UIViewController {
     @IBAction func scheduleButtonTapped(_ sender: Any) {
     }
     
+    
+    @IBAction func cancelTapped(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
     
     fileprivate func showViewController(controller: UIViewController)
     {
