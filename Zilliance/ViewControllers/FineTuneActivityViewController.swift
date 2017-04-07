@@ -14,7 +14,7 @@ struct FineTuneItem {
     let viewController: UIViewController
 }
 
-final class FineTuneItemCell: UICollectionViewCell{
+final class FineTuneItemCell: UICollectionViewCell {
     @IBOutlet var label: UILabel!
     @IBOutlet var imageView: UIImageView!
     
