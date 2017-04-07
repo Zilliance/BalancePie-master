@@ -10,8 +10,18 @@ import UIKit
 
 class OnboardingPageViewController: UIPageViewController {
     
+    private enum OnboardingScene: String {
+        case first
+        case second
+        case third
+    }
+    
     fileprivate(set) lazy var introViewControllers: [UIViewController]  = {
-        return [self.viewController(forId: "First"), self.viewController(forId: "Second"), self.viewController(forId: "Third")]
+        return [
+            self.viewController(for: .first),
+            self.viewController(for: .second),
+            self.viewController(for: .third)
+        ]
     }()
 
     override func viewDidLoad() {
@@ -26,9 +36,9 @@ class OnboardingPageViewController: UIPageViewController {
         }
     }
 
-    private func viewController(forId id: String) -> UIViewController {
+    private func viewController(for scene: OnboardingScene) -> UIViewController {
         
-        return UIStoryboard.init(name: "Onboarding", bundle: nil).instantiateViewController(withIdentifier:id)
+        return UIStoryboard.init(name: "Onboarding", bundle: nil).instantiateViewController(withIdentifier:scene.rawValue)
     
     }
 
