@@ -25,6 +25,34 @@ struct ItemSelectionViewModel
     
 }
 
+extension ItemSelectionViewModel {
+   static func activitiesItems() -> [ItemSelectionViewModel] {
+        var items: [ItemSelectionViewModel] = []
+        Database.shared.allActivities().forEach { activity in
+            
+            var image: UIImage? = nil
+        
+            if let iconName = activity.iconName {
+                image = UIImage(named: iconName)
+            }
+            
+            let item = ItemSelectionViewModel(title: activity.name, image: image)
+            items.append(item)
+        }
+        return items
+    }
+    
+    static func valuesItems() -> [ItemSelectionViewModel] {
+        var items: [ItemSelectionViewModel] = []
+        Database.shared.allValues().forEach { value in
+            
+            let item = ItemSelectionViewModel(title: value.name, image: nil)
+            items.append(item)
+        }
+        return items
+    }
+}
+
 class ItemsSelectionViewController: UIViewController {
 
     var items: [ItemSelectionViewModel] = []
@@ -65,7 +93,9 @@ extension ItemsSelectionViewController: UITableViewDelegate
         
         if (indexPath.section == 0) //create action item
         {
-            self.createNewItemAction?()
+            DispatchQueue.main.async {
+                self.createNewItemAction?()
+            }
             return
         }
         

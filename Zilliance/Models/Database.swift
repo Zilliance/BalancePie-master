@@ -70,6 +70,11 @@ class Database {
     {
         return self.realm.objects(Activity.self)
     }
+    
+    func allValues() -> Results<Value>
+    {
+        return self.realm.objects(Value.self)
+    }
 
     // MARK: - Convenience queries
 

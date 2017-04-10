@@ -20,7 +20,8 @@ class OnboardingPageViewController: UIPageViewController {
         return [
             self.viewController(for: .first),
             self.viewController(for: .second),
-            self.viewController(for: .third)
+            self.viewController(for: .third),
+            UIViewController()
         ]
     }()
 
@@ -40,6 +41,16 @@ class OnboardingPageViewController: UIPageViewController {
         
         return UIStoryboard.init(name: "Onboarding", bundle: nil).instantiateViewController(withIdentifier:scene.rawValue)
     
+    }
+    
+    func gotoFavoriteActivity() {
+        
+        guard let viewController = UIStoryboard.init(name: "FavoriteActivity", bundle: nil).instantiateInitialViewController() as? FavoriteActivityTableViewController else {
+            assertionFailure()
+            return
+        }
+        
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 
 }
@@ -72,11 +83,8 @@ extension OnboardingPageViewController: UIPageViewControllerDataSource {
         let nextIndex = viewControllerIndex + 1
         let orderedViewControllersCount = self.introViewControllers.count
         
-        guard orderedViewControllersCount != nextIndex else {
-            return nil
-        }
-        
         guard orderedViewControllersCount > nextIndex else {
+            self.gotoFavoriteActivity()
             return nil
         }
         
