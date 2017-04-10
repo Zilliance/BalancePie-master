@@ -10,6 +10,7 @@ target 'Zilliance' do
   pod 'Charts', :git => 'https://github.com/danielgindi/Charts.git', :branch => 'master'
   pod 'Realm'
   pod 'RealmSwift'
+  pod 'ActionSheetPicker-3.0'
 
   target 'ZillianceTests' do
     inherit! :search_paths

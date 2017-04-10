@@ -10,6 +10,7 @@
 		01FC8C629D821129AE1F5C39 /* Pods_ZillianceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7A740D362571F85742B547 /* Pods_ZillianceTests.framework */; };
 		04647C721E97D8450040CA46 /* FineTuneActivity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04647C701E97D8450040CA46 /* FineTuneActivity.storyboard */; };
 		04647C751E97D85C0040CA46 /* FineTuneActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04647C741E97D85C0040CA46 /* FineTuneActivityViewController.swift */; };
+		04647C7D1E9BFD4B0040CA46 /* AddSliceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04647C7C1E9BFD4B0040CA46 /* AddSliceViewController.swift */; };
 		0469D0AE1E944B700024EA39 /* UserActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469D0AD1E944B700024EA39 /* UserActivity.swift */; };
 		04B29A631E97AB340090E52E /* ItemsSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B29A621E97AB340090E52E /* ItemsSelection.storyboard */; };
 		04B29A651E97AB4A0090E52E /* ItemsSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B29A641E97AB4A0090E52E /* ItemsSelectionViewController.swift */; };
@@ -83,6 +84,7 @@
 /* Begin PBXFileReference section */
 		04647C701E97D8450040CA46 /* FineTuneActivity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FineTuneActivity.storyboard; sourceTree = "<group>"; };
 		04647C741E97D85C0040CA46 /* FineTuneActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FineTuneActivityViewController.swift; path = ViewControllers/FineTuneActivityViewController.swift; sourceTree = "<group>"; };
+		04647C7C1E9BFD4B0040CA46 /* AddSliceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddSliceViewController.swift; path = ViewControllers/AddSliceViewController.swift; sourceTree = "<group>"; };
 		0469D0AD1E944B700024EA39 /* UserActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserActivity.swift; path = Models/UserActivity.swift; sourceTree = "<group>"; };
 		04B29A621E97AB340090E52E /* ItemsSelection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ItemsSelection.storyboard; sourceTree = "<group>"; };
 		04B29A641E97AB4A0090E52E /* ItemsSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemsSelectionViewController.swift; path = ViewControllers/ItemsSelectionViewController.swift; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 				8CBBBE1E1E958B6300281C3C /* AddActivityViewController.swift */,
 				8CBBBE221E95925700281C3C /* IconCollectionViewCell.swift */,
 				8CBBBE1F1E958B6300281C3C /* AddValuesViewController.swift */,
+				04647C7C1E9BFD4B0040CA46 /* AddSliceViewController.swift */,
 			);
 			name = AddCustom;
 			sourceTree = "<group>";
@@ -680,6 +683,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C3EA4631E92E7BF00F56DED /* Activity.swift in Sources */,
+				04647C7D1E9BFD4B0040CA46 /* AddSliceViewController.swift in Sources */,
 				8C3EA47C1E92F0F100F56DED /* CalendarHelper.swift in Sources */,
 				8C3EA4751E92E9D600F56DED /* UIFont+CustomFonts.swift in Sources */,
 				8C3EA49E1E94274600F56DED /* PieViewController.swift in Sources */,

@@ -16,6 +16,20 @@ final class UserActivity: Object {
         case neutral
         case lousy
         case mixed
+        
+        func string() -> String
+        {
+            switch self {
+            case .great:
+                return "Great"
+            case .neutral:
+                return "Neutral"
+            case .lousy:
+                return "Lousy"
+            case .mixed:
+                return "Mixed"
+            }
+        }
     }
     
     dynamic var activity: Activity!
