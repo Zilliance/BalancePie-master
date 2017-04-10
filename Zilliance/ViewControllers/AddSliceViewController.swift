@@ -20,8 +20,6 @@ enum FeelingTableViewModelType
     func numberOfSections() -> Int
     {
         switch self {
-        case .none:
-            return 0
         case .mixed(_):
             return 2
         default:
@@ -129,11 +127,11 @@ struct EmbeddedFeelingTableViewModel
         return self.feelingTypeTable.titleForItem(item: index.row, section: index.section - self.initialSection)
     }
     
-    func titleForSection(section: Int) -> String
+    func titleForSection(section: Int) -> String?
     {
         switch self.feelingTypeTable {
         case .none:
-            return ""
+            return nil
         case .good(_):
             return "Feels good because"
         case .bad(_):
@@ -233,7 +231,7 @@ extension AddSliceViewController: UITableViewDataSource
         
         if (self.feelingInternalTableModel.insideOfTable(section: section))
         {
-            return self.feelingInternalTableModel.titleForSection(section: section)
+            return self.feelingInternalTableModel.titleForSection(section: section) ?? ""
         }
         
         switch section {
@@ -248,6 +246,19 @@ extension AddSliceViewController: UITableViewDataSource
         }
         
         return ""
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if (self.feelingInternalTableModel.insideOfTable(section: section))
+        {
+            let title = self.feelingInternalTableModel.titleForSection(section: section)
+            
+            if (title == nil)
+            {
+                return 0
+            }
+        }
+        return 44
     }
     
 }
@@ -293,6 +304,23 @@ extension AddSliceViewController: UITableViewDelegate
                 self.newActivity.feeling = feelings[index]
                 
                 self.tableView.reloadRows(at: [IndexPath(row: 0, section: 2)], with: .fade)
+                
+                //modify internal table model
+                switch self.newActivity.feeling
+                {
+                case .great:
+                    self.feelingInternalTableModel.feelingTypeTable = .good([])
+                case .lousy:
+                    self.feelingInternalTableModel.feelingTypeTable = .bad([])
+                case .mixed:
+                    self.feelingInternalTableModel.feelingTypeTable = .mixed(([], []))
+                case .neutral:
+                    self.feelingInternalTableModel.feelingTypeTable = .good([])
+                }
+                
+                let indices = IndexSet(self.feelingInternalTableModel.sections())
+                
+                self.tableView.reloadSections(indices, with: .fade)
                 
                 return
             }, cancel: { (picker) in
