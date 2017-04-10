@@ -115,6 +115,30 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
     }
     
     private func fineTune(userActivity: UserActivity) {
+
+        //fine tune setup example. It should use other view controllers
+        let addStoryboard = UIStoryboard(name: "AddCustom", bundle: nil)
+
+        let fineTuneStoryboard = UIStoryboard(name: "FineTuneActivity", bundle: nil)
+        
+        guard let addActivityVC = addStoryboard.instantiateViewController(withIdentifier: "AddActivityViewController") as? AddActivityViewController,
+            let addValueVC = addStoryboard.instantiateViewController(withIdentifier: "AddValuesViewController") as? AddValuesViewController,
+            let fineTuneVC = fineTuneStoryboard.instantiateInitialViewController() as? FineTuneActivityViewController
+        else
+        {
+            return
+        }
+        
+        let fineTuneItem0 = FineTuneItem(title: "Activity", image: UIImage(named: "btnPlus")!, viewController: addActivityVC)
+        let fineTuneItem1 = FineTuneItem(title: "Value", image: UIImage(named: "btnPlus")!, viewController: addValueVC)
+        
+        let items = [fineTuneItem0, fineTuneItem1]
+        
+        fineTuneVC.items = items
+        
+        let navigationFineTuneVC = UINavigationController(rootViewController: fineTuneVC)
+        
+        present(navigationFineTuneVC, animated: true, completion: nil)
         
     }
     

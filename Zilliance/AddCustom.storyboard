@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -28,7 +28,7 @@
         <!--Add Values View Controller-->
         <scene sceneID="ifH-w5-ddx">
             <objects>
-                <viewController id="zns-zh-lLo" customClass="AddValuesViewController" customModule="Zilliance" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddValuesViewController" id="zns-zh-lLo" customClass="AddValuesViewController" customModule="Zilliance" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yKr-r8-BIZ"/>
                         <viewControllerLayoutGuide type="bottom" id="KVp-mO-OKl"/>
@@ -186,6 +186,8 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ii5-Og-ePf"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="activityTextField" destination="qc8-jv-Wpo" id="mTl-tR-8eY"/>
                         <outlet property="collectionView" destination="Sbc-r6-ifh" id="c7i-9F-jQ0"/>

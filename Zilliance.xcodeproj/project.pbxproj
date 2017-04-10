@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		01FC8C629D821129AE1F5C39 /* Pods_ZillianceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7A740D362571F85742B547 /* Pods_ZillianceTests.framework */; };
+		04647C721E97D8450040CA46 /* FineTuneActivity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04647C701E97D8450040CA46 /* FineTuneActivity.storyboard */; };
+		04647C751E97D85C0040CA46 /* FineTuneActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04647C741E97D85C0040CA46 /* FineTuneActivityViewController.swift */; };
 		0469D0AE1E944B700024EA39 /* UserActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469D0AD1E944B700024EA39 /* UserActivity.swift */; };
 		04B29A631E97AB340090E52E /* ItemsSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B29A621E97AB340090E52E /* ItemsSelection.storyboard */; };
 		04B29A651E97AB4A0090E52E /* ItemsSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B29A641E97AB4A0090E52E /* ItemsSelectionViewController.swift */; };
@@ -79,6 +81,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04647C701E97D8450040CA46 /* FineTuneActivity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FineTuneActivity.storyboard; sourceTree = "<group>"; };
+		04647C741E97D85C0040CA46 /* FineTuneActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FineTuneActivityViewController.swift; path = ViewControllers/FineTuneActivityViewController.swift; sourceTree = "<group>"; };
 		0469D0AD1E944B700024EA39 /* UserActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserActivity.swift; path = Models/UserActivity.swift; sourceTree = "<group>"; };
 		04B29A621E97AB340090E52E /* ItemsSelection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ItemsSelection.storyboard; sourceTree = "<group>"; };
 		04B29A641E97AB4A0090E52E /* ItemsSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemsSelectionViewController.swift; path = ViewControllers/ItemsSelectionViewController.swift; sourceTree = "<group>"; };
@@ -173,6 +177,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04647C6F1E97D82D0040CA46 /* FineTuneActivities */ = {
+			isa = PBXGroup;
+			children = (
+				04647C741E97D85C0040CA46 /* FineTuneActivityViewController.swift */,
+				04647C701E97D8450040CA46 /* FineTuneActivity.storyboard */,
+			);
+			name = FineTuneActivities;
+			sourceTree = "<group>";
+		};
 		04B29A611E97AB000090E52E /* ItemsSelection */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +211,7 @@
 		8C3EA4571E92E4FD00F56DED /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				04647C6F1E97D82D0040CA46 /* FineTuneActivities */,
 				04B29A611E97AB000090E52E /* ItemsSelection */,
 				8CBBBE1B1E9588E700281C3C /* AddCustom */,
 				8CBBBE161E9558A300281C3C /* Calendar */,
@@ -490,6 +504,7 @@
 				8C3EA4971E93F85C00F56DED /* Muli-LightItalic.ttf in Resources */,
 				8CBBBE1D1E95890700281C3C /* AddCustom.storyboard in Resources */,
 				8C3EA4981E93F85C00F56DED /* Muli-Regular.ttf in Resources */,
+				04647C721E97D8450040CA46 /* FineTuneActivity.storyboard in Resources */,
 				8C3EA48F1E93F85C00F56DED /* Muli-Bold.ttf in Resources */,
 				E356683C1E8C15BA00ED81D9 /* LaunchScreen.storyboard in Resources */,
 				8C3EA4931E93F85C00F56DED /* Muli-ExtraLight.ttf in Resources */,
@@ -681,6 +696,7 @@
 				8C3EA47D1E92F0F100F56DED /* LocalNotificationsHelper.swift in Sources */,
 				04B29A671E97AB680090E52E /* PartialSizePresentationController.swift in Sources */,
 				8C3EA4611E92E7BF00F56DED /* Database.swift in Sources */,
+				04647C751E97D85C0040CA46 /* FineTuneActivityViewController.swift in Sources */,
 				8C3EA4641E92E7BF00F56DED /* ArrayDataSource.swift in Sources */,
 				8C3EA4781E92EF9C00F56DED /* HoursProgressView.swift in Sources */,
 				8C3EA46F1E92E9D600F56DED /* UIImage+Extensions.swift in Sources */,
