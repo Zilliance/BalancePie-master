@@ -10,27 +10,32 @@
 import Foundation
 import RealmSwift
 
-final class UserActivity: Object {
-    @objc enum Feeling: Int32 {
-        case great
-        case neutral
-        case lousy
-        case mixed
-        
-        func string() -> String
-        {
-            switch self {
-            case .great:
-                return "Great"
-            case .neutral:
-                return "Neutral"
-            case .lousy:
-                return "Lousy"
-            case .mixed:
-                return "Mixed"
-            }
+@objc enum Feeling: Int32 {
+    case great
+    case neutral
+    case lousy
+    case mixed
+    
+    func string() -> String
+    {
+        switch self {
+        case .great:
+            return "Great"
+        case .neutral:
+            return "Neutral"
+        case .lousy:
+            return "Lousy"
+        case .mixed:
+            return "Mixed"
         }
     }
+    
+    static let allFeelings: [Feeling] = {
+        return [Feeling.great, Feeling.neutral, Feeling.lousy, Feeling.mixed]
+    }()
+}
+
+final class UserActivity: Object {
     
     dynamic var activity: Activity!
     dynamic var duration: Minutes = 0

@@ -269,11 +269,30 @@ extension AddSliceViewController: UITableViewDelegate
                 initialIndex = activitiesNames.index(of: self.newActivity.activity.name)!
             }
             
-            ActionSheetStringPicker.show(withTitle: "Activities", rows: activities.map{ $0.name }, initialSelection: initialIndex, doneBlock: { (picker, index, name) in
+            ActionSheetStringPicker.show(withTitle: "Activities", rows: activitiesNames, initialSelection: initialIndex, doneBlock: { (picker, index, name) in
                 
                 self.newActivity.activity = activities[index]
                 
                 self.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .fade)
+                
+                return
+            }, cancel: { (picker) in
+                return
+            }, origin: tableView)
+        }
+        
+        if (indexPath.section == 2)
+        {
+            let feelings = Feeling.allFeelings
+            let feelingsNames = feelings.map({$0.string()})
+            
+            let initialIndex = feelings.index(of: self.newActivity.feeling) ?? 0
+            
+            ActionSheetStringPicker.show(withTitle: "Activities", rows: feelingsNames, initialSelection: initialIndex, doneBlock: { (picker, index, name) in
+                
+                self.newActivity.feeling = feelings[index]
+                
+                self.tableView.reloadRows(at: [IndexPath(row: 0, section: 2)], with: .fade)
                 
                 return
             }, cancel: { (picker) in
