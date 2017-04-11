@@ -26,12 +26,11 @@ struct ItemSelectionViewModel
 }
 
 extension ItemSelectionViewModel {
-   static func activitiesItems() -> [ItemSelectionViewModel] {
+    static func items(from activities:[Activity]) -> [ItemSelectionViewModel] {
         var items: [ItemSelectionViewModel] = []
-        Database.shared.allActivities().forEach { activity in
-            
+        activities.forEach { activity in
             var image: UIImage? = nil
-        
+            
             if let iconName = activity.iconName {
                 image = UIImage(named: iconName)
             }
@@ -42,9 +41,9 @@ extension ItemSelectionViewModel {
         return items
     }
     
-    static func valuesItems() -> [ItemSelectionViewModel] {
+    static func items(from values:[Value]) -> [ItemSelectionViewModel] {
         var items: [ItemSelectionViewModel] = []
-        Database.shared.allValues().forEach { value in
+        values.forEach { value in
             
             let item = ItemSelectionViewModel(title: value.name, image: nil)
             items.append(item)
@@ -62,6 +61,8 @@ class ItemsSelectionViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var doneAction: (([Int]) -> ())?
     var createNewItemAction: (() -> ())?
+    
+    var isMultipleSelectionEnabled = true
 
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -97,6 +98,15 @@ extension ItemsSelectionViewController: UITableViewDelegate
                 self.createNewItemAction?()
             }
             return
+        }
+        
+        if !self.isMultipleSelectionEnabled {
+            
+            if let row = self.selectedItemsIndexes.popFirst() {
+                let cell = tableView.cellForRow(at: IndexPath(row: row, section: 1))
+                cell?.accessoryType = .none
+            }
+            
         }
         
         if (!self.selectedItemsIndexes.contains(indexPath.row))

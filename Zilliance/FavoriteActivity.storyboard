@@ -42,6 +42,9 @@
                                     <state key="normal" title="Get Started">
                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </state>
+                                    <connections>
+                                        <action selector="getStartedAction:" destination="3RU-aF-L6x" eventType="touchUpInside" id="JM7-gz-x5O"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -151,6 +154,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="7Zg-by-uHc"/>
+                    <connections>
+                        <outlet property="favoriteActivityLabel" destination="mab-qh-FUM" id="PY2-of-0gE"/>
+                        <outlet property="howLongLabel" destination="JbI-qR-OV8" id="bbZ-7h-DQS"/>
+                        <outlet property="sleepHoursLabel" destination="gzk-Je-KEq" id="7Lz-e5-wrF"/>
+                        <outlet property="valueLabel" destination="rYS-1g-4Wd" id="FuN-H8-Sby"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h36-vo-3in" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

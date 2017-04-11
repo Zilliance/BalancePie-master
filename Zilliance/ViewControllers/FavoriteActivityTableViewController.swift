@@ -11,6 +11,11 @@ import ActionSheetPicker_3_0
 
 class FavoriteActivityTableViewController: UITableViewController, UIViewControllerTransitioningDelegate {
     
+    @IBOutlet weak var sleepHoursLabel: UILabel!
+    @IBOutlet weak var favoriteActivityLabel: UILabel!
+    @IBOutlet weak var howLongLabel: UILabel!
+    @IBOutlet weak var valueLabel: UILabel!
+    
     private enum TableRow: Int {
         case hours = 0
         case activity
@@ -18,11 +23,20 @@ class FavoriteActivityTableViewController: UITableViewController, UIViewControll
         case feels
     }
     
+    private struct Favorite {
+        var sleepDuration: Minutes = -1
+        var activity: Activity?
+        var activityDuration: Minutes = -1
+        var value: Value?
+    }
+    
     private enum Presenting {
         case activities
         case values
         case none
     }
+    
+    private var favorite = Favorite()
     
     private let hours = App.Appearance.zilianceMaxHours.labeledArray(with: "Hour")
     private let minutes = ["0 Minutes", "15 Minutes", "30 Minutes", "45 Minutes"]
@@ -58,11 +72,10 @@ class FavoriteActivityTableViewController: UITableViewController, UIViewControll
         
         ActionSheetMultipleStringPicker.show(withTitle: "Sleep Hours", rows: [self.hours, self.minutes], initialSelection: [0, 0], doneBlock: { (picker, indexes, values) in
             
-//            let hour = indexes?[0] as! Int
-//            let minute = indexes?[1] as! Int * 15
-//            let hourString = Int(hour) < 10 ? "0" + String(hour) : String(hour)
-//            let minuteString = Int(minute) < 10 ? "0" + String(minute) : String(minute)
-            
+            let hour = indexes?[0] as! Int
+            let minute = indexes?[1] as! Int * 15
+            self.favorite.sleepDuration = hour * 60 + minute
+            self.sleepHoursLabel.text = self.favorite.sleepDuration.userFriendlyText
             
         }, cancel: { (picker) in
             
@@ -79,10 +92,12 @@ class FavoriteActivityTableViewController: UITableViewController, UIViewControll
             assertionFailure()
             return
         }
+        let activities: [Activity] = Array(Database.shared.allActivities())
         itemSelectionViewController.modalPresentationStyle = .custom
         itemSelectionViewController.transitioningDelegate = self
         itemSelectionViewController.createItemTitle = "Create my own"
-        itemSelectionViewController.items = ItemSelectionViewModel.activitiesItems()
+        itemSelectionViewController.items = ItemSelectionViewModel.items(from: activities)
+        itemSelectionViewController.isMultipleSelectionEnabled = false
         DispatchQueue.main.async {
             self.present(itemSelectionViewController, animated: true, completion: nil)
         }
@@ -100,17 +115,21 @@ class FavoriteActivityTableViewController: UITableViewController, UIViewControll
             })
             
         }
+        
+        itemSelectionViewController.doneAction = { index in
+            self.favorite.activity = activities[index.first!]
+            self.favoriteActivityLabel.text = activities[index.first!].name
+        }
     }
     
     private func selectActivityDuration() {
         
         ActionSheetMultipleStringPicker.show(withTitle: "Activity Duration", rows: [self.hours, self.minutes], initialSelection: [0, 0], doneBlock: { (picker, indexes, values) in
             
-            //            let hour = indexes?[0] as! Int
-            //            let minute = indexes?[1] as! Int * 15
-            //            let hourString = Int(hour) < 10 ? "0" + String(hour) : String(hour)
-            //            let minuteString = Int(minute) < 10 ? "0" + String(minute) : String(minute)
-            
+            let hour = indexes?[0] as! Int
+            let minute = indexes?[1] as! Int * 15
+            self.favorite.activityDuration = hour * 60 + minute
+            self.howLongLabel.text = self.favorite.activityDuration.userFriendlyText
             
         }, cancel: { (picker) in
             
@@ -126,10 +145,12 @@ class FavoriteActivityTableViewController: UITableViewController, UIViewControll
             assertionFailure()
             return
         }
+        
+        let values: [Value] = Array(Database.shared.allValues())
         itemSelectionViewController.modalPresentationStyle = .custom
         itemSelectionViewController.transitioningDelegate = self
         itemSelectionViewController.createItemTitle = "Create my own"
-        itemSelectionViewController.items = ItemSelectionViewModel.valuesItems()
+        itemSelectionViewController.items = ItemSelectionViewModel.items(from: values)
         DispatchQueue.main.async {
             self.present(itemSelectionViewController, animated: true, completion: nil)
         }
@@ -148,6 +169,14 @@ class FavoriteActivityTableViewController: UITableViewController, UIViewControll
         }
         
     }
+    
+    // MARK: -- User Actions
+    
+    @IBAction func getStartedAction(_ sender: Any) {
+        
+        
+    }
+    
     
     // MARK: -- table view delegate
     
