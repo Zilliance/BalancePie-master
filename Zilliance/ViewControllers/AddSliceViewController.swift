@@ -166,7 +166,7 @@ struct EmbeddedFeelingTableViewModel
 final class AddSliceViewController: UIViewController
 {
     
-    fileprivate static let rowStartOfFeelingsTable: Int = 3
+    fileprivate static let initialRowFeelingsTable: Int = 3
     
     @IBOutlet fileprivate weak var tableView: UITableView!
 
@@ -179,7 +179,9 @@ final class AddSliceViewController: UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        feelingInternalTableModel = EmbeddedFeelingTableViewModel(initialSection: AddSliceViewController.rowStartOfFeelingsTable, userActivity: newActivity)
+        feelingInternalTableModel = EmbeddedFeelingTableViewModel(initialSection: AddSliceViewController.initialRowFeelingsTable, userActivity: newActivity)
+        
+        self.selectActivityName()
         
     }
     
@@ -280,134 +282,173 @@ extension AddSliceViewController: UITableViewDataSource
 
 extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitioningDelegate
 {
+    
+    func selectActivityName()
+    {
+        let activities = Database.shared.allActivities()
+        let activitiesNames: [String] = activities.map { $0.name }
+        
+        var initialIndex = 0
+        
+        if (self.newActivity.activity != nil)
+        {
+            initialIndex = activitiesNames.index(of: self.newActivity.activity.name)!
+        }
+        
+        ActionSheetStringPicker.show(withTitle: "Name", rows: activitiesNames, initialSelection: initialIndex, doneBlock: { (picker, index, name) in
+            
+            self.newActivity.activity = activities[index]
+            
+            self.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .fade)
+            
+            self.selectDuration()
+            
+        }, cancel: { (picker) in
+            return
+        }, origin: tableView)
+    
+    }
+    
+    func selectDuration()
+    {
+        let hours = 80.labeledArray(with: "Hour")
+        let minutes = ["0 Minutes", "15 Minutes", "30 Minutes", "45 Minutes"]
+        let selectedDuration = self.newActivity.duration
+        let selectedHour = selectedDuration.asHoursMinutes.0
+        let selectedMinutes = selectedDuration.asHoursMinutes.1 / 15
+        
+        ActionSheetMultipleStringPicker.show(withTitle: "Duration", rows: [hours, minutes], initialSelection: [selectedHour, selectedMinutes], doneBlock: { (picker, indexes, values) in
+            
+            guard let hour = indexes?[0] as? Int, var minute = indexes?[1] as? Int else {
+                assertionFailure()
+                return
+            }
+            minute *= 15
+            
+            let totalTimeMinutes = hour * 60 + minute
+            
+            self.newActivity.duration = totalTimeMinutes
+            
+            self.tableView.reloadRows(at: [IndexPath(row: 0, section: 1)], with: .fade)
+            
+            self.selectHowItFeels()
+            
+        }, cancel: { (picker) in
+            
+        }, origin: UIButton())
+    }
+    
+    func selectHowItFeels()
+    {
+        let feelings = Feeling.allFeelings
+        let feelingsNames = feelings.map({$0.string()})
+        
+        let initialIndex = feelings.index(of: self.newActivity.feeling) ?? 0
+        
+        ActionSheetStringPicker.show(withTitle: "How do you feel about it ?", rows: feelingsNames, initialSelection: initialIndex, doneBlock: { (picker, index, name) in
+            
+            
+            self.tableView.beginUpdates()
+            
+            
+            self.tableView.deleteSections(IndexSet(self.feelingInternalTableModel.sections()), with: .fade)
+            //self.tableView.deleteRows(at: self.feelingInternalTableModel.rows(), with: .fade)
+            
+            self.newActivity.feeling = feelings[index]
+            
+            self.tableView.insertSections(IndexSet(self.feelingInternalTableModel.sections()), with: .fade)
+            
+            //self.tableView.insertRows(at: self.feelingInternalTableModel.rows(), with: .fade)
+            
+            self.tableView.reloadRows(at: [IndexPath(row: 0, section: 2)], with: .fade)
+            
+            self.tableView.endUpdates()
+            
+            self.selectValues(forSection: AddSliceViewController.initialRowFeelingsTable)
+            
+            return
+        }, cancel: { (picker) in
+            return
+        }, origin: tableView)
+    }
+    
+    func selectValues(forSection section: Int)
+    {
+        let values = self.feelingInternalTableModel.availableValuesForSection(section: section)
+        let initialIndexes = self.feelingInternalTableModel.selectedValuesIndexes(section: section)
+        
+        let storyboard = UIStoryboard(name: "ItemsSelection", bundle: nil)
+        if let itemsVC = storyboard.instantiateInitialViewController() as? ItemsSelectionViewController
+        {
+            //itemsVC.modalPresentationStyle = .custom
+            //itemsVC.transitioningDelegate = self
+            
+            itemsVC.selectedItemsIndexes = Set(initialIndexes)
+            
+            let valuesNames = values.map({$0.name})
+            for valueName in valuesNames
+            {
+                let itemModel = ItemSelectionViewModel(title: valueName, image:nil)
+                itemsVC.items.append(itemModel)
+            }
+            
+            itemsVC.createItemTitle = "Create a new Value"
+            itemsVC.createNewItemAction = {
+                print("this should launch a controller to show the activity creation")
+            }
+            
+            itemsVC.title = self.feelingInternalTableModel.titleForSection(section: section)
+            
+            itemsVC.doneAction = { indexes in
+                
+                self.feelingInternalTableModel.deleteValuesForSection(section: section)
+                
+                for index in indexes
+                {
+                    let value = values[index]
+                    self.newActivity.values.append(value)
+                }
+                
+                self.tableView.reloadSections(IndexSet([section]), with: .fade)
+                
+                let nextSection = section + 1
+                if (self.feelingInternalTableModel.insideOfTable(section: nextSection))
+                {
+                    self.selectValues(forSection: nextSection)
+                }
+                
+            }
+
+            let navigation = UINavigationController(rootViewController: itemsVC)
+            navigation.transitioningDelegate = self
+            navigation.modalPresentationStyle = .custom
+            
+            self.present(navigation, animated: true, completion: nil)
+
+        }
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         //activity name
         if (indexPath.section == 0)
         {
-            let activities = Database.shared.allActivities()
-            let activitiesNames: [String] = activities.map { $0.name }
-            
-            var initialIndex = 0
-            
-            if (self.newActivity.activity != nil)
-            {
-                initialIndex = activitiesNames.index(of: self.newActivity.activity.name)!
-            }
-            
-            ActionSheetStringPicker.show(withTitle: "Activities", rows: activitiesNames, initialSelection: initialIndex, doneBlock: { (picker, index, name) in
-                
-                self.newActivity.activity = activities[index]
-                
-                self.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .fade)
-                
-                return
-            }, cancel: { (picker) in
-                return
-            }, origin: tableView)
+            self.selectActivityName()
         }
         
         if (indexPath.section == 1)
         {
-            let hours = 80.labeledArray(with: "Hour")
-            let minutes = ["0 Minutes", "15 Minutes", "30 Minutes", "45 Minutes"]
-            let selectedDuration = self.newActivity.duration
-            let selectedHour = selectedDuration.asHoursMinutes.0
-            let selectedMinutes = selectedDuration.asHoursMinutes.1 / 15
-            
-            ActionSheetMultipleStringPicker.show(withTitle: "Duration", rows: [hours, minutes], initialSelection: [selectedHour, selectedMinutes], doneBlock: { (picker, indexes, values) in
-                
-                guard let hour = indexes?[0] as? Int, var minute = indexes?[1] as? Int else {
-                    assertionFailure()
-                    return
-                }
-                minute *= 15
-                
-                let totalTimeMinutes = hour * 60 + minute
-                
-                self.newActivity.duration = totalTimeMinutes
-                
-                self.tableView.reloadRows(at: [indexPath], with: .fade)
-
-                
-            }, cancel: { (picker) in
-                
-            }, origin: UIButton())
+            self.selectDuration()
         }
         
         if (indexPath.section == 2)
         {
-            let feelings = Feeling.allFeelings
-            let feelingsNames = feelings.map({$0.string()})
-            
-            let initialIndex = feelings.index(of: self.newActivity.feeling) ?? 0
-            
-            ActionSheetStringPicker.show(withTitle: "Activities", rows: feelingsNames, initialSelection: initialIndex, doneBlock: { (picker, index, name) in
-                
-                
-                self.tableView.beginUpdates()
-                
-
-                self.tableView.deleteSections(IndexSet(self.feelingInternalTableModel.sections()), with: .fade)
-                //self.tableView.deleteRows(at: self.feelingInternalTableModel.rows(), with: .fade)
-                
-                self.newActivity.feeling = feelings[index]
-                
-                self.tableView.insertSections(IndexSet(self.feelingInternalTableModel.sections()), with: .fade)
-
-                //self.tableView.insertRows(at: self.feelingInternalTableModel.rows(), with: .fade)
-
-                self.tableView.reloadRows(at: [IndexPath(row: 0, section: 2)], with: .fade)
-
-                self.tableView.endUpdates()
-                
-                return
-            }, cancel: { (picker) in
-                return
-            }, origin: tableView)
+            self.selectHowItFeels()
         }
         
         if (self.feelingInternalTableModel.insideOfTable(section: indexPath.section))
         {
-            let values = self.feelingInternalTableModel.availableValuesForSection(section: indexPath.section)
-            let initialIndexes = self.feelingInternalTableModel.selectedValuesIndexes(section: indexPath.section)
-            
-            let storyboard = UIStoryboard(name: "ItemsSelection", bundle: nil)
-            if let itemsVC = storyboard.instantiateInitialViewController() as? ItemsSelectionViewController
-            {
-                itemsVC.modalPresentationStyle = .custom
-                itemsVC.transitioningDelegate = self
-                
-                itemsVC.selectedItemsIndexes = Set(initialIndexes)
-                
-                let valuesNames = values.map({$0.name})
-                for valueName in valuesNames
-                {
-                    let itemModel = ItemSelectionViewModel(title: valueName, image:nil)
-                    itemsVC.items.append(itemModel)
-                }
-                
-                self.present(itemsVC, animated: true, completion: nil)
-                
-                itemsVC.createItemTitle = "Create a new Value"
-                itemsVC.createNewItemAction = {
-                    print("this should launch a controller to show the activity creation")
-                }
-                
-                itemsVC.doneAction = { indexes in
-                    
-                    self.feelingInternalTableModel.deleteValuesForSection(section: indexPath.section)
-                    
-                    for index in indexes
-                    {
-                        let value = values[index]
-                        self.newActivity.values.append(value)
-                    }
-                    
-                    self.tableView.reloadSections(IndexSet([indexPath.section]), with: .fade)
-                    
-                }
-            }
+            self.selectValues(forSection: indexPath.section)
         }
         
     }

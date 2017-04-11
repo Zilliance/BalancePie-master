@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Items Selection View Controller-->
+        <!--Title-->
         <scene sceneID="37C-Hg-IZa">
             <objects>
-                <viewController id="Trf-ba-bOm" customClass="ItemsSelectionViewController" customModule="Zilliance" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Trf-ba-bOm" customClass="ItemsSelectionViewController" customModule="Zilliance" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pEP-JH-EzQ"/>
                         <viewControllerLayoutGuide type="bottom" id="EJ2-ec-f3a"/>
@@ -23,18 +23,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hMr-ML-zFP">
-                                <rect key="frame" x="0.0" y="61" width="375" height="314"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="331"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="createItemCell" textLabel="uCR-UJ-h4z" style="IBUITableViewCellStyleDefault" id="Atr-hB-GyZ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="createItemCell" textLabel="uCR-UJ-h4z" style="IBUITableViewCellStyleDefault" id="Atr-hB-GyZ">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Atr-hB-GyZ" id="smS-cm-6lm">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uCR-UJ-h4z">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="325" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.19607843137254902" green="0.45998008578431371" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
@@ -100,40 +100,34 @@
                                     <outlet property="delegate" destination="Trf-ba-bOm" id="h8z-Kn-NUl"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rCU-JA-q6X">
-                                <rect key="frame" x="20" y="20" width="48" height="30"/>
-                                <state key="normal" title="Cancel">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="cancelTapped:" destination="Trf-ba-bOm" eventType="touchUpInside" id="lXs-ph-bwU"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZMD-FX-JWf">
-                                <rect key="frame" x="322" y="20" width="37" height="30"/>
-                                <state key="normal" title="Done">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="doneTapped:" destination="Trf-ba-bOm" eventType="touchUpInside" id="OzD-K7-n2h"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="rCU-JA-q6X" firstAttribute="top" secondItem="pEP-JH-EzQ" secondAttribute="bottom" constant="20" id="1BC-wO-STF"/>
-                            <constraint firstItem="rCU-JA-q6X" firstAttribute="leading" secondItem="IuA-mA-jgu" secondAttribute="leading" constant="20" id="3kl-RX-Zp2"/>
                             <constraint firstItem="EJ2-ec-f3a" firstAttribute="top" secondItem="hMr-ML-zFP" secondAttribute="bottom" id="F6d-f8-Kg1"/>
                             <constraint firstItem="hMr-ML-zFP" firstAttribute="leading" secondItem="IuA-mA-jgu" secondAttribute="leading" id="FnO-q5-hu9"/>
-                            <constraint firstItem="hMr-ML-zFP" firstAttribute="top" secondItem="ZMD-FX-JWf" secondAttribute="bottom" constant="11" id="QWq-ew-2xt"/>
-                            <constraint firstItem="ZMD-FX-JWf" firstAttribute="top" secondItem="pEP-JH-EzQ" secondAttribute="bottom" constant="20" id="g9V-Ti-EWs"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ZMD-FX-JWf" secondAttribute="trailing" id="idY-A7-Lcy"/>
+                            <constraint firstItem="hMr-ML-zFP" firstAttribute="top" secondItem="pEP-JH-EzQ" secondAttribute="bottom" id="Ksv-eh-tHZ"/>
                             <constraint firstAttribute="trailing" secondItem="hMr-ML-zFP" secondAttribute="trailing" id="vxR-cJ-REs"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="jkh-Ih-QDT">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="lBs-cI-bAx">
+                            <connections>
+                                <action selector="cancelTapped:" destination="Trf-ba-bOm" id="OfR-cA-8wG"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="FvT-6B-oLv">
+                            <connections>
+                                <action selector="doneTapped:" destination="Trf-ba-bOm" id="uzs-PP-yGS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="375"/>
+                    <connections>
+                        <outlet property="tableView" destination="hMr-ML-zFP" id="q0g-A2-dua"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z1s-oK-KRL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
