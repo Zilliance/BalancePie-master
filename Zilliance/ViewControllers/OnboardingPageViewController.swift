@@ -21,10 +21,14 @@ class OnboardingPageViewController: UIPageViewController {
             self.viewController(for: .first),
             self.viewController(for: .second),
             self.viewController(for: .third),
-            UIViewController()
+            self.favoriteViewController
         ]
     }()
 
+    fileprivate lazy var favoriteViewController: UIViewController = {
+        return UIStoryboard.init(name: "FavoriteActivity", bundle: nil).instantiateInitialViewController()
+    }()!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupView()
@@ -42,6 +46,7 @@ class OnboardingPageViewController: UIPageViewController {
         return UIStoryboard.init(name: "Onboarding", bundle: nil).instantiateViewController(withIdentifier:scene.rawValue)
     
     }
+    
     
     func gotoFavoriteActivity() {
         
@@ -84,7 +89,6 @@ extension OnboardingPageViewController: UIPageViewControllerDataSource {
         let orderedViewControllersCount = self.introViewControllers.count
         
         guard orderedViewControllersCount > nextIndex else {
-            self.gotoFavoriteActivity()
             return nil
         }
         
