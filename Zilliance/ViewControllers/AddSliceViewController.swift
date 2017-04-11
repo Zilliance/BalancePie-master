@@ -33,17 +33,17 @@ enum FeelingTableViewModelType
         case .none:
             return 0
         case .good(let values):
-            return values.count
+            return max(values.count, 1)
         case .bad(let values):
-            return values.count
+            return max(values.count, 1)
         case .mixed(let mixedModel):
             if (section == 0)
             {
-                return mixedModel.0.count
+                return max(mixedModel.0.count, 1)
             }
             else
             {
-                return mixedModel.1.count
+                return max(mixedModel.1.count, 1)
             }
         }
     }
@@ -54,16 +54,36 @@ enum FeelingTableViewModelType
         case .none:
             return ""
         case .good(let values):
+            if (values.count == 0)
+            {
+                return ""
+            }
             return values[item].name
+            
         case .bad(let values):
+            if (values.count == 0)
+            {
+                return ""
+            }
             return values[item].name
+            
         case .mixed(let goodValues, let badValues):
+
             if (section == 0)
             {
+                if (goodValues.count == 0)
+                {
+                    return ""
+                }
                 return goodValues[item].name
             }
             else
             {
+                if (badValues.count == 0)
+                {
+                    return ""
+                }
+
                 return badValues[item].name
             }
         }
@@ -94,50 +114,141 @@ func ==(lhs: FeelingTableViewModelType, rhs: FeelingTableViewModelType) -> Bool 
 struct EmbeddedFeelingTableViewModel
 {
     var initialSection = 0
-    var feelingTypeTable = FeelingTableViewModelType.none
+    var userActivity: UserActivity
     
     //return the sections that are part of this table
     func sections() -> [Int]
     {
-        switch self.feelingTypeTable {
-        case .mixed(_):
+        switch self.userActivity.feeling {
+        case .mixed:
             return [self.initialSection, self.initialSection + 1]
         default:
             return [self.initialSection]
         }
     }
     
+    func rows() -> [IndexPath]
+    {
+        var rows: [IndexPath] = []
+        for section in self.sections()
+        {
+            for row in 0..<self.numberOfRows(section: section)
+            {
+                rows.append(IndexPath(row: row, section: section))
+            }
+        }
+        return rows
+    }
+    
     func insideOfTable(section: Int) -> Bool
     {
-        return section >= self.initialSection && section < self.feelingTypeTable.numberOfSections() + self.initialSection
+        return section >= self.initialSection && section < self.sections().count + self.initialSection
     }
     
     func numberOfSections() -> Int
     {
-        return self.feelingTypeTable.numberOfSections()
+        return self.sections().count
     }
     
     func numberOfRows(section: Int) -> Int
     {
-        return self.feelingTypeTable.numberOfItems(section:section - self.initialSection)
+        if (self.userActivity.feeling == .none)
+        {
+            return 1
+        }
+
+        let internalSection = self.initialSection - section
+        switch (internalSection, self.userActivity.feeling) {
+        case (0, .great), (0, .mixed):
+            return max(self.userActivity.goodValues.count, 1)
+        default:
+            return max(self.userActivity.badValues.count, 1)
+        }
     }
     
     func titleForIndexPath(index : IndexPath) -> String
     {
-        return self.feelingTypeTable.titleForItem(item: index.row, section: index.section - self.initialSection)
+        if (self.userActivity.feeling == .none || self.userActivity.values.count == 0)
+        {
+            return ""
+        }
+        
+        let internalSection = self.initialSection - index.section
+        switch (internalSection, self.userActivity.feeling) {
+        case (0, .great), (0, .mixed):
+            let goodValues = self.userActivity.goodValues
+            return goodValues.count > 0 ? self.userActivity.goodValues[index.row].name : ""
+        default:
+            let badValues = self.userActivity.badValues
+            return badValues.count > 0 ? self.userActivity.badValues[index.row].name : ""
+        }
+    }
+    
+    func availableValuesForSection(section: Int) -> [Value]
+    {
+        if (self.userActivity.feeling == .none)
+        {
+            return []
+        }
+        
+        let internalSection = self.initialSection - section
+        switch (internalSection, self.userActivity.feeling) {
+        case (0, .great), (0, .mixed):
+            return Value.goodValues
+        default:
+            return Value.badValues
+        }
+    }
+    
+    func selectedValuesIndexes(section: Int) -> [Int]
+    {
+        if (self.userActivity.feeling == .none)
+        {
+            return []
+        }
+        
+        let values = availableValuesForSection(section: section)
+        
+        let internalSection = self.initialSection - section
+        switch (internalSection, self.userActivity.feeling) {
+        case (0, .great), (0, .mixed):
+            let selection = values.flatMap({self.userActivity.goodValues.index(of: $0) == nil ? nil : values.index(of: $0)})
+            return selection
+        default:
+            let selection = values.flatMap({self.userActivity.badValues.index(of: $0) == nil ? nil : values.index(of: $0)})
+            return selection
+        }
+    }
+    
+    func deleteValuesForSection(section: Int)
+    {
+        if (self.userActivity.feeling == .none)
+        {
+        }
+        
+        let values = availableValuesForSection(section: section)
+        
+        values.forEach
+        {
+            if let index = self.userActivity.values.index(of: $0)
+            {
+                self.userActivity.values.remove(objectAtIndex: index)
+            }
+        }
+    
     }
     
     func titleForSection(section: Int) -> String?
     {
-        switch self.feelingTypeTable {
+        switch self.userActivity.feeling {
         case .none:
             return nil
-        case .good(_):
+        case .great:
             return "Feels good because"
-        case .bad(_):
+        case .lousy:
             return "Feels bad because"
-        case .mixed(_):
-            if (section == 0)
+        case .mixed:
+            if (section - initialSection == 0)
             {
                 return "Good values"
             }
@@ -145,7 +256,10 @@ struct EmbeddedFeelingTableViewModel
             {
                 return "Bad values"
             }
+        case .neutral:
+            return "Feels neutral because"
         }
+        
     }
     
 }
@@ -159,12 +273,14 @@ final class AddSliceViewController: UIViewController
 
     var newActivity = UserActivity()
 
-    fileprivate var feelingInternalTableModel = EmbeddedFeelingTableViewModel(initialSection: AddSliceViewController.rowStartOfFeelingsTable, feelingTypeTable: .none)
+    fileprivate var feelingInternalTableModel: EmbeddedFeelingTableViewModel!
     
     fileprivate weak var table: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        feelingInternalTableModel = EmbeddedFeelingTableViewModel(initialSection: AddSliceViewController.rowStartOfFeelingsTable, userActivity: newActivity)
         
     }
     
@@ -263,7 +379,7 @@ extension AddSliceViewController: UITableViewDataSource
     
 }
 
-extension AddSliceViewController: UITableViewDelegate
+extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitioningDelegate
 {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -301,26 +417,22 @@ extension AddSliceViewController: UITableViewDelegate
             
             ActionSheetStringPicker.show(withTitle: "Activities", rows: feelingsNames, initialSelection: initialIndex, doneBlock: { (picker, index, name) in
                 
+                
+                self.tableView.beginUpdates()
+                
+
+                self.tableView.deleteSections(IndexSet(self.feelingInternalTableModel.sections()), with: .fade)
+                //self.tableView.deleteRows(at: self.feelingInternalTableModel.rows(), with: .fade)
+                
                 self.newActivity.feeling = feelings[index]
                 
+                self.tableView.insertSections(IndexSet(self.feelingInternalTableModel.sections()), with: .fade)
+
+                //self.tableView.insertRows(at: self.feelingInternalTableModel.rows(), with: .fade)
+
                 self.tableView.reloadRows(at: [IndexPath(row: 0, section: 2)], with: .fade)
-                
-                //modify internal table model
-                switch self.newActivity.feeling
-                {
-                case .great:
-                    self.feelingInternalTableModel.feelingTypeTable = .good([])
-                case .lousy:
-                    self.feelingInternalTableModel.feelingTypeTable = .bad([])
-                case .mixed:
-                    self.feelingInternalTableModel.feelingTypeTable = .mixed(([], []))
-                case .neutral:
-                    self.feelingInternalTableModel.feelingTypeTable = .good([])
-                }
-                
-                let indices = IndexSet(self.feelingInternalTableModel.sections())
-                
-                self.tableView.reloadSections(indices, with: .fade)
+
+                self.tableView.endUpdates()
                 
                 return
             }, cancel: { (picker) in
@@ -328,6 +440,57 @@ extension AddSliceViewController: UITableViewDelegate
             }, origin: tableView)
         }
         
+        if (self.feelingInternalTableModel.insideOfTable(section: indexPath.section))
+        {
+            let values = self.feelingInternalTableModel.availableValuesForSection(section: indexPath.section)
+            let initialIndexes = self.feelingInternalTableModel.selectedValuesIndexes(section: indexPath.section)
+            
+            let storyboard = UIStoryboard(name: "ItemsSelection", bundle: nil)
+            if let itemsVC = storyboard.instantiateInitialViewController() as? ItemsSelectionViewController
+            {
+                itemsVC.modalPresentationStyle = .custom
+                itemsVC.transitioningDelegate = self
+                
+                itemsVC.selectedItemsIndexes = Set(initialIndexes)
+                
+                let valuesNames = values.map({$0.name})
+                for valueName in valuesNames
+                {
+                    let itemModel = ItemSelectionViewModel(title: valueName, image:nil)
+                    itemsVC.items.append(itemModel)
+                }
+                
+                self.present(itemsVC, animated: true, completion: nil)
+                
+                itemsVC.createItemTitle = "Create a new Value"
+                itemsVC.createNewItemAction = {
+                    print("this should launch a controller to show the activity creation")
+                }
+                
+                itemsVC.doneAction = { indexes in
+                    
+                    self.feelingInternalTableModel.deleteValuesForSection(section: indexPath.section)
+                    
+                    for index in indexes
+                    {
+                        let value = values[index]
+                        self.newActivity.values.append(value)
+                    }
+                    
+                    self.tableView.reloadSections(IndexSet([indexPath.section]), with: .fade)
+                    
+                }
+            }
+        }
+        
+    }
+    
+    func presentationController(forPresented presented: UIViewController,
+                                presenting: UIViewController?,
+                                source: UIViewController) -> UIPresentationController? {
+        let presentationController = PartialSizePresentationController(presentedViewController: presented,
+                                                                       presenting: presenting, height: self.view.frame.size.height / 2.0)
+        return presentationController
     }
 
     

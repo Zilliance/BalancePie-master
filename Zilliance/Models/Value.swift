@@ -27,5 +27,12 @@ class Value: Object {
         }
     }
 
-    
+    static var goodValues: Array<Value> {
+        return Array(Database.shared.realm.objects(Value.self).filter("type == %d", ValueType.good.rawValue))
+    }
+
+    static var badValues: Array<Value> {
+        return Array(Database.shared.realm.objects(Value.self).filter("type == %d", ValueType.bad.rawValue))
+    }
+
 }

@@ -173,6 +173,8 @@ class Database {
             value.name = dict["name"]!
             value.iconName = dict["iconName"]
             
+            value.type = arc4random_uniform(2) == 0 ? .good : .bad // todo: add bad values
+            
             try! self.realm.write {
                 self.realm.add(value)
             }
