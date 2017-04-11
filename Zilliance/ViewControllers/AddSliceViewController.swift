@@ -295,7 +295,7 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
             initialIndex = activitiesNames.index(of: self.newActivity.activity.name)!
         }
         
-        ActionSheetStringPicker.show(withTitle: "Name", rows: activitiesNames, initialSelection: initialIndex, doneBlock: { (picker, index, name) in
+        ActionSheetStringPicker.show(withTitle: "Activity", rows: activitiesNames, initialSelection: initialIndex, doneBlock: { (picker, index, name) in
             
             self.newActivity.activity = activities[index]
             
