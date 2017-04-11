@@ -27,7 +27,7 @@ class FavoriteActivityTableViewController: UITableViewController, UIViewControll
         var sleepDuration: Minutes = -1
         var activity: Activity?
         var activityDuration: Minutes = -1
-        var value: Value?
+        var values: [Value] = []
     }
     
     private enum Presenting {
@@ -116,9 +116,14 @@ class FavoriteActivityTableViewController: UITableViewController, UIViewControll
             
         }
         
-        itemSelectionViewController.doneAction = { index in
-            self.favorite.activity = activities[index.first!]
-            self.favoriteActivityLabel.text = activities[index.first!].name
+        itemSelectionViewController.doneAction = { indexes in
+            
+            guard indexes.count > 0 else {
+                return
+            }
+            
+            self.favorite.activity = activities[indexes.first!]
+            self.favoriteActivityLabel.text = activities[indexes.first!].name
         }
     }
     
@@ -166,6 +171,30 @@ class FavoriteActivityTableViewController: UITableViewController, UIViewControll
                 self.present(customValueViewController, animated: true, completion: nil)
             })
             
+        }
+        
+        itemSelectionViewController.doneAction = { indexes in
+            
+            guard indexes.count > 0 else {
+                return
+            }
+            
+            var selectedValues: [Value] = []
+            
+            indexes.forEach({ (index) in
+                selectedValues.append(values[index])
+            })
+            
+            self.favorite.values = selectedValues
+            
+            var valueNames: String? = selectedValues.first?.name
+            selectedValues.removeFirst()
+    
+            selectedValues.forEach({ (value) in
+                valueNames?.append(", \(value.name)")
+            })
+            
+            self.valueLabel.text = valueNames
         }
         
     }
