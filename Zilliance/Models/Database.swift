@@ -133,7 +133,7 @@ class Database {
         }
     }
     
-    func addActivity(activity: Activity)
+    fileprivate func addActivity(activity: Activity)
     {
         try! self.realm.write {
             self.realm.add(activity)

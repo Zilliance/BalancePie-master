@@ -187,6 +187,8 @@ final class AddSliceViewController: UIViewController
     
     @IBAction func doneTapped(_ sender: Any) {
         //save activity
+        
+        self.saveActivity()
         self.dismiss(animated: true, completion: nil)
 
     }
@@ -196,13 +198,18 @@ final class AddSliceViewController: UIViewController
     }
     
     
+    func saveActivity()
+    {
+        Database.shared.user.add(userActivity: self.newActivity)
+    }
+    
 }
 
 extension AddSliceViewController: UITableViewDataSource
 {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3 + self.feelingInternalTableModel.numberOfSections()
-    }
+    } 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
