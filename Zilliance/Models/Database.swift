@@ -129,9 +129,14 @@ class Database {
             activity.name = dict["name"]!
             activity.iconName = dict["iconName"]
             
-            try! self.realm.write {
-                self.realm.add(activity)
-            }
+            addActivity(activity: activity)
+        }
+    }
+    
+    func addActivity(activity: Activity)
+    {
+        try! self.realm.write {
+            self.realm.add(activity)
         }
     }
     

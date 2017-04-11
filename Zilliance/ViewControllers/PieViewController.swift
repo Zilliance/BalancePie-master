@@ -173,7 +173,9 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
             return
         }
         
-        self.present(addActivityVC, animated: true)
+        let navigation = UINavigationController(rootViewController: addActivityVC)
+        
+        self.present(navigation, animated: true)
     }
     
     func sliceAction(withActivity activity: UserActivity) {

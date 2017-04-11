@@ -185,6 +185,17 @@ final class AddSliceViewController: UIViewController
         
     }
     
+    @IBAction func doneTapped(_ sender: Any) {
+        //save activity
+        self.dismiss(animated: true, completion: nil)
+
+    }
+    
+    @IBAction func cancelTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
 }
 
 extension AddSliceViewController: UITableViewDataSource
