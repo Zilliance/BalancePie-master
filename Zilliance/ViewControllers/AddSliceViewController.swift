@@ -434,6 +434,12 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
                 {
                     self.selectValues(forSection: nextSection)
                 }
+                else
+                {
+                    let lastSection = self.tableView.numberOfSections - 1
+                    let lastRowIndex = IndexPath(row: self.tableView.numberOfRows(inSection: lastSection) - 1, section: lastSection)
+                    self.tableView.scrollToRow(at: lastRowIndex, at: .bottom, animated: true)
+                }
                 
             }
 
