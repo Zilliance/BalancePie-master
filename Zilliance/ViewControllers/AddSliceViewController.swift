@@ -67,7 +67,7 @@ struct EmbeddedFeelingTableViewModel
     
     func titleForIndexPath(index : IndexPath) -> String
     {
-        if (self.userActivity.feeling == .none || self.userActivity.values.count == 0)
+        if (self.userActivity.feeling == .none)
         {
             return ""
         }
@@ -76,10 +76,10 @@ struct EmbeddedFeelingTableViewModel
         switch (internalSection, self.userActivity.feeling) {
         case (0, .great), (0, .mixed):
             let goodValues = self.userActivity.goodValues
-            return goodValues.count > 0 ? self.userActivity.goodValues[index.row].name : ""
+            return goodValues.count > 0 ? self.userActivity.goodValues[index.row].name : "Tap to select"
         default:
             let badValues = self.userActivity.badValues
-            return badValues.count > 0 ? self.userActivity.badValues[index.row].name : ""
+            return badValues.count > 0 ? self.userActivity.badValues[index.row].name : "Tap to select"
         }
     }
     
@@ -305,6 +305,34 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
             }, cancel: { (picker) in
                 return
             }, origin: tableView)
+        }
+        
+        if (indexPath.section == 1)
+        {
+            let hours = 80.labeledArray(with: "Hour")
+            let minutes = ["0 Minutes", "15 Minutes", "30 Minutes", "45 Minutes"]
+            let selectedDuration = self.newActivity.duration
+            let selectedHour = selectedDuration.asHoursMinutes.0
+            let selectedMinutes = selectedDuration.asHoursMinutes.1 / 15
+            
+            ActionSheetMultipleStringPicker.show(withTitle: "Duration", rows: [hours, minutes], initialSelection: [selectedHour, selectedMinutes], doneBlock: { (picker, indexes, values) in
+                
+                guard let hour = indexes?[0] as? Int, var minute = indexes?[1] as? Int else {
+                    assertionFailure()
+                    return
+                }
+                minute *= 15
+                
+                let totalTimeMinutes = hour * 60 + minute
+                
+                self.newActivity.duration = totalTimeMinutes
+                
+                self.tableView.reloadRows(at: [indexPath], with: .fade)
+
+                
+            }, cancel: { (picker) in
+                
+            }, origin: UIButton())
         }
         
         if (indexPath.section == 2)
