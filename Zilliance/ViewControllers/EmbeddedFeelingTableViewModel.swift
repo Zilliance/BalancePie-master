@@ -2,7 +2,7 @@
 //  EmbeddedFeelingTableViewModel.swift
 //  Zilliance
 //
-//  Created by mac on 12-04-17.
+//  Created by Ignacio Zunino on 12-04-17.
 //  Copyright © 2017 Pillars4Life. All rights reserved.
 //
 
@@ -121,18 +121,18 @@ struct EmbeddedFeelingTableViewModel
     {
         if (self.userActivity.feeling == .none)
         {
+            return
         }
         
         let values = availableValuesForSection(section: section)
         
         values.forEach
+        {
+            if let index = self.userActivity.values.index(of: $0)
             {
-                if let index = self.userActivity.values.index(of: $0)
-                {
-                    self.userActivity.values.remove(objectAtIndex: index)
-                }
+                self.userActivity.values.remove(objectAtIndex: index)
+            }
         }
-        
     }
     
     func titleForSection(section: Int) -> String?

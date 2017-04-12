@@ -38,7 +38,7 @@ class ItemsSelectionViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     
     override func viewDidLoad() {
-        self.tableView.contentOffset.y = 0
+        super.viewDidLoad()
     }
 
     override func didReceiveMemoryWarning() {
