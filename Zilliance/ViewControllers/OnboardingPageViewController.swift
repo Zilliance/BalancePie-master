@@ -34,8 +34,24 @@ class OnboardingPageViewController: UIPageViewController {
         self.setupView()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        // show pageview contoller full screen (remove dots gap)
+        var scrollView: UIScrollView? = nil
+        self.view.subviews.forEach { (view) in
+            if let subview = view as? UIScrollView {
+                scrollView = subview
+            }
+        }
+        
+        scrollView?.frame = self.view.bounds
+        self.view.bringSubview(toFront: self.pageControl!)
+    }
+    
     private func setupView() {
         self.dataSource = self
+        self.delegate = self
         if let firstViewController = self.introViewControllers.first {
             self.setViewControllers([firstViewController], direction: .forward, animated: true, completion: nil)
         }
@@ -58,6 +74,18 @@ class OnboardingPageViewController: UIPageViewController {
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 
+}
+
+extension OnboardingPageViewController: UIPageViewControllerDelegate {
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+
+        if let index = introViewControllers.index(of: previousViewControllers.first!), index == 2 {
+            // hide dots and remove swipe in last page
+            self.pageControl?.isHidden = true
+            self.removeSwipeGesture()
+        }
+    
+    }
 }
 
 extension OnboardingPageViewController: UIPageViewControllerDataSource {
@@ -109,4 +137,23 @@ extension OnboardingPageViewController: UIPageViewControllerDataSource {
         return firstViewControllerIndex
     }
     
+}
+
+extension UIPageViewController {
+    var pageControl: UIPageControl? {
+        for view in self.view.subviews {
+            if view is UIPageControl {
+                return view as? UIPageControl
+            }
+        }
+        return nil
+    }
+    
+    func removeSwipeGesture() {
+        self.view.subviews.forEach { (view) in
+            if let scrollView = view as? UIScrollView {
+                scrollView.isScrollEnabled = false
+            }
+        }
+    }
 }

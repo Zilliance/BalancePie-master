@@ -14,7 +14,7 @@
             <objects>
                 <navigationController navigationBarHidden="YES" id="ayH-Ju-eNM" sceneMemberID="viewController">
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="buJ-R0-U1u">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="buJ-R0-U1u">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -67,7 +67,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="szC-mv-fV8" firstAttribute="centerX" secondItem="q82-xB-3ie" secondAttribute="centerX" id="ZCI-Oa-l1v"/>
                             <constraint firstItem="Opb-o3-zT3" firstAttribute="centerX" secondItem="q82-xB-3ie" secondAttribute="centerX" id="ko7-wf-kRS"/>
@@ -111,7 +111,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="z1R-ae-JiV" firstAttribute="centerX" secondItem="9pH-L4-YYv" secondAttribute="centerX" id="ViG-Ig-3Ps"/>
                             <constraint firstItem="bvy-Th-MLk" firstAttribute="top" secondItem="MAO-IY-aQX" secondAttribute="bottom" constant="89" id="e7i-dX-I50"/>
@@ -155,7 +155,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="dH8-m4-BF3" firstAttribute="centerX" secondItem="0kM-7Z-ArV" secondAttribute="centerX" id="2Mn-44-gCt"/>
                             <constraint firstItem="7OF-AJ-7kq" firstAttribute="centerX" secondItem="0kM-7Z-ArV" secondAttribute="centerX" id="CGS-ub-Kl8"/>
