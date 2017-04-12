@@ -168,6 +168,10 @@ final class AddSliceViewController: UIViewController
     
     fileprivate static let initialRowFeelingsTable: Int = 3
     
+    @IBOutlet weak var tuneSliceButton: UIButton!
+    
+    @IBOutlet weak var addAnotherActivityButton: UIButton!
+    
     @IBOutlet fileprivate weak var tableView: UITableView!
 
     var newActivity = UserActivity()
@@ -182,6 +186,14 @@ final class AddSliceViewController: UIViewController
         feelingInternalTableModel = EmbeddedFeelingTableViewModel(initialSection: AddSliceViewController.initialRowFeelingsTable, userActivity: newActivity)
         
         self.selectActivityName()
+        
+        //setup width and corner radius
+        for view in [self.tuneSliceButton, self.addAnotherActivityButton] as [UIView]
+        {
+            view.layer.cornerRadius = App.Appearance.zillianceCornerRadius
+            view.layer.borderWidth = App.Appearance.zillianceBorderWidth
+            view.layer.borderColor = UIColor.lightGray.cgColor
+        }
         
     }
     

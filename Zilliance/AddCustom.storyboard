@@ -318,7 +318,9 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="addAnotherActivityButton" destination="2U4-t9-XIp" id="n6a-kK-3ua"/>
                         <outlet property="tableView" destination="BnA-gA-Jdc" id="0vC-FL-eBb"/>
+                        <outlet property="tuneSliceButton" destination="N5m-t8-ytB" id="ZIh-4Z-TD6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4zJ-t7-Qoj" userLabel="First Responder" sceneMemberID="firstResponder"/>
