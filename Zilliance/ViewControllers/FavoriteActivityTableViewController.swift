@@ -36,6 +36,13 @@ class FavoriteActivityTableViewController: UITableViewController, UIViewControll
         case none
     }
     
+    private enum InputDataError {
+        case sleepDuration
+        case activity
+        case activityDuration
+        case values
+    }
+    
     private var favorite = Favorite()
     
     private let hours = App.Appearance.zilianceMaxHours.labeledArray(with: "Hour")
@@ -199,9 +206,69 @@ class FavoriteActivityTableViewController: UITableViewController, UIViewControll
         
     }
     
+    private func validateData() -> InputDataError? {
+        
+        if self.favorite.sleepDuration < 0 {
+            return .sleepDuration
+        }
+        
+        if self.favorite.activity == nil {
+            return .activity
+        }
+        
+        if self.favorite.activityDuration < 0 {
+            return .activityDuration
+        }
+        
+        if self.favorite.values.count == 0 {
+            return .values
+        }
+
+        return nil
+    }
+    
+    private func saveData() {
+        let userActivity = UserActivity()
+        userActivity.activity = self.favorite.activity
+        userActivity.duration = self.favorite.activityDuration
+        //userActivity.values = self.favorite.values
+        
+        Database.shared.user.add(userActivity: userActivity)
+        Database.shared.user.saveTimeSlept(hours: self.favorite.sleepDuration.asHoursMinutes.0 , minutes: self.favorite.sleepDuration.asHoursMinutes.1)
+    }
+    
+    private func gotoPie() {
+        
+        guard let pieViewController = UIStoryboard.init(name: "Pie", bundle: nil).instantiateInitialViewController() else {
+            assertionFailure()
+            return
+        }
+        
+        self.navigationController?.pushViewController(pieViewController, animated: true)
+    }
+    
     // MARK: -- User Actions
     
     @IBAction func getStartedAction(_ sender: Any) {
+        
+        if let error: InputDataError = validateData() {
+            
+            switch error {
+            case .sleepDuration:
+                self.showAlert(message: "Please enter your sleep time", title: nil)
+            case .activity:
+                self.showAlert(message: "Please select an activity", title: nil)
+            case .activityDuration:
+                self.showAlert(message: "Please enter the duration of your activity", title: nil)
+            case .values:
+                self.showAlert(message: "Please select your value(s)", title: nil)
+                
+            }
+            
+        } else {
+            self.saveData()
+            self.gotoPie()
+        }
         
         
     }
