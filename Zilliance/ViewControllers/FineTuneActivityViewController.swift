@@ -55,6 +55,13 @@ final class FineTuneActivityViewController: UIViewController {
     
 
     @IBAction func scheduleButtonTapped(_ sender: Any) {
+        
+        guard let calendarViewController = UIStoryboard.init(name: "Calendar", bundle: nil).instantiateInitialViewController() else {
+            assertionFailure()
+            return
+        }
+        calendarViewController.modalPresentationStyle = .overCurrentContext
+        self.present(calendarViewController, animated: true, completion: nil)
     }
     
     

@@ -27,6 +27,7 @@ class AddToCalendarViewController: UIViewController, UITextViewDelegate {
     
     func setupView()
     {
+        self.view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         
         //setup width and corner radius
         for view in [self.bodyTextView, self.doneButton] as [UIView]
@@ -74,7 +75,7 @@ class AddToCalendarViewController: UIViewController, UITextViewDelegate {
             //is this needed?
             if (bodyTextView.text.characters.count == 0)
             {
-                self.showAlert(message: "Please include a note", title: "Error")
+                self.showAlert(message: "Please include a Event", title: "Error")
                 return
             }
             
