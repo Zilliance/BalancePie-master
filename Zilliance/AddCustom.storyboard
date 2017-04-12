@@ -62,11 +62,29 @@
                                     <constraint firstAttribute="height" constant="1" id="QHp-oG-fB8"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9N-Mx-54R">
+                                <rect key="frame" x="20" y="597" width="335" height="50"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="3RE-jM-qct"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
+                                <state key="normal" title="Create Value">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="createActivity:" destination="kPV-bF-Dwb" eventType="touchUpInside" id="1f6-mK-KAM"/>
+                                    <action selector="createValueAction:" destination="zns-zh-lLo" eventType="touchUpInside" id="H66-ZS-58E"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="h9N-Mx-54R" firstAttribute="leading" secondItem="eiV-gd-WNf" secondAttribute="leading" constant="20" id="25z-h4-x5N"/>
+                            <constraint firstAttribute="trailing" secondItem="h9N-Mx-54R" secondAttribute="trailing" constant="20" id="Ajd-AE-kT5"/>
                             <constraint firstItem="bZH-14-CTn" firstAttribute="top" secondItem="KpO-1g-bze" secondAttribute="bottom" constant="10" id="CUa-QF-qyX"/>
                             <constraint firstItem="KpO-1g-bze" firstAttribute="leading" secondItem="eiV-gd-WNf" secondAttribute="leading" constant="10" id="Kou-pb-icQ"/>
+                            <constraint firstItem="KVp-mO-OKl" firstAttribute="top" secondItem="h9N-Mx-54R" secondAttribute="bottom" constant="20" id="Yev-51-U6y"/>
                             <constraint firstAttribute="trailing" secondItem="bZH-14-CTn" secondAttribute="trailing" constant="10" id="d5o-YW-9t1"/>
                             <constraint firstItem="KpO-1g-bze" firstAttribute="top" secondItem="yKr-r8-BIZ" secondAttribute="bottom" constant="20" id="fGg-DU-V7o"/>
                             <constraint firstAttribute="trailing" secondItem="KpO-1g-bze" secondAttribute="trailing" constant="10" id="oho-3e-Mlz"/>
@@ -96,10 +114,14 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ca-a9-5o0">
                                 <rect key="frame" x="20" y="597" width="335" height="50"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="EAE-fo-WHx"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
+                                <state key="normal" title="Create Activity">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="createActivity:" destination="kPV-bF-Dwb" eventType="touchUpInside" id="Q95-ye-9Oo"/>
                                 </connections>

@@ -73,6 +73,26 @@ class AddValuesViewController: UIViewController {
         
     // MARK: User Actions
     
+    @IBAction func createValueAction(_ sender: Any) {
+        
+        guard let name = self.valueText else {
+            self.showAlert(message: "Please enter a name for your custom value", title: nil)
+            return
+        }
+        if !self.nameIsValid(name) {
+            self.showAlert(message: "Please enter a name for your custom value", title: nil)
+            return
+        } else if self.valueAlreadyExists(name: name) {
+            self.showAlert(message: "A value with this name already exists", title: nil)
+            return
+        } else {
+            self.saveValue(name: name)
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        
+    }
+    
     @IBAction func userDidTapCancel(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -80,21 +100,8 @@ class AddValuesViewController: UIViewController {
 
 extension AddValuesViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        guard let name = self.valueText else {
-            self.showAlert(message: "Please enter a name for your custom value", title: nil)
-            return false
-        }
-        if !self.nameIsValid(name) {
-            self.showAlert(message: "Please enter a name for your custom value", title: nil)
-            return false
-        } else if self.valueAlreadyExists(name: name) {
-            self.showAlert(message: "A value with this name already exists", title: nil)
-            return false
-        } else {
-            self.saveValue(name: name)
-            textField.resignFirstResponder()
-            self.dismiss(animated: true, completion: nil)
-            return true
-        }
+        textField.resignFirstResponder()
+        return true
     }
+    
 }
