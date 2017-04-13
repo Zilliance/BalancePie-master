@@ -166,7 +166,7 @@ extension AddSliceViewController: UITableViewDataSource
         {
         case TableSections.goodFeelings.rawValue:
             
-            if (self.newActivity.feeling == .lousy || self.newActivity.feeling == .neutral)
+            if (self.newActivity.feeling == .lousy || self.newActivity.feeling == .neutral || self.newActivity.feeling == .none)
             {
                 return 0
             }
@@ -174,7 +174,7 @@ extension AddSliceViewController: UITableViewDataSource
             return max(self.newActivity.goodValues.count, 1)
         case TableSections.badFeelings.rawValue:
             
-            if (self.newActivity.feeling == .great)
+            if (self.newActivity.feeling == .great || self.newActivity.feeling == .none)
             {
                 return 0
             }
