@@ -10,31 +10,27 @@ import UIKit
 
 extension UIFont {
     
-    class func zillianceLightFont(ofSize size: (CGFloat)) -> UIFont {
+    class func muliLight(size: (CGFloat)) -> UIFont {
         return UIFont(name: "Muli-Light", size: size)!
     }
     
-    class func zillianceThinFont(ofSize size: (CGFloat)) -> UIFont {
-        return UIFont(name: "Muli-Thin", size: size)!
-    }
-    
-    class func zillianceItalicFont(ofSize size: (CGFloat)) -> UIFont {
+    class func muliItalic(size: (CGFloat)) -> UIFont {
         return UIFont(name: "Muli-Italic", size: size)!
     }
     
-    class func zillianceBlackFont(ofSize size: (CGFloat)) -> UIFont {
+    class func muliBlack(size: (CGFloat)) -> UIFont {
         return UIFont(name: "Muli-Black", size: size)!
     }
     
-    class func zillianceRegularFont(ofSize size: (CGFloat)) -> UIFont {
+    class func muliRegular(size: (CGFloat)) -> UIFont {
         return UIFont(name: "Muli-Regular", size: size)!
     }
     
-    class func zillianceMediumFont(ofSize size: (CGFloat)) -> UIFont {
-        return UIFont(name: "Muli-Medium", size: size)!
+    class func muliSemiBold(size: (CGFloat)) -> UIFont {
+        return UIFont(name: "Muli-Semibold", size: size)!
     }
     
-    class func zillianceBoldFont(ofSize size: (CGFloat)) -> UIFont {
+    class func muliBold(size: (CGFloat)) -> UIFont {
         return UIFont(name: "Muli-Bold", size: size)!
     }
 }

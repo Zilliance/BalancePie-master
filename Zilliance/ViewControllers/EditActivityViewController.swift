@@ -88,7 +88,7 @@ extension EditActivityViewController: UITableViewDataSource
             
             cell = tableView.dequeueReusableCell(withIdentifier: "subtitleCell")!
             cell.textLabel?.text = "How do you feel now?"
-            cell.detailTextLabel?.text = self.activity.feeling.string()
+            cell.detailTextLabel?.text = self.activity.feeling.string
 
         case (TableSections.goodFeelings.rawValue, 0):
             
@@ -172,8 +172,8 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
     
     func selectHowItFeels()
     {
-        let feelings = Feeling.allFeelings
-        let feelingsNames = feelings.map({$0.string()})
+        let feelings = Feeling.all
+        let feelingsNames = feelings.map({$0.string})
         
         let initialIndex = feelings.index(of: self.activity.feeling) ?? 0
         

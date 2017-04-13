@@ -20,6 +20,10 @@ class AddActivityViewController: UIViewController, UICollectionViewDataSource, U
     
     private let iconNames = ["chores", "driving", "exercise", "familyTime", "hobbies", "leisureTime", "quietTime", "reading", "romance", "socialNetworking", "spiritualPractice", "talkingOnPhone", "timeWithFriends", "treatment", "tv", "volunterring", "work"]
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupViews()
@@ -37,14 +41,16 @@ class AddActivityViewController: UIViewController, UICollectionViewDataSource, U
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(closeView))
         
         self.selectAnIconLabel.text = "Select An Icon:"
-        self.selectAnIconLabel.font = UIFont.zillianceRegularFont(ofSize: 16.0)
+        self.selectAnIconLabel.font = UIFont.muliRegular(size: 16.0)
         
         self.collectionView.contentInset = UIEdgeInsetsMake(10, 10, 10, 10)
         
         self.createActivityButton.setTitle("Create Activity", for: .normal)
+        self.createActivityButton.setTitleColor(UIColor.white, for: .normal)
+        self.createActivityButton.titleLabel?.font = UIFont.muliRegular(size: 16.0)
         
         self.activityTextField.attributedPlaceholder = NSAttributedString(string: "Name of activity, e.g. Sports", attributes:[
-            NSFontAttributeName : UIFont.zillianceRegularFont(ofSize: 16.0)
+            NSFontAttributeName : UIFont.muliRegular(size: 16.0)
         ])
     }
     
@@ -58,7 +64,8 @@ class AddActivityViewController: UIViewController, UICollectionViewDataSource, U
         let activity = Activity()
         activity.name = self.activityTextField.text!
         activity.iconName = selectedIconName!
-    //TODO: move this to the model
+        
+        //TODO: move this to the model
         try! Database.shared.realm.write {
             Database.shared.realm.add(activity)
             self.dismiss(animated: true, completion: nil)

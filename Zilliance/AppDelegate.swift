@@ -15,20 +15,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+    	// App wide appearance
+        
+        UINavigationBar.appearance().tintColor = .white
+        UINavigationBar.appearance().barTintColor = .darkBlueBackground
+        UINavigationBar.appearance().barStyle = .black
+        UINavigationBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().titleTextAttributes = [
+            NSForegroundColorAttributeName: UIColor.white,
+            NSFontAttributeName: UIFont.muliBold(size: 18)
+        ]
+
+        // Onboarding Logic
+
         var rootViewController: UIViewController?
         
         if Database.shared.user.activities.count > 0 {
-         rootViewController = UIStoryboard(name: "Pie", bundle: nil).instantiateInitialViewController()
+         	rootViewController = UIStoryboard(name: "Pie", bundle: nil).instantiateInitialViewController()
         }
         else {
             rootViewController =  UIStoryboard(name: "Onboarding", bundle: nil).instantiateInitialViewController()
         }
-        
+
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = rootViewController
         window?.makeKeyAndVisible()
         
         return true
     }
+
 }
 

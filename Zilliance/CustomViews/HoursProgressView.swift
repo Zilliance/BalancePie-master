@@ -51,7 +51,7 @@ final class HoursProgressView: UIView {
     }
     
     private func commonInit() {
-        self.backgroundColor = .darkBackgroundBlue
+        self.backgroundColor = .darkBlueBackground
         
         // Progress Track
         
@@ -66,7 +66,7 @@ final class HoursProgressView: UIView {
         
         // Progress Bar
         
-        self.progressBar.backgroundColor = .lightBackgroundBlue
+        self.progressBar.backgroundColor = .lightBlueBackground
         self.progressBar.translatesAutoresizingMaskIntoConstraints = false
         
         self.addSubview(self.progressBar)
@@ -83,7 +83,7 @@ final class HoursProgressView: UIView {
             let scaled = UIImage(cgImage: cgImage, scale: UIScreen.main.scale, orientation: pattern.imageOrientation)
             self.sleepBar.backgroundColor = UIColor(patternImage: scaled)
         } else {
-            self.sleepBar.backgroundColor = .lightBackgroundBlue
+            self.sleepBar.backgroundColor = .lightBlueBackground
         }
         
         self.sleepBar.translatesAutoresizingMaskIntoConstraints = false
@@ -99,8 +99,8 @@ final class HoursProgressView: UIView {
         // Label
         
         self.filledLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.filledLabel.font = .zillianceRegularFont(ofSize: 12)
-        self.filledLabel.textColor = .lightBackgroundBlue
+        self.filledLabel.font = .muliRegular(size: 12)
+        self.filledLabel.textColor = .lightBlueBackground
         
         self.addSubview(self.filledLabel)
         self.filledLabel.bottomAnchor.constraint(equalTo: self.progressTrack.topAnchor, constant: -4).isActive = true
@@ -109,8 +109,8 @@ final class HoursProgressView: UIView {
         // Sleep Label
         
         self.sleepLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.sleepLabel.font = .zillianceRegularFont(ofSize: 12)
-        self.sleepLabel.textColor = .lightBackgroundBlue
+        self.sleepLabel.font = .muliRegular(size: 12)
+        self.sleepLabel.textColor = .lightBlueBackground
         self.sleepLabel.textAlignment = .right
         
         self.addSubview(self.sleepLabel)
