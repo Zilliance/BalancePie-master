@@ -10,18 +10,40 @@
 import Foundation
 import RealmSwift
 
-final class UserActivity: Object {
-    @objc enum Feeling: Int32 {
-        case great
-        case neutral
-        case lousy
-        case mixed
+@objc enum Feeling: Int32 {
+    case none
+    case great
+    case neutral
+    case lousy
+    case mixed
+    
+    func string() -> String
+    {
+        switch self {
+        case .none:
+            return ""
+        case .great:
+            return "Great"
+        case .neutral:
+            return "Neutral"
+        case .lousy:
+            return "Lousy"
+        case .mixed:
+            return "Mixed"
+        }
     }
+    
+    static let allFeelings: [Feeling] = {
+        return [Feeling.great, Feeling.neutral, Feeling.lousy, Feeling.mixed]
+    }()
+}
+
+final class UserActivity: Object {
     
     dynamic var activity: Activity!
     dynamic var duration: Minutes = 0
     let values = List<Value>()
-    dynamic var feeling: Feeling = .great
+    dynamic var feeling: Feeling = .none
     
     var image: UIImage? {
         guard let iconName = self.activity.iconName else
@@ -42,15 +64,28 @@ final class UserActivity: Object {
             return UIColor.black
         case .mixed:
             return UIColor.green
+        case .none:
+            return UIColor.white
         }
+        
     }
     
-    var goodValues: Results<Value> {
-        return self.values.filter("type == \(ValueType.good.rawValue)")
+    var goodValues: Array<Value> {
+        return self.values.filter{$0.type == .good}
     }
 
-    var badValues: Results<Value> {
-        return self.values.filter("type == \(ValueType.bad.rawValue)")
+    var badValues: Array<Value> {
+        return self.values.filter{$0.type == .bad}
+    }
+    
+    func removeBadValues()
+    {
+        
+    }
+    
+    func removeGoodValues()
+    {
+        
     }
 
 }

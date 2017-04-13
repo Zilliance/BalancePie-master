@@ -47,6 +47,9 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
         self.pieView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
         self.pieView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         
+        self.pieView.plusButtonAction = {[unowned self] in
+            self.plusAction()
+        }
         
         self.pieView.sliceAction = { [weak self] index, activity in
             self?.sliceAction(withActivity: activity)
@@ -161,6 +164,19 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
     }
     
     // MARK: - User Actions
+    
+    func plusAction()
+    {
+        let addStoryboard = UIStoryboard(name: "AddCustom", bundle: nil)
+        guard let addActivityVC = addStoryboard.instantiateViewController(withIdentifier: "AddSliceViewController") as? AddSliceViewController
+        else{
+            return
+        }
+        
+        let navigation = UINavigationController(rootViewController: addActivityVC)
+        
+        self.present(navigation, animated: true)
+    }
     
     func sliceAction(withActivity activity: UserActivity) {
         

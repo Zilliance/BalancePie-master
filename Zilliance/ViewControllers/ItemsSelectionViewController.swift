@@ -31,9 +31,12 @@ class ItemsSelectionViewController: UIViewController {
     var createItemTitle = "Create new item"
     var selectedItemsIndexes:Set<Int> = []
     
+    @IBOutlet weak var tableView: UITableView!
     var doneAction: (([Int]) -> ())?
     var createNewItemAction: (() -> ())?
 
+    @IBOutlet weak var titleLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

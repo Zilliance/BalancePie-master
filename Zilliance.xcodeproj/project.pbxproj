@@ -10,10 +10,12 @@
 		01FC8C629D821129AE1F5C39 /* Pods_ZillianceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7A740D362571F85742B547 /* Pods_ZillianceTests.framework */; };
 		04647C721E97D8450040CA46 /* FineTuneActivity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04647C701E97D8450040CA46 /* FineTuneActivity.storyboard */; };
 		04647C751E97D85C0040CA46 /* FineTuneActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04647C741E97D85C0040CA46 /* FineTuneActivityViewController.swift */; };
+		04647C7D1E9BFD4B0040CA46 /* AddSliceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04647C7C1E9BFD4B0040CA46 /* AddSliceViewController.swift */; };
 		0469D0AE1E944B700024EA39 /* UserActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469D0AD1E944B700024EA39 /* UserActivity.swift */; };
 		04B29A631E97AB340090E52E /* ItemsSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B29A621E97AB340090E52E /* ItemsSelection.storyboard */; };
 		04B29A651E97AB4A0090E52E /* ItemsSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B29A641E97AB4A0090E52E /* ItemsSelectionViewController.swift */; };
 		04B29A671E97AB680090E52E /* PartialSizePresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B29A661E97AB680090E52E /* PartialSizePresentationController.swift */; };
+		04E6F5671E9E7FEC00EBD119 /* EmbeddedFeelingTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6F5661E9E7FEC00EBD119 /* EmbeddedFeelingTableViewModel.swift */; };
 		1E51585B238E77BA1CAA3F72 /* Pods_ZillianceUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD551A78B0B1A451D0EC85B /* Pods_ZillianceUITests.framework */; };
 		6D62B4EDFBB711AD0B00D39E /* Pods_Zilliance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 736C6E0154BDC836D0C0D4EB /* Pods_Zilliance.framework */; };
 		8C3EA45A1E92E6D000F56DED /* PieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3EA4591E92E6D000F56DED /* PieView.swift */; };
@@ -85,10 +87,12 @@
 /* Begin PBXFileReference section */
 		04647C701E97D8450040CA46 /* FineTuneActivity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FineTuneActivity.storyboard; sourceTree = "<group>"; };
 		04647C741E97D85C0040CA46 /* FineTuneActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FineTuneActivityViewController.swift; path = ViewControllers/FineTuneActivityViewController.swift; sourceTree = "<group>"; };
+		04647C7C1E9BFD4B0040CA46 /* AddSliceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddSliceViewController.swift; path = ViewControllers/AddSliceViewController.swift; sourceTree = "<group>"; };
 		0469D0AD1E944B700024EA39 /* UserActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserActivity.swift; path = Models/UserActivity.swift; sourceTree = "<group>"; };
 		04B29A621E97AB340090E52E /* ItemsSelection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ItemsSelection.storyboard; sourceTree = "<group>"; };
 		04B29A641E97AB4A0090E52E /* ItemsSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemsSelectionViewController.swift; path = ViewControllers/ItemsSelectionViewController.swift; sourceTree = "<group>"; };
 		04B29A661E97AB680090E52E /* PartialSizePresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartialSizePresentationController.swift; sourceTree = "<group>"; };
+		04E6F5661E9E7FEC00EBD119 /* EmbeddedFeelingTableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmbeddedFeelingTableViewModel.swift; path = ViewControllers/EmbeddedFeelingTableViewModel.swift; sourceTree = "<group>"; };
 		1BD551A78B0B1A451D0EC85B /* Pods_ZillianceUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZillianceUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D5A61EEA6A77027635EDAC1 /* Pods-Zilliance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zilliance.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Zilliance/Pods-Zilliance.debug.xcconfig"; sourceTree = "<group>"; };
 		3770342A51232B23DA4673E7 /* Pods-ZillianceUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZillianceUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZillianceUITests/Pods-ZillianceUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -320,6 +324,8 @@
 				8CBBBE1E1E958B6300281C3C /* AddActivityViewController.swift */,
 				8CBBBE221E95925700281C3C /* IconCollectionViewCell.swift */,
 				8CBBBE1F1E958B6300281C3C /* AddValuesViewController.swift */,
+				04647C7C1E9BFD4B0040CA46 /* AddSliceViewController.swift */,
+				04E6F5661E9E7FEC00EBD119 /* EmbeddedFeelingTableViewModel.swift */,
 			);
 			name = AddCustom;
 			sourceTree = "<group>";
@@ -696,6 +702,7 @@
 			files = (
 				8C4D28C91E96D1A400034A20 /* OnboardingPageViewController.swift in Sources */,
 				8C3EA4631E92E7BF00F56DED /* Activity.swift in Sources */,
+				04647C7D1E9BFD4B0040CA46 /* AddSliceViewController.swift in Sources */,
 				8C3EA47C1E92F0F100F56DED /* CalendarHelper.swift in Sources */,
 				8C3EA4751E92E9D600F56DED /* UIFont+CustomFonts.swift in Sources */,
 				8C3EA49E1E94274600F56DED /* PieViewController.swift in Sources */,
@@ -714,6 +721,7 @@
 				8C3EA4611E92E7BF00F56DED /* Database.swift in Sources */,
 				04647C751E97D85C0040CA46 /* FineTuneActivityViewController.swift in Sources */,
 				8C3EA4641E92E7BF00F56DED /* ArrayDataSource.swift in Sources */,
+				04E6F5671E9E7FEC00EBD119 /* EmbeddedFeelingTableViewModel.swift in Sources */,
 				8C3EA4781E92EF9C00F56DED /* HoursProgressView.swift in Sources */,
 				8C3EA46F1E92E9D600F56DED /* UIImage+Extensions.swift in Sources */,
 				8C3EA4621E92E7BF00F56DED /* User.swift in Sources */,

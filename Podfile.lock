@@ -1,4 +1,5 @@
 PODS:
+  - ActionSheetPicker-3.0 (2.2.0)
   - Charts (3.0.2):
     - Charts/Core (= 3.0.2)
   - Charts/Core (3.0.2)
@@ -9,6 +10,7 @@ PODS:
     - Realm (= 2.5.0)
 
 DEPENDENCIES:
+  - ActionSheetPicker-3.0
   - Charts (from `https://github.com/danielgindi/Charts.git`, branch `master`)
   - Realm
   - RealmSwift
@@ -24,10 +26,11 @@ CHECKOUT OPTIONS:
     :git: https://github.com/danielgindi/Charts.git
 
 SPEC CHECKSUMS:
+  ActionSheetPicker-3.0: d11a4c12c6aaf704b8a3f56d179198c99f3e41e6
   Charts: e955b9a241a14a8971d70143002c8ab1610d26b6
   Realm: 62abce501668580092d2be9b6ba7324a3d5f906a
   RealmSwift: 9f1a8f624f2f153410115c2cb7d486be9976565d
 
-PODFILE CHECKSUM: df9e06534afde3b1c4168686225c53acd5c7189d
+PODFILE CHECKSUM: 3cf57c14f9ae0a09a275cd1e272d472078dae62f
 
 COCOAPODS: 1.2.0
