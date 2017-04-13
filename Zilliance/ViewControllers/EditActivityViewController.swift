@@ -46,7 +46,6 @@ final class EditActivityViewController: UIViewController{
 
 extension EditActivityViewController: UITableViewDataSource
 {
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 4
     }
@@ -54,6 +53,12 @@ extension EditActivityViewController: UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case TableSections.goodFeelings.rawValue:
+            
+            if (self.activity.feeling == .lousy || self.activity.feeling == .neutral)
+            {
+                return 0
+            }
+            
             return max(self.activity.goodValues.count, 1)
         case TableSections.badFeelings.rawValue:
             
@@ -208,9 +213,7 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
             }
             
             itemsVC.doneAction = { indexes in
-                
                 completion(indexes)
-                
             }
             
             let navigation = UINavigationController(rootViewController: itemsVC)
