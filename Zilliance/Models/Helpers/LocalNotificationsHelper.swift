@@ -2,7 +2,7 @@
 //  LocalNotificationsUtils.swift
 //  Balance Pie
 //
-//  Created by mac on 21-03-17.
+//  Created by Ignacio Zunino on 21-03-17.
 //  Copyright © 2017 Phil Dow. All rights reserved.
 //
 
