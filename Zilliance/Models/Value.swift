@@ -34,5 +34,15 @@ class Value: Object {
     static var badValues: Array<Value> {
         return Array(Database.shared.realm.objects(Value.self).filter("type == %d", ValueType.bad.rawValue))
     }
+    
+    override class func primaryKey() -> String? {
+        return "name"
+    }
 
+}
+
+extension Value {
+    static func ==(lhs: Value, rhs: Value) -> Bool {
+        return lhs.name == rhs.name
+    }
 }

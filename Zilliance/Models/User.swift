@@ -61,9 +61,21 @@ extension User
         }
     }
     
-    func add(userActivity: UserActivity) {
-        try! Database.shared.realm.write {
-            self.activities.append(userActivity)
+    func save(userActivity: UserActivity) {
+        
+        let realm = Database.shared.realm
+        
+        try! realm?.write {
+            
+            //if it already contains the activity we need to update it
+            if (self.activities.filter("id = '\(userActivity.id)'").count > 0)
+            {
+                realm?.create(UserActivity.self, value: userActivity, update: true)
+            }
+            else
+            {
+                self.activities.append(userActivity)
+            }
         }
     }
     

@@ -16,6 +16,8 @@
 		04B29A651E97AB4A0090E52E /* ItemsSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B29A641E97AB4A0090E52E /* ItemsSelectionViewController.swift */; };
 		04B29A671E97AB680090E52E /* PartialSizePresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B29A661E97AB680090E52E /* PartialSizePresentationController.swift */; };
 		04E6F5671E9E7FEC00EBD119 /* EmbeddedFeelingTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6F5661E9E7FEC00EBD119 /* EmbeddedFeelingTableViewModel.swift */; };
+		04E6F56C1E9F804000EBD119 /* DetachableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6F56B1E9F804000EBD119 /* DetachableObject.swift */; };
+		04E6F56E1E9F8CDB00EBD119 /* EditActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6F56D1E9F8CDB00EBD119 /* EditActivityViewController.swift */; };
 		1E51585B238E77BA1CAA3F72 /* Pods_ZillianceUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD551A78B0B1A451D0EC85B /* Pods_ZillianceUITests.framework */; };
 		6D62B4EDFBB711AD0B00D39E /* Pods_Zilliance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 736C6E0154BDC836D0C0D4EB /* Pods_Zilliance.framework */; };
 		8C3EA45A1E92E6D000F56DED /* PieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3EA4591E92E6D000F56DED /* PieView.swift */; };
@@ -93,6 +95,8 @@
 		04B29A641E97AB4A0090E52E /* ItemsSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemsSelectionViewController.swift; path = ViewControllers/ItemsSelectionViewController.swift; sourceTree = "<group>"; };
 		04B29A661E97AB680090E52E /* PartialSizePresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartialSizePresentationController.swift; sourceTree = "<group>"; };
 		04E6F5661E9E7FEC00EBD119 /* EmbeddedFeelingTableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmbeddedFeelingTableViewModel.swift; path = ViewControllers/EmbeddedFeelingTableViewModel.swift; sourceTree = "<group>"; };
+		04E6F56B1E9F804000EBD119 /* DetachableObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetachableObject.swift; path = Models/DetachableObject.swift; sourceTree = "<group>"; };
+		04E6F56D1E9F8CDB00EBD119 /* EditActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditActivityViewController.swift; path = ViewControllers/EditActivityViewController.swift; sourceTree = "<group>"; };
 		1BD551A78B0B1A451D0EC85B /* Pods_ZillianceUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZillianceUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D5A61EEA6A77027635EDAC1 /* Pods-Zilliance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zilliance.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Zilliance/Pods-Zilliance.debug.xcconfig"; sourceTree = "<group>"; };
 		3770342A51232B23DA4673E7 /* Pods-ZillianceUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZillianceUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZillianceUITests/Pods-ZillianceUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -274,6 +278,7 @@
 				8C3EA45F1E92E7BF00F56DED /* ArrayDataSource.swift */,
 				8C3EA47A1E92F0F100F56DED /* CalendarHelper.swift */,
 				8C3EA47B1E92F0F100F56DED /* LocalNotificationsHelper.swift */,
+				04E6F56B1E9F804000EBD119 /* DetachableObject.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -326,6 +331,7 @@
 				8CBBBE1F1E958B6300281C3C /* AddValuesViewController.swift */,
 				04647C7C1E9BFD4B0040CA46 /* AddSliceViewController.swift */,
 				04E6F5661E9E7FEC00EBD119 /* EmbeddedFeelingTableViewModel.swift */,
+				04E6F56D1E9F8CDB00EBD119 /* EditActivityViewController.swift */,
 			);
 			name = AddCustom;
 			sourceTree = "<group>";
@@ -707,6 +713,7 @@
 				8C3EA4751E92E9D600F56DED /* UIFont+CustomFonts.swift in Sources */,
 				8C3EA49E1E94274600F56DED /* PieViewController.swift in Sources */,
 				8CBBBE211E958B6300281C3C /* AddValuesViewController.swift in Sources */,
+				04E6F56C1E9F804000EBD119 /* DetachableObject.swift in Sources */,
 				8C3EA4711E92E9D600F56DED /* Minutes+Extensions.swift in Sources */,
 				E35668321E8C15BA00ED81D9 /* AppDelegate.swift in Sources */,
 				8C3EA4731E92E9D600F56DED /* UIColor+CustomColors.swift in Sources */,
@@ -726,6 +733,7 @@
 				8C3EA46F1E92E9D600F56DED /* UIImage+Extensions.swift in Sources */,
 				8C3EA4621E92E7BF00F56DED /* User.swift in Sources */,
 				04B29A651E97AB4A0090E52E /* ItemsSelectionViewController.swift in Sources */,
+				04E6F56E1E9F8CDB00EBD119 /* EditActivityViewController.swift in Sources */,
 				8C3EA4761E92E9D600F56DED /* UIViewController+Extensions.swift in Sources */,
 				8C3EA45A1E92E6D000F56DED /* PieView.swift in Sources */,
 				8C3EA4701E92E9D600F56DED /* Int+Extensions.swift in Sources */,

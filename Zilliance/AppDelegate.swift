@@ -37,16 +37,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         userActivity.activity = activity1
         userActivity.duration = 300
         userActivity.feeling = .mixed
-        Database.shared.user.add(userActivity: userActivity)
+        Database.shared.user.save(userActivity: userActivity)
         
         let activity2 = Activity()
-        activity2.name = "Test"
+        activity2.name = "Test2"
         
         let userActivity1 = UserActivity()
         userActivity1.activity = activity2
         userActivity1.duration = 800
         userActivity1.feeling = .great
-        Database.shared.user.add(userActivity: userActivity1)
+        Database.shared.user.save(userActivity: userActivity1)
         
         
     }

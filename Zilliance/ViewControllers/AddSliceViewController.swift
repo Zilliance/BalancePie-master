@@ -58,8 +58,66 @@ final class AddSliceViewController: UIViewController
     
     func saveActivity()
     {
-        Database.shared.user.add(userActivity: self.newActivity)
+        Database.shared.user.save(userActivity: self.newActivity)
+        
+        //since we'll keep modifying it we'll need an in memory copy of it
+        self.newActivity = self.newActivity.detached()
+        self.feelingInternalTableModel.userActivity = self.newActivity
+        
     }
+    
+    private func fineTune(userActivity: UserActivity) {
+        
+        //fine tune setup example. It should use other view controllers
+        let addStoryboard = UIStoryboard(name: "AddCustom", bundle: nil)
+        
+        let fineTuneStoryboard = UIStoryboard(name: "FineTuneActivity", bundle: nil)
+        
+        guard let addActivityVC = addStoryboard.instantiateViewController(withIdentifier: "AddActivityViewController") as? AddActivityViewController,
+            let addValueVC = addStoryboard.instantiateViewController(withIdentifier: "AddValuesViewController") as? AddValuesViewController,
+            let fineTuneVC = fineTuneStoryboard.instantiateInitialViewController() as? FineTuneActivityViewController
+            else
+        {
+            return
+        }
+        
+        let fineTuneItem0 = FineTuneItem(title: "Activity", image: UIImage(named: "btnPlus")!, viewController: addActivityVC)
+        let fineTuneItem1 = FineTuneItem(title: "Value", image: UIImage(named: "btnPlus")!, viewController: addValueVC)
+        
+        let items = [fineTuneItem0, fineTuneItem1]
+        
+        fineTuneVC.items = items
+        
+        let navigationFineTuneVC = UINavigationController(rootViewController: fineTuneVC)
+        
+        self.present(navigationFineTuneVC, animated: true, completion: nil)
+        
+    }
+    
+    @IBAction func fineTuneTapped(_ sender: Any) {
+        self.saveActivity()
+        //open fine tune
+        fineTune(userActivity: self.newActivity)
+    }
+    
+    @IBAction func addAnotherSliceTapped(_ sender: Any) {
+        self.saveActivity()
+        
+        let addStoryboard = UIStoryboard(name: "AddCustom", bundle: nil)
+        guard let addActivityVC = addStoryboard.instantiateViewController(withIdentifier: "AddSliceViewController") as? AddSliceViewController
+            else{
+                return
+        }
+        
+        self.navigationController?.pushViewController(addActivityVC, animated: true)
+    }
+    
+    @IBAction func backToPieTapped(_ sender: Any) {
+        
+        self.navigationController?.dismiss(animated: true, completion: nil)
+        
+    }
+    
     
 }
 
