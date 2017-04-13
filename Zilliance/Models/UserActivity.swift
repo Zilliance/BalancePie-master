@@ -42,8 +42,9 @@ final class UserActivity: Object {
     
     dynamic var activity: Activity!
     dynamic var duration: Minutes = 0
-    let values = List<Value>()
+    var values = List<Value>()
     dynamic var feeling: Feeling = .none
+    dynamic var id: String = UUID().uuidString
     
     var image: UIImage? {
         guard let iconName = self.activity.iconName else
@@ -70,6 +71,10 @@ final class UserActivity: Object {
         
     }
     
+    override class func primaryKey() -> String? {
+        return "id"
+    }
+    
     var goodValues: Array<Value> {
         return self.values.filter{$0.type == .good}
     }
@@ -86,6 +91,12 @@ final class UserActivity: Object {
     func removeGoodValues()
     {
         
+    }
+    
+    override func detached() -> UserActivity {
+        let detachedActiviy = UserActivity.init(value: self)
+        detachedActiviy.values = List<Value>(self.values)
+        return detachedActiviy
     }
 
 }

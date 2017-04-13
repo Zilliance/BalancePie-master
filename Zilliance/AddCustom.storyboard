@@ -272,6 +272,9 @@
                                             <constraint firstAttribute="height" constant="50" id="xsm-dA-UVW"/>
                                         </constraints>
                                         <state key="normal" title="Fine Tune this Slice"/>
+                                        <connections>
+                                            <action selector="fineTuneTapped:" destination="vev-B3-EIv" eventType="touchUpInside" id="XCQ-Ix-pFa"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2U4-t9-XIp">
                                         <rect key="frame" x="0.0" y="60" width="303" height="50"/>
@@ -279,6 +282,9 @@
                                             <constraint firstAttribute="height" constant="50" id="1m3-i8-51j"/>
                                         </constraints>
                                         <state key="normal" title="Add Another Slice"/>
+                                        <connections>
+                                            <action selector="addAnotherSliceTapped:" destination="vev-B3-EIv" eventType="touchUpInside" id="vAf-gv-eb5"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FGy-cb-chr">
                                         <rect key="frame" x="0.0" y="120" width="303" height="50"/>
@@ -286,6 +292,9 @@
                                             <constraint firstAttribute="height" constant="50" id="CSf-Md-RSy"/>
                                         </constraints>
                                         <state key="normal" title="Back to Pie"/>
+                                        <connections>
+                                            <action selector="backToPieTapped:" destination="vev-B3-EIv" eventType="touchUpInside" id="tev-4H-TCo"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
