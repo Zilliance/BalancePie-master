@@ -10,25 +10,26 @@ import Foundation
 import UIKit
 import ActionSheetPicker_3_0
 
-enum TableSections: Int
-{
-    case duration = 0
-    case feelingType
-    case goodFeelings
-    case badFeelings
-    
-    static func feelingSections() -> [Int]{
-        return [feelingType.rawValue, goodFeelings.rawValue, badFeelings.rawValue]
-    }
-}
-
 final class EditActivityViewController: UIViewController{
+    
+    enum TableSections: Int
+    {
+        case duration = 0
+        case feelingType
+        case goodFeelings
+        case badFeelings
+        
+        static func feelingSections() -> [Int]{
+            return [feelingType.rawValue, goodFeelings.rawValue, badFeelings.rawValue]
+        }
+    }
+    
     @IBOutlet var tableView: UITableView!
     
     var activity: UserActivity! {
         didSet{
             self.activity = activity.detached()
-            self.title = self.activity.activity.name
+            self.title = self.activity.activity?.name
         }
     }
     
@@ -124,6 +125,8 @@ extension EditActivityViewController: UITableViewDataSource
         default:
             break
         }
+        
+        cell.selectionStyle = .none
         
         return cell
         

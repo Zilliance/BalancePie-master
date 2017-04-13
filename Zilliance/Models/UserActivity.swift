@@ -40,14 +40,14 @@ import RealmSwift
 
 final class UserActivity: Object {
     
-    dynamic var activity: Activity!
+    dynamic var activity: Activity?
     dynamic var duration: Minutes = 0
     var values = List<Value>()
     dynamic var feeling: Feeling = .none
     dynamic var id: String = UUID().uuidString
     
     var image: UIImage? {
-        guard let iconName = self.activity.iconName else
+        guard let iconName = self.activity?.iconName else
         {
             return nil
         }
