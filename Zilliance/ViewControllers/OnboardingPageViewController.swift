@@ -63,16 +63,6 @@ class OnboardingPageViewController: UIPageViewController {
     
     }
     
-    
-    func gotoFavoriteActivity() {
-        
-        guard let viewController = UIStoryboard.init(name: "FavoriteActivity", bundle: nil).instantiateInitialViewController() as? FavoriteActivityTableViewController else {
-            assertionFailure()
-            return
-        }
-        
-        self.navigationController?.pushViewController(viewController, animated: true)
-    }
 
 }
 

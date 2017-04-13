@@ -56,6 +56,7 @@
 		8C4D28C41E9694F800034A20 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4D28C31E9694F800034A20 /* App.swift */; };
 		8C4D28C71E96CFEE00034A20 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C4D28C61E96CFEE00034A20 /* Onboarding.storyboard */; };
 		8C4D28C91E96D1A400034A20 /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4D28C81E96D1A400034A20 /* OnboardingPageViewController.swift */; };
+		8C4EAE191E9FCD3500D800E4 /* FavoriteActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4EAE181E9FCD3500D800E4 /* FavoriteActivityViewController.swift */; };
 		8CBBBE181E9558D600281C3C /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CBBBE171E9558D600281C3C /* Calendar.storyboard */; };
 		8CBBBE1A1E9576F800281C3C /* AddToCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBBBE191E9576F800281C3C /* AddToCalendarViewController.swift */; };
 		8CBBBE1D1E95890700281C3C /* AddCustom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CBBBE1C1E95890700281C3C /* AddCustom.storyboard */; };
@@ -63,7 +64,6 @@
 		8CBBBE211E958B6300281C3C /* AddValuesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBBBE1F1E958B6300281C3C /* AddValuesViewController.swift */; };
 		8CBBBE231E95925700281C3C /* IconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBBBE221E95925700281C3C /* IconCollectionViewCell.swift */; };
 		8CDAB8DA1E9BF42F006BFD4B /* FavoriteActivity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CDAB8D91E9BF42F006BFD4B /* FavoriteActivity.storyboard */; };
-		8CDAB8DC1E9C0873006BFD4B /* FavoriteActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDAB8DB1E9C0873006BFD4B /* FavoriteActivityTableViewController.swift */; };
 		E35668321E8C15BA00ED81D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35668311E8C15BA00ED81D9 /* AppDelegate.swift */; };
 		E35668391E8C15BA00ED81D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E35668381E8C15BA00ED81D9 /* Assets.xcassets */; };
 		E356683C1E8C15BA00ED81D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E356683A1E8C15BA00ED81D9 /* LaunchScreen.storyboard */; };
@@ -141,6 +141,7 @@
 		8C4D28C31E9694F800034A20 /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		8C4D28C61E96CFEE00034A20 /* Onboarding.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		8C4D28C81E96D1A400034A20 /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnboardingPageViewController.swift; path = ViewControllers/OnboardingPageViewController.swift; sourceTree = "<group>"; };
+		8C4EAE181E9FCD3500D800E4 /* FavoriteActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoriteActivityViewController.swift; path = ViewControllers/FavoriteActivityViewController.swift; sourceTree = "<group>"; };
 		8CBBBE171E9558D600281C3C /* Calendar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
 		8CBBBE191E9576F800281C3C /* AddToCalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddToCalendarViewController.swift; path = ViewControllers/AddToCalendarViewController.swift; sourceTree = "<group>"; };
 		8CBBBE1C1E95890700281C3C /* AddCustom.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddCustom.storyboard; sourceTree = "<group>"; };
@@ -148,7 +149,6 @@
 		8CBBBE1F1E958B6300281C3C /* AddValuesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddValuesViewController.swift; path = ViewControllers/AddValuesViewController.swift; sourceTree = "<group>"; };
 		8CBBBE221E95925700281C3C /* IconCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IconCollectionViewCell.swift; path = CustomCells/IconCollectionViewCell.swift; sourceTree = "<group>"; };
 		8CDAB8D91E9BF42F006BFD4B /* FavoriteActivity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FavoriteActivity.storyboard; sourceTree = "<group>"; };
-		8CDAB8DB1E9C0873006BFD4B /* FavoriteActivityTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoriteActivityTableViewController.swift; path = ViewControllers/FavoriteActivityTableViewController.swift; sourceTree = "<group>"; };
 		D2CBE99AE0B6F1497DB66ABA /* Pods-ZillianceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZillianceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZillianceTests/Pods-ZillianceTests.release.xcconfig"; sourceTree = "<group>"; };
 		DE7A740D362571F85742B547 /* Pods_ZillianceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZillianceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E356682E1E8C15BA00ED81D9 /* Zilliance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zilliance.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -314,7 +314,7 @@
 				8C4D28C61E96CFEE00034A20 /* Onboarding.storyboard */,
 				8CDAB8D91E9BF42F006BFD4B /* FavoriteActivity.storyboard */,
 				8C4D28C81E96D1A400034A20 /* OnboardingPageViewController.swift */,
-				8CDAB8DB1E9C0873006BFD4B /* FavoriteActivityTableViewController.swift */,
+				8C4EAE181E9FCD3500D800E4 /* FavoriteActivityViewController.swift */,
 			);
 			name = Onboarding;
 			sourceTree = "<group>";
@@ -733,7 +733,6 @@
 				8C3EA47D1E92F0F100F56DED /* LocalNotificationsHelper.swift in Sources */,
 				04B29A671E97AB680090E52E /* PartialSizePresentationController.swift in Sources */,
 				8C3EA4611E92E7BF00F56DED /* Database.swift in Sources */,
-				8CDAB8DC1E9C0873006BFD4B /* FavoriteActivityTableViewController.swift in Sources */,
 				04647C751E97D85C0040CA46 /* FineTuneActivityViewController.swift in Sources */,
 				8C3EA4641E92E7BF00F56DED /* ArrayDataSource.swift in Sources */,
 				04E6F5671E9E7FEC00EBD119 /* EmbeddedFeelingTableViewModel.swift in Sources */,
@@ -746,6 +745,7 @@
 				8C3EA45A1E92E6D000F56DED /* PieView.swift in Sources */,
 				8C3EA4701E92E9D600F56DED /* Int+Extensions.swift in Sources */,
 				8C3EA4741E92E9D600F56DED /* UIDevice+Extensions.swift in Sources */,
+				8C4EAE191E9FCD3500D800E4 /* FavoriteActivityViewController.swift in Sources */,
 				8CBBBE231E95925700281C3C /* IconCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
