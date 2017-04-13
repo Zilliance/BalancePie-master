@@ -114,7 +114,17 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
     // MARK: Slice Options
     
     private func edit(userActivity: UserActivity) {
+        let addStoryboard = UIStoryboard(name: "AddCustom", bundle: nil)
+        guard let editActivtyVC = addStoryboard.instantiateViewController(withIdentifier: "EditActivityViewController") as? EditActivityViewController
+            else{
+                return
+        }
         
+        editActivtyVC.activity = userActivity
+        
+        let navigation = UINavigationController(rootViewController: editActivtyVC)
+        
+        self.present(navigation, animated: true)
     }
     
     private func fineTune(userActivity: UserActivity) {

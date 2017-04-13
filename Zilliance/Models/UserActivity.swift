@@ -85,12 +85,22 @@ final class UserActivity: Object {
     
     func removeBadValues()
     {
-        
+        self.badValues.forEach{
+            if let index = self.values.index(of: $0)
+            {
+                self.values.remove(objectAtIndex: index)
+            }
+        }
     }
     
     func removeGoodValues()
     {
-        
+        self.goodValues.forEach{
+            if let index = self.values.index(of: $0)
+            {
+                self.values.remove(objectAtIndex: index)
+            }
+        }
     }
     
     override func detached() -> UserActivity {
