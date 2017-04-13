@@ -10,25 +10,26 @@ import Foundation
 import UIKit
 import ActionSheetPicker_3_0
 
-enum TableSections: Int
-{
-    case duration = 0
-    case feelingType
-    case goodFeelings
-    case badFeelings
-    
-    static func feelingSections() -> [Int]{
-        return [feelingType.rawValue, goodFeelings.rawValue, badFeelings.rawValue]
-    }
-}
-
 final class EditActivityViewController: UIViewController{
+    
+    enum TableSections: Int
+    {
+        case duration = 0
+        case feelingType
+        case goodFeelings
+        case badFeelings
+        
+        static func feelingSections() -> [Int]{
+            return [feelingType.rawValue, goodFeelings.rawValue, badFeelings.rawValue]
+        }
+    }
+    
     @IBOutlet var tableView: UITableView!
     
     var activity: UserActivity! {
         didSet{
             self.activity = activity.detached()
-            self.title = self.activity.activity.name
+            self.title = self.activity.activity?.name
         }
     }
     
@@ -46,7 +47,6 @@ final class EditActivityViewController: UIViewController{
 
 extension EditActivityViewController: UITableViewDataSource
 {
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 4
     }
@@ -54,6 +54,12 @@ extension EditActivityViewController: UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case TableSections.goodFeelings.rawValue:
+            
+            if (self.activity.feeling == .lousy || self.activity.feeling == .neutral)
+            {
+                return 0
+            }
+            
             return max(self.activity.goodValues.count, 1)
         case TableSections.badFeelings.rawValue:
             
@@ -119,6 +125,8 @@ extension EditActivityViewController: UITableViewDataSource
         default:
             break
         }
+        
+        cell.selectionStyle = .none
         
         return cell
         
@@ -208,9 +216,7 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
             }
             
             itemsVC.doneAction = { indexes in
-                
                 completion(indexes)
-                
             }
             
             let navigation = UINavigationController(rootViewController: itemsVC)

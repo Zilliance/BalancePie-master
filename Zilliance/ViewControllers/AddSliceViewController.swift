@@ -12,6 +12,19 @@ import ActionSheetPicker_3_0
 
 final class AddSliceViewController: UIViewController
 {
+    enum TableSections: Int
+    {
+        case name = 0
+        case duration
+        case feelingType
+        case goodFeelings
+        case badFeelings
+        
+        static func feelingSections() -> [Int]{
+            return [feelingType.rawValue, goodFeelings.rawValue, badFeelings.rawValue]
+        }
+    }
+    
     fileprivate static let initialRowFeelingsTable: Int = 3
     
     @IBOutlet weak var tuneSliceButton: UIButton!
@@ -21,17 +34,11 @@ final class AddSliceViewController: UIViewController
     @IBOutlet fileprivate weak var tableView: UITableView!
 
     var newActivity = UserActivity()
-
-    fileprivate var feelingInternalTableModel: EmbeddedFeelingTableViewModel!
     
     fileprivate weak var table: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        feelingInternalTableModel = EmbeddedFeelingTableViewModel(initialSection: AddSliceViewController.initialRowFeelingsTable, userActivity: newActivity)
-        
-        self.selectActivityName()
         
         //setup width and corner radius
         for view in [self.tuneSliceButton, self.addAnotherActivityButton] as [UIView]
@@ -43,11 +50,36 @@ final class AddSliceViewController: UIViewController
         
     }
     
-    @IBAction func doneTapped(_ sender: Any) {
-        //save activity
+    func validateValues() -> Bool
+    {
+        if (self.newActivity.activity == nil)
+        {
+            showAlert(message: "Please select an activity", title: "")
+            return false
+        }
+        else
+        if (self.newActivity.duration == 0)
+        {
+            showAlert(message: "Please select a duration for the activity", title: "")
+            return false
+        }
+        else
+            if (self.newActivity.feeling == .none)
+            {
+                showAlert(message: "Please select how you feel about the activity", title: "")
+                return false
+        }
         
-        self.saveActivity()
-        self.dismiss(animated: true, completion: nil)
+        return true
+    }
+    
+    @IBAction func doneTapped(_ sender: Any) {
+        
+        if (self.validateValues())
+        {
+            self.saveActivity()
+            self.dismiss(animated: true, completion: nil)
+        }
 
     }
     
@@ -62,7 +94,6 @@ final class AddSliceViewController: UIViewController
         
         //since we'll keep modifying it we'll need an in memory copy of it
         self.newActivity = self.newActivity.detached()
-        self.feelingInternalTableModel.userActivity = self.newActivity
         
     }
     
@@ -95,9 +126,11 @@ final class AddSliceViewController: UIViewController
     }
     
     @IBAction func fineTuneTapped(_ sender: Any) {
-        self.saveActivity()
-        //open fine tune
-        fineTune(userActivity: self.newActivity)
+        if (self.validateValues())
+        {
+            self.saveActivity()
+            fineTune(userActivity: self.newActivity)
+        }
     }
     
     @IBAction func addAnotherSliceTapped(_ sender: Any) {
@@ -124,98 +157,107 @@ final class AddSliceViewController: UIViewController
 extension AddSliceViewController: UITableViewDataSource
 {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3 + self.feelingInternalTableModel.numberOfSections()
+        return 5
     } 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if (self.feelingInternalTableModel.insideOfTable(section: section))
+        switch section
         {
-            return self.feelingInternalTableModel.numberOfRows(section: section)
+        case TableSections.goodFeelings.rawValue:
+            
+            if (self.newActivity.feeling == .lousy || self.newActivity.feeling == .neutral)
+            {
+                return 0
+            }
+            
+            return max(self.newActivity.goodValues.count, 1)
+        case TableSections.badFeelings.rawValue:
+            
+            if (self.newActivity.feeling == .great)
+            {
+                return 0
+            }
+            
+            return max(self.newActivity.badValues.count, 1)
+        default:
+            return 1
         }
-        
-        return 1
 
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SimpleCell")!
-        var title = ""
-        
-        if (self.feelingInternalTableModel.insideOfTable(section: indexPath.section))
-        {
-            title = self.feelingInternalTableModel.titleForIndexPath(index: indexPath)
-            cell.textLabel?.text = title
+        var cell: UITableViewCell!
+        switch (indexPath.section, indexPath.row) {
             
-            return cell
-
-        }
-        
-        else
-        {
-            title = ""
-            switch indexPath.section {
-            case 0:
-                if let activity = self.newActivity.activity
-                {
-                    title = activity.name
-                }
-                
-            case 1:
-                title = self.newActivity.duration.userFriendlyText
-
-            case 2:
-                title = self.newActivity.feeling.string()
-
-            default:
+        case (TableSections.name.rawValue, _):
+            cell = tableView.dequeueReusableCell(withIdentifier: "subtitleCell")!
+            cell.textLabel?.text = "Name of this activity"
+            
+            cell.detailTextLabel?.text = self.newActivity.activity?.name ?? " "
+            
+        case (TableSections.duration.rawValue, _):
+            
+            cell = tableView.dequeueReusableCell(withIdentifier: "subtitleCell")!
+            cell.textLabel?.text = "About how long"
+            cell.detailTextLabel?.text = self.newActivity.duration.userFriendlyText
+            
+        case (TableSections.feelingType.rawValue, _):
+            
+            cell = tableView.dequeueReusableCell(withIdentifier: "subtitleCell")!
+            cell.textLabel?.text = "How do you feel"
+            cell.detailTextLabel?.text = self.newActivity.feeling.string()
+            
+        case (TableSections.goodFeelings.rawValue, 0):
+            
+            cell = tableView.dequeueReusableCell(withIdentifier: "subtitleCell")!
+            cell.textLabel?.text = "Feels good because"
+            if (self.newActivity.goodValues.count == 0)
+            {
+                cell.detailTextLabel?.text = ""
                 break
             }
-        }
-        
-        cell.textLabel?.text = title
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?{
-        
-        if (self.feelingInternalTableModel.insideOfTable(section: section))
-        {
-            return self.feelingInternalTableModel.titleForSection(section: section) ?? ""
-        }
-        
-        switch section {
-        case 0:
-            return "Name of this activity"
-        case 1:
-            return "About how long"
-        case 2:
-            return "How do you feel"
+            cell.detailTextLabel?.text = self.newActivity.goodValues[indexPath.row].name
+            
+        case (TableSections.badFeelings.rawValue, 0):
+            
+            cell = tableView.dequeueReusableCell(withIdentifier: "subtitleCell")!
+            cell.textLabel?.text = "Feels bad because"
+            if (self.newActivity.badValues.count == 0)
+            {
+                cell.detailTextLabel?.text = ""
+                break
+            }
+            cell.detailTextLabel?.text = self.newActivity.badValues[indexPath.row].name
+            
+        case (TableSections.goodFeelings.rawValue, 1...Int(INT_MAX)):
+            
+            cell = tableView.dequeueReusableCell(withIdentifier: "basicCell")!
+            cell.textLabel?.text = self.newActivity.goodValues[indexPath.row].name
+            
+        case (TableSections.badFeelings.rawValue, 1...Int(INT_MAX)):
+            
+            cell = tableView.dequeueReusableCell(withIdentifier: "basicCell")!
+            cell.textLabel?.text = self.newActivity.badValues[indexPath.row].name
+            
         default:
             break
         }
         
-        return ""
+        cell.selectionStyle = .none
+        
+        return cell
+        
     }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if (self.feelingInternalTableModel.insideOfTable(section: section))
-        {
-            let title = self.feelingInternalTableModel.titleForSection(section: section)
-            
-            if (title == nil)
-            {
-                return 0
-            }
-        }
-        return 44
-    }
-    
+
 }
 
 extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitioningDelegate
 {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return indexPath.row == 0 ? 64 : 34
+    }
     
     func selectActivityName()
     {
@@ -224,9 +266,9 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
         
         var initialIndex = 0
         
-        if (self.newActivity.activity != nil)
+        if let activityName = self.newActivity.activity?.name
         {
-            initialIndex = activitiesNames.index(of: self.newActivity.activity.name)!
+            initialIndex = activitiesNames.index(of: activityName)!
         }
         
         ActionSheetStringPicker.show(withTitle: "Activity", rows: activitiesNames, initialSelection: initialIndex, doneBlock: { (picker, index, name) in
@@ -234,8 +276,6 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
             self.newActivity.activity = activities[index]
             
             self.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .fade)
-            
-            self.selectDuration()
             
         }, cancel: { (picker) in
             return
@@ -265,8 +305,6 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
             
             self.tableView.reloadRows(at: [IndexPath(row: 0, section: 1)], with: .fade)
             
-            self.selectHowItFeels()
-            
         }, cancel: { (picker) in
             
         }, origin: UIButton())
@@ -281,19 +319,13 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
         
         ActionSheetStringPicker.show(withTitle: "How do you feel about it ?", rows: feelingsNames, initialSelection: initialIndex, doneBlock: { (picker, index, name) in
             
-            self.tableView.beginUpdates()
-            
-            self.tableView.deleteSections(IndexSet(self.feelingInternalTableModel.sections()), with: .fade)
-            
             self.newActivity.feeling = feelings[index]
             
-            self.tableView.insertSections(IndexSet(self.feelingInternalTableModel.sections()), with: .fade)
+            let feelingSections: [Int] = TableSections.feelingSections()
             
-            self.tableView.reloadRows(at: [IndexPath(row: 0, section: 2)], with: .fade)
+            self.tableView.reloadSections(IndexSet(feelingSections), with: .fade)
             
             self.tableView.endUpdates()
-            
-            self.selectValues(forSection: AddSliceViewController.initialRowFeelingsTable)
             
             return
         }, cancel: { (picker) in
@@ -301,16 +333,12 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
         }, origin: tableView)
     }
     
-    func selectValues(forSection section: Int)
+    
+    func selectValues(values: [Value], initialIndexes: [Int], completion: @escaping ([Int])->())
     {
-        let values = self.feelingInternalTableModel.availableValuesForSection(section: section)
-        let initialIndexes = self.feelingInternalTableModel.selectedValuesIndexes(section: section)
-        
         let storyboard = UIStoryboard(name: "ItemsSelection", bundle: nil)
         if let itemsVC = storyboard.instantiateInitialViewController() as? ItemsSelectionViewController
         {
-            //itemsVC.modalPresentationStyle = .custom
-            //itemsVC.transitioningDelegate = self
             
             itemsVC.selectedItemsIndexes = Set(initialIndexes)
             
@@ -326,11 +354,39 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
                 print("this should launch a controller to show the activity creation")
             }
             
-            itemsVC.title = self.feelingInternalTableModel.titleForSection(section: section)
-            
             itemsVC.doneAction = { indexes in
-                
-                self.feelingInternalTableModel.deleteValuesForSection(section: section)
+                completion(indexes)
+            }
+            
+            let navigation = UINavigationController(rootViewController: itemsVC)
+            navigation.transitioningDelegate = self
+            navigation.modalPresentationStyle = .custom
+            
+            self.present(navigation, animated: true, completion: nil)
+            
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        //activity name
+        
+        switch indexPath.section {
+        case TableSections.name.rawValue:
+            self.selectActivityName()
+            
+        case TableSections.duration.rawValue:
+            self.selectDuration()
+            
+        case TableSections.feelingType.rawValue:
+            self.selectHowItFeels()
+            
+        case TableSections.goodFeelings.rawValue:
+            let values = Value.goodValues
+            let selectedValues = values.flatMap({self.newActivity.goodValues.index(of: $0) == nil ? nil : values.index(of: $0)})
+            
+            self.selectValues(values: values, initialIndexes: selectedValues, completion: { (indexes) in
+                self.newActivity.removeGoodValues()
                 
                 for index in indexes
                 {
@@ -338,52 +394,27 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
                     self.newActivity.values.append(value)
                 }
                 
-                self.tableView.reloadSections(IndexSet([section]), with: .fade)
-                
-                let nextSection = section + 1
-                if (self.feelingInternalTableModel.insideOfTable(section: nextSection))
-                {
-                    self.selectValues(forSection: nextSection)
-                }
-                else
-                {
-                    let lastSection = self.tableView.numberOfSections - 1
-                    let lastRowIndex = IndexPath(row: self.tableView.numberOfRows(inSection: lastSection) - 1, section: lastSection)
-                    self.tableView.scrollToRow(at: lastRowIndex, at: .bottom, animated: true)
-                }
-
-            }
-
-            let navigation = UINavigationController(rootViewController: itemsVC)
-            navigation.transitioningDelegate = self
-            navigation.modalPresentationStyle = .custom
+                self.tableView.reloadSections(IndexSet([TableSections.goodFeelings.rawValue]), with: .fade)
+            })
             
-            self.present(navigation, animated: true, completion: nil)
-
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        //activity name
-        if (indexPath.section == 0)
-        {
-            self.selectActivityName()
-        }
-        
-        if (indexPath.section == 1)
-        {
-            self.selectDuration()
-        }
-        
-        if (indexPath.section == 2)
-        {
-            self.selectHowItFeels()
-        }
-        
-        if (self.feelingInternalTableModel.insideOfTable(section: indexPath.section))
-        {
-            self.selectValues(forSection: indexPath.section)
+        case TableSections.badFeelings.rawValue:
+            let values = Value.badValues
+            let selectedValues = values.flatMap({self.newActivity.badValues.index(of: $0) == nil ? nil : values.index(of: $0)})
+            
+            self.selectValues(values: values, initialIndexes: selectedValues, completion: { (indexes) in
+                self.newActivity.removeBadValues()
+                
+                for index in indexes
+                {
+                    let value = values[index]
+                    self.newActivity.values.append(value)
+                }
+                
+                self.tableView.reloadSections(IndexSet([TableSections.badFeelings.rawValue]), with: .fade)
+            })
+            
+        default:
+            break
         }
         
     }

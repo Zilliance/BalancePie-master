@@ -8,7 +8,8 @@
 
 import UIKit
 
-class AddActivityViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class AddActivityViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate
+{
 
     @IBOutlet weak var activityTextField: UITextField!
     @IBOutlet weak var selectAnIconLabel: UILabel!
