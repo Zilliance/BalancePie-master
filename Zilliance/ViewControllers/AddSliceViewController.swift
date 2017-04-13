@@ -66,7 +66,7 @@ final class AddSliceViewController: UIViewController
         else
             if (self.newActivity.feeling == .none)
             {
-                showAlert(message: "Please select how you feel about the activity, title: "")
+                showAlert(message: "Please select how you feel about the activity", title: "")
                 return false
         }
         
@@ -126,9 +126,11 @@ final class AddSliceViewController: UIViewController
     }
     
     @IBAction func fineTuneTapped(_ sender: Any) {
-        self.saveActivity()
-        //open fine tune
-        fineTune(userActivity: self.newActivity)
+        if (self.validateValues())
+        {
+            self.saveActivity()
+            fineTune(userActivity: self.newActivity)
+        }
     }
     
     @IBAction func addAnotherSliceTapped(_ sender: Any) {

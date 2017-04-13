@@ -269,33 +269,42 @@
                                 </connections>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="bH3-Uf-vwh">
-                                <rect key="frame" x="36" y="489" width="303" height="170"/>
+                                <rect key="frame" x="31" y="489" width="313" height="170"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5m-t8-ytB">
-                                        <rect key="frame" x="0.0" y="0.0" width="303" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="313" height="50"/>
+                                        <color key="backgroundColor" red="0.0" green="0.73725490199999999" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="xsm-dA-UVW"/>
                                         </constraints>
-                                        <state key="normal" title="Fine Tune this Slice"/>
+                                        <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="23"/>
+                                        <state key="normal" title="Fine Tune this Slice">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
                                             <action selector="fineTuneTapped:" destination="vev-B3-EIv" eventType="touchUpInside" id="XCQ-Ix-pFa"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2U4-t9-XIp">
-                                        <rect key="frame" x="0.0" y="60" width="303" height="50"/>
+                                        <rect key="frame" x="0.0" y="60" width="313" height="50"/>
+                                        <color key="backgroundColor" red="0.0" green="0.73725490199999999" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="1m3-i8-51j"/>
                                         </constraints>
-                                        <state key="normal" title="Add Another Slice"/>
+                                        <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="23"/>
+                                        <state key="normal" title="Add Another Slice">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
                                             <action selector="addAnotherSliceTapped:" destination="vev-B3-EIv" eventType="touchUpInside" id="vAf-gv-eb5"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FGy-cb-chr">
-                                        <rect key="frame" x="0.0" y="120" width="303" height="50"/>
+                                        <rect key="frame" x="0.0" y="120" width="313" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="CSf-Md-RSy"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="20"/>
                                         <state key="normal" title="Back to Pie"/>
                                         <connections>
                                             <action selector="backToPieTapped:" destination="vev-B3-EIv" eventType="touchUpInside" id="tev-4H-TCo"/>
@@ -305,6 +314,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="170" id="DSd-r3-Iqn"/>
                                 </constraints>
+                                <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -313,9 +323,9 @@
                             <constraint firstItem="BnA-gA-Jdc" firstAttribute="top" secondItem="rXQ-hf-UO6" secondAttribute="bottom" id="IdE-hZ-Hak"/>
                             <constraint firstAttribute="trailing" secondItem="BnA-gA-Jdc" secondAttribute="trailing" id="QMH-Qj-PsW"/>
                             <constraint firstItem="bH3-Uf-vwh" firstAttribute="top" secondItem="BnA-gA-Jdc" secondAttribute="bottom" constant="10" id="ScH-VG-ZtU"/>
-                            <constraint firstItem="bH3-Uf-vwh" firstAttribute="leading" secondItem="oxx-Z5-7BZ" secondAttribute="leadingMargin" constant="20" id="gkm-mA-pGo"/>
+                            <constraint firstItem="bH3-Uf-vwh" firstAttribute="leading" secondItem="oxx-Z5-7BZ" secondAttribute="leadingMargin" constant="15" id="gkm-mA-pGo"/>
                             <constraint firstItem="AZo-k5-Gej" firstAttribute="top" secondItem="bH3-Uf-vwh" secondAttribute="bottom" constant="8" id="nIN-hY-ivl"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="bH3-Uf-vwh" secondAttribute="trailing" constant="20" id="wq9-X5-QAO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bH3-Uf-vwh" secondAttribute="trailing" constant="15" id="wq9-X5-QAO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Slice" id="f24-Tl-FWt">
