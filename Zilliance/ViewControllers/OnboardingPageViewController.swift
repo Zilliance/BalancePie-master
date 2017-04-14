@@ -26,7 +26,7 @@ class OnboardingPageViewController: UIPageViewController {
     }()
 
     fileprivate lazy var favoriteViewController: UIViewController = {
-        return UIStoryboard.init(name: "FavoriteActivity", bundle: nil).instantiateInitialViewController()
+        return UIStoryboard(name: "FavoriteActivity", bundle: nil).instantiateInitialViewController()
     }()!
     
     override func viewDidLoad() {
@@ -59,7 +59,7 @@ class OnboardingPageViewController: UIPageViewController {
 
     private func viewController(for scene: OnboardingScene) -> UIViewController {
         
-        return UIStoryboard.init(name: "Onboarding", bundle: nil).instantiateViewController(withIdentifier:scene.rawValue)
+        return UIStoryboard(name: "Onboarding", bundle: nil).instantiateViewController(withIdentifier:scene.rawValue)
     
     }
     

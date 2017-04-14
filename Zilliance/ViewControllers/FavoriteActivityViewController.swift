@@ -89,7 +89,7 @@ class FavoriteActivityViewController: UIViewController {
         
         self.presenting = .activities
         
-        guard let itemSelectionViewController = UIStoryboard.init(name: "ItemsSelection", bundle: nil).instantiateInitialViewController() as? ItemsSelectionViewController else {
+        guard let itemSelectionViewController = UIStoryboard(name: "ItemsSelection", bundle: nil).instantiateInitialViewController() as? ItemsSelectionViewController else {
             assertionFailure()
             return
         }
@@ -109,7 +109,7 @@ class FavoriteActivityViewController: UIViewController {
         itemSelectionViewController.createNewItemAction = {
             
             itemSelectionViewController.dismiss(animated: true, completion: {
-                guard let customActivityViewController = UIStoryboard.init(name: "AddCustom", bundle: nil).instantiateViewController(withIdentifier: "AddActivity") as? UINavigationController else {
+                guard let customActivityViewController = UIStoryboard(name: "AddCustom", bundle: nil).instantiateViewController(withIdentifier: "AddActivity") as? UINavigationController else {
                     assertionFailure()
                     return
                 }
@@ -151,7 +151,7 @@ class FavoriteActivityViewController: UIViewController {
         
         self.presenting = .values
         
-        guard let itemSelectionViewController = UIStoryboard.init(name: "ItemsSelection", bundle: nil).instantiateInitialViewController() as? ItemsSelectionViewController else {
+        guard let itemSelectionViewController = UIStoryboard(name: "ItemsSelection", bundle: nil).instantiateInitialViewController() as? ItemsSelectionViewController else {
             assertionFailure()
             return
         }
@@ -170,7 +170,7 @@ class FavoriteActivityViewController: UIViewController {
         itemSelectionViewController.createNewItemAction = {
             
             itemSelectionViewController.dismiss(animated: true, completion: {
-                guard let customValueViewController = UIStoryboard.init(name: "AddCustom", bundle: nil).instantiateViewController(withIdentifier: "AddValue") as? UINavigationController else {
+                guard let customValueViewController = UIStoryboard(name: "AddCustom", bundle: nil).instantiateViewController(withIdentifier: "AddValue") as? UINavigationController else {
                     assertionFailure()
                     return
                 }
@@ -235,8 +235,7 @@ class FavoriteActivityViewController: UIViewController {
     }
     
     private func gotoPie() {
-        
-        guard let pieViewController = UIStoryboard.init(name: "PieViewController", bundle: nil).instantiateInitialViewController() else {
+        guard let pieViewController = UIStoryboard(name: "Pie", bundle: nil).instantiateInitialViewController() else {
             assertionFailure()
             return
         }
