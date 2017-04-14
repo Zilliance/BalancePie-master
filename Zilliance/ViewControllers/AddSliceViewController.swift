@@ -96,7 +96,6 @@ final class AddSliceViewController: UIViewController
     }
     
     @IBAction func cancelTapped(_ sender: Any) {
-
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -138,7 +137,7 @@ final class AddSliceViewController: UIViewController
     @IBAction func fineTuneTapped(_ sender: Any) {
         if (self.validateValues())
         {
-//            self.saveActivity()
+            self.saveActivity()
             fineTune(userActivity: self.newActivity)
         }
     }
