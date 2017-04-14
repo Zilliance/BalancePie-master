@@ -17,8 +17,7 @@ import RealmSwift
     case lousy
     case mixed
     
-    func string() -> String
-    {
+    var string: String {
         switch self {
         case .none:
             return ""
@@ -33,9 +32,7 @@ import RealmSwift
         }
     }
     
-    static let allFeelings: [Feeling] = {
-        return [Feeling.great, Feeling.neutral, Feeling.lousy, Feeling.mixed]
-    }()
+    static let all: [Feeling] = [.great, .neutral, .lousy, .mixed]
 }
 
 final class UserActivity: Object {
@@ -58,17 +55,16 @@ final class UserActivity: Object {
     var color: UIColor {
         switch(feeling){
         case .great:
-            return UIColor.red
+            return .feelingGreat
         case .neutral:
-            return UIColor.blue
+            return .feelingNeutral
         case .lousy:
-            return UIColor.black
+            return .feelingLousy
         case .mixed:
-            return UIColor.green
+            return .feelingMixed
         case .none:
             return UIColor.white
         }
-        
     }
     
     override class func primaryKey() -> String? {
@@ -109,4 +105,11 @@ final class UserActivity: Object {
         return detachedActiviy
     }
 
+}
+
+extension UIColor {
+    static let feelingGreat = UIColor.color(forRed: 91.0, green: 178.0, blue: 86.0, alpha: 1)
+    static let feelingNeutral = UIColor.color(forRed: 255.0, green: 206.0, blue: 7.0, alpha: 1)
+    static let feelingLousy = UIColor.color(forRed: 255.0, green: 130.0, blue: 16.0, alpha: 1)
+    static let feelingMixed = UIColor.color(forRed: 235.0, green: 60.0, blue: 67.0, alpha: 1)
 }

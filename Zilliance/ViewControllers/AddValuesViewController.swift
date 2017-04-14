@@ -19,6 +19,10 @@ class AddValuesViewController: UIViewController {
         }
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupViews()
@@ -39,9 +43,9 @@ class AddValuesViewController: UIViewController {
         // Name field
 
         self.valueTextField.backgroundColor = .clear
-        self.valueTextField.font = .zillianceRegularFont(ofSize: 16.0)
+        self.valueTextField.font = .muliRegular(size: 16.0)
         self.valueTextField.attributedPlaceholder = NSAttributedString(string: "Name of value, .e.g. Happiness", attributes: [
-            NSFontAttributeName : UIFont.zillianceRegularFont(ofSize: 16.0)
+            NSFontAttributeName : UIFont.muliRegular(size: 16.0)
         ])
     }
     

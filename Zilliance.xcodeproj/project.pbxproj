@@ -196,8 +196,8 @@
 		04647C6F1E97D82D0040CA46 /* FineTuneActivities */ = {
 			isa = PBXGroup;
 			children = (
-				04647C741E97D85C0040CA46 /* FineTuneActivityViewController.swift */,
 				04647C701E97D8450040CA46 /* FineTuneActivity.storyboard */,
+				04647C741E97D85C0040CA46 /* FineTuneActivityViewController.swift */,
 			);
 			name = FineTuneActivities;
 			sourceTree = "<group>";

@@ -10,13 +10,17 @@ import Foundation
 
 extension String {
     
-    func toMinutes() -> Minutes {
-        guard self.characters.count > 0 else {
+    var minutes: Minutes {
+        let components = self.components(separatedBy: ":")
+        
+        guard components.count == 2 else {
+            assertionFailure()
             return 0
         }
-        let newString = self.components(separatedBy: ":")
-        let hours = Int(newString[0])!
-        let minutes = Int(newString[1])!
+        
+        let hours = Int(components[0])!
+        let minutes = Int(components[1])!
+        
         return hours * 60 + minutes
     }
 

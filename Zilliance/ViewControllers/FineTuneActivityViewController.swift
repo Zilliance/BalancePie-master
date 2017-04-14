@@ -35,7 +35,16 @@ final class FineTuneActivityViewController: UIViewController {
     fileprivate var currentViewController: UIViewController?
     
     var items: [FineTuneItem]!
-
+    var zUserActivity: UserActivity? {
+        didSet {
+            self.title = zUserActivity?.activity?.name ?? ""
+        }
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,16 +52,20 @@ final class FineTuneActivityViewController: UIViewController {
         self.scheduleButton.layer.borderWidth = App.Appearance.zillianceBorderWidth
         self.scheduleButton.layer.borderColor = UIColor.lightGray.cgColor
         
-        showViewController(controller: items[0].viewController)
+        // Add a cancel button when we are the root view controller in the navigation stack
         
-        navigationController?.isNavigationBarHidden = true
-
+        if self.navigationController?.viewControllers.first == self {
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelTapped(_:)))
+        }
+        
+        self.showViewController(controller: items[0].viewController)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
+    // MARK: - User Actions
 
     @IBAction func scheduleButtonTapped(_ sender: Any) {
         

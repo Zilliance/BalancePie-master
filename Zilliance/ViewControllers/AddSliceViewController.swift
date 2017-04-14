@@ -24,19 +24,22 @@ final class AddSliceViewController: UIViewController
             return [feelingType.rawValue, goodFeelings.rawValue, badFeelings.rawValue]
         }
     }
-    
+
     fileprivate static let initialRowFeelingsTable: Int = 3
     fileprivate var isPresentingActivities = false
     
     @IBOutlet weak var tuneSliceButton: UIButton!
-    
     @IBOutlet weak var addAnotherActivityButton: UIButton!
-    
     @IBOutlet fileprivate weak var tableView: UITableView!
 
     var newActivity = UserActivity()
     
+    fileprivate var feelingInternalTableModel: EmbeddedFeelingTableViewModel!
     fileprivate weak var table: UITableView!
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -127,11 +130,8 @@ final class AddSliceViewController: UIViewController
         let items = [fineTuneItem0, fineTuneItem1]
         
         fineTuneVC.items = items
-        
         let navigationFineTuneVC = UINavigationController(rootViewController: fineTuneVC)
-        
         self.present(navigationFineTuneVC, animated: true, completion: nil)
-        
     }
     
     @IBAction func fineTuneTapped(_ sender: Any) {
@@ -216,7 +216,7 @@ extension AddSliceViewController: UITableViewDataSource
             
             cell = tableView.dequeueReusableCell(withIdentifier: "subtitleCell")!
             cell.textLabel?.text = "How do you feel"
-            cell.detailTextLabel?.text = self.newActivity.feeling.string()
+            cell.detailTextLabel?.text = self.newActivity.feeling.string
             
         case (TableSections.goodFeelings.rawValue, 0):
             
@@ -342,8 +342,8 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
     
     func selectHowItFeels()
     {
-        let feelings = Feeling.allFeelings
-        let feelingsNames = feelings.map({$0.string()})
+        let feelings = Feeling.all
+        let feelingsNames = feelings.map({$0.string})
         
         let initialIndex = feelings.index(of: self.newActivity.feeling) ?? 0
         

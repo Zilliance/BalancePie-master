@@ -9,16 +9,18 @@
 import UIKit
 import Charts
 
+extension UIColor {
+    static let emptySlice = UIColor(white: 0.9, alpha: 1.0)
+}
+
+fileprivate let imageMinimumSizePercentageThreshold: Double = 5
+
 final class PieView: UIView {
     
     private var pieChartView = PieChartView()
-    private let plusButton = UIButton(type: .custom)
+    private let plusButton = UIButton()
     
     fileprivate var activities: [UserActivity] = []
-    
-    var emptyColor = UIColor.white
-    
-    fileprivate let imageMinimumSizePercentageThreshold: Double = 5
     
     var plusButtonAction: (()->())? = nil
     var sliceAction: ((Int, UserActivity)->())? = nil
@@ -36,6 +38,10 @@ final class PieView: UIView {
     }
     
     private func commonInit() {
+        
+        // How can we draw a border around the pie?
+        // self.pieChartView.layer.borderColor = UIColor(white: 0.9, alpha: 1.0).cgColor
+        // self.pieChartView.layer.borderWidth = 3
         
         // Pie Chart
         
@@ -64,7 +70,6 @@ final class PieView: UIView {
         self.plusButton.translatesAutoresizingMaskIntoConstraints = false
         self.plusButton.setImage(#imageLiteral(resourceName: "btnPlus"), for: .normal)
         self.plusButton.addTarget(self, action: #selector(plusButtonTapped), for: .touchUpInside)
-        
 
         self.addSubview(plusButton)
         
@@ -72,33 +77,23 @@ final class PieView: UIView {
         self.plusButton.heightAnchor.constraint(equalToConstant: buttonHeight).isActive = true
         self.plusButton.centerXAnchor.constraint(equalTo: pieChartView.centerXAnchor).isActive = true
         self.plusButton.centerYAnchor.constraint(equalTo: pieChartView.centerYAnchor).isActive = true
-
-        
     }
     
-    // hides only the pie, keep the button
-    
-    func hidePie() {
-        self.pieChartView.isHidden = true
-    }
-    
-    // MARK: Pie Data
+    // MARK: - Pie Data
     
     func load(activities pieActivities:[UserActivity], availableMinutes: Minutes) {
+        self.activities = pieActivities.sorted { $0.feeling.rawValue > $1.feeling.rawValue }
         
-        self.pieChartView.isHidden = false
-        self.activities = pieActivities
         var yVals1: [ChartDataEntry] = [ChartDataEntry]()
         var colors: [NSUIColor] = [NSUIColor]()
         
         var emptyMinutes = availableMinutes
         
-        pieActivities.forEach { userActivity in
+        self.activities.forEach { userActivity in
             let iconImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
             
             iconImageView.image = userActivity.image
             iconImageView.contentMode = .center
-            // TODO: --green slice for now, change later
             iconImageView.layer.backgroundColor = userActivity.color.darker(amount: 0.25).cgColor
             iconImageView.layer.cornerRadius = iconImageView.frame.size.height/2
             iconImageView.clipsToBounds = true
@@ -122,7 +117,7 @@ final class PieView: UIView {
         assert(emptyMinutes > 0, "the duration of the activities is greater than your available time")
         
         yVals1.append(PieChartDataEntry(value: Double(emptyMinutes), label: nil, icon: nil))
-        colors.append(emptyColor)
+        colors.append(.emptySlice)
         
         let dataSet: PieChartDataSet = PieChartDataSet(values: yVals1, label: "Activities")
         
