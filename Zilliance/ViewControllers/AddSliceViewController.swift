@@ -20,9 +20,13 @@ final class AddSliceViewController: UIViewController
         case goodFeelings
         case badFeelings
         
-        static func feelingSections() -> [Int]{
-            return [feelingType.rawValue, goodFeelings.rawValue, badFeelings.rawValue]
-        }
+        static var count = 5
+        
+        static var feelings: [Int] = [
+            feelingType.rawValue,
+            goodFeelings.rawValue,
+            badFeelings.rawValue
+        ]
     }
 
     fileprivate static let initialRowFeelingsTable: Int = 3
@@ -198,27 +202,27 @@ extension AddSliceViewController: UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         var cell: UITableViewCell!
-        switch (indexPath.section, indexPath.row) {
+        switch (TableSection(rawValue: indexPath.section), indexPath.row) {
             
-        case (TableSection.name.rawValue, _):
+        case (.name?, _):
             cell = tableView.dequeueReusableCell(withIdentifier: "subtitleCell")!
             cell.textLabel?.text = "Name of this activity"
             
             cell.detailTextLabel?.text = self.newActivity.activity?.name ?? " "
             
-        case (TableSection.duration.rawValue, _):
+        case (.duration?, _):
             
             cell = tableView.dequeueReusableCell(withIdentifier: "subtitleCell")!
             cell.textLabel?.text = "About how long"
             cell.detailTextLabel?.text = self.newActivity.duration.userFriendlyText
             
-        case (TableSection.feelingType.rawValue, _):
+        case (.feelingType?, _):
             
             cell = tableView.dequeueReusableCell(withIdentifier: "subtitleCell")!
             cell.textLabel?.text = "How do you feel"
             cell.detailTextLabel?.text = self.newActivity.feeling.string
             
-        case (TableSection.goodFeelings.rawValue, 0):
+        case (.goodFeelings?, 0):
             
             cell = tableView.dequeueReusableCell(withIdentifier: "subtitleCell")!
             cell.textLabel?.text = "Feels good because"
@@ -229,7 +233,7 @@ extension AddSliceViewController: UITableViewDataSource
             }
             cell.detailTextLabel?.text = self.newActivity.goodValues[indexPath.row].name
             
-        case (TableSection.badFeelings.rawValue, 0):
+        case (.badFeelings?, 0):
             
             cell = tableView.dequeueReusableCell(withIdentifier: "subtitleCell")!
             cell.textLabel?.text = "Feels bad because"
@@ -240,12 +244,12 @@ extension AddSliceViewController: UITableViewDataSource
             }
             cell.detailTextLabel?.text = self.newActivity.badValues[indexPath.row].name
             
-        case (TableSection.goodFeelings.rawValue, 1...Int(INT_MAX)):
+        case (.goodFeelings?, _):
             
             cell = tableView.dequeueReusableCell(withIdentifier: "basicCell")!
             cell.textLabel?.text = self.newActivity.goodValues[indexPath.row].name
             
-        case (TableSection.badFeelings.rawValue, 1...Int(INT_MAX)):
+        case (.badFeelings?, _):
             
             cell = tableView.dequeueReusableCell(withIdentifier: "basicCell")!
             cell.textLabel?.text = self.newActivity.badValues[indexPath.row].name
@@ -348,18 +352,14 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
         let initialIndex = feelings.index(of: self.newActivity.feeling) ?? 0
         
         ActionSheetStringPicker.show(withTitle: "How do you feel about it ?", rows: feelingsNames, initialSelection: initialIndex, doneBlock: { (picker, index, name) in
+            let feelingSections: [Int] = TableSection.feelings
             
             self.newActivity.feeling = feelings[index]
-            
-            let feelingSections: [Int] = TableSection.feelingSections()
-            
             self.tableView.reloadSections(IndexSet(feelingSections), with: .fade)
-            
             self.tableView.endUpdates()
             
-            return
         }, cancel: { (picker) in
-            return
+            
         }, origin: tableView)
     }
     
@@ -421,17 +421,17 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
         
         //activity name
         
-        switch indexPath.section {
-        case TableSection.name.rawValue:
+        switch TableSection(rawValue: indexPath.section) {
+        case .name?:
             self.selectActivityName()
             
-        case TableSection.duration.rawValue:
+        case .duration?:
             self.selectDuration()
             
-        case TableSection.feelingType.rawValue:
+        case .feelingType?:
             self.selectHowItFeels()
             
-        case TableSection.goodFeelings.rawValue:
+        case .goodFeelings?:
             let values = Value.goodValues
             let selectedValues = values.flatMap({self.newActivity.goodValues.index(of: $0) == nil ? nil : values.index(of: $0)})
             
@@ -447,7 +447,7 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
                 self.tableView.reloadSections(IndexSet([TableSection.goodFeelings.rawValue]), with: .fade)
             })
             
-        case TableSection.badFeelings.rawValue:
+        case .badFeelings?:
             let values = Value.badValues
             let selectedValues = values.flatMap({self.newActivity.badValues.index(of: $0) == nil ? nil : values.index(of: $0)})
             

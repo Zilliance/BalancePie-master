@@ -374,8 +374,8 @@ extension FavoriteActivityViewController: UITableViewDataSource
 extension FavoriteActivityViewController: UITableViewDelegate, UIViewControllerTransitioningDelegate
 {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch (indexPath.section, indexPath.row) {
-        case (0, _): return 120
+        switch (TableSection(rawValue: indexPath.section), indexPath.row) {
+        case (.hours?, _): return 120
         case (_, 0): return 96
         default: return 44
         }
