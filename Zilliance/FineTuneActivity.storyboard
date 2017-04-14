@@ -82,10 +82,10 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sey-BU-GQE">
-                                <rect key="frame" x="31" y="587" width="313" height="60"/>
+                                <rect key="frame" x="31" y="597" width="313" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.73725490199999999" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="Nun-0H-Dp7"/>
+                                    <constraint firstAttribute="height" constant="50" id="Nun-0H-Dp7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="23"/>
                                 <state key="normal" title="Schedule it">
@@ -96,7 +96,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FcF-ec-ahG">
-                                <rect key="frame" x="0.0" y="120" width="375" height="457"/>
+                                <rect key="frame" x="0.0" y="120" width="375" height="467"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
