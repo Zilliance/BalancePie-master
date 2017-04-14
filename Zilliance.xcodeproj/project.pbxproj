@@ -58,14 +58,6 @@
 		8C4D28C91E96D1A400034A20 /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4D28C81E96D1A400034A20 /* OnboardingPageViewController.swift */; };
 		8C4EAE191E9FCD3500D800E4 /* FavoriteActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4EAE181E9FCD3500D800E4 /* FavoriteActivityViewController.swift */; };
 		8C4EAE1B1EA15B2F00D800E4 /* FineTuneItems.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C4EAE1A1EA15B2F00D800E4 /* FineTuneItems.storyboard */; };
-		8C4EAE1D1EA15C1100D800E4 /* FineTunePleasureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4EAE1C1EA15C1100D800E4 /* FineTunePleasureViewController.swift */; };
-		8C4EAE201EA1628800D800E4 /* FineTuneGratitudeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4EAE1F1EA1628800D800E4 /* FineTuneGratitudeViewController.swift */; };
-		8C4EAE221EA162A200D800E4 /* FineTuneGivingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4EAE211EA162A200D800E4 /* FineTuneGivingViewController.swift */; };
-		8C4EAE241EA162BF00D800E4 /* FineTuneValuesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4EAE231EA162BF00D800E4 /* FineTuneValuesViewController.swift */; };
-		8C4EAE261EA162E300D800E4 /* FineTuneTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4EAE251EA162E300D800E4 /* FineTuneTimeViewController.swift */; };
-		8C4EAE281EA162FC00D800E4 /* FineTuneReplaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4EAE271EA162FC00D800E4 /* FineTuneReplaceViewController.swift */; };
-		8C4EAE2A1EA1631200D800E4 /* FineTuneReduceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4EAE291EA1631200D800E4 /* FineTuneReduceViewController.swift */; };
-		8C4EAE2C1EA1633400D800E4 /* FineTuneFocusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4EAE2B1EA1633400D800E4 /* FineTuneFocusViewController.swift */; };
 		8CBBBE181E9558D600281C3C /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CBBBE171E9558D600281C3C /* Calendar.storyboard */; };
 		8CBBBE1A1E9576F800281C3C /* AddToCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBBBE191E9576F800281C3C /* AddToCalendarViewController.swift */; };
 		8CBBBE1D1E95890700281C3C /* AddCustom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CBBBE1C1E95890700281C3C /* AddCustom.storyboard */; };
@@ -153,14 +145,6 @@
 		8C4D28C81E96D1A400034A20 /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnboardingPageViewController.swift; path = ViewControllers/OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		8C4EAE181E9FCD3500D800E4 /* FavoriteActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoriteActivityViewController.swift; path = ViewControllers/FavoriteActivityViewController.swift; sourceTree = "<group>"; };
 		8C4EAE1A1EA15B2F00D800E4 /* FineTuneItems.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FineTuneItems.storyboard; sourceTree = "<group>"; };
-		8C4EAE1C1EA15C1100D800E4 /* FineTunePleasureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FineTunePleasureViewController.swift; path = ViewControllers/FineTunePleasureViewController.swift; sourceTree = "<group>"; };
-		8C4EAE1F1EA1628800D800E4 /* FineTuneGratitudeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FineTuneGratitudeViewController.swift; path = ViewControllers/FineTuneGratitudeViewController.swift; sourceTree = "<group>"; };
-		8C4EAE211EA162A200D800E4 /* FineTuneGivingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FineTuneGivingViewController.swift; path = ViewControllers/FineTuneGivingViewController.swift; sourceTree = "<group>"; };
-		8C4EAE231EA162BF00D800E4 /* FineTuneValuesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FineTuneValuesViewController.swift; path = ViewControllers/FineTuneValuesViewController.swift; sourceTree = "<group>"; };
-		8C4EAE251EA162E300D800E4 /* FineTuneTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FineTuneTimeViewController.swift; path = ViewControllers/FineTuneTimeViewController.swift; sourceTree = "<group>"; };
-		8C4EAE271EA162FC00D800E4 /* FineTuneReplaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FineTuneReplaceViewController.swift; path = ViewControllers/FineTuneReplaceViewController.swift; sourceTree = "<group>"; };
-		8C4EAE291EA1631200D800E4 /* FineTuneReduceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FineTuneReduceViewController.swift; path = ViewControllers/FineTuneReduceViewController.swift; sourceTree = "<group>"; };
-		8C4EAE2B1EA1633400D800E4 /* FineTuneFocusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FineTuneFocusViewController.swift; path = ViewControllers/FineTuneFocusViewController.swift; sourceTree = "<group>"; };
 		8CBBBE171E9558D600281C3C /* Calendar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
 		8CBBBE191E9576F800281C3C /* AddToCalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddToCalendarViewController.swift; path = ViewControllers/AddToCalendarViewController.swift; sourceTree = "<group>"; };
 		8CBBBE1C1E95890700281C3C /* AddCustom.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddCustom.storyboard; sourceTree = "<group>"; };
@@ -217,8 +201,8 @@
 			isa = PBXGroup;
 			children = (
 				04647C701E97D8450040CA46 /* FineTuneActivity.storyboard */,
+				8C4EAE1A1EA15B2F00D800E4 /* FineTuneItems.storyboard */,
 				04647C741E97D85C0040CA46 /* FineTuneActivityViewController.swift */,
-				8C4EAE1E1EA1626600D800E4 /* Items */,
 			);
 			name = FineTuneActivities;
 			sourceTree = "<group>";
@@ -339,22 +323,6 @@
 				E3E80A441EA15526004A44AF /* UserActivityTableViewCell.swift */,
 			);
 			name = Onboarding;
-			sourceTree = "<group>";
-		};
-		8C4EAE1E1EA1626600D800E4 /* Items */ = {
-			isa = PBXGroup;
-			children = (
-				8C4EAE1A1EA15B2F00D800E4 /* FineTuneItems.storyboard */,
-				8C4EAE1C1EA15C1100D800E4 /* FineTunePleasureViewController.swift */,
-				8C4EAE1F1EA1628800D800E4 /* FineTuneGratitudeViewController.swift */,
-				8C4EAE211EA162A200D800E4 /* FineTuneGivingViewController.swift */,
-				8C4EAE231EA162BF00D800E4 /* FineTuneValuesViewController.swift */,
-				8C4EAE251EA162E300D800E4 /* FineTuneTimeViewController.swift */,
-				8C4EAE271EA162FC00D800E4 /* FineTuneReplaceViewController.swift */,
-				8C4EAE291EA1631200D800E4 /* FineTuneReduceViewController.swift */,
-				8C4EAE2B1EA1633400D800E4 /* FineTuneFocusViewController.swift */,
-			);
-			name = Items;
 			sourceTree = "<group>";
 		};
 		8CBBBE161E9558A300281C3C /* Calendar */ = {
@@ -759,9 +727,7 @@
 				8C3EA47C1E92F0F100F56DED /* CalendarHelper.swift in Sources */,
 				8C3EA4751E92E9D600F56DED /* UIFont+CustomFonts.swift in Sources */,
 				8C3EA49E1E94274600F56DED /* PieViewController.swift in Sources */,
-				8C4EAE201EA1628800D800E4 /* FineTuneGratitudeViewController.swift in Sources */,
 				8CBBBE211E958B6300281C3C /* AddValuesViewController.swift in Sources */,
-				8C4EAE241EA162BF00D800E4 /* FineTuneValuesViewController.swift in Sources */,
 				04E6F56C1E9F804000EBD119 /* DetachableObject.swift in Sources */,
 				8C3EA4711E92E9D600F56DED /* Minutes+Extensions.swift in Sources */,
 				E35668321E8C15BA00ED81D9 /* AppDelegate.swift in Sources */,
@@ -772,14 +738,11 @@
 				8CBBBE201E958B6300281C3C /* AddActivityViewController.swift in Sources */,
 				8C3EA4651E92E7BF00F56DED /* Value.swift in Sources */,
 				0469D0AE1E944B700024EA39 /* UserActivity.swift in Sources */,
-				8C4EAE261EA162E300D800E4 /* FineTuneTimeViewController.swift in Sources */,
 				8C3EA47D1E92F0F100F56DED /* LocalNotificationsHelper.swift in Sources */,
 				04B29A671E97AB680090E52E /* PartialSizePresentationController.swift in Sources */,
-				8C4EAE2A1EA1631200D800E4 /* FineTuneReduceViewController.swift in Sources */,
 				8C3EA4611E92E7BF00F56DED /* Database.swift in Sources */,
 				04647C751E97D85C0040CA46 /* FineTuneActivityViewController.swift in Sources */,
 				8C3EA4641E92E7BF00F56DED /* ArrayDataSource.swift in Sources */,
-				8C4EAE221EA162A200D800E4 /* FineTuneGivingViewController.swift in Sources */,
 				04E6F5671E9E7FEC00EBD119 /* EmbeddedFeelingTableViewModel.swift in Sources */,
 				8C3EA4781E92EF9C00F56DED /* HoursProgressView.swift in Sources */,
 				8C3EA46F1E92E9D600F56DED /* UIImage+Extensions.swift in Sources */,
@@ -788,13 +751,10 @@
 				04E6F56E1E9F8CDB00EBD119 /* EditActivityViewController.swift in Sources */,
 				8C3EA4761E92E9D600F56DED /* UIViewController+Extensions.swift in Sources */,
 				8C3EA45A1E92E6D000F56DED /* PieView.swift in Sources */,
-				8C4EAE2C1EA1633400D800E4 /* FineTuneFocusViewController.swift in Sources */,
 				8C3EA4701E92E9D600F56DED /* Int+Extensions.swift in Sources */,
-				8C4EAE1D1EA15C1100D800E4 /* FineTunePleasureViewController.swift in Sources */,
 				8C3EA4741E92E9D600F56DED /* UIDevice+Extensions.swift in Sources */,
 				8C4EAE191E9FCD3500D800E4 /* FavoriteActivityViewController.swift in Sources */,
 				8CBBBE231E95925700281C3C /* IconCollectionViewCell.swift in Sources */,
-				8C4EAE281EA162FC00D800E4 /* FineTuneReplaceViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -114,36 +114,22 @@ final class AddSliceViewController: UIViewController
     }
     
     private func fineTune(userActivity: UserActivity) {
+        // Will depend on the feeling of the current activity
         
-        let addStoryboard = UIStoryboard(name: "FineTuneItems", bundle: nil)
-        let fineTuneStoryboard = UIStoryboard(name: "FineTuneActivity", bundle: nil)
+        let fineTuneVC = UIStoryboard(name: "FineTuneActivity", bundle: nil).instantiateInitialViewController() as! FineTuneActivityViewController
         
-        guard let pleasureVC = addStoryboard.instantiateViewController(withIdentifier: "FineTunePleasureViewController") as?
-            FineTunePleasureViewController,
-            let gratitudeVC = addStoryboard.instantiateViewController(withIdentifier: "FineTuneGratitudeViewController") as? FineTuneGratitudeViewController,
-            let givingVC = addStoryboard.instantiateViewController(withIdentifier: "FineTuneGivingViewController") as? FineTuneGivingViewController,
-            let valuesVC = addStoryboard.instantiateViewController(withIdentifier: "FineTuneValuesViewController") as? FineTuneValuesViewController,
-            let timeVC = addStoryboard.instantiateViewController(withIdentifier: "FineTuneTimeViewController") as?
-            FineTuneTimeViewController,
-            let fineTuneVC = fineTuneStoryboard.instantiateInitialViewController() as? FineTuneActivityViewController else {
-                assertionFailure()
-                return
-        }
-        
-        
-        let fineTuneItem0 = FineTuneItem(title: "Pleasure", image: UIImage(named: "btnPlus")!, viewController: pleasureVC)
-        let fineTuneItem1 = FineTuneItem(title: "Gratitude", image: UIImage(named: "btnPlus")!, viewController: gratitudeVC)
-        let fineTuneItem2 = FineTuneItem(title: "Giving", image: UIImage(named: "btnPlus")!, viewController: givingVC)
-        let fineTuneItem3 = FineTuneItem(title: "Values", image: UIImage(named: "btnPlus")!, viewController: valuesVC)
-        let fineTuneItem4 = FineTuneItem(title: "Time", image: UIImage(named: "btnPlus")!, viewController: timeVC)
-        
-        
-        let items = [fineTuneItem0, fineTuneItem1, fineTuneItem2, fineTuneItem3, fineTuneItem4]
+         let items: [FineTuneItem] = [
+            .pleasure,
+            .prioritize,
+            .gratitude,
+            .giving,
+            .values
+        ]
         
         fineTuneVC.zUserActivity = userActivity
         fineTuneVC.items = items
-        let navigationFineTuneVC = UINavigationController(rootViewController: fineTuneVC)
-        self.present(navigationFineTuneVC, animated: true, completion: nil)
+        
+        self.navigationController!.pushViewController(fineTuneVC, animated: true)
     }
     
     @IBAction func fineTuneTapped(_ sender: Any) {
