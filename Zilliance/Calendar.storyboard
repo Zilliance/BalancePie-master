@@ -60,16 +60,16 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="5TE-Dh-zm2">
-                                        <rect key="frame" x="8" y="186" width="309" height="216"/>
+                                        <rect key="frame" x="8" y="186" width="309" height="207"/>
                                         <date key="date" timeIntervalSinceReferenceDate="513112832.37409902">
                                             <!--2017-04-05 19:20:32 +0000-->
                                         </date>
                                     </datePicker>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="89b-fO-R0j">
-                                        <rect key="frame" x="4" y="424" width="317" height="41"/>
+                                        <rect key="frame" x="4" y="415" width="317" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HV3-vp-XLw">
-                                                <rect key="frame" x="0.0" y="3.5" width="95.5" height="34"/>
+                                                <rect key="frame" x="0.0" y="8" width="95.5" height="34"/>
                                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
                                                 <state key="normal" title="   Cancel   ">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -79,7 +79,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxc-PB-GEU">
-                                                <rect key="frame" x="95.5" y="0.0" width="221.5" height="41"/>
+                                                <rect key="frame" x="95.5" y="4.5" width="221.5" height="41"/>
                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="23"/>
                                                 <state key="normal" title="Add To Calendar">
                                                     <color key="titleColor" red="0.11764705882352941" green="0.16862745098039217" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
@@ -90,7 +90,7 @@
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="41" id="M5g-Ig-ceB"/>
+                                            <constraint firstAttribute="height" constant="50" id="M5g-Ig-ceB"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>

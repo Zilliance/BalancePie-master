@@ -9,8 +9,9 @@
 import UIKit
 
 class AddValuesViewController: UIViewController {
-    @IBOutlet weak var valueTextField: UITextField!
     
+    @IBOutlet weak var valueTextField: UITextField!
+    @IBOutlet weak var createValueButton: UIButton!
     var dismissAction: (() -> ())?
     
     var valueText: String? {
@@ -37,6 +38,8 @@ class AddValuesViewController: UIViewController {
     
     fileprivate func setupViews() {
         self.title = "Custom Value"
+        
+        self.createValueButton.layer.cornerRadius = App.Appearance.zillianceCornerRadius
         
         // Cancel button
         

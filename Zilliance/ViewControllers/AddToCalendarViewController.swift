@@ -30,12 +30,12 @@ class AddToCalendarViewController: UIViewController, UITextViewDelegate {
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         
         //setup width and corner radius
-        for view in [self.bodyTextView, self.doneButton] as [UIView]
-        {
-            view.layer.cornerRadius = App.Appearance.zillianceCornerRadius
-            view.layer.borderWidth = App.Appearance.zillianceBorderWidth
-            view.layer.borderColor = UIColor.lightGray.cgColor
-        }
+ 
+        self.bodyTextView.layer.cornerRadius = App.Appearance.zillianceCornerRadius
+        self.bodyTextView.layer.borderWidth = App.Appearance.zillianceBorderWidth
+        self.bodyTextView.layer.borderColor = UIColor.lightGray.cgColor
+        
+        self.doneButton.layer.cornerRadius = App.Appearance.zillianceCornerRadius
         
         // date picker
 

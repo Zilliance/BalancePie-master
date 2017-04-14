@@ -27,10 +27,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bxU-T8-74G">
-                                <rect key="frame" x="20" y="603" width="335" height="44"/>
+                                <rect key="frame" x="20" y="597" width="335" height="50"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="6NQ-1W-2uu"/>
+                                    <constraint firstAttribute="height" constant="50" id="6NQ-1W-2uu"/>
                                 </constraints>
                                 <state key="normal" title="Get Started">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -49,7 +49,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tkQ-NP-lhQ">
-                                <rect key="frame" x="0.0" y="82" width="375" height="513"/>
+                                <rect key="frame" x="0.0" y="82" width="375" height="507"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="subtitleCell" textLabel="Lij-z6-c0R" detailTextLabel="7pO-3t-5z0" rowHeight="64" style="IBUITableViewCellStyleSubtitle" id="hK2-aX-EUf">
@@ -115,6 +115,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="getStartedButton" destination="bxU-T8-74G" id="hgG-ir-x3i"/>
                         <outlet property="tableView" destination="tkQ-NP-lhQ" id="VXc-Nb-Qaj"/>
                     </connections>
                 </viewController>

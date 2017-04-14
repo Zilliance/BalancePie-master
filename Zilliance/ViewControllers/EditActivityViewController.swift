@@ -24,6 +24,7 @@ final class EditActivityViewController: UIViewController{
         }
     }
     
+    @IBOutlet weak var updateSliceButton: UIButton!
     @IBOutlet var tableView: UITableView!
     
     var activity: UserActivity! {
@@ -32,6 +33,17 @@ final class EditActivityViewController: UIViewController{
             self.title = self.activity.activity?.name
         }
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.setupViews()
+    }
+    
+    private func setupViews() {
+        self.updateSliceButton.layer.cornerRadius = App.Appearance.zillianceCornerRadius
+    }
+    
+    // MARK: -- User Actions
     
     @IBAction func updateTapped(){
         Database.shared.user.save(userActivity: self.activity)
