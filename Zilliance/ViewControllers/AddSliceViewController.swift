@@ -96,6 +96,7 @@ final class AddSliceViewController: UIViewController
     }
     
     @IBAction func cancelTapped(_ sender: Any) {
+
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -110,7 +111,7 @@ final class AddSliceViewController: UIViewController
     }
     
     private func fineTune(userActivity: UserActivity) {
-        
+
         //fine tune setup example. It should use other view controllers
         let addStoryboard = UIStoryboard(name: "AddCustom", bundle: nil)
         
@@ -137,7 +138,7 @@ final class AddSliceViewController: UIViewController
     @IBAction func fineTuneTapped(_ sender: Any) {
         if (self.validateValues())
         {
-            self.saveActivity()
+//            self.saveActivity()
             fineTune(userActivity: self.newActivity)
         }
     }
@@ -270,7 +271,6 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
     
     func selectActivityName()
     {
-        self.isPresentingActivities = true
         guard let itemSelectionViewController = UIStoryboard.init(name: "ItemsSelection", bundle: nil).instantiateInitialViewController() as? ItemsSelectionViewController else {
             assertionFailure()
             return
@@ -289,13 +289,14 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
         
         
         itemSelectionViewController.createNewItemAction = {
-            
+
             itemSelectionViewController.dismiss(animated: true, completion: {
                 guard let customActivityViewController = UIStoryboard.init(name: "AddCustom", bundle: nil).instantiateViewController(withIdentifier: "AddActivity") as? UINavigationController else {
                     assertionFailure()
                     return
                 }
-                
+                self.isPresentingActivities = true
+
                 self.present(customActivityViewController, animated: true, completion: nil)
             })
             
