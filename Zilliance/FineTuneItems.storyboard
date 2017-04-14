@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Muli-Bold.ttf">
+            <string>Muli-Bold</string>
+        </array>
+        <array key="Muli-Regular.ttf">
+            <string>Muli-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Fine Tune Reduce View Controller-->
+        <scene sceneID="Xg2-Ji-5m7">
+            <objects>
+                <viewController storyboardIdentifier="FineTuneReduceViewController" id="FgW-77-vSc" customClass="FineTuneReduceViewController" customModule="Zilliance" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JR9-EL-wwM"/>
+                        <viewControllerLayoutGuide type="bottom" id="cUy-zO-9gG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nGG-Uc-mTi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reduce" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqm-9n-lR2">
+                                <rect key="frame" x="16" y="40" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="uqN-5o-AeL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eZe-f0-WFA">
+                                <rect key="frame" x="12" y="77" width="351" height="574"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eZe-f0-WFA" firstAttribute="leading" secondItem="nGG-Uc-mTi" secondAttribute="leading" constant="12" id="4Xd-Zv-KXc"/>
+                            <constraint firstItem="cUy-zO-9gG" firstAttribute="top" secondItem="eZe-f0-WFA" secondAttribute="bottom" constant="16" id="Fze-uY-NSU"/>
+                            <constraint firstAttribute="trailing" secondItem="gqm-9n-lR2" secondAttribute="trailing" constant="16" id="J2B-Kz-MOE"/>
+                            <constraint firstAttribute="trailing" secondItem="eZe-f0-WFA" secondAttribute="trailing" constant="12" id="Rf2-sF-n0X"/>
+                            <constraint firstItem="gqm-9n-lR2" firstAttribute="top" secondItem="JR9-EL-wwM" secondAttribute="bottom" constant="20" id="T7a-l0-mJR"/>
+                            <constraint firstItem="eZe-f0-WFA" firstAttribute="top" secondItem="gqm-9n-lR2" secondAttribute="bottom" constant="16" id="cIg-tu-ttj"/>
+                            <constraint firstItem="gqm-9n-lR2" firstAttribute="leading" secondItem="nGG-Uc-mTi" secondAttribute="leading" constant="16" id="wtZ-Gc-CUH"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SXl-1Y-MQv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-119" y="-904"/>
+        </scene>
+        <!--Fine Tune Pleasure View Controller-->
+        <scene sceneID="HAk-gq-nFu">
+            <objects>
+                <viewController storyboardIdentifier="FineTunePleasureViewController" id="aV3-CC-BPZ" customClass="FineTunePleasureViewController" customModule="Zilliance" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NqN-mw-B3W"/>
+                        <viewControllerLayoutGuide type="bottom" id="tlY-0P-ePy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cey-BF-CHo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pleasure" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LHo-Q5-xfQ">
+                                <rect key="frame" x="16" y="40" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="EgI-50-wzz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zzH-1c-OHI">
+                                <rect key="frame" x="12" y="77" width="351" height="574"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zzH-1c-OHI" firstAttribute="top" secondItem="LHo-Q5-xfQ" secondAttribute="bottom" constant="16" id="5Jk-M7-Xux"/>
+                            <constraint firstAttribute="trailing" secondItem="zzH-1c-OHI" secondAttribute="trailing" constant="12" id="95k-cn-KOC"/>
+                            <constraint firstItem="LHo-Q5-xfQ" firstAttribute="leading" secondItem="cey-BF-CHo" secondAttribute="leading" constant="16" id="EhE-8l-UwN"/>
+                            <constraint firstItem="tlY-0P-ePy" firstAttribute="top" secondItem="zzH-1c-OHI" secondAttribute="bottom" constant="16" id="HE4-rM-hUs"/>
+                            <constraint firstAttribute="trailing" secondItem="LHo-Q5-xfQ" secondAttribute="trailing" constant="16" id="IfL-d4-RBt"/>
+                            <constraint firstItem="LHo-Q5-xfQ" firstAttribute="top" secondItem="NqN-mw-B3W" secondAttribute="bottom" constant="20" id="b8X-UP-ovV"/>
+                            <constraint firstItem="zzH-1c-OHI" firstAttribute="leading" secondItem="cey-BF-CHo" secondAttribute="leading" constant="12" id="jik-Xr-Jps"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sBK-d9-sTQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1609" y="-1650"/>
+        </scene>
+        <!--Fine Tune Replace View Controller-->
+        <scene sceneID="OSY-Yb-SyG">
+            <objects>
+                <viewController storyboardIdentifier="FineTuneReplaceViewController" id="4V7-ms-1xV" customClass="FineTuneReplaceViewController" customModule="Zilliance" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qm1-O3-AgR"/>
+                        <viewControllerLayoutGuide type="bottom" id="AnE-Y7-EHW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TON-lo-3zw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Replace" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iev-ca-XBz">
+                                <rect key="frame" x="16" y="40" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="cxE-GU-zXm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kx9-QO-IWl">
+                                <rect key="frame" x="12" y="77" width="351" height="574"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Iev-ca-XBz" firstAttribute="leading" secondItem="TON-lo-3zw" secondAttribute="leading" constant="16" id="JAY-dx-ueH"/>
+                            <constraint firstAttribute="trailing" secondItem="Iev-ca-XBz" secondAttribute="trailing" constant="16" id="PnW-fH-nt1"/>
+                            <constraint firstAttribute="trailing" secondItem="kx9-QO-IWl" secondAttribute="trailing" constant="12" id="Tzh-cX-63c"/>
+                            <constraint firstItem="kx9-QO-IWl" firstAttribute="top" secondItem="Iev-ca-XBz" secondAttribute="bottom" constant="16" id="UdL-Rv-6Cf"/>
+                            <constraint firstItem="kx9-QO-IWl" firstAttribute="leading" secondItem="TON-lo-3zw" secondAttribute="leading" constant="12" id="Z6N-Wr-uhw"/>
+                            <constraint firstItem="AnE-Y7-EHW" firstAttribute="top" secondItem="kx9-QO-IWl" secondAttribute="bottom" constant="16" id="byj-Bu-sTh"/>
+                            <constraint firstItem="Iev-ca-XBz" firstAttribute="top" secondItem="qm1-O3-AgR" secondAttribute="bottom" constant="20" id="oG7-pu-ey5"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WQt-2x-1D6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-863" y="-904"/>
+        </scene>
+        <!--Fine Tune Time View Controller-->
+        <scene sceneID="NeZ-oy-3Kc">
+            <objects>
+                <viewController storyboardIdentifier="FineTuneTimeViewController" id="G4D-h7-ZDD" customClass="FineTuneTimeViewController" customModule="Zilliance" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="flM-D2-ad4"/>
+                        <viewControllerLayoutGuide type="bottom" id="Cdb-me-Zzp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dpf-tR-p0H">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jiu-NG-fC0">
+                                <rect key="frame" x="16" y="40" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="wIV-Ra-uQP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EJ5-Bj-GZd">
+                                <rect key="frame" x="12" y="77" width="351" height="574"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EJ5-Bj-GZd" firstAttribute="top" secondItem="Jiu-NG-fC0" secondAttribute="bottom" constant="16" id="4It-f8-9VY"/>
+                            <constraint firstAttribute="trailing" secondItem="Jiu-NG-fC0" secondAttribute="trailing" constant="16" id="GpE-ed-Se3"/>
+                            <constraint firstItem="Jiu-NG-fC0" firstAttribute="top" secondItem="flM-D2-ad4" secondAttribute="bottom" constant="20" id="Kkl-CF-1BS"/>
+                            <constraint firstItem="Jiu-NG-fC0" firstAttribute="leading" secondItem="dpf-tR-p0H" secondAttribute="leading" constant="16" id="N0e-nc-k8c"/>
+                            <constraint firstItem="Cdb-me-Zzp" firstAttribute="top" secondItem="EJ5-Bj-GZd" secondAttribute="bottom" constant="16" id="ZVF-SV-Vw6"/>
+                            <constraint firstItem="EJ5-Bj-GZd" firstAttribute="leading" secondItem="dpf-tR-p0H" secondAttribute="leading" constant="12" id="k6t-hJ-DWd"/>
+                            <constraint firstAttribute="trailing" secondItem="EJ5-Bj-GZd" secondAttribute="trailing" constant="12" id="lMR-sT-Utd"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nzw-sU-Hs8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1610" y="-903"/>
+        </scene>
+        <!--Fine Tune Values View Controller-->
+        <scene sceneID="wJo-vD-7b7">
+            <objects>
+                <viewController storyboardIdentifier="FineTuneValuesViewController" id="iht-hH-hsv" customClass="FineTuneValuesViewController" customModule="Zilliance" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="azu-db-kq3"/>
+                        <viewControllerLayoutGuide type="bottom" id="hwY-Ka-nqa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jWe-7h-Kcb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Values" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghb-vs-OmH">
+                                <rect key="frame" x="16" y="40" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="SEm-WS-YvB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OPw-ka-dnd">
+                                <rect key="frame" x="12" y="77" width="351" height="574"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OPw-ka-dnd" firstAttribute="top" secondItem="ghb-vs-OmH" secondAttribute="bottom" constant="16" id="7zd-fS-f9O"/>
+                            <constraint firstAttribute="trailing" secondItem="ghb-vs-OmH" secondAttribute="trailing" constant="16" id="GLS-JV-zyt"/>
+                            <constraint firstItem="ghb-vs-OmH" firstAttribute="leading" secondItem="jWe-7h-Kcb" secondAttribute="leading" constant="16" id="H42-uZ-Czz"/>
+                            <constraint firstItem="OPw-ka-dnd" firstAttribute="leading" secondItem="jWe-7h-Kcb" secondAttribute="leading" constant="12" id="VkH-0y-0MB"/>
+                            <constraint firstItem="ghb-vs-OmH" firstAttribute="top" secondItem="azu-db-kq3" secondAttribute="bottom" constant="20" id="Whf-4g-0vu"/>
+                            <constraint firstItem="hwY-Ka-nqa" firstAttribute="top" secondItem="OPw-ka-dnd" secondAttribute="bottom" constant="16" id="h9w-Vu-8RG"/>
+                            <constraint firstAttribute="trailing" secondItem="OPw-ka-dnd" secondAttribute="trailing" constant="12" id="m7q-PW-gWR"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="10B-J4-ut1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="596" y="-1650"/>
+        </scene>
+        <!--Fine Tune Giving View Controller-->
+        <scene sceneID="aSr-1E-cD1">
+            <objects>
+                <viewController storyboardIdentifier="FineTuneGivingViewController" id="5K2-Fr-uqJ" customClass="FineTuneGivingViewController" customModule="Zilliance" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lcP-4h-JaV"/>
+                        <viewControllerLayoutGuide type="bottom" id="h6l-du-Sim"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NjV-Kc-wwp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giving" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gG-eR-df9">
+                                <rect key="frame" x="16" y="40" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Ep6-CN-OMv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BQc-mK-3Wj">
+                                <rect key="frame" x="12" y="77" width="351" height="574"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7gG-eR-df9" firstAttribute="top" secondItem="lcP-4h-JaV" secondAttribute="bottom" constant="20" id="AW2-Yk-bUZ"/>
+                            <constraint firstAttribute="trailing" secondItem="7gG-eR-df9" secondAttribute="trailing" constant="16" id="KsX-Ey-cQv"/>
+                            <constraint firstItem="h6l-du-Sim" firstAttribute="top" secondItem="BQc-mK-3Wj" secondAttribute="bottom" constant="16" id="SPI-gR-nYv"/>
+                            <constraint firstItem="BQc-mK-3Wj" firstAttribute="top" secondItem="7gG-eR-df9" secondAttribute="bottom" constant="16" id="Xf9-cJ-J9a"/>
+                            <constraint firstItem="7gG-eR-df9" firstAttribute="leading" secondItem="NjV-Kc-wwp" secondAttribute="leading" constant="16" id="bOL-qS-haT"/>
+                            <constraint firstAttribute="trailing" secondItem="BQc-mK-3Wj" secondAttribute="trailing" constant="12" id="byh-Ma-6D4"/>
+                            <constraint firstItem="BQc-mK-3Wj" firstAttribute="leading" secondItem="NjV-Kc-wwp" secondAttribute="leading" constant="12" id="jgF-30-J76"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e4W-sT-jru" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-193" y="-1650"/>
+        </scene>
+        <!--Fine Tune Gratitude View Controller-->
+        <scene sceneID="I3W-5T-lts">
+            <objects>
+                <viewController storyboardIdentifier="FineTuneGratitudeViewController" id="aNt-cy-LzU" customClass="FineTuneGratitudeViewController" customModule="Zilliance" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SPX-Aw-2Y6"/>
+                        <viewControllerLayoutGuide type="bottom" id="Wde-2A-Eua"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Dn5-sa-wIy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gratitude" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vzu-A9-NH6">
+                                <rect key="frame" x="16" y="40" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="eZ7-9P-VD9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wJ1-NO-GjP">
+                                <rect key="frame" x="12" y="77" width="351" height="574"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vzu-A9-NH6" firstAttribute="top" secondItem="SPX-Aw-2Y6" secondAttribute="bottom" constant="20" id="2m5-R0-sZa"/>
+                            <constraint firstAttribute="trailing" secondItem="vzu-A9-NH6" secondAttribute="trailing" constant="16" id="BWf-Lx-Ns8"/>
+                            <constraint firstItem="wJ1-NO-GjP" firstAttribute="leading" secondItem="Dn5-sa-wIy" secondAttribute="leading" constant="12" id="LL8-zP-A8A"/>
+                            <constraint firstAttribute="trailing" secondItem="wJ1-NO-GjP" secondAttribute="trailing" constant="12" id="TrB-aX-oyc"/>
+                            <constraint firstItem="wJ1-NO-GjP" firstAttribute="top" secondItem="vzu-A9-NH6" secondAttribute="bottom" constant="16" id="cfv-2L-c1i"/>
+                            <constraint firstItem="Wde-2A-Eua" firstAttribute="top" secondItem="wJ1-NO-GjP" secondAttribute="bottom" constant="16" id="o75-Cn-gb2"/>
+                            <constraint firstItem="vzu-A9-NH6" firstAttribute="leading" secondItem="Dn5-sa-wIy" secondAttribute="leading" constant="16" id="oMc-5o-ZjR"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZFF-Fa-jLm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-897" y="-1650"/>
+        </scene>
+        <!--Fine Tune Focus View Controller-->
+        <scene sceneID="bXA-ts-21a">
+            <objects>
+                <viewController storyboardIdentifier="FineTuneFocusViewController" id="G6y-qm-ZVq" customClass="FineTuneFocusViewController" customModule="Zilliance" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ek0-bI-p9l"/>
+                        <viewControllerLayoutGuide type="bottom" id="pYP-kQ-pG5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="obA-NU-7Jy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Focus" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sXj-q6-afx">
+                                <rect key="frame" x="16" y="40" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="qQ6-yk-QFB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cV3-U6-K1m">
+                                <rect key="frame" x="12" y="77" width="351" height="574"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sXj-q6-afx" firstAttribute="leading" secondItem="obA-NU-7Jy" secondAttribute="leading" constant="16" id="8o2-Mn-WgO"/>
+                            <constraint firstItem="cV3-U6-K1m" firstAttribute="leading" secondItem="obA-NU-7Jy" secondAttribute="leading" constant="12" id="BSu-sO-QhC"/>
+                            <constraint firstItem="cV3-U6-K1m" firstAttribute="top" secondItem="sXj-q6-afx" secondAttribute="bottom" constant="16" id="Imw-Oz-joq"/>
+                            <constraint firstItem="sXj-q6-afx" firstAttribute="top" secondItem="ek0-bI-p9l" secondAttribute="bottom" constant="20" id="LEh-zH-xXQ"/>
+                            <constraint firstItem="pYP-kQ-pG5" firstAttribute="top" secondItem="cV3-U6-K1m" secondAttribute="bottom" constant="16" id="Mhr-Af-Bk1"/>
+                            <constraint firstAttribute="trailing" secondItem="cV3-U6-K1m" secondAttribute="trailing" constant="12" id="OY0-3q-Wv9"/>
+                            <constraint firstAttribute="trailing" secondItem="sXj-q6-afx" secondAttribute="trailing" constant="16" id="dzQ-DM-1a3"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l5v-oe-khj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="596" y="-904"/>
+        </scene>
+    </scenes>
+</document>
