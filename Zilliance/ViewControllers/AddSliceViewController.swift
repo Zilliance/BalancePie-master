@@ -216,7 +216,7 @@ extension AddSliceViewController: UITableViewDataSource
             
             cell = tableView.dequeueReusableCell(withIdentifier: "subtitleCell")!
             cell.textLabel?.text = "How do you feel"
-            cell.detailTextLabel?.text = self.newActivity.feeling.string()
+            cell.detailTextLabel?.text = self.newActivity.feeling.string
             
         case (TableSections.goodFeelings.rawValue, 0):
             

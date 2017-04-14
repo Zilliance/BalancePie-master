@@ -37,7 +37,7 @@ final class FineTuneActivityViewController: UIViewController {
     var items: [FineTuneItem]!
     var zUserActivity: UserActivity? {
         didSet {
-            self.title = zUserActivity?.activity.name ?? ""
+            self.title = zUserActivity?.activity?.name ?? ""
         }
     }
     
