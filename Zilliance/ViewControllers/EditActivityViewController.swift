@@ -12,16 +12,20 @@ import ActionSheetPicker_3_0
 
 final class EditActivityViewController: UIViewController{
     
-    enum TableSections: Int
+    enum TableSection: Int
     {
         case duration = 0
         case feelingType
         case goodFeelings
         case badFeelings
         
-        static func feelingSections() -> [Int]{
-            return [feelingType.rawValue, goodFeelings.rawValue, badFeelings.rawValue]
-        }
+        static var count = 4
+        
+        static var feelings : [Int] = [
+            feelingType.rawValue,
+            goodFeelings.rawValue,
+            badFeelings.rawValue
+        ]
     }
     
     @IBOutlet weak var updateSliceButton: UIButton!
@@ -65,7 +69,7 @@ extension EditActivityViewController: UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
-        case TableSections.goodFeelings.rawValue:
+        case TableSection.goodFeelings.rawValue:
             
             if (self.activity.feeling == .lousy || self.activity.feeling == .neutral)
             {
@@ -73,7 +77,7 @@ extension EditActivityViewController: UITableViewDataSource
             }
             
             return max(self.activity.goodValues.count, 1)
-        case TableSections.badFeelings.rawValue:
+        case TableSection.badFeelings.rawValue:
             
             if (self.activity.feeling == .great)
             {
@@ -89,20 +93,20 @@ extension EditActivityViewController: UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         var cell: UITableViewCell!
-        switch (indexPath.section, indexPath.row) {
-        case (TableSections.duration.rawValue, _):
+        switch (TableSection(rawValue: indexPath.section), indexPath.row) {
+        case (.duration?, _):
             
             cell = tableView.dequeueReusableCell(withIdentifier: "subtitleCell")!
             cell.textLabel?.text = "About how long now?"
             cell.detailTextLabel?.text = self.activity.duration.userFriendlyText
             
-        case (TableSections.feelingType.rawValue, _):
+        case (.feelingType?, _):
             
             cell = tableView.dequeueReusableCell(withIdentifier: "subtitleCell")!
             cell.textLabel?.text = "How do you feel now?"
             cell.detailTextLabel?.text = self.activity.feeling.string
 
-        case (TableSections.goodFeelings.rawValue, 0):
+        case (.goodFeelings?, 0):
             
             cell = tableView.dequeueReusableCell(withIdentifier: "subtitleCell")!
             cell.textLabel?.text = "Feels good because"
@@ -113,7 +117,7 @@ extension EditActivityViewController: UITableViewDataSource
             }
             cell.detailTextLabel?.text = self.activity.goodValues[indexPath.row].name
 
-        case (TableSections.badFeelings.rawValue, 0):
+        case (.badFeelings?, 0):
 
             cell = tableView.dequeueReusableCell(withIdentifier: "subtitleCell")!
             cell.textLabel?.text = "Feels bad because"
@@ -124,17 +128,18 @@ extension EditActivityViewController: UITableViewDataSource
             }
             cell.detailTextLabel?.text = self.activity.badValues[indexPath.row].name
             
-        case (TableSections.goodFeelings.rawValue, 1...Int(INT_MAX)):
+        case (.goodFeelings?, _):
             
             cell = tableView.dequeueReusableCell(withIdentifier: "basicCell")!
             cell.textLabel?.text = self.activity.goodValues[indexPath.row].name
 
-        case (TableSections.badFeelings.rawValue, 1...Int(INT_MAX)):
+        case (.badFeelings?, _):
             
             cell = tableView.dequeueReusableCell(withIdentifier: "basicCell")!
             cell.textLabel?.text = self.activity.badValues[indexPath.row].name
 
         default:
+            assertionFailure()
             break
         }
         
@@ -173,7 +178,7 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
             
             self.activity.duration = totalTimeMinutes
             
-            self.tableView.reloadRows(at: [IndexPath(row: 0, section: TableSections.duration.rawValue)], with: .fade)
+            self.tableView.reloadRows(at: [IndexPath(row: 0, section: TableSection.duration.rawValue)], with: .fade)
             
             self.selectHowItFeels()
             
@@ -182,36 +187,26 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
         }, origin: UIButton())
     }
     
-    func selectHowItFeels()
-    {
+    func selectHowItFeels() {
         let feelings = Feeling.all
         let feelingsNames = feelings.map({$0.string})
         
         let initialIndex = feelings.index(of: self.activity.feeling) ?? 0
         
         ActionSheetStringPicker.show(withTitle: "How do you feel about it ?", rows: feelingsNames, initialSelection: initialIndex, doneBlock: { (picker, index, name) in
+            let feelingSections: [Int] = TableSection.feelings
             
             self.activity.feeling = feelings[index]
-            
-            let feelingSections: [Int] = TableSections.feelingSections()
-            
             self.tableView.reloadSections(IndexSet(feelingSections), with: .fade)
-            
             self.tableView.endUpdates()
             
-            
-            return
         }, cancel: { (picker) in
-            return
+            
         }, origin: tableView)
     }
     
-    func selectValues(values: [Value], initialIndexes: [Int], completion: @escaping ([Int])->())
-    {
-
-        let storyboard = UIStoryboard(name: "ItemsSelection", bundle: nil)
-        if let itemsVC = storyboard.instantiateInitialViewController() as? ItemsSelectionViewController
-        {
+    func selectValues(values: [Value], initialIndexes: [Int], completion: @escaping ([Int])->()) {
+        if let itemsVC = UIStoryboard(name: "ItemsSelection", bundle: nil).instantiateInitialViewController() as? ItemsSelectionViewController {
             
             itemsVC.selectedItemsIndexes = Set(initialIndexes)
             
@@ -244,14 +239,14 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
         
         //activity name
         
-        switch indexPath.section {
-        case TableSections.duration.rawValue:
+        switch TableSection(rawValue: indexPath.section) {
+        case .duration?:
             self.selectDuration()
 
-        case TableSections.feelingType.rawValue:
+        case .feelingType?:
             self.selectHowItFeels()
 
-        case TableSections.goodFeelings.rawValue:
+        case .goodFeelings?:
             let values = Value.goodValues
             let selectedValues = values.flatMap({self.activity.goodValues.index(of: $0) == nil ? nil : values.index(of: $0)})
             
@@ -264,10 +259,10 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
                     self.activity.values.append(value)
                 }
                 
-                self.tableView.reloadSections(IndexSet([TableSections.goodFeelings.rawValue]), with: .fade)
+                self.tableView.reloadSections(IndexSet([TableSection.goodFeelings.rawValue]), with: .fade)
             })
 
-        case TableSections.badFeelings.rawValue:
+        case .badFeelings?:
             let values = Value.badValues
             let selectedValues = values.flatMap({self.activity.badValues.index(of: $0) == nil ? nil : values.index(of: $0)})
             
@@ -280,7 +275,7 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
                     self.activity.values.append(value)
                 }
                 
-                self.tableView.reloadSections(IndexSet([TableSections.badFeelings.rawValue]), with: .fade)
+                self.tableView.reloadSections(IndexSet([TableSection.badFeelings.rawValue]), with: .fade)
             })
             
         default:
