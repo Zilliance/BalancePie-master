@@ -40,7 +40,7 @@ final class EditActivityViewController: UIViewController{
     }
     
     private func setupViews() {
-        self.updateSliceButton.layer.cornerRadius = App.Appearance.zillianceCornerRadius
+        self.updateSliceButton.layer.cornerRadius = App.Appearance.buttonCornerRadius
     }
     
     // MARK: -- User Actions

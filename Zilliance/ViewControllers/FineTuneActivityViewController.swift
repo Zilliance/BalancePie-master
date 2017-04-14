@@ -48,8 +48,8 @@ final class FineTuneActivityViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.scheduleButton.layer.cornerRadius = App.Appearance.zillianceCornerRadius
-        self.scheduleButton.layer.borderWidth = App.Appearance.zillianceBorderWidth
+        self.scheduleButton.layer.cornerRadius = App.Appearance.buttonCornerRadius
+        self.scheduleButton.layer.borderWidth = App.Appearance.borderWidth
         self.scheduleButton.layer.borderColor = UIColor.lightGray.cgColor
         
         // Add a cancel button when we are the root view controller in the navigation stack

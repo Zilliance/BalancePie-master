@@ -43,7 +43,7 @@ class AddActivityViewController: UIViewController, UICollectionViewDataSource, U
         self.selectAnIconLabel.text = "Select An Icon:"
         self.selectAnIconLabel.font = UIFont.muliRegular(size: 16.0)
         
-        self.createActivityButton.layer.cornerRadius = App.Appearance.zillianceCornerRadius
+        self.createActivityButton.layer.cornerRadius = App.Appearance.buttonCornerRadius
         
         self.collectionView.contentInset = UIEdgeInsetsMake(10, 10, 10, 10)
         

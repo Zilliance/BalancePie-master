@@ -39,7 +39,7 @@ class AddValuesViewController: UIViewController {
     fileprivate func setupViews() {
         self.title = "Custom Value"
         
-        self.createValueButton.layer.cornerRadius = App.Appearance.zillianceCornerRadius
+        self.createValueButton.layer.cornerRadius = App.Appearance.buttonCornerRadius
         
         // Cancel button
         

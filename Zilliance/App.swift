@@ -10,9 +10,11 @@ import UIKit
 
 struct App {
     struct Appearance {
-        static let zillianceCornerRadius: CGFloat = 3
-        static let zillianceButtonHeight: CGFloat = 50
-        static let zillianceBorderWidth: CGFloat = 0.5
-        static let zilianceMaxHours = 85
+        static let buttonCornerRadius: CGFloat = 3
+        static let buttonHeight: CGFloat = 50
+        static let borderWidth: CGFloat = 0.5
+        
+        static let maxHours = 85
     }
+    
 }

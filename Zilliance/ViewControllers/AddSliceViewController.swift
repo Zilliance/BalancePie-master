@@ -47,8 +47,8 @@ final class AddSliceViewController: UIViewController
         //setup width and corner radius
         for view in [self.tuneSliceButton, self.addAnotherActivityButton] as [UIView]
         {
-            view.layer.cornerRadius = App.Appearance.zillianceCornerRadius
-            view.layer.borderWidth = App.Appearance.zillianceBorderWidth
+            view.layer.cornerRadius = App.Appearance.buttonCornerRadius
+            view.layer.borderWidth = App.Appearance.borderWidth
             view.layer.borderColor = UIColor.lightGray.cgColor
         }
         

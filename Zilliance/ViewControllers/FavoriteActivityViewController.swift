@@ -44,7 +44,7 @@ class FavoriteActivityViewController: UIViewController {
     
     fileprivate var favorite = Favorite()
     
-    private let hours = App.Appearance.zilianceMaxHours.labeledArray(with: "Hour")
+    private let hours = App.Appearance.maxHours.labeledArray(with: "Hour")
     private let minutes = ["0 Minutes", "15 Minutes", "30 Minutes", "45 Minutes"]
     
     private var presenting: Presenting = .none
@@ -55,7 +55,7 @@ class FavoriteActivityViewController: UIViewController {
     }
     
     private func setupViews() {
-        self.getStartedButton.layer.cornerRadius = App.Appearance.zillianceCornerRadius
+        self.getStartedButton.layer.cornerRadius = App.Appearance.buttonCornerRadius
     }
     
     override func viewWillAppear(_ animated: Bool) {
