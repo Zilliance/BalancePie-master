@@ -110,7 +110,7 @@ final class AddSliceViewController: UIViewController
     }
     
     private func fineTune(userActivity: UserActivity) {
-        
+
         //fine tune setup example. It should use other view controllers
         let addStoryboard = UIStoryboard(name: "AddCustom", bundle: nil)
         
@@ -270,7 +270,6 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
     
     func selectActivityName()
     {
-        self.isPresentingActivities = true
         guard let itemSelectionViewController = UIStoryboard.init(name: "ItemsSelection", bundle: nil).instantiateInitialViewController() as? ItemsSelectionViewController else {
             assertionFailure()
             return
@@ -289,13 +288,14 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
         
         
         itemSelectionViewController.createNewItemAction = {
-            
+
             itemSelectionViewController.dismiss(animated: true, completion: {
                 guard let customActivityViewController = UIStoryboard.init(name: "AddCustom", bundle: nil).instantiateViewController(withIdentifier: "AddActivity") as? UINavigationController else {
                     assertionFailure()
                     return
                 }
-                
+                self.isPresentingActivities = true
+
                 self.present(customActivityViewController, animated: true, completion: nil)
             })
             
@@ -386,6 +386,26 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
             
             itemsVC.doneAction = { indexes in
                 completion(indexes)
+            }
+            
+            itemsVC.createNewItemAction = {
+                
+                itemsVC.dismiss(animated: true, completion: {
+                    guard let customValueViewController = UIStoryboard.init(name: "AddCustom", bundle: nil).instantiateViewController(withIdentifier: "AddValuesViewController") as? AddValuesViewController else {
+                        assertionFailure()
+                        return
+                    }
+                    
+                    let navigation = UINavigationController(rootViewController: customValueViewController)
+                    self.present(navigation, animated: true, completion: nil)
+                    
+                    customValueViewController.dismissAction = {
+                        //need to go back to the values selection
+                        self.selectValues(values: values, initialIndexes: initialIndexes, completion: completion)
+                    }
+                    
+                })
+                
             }
             
             let navigation = UINavigationController(rootViewController: itemsVC)

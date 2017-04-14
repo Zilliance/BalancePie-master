@@ -18,7 +18,7 @@ class PartialSizePresentationController : UIPresentationController {
         super.init(presentedViewController: presentedViewController, presenting: presentingViewController)
         
         self.height = height
-        
+                
     }
     
     override var frameOfPresentedViewInContainerView: CGRect {
@@ -27,4 +27,6 @@ class PartialSizePresentationController : UIPresentationController {
         
         return CGRect(x: 0, y: containerView.frame.size.height - self.height, width: containerView.bounds.width, height: self.height)
     }
+    
+    
 }
