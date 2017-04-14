@@ -225,6 +225,7 @@ class FavoriteActivityViewController: UIViewController {
         let userActivity = UserActivity()
         userActivity.activity = self.favorite.activity
         userActivity.duration = self.favorite.activityDuration
+        userActivity.feeling = .great
         
         self.favorite.values.forEach { (value) in
             userActivity.values.append(value)
@@ -240,7 +241,20 @@ class FavoriteActivityViewController: UIViewController {
             return
         }
         
-        self.present(pieViewController, animated: true)
+        guard let window = UIApplication.shared.keyWindow else {
+            return
+        }
+        
+        guard let rootViewController = window.rootViewController else {
+            return
+        }
+        
+        pieViewController.view.frame = rootViewController.view.frame
+        pieViewController.view.layoutIfNeeded()
+        
+        UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve, animations: { 
+            window.rootViewController = pieViewController
+        }, completion: nil)
     }
 
 
