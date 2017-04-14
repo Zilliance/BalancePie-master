@@ -236,12 +236,12 @@ class FavoriteActivityViewController: UIViewController {
     
     private func gotoPie() {
         
-        guard let pieNavViewController = UIStoryboard.init(name: "Pie", bundle: nil).instantiateInitialViewController() else {
+        guard let pieViewController = UIStoryboard.init(name: "PieViewController", bundle: nil).instantiateInitialViewController() else {
             assertionFailure()
             return
         }
         
-        self.present(pieNavViewController, animated: true)
+        self.present(pieViewController, animated: true)
     }
 
 
