@@ -28,8 +28,5 @@ class PartialSizePresentationController : UIPresentationController {
         return CGRect(x: 0, y: containerView.frame.size.height - self.height, width: containerView.bounds.width, height: self.height)
     }
     
-    override var shouldPresentInFullscreen: Bool {
-        return false
-    }
     
 }
