@@ -389,6 +389,26 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
                 completion(indexes)
             }
             
+            itemsVC.createNewItemAction = {
+                
+                itemsVC.dismiss(animated: true, completion: {
+                    guard let customValueViewController = UIStoryboard.init(name: "AddCustom", bundle: nil).instantiateViewController(withIdentifier: "AddValuesViewController") as? AddValuesViewController else {
+                        assertionFailure()
+                        return
+                    }
+                    
+                    let navigation = UINavigationController(rootViewController: customValueViewController)
+                    self.present(navigation, animated: true, completion: nil)
+                    
+                    customValueViewController.dismissAction = {
+                        //need to go back to the values selection
+                        self.selectValues(values: values, initialIndexes: initialIndexes, completion: completion)
+                    }
+                    
+                })
+                
+            }
+            
             let navigation = UINavigationController(rootViewController: itemsVC)
             navigation.transitioningDelegate = self
             navigation.modalPresentationStyle = .custom

@@ -11,6 +11,8 @@ import UIKit
 class AddValuesViewController: UIViewController {
     @IBOutlet weak var valueTextField: UITextField!
     
+    var dismissAction: (() -> ())?
+    
     var valueText: String? {
         if let text = self.valueTextField.text {
             return text.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -99,6 +101,7 @@ class AddValuesViewController: UIViewController {
     
     @IBAction func userDidTapCancel(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+        self.dismissAction?()
     }
 }
 
