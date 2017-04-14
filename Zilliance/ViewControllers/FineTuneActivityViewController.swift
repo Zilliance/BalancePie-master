@@ -23,6 +23,10 @@ final class FineTuneItemCell: UICollectionViewCell {
         
         //rounded image
         imageView.layer.cornerRadius = imageView.frame.size.width / 2
+        
+        if UIDevice.isSmallerThaniPhone6 {
+            label.font = UIFont.muliRegular(size: 12)
+        }
     }
     
 }
@@ -143,5 +147,14 @@ extension FineTuneActivityViewController: UICollectionViewDelegate
         }
     }
 }
+
+extension FineTuneActivityViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.bounds.size.width / CGFloat(self.items.count), height: 100)
+    }
+    
+}
+
 
 
