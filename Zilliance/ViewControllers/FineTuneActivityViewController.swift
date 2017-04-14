@@ -14,6 +14,20 @@ struct FineTuneItem {
     let viewController: UIViewController
 }
 
+extension FineTuneItem {
+    static var pleasure: FineTuneItem = FineTuneItem(title: "Pleasure", image: UIImage(named: "btnPlus")!, viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "pleasure"))
+    
+    static let prioritize = FineTuneItem(title: "Prioritize", image: UIImage(named: "btnPlus")!, viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "prioritize"))
+    
+    static var gratitude: FineTuneItem = FineTuneItem(title: "Gratitude", image: UIImage(named: "btnPlus")!, viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "gratitude"))
+    
+    static let giving = FineTuneItem(title: "Giving", image: UIImage(named: "btnPlus")!, viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "giving"))
+    
+    static let values = FineTuneItem(title: "Values", image: UIImage(named: "btnPlus")!, viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "values"))
+}
+
+// MARK: -
+
 final class FineTuneItemCell: UICollectionViewCell {
     @IBOutlet var label: UILabel!
     @IBOutlet var imageView: UIImageView!
@@ -30,6 +44,8 @@ final class FineTuneItemCell: UICollectionViewCell {
     }
     
 }
+
+// MARK: -
 
 final class FineTuneActivityViewController: UIViewController {
     
@@ -59,7 +75,7 @@ final class FineTuneActivityViewController: UIViewController {
         // Add a cancel button when we are the root view controller in the navigation stack
         
         if self.navigationController?.viewControllers.first == self {
-            self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelTapped(_:)))
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(cancelTapped(_:)))
         }
         
         self.showViewController(controller: items[0].viewController)
