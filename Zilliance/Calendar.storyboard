@@ -81,7 +81,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxc-PB-GEU">
                                                 <rect key="frame" x="95.5" y="0.0" width="221.5" height="41"/>
                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="23"/>
-                                                <state key="normal" title="Add To Calendar"/>
+                                                <state key="normal" title="Add To Calendar">
+                                                    <color key="titleColor" red="0.11764705882352941" green="0.16862745098039217" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="onDone:" destination="40o-Hi-Wew" eventType="touchUpInside" id="q8X-3h-hrN"/>
                                                 </connections>
