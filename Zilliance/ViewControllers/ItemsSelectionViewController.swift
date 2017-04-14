@@ -25,6 +25,33 @@ struct ItemSelectionViewModel
     
 }
 
+extension ItemSelectionViewModel {
+    static func items(from activities:[Activity]) -> [ItemSelectionViewModel] {
+        var items: [ItemSelectionViewModel] = []
+        activities.forEach { activity in
+            var image: UIImage? = nil
+            
+            if let iconName = activity.iconName {
+                image = UIImage(named: iconName)
+            }
+            
+            let item = ItemSelectionViewModel(title: activity.name, image: image)
+            items.append(item)
+        }
+        return items
+    }
+    
+    static func items(from values:[Value]) -> [ItemSelectionViewModel] {
+        var items: [ItemSelectionViewModel] = []
+        values.forEach { value in
+            
+            let item = ItemSelectionViewModel(title: value.name, image: nil)
+            items.append(item)
+        }
+        return items
+    }
+}
+
 class ItemsSelectionViewController: UIViewController {
 
     var items: [ItemSelectionViewModel] = []
@@ -34,6 +61,8 @@ class ItemsSelectionViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var doneAction: (([Int]) -> ())?
     var createNewItemAction: (() -> ())?
+    
+    var isMultipleSelectionEnabled = true
 
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -65,8 +94,19 @@ extension ItemsSelectionViewController: UITableViewDelegate
         
         if (indexPath.section == 0) //create action item
         {
-            self.createNewItemAction?()
+            DispatchQueue.main.async {
+                self.createNewItemAction?()
+            }
             return
+        }
+        
+        if !self.isMultipleSelectionEnabled {
+            
+            if let row = self.selectedItemsIndexes.popFirst() {
+                let cell = tableView.cellForRow(at: IndexPath(row: row, section: 1))
+                cell?.accessoryType = .none
+            }
+            
         }
         
         if (!self.selectedItemsIndexes.contains(indexPath.row))

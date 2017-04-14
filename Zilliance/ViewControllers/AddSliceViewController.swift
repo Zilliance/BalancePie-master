@@ -26,6 +26,7 @@ final class AddSliceViewController: UIViewController
     }
     
     fileprivate static let initialRowFeelingsTable: Int = 3
+    fileprivate var isPresentingActivities = false
     
     @IBOutlet weak var tuneSliceButton: UIButton!
     
@@ -48,6 +49,14 @@ final class AddSliceViewController: UIViewController
             view.layer.borderColor = UIColor.lightGray.cgColor
         }
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if self.isPresentingActivities {
+            self.selectActivityName()
+        }
+        self.isPresentingActivities = false
     }
     
     func validateValues() -> Bool
@@ -261,25 +270,46 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
     
     func selectActivityName()
     {
-        let activities = Database.shared.allActivities()
-        let activitiesNames: [String] = activities.map { $0.name }
-        
-        var initialIndex = 0
-        
-        if let activityName = self.newActivity.activity?.name
-        {
-            initialIndex = activitiesNames.index(of: activityName)!
+        self.isPresentingActivities = true
+        guard let itemSelectionViewController = UIStoryboard.init(name: "ItemsSelection", bundle: nil).instantiateInitialViewController() as? ItemsSelectionViewController else {
+            assertionFailure()
+            return
         }
         
-        ActionSheetStringPicker.show(withTitle: "Activity", rows: activitiesNames, initialSelection: initialIndex, doneBlock: { (picker, index, name) in
+        let activities: [Activity] = Array(Database.shared.allActivities())
+        itemSelectionViewController.createItemTitle = "Create my own"
+        itemSelectionViewController.items = ItemSelectionViewModel.items(from: activities)
+        itemSelectionViewController.isMultipleSelectionEnabled = false
+        let navigationController = UINavigationController(rootViewController: itemSelectionViewController)
+        navigationController.modalPresentationStyle = .custom
+        navigationController.transitioningDelegate = self
+        DispatchQueue.main.async {
+            self.present(navigationController, animated: true, completion: nil)
+        }
+        
+        
+        itemSelectionViewController.createNewItemAction = {
             
-            self.newActivity.activity = activities[index]
+            itemSelectionViewController.dismiss(animated: true, completion: {
+                guard let customActivityViewController = UIStoryboard.init(name: "AddCustom", bundle: nil).instantiateViewController(withIdentifier: "AddActivity") as? UINavigationController else {
+                    assertionFailure()
+                    return
+                }
+                
+                self.present(customActivityViewController, animated: true, completion: nil)
+            })
             
+        }
+        
+        itemSelectionViewController.doneAction = { indexes in
+            
+            guard indexes.count > 0 else {
+                return
+            }
+            
+            self.newActivity.activity = activities[indexes.first!]
             self.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .fade)
-            
-        }, cancel: { (picker) in
-            return
-        }, origin: tableView)
+        }
     
     }
     

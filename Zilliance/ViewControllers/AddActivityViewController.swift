@@ -42,8 +42,6 @@ class AddActivityViewController: UIViewController, UICollectionViewDataSource, U
         self.collectionView.contentInset = UIEdgeInsetsMake(10, 10, 10, 10)
         
         self.createActivityButton.setTitle("Create Activity", for: .normal)
-        self.createActivityButton.setTitleColor(UIColor.white, for: .normal)
-        self.createActivityButton.titleLabel?.font = UIFont.zillianceRegularFont(ofSize: 16.0)
         
         self.activityTextField.attributedPlaceholder = NSAttributedString(string: "Name of activity, e.g. Sports", attributes:[
             NSFontAttributeName : UIFont.zillianceRegularFont(ofSize: 16.0)
