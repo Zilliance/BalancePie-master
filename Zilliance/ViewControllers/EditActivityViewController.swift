@@ -12,7 +12,7 @@ import ActionSheetPicker_3_0
 
 final class EditActivityViewController: UIViewController{
     
-    enum TableSections: Int
+    enum TableSection: Int
     {
         case duration = 0
         case feelingType
@@ -65,7 +65,7 @@ extension EditActivityViewController: UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
-        case TableSections.goodFeelings.rawValue:
+        case TableSection.goodFeelings.rawValue:
             
             if (self.activity.feeling == .lousy || self.activity.feeling == .neutral)
             {
@@ -73,7 +73,7 @@ extension EditActivityViewController: UITableViewDataSource
             }
             
             return max(self.activity.goodValues.count, 1)
-        case TableSections.badFeelings.rawValue:
+        case TableSection.badFeelings.rawValue:
             
             if (self.activity.feeling == .great)
             {
@@ -90,19 +90,19 @@ extension EditActivityViewController: UITableViewDataSource
         
         var cell: UITableViewCell!
         switch (indexPath.section, indexPath.row) {
-        case (TableSections.duration.rawValue, _):
+        case (TableSection.duration.rawValue, _):
             
             cell = tableView.dequeueReusableCell(withIdentifier: "subtitleCell")!
             cell.textLabel?.text = "About how long now?"
             cell.detailTextLabel?.text = self.activity.duration.userFriendlyText
             
-        case (TableSections.feelingType.rawValue, _):
+        case (TableSection.feelingType.rawValue, _):
             
             cell = tableView.dequeueReusableCell(withIdentifier: "subtitleCell")!
             cell.textLabel?.text = "How do you feel now?"
             cell.detailTextLabel?.text = self.activity.feeling.string
 
-        case (TableSections.goodFeelings.rawValue, 0):
+        case (TableSection.goodFeelings.rawValue, 0):
             
             cell = tableView.dequeueReusableCell(withIdentifier: "subtitleCell")!
             cell.textLabel?.text = "Feels good because"
@@ -113,7 +113,7 @@ extension EditActivityViewController: UITableViewDataSource
             }
             cell.detailTextLabel?.text = self.activity.goodValues[indexPath.row].name
 
-        case (TableSections.badFeelings.rawValue, 0):
+        case (TableSection.badFeelings.rawValue, 0):
 
             cell = tableView.dequeueReusableCell(withIdentifier: "subtitleCell")!
             cell.textLabel?.text = "Feels bad because"
@@ -124,12 +124,12 @@ extension EditActivityViewController: UITableViewDataSource
             }
             cell.detailTextLabel?.text = self.activity.badValues[indexPath.row].name
             
-        case (TableSections.goodFeelings.rawValue, 1...Int(INT_MAX)):
+        case (TableSection.goodFeelings.rawValue, 1...Int(INT_MAX)):
             
             cell = tableView.dequeueReusableCell(withIdentifier: "basicCell")!
             cell.textLabel?.text = self.activity.goodValues[indexPath.row].name
 
-        case (TableSections.badFeelings.rawValue, 1...Int(INT_MAX)):
+        case (TableSection.badFeelings.rawValue, 1...Int(INT_MAX)):
             
             cell = tableView.dequeueReusableCell(withIdentifier: "basicCell")!
             cell.textLabel?.text = self.activity.badValues[indexPath.row].name
@@ -173,7 +173,7 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
             
             self.activity.duration = totalTimeMinutes
             
-            self.tableView.reloadRows(at: [IndexPath(row: 0, section: TableSections.duration.rawValue)], with: .fade)
+            self.tableView.reloadRows(at: [IndexPath(row: 0, section: TableSection.duration.rawValue)], with: .fade)
             
             self.selectHowItFeels()
             
@@ -193,7 +193,7 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
             
             self.activity.feeling = feelings[index]
             
-            let feelingSections: [Int] = TableSections.feelingSections()
+            let feelingSections: [Int] = TableSection.feelingSections()
             
             self.tableView.reloadSections(IndexSet(feelingSections), with: .fade)
             
@@ -245,13 +245,13 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
         //activity name
         
         switch indexPath.section {
-        case TableSections.duration.rawValue:
+        case TableSection.duration.rawValue:
             self.selectDuration()
 
-        case TableSections.feelingType.rawValue:
+        case TableSection.feelingType.rawValue:
             self.selectHowItFeels()
 
-        case TableSections.goodFeelings.rawValue:
+        case TableSection.goodFeelings.rawValue:
             let values = Value.goodValues
             let selectedValues = values.flatMap({self.activity.goodValues.index(of: $0) == nil ? nil : values.index(of: $0)})
             
@@ -264,10 +264,10 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
                     self.activity.values.append(value)
                 }
                 
-                self.tableView.reloadSections(IndexSet([TableSections.goodFeelings.rawValue]), with: .fade)
+                self.tableView.reloadSections(IndexSet([TableSection.goodFeelings.rawValue]), with: .fade)
             })
 
-        case TableSections.badFeelings.rawValue:
+        case TableSection.badFeelings.rawValue:
             let values = Value.badValues
             let selectedValues = values.flatMap({self.activity.badValues.index(of: $0) == nil ? nil : values.index(of: $0)})
             
@@ -280,7 +280,7 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
                     self.activity.values.append(value)
                 }
                 
-                self.tableView.reloadSections(IndexSet([TableSections.badFeelings.rawValue]), with: .fade)
+                self.tableView.reloadSections(IndexSet([TableSection.badFeelings.rawValue]), with: .fade)
             })
             
         default:

@@ -9,17 +9,22 @@
 import UIKit
 import ActionSheetPicker_3_0
 
+private let headerCellIdentifier = "headerCell"
+private let userActivityCellIdentifier = "userActivityCell"
+private let valueCellIdentifier = "basicCell"
+
 class FavoriteActivityViewController: UIViewController {
-    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var getStartedButton: UIButton!
     
-    fileprivate enum FavoriteTableSections: Int
-    {
-        case hours = 0
+    fileprivate enum TableSection: Int {
+        case header = 0
+        case hours
         case activity
         case howLong
         case feels
+        
+        static var count = 5
     }
     
     fileprivate struct Favorite {
@@ -51,10 +56,9 @@ class FavoriteActivityViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupViews()
-    }
-    
-    private func setupViews() {
+        
+        self.view.backgroundColor = .lightGrayBackground
+        self.tableView.backgroundColor = .lightGrayBackground
         self.getStartedButton.layer.cornerRadius = App.Appearance.buttonCornerRadius
     }
     
@@ -86,12 +90,11 @@ class FavoriteActivityViewController: UIViewController {
             let minute = indexes?[1] as! Int * 15
             self.favorite.sleepDuration = hour * 60 + minute
             
-             self.tableView.reloadRows(at: [IndexPath(row: 0, section: FavoriteTableSections.hours.rawValue)], with: .fade)
+             self.tableView.reloadRows(at: [IndexPath(row: 0, section: TableSection.hours.rawValue)], with: .fade)
             
         }, cancel: { (picker) in
             
         }, origin: UITableViewCell())
-        
         
     }
     
@@ -136,7 +139,7 @@ class FavoriteActivityViewController: UIViewController {
             }
             
             self.favorite.activity = activities[indexes.first!]
-               self.tableView.reloadRows(at: [IndexPath(row: 0, section: FavoriteTableSections.activity.rawValue)], with: .fade)
+               self.tableView.reloadRows(at: [IndexPath(row: 0, section: TableSection.activity.rawValue)], with: .fade)
         }
     }
     
@@ -148,7 +151,7 @@ class FavoriteActivityViewController: UIViewController {
             let minute = indexes?[1] as! Int * 15
             self.favorite.activityDuration = hour * 60 + minute
             
-            self.tableView.reloadRows(at: [IndexPath(row: 0, section: FavoriteTableSections.howLong.rawValue)], with: .fade)
+            self.tableView.reloadRows(at: [IndexPath(row: 0, section: TableSection.howLong.rawValue)], with: .fade)
             
             
         }, cancel: { (picker) in
@@ -204,7 +207,7 @@ class FavoriteActivityViewController: UIViewController {
             
             self.favorite.values = selectedValues
             
-            self.tableView.reloadSections(IndexSet([FavoriteTableSections.feels.rawValue]), with: .fade)
+            self.tableView.reloadSections(IndexSet([TableSection.feels.rawValue]), with: .fade)
 
         }
         
@@ -299,12 +302,12 @@ extension FavoriteActivityViewController: UITableViewDataSource
 {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
+        return TableSection.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
-        case FavoriteTableSections.feels.rawValue:
+        case TableSection.feels.rawValue:
             return max(self.favorite.values.count, 1)
         default:
             return 1
@@ -312,57 +315,58 @@ extension FavoriteActivityViewController: UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch (TableSection(rawValue: indexPath.section), indexPath.row) {
         
-        var cell: UITableViewCell!
-        switch (indexPath.section, indexPath.row) {
-        case (FavoriteTableSections.hours.rawValue, _):
+        case (.header?, _):
+            return tableView.dequeueReusableCell(withIdentifier: headerCellIdentifier, for: indexPath)
             
-            cell = tableView.dequeueReusableCell(withIdentifier: "subtitleCell")!
-            cell.textLabel?.text = "Sleep Hours"
+        case (.hours?, _):
+            let cell = tableView.dequeueReusableCell(withIdentifier: userActivityCellIdentifier, for: indexPath) as! UserActivityTableViewCell
             
-            cell.detailTextLabel?.text = self.favorite.sleepDuration >= 0 ? self.favorite.sleepDuration.userFriendlyText : ""
+            cell.titleLabel.text = "About how many hours do you sleep in a night?"
+            cell.valueLabel.text = self.favorite.sleepDuration >= 0 ? self.favorite.sleepDuration.userFriendlyText : ""
             
-        case (FavoriteTableSections.activity.rawValue, _):
+            return cell
             
-            cell = tableView.dequeueReusableCell(withIdentifier: "subtitleCell")!
-            cell.textLabel?.text = "Favorite Activity"
-            if let title = self.favorite.activity?.name {
-                cell.detailTextLabel?.text = title
-            } else {
-                cell.detailTextLabel?.text = ""
-            }
+        case (.activity?, _):
+            let cell = tableView.dequeueReusableCell(withIdentifier: userActivityCellIdentifier, for: indexPath) as! UserActivityTableViewCell
             
-        case (FavoriteTableSections.howLong.rawValue, _):
-            cell = tableView.dequeueReusableCell(withIdentifier: "subtitleCell")!
-            cell.textLabel?.text = "About how Long"
-            cell.detailTextLabel?.text = self.favorite.activityDuration >= 0 ? self.favorite.activityDuration.userFriendlyText : ""
+            cell.titleLabel.text = "What is one of your favorite activities?"
+            cell.valueLabel.text = self.favorite.activity?.name ?? ""
             
-        case (FavoriteTableSections.feels.rawValue, 0):
+            return cell
             
-            cell = tableView.dequeueReusableCell(withIdentifier: "subtitleCell")!
-            cell.textLabel?.text = "Activity Feels Good Because Off"
-            cell.detailTextLabel?.text = ""
+        case (.howLong?, _):
+            let cell = tableView.dequeueReusableCell(withIdentifier: userActivityCellIdentifier, for: indexPath) as! UserActivityTableViewCell
+           
+            cell.titleLabel.text = "Roughly how many hours a week do you spend on this activity?"
+            cell.valueLabel.text = self.favorite.activityDuration >= 0 ? self.favorite.activityDuration.userFriendlyText : ""
             
-            if (self.favorite.values.count == 0)
-            {
-                cell.detailTextLabel?.text = ""
-                break
-            }
-            cell.detailTextLabel?.text = self.favorite.values[indexPath.row].name
+            return cell
             
-        case (FavoriteTableSections.feels.rawValue, 1...Int(INT_MAX)):
+        case (.feels?, 0):
+            let cell = tableView.dequeueReusableCell(withIdentifier: userActivityCellIdentifier, for: indexPath) as! UserActivityTableViewCell
             
-            cell = tableView.dequeueReusableCell(withIdentifier: "basicCell")!
+            cell.titleLabel.text = "Why does this activity feel good?"
+            cell.valueLabel.text = self.favorite.values.count == 0 ? "" : self.favorite.values[indexPath.row].name
+            
+            return cell
+            
+        case (.feels?, _):
+            let cell = tableView.dequeueReusableCell(withIdentifier: valueCellIdentifier, for: indexPath)
             cell.textLabel?.text = self.favorite.values[indexPath.row].name
+            
+            return cell
     
         default:
-            break
-            
+            assertionFailure()
+            return tableView.dequeueReusableCell(withIdentifier: "Error")!
             
         }
-        
-        return cell
-        
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = .lightGrayBackground
     }
 }
 
@@ -370,40 +374,36 @@ extension FavoriteActivityViewController: UITableViewDataSource
 extension FavoriteActivityViewController: UITableViewDelegate, UIViewControllerTransitioningDelegate
 {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return indexPath.row == 0 ? 64 : 44
+        switch (indexPath.section, indexPath.row) {
+        case (0, _): return 120
+        case (_, 0): return 96
+        default: return 44
+        }
     }
     
-
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         
-        //activity name
-        
-        switch indexPath.section {
-        case FavoriteTableSections.hours.rawValue:
+        switch TableSection(rawValue: indexPath.section) {
+        case .hours?:
             self.selectSleepHours()
             
-        case FavoriteTableSections.activity.rawValue:
+        case .activity?:
             self.selectActivity()
             
-        case FavoriteTableSections.howLong.rawValue:
+        case .howLong?:
             self.selectActivityDuration()
             
-        case FavoriteTableSections.feels.rawValue:
+        case .feels?:
             self.selectValues()
             
         default:
             break
         }
-        
     }
     
-    func presentationController(forPresented presented: UIViewController,
-                                presenting: UIViewController?,
-                                source: UIViewController) -> UIPresentationController? {
-        let presentationController = PartialSizePresentationController(presentedViewController: presented,
-                                                                       presenting: presenting, height: self.view.frame.size.height / 2.0)
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        let presentationController = PartialSizePresentationController(presentedViewController: presented, presenting: presenting, height: self.view.frame.size.height / 2.0)
         return presentationController
     }
-    
 }

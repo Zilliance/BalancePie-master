@@ -12,7 +12,7 @@ import ActionSheetPicker_3_0
 
 final class AddSliceViewController: UIViewController
 {
-    enum TableSections: Int
+    enum TableSection: Int
     {
         case name = 0
         case duration
@@ -173,7 +173,7 @@ extension AddSliceViewController: UITableViewDataSource
         
         switch section
         {
-        case TableSections.goodFeelings.rawValue:
+        case TableSection.goodFeelings.rawValue:
             
             if (self.newActivity.feeling == .lousy || self.newActivity.feeling == .neutral || self.newActivity.feeling == .none)
             {
@@ -181,7 +181,7 @@ extension AddSliceViewController: UITableViewDataSource
             }
             
             return max(self.newActivity.goodValues.count, 1)
-        case TableSections.badFeelings.rawValue:
+        case TableSection.badFeelings.rawValue:
             
             if (self.newActivity.feeling == .great || self.newActivity.feeling == .none)
             {
@@ -200,25 +200,25 @@ extension AddSliceViewController: UITableViewDataSource
         var cell: UITableViewCell!
         switch (indexPath.section, indexPath.row) {
             
-        case (TableSections.name.rawValue, _):
+        case (TableSection.name.rawValue, _):
             cell = tableView.dequeueReusableCell(withIdentifier: "subtitleCell")!
             cell.textLabel?.text = "Name of this activity"
             
             cell.detailTextLabel?.text = self.newActivity.activity?.name ?? " "
             
-        case (TableSections.duration.rawValue, _):
+        case (TableSection.duration.rawValue, _):
             
             cell = tableView.dequeueReusableCell(withIdentifier: "subtitleCell")!
             cell.textLabel?.text = "About how long"
             cell.detailTextLabel?.text = self.newActivity.duration.userFriendlyText
             
-        case (TableSections.feelingType.rawValue, _):
+        case (TableSection.feelingType.rawValue, _):
             
             cell = tableView.dequeueReusableCell(withIdentifier: "subtitleCell")!
             cell.textLabel?.text = "How do you feel"
             cell.detailTextLabel?.text = self.newActivity.feeling.string
             
-        case (TableSections.goodFeelings.rawValue, 0):
+        case (TableSection.goodFeelings.rawValue, 0):
             
             cell = tableView.dequeueReusableCell(withIdentifier: "subtitleCell")!
             cell.textLabel?.text = "Feels good because"
@@ -229,7 +229,7 @@ extension AddSliceViewController: UITableViewDataSource
             }
             cell.detailTextLabel?.text = self.newActivity.goodValues[indexPath.row].name
             
-        case (TableSections.badFeelings.rawValue, 0):
+        case (TableSection.badFeelings.rawValue, 0):
             
             cell = tableView.dequeueReusableCell(withIdentifier: "subtitleCell")!
             cell.textLabel?.text = "Feels bad because"
@@ -240,12 +240,12 @@ extension AddSliceViewController: UITableViewDataSource
             }
             cell.detailTextLabel?.text = self.newActivity.badValues[indexPath.row].name
             
-        case (TableSections.goodFeelings.rawValue, 1...Int(INT_MAX)):
+        case (TableSection.goodFeelings.rawValue, 1...Int(INT_MAX)):
             
             cell = tableView.dequeueReusableCell(withIdentifier: "basicCell")!
             cell.textLabel?.text = self.newActivity.goodValues[indexPath.row].name
             
-        case (TableSections.badFeelings.rawValue, 1...Int(INT_MAX)):
+        case (TableSection.badFeelings.rawValue, 1...Int(INT_MAX)):
             
             cell = tableView.dequeueReusableCell(withIdentifier: "basicCell")!
             cell.textLabel?.text = self.newActivity.badValues[indexPath.row].name
@@ -351,7 +351,7 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
             
             self.newActivity.feeling = feelings[index]
             
-            let feelingSections: [Int] = TableSections.feelingSections()
+            let feelingSections: [Int] = TableSection.feelingSections()
             
             self.tableView.reloadSections(IndexSet(feelingSections), with: .fade)
             
@@ -422,16 +422,16 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
         //activity name
         
         switch indexPath.section {
-        case TableSections.name.rawValue:
+        case TableSection.name.rawValue:
             self.selectActivityName()
             
-        case TableSections.duration.rawValue:
+        case TableSection.duration.rawValue:
             self.selectDuration()
             
-        case TableSections.feelingType.rawValue:
+        case TableSection.feelingType.rawValue:
             self.selectHowItFeels()
             
-        case TableSections.goodFeelings.rawValue:
+        case TableSection.goodFeelings.rawValue:
             let values = Value.goodValues
             let selectedValues = values.flatMap({self.newActivity.goodValues.index(of: $0) == nil ? nil : values.index(of: $0)})
             
@@ -444,10 +444,10 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
                     self.newActivity.values.append(value)
                 }
                 
-                self.tableView.reloadSections(IndexSet([TableSections.goodFeelings.rawValue]), with: .fade)
+                self.tableView.reloadSections(IndexSet([TableSection.goodFeelings.rawValue]), with: .fade)
             })
             
-        case TableSections.badFeelings.rawValue:
+        case TableSection.badFeelings.rawValue:
             let values = Value.badValues
             let selectedValues = values.flatMap({self.newActivity.badValues.index(of: $0) == nil ? nil : values.index(of: $0)})
             
@@ -460,7 +460,7 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
                     self.newActivity.values.append(value)
                 }
                 
-                self.tableView.reloadSections(IndexSet([TableSections.badFeelings.rawValue]), with: .fade)
+                self.tableView.reloadSections(IndexSet([TableSection.badFeelings.rawValue]), with: .fade)
             })
             
         default:
