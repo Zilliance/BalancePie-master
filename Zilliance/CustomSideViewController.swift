@@ -2,7 +2,7 @@
 //  CustomSideViewController.swift
 //  Zilliance
 //
-//  Created by mac on 17-04-17.
+//  Created by Ignacio Zunino on 17-04-17.
 //  Copyright © 2017 Pillars4Life. All rights reserved.
 //
 
