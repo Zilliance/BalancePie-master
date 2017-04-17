@@ -12,23 +12,23 @@ import SideMenuController
 
 final class CustomSideViewController: SideMenuController
 {
-    func initialize()
+    static func initSideProperties()
     {
         SideMenuController.preferences.drawing.menuButtonImage = UIImage(named: "driving")
-        SideMenuController.preferences.drawing.sidePanelPosition = .overCenterPanelLeft
+        SideMenuController.preferences.drawing.sidePanelPosition = .underCenterPanelLeft
         SideMenuController.preferences.drawing.sidePanelWidth = 300
         SideMenuController.preferences.drawing.centerPanelShadow = true
-        SideMenuController.preferences.animating.statusBarBehaviour = .showUnderlay
+        SideMenuController.preferences.animating.statusBarBehaviour = .horizontalPan
     }
     
     required init?(coder aDecoder: NSCoder) {
+        CustomSideViewController.initSideProperties()
         super.init(coder: aDecoder)
-        initialize()
     }
     
     init()
     {
+        CustomSideViewController.initSideProperties()
         super.init(nibName: nil, bundle: nil)
-        initialize()
     }
 }
