@@ -11,6 +11,7 @@ target 'Zilliance' do
   pod 'Realm'
   pod 'RealmSwift'
   pod 'ActionSheetPicker-3.0'
+  pod 'SideMenuController'
 
   target 'ZillianceTests' do
     inherit! :search_paths

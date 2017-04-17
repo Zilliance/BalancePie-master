@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SideMenuController
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -31,7 +32,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var rootViewController: UIViewController?
         
         if Database.shared.user.activities.count > 0 {
-         	rootViewController = UIStoryboard(name: "Pie", bundle: nil).instantiateInitialViewController()
+            
+            let sideMenuViewController = CustomSideViewController()
+            
+            // create the side controller
+            let sideController = UIStoryboard(name: "SideMenu", bundle: nil).instantiateInitialViewController()
+            
+            // embed the side and center controllers
+            sideMenuViewController.embed(sideViewController: sideController!)
+            
+            let pieNavController = UIStoryboard(name: "Pie", bundle: nil).instantiateInitialViewController() as! UINavigationController
+            pieNavController.addSideMenuButton()
+            
+            sideMenuViewController.embed(centerViewController: pieNavController)
+            
+         	rootViewController = sideMenuViewController
         }
         else {
             rootViewController =  UIStoryboard(name: "Onboarding", bundle: nil).instantiateInitialViewController()

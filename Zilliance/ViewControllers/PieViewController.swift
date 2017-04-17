@@ -38,7 +38,7 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
 
     private func setupViews() {
     
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
+       // self.navigationController?.setNavigationBarHidden(true, animated: false)
         self.view.backgroundColor = .lightGrayBackground
         self.title = "Balance Pie"
         
