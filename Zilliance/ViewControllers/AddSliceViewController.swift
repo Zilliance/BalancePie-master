@@ -273,7 +273,11 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
             return
         }
         
-        let activities: [Activity] = Array(Database.shared.allActivities())
+        let selectedActivities = Database.shared.user.activities.map { $0.activity }
+        let activities: [Activity] = Array(Database.shared.allActivities()).filter { activity in
+            return !selectedActivities.contains { $0 == activity }
+        }
+
         itemSelectionViewController.createItemTitle = "Create my own"
         itemSelectionViewController.items = ItemSelectionViewModel.items(from: activities)
         itemSelectionViewController.isMultipleSelectionEnabled = false
