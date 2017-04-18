@@ -100,8 +100,7 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
     private func refreshHours() {
         if let user = Database.shared.user {
             self.hoursProgressView.availableHours = user.availableHours
-            self.hoursProgressView.activeHours = 35 // TODO: take it from the DB after we start to work with the DB = user?.currentActivitiesDuration / 60
-            
+            self.hoursProgressView.activeHours = user.currentActivitiesDuration / 60
             self.hoursProgressView.sleepHours = user.timeSlept / 60
         }
     }
@@ -147,6 +146,7 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
         alert.addAction(UIAlertAction(title: "Delete Slice", style: .default) { _ in
             Database.shared.user.remove(userActivity: userActivity)
             self.loadData()
+            self.refreshHours()
             alert.dismiss(animated: true, completion: nil)
         })
         
