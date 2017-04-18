@@ -37,8 +37,7 @@ final class AddSliceViewController: UIViewController, AlertsDuration
     fileprivate static let initialRowFeelingsTable: Int = 3
     fileprivate var isPresentingActivities = false
     
-    @IBOutlet weak var tuneSliceButton: UIButton!
-    @IBOutlet weak var addAnotherActivityButton: UIButton!
+    @IBOutlet weak var addSliceButton: UIButton!
     @IBOutlet fileprivate weak var tableView: UITableView!
 
     var newActivity = UserActivity()
@@ -54,13 +53,8 @@ final class AddSliceViewController: UIViewController, AlertsDuration
         super.viewDidLoad()
         
         //setup width and corner radius
-        for view in [self.tuneSliceButton, self.addAnotherActivityButton] as [UIView]
-        {
-            view.layer.cornerRadius = App.Appearance.buttonCornerRadius
-            view.layer.borderWidth = App.Appearance.borderWidth
-            view.layer.borderColor = UIColor.lightGray.cgColor
-        }
-        
+
+        self.addSliceButton.layer.cornerRadius = App.Appearance.buttonCornerRadius
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -137,15 +131,23 @@ final class AddSliceViewController: UIViewController, AlertsDuration
         self.navigationController!.pushViewController(fineTuneVC, animated: true)
     }
     
-    @IBAction func fineTuneTapped(_ sender: Any) {
+    @IBAction func fineTuneAction() {
         if (self.validateValues())
         {
-            self.saveActivity()
             fineTune(userActivity: self.newActivity)
         }
     }
     
-    @IBAction func addAnotherSliceTapped(_ sender: Any) {
+    @IBAction func addSliceAction(_ sender: Any) {
+        
+        if (self.validateValues())
+        {
+            self.saveActivity()
+            self.showOptionsAlert()
+        }
+    }
+    
+    @IBAction func addAnotherSliceAction() {
         self.saveActivity()
         
         let addStoryboard = UIStoryboard(name: "AddCustom", bundle: nil)
@@ -157,7 +159,7 @@ final class AddSliceViewController: UIViewController, AlertsDuration
         self.navigationController?.pushViewController(addActivityVC, animated: true)
     }
     
-    @IBAction func backToPieTapped(_ sender: Any) {
+    @IBAction func backToPieAction() {
         
         self.navigationController?.dismiss(animated: true, completion: nil)
         
@@ -382,6 +384,28 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
         }, origin: tableView)
     }
     
+    func showOptionsAlert() {
+        
+        let alertController = UIAlertController(title: nil, message: "Added the slice to your pie. What would you like to do next?", preferredStyle: .alert)
+        
+        alertController.addAction(UIAlertAction(title: "Fine Tune This Slice", style: .default) { _ in
+            alertController.dismiss(animated: true, completion: nil)
+            self.fineTuneAction()
+        })
+        
+        alertController.addAction(UIAlertAction(title: "Add Another Slice", style: .default) { _ in
+            alertController.dismiss(animated: true, completion: nil)
+            self.addAnotherSliceAction()
+        })
+        
+        alertController.addAction(UIAlertAction(title: "See My Pie", style: .default) { _ in
+            alertController.dismiss(animated: true, completion: nil)
+            self.backToPieAction()
+        })
+        
+        self.present(alertController, animated: true, completion: nil)
+
+    }
     
     func selectValues(values: [Value], initialIndexes: [Int], completion: @escaping ([Int])->())
     {
