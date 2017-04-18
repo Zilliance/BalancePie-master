@@ -15,7 +15,7 @@ enum DurationAlertAction {
     case changeHours
 }
 
-final class AddSliceViewController: UIViewController
+final class AddSliceViewController: UIViewController, AlertsDuration
 {
     enum TableSection: Int
     {
