@@ -9,13 +9,17 @@
 import UIKit
 import SideMenuController
 
-class PieViewController: UIViewController, UIViewControllerTransitioningDelegate {
+class PieViewController: UIViewController, UIViewControllerTransitioningDelegate, UITextViewDelegate {
     
     private enum SliceOptions: String {
         case edit = "Edit Slice"
         case tune = "Fine Tune Slice"
         case delete = "Delete Slice"
     }
+    
+    @IBOutlet weak var textView: UITextView!
+    
+    var valueString = "choose value"
     
     private let statusBarBackgroundView = UIView()
     private let hoursProgressView = HoursProgressView()
@@ -29,12 +33,24 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupViews()
+        self.setupTextView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.loadData()
         self.refreshHours()
+        self.view.bringSubview(toFront: self.textView)
+    }
+    
+    private func setupTextView() {
+        let string = "Shift my thoughts about Activity by focusing on the need(s) it fulfills: \(self.valueString)"
+        let attributedString = NSMutableAttributedString(string: string)
+        attributedString.addAttribute(NSLinkAttributeName, value: "choosevalue://", range: (string as NSString).range(of: self.valueString))
+        self.textView.attributedText = attributedString
+        self.textView.dataDetectorTypes = .link
+        self.textView.delegate = self
+        
     }
 
     private func setupViews() {
@@ -211,4 +227,71 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
         let presentationController = PartialSizePresentationController(presentedViewController: presented, presenting: presenting, height: self.view.frame.size.height / 2.0)
         return presentationController
     }
+    
+    fileprivate func selectValues() {
+        
+        guard let itemSelectionViewController = UIStoryboard(name: "ItemsSelection", bundle: nil).instantiateInitialViewController() as? ItemsSelectionViewController else {
+            assertionFailure()
+            return
+        }
+        
+        let values: [Value] = Array(Database.shared.allValues())
+        itemSelectionViewController.createItemTitle = "Create my own"
+        itemSelectionViewController.items = ItemSelectionViewModel.items(from: values)
+        
+        let navigationController = UINavigationController(rootViewController: itemSelectionViewController)
+        navigationController.modalPresentationStyle = .custom
+        navigationController.transitioningDelegate = self
+        DispatchQueue.main.async {
+            self.present(navigationController, animated: true, completion: nil)
+        }
+        
+        itemSelectionViewController.createNewItemAction = {
+            
+            itemSelectionViewController.dismiss(animated: true, completion: {
+                guard let customValueViewController = UIStoryboard(name: "AddCustom", bundle: nil).instantiateViewController(withIdentifier: "AddValue") as? UINavigationController else {
+                    assertionFailure()
+                    return
+                }
+                
+                self.present(customValueViewController, animated: true, completion: nil)
+            })
+            
+        }
+        
+        itemSelectionViewController.doneAction = { indexes in
+            
+            guard indexes.count > 0 else {
+                return
+            }
+            
+            var selectedValues: [Value] = []
+            
+            indexes.forEach({ (index) in
+                selectedValues.append(values[index])
+            })
+//            
+            self.valueString = selectedValues[0].name
+            self.setupTextView()
+//            self.favorite.values = selectedValues
+//            
+//            self.tableView.reloadSections(IndexSet([TableSection.feels.rawValue]), with: .fade)
+            
+        }
+        
+    }
+
+    
+    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
+        
+        if URL.scheme == "choosevalue" {
+  
+            self.selectValues()
+            
+            return false
+        }
+        return true
+    }
+
+    
 }
