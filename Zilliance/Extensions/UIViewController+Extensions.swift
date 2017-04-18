@@ -20,4 +20,22 @@ extension UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
+    func showDurationAlert(completion: ((DurationAlertAction)->())?=nil) {
+        let alertController = UIAlertController(title: "More Hours Than Available", message: "You've exceeded the number of hours available in a week. Would you like to change the duration or keep it", preferredStyle: .alert)
+        
+        alertController.addAction(UIAlertAction(title: "Allow Anyway", style: .default) { _ in
+            alertController.dismiss(animated: true, completion: nil)
+            completion?(.allowHours)
+        })
+        
+        
+        alertController.addAction(UIAlertAction(title: "Change Hours", style: .default) { _ in
+            alertController.dismiss(animated: true, completion: nil)
+            completion?(.changeHours)
+        })
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    
 }

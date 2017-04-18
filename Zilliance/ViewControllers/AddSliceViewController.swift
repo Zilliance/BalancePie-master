@@ -10,6 +10,11 @@ import Foundation
 import UIKit
 import ActionSheetPicker_3_0
 
+enum DurationAlertAction {
+    case allowHours
+    case changeHours
+}
+
 final class AddSliceViewController: UIViewController
 {
     enum TableSection: Int
@@ -329,13 +334,29 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
                 assertionFailure()
                 return
             }
+            
             minute *= 15
             
             let totalTimeMinutes = hour * 60 + minute
             
-            self.newActivity.duration = totalTimeMinutes
-            
-            self.tableView.reloadRows(at: [IndexPath(row: 0, section: 1)], with: .fade)
+            if totalTimeMinutes > Database.shared.user.availableMinutesForActivities {
+                self.showDurationAlert() { option in
+                    switch option {
+                    case .allowHours:
+                        self.newActivity.duration = totalTimeMinutes
+                        self.tableView.reloadRows(at: [IndexPath(row: 0, section: 1)], with: .fade)
+                    case .changeHours:
+                        self.selectDuration()
+                    }
+                    
+                }
+            }
+            else {
+                
+                self.newActivity.duration = totalTimeMinutes
+                self.tableView.reloadRows(at: [IndexPath(row: 0, section: 1)], with: .fade)
+                
+            }
             
         }, cancel: { (picker) in
             
