@@ -114,10 +114,11 @@ final class PieView: UIView {
             emptyMinutes -= userActivity.duration
         }
         
-        assert(emptyMinutes > 0, "the duration of the activities is greater than your available time")
         
-        yVals1.append(PieChartDataEntry(value: Double(emptyMinutes), label: nil, icon: nil))
-        colors.append(.emptySlice)
+        if emptyMinutes > 0 {
+            yVals1.append(PieChartDataEntry(value: Double(emptyMinutes), label: nil, icon: nil))
+            colors.append(.emptySlice)
+        }
         
         let dataSet: PieChartDataSet = PieChartDataSet(values: yVals1, label: "Activities")
         

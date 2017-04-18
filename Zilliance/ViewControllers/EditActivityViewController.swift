@@ -176,11 +176,22 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
             
             let totalTimeMinutes = hour * 60 + minute
             
-            self.activity.duration = totalTimeMinutes
-            
-            self.tableView.reloadRows(at: [IndexPath(row: 0, section: TableSection.duration.rawValue)], with: .fade)
-            
-            self.selectHowItFeels()
+            if totalTimeMinutes > Database.shared.user.availableMinutesForActivities {
+                self.showDurationAlert() { option in
+                    switch option {
+                    case .allowHours:
+                        self.activity.duration = totalTimeMinutes
+                        self.tableView.reloadRows(at: [IndexPath(row: 0, section: 1)], with: .fade)
+                    case .changeHours:
+                        self.selectDuration()
+                    }
+                    
+                }
+            }
+            else {
+                self.activity.duration = totalTimeMinutes
+                self.tableView.reloadRows(at: [IndexPath(row: 0, section: 1)], with: .fade)
+            }
             
         }, cancel: { (picker) in
             

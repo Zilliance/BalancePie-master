@@ -149,10 +149,24 @@ class FavoriteActivityViewController: UIViewController {
             
             let hour = indexes?[0] as! Int
             let minute = indexes?[1] as! Int * 15
-            self.favorite.activityDuration = hour * 60 + minute
             
-            self.tableView.reloadRows(at: [IndexPath(row: 0, section: TableSection.howLong.rawValue)], with: .fade)
+            let totalTimeMinutes = hour * 60 + minute
             
+            if totalTimeMinutes > Database.shared.user.availableMinutesForActivities {
+                self.showDurationAlert() { option in
+                    switch option {
+                    case .allowHours:
+                        self.favorite.activityDuration = totalTimeMinutes
+                        self.tableView.reloadRows(at: [IndexPath(row: 0, section: TableSection.howLong.rawValue)], with: .fade)
+                    case .changeHours:
+                        self.selectActivityDuration()
+                    }
+                }
+            }
+            else {
+                self.favorite.activityDuration = totalTimeMinutes
+                self.tableView.reloadRows(at: [IndexPath(row: 0, section: TableSection.howLong.rawValue)], with: .fade)
+            }
             
         }, cancel: { (picker) in
             
