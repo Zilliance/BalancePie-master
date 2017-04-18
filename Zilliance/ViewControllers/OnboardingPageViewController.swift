@@ -71,7 +71,7 @@ class OnboardingPageViewController: UIPageViewController {
 extension OnboardingPageViewController: UIPageViewControllerDelegate {
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
 
-        if let index = introViewControllers.index(of: previousViewControllers.first!), index == 2, shouldHideDots == true, completed == true {
+        if self.shouldHideDots == true, completed == true {
             // hide dots and remove swipe in last page
             
             UIView.animate(withDuration: 0.3, animations: { 
