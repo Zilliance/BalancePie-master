@@ -9,35 +9,13 @@
 import UIKit
 import SideMenuController
 
-class PieViewController: UIViewController, UIViewControllerTransitioningDelegate, UITextViewDelegate {
+class PieViewController: UIViewController, UIViewControllerTransitioningDelegate {
     
     private enum SliceOptions: String {
         case edit = "Edit Slice"
         case tune = "Fine Tune Slice"
         case delete = "Delete Slice"
     }
-    
-    struct EditableText {
-        var feeling: Feeling = .none
-        var text: String = ""
-        var type: EditTextType = .value
-        var isMultipleSelection = false
-        var selectedIndexes: [Int]? = []
-    }
-    
-    enum EditTextType {
-        case value
-        case activity
-        case text
-    }
-    
-    @IBOutlet weak var textView: UITextView!
-    
-    
-    var editText = EditableText(feeling: .great, text: "choose multiple good values", type: .value, isMultipleSelection: true, selectedIndexes: nil)
-    var editText2 = EditableText(feeling: .lousy, text: "chooose single bad value", type: .value, isMultipleSelection: false, selectedIndexes: nil)
-    
-    var editableTexts: [EditableText] = []
     
     private let statusBarBackgroundView = UIView()
     private let hoursProgressView = HoursProgressView()
@@ -50,34 +28,15 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.editableTexts = [editText, editText2]
         self.setupViews()
-        self.setupTextView()
     }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.loadData()
         self.refreshHours()
-        self.view.bringSubview(toFront: self.textView)
     }
     
-    private func setupTextView() {
-        
-        let string = "Shift my thoughts about Activity by focusing on the need(s) it fulfills: \(self.editableTexts[0].text) and another text : \(self.editableTexts[1].text)"
-        let attributedString = NSMutableAttributedString(string: string)
-        
-        for i in 0 ..< self.editableTexts.count {
-            attributedString.addAttribute(NSLinkAttributeName, value: "edittext://" + "?order=" + String(i) , range: (string as NSString).range(of: self.editableTexts[i].text))
-        }
-        
-        self.textView.attributedText = attributedString
-        self.textView.dataDetectorTypes = .link
-        self.textView.delegate = self
-        
-    }
-
     private func setupViews() {
     
         self.navigationController?.setNavigationBarHidden(true, animated: false)
@@ -252,107 +211,5 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
         let presentationController = PartialSizePresentationController(presentedViewController: presented, presenting: presenting, height: self.view.frame.size.height / 2.0)
         return presentationController
     }
-
-    func getQueryStringParameter(url: String, param: String) -> String? {
-        guard let url = URLComponents(string: url) else { return nil }
-        return url.queryItems?.first(where: { $0.name == param })?.value
-    }
     
-    
-    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
-        
-        guard let itemSelectionViewController = UIStoryboard(name: "ItemsSelection", bundle: nil).instantiateInitialViewController() as? ItemsSelectionViewController, let param = getQueryStringParameter(url: URL.absoluteString, param: "order") else {
-            assertionFailure()
-            return false
-        }
-        
-        let order = Int(param)!
-        var editText = self.editableTexts[order]
-        
-        if editText.type == .value {
-            
-            
-            var values: [Value] = Array(Database.shared.allValues())
-            
-            switch editText.feeling {
-            case .great:
-                values = values.filter { $0.type == .good }
-            case .lousy:
-                values = values.filter { $0.type == .bad }
-            default:
-                break
-            }
-            
-            
-            if let indexes = editText.selectedIndexes {
-                itemSelectionViewController.selectedItemsIndexes = Set(indexes)
-            }
-            
-            itemSelectionViewController.createItemTitle = "Create your own"
-            itemSelectionViewController.items = ItemSelectionViewModel.items(from: values)
-            itemSelectionViewController.isMultipleSelectionEnabled = editText.isMultipleSelection
-            
-            let navigationController = UINavigationController(rootViewController: itemSelectionViewController)
-            navigationController.modalPresentationStyle = .custom
-            navigationController.transitioningDelegate = self
-            navigationController.title = "Choose Values"
-            DispatchQueue.main.async {
-                self.present(navigationController, animated: true, completion: nil)
-            }
-            
-            itemSelectionViewController.createNewItemAction = {
-                
-                itemSelectionViewController.dismiss(animated: true, completion: {
-                    guard let customValueViewController = UIStoryboard(name: "AddCustom", bundle: nil).instantiateViewController(withIdentifier: "AddValue") as? UINavigationController else {
-                        assertionFailure()
-                        return
-                    }
-                    
-                    self.present(customValueViewController, animated: true, completion: nil)
-                })
-                
-            }
-            
-            itemSelectionViewController.doneAction = { indexes in
-                
-                guard indexes.count > 0 else {
-                    return
-                }
-                
-                editText.selectedIndexes = indexes
-                
-                var selectedValues: [Value] = []
-                indexes.forEach({ (index) in
-                    selectedValues.append(values[index])
-                })
-                
-                var valuesName = selectedValues.first?.name
-                selectedValues.remove(at: 0)
-                
-                selectedValues.forEach({ (value) in
-                    valuesName = valuesName! + ", \(value.name)"
-                
-                })
-                
-                editText.text = valuesName!
-                
-                self.editableTexts[order] = editText
-                self.setupTextView()
-                
-            }
-
-        }
-        
-        else if editText.type == .activity {
-         
-            // pick activity
-        }
-        
-        else if editText.type == .text {
-            // show text promp
-        }
-        
-        return false
-    }
-
 }
