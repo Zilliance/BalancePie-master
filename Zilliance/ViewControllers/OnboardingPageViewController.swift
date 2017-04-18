@@ -29,6 +29,8 @@ class OnboardingPageViewController: UIPageViewController {
         return UIStoryboard(name: "FavoriteActivity", bundle: nil).instantiateInitialViewController()
     }()!
     
+    fileprivate var shouldHideDots = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupView()
@@ -69,12 +71,24 @@ class OnboardingPageViewController: UIPageViewController {
 extension OnboardingPageViewController: UIPageViewControllerDelegate {
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
 
-        if let index = introViewControllers.index(of: previousViewControllers.first!), index == 2 {
+        if self.shouldHideDots == true, completed == true {
             // hide dots and remove swipe in last page
-            self.pageControl?.isHidden = true
+            
+            UIView.animate(withDuration: 0.3, animations: { 
+                self.pageControl?.alpha = 0
+            }, completion: { (_) in
+                self.pageControl?.isHidden = true
+            })
+            
             self.removeSwipeGesture()
         }
     
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
+        
+        self.shouldHideDots = pendingViewControllers.first is FavoriteActivityViewController
+        
     }
 }
 
