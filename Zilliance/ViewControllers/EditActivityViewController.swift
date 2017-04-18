@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import ActionSheetPicker_3_0
 
-final class EditActivityViewController: UIViewController{
+final class EditActivityViewController: UIViewController, AlertsDuration {
     
     enum TableSection: Int
     {

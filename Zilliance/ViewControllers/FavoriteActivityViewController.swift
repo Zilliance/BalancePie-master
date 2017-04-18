@@ -13,7 +13,7 @@ private let headerCellIdentifier = "headerCell"
 private let userActivityCellIdentifier = "userActivityCell"
 private let valueCellIdentifier = "basicCell"
 
-class FavoriteActivityViewController: UIViewController {
+class FavoriteActivityViewController: UIViewController, AlertsDuration {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var getStartedButton: UIButton!
     
