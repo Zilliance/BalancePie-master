@@ -145,30 +145,82 @@ class Database {
         }
     }
     
-    private var defaultValuesData: [[String: String]] {
+    private var defaultValuesData: [[String: Any]] {
         return [
-            ["name": "Passion"],
-            ["name": "Purpose"],
-            ["name": "Service"],
-            ["name": "Personal Growth"],
-            ["name": "Freedom"],
-            ["name": "Adventure"],
-            ["name": "Healthy Lifestyle"],
-            ["name": "Love"],
-            ["name": "Intimacy"],
-            ["name": "Joy"],
-            ["name": "Authenticity"],
-            ["name": "Integrity"],
-            ["name": "Creativity"],
-            ["name": "Fun"],
-            ["name": "Wealth"],
-            ["name": "Achievement"],
-            ["name": "Recognition"],
-            ["name": "Power"],
-            ["name": "Stability"],
-            ["name": "Spiritualiry"],
-            ["name": "Wisdom"],
-            ["name": "Impact"],
+            ["name": "Passion", "type": ValueType.good],
+            ["name": "Purpose, meaning", "type": ValueType.good],
+            ["name": "Imact, ability to make a difference", "type": ValueType.good],
+            ["name": "Contribution, giving back", "type": ValueType.good],
+            ["name": "Personal development, learning, growth", "type": ValueType.good],
+            ["name": "Leisure", "type": ValueType.good],
+            ["name": "Freedom", "type": ValueType.good],
+            ["name": "Spontaneity", "type": ValueType.good],
+            ["name": "Laughter", "type": ValueType.good],
+            ["name": "Variety, diversity", "type": ValueType.good],
+            ["name": "Camaraderie, friendship", "type": ValueType.good],
+            ["name": "Teamwork", "type": ValueType.good],
+            ["name": "Family time", "type": ValueType.good],
+            ["name": "Adventure", "type": ValueType.good],
+            ["name": "Self-care", "type": ValueType.good],
+            ["name": "Healthiness", "type": ValueType.good],
+            ["name": "Love, connection, belonging", "type": ValueType.good],
+            ["name": "Romance", "type": ValueType.good],
+            ["name": "Intimacy", "type": ValueType.good],
+            ["name": "Joy, happiness", "type": ValueType.good],
+            ["name": "Authenticity", "type": ValueType.good],
+            ["name": "Honesty", "type": ValueType.good],
+            ["name": "Challenge", "type": ValueType.good],
+            ["name": "Integrity, ethics", "type": ValueType.good],
+            ["name": "Creativity, self-expression", "type": ValueType.good],
+            ["name": "Fun, pleasure", "type": ValueType.good],
+            ["name": "Wealth, money", "type": ValueType.good],
+            ["name": "Achievement, mastery", "type": ValueType.good],
+            ["name": "Wisdom", "type": ValueType.good],
+            ["name": "Fame, recognition, popularity", "type": ValueType.good],
+            ["name": "Respect", "type": ValueType.good],
+            ["name": "Power, influence", "type": ValueType.good],
+            ["name": "Stability, security", "type": ValueType.good],
+            ["name": "Independece", "type": ValueType.good],
+            ["name": "Spirituality, faith", "type": ValueType.good],
+            ["name": "Community", "type": ValueType.good],
+            ["name": "Nurturance", "type": ValueType.good],
+            ["name": "Privacy", "type": ValueType.good],
+            ["name": "Leadership", "type": ValueType.good],
+            ["name": "Courage, bravery", "type": ValueType.good],
+            ["name": "Simplicity", "type": ValueType.good],
+            ["name": "Harmony", "type": ValueType.good],
+            ["name": "Optimism / Benevolence", "type": ValueType.good],
+            ["name": "Dullness", "type": ValueType.bad],
+            ["name": "Meaninglessness", "type": ValueType.bad],
+            ["name": "Submissiveness", "type": ValueType.bad],
+            ["name": "Stagnation", "type": ValueType.bad],
+            ["name": "Restraints", "type": ValueType.bad],
+            ["name": "Servitude", "type": ValueType.bad],
+            ["name": "Boredom", "type": ValueType.bad],
+            ["name": "Seriousness", "type": ValueType.bad],
+            ["name": "Monotony", "type": ValueType.bad],
+            ["name": "Formality", "type": ValueType.bad],
+            ["name": "Combativeness", "type": ValueType.bad],
+            ["name": "Solitude", "type": ValueType.bad],
+            ["name": "Feelings of inadequacy", "type": ValueType.bad],
+            ["name": "Harmfulness", "type": ValueType.bad],
+            ["name": "Pain", "type": ValueType.bad],
+            ["name": "Loneliness", "type": ValueType.bad],
+            ["name": "Sadness", "type": ValueType.bad],
+            ["name": "Time commitement", "type": ValueType.bad],
+            ["name": "Fraudulence", "type": ValueType.bad],
+            ["name": "Dishonesty", "type": ValueType.bad],
+            ["name": "Simplicity", "type": ValueType.bad],
+            ["name": "Arrogance", "type": ValueType.bad],
+            ["name": "Ignorance", "type": ValueType.bad],
+            ["name": "Irreverence", "type": ValueType.bad],
+            ["name": "Meekness", "type": ValueType.bad],
+            ["name": "Instability", "type": ValueType.bad],
+            ["name": "Blasphemy", "type": ValueType.bad],
+            ["name": "Helplessness", "type": ValueType.bad],
+            ["name": "Complexity", "type": ValueType.bad],
+            ["name": "Fear", "type": ValueType.bad],
+            ["name": "Pessimism", "type": ValueType.bad],
         ]
     }
     
@@ -180,10 +232,8 @@ class Database {
         self.defaultValuesData.forEach { (dict) in
             let value = Value()
             
-            value.name = dict["name"]!
-            value.iconName = dict["iconName"]
-            
-            value.type = arc4random_uniform(2) == 0 ? .good : .bad // todo: add bad values
+            value.name = dict["name"] as! String
+            value.type = dict["type"] as! ValueType
             
             try! self.realm.write {
                 self.realm.add(value)
