@@ -386,7 +386,10 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
     
     func showOptionsAlert() {
         
-        let alertController = UIAlertController(title: nil, message: "Added the slice to your pie. What would you like to do next?", preferredStyle: .alert)
+        let title = "Added \(self.newActivity.activity!.name) to Your Pie"
+        let message = "What would you like to do next?"
+        
+        let alertController = UIAlertController(title: title , message: message, preferredStyle: .alert)
         
         alertController.addAction(UIAlertAction(title: "Fine Tune This Slice", style: .default) { _ in
             alertController.dismiss(animated: true, completion: nil)
