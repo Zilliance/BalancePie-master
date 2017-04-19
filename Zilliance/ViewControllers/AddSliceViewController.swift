@@ -134,7 +134,7 @@ final class AddSliceViewController: UIViewController, AlertsDuration
     @IBAction func fineTuneAction() {
         if (self.validateValues())
         {
-            fineTune(userActivity: self.newActivity)
+            self.fineTune(userActivity: self.newActivity)
         }
     }
     

@@ -240,7 +240,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BnA-gA-Jdc">
-                                <rect key="frame" x="0.0" y="64" width="375" height="535"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="527"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="basicCell" textLabel="aq5-Bx-nE5" style="IBUITableViewCellStyleDefault" id="Nmx-no-Got">
@@ -291,10 +291,10 @@
                                 </connections>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="bH3-Uf-vwh">
-                                <rect key="frame" x="31" y="609" width="313" height="50"/>
+                                <rect key="frame" x="32" y="601" width="311" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FGy-cb-chr">
-                                        <rect key="frame" x="0.0" y="0.0" width="313" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="311" height="50"/>
                                         <color key="backgroundColor" red="0.0" green="0.73725490199999999" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="20"/>
                                         <state key="normal" title="Add Slice">
@@ -317,9 +317,9 @@
                             <constraint firstItem="BnA-gA-Jdc" firstAttribute="top" secondItem="rXQ-hf-UO6" secondAttribute="bottom" id="IdE-hZ-Hak"/>
                             <constraint firstAttribute="trailing" secondItem="BnA-gA-Jdc" secondAttribute="trailing" id="QMH-Qj-PsW"/>
                             <constraint firstItem="bH3-Uf-vwh" firstAttribute="top" secondItem="BnA-gA-Jdc" secondAttribute="bottom" constant="10" id="ScH-VG-ZtU"/>
-                            <constraint firstItem="bH3-Uf-vwh" firstAttribute="leading" secondItem="oxx-Z5-7BZ" secondAttribute="leadingMargin" constant="15" id="gkm-mA-pGo"/>
-                            <constraint firstItem="AZo-k5-Gej" firstAttribute="top" secondItem="bH3-Uf-vwh" secondAttribute="bottom" constant="8" id="nIN-hY-ivl"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="bH3-Uf-vwh" secondAttribute="trailing" constant="15" id="wq9-X5-QAO"/>
+                            <constraint firstItem="bH3-Uf-vwh" firstAttribute="leading" secondItem="oxx-Z5-7BZ" secondAttribute="leadingMargin" constant="16" id="gkm-mA-pGo"/>
+                            <constraint firstItem="AZo-k5-Gej" firstAttribute="top" secondItem="bH3-Uf-vwh" secondAttribute="bottom" constant="16" id="nIN-hY-ivl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bH3-Uf-vwh" secondAttribute="trailing" constant="16" id="wq9-X5-QAO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Slice" id="f24-Tl-FWt">
