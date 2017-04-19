@@ -10,12 +10,79 @@ import Foundation
 import UIKit
 import SideMenuController
 
-final class LeftMenuViewController: UIViewController
+enum TableViewRow: Int
+{
+    case howItWorks = 0
+    case tour
+    case videos
+    
+    func title(row: TableViewRow) -> String
+    {
+        switch self {
+        case .howItWorks:
+            return "How it works"
+        case .tour:
+            return "Tour"
+        case .videos:
+            return "Videos"
+        }
+    }
+    
+    static var count: Int{
+        return 3
+    }
+}
+
+final class LeftMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
 {
     //todo add methods to change view controllers.
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return TableViewRow.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BasicCell")!
+        
+        if let row = TableViewRow(rawValue: indexPath.row)
+        {
+            cell.textLabel?.text = row.title(row: row)
+            
+            //add images
+            
+        }
+        
+        return cell
+    }
     
     func changeToVCAt(index:Int)
     {
         //self.sideMenuController?.embed(centerViewController: <#T##UIViewController#>)
     }
+    
+    func showHTMLView(htmlFile: String, title: String)
+    {
+        let htmlFilePath = Bundle.main.path(forResource: htmlFile, ofType: "html")
+        let url = URL(fileURLWithPath: htmlFilePath!)
+        
+        if let webController = UIStoryboard(name: "WebView", bundle: nil).instantiateInitialViewController() as? WebViewController
+        {
+            webController.title = title
+            webController.url = url
+            
+            let navigationController = UINavigationController(rootViewController: webController)
+            
+            self.present(navigationController, animated: true)
+        }
+    }
+    
+    @IBAction func privacyPolicyTapped(_ sender: Any) {
+        showHTMLView(htmlFile: "zilliance privacy policy", title: "Privacy Policy")
+    }
+    
+    @IBAction func termsOfServicesTapped(_ sender: Any) {
+        showHTMLView(htmlFile: "zilliance privacy policy", title: "Waiting for HTML")
+    }
+    
+    
 }

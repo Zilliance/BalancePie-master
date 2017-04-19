@@ -95,7 +95,7 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
         let sideMenuButton = UIButton()
         self.view.addSubview(sideMenuButton)
         sideMenuButton.translatesAutoresizingMaskIntoConstraints = false
-        sideMenuButton.setImage(UIImage(named: "driving"), for: .normal)
+        sideMenuButton.setImage(UIImage(named: "drawer-toolbar-icon"), for: .normal)
         sideMenuButton.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 5).isActive = true
         sideMenuButton.widthAnchor.constraint(equalToConstant: 40)
         sideMenuButton.heightAnchor.constraint(equalToConstant: 40)
