@@ -54,6 +54,10 @@ final class User: Object {
 extension User
 {
     
+    var availableMinutesForActivities: Minutes {
+        return self.availableMinutes - self.timeSlept - self.currentActivitiesDuration
+    }
+    
     func saveTimeSlept(hours: Int, minutes: Minutes)
     {
         try! Database.shared.realm.write {

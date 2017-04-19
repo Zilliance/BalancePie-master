@@ -10,7 +10,12 @@ import Foundation
 import UIKit
 import ActionSheetPicker_3_0
 
-final class AddSliceViewController: UIViewController
+enum DurationAlertAction {
+    case allowHours
+    case changeHours
+}
+
+final class AddSliceViewController: UIViewController, AlertsDuration
 {
     enum TableSection: Int
     {
@@ -32,8 +37,7 @@ final class AddSliceViewController: UIViewController
     fileprivate static let initialRowFeelingsTable: Int = 3
     fileprivate var isPresentingActivities = false
     
-    @IBOutlet weak var tuneSliceButton: UIButton!
-    @IBOutlet weak var addAnotherActivityButton: UIButton!
+    @IBOutlet weak var addSliceButton: UIButton!
     @IBOutlet fileprivate weak var tableView: UITableView!
 
     var newActivity = UserActivity()
@@ -49,13 +53,8 @@ final class AddSliceViewController: UIViewController
         super.viewDidLoad()
         
         //setup width and corner radius
-        for view in [self.tuneSliceButton, self.addAnotherActivityButton] as [UIView]
-        {
-            view.layer.cornerRadius = App.Appearance.buttonCornerRadius
-            view.layer.borderWidth = App.Appearance.borderWidth
-            view.layer.borderColor = UIColor.lightGray.cgColor
-        }
-        
+
+        self.addSliceButton.layer.cornerRadius = App.Appearance.buttonCornerRadius
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -132,15 +131,23 @@ final class AddSliceViewController: UIViewController
         self.navigationController!.pushViewController(fineTuneVC, animated: true)
     }
     
-    @IBAction func fineTuneTapped(_ sender: Any) {
+    @IBAction func fineTuneAction() {
         if (self.validateValues())
         {
-            self.saveActivity()
-            fineTune(userActivity: self.newActivity)
+            self.fineTune(userActivity: self.newActivity)
         }
     }
     
-    @IBAction func addAnotherSliceTapped(_ sender: Any) {
+    @IBAction func addSliceAction(_ sender: Any) {
+        
+        if (self.validateValues())
+        {
+            self.saveActivity()
+            self.showOptionsAlert()
+        }
+    }
+    
+    @IBAction func addAnotherSliceAction() {
         self.saveActivity()
         
         let addStoryboard = UIStoryboard(name: "AddCustom", bundle: nil)
@@ -152,7 +159,7 @@ final class AddSliceViewController: UIViewController
         self.navigationController?.pushViewController(addActivityVC, animated: true)
     }
     
-    @IBAction func backToPieTapped(_ sender: Any) {
+    @IBAction func backToPieAction() {
         
         self.navigationController?.dismiss(animated: true, completion: nil)
         
@@ -273,7 +280,11 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
             return
         }
         
-        let activities: [Activity] = Array(Database.shared.allActivities())
+        let selectedActivities = Database.shared.user.activities.map { $0.activity }
+        let activities: [Activity] = Array(Database.shared.allActivities()).filter { activity in
+            return !selectedActivities.contains { $0 == activity }
+        }
+
         itemSelectionViewController.createItemTitle = "Create my own"
         itemSelectionViewController.items = ItemSelectionViewModel.items(from: activities)
         itemSelectionViewController.isMultipleSelectionEnabled = false
@@ -325,13 +336,29 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
                 assertionFailure()
                 return
             }
+            
             minute *= 15
             
             let totalTimeMinutes = hour * 60 + minute
             
-            self.newActivity.duration = totalTimeMinutes
-            
-            self.tableView.reloadRows(at: [IndexPath(row: 0, section: 1)], with: .fade)
+            if totalTimeMinutes > Database.shared.user.availableMinutesForActivities {
+                self.showDurationAlert() { option in
+                    switch option {
+                    case .allowHours:
+                        self.newActivity.duration = totalTimeMinutes
+                        self.tableView.reloadRows(at: [IndexPath(row: 0, section: 1)], with: .fade)
+                    case .changeHours:
+                        self.selectDuration()
+                    }
+                    
+                }
+            }
+            else {
+                
+                self.newActivity.duration = totalTimeMinutes
+                self.tableView.reloadRows(at: [IndexPath(row: 0, section: 1)], with: .fade)
+                
+            }
             
         }, cancel: { (picker) in
             
@@ -357,6 +384,31 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
         }, origin: tableView)
     }
     
+    func showOptionsAlert() {
+        
+        let title = "Added \(self.newActivity.activity!.name) to Your Pie"
+        let message = "What would you like to do next?"
+        
+        let alertController = UIAlertController(title: title , message: message, preferredStyle: .alert)
+        
+        alertController.addAction(UIAlertAction(title: "Fine Tune This Slice", style: .default) { _ in
+            alertController.dismiss(animated: true, completion: nil)
+            self.fineTuneAction()
+        })
+        
+        alertController.addAction(UIAlertAction(title: "Add Another Slice", style: .default) { _ in
+            alertController.dismiss(animated: true, completion: nil)
+            self.addAnotherSliceAction()
+        })
+        
+        alertController.addAction(UIAlertAction(title: "See My Pie", style: .default) { _ in
+            alertController.dismiss(animated: true, completion: nil)
+            self.backToPieAction()
+        })
+        
+        self.present(alertController, animated: true, completion: nil)
+
+    }
     
     func selectValues(values: [Value], initialIndexes: [Int], completion: @escaping ([Int])->())
     {

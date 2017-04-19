@@ -73,6 +73,7 @@
 		E356683C1E8C15BA00ED81D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E356683A1E8C15BA00ED81D9 /* LaunchScreen.storyboard */; };
 		E35668471E8C15BA00ED81D9 /* ZillianceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35668461E8C15BA00ED81D9 /* ZillianceTests.swift */; };
 		E35668521E8C15BA00ED81D9 /* ZillianceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35668511E8C15BA00ED81D9 /* ZillianceUITests.swift */; };
+		E38910E51EA698A5000E1511 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38910E41EA698A5000E1511 /* UIViewController+Alerts.swift */; };
 		E3E80A451EA15526004A44AF /* UserActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E80A441EA15526004A44AF /* UserActivityTableViewCell.swift */; };
 		E3E80A471EA17CBB004A44AF /* FineTuneItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E80A461EA17CBB004A44AF /* FineTuneItemViewController.swift */; };
 /* End PBXBuildFile section */
@@ -172,6 +173,7 @@
 		E356684D1E8C15BA00ED81D9 /* ZillianceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZillianceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E35668511E8C15BA00ED81D9 /* ZillianceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZillianceUITests.swift; sourceTree = "<group>"; };
 		E35668531E8C15BA00ED81D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E38910E41EA698A5000E1511 /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+Alerts.swift"; path = "Extensions/UIViewController+Alerts.swift"; sourceTree = "<group>"; };
 		E3E80A441EA15526004A44AF /* UserActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserActivityTableViewCell.swift; path = CustomCells/UserActivityTableViewCell.swift; sourceTree = "<group>"; };
 		E3E80A461EA17CBB004A44AF /* FineTuneItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FineTuneItemViewController.swift; sourceTree = "<group>"; };
 		FEC5A0602B35F92656E0CD4F /* Pods-ZillianceUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZillianceUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZillianceUITests/Pods-ZillianceUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 				8C3EA46C1E92E9D600F56DED /* UIDevice+Extensions.swift */,
 				8C3EA46D1E92E9D600F56DED /* UIFont+CustomFonts.swift */,
 				8C3EA46E1E92E9D600F56DED /* UIViewController+Extensions.swift */,
+				E38910E41EA698A5000E1511 /* UIViewController+Alerts.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -756,6 +759,7 @@
 				8C4D28C41E9694F800034A20 /* App.swift in Sources */,
 				8CBBBE1A1E9576F800281C3C /* AddToCalendarViewController.swift in Sources */,
 				8C3EA4721E92E9D600F56DED /* String+Extensions.swift in Sources */,
+				E38910E51EA698A5000E1511 /* UIViewController+Alerts.swift in Sources */,
 				8CBBBE201E958B6300281C3C /* AddActivityViewController.swift in Sources */,
 				8C3EA4651E92E7BF00F56DED /* Value.swift in Sources */,
 				0469D0AE1E944B700024EA39 /* UserActivity.swift in Sources */,
