@@ -84,7 +84,12 @@ final class AddSliceViewController: UIViewController, AlertsDuration
                 showAlert(message: "Please select how you feel about the activity", title: "")
                 return false
         }
-        
+        else
+                if (self.newActivity.values.count == 0) {
+                    showAlert(message: "Please select values", title: "")
+                    return false
+        }
+    
         return true
     }
     
