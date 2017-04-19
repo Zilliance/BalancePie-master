@@ -183,7 +183,7 @@ class FavoriteActivityViewController: UIViewController, AlertsDuration {
             return
         }
         
-        let values: [Value] = Array(Database.shared.allValues())
+        let values: [Value] = Array(Database.shared.allValues()).filter { $0.type == .good }
         itemSelectionViewController.createItemTitle = "Create my own"
         itemSelectionViewController.items = ItemSelectionViewModel.items(from: values)
         
