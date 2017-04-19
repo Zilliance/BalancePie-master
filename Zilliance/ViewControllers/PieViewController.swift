@@ -87,7 +87,7 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
         }
         
         self.pieView.sliceAction = { [weak self] index, activity in
-            self?.sliceAction(withActivity: activity)
+            self?.sliceAction(with: activity)
         }
         
     }
@@ -107,7 +107,7 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
     
     // MARK: Slice Options
     
-    private func edit(userActivity: UserActivity) {
+    private func edit(_ userActivity: UserActivity) {
         let addStoryboard = UIStoryboard(name: "AddCustom", bundle: nil)
         guard let editActivtyVC = addStoryboard.instantiateViewController(withIdentifier: "EditActivityViewController") as? EditActivityViewController
             else{
@@ -119,7 +119,7 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
         self.present(navigation, animated: true)
     }
     
-    private func fineTune(userActivity: UserActivity) {
+    private func fineTune(_ userActivity: UserActivity) {
         // Will depend on the feeling of the current activity
         
         let fineTuneVC = UIStoryboard(name: "FineTuneActivity", bundle: nil).instantiateInitialViewController() as! FineTuneActivityViewController
@@ -139,9 +139,11 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
         self.present(navigationFineTuneVC, animated: true, completion: nil)
     }
     
-    private func delete(userActivity: UserActivity) {
+    private func delete(_ userActivity: UserActivity) {
+        let title = "Delete \(userActivity.activity!.name) Slice"
+        let message = "Deleting this slice will remove it from your pie"
         
-        let alert = UIAlertController(title: "Delete Slice", message: "Deleting a slice will remove it from your pie", preferredStyle: .alert)
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Delete Slice", style: .default) { _ in
             Database.shared.user.remove(userActivity: userActivity)
@@ -169,25 +171,27 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
         self.present(navigation, animated: true)
     }
     
-    func sliceAction(withActivity activity: UserActivity) {
+    func sliceAction(with activity: UserActivity) {
+        let title = "\(activity.activity!.name) Slice"
+        let message = "What would you like to do?"
         
-        let actionController = UIAlertController(title: "What would you like to do?", message: nil, preferredStyle: .actionSheet)
+        let actionController = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
         
         actionController.addAction(UIAlertAction(title: SliceOptions.edit.rawValue, style: .default) { _ in
             actionController.dismiss(animated: true, completion: nil)
-            self.edit(userActivity: activity)
+            self.edit(activity)
             
         })
         
         actionController.addAction(UIAlertAction(title: SliceOptions.tune.rawValue, style: .default) { _ in
             actionController.dismiss(animated: true, completion: nil)
-            self.fineTune(userActivity: activity)
+            self.fineTune(activity)
             
         })
         
         actionController.addAction(UIAlertAction(title: SliceOptions.delete.rawValue, style: .destructive) { _ in
             actionController.dismiss(animated: true, completion: nil)
-            self.delete(userActivity: activity)
+            self.delete(activity)
             
         })
         
