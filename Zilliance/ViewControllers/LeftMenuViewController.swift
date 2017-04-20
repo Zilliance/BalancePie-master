@@ -48,6 +48,7 @@ final class LeftMenuViewController: UIViewController, UITableViewDelegate, UITab
             cell.textLabel?.text = row.title(row: row)
             
             //add images
+            cell.imageView?.image = UIImage(named: "driving")
             
         }
         

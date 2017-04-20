@@ -131,6 +131,10 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="pfF-eJ-xck" id="8ah-Pr-4AD"/>
+                                    <outlet property="delegate" destination="pfF-eJ-xck" id="sG0-f6-lca"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.13685885170000001" blue="0.24961256640000001" alpha="1" colorSpace="calibratedRGB"/>
