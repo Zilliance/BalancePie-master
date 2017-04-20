@@ -42,9 +42,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             sideMenuViewController.embed(sideViewController: sideController!)
             
             let pieNavController = UIStoryboard(name: "Pie", bundle: nil).instantiateInitialViewController() as! UINavigationController
-            pieNavController.addSideMenuButton()
             
-            sideMenuViewController.embed(centerViewController: pieNavController)
+            sideMenuViewController.embed(centerViewController: pieNavController, cacheIdentifier: "PieViewController")
             
          	rootViewController = sideMenuViewController
         }

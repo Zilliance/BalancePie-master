@@ -35,7 +35,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="nOr-SH-el6">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="FxP-hQ-z8P">
+                        <barButtonItem key="leftBarButtonItem" image="drawer-toolbar-icon" id="FxP-hQ-z8P">
                             <connections>
                                 <action selector="backTapped" destination="Ysj-9E-oTz" id="MIm-wy-mgF"/>
                             </connections>
@@ -51,4 +51,7 @@
             <point key="canvasLocation" x="86" y="215"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="drawer-toolbar-icon" width="20" height="20"/>
+    </resources>
 </document>

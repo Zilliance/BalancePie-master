@@ -21,7 +21,7 @@ final class WebViewController: UIViewController
     }
     
     @IBAction func backTapped() {
-        self.dismiss(animated: true)
+        self.sideMenuController?.toggle()
     }
     
 }

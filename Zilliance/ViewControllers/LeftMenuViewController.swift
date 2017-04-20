@@ -67,8 +67,25 @@ final class LeftMenuViewController: UIViewController, UITableViewDelegate, UITab
             
             let navigationController = UINavigationController(rootViewController: webController)
             
-            self.present(navigationController, animated: true)
+            self.sideMenuController?.embed(centerViewController: navigationController)
         }
+    }
+    
+    func showPieView()
+    {
+        guard let sideMenu = self.sideMenuController else
+        {
+            assertionFailure()
+            return
+        }
+        let pieNavController = UIStoryboard(name: "Pie", bundle: nil).instantiateInitialViewController() as! UINavigationController
+        
+        sideMenu.embed(centerViewController: pieNavController, cacheIdentifier: "PieViewController")
+    }
+    
+    @IBAction func pieButtonTapped()
+    {
+        showPieView()
     }
     
     @IBAction func privacyPolicyTapped(_ sender: Any) {

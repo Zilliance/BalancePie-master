@@ -14,7 +14,7 @@ final class CustomSideViewController: SideMenuController
 {
     static func initSideProperties()
     {
-        SideMenuController.preferences.drawing.menuButtonImage = UIImage(named: "driving")
+        //SideMenuController.preferences.drawing.menuButtonImage = UIImage(named: "driving")
         SideMenuController.preferences.drawing.sidePanelPosition = .underCenterPanelLeft
         SideMenuController.preferences.drawing.sidePanelWidth = 300
         SideMenuController.preferences.drawing.centerPanelShadow = true

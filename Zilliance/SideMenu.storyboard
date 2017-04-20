@@ -36,11 +36,17 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="162.5" height="155"/>
                                                 <color key="backgroundColor" red="0.86274509803921573" green="0.86274509803921573" blue="0.86274509803921573" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Todo Image"/>
+                                                <connections>
+                                                    <action selector="pieButtonTapped" destination="pfF-eJ-xck" eventType="touchUpInside" id="whr-W1-mFi"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8JO-N5-Pi3">
                                                 <rect key="frame" x="172.5" y="0.0" width="162.5" height="155"/>
                                                 <color key="backgroundColor" red="0.86274509803921573" green="0.86274509803921573" blue="0.86274509803921573" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Todo Image 2"/>
+                                                <connections>
+                                                    <action selector="pieButtonTapped" destination="pfF-eJ-xck" eventType="touchUpInside" id="XjX-5y-wSe"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
