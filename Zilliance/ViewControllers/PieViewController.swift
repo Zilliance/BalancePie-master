@@ -96,13 +96,12 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
         sideMenuButton.translatesAutoresizingMaskIntoConstraints = false
         sideMenuButton.setImage(UIImage(named: "drawer-toolbar-icon"), for: .normal)
         sideMenuButton.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 10).isActive = true
-        sideMenuButton.widthAnchor.constraint(equalToConstant: 40)
-        sideMenuButton.heightAnchor.constraint(equalToConstant: 40)
+        sideMenuButton.widthAnchor.constraint(equalToConstant: 20).isActive = true
+        sideMenuButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
         sideMenuButton.centerYAnchor.constraint(equalTo: self.hoursProgressView.progressTrack.centerYAnchor).isActive = true
         
         self.hoursProgressView.leftAnchor.constraint(equalTo: sideMenuButton.rightAnchor, constant: 0).isActive = true
-
-
+        
         sideMenuButton.addTarget(self.sideMenuController, action: #selector(SideMenuController.toggle), for: .touchUpInside)
         
     }
