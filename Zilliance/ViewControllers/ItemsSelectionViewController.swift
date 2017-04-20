@@ -124,6 +124,10 @@ extension ItemsSelectionViewController: UITableViewDataSource {
             
             cell.textLabel?.text = self.createItemTitle
             cell.selectionStyle = .none
+            
+            cell.preservesSuperviewLayoutMargins = false
+            cell.separatorInset = .zero
+            cell.layoutMargins = .zero
 
             return cell
         } else {
@@ -136,6 +140,10 @@ extension ItemsSelectionViewController: UITableViewDataSource {
             cell.accessoryType = self.selectedItemsIndexes.contains(indexPath.row) ? .checkmark : .none
             cell.selectionStyle = .none
 
+            cell.preservesSuperviewLayoutMargins = false
+            cell.separatorInset = .zero
+            cell.layoutMargins = .zero
+            
             return cell
         }
     }
