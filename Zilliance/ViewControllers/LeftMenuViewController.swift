@@ -10,31 +10,27 @@ import Foundation
 import UIKit
 import SideMenuController
 
-enum TableViewRow: Int
-{
-    case howItWorks = 0
-    case tour
-    case videos
-    
-    func title(row: TableViewRow) -> String
-    {
-        switch self {
-        case .howItWorks:
-            return "How it works"
-        case .tour:
-            return "Tour"
-        case .videos:
-            return "Videos"
+final class LeftMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    enum TableViewRow: Int {
+        case howItWorks = 0
+        case tour
+        case videos
+        
+        func title(row: TableViewRow) -> String {
+            switch self {
+            case .howItWorks:
+                return "How it works"
+            case .tour:
+                return "Tour"
+            case .videos:
+                return "Videos"
+            }
+        }
+        
+        static var count: Int{
+            return 3
         }
     }
-    
-    static var count: Int{
-        return 3
-    }
-}
-
-final class LeftMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
-{
     
     override func viewDidLoad() {
         super.viewDidLoad()
