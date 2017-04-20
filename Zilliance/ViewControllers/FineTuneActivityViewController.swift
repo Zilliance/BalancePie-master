@@ -24,6 +24,14 @@ extension FineTuneItem {
     static let giving = FineTuneItem(title: "Giving", image: UIImage(named: "btnPlus")!, viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "giving"))
     
     static let values = FineTuneItem(title: "Values", image: UIImage(named: "btnPlus")!, viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "values"))
+    
+     static let replace = FineTuneItem(title: "Replace", image: UIImage(named: "btnPlus")!, viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "replace"))
+    
+    static let reduce = FineTuneItem(title: "Reduce", image: UIImage(named: "btnPlus")!, viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "reduce"))
+    
+     static let shift = FineTuneItem(title: "Shift", image: UIImage(named: "btnPlus")!, viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "shift"))
+    
+     static let need = FineTuneItem(title: "Need", image: UIImage(named: "btnPlus")!, viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "need"))
 }
 
 // MARK: -
@@ -54,10 +62,27 @@ final class FineTuneActivityViewController: UIViewController {
     
     fileprivate var currentViewController: UIViewController?
     
-    var items: [FineTuneItem]!
+    fileprivate var items: [FineTuneItem]!
+    
+    private func fineTuneItems(for feeling: Feeling) -> [FineTuneItem] {
+        switch feeling {
+        case .great:
+            return [.pleasure, .prioritize, .gratitude, .giving, .values]
+        case .lousy:
+            return [.replace, .reduce, .shift, .values, .need]
+        case .neutral:
+            return [.replace, .reduce, .shift, .values, . need]
+        case .mixed:
+            return [.reduce, .gratitude, .shift, .values, .need]
+        default:
+            return []
+        }
+    }
+    
     var zUserActivity: UserActivity? {
         didSet {
             self.title = zUserActivity?.activity?.name ?? ""
+            self.items = self.fineTuneItems(for: (zUserActivity?.feeling)!)
         }
     }
     
