@@ -35,7 +35,6 @@ enum TableViewRow: Int
 
 final class LeftMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
 {
-    //todo add methods to change view controllers.
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return TableViewRow.count
@@ -53,11 +52,6 @@ final class LeftMenuViewController: UIViewController, UITableViewDelegate, UITab
         }
         
         return cell
-    }
-    
-    func changeToVCAt(index:Int)
-    {
-        //self.sideMenuController?.embed(centerViewController: <#T##UIViewController#>)
     }
     
     func showHTMLView(htmlFile: String, title: String)
