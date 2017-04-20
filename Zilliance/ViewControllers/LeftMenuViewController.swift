@@ -16,7 +16,7 @@ final class LeftMenuViewController: UIViewController, UITableViewDelegate, UITab
         case tour
         case videos
         
-        func title(row: TableViewRow) -> String {
+        var title: String {
             switch self {
             case .howItWorks:
                 return "How it works"
@@ -46,8 +46,8 @@ final class LeftMenuViewController: UIViewController, UITableViewDelegate, UITab
         let cell = tableView.dequeueReusableCell(withIdentifier: "BasicCell", for: indexPath)
         
         if let row = TableViewRow(rawValue: indexPath.row) {
-            cell.textLabel?.text = row.title(row: row)
             cell.imageView?.image = UIImage(named: "driving")
+            cell.textLabel?.text = row.title
         }
         
         return cell
