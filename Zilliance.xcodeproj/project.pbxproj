@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		01FC8C629D821129AE1F5C39 /* Pods_ZillianceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7A740D362571F85742B547 /* Pods_ZillianceTests.framework */; };
+		041C3CB71EA55BA100C52195 /* CustomSideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041C3CB61EA55BA100C52195 /* CustomSideViewController.swift */; };
+		041C3CBA1EA55C6400C52195 /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 041C3CB91EA55C6400C52195 /* SideMenu.storyboard */; };
+		041C3CBC1EA55D8D00C52195 /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041C3CBB1EA55D8D00C52195 /* LeftMenuViewController.swift */; };
+		041C3CCE1EA7F5A000C52195 /* WebView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 041C3CCD1EA7F5A000C52195 /* WebView.storyboard */; };
+		041C3CD01EA7F65A00C52195 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041C3CCF1EA7F65A00C52195 /* WebViewController.swift */; };
+		041C3CD81EA8062500C52195 /* zilliance privacy policy.html in Resources */ = {isa = PBXBuildFile; fileRef = 041C3CD71EA8062500C52195 /* zilliance privacy policy.html */; };
+		041C3CDC1EA9291300C52195 /* zilliance terms of service.html in Resources */ = {isa = PBXBuildFile; fileRef = 041C3CDB1EA9291300C52195 /* zilliance terms of service.html */; };
 		04647C721E97D8450040CA46 /* FineTuneActivity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04647C701E97D8450040CA46 /* FineTuneActivity.storyboard */; };
 		04647C751E97D85C0040CA46 /* FineTuneActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04647C741E97D85C0040CA46 /* FineTuneActivityViewController.swift */; };
 		04647C7D1E9BFD4B0040CA46 /* AddSliceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04647C7C1E9BFD4B0040CA46 /* AddSliceViewController.swift */; };
@@ -93,6 +100,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		041C3CB61EA55BA100C52195 /* CustomSideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSideViewController.swift; sourceTree = "<group>"; };
+		041C3CB91EA55C6400C52195 /* SideMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SideMenu.storyboard; sourceTree = "<group>"; };
+		041C3CBB1EA55D8D00C52195 /* LeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeftMenuViewController.swift; path = ViewControllers/LeftMenuViewController.swift; sourceTree = "<group>"; };
+		041C3CCD1EA7F5A000C52195 /* WebView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WebView.storyboard; sourceTree = "<group>"; };
+		041C3CCF1EA7F65A00C52195 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebViewController.swift; path = ViewControllers/WebViewController.swift; sourceTree = "<group>"; };
+		041C3CD71EA8062500C52195 /* zilliance privacy policy.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "zilliance privacy policy.html"; sourceTree = "<group>"; };
+		041C3CDB1EA9291300C52195 /* zilliance terms of service.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "zilliance terms of service.html"; sourceTree = "<group>"; };
 		04647C701E97D8450040CA46 /* FineTuneActivity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FineTuneActivity.storyboard; sourceTree = "<group>"; };
 		04647C741E97D85C0040CA46 /* FineTuneActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FineTuneActivityViewController.swift; path = ViewControllers/FineTuneActivityViewController.swift; sourceTree = "<group>"; };
 		04647C7C1E9BFD4B0040CA46 /* AddSliceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddSliceViewController.swift; path = ViewControllers/AddSliceViewController.swift; sourceTree = "<group>"; };
@@ -201,6 +215,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		041C3CB81EA55C4800C52195 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				041C3CB91EA55C6400C52195 /* SideMenu.storyboard */,
+				041C3CB61EA55BA100C52195 /* CustomSideViewController.swift */,
+				041C3CBB1EA55D8D00C52195 /* LeftMenuViewController.swift */,
+				041C3CCD1EA7F5A000C52195 /* WebView.storyboard */,
+				041C3CCF1EA7F65A00C52195 /* WebViewController.swift */,
+			);
+			name = SideMenu;
+			sourceTree = "<group>";
+		};
+		041C3CCA1EA7E81C00C52195 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				041C3CDB1EA9291300C52195 /* zilliance terms of service.html */,
+				041C3CD71EA8062500C52195 /* zilliance privacy policy.html */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		04647C6F1E97D82D0040CA46 /* FineTuneActivities */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,6 +272,7 @@
 		8C3EA4571E92E4FD00F56DED /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				041C3CB81EA55C4800C52195 /* SideMenu */,
 				04647C6F1E97D82D0040CA46 /* FineTuneActivities */,
 				04B29A611E97AB000090E52E /* ItemsSelection */,
 				8C4D28C51E96CFC300034A20 /* Onboarding */,
@@ -389,6 +425,7 @@
 		E35668301E8C15BA00ED81D9 /* Zilliance */ = {
 			isa = PBXGroup;
 			children = (
+				041C3CCA1EA7E81C00C52195 /* Resources */,
 				8C4D28C31E9694F800034A20 /* App.swift */,
 				E35668311E8C15BA00ED81D9 /* AppDelegate.swift */,
 				8C3EA4571E92E4FD00F56DED /* Scenes */,
@@ -551,7 +588,9 @@
 				8C3EA4981E93F85C00F56DED /* Muli-Regular.ttf in Resources */,
 				04647C721E97D8450040CA46 /* FineTuneActivity.storyboard in Resources */,
 				8C3EA48F1E93F85C00F56DED /* Muli-Bold.ttf in Resources */,
+				041C3CBA1EA55C6400C52195 /* SideMenu.storyboard in Resources */,
 				E356683C1E8C15BA00ED81D9 /* LaunchScreen.storyboard in Resources */,
+				041C3CD81EA8062500C52195 /* zilliance privacy policy.html in Resources */,
 				8C3EA4931E93F85C00F56DED /* Muli-ExtraLight.ttf in Resources */,
 				8C3EA49A1E93F85C00F56DED /* Muli-SemiBoldItalic.ttf in Resources */,
 				8C4D28C71E96CFEE00034A20 /* Onboarding.storyboard in Resources */,
@@ -563,6 +602,8 @@
 				8C3EA48E1E93F85C00F56DED /* Muli-BlackItalic.ttf in Resources */,
 				8C3EA4901E93F85C00F56DED /* Muli-BoldItalic.ttf in Resources */,
 				8C3EA48D1E93F85C00F56DED /* Muli-Black.ttf in Resources */,
+				041C3CCE1EA7F5A000C52195 /* WebView.storyboard in Resources */,
+				041C3CDC1EA9291300C52195 /* zilliance terms of service.html in Resources */,
 				8C3EA4911E93F85C00F56DED /* Muli-ExtraBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -749,6 +790,7 @@
 				04B29A671E97AB680090E52E /* PartialSizePresentationController.swift in Sources */,
 				8C3EA4611E92E7BF00F56DED /* Database.swift in Sources */,
 				04647C751E97D85C0040CA46 /* FineTuneActivityViewController.swift in Sources */,
+				041C3CD01EA7F65A00C52195 /* WebViewController.swift in Sources */,
 				E3E80A471EA17CBB004A44AF /* FineTuneItemViewController.swift in Sources */,
 				8C3EA4641E92E7BF00F56DED /* ArrayDataSource.swift in Sources */,
 				04E6F5671E9E7FEC00EBD119 /* EmbeddedFeelingTableViewModel.swift in Sources */,
@@ -761,7 +803,9 @@
 				8C3EA45A1E92E6D000F56DED /* PieView.swift in Sources */,
 				8C3EA4701E92E9D600F56DED /* Int+Extensions.swift in Sources */,
 				8C3EA4741E92E9D600F56DED /* UIDevice+Extensions.swift in Sources */,
+				041C3CB71EA55BA100C52195 /* CustomSideViewController.swift in Sources */,
 				8C4EAE191E9FCD3500D800E4 /* FavoriteActivityViewController.swift in Sources */,
+				041C3CBC1EA55D8D00C52195 /* LeftMenuViewController.swift in Sources */,
 				8CBBBE231E95925700281C3C /* IconCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

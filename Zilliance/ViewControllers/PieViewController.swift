@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SideMenuController
 
 class PieViewController: UIViewController, UIViewControllerTransitioningDelegate {
     
@@ -42,23 +43,23 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
         self.view.backgroundColor = .lightGrayBackground
         self.title = "Balance Pie"
         
+        
+        self.statusBarBackgroundView.backgroundColor = .darkBlueBackground
+        self.statusBarBackgroundView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(self.statusBarBackgroundView)
+        
         // Progress View
         
         self.hoursProgressView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(self.hoursProgressView)
         
         self.hoursProgressView.topAnchor.constraint(equalTo: self.topLayoutGuide.bottomAnchor, constant: 0).isActive = true
-        self.hoursProgressView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0).isActive = true
         self.hoursProgressView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0).isActive = true
         
         // Status Bar Background
-        
-        self.statusBarBackgroundView.backgroundColor = .darkBlueBackground
-        self.statusBarBackgroundView.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(self.statusBarBackgroundView)
-        
+
         self.statusBarBackgroundView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0).isActive = true
-        self.statusBarBackgroundView.bottomAnchor.constraint(equalTo: self.hoursProgressView.topAnchor, constant: 0).isActive = true
+        self.statusBarBackgroundView.bottomAnchor.constraint(equalTo: self.hoursProgressView.bottomAnchor, constant: 0).isActive = true
         self.statusBarBackgroundView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0).isActive = true
         self.statusBarBackgroundView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0).isActive = true
         
@@ -89,6 +90,20 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
         self.pieView.sliceAction = { [weak self] index, activity in
             self?.sliceAction(with: activity)
         }
+        
+        let sideMenuButton = UIButton()
+        self.view.addSubview(sideMenuButton)
+        sideMenuButton.translatesAutoresizingMaskIntoConstraints = false
+        sideMenuButton.setImage(UIImage(named: "drawer-toolbar-icon"), for: .normal)
+        sideMenuButton.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 10).isActive = true
+        sideMenuButton.widthAnchor.constraint(equalToConstant: 40)
+        sideMenuButton.heightAnchor.constraint(equalToConstant: 40)
+        sideMenuButton.centerYAnchor.constraint(equalTo: self.hoursProgressView.progressTrack.centerYAnchor).isActive = true
+        
+        self.hoursProgressView.leftAnchor.constraint(equalTo: sideMenuButton.rightAnchor, constant: 0).isActive = true
+
+
+        sideMenuButton.addTarget(self.sideMenuController, action: #selector(SideMenuController.toggle), for: .touchUpInside)
         
     }
     

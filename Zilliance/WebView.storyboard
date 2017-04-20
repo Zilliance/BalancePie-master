@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ysj-9E-oTz">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Title-->
+        <scene sceneID="o92-YT-VZ5">
+            <objects>
+                <viewController storyboardIdentifier="WebViewController" id="Ysj-9E-oTz" customClass="WebViewController" customModule="Zilliance" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zjI-Qn-9LU"/>
+                        <viewControllerLayoutGuide type="bottom" id="IED-YR-bnT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eas-pJ-Fwy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HsR-3x-JWM">
+                                <rect key="frame" x="10" y="64" width="355" height="603"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IED-YR-bnT" firstAttribute="top" secondItem="HsR-3x-JWM" secondAttribute="bottom" id="Dtl-94-Wv2"/>
+                            <constraint firstItem="HsR-3x-JWM" firstAttribute="leading" secondItem="eas-pJ-Fwy" secondAttribute="leading" constant="10" id="SYX-3D-cwA"/>
+                            <constraint firstItem="HsR-3x-JWM" firstAttribute="top" secondItem="zjI-Qn-9LU" secondAttribute="bottom" id="kVv-5b-s7y"/>
+                            <constraint firstAttribute="trailing" secondItem="HsR-3x-JWM" secondAttribute="trailing" constant="10" id="om6-B8-dwr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="nOr-SH-el6">
+                        <barButtonItem key="leftBarButtonItem" image="drawer-toolbar-icon" id="FxP-hQ-z8P">
+                            <connections>
+                                <action selector="backTapped" destination="Ysj-9E-oTz" id="MIm-wy-mgF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="webView" destination="HsR-3x-JWM" id="qIi-kV-Obn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7J3-d0-Ond" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="86" y="215"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="drawer-toolbar-icon" width="20" height="20"/>
+    </resources>
+</document>

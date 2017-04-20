@@ -8,12 +8,14 @@ PODS:
   - Realm/Headers (2.5.1)
   - RealmSwift (2.5.1):
     - Realm (= 2.5.1)
+  - SideMenuController (0.2.4)
 
 DEPENDENCIES:
   - ActionSheetPicker-3.0
   - Charts (from `https://github.com/danielgindi/Charts.git`, branch `master`)
   - Realm
   - RealmSwift
+  - SideMenuController
 
 EXTERNAL SOURCES:
   Charts:
@@ -30,7 +32,8 @@ SPEC CHECKSUMS:
   Charts: e955b9a241a14a8971d70143002c8ab1610d26b6
   Realm: 32f86104d37c8521f864d4274050b38ba6190733
   RealmSwift: f719e7511c902b8908593e8f143f59e47931bdb6
+  SideMenuController: b463d2b3aa58e2afe57f57a07938fa9a647894ca
 
-PODFILE CHECKSUM: 3cf57c14f9ae0a09a275cd1e272d472078dae62f
+PODFILE CHECKSUM: 5d1a2f4aaf30e6fa4f6a3af8c75a0515a1faa1e6
 
 COCOAPODS: 1.2.0
