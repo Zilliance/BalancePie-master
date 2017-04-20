@@ -13,16 +13,9 @@ final class ItemWithIconCell: UITableViewCell {
     @IBOutlet var label: UILabel!
 }
 
-struct ItemSelectionViewModel
-{
-    var image: UIImage?
+struct ItemSelectionViewModel {
     var title: String
-    
-    init(title: String, image: UIImage? = nil) {
-        self.title = title
-        self.image = image
-    }
-    
+    var image: UIImage?
 }
 
 extension ItemSelectionViewModel {
@@ -32,7 +25,7 @@ extension ItemSelectionViewModel {
             var image: UIImage? = nil
             
             if let iconName = activity.iconName {
-                image = UIImage(named: iconName)
+                image = UIImage(named: iconName)?.tinted(color: .darkBlueBackground)
             }
             
             let item = ItemSelectionViewModel(title: activity.name, image: image)
@@ -51,6 +44,8 @@ extension ItemSelectionViewModel {
         return items
     }
 }
+
+// MARK: -
 
 class ItemsSelectionViewController: UIViewController {
 
@@ -79,55 +74,14 @@ class ItemsSelectionViewController: UIViewController {
     }
     
     @IBAction private func doneTapped(_ sender: Any) {
-        
         self.dismiss(animated: true, completion: nil)
-        
         self.doneAction?(Array(self.selectedItemsIndexes))
-
     }
 }
 
-extension ItemsSelectionViewController: UITableViewDelegate
-{
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        if (indexPath.section == 0) //create action item
-        {
-            DispatchQueue.main.async {
-                self.createNewItemAction?()
-            }
-            return
-        }
-        
-        if !self.isMultipleSelectionEnabled {
-            
-            if let row = self.selectedItemsIndexes.popFirst() {
-                let cell = tableView.cellForRow(at: IndexPath(row: row, section: 1))
-                cell?.accessoryType = .none
-            }
-            
-        }
-        
-        if (!self.selectedItemsIndexes.contains(indexPath.row))
-        {
-            self.selectedItemsIndexes.insert(indexPath.row)
-        }
-        else
-        {
-            self.selectedItemsIndexes.remove(indexPath.row)
-        }
-        
-        if let cell = tableView.cellForRow(at: indexPath)
-        {
-            cell.accessoryType = self.selectedItemsIndexes.contains(indexPath.row) ? .checkmark : .none
-        }
-        
-    }
-}
+// MARK: - Data Source
 
-extension ItemsSelectionViewController: UITableViewDataSource
-{
+extension ItemsSelectionViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
@@ -138,29 +92,64 @@ extension ItemsSelectionViewController: UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if (indexPath.section == 0)
-        {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "createItemCell")!
+        if (indexPath.section == 0) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "createItemCell", for: indexPath)
             
             cell.textLabel?.text = self.createItemTitle
             cell.selectionStyle = .none
+            
+            cell.preservesSuperviewLayoutMargins = false
+            cell.separatorInset = .zero
+            cell.layoutMargins = .zero
 
             return cell
-        }
-        else
-        {
+        } else {
             let item = self.items[indexPath.row]
-            let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell")!
-
-            cell.imageView?.image = item.image
-
-            cell.textLabel?.text = item.title
+            let cell = tableView.dequeueReusableCell(withIdentifier: "itemWithIconCell", for: indexPath) as! ItemWithIconCell
+            
+            cell.iconView?.image = item.image
+            cell.label?.text = item.title
             
             cell.accessoryType = self.selectedItemsIndexes.contains(indexPath.row) ? .checkmark : .none
             cell.selectionStyle = .none
 
+            cell.preservesSuperviewLayoutMargins = false
+            cell.separatorInset = .zero
+            cell.layoutMargins = .zero
+            
             return cell
         }
     }
+}
+
+// MARK: - Delegate
+
+extension ItemsSelectionViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if (indexPath.section == 0) {
+            DispatchQueue.main.async {
+                self.createNewItemAction?()
+            }
+            return
+        }
+        
+        if !self.isMultipleSelectionEnabled {
+            if let row = self.selectedItemsIndexes.popFirst() {
+                let cell = tableView.cellForRow(at: IndexPath(row: row, section: 1))
+                cell?.accessoryType = .none
+            }
+        }
+        
+        if (!self.selectedItemsIndexes.contains(indexPath.row)) {
+            self.selectedItemsIndexes.insert(indexPath.row)
+        } else {
+            self.selectedItemsIndexes.remove(indexPath.row)
+        }
+        
+        if let cell = tableView.cellForRow(at: indexPath) {
+            cell.accessoryType = self.selectedItemsIndexes.contains(indexPath.row) ? .checkmark : .none
+        }
+    }
 }
