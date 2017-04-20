@@ -14,13 +14,8 @@ final class ItemWithIconCell: UITableViewCell {
 }
 
 struct ItemSelectionViewModel {
-    var image: UIImage?
     var title: String
-    
-    init(title: String, image: UIImage? = nil) {
-        self.title = title
-        self.image = image
-    }
+    var image: UIImage?
 }
 
 extension ItemSelectionViewModel {
