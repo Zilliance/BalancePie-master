@@ -47,15 +47,11 @@ final class LeftMenuViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "BasicCell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BasicCell", for: indexPath)
         
-        if let row = TableViewRow(rawValue: indexPath.row)
-        {
+        if let row = TableViewRow(rawValue: indexPath.row) {
             cell.textLabel?.text = row.title(row: row)
-            
-            //add images
             cell.imageView?.image = UIImage(named: "driving")
-            
         }
         
         return cell
