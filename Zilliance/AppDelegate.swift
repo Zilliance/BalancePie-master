@@ -43,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             let pieNavController = UIStoryboard(name: "Pie", bundle: nil).instantiateInitialViewController() as! UINavigationController
             
-            sideMenuViewController.embed(centerViewController: pieNavController, cacheIdentifier: "PieViewController")
+            sideMenuViewController.embed(centerViewController: pieNavController)
             
          	rootViewController = sideMenuViewController
         }
