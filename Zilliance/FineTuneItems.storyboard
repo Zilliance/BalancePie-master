@@ -29,19 +29,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reduce" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqm-9n-lR2">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reduce the time you spend on it" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqm-9n-lR2">
                                 <rect key="frame" x="16" y="40" width="343" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="uqN-5o-AeL"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eZe-f0-WFA">
                                 <rect key="frame" x="12" y="77" width="351" height="574"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <mutableString key="text">We often find ourselves doing things that don’t feel as good as we thought they would, but we keep doing them out of habit. We say, for instance, that we watch television to relax, but then we watch shows that make us feel sad or anxious. We think we spend time on social media to feel connected to our friends, but we come away feeling bad about ourselves and insecure about our relationships. 
+
+When these activities become habits, we stop noticing how they feel and how much time they suck away from us. If we reduced the amount of time we spend doing them, we could start doing activities that make us feel happier. 
+
+Can you find ways to reduce the amount of time you are spending on lousy-feeling activities? When you notice that you feel lousy after spending time with certain people, can you reduce the amount of time you spend with these people? When you feel crabby after staying up late doing work, can you turn the lights off and get an extra hour of sleep?</mutableString>
+                                <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -66,6 +71,57 @@
             <point key="canvasLocation" x="-119" y="-904"/>
         </scene>
         <!--Fine Tune Item View Controller-->
+        <scene sceneID="5Gj-9G-E4E">
+            <objects>
+                <viewController storyboardIdentifier="reducemixed" id="83r-RC-rXW" customClass="FineTuneItemViewController" customModule="Zilliance" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AtE-yW-JHQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="xBZ-Ry-fZR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Yev-JD-Cxb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reduce the time you spend on it" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="env-2r-PW0">
+                                <rect key="frame" x="16" y="40" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="zGx-aR-uXf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
+                                <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ubR-La-fNf">
+                                <rect key="frame" x="12" y="77" width="351" height="574"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">We often find ourselves doing things that don’t feel as good as we would like them to, but we keep doing them in order to keep our job, obtain a degree or achieve a desired outcome. While we might not be able to eliminate the lousy-feeling parts of some of our activities, we can reduce the amount of time we spend on them, focusing our precious energy instead on activities that make us feel happier. 
+
+When you notice that you feel lousy after spending time with certain people, can you reduce the amount of time you spend with these people? When you feel crabby from attending a work meeting, can you take a quick bathroom break and send your partner or spouse a fun-loving text?  </mutableString>
+                                <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ubR-La-fNf" firstAttribute="top" secondItem="env-2r-PW0" secondAttribute="bottom" constant="16" id="0a2-66-TtB"/>
+                            <constraint firstAttribute="trailing" secondItem="ubR-La-fNf" secondAttribute="trailing" constant="12" id="78e-Es-hss"/>
+                            <constraint firstItem="env-2r-PW0" firstAttribute="leading" secondItem="Yev-JD-Cxb" secondAttribute="leading" constant="16" id="XoX-Vl-CyH"/>
+                            <constraint firstAttribute="trailing" secondItem="env-2r-PW0" secondAttribute="trailing" constant="16" id="czF-YT-Ctr"/>
+                            <constraint firstItem="xBZ-Ry-fZR" firstAttribute="top" secondItem="ubR-La-fNf" secondAttribute="bottom" constant="16" id="kmK-jg-r2n"/>
+                            <constraint firstItem="ubR-La-fNf" firstAttribute="leading" secondItem="Yev-JD-Cxb" secondAttribute="leading" constant="12" id="ntc-1w-jZO"/>
+                            <constraint firstItem="env-2r-PW0" firstAttribute="top" secondItem="AtE-yW-JHQ" secondAttribute="bottom" constant="20" id="oGw-yB-Fsn"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="ubR-La-fNf" id="lnT-ae-BUx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bFZ-GC-BFB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-119" y="-239"/>
+        </scene>
+        <!--Fine Tune Item View Controller-->
         <scene sceneID="HAk-gq-nFu">
             <objects>
                 <viewController storyboardIdentifier="pleasure" id="aV3-CC-BPZ" customClass="FineTuneItemViewController" customModule="Zilliance" customModuleProvider="target" sceneMemberID="viewController">
@@ -78,13 +134,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Identify why it's pleasurable" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LHo-Q5-xfQ">
-                                <rect key="frame" x="16" y="40" width="343" height="20"/>
+                                <rect key="frame" x="16" y="40" width="343" height="21.5"/>
                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
                                 <color key="textColor" red="0.11764705882352941" green="0.16862745098039217" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zzH-1c-OHI">
-                                <rect key="frame" x="12" y="76" width="351" height="575"/>
+                                <rect key="frame" x="12" y="77.5" width="351" height="573.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">If you have ever noticed a fun hobby or a great relationship start to slowly feel not-so-good, it might be that you forgot to identify why the relationship or hobby felt great, so you failed to preserve these aspects.
 
@@ -127,19 +183,26 @@ When you can dig deeper into the reasons you love all of those good-feeling acti
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Replace" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iev-ca-XBz">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Replace this activity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iev-ca-XBz">
                                 <rect key="frame" x="16" y="40" width="343" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="cxE-GU-zXm"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kx9-QO-IWl">
                                 <rect key="frame" x="12" y="77" width="351" height="574"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <mutableString key="text">This one is obvious: One of the fastest ways to bring happiness to your life is to replace activities that feel lousy with activities that feel better—preferably ones that feel great.  
+
+Sometimes, it’s impossible to replace a lousy-feeling activity with one that feels great, but you might find that you can replace it with something that feels just a little bit better. If you hate your job, can you try something new? Your new job might not be your life’s passion, but if it feels even a little bit better, making the switch might be worth it. You might hate running, but swimming feels a little bit better. 
+
+Ideally, you can make the leap from a lousy-feeling activity to a great-feel activity, but life often happens more incrementally. The key is to change to something that at least feels a little better and is a step in the right direction. 
+
+Can you replace this activity with something else? If so, click Schedule It. Of course, this option is not always practical, so we invite you to explore the other options. </mutableString>
+                                <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -176,13 +239,13 @@ When you can dig deeper into the reasons you love all of those good-feeling acti
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prioritize feel-good activities" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jiu-NG-fC0">
-                                <rect key="frame" x="16" y="40" width="343" height="20"/>
+                                <rect key="frame" x="16" y="40" width="343" height="21.5"/>
                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
                                 <color key="textColor" red="0.11764705882352941" green="0.16862745098039217" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EJ5-Bj-GZd">
-                                <rect key="frame" x="12" y="76" width="351" height="575"/>
+                                <rect key="frame" x="12" y="77.5" width="351" height="573.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Oftentimes, our favorite activities take the backburner to activities that we think we should be doing. Yet, if we neglect to intentionally prioritize good-feeling activities, they can gradually fade into the background until we hardly participate in them at all. If you have ever found yourself seemingly without time for a friend or a favorite hobby, you know how frustrating this can be! 
 
@@ -214,7 +277,7 @@ It’s important to make pleasurable activities a priority. Put them in your cal
         <!--Fine Tune Item View Controller-->
         <scene sceneID="wJo-vD-7b7">
             <objects>
-                <viewController storyboardIdentifier="values" id="iht-hH-hsv" customClass="FineTuneItemViewController" customModule="Zilliance" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="valuesneutral" id="iht-hH-hsv" customClass="FineTuneItemViewController" customModule="Zilliance" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="azu-db-kq3"/>
                         <viewControllerLayoutGuide type="bottom" id="hwY-Ka-nqa"/>
@@ -223,20 +286,22 @@ It’s important to make pleasurable activities a priority. Put them in your cal
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amp up your alignment with your values" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghb-vs-OmH">
-                                <rect key="frame" x="16" y="40" width="343" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bring values" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghb-vs-OmH">
+                                <rect key="frame" x="16" y="40" width="343" height="21.5"/>
                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
                                 <color key="textColor" red="0.11764705882352941" green="0.16862745098039217" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OPw-ka-dnd">
-                                <rect key="frame" x="12" y="76" width="351" height="575"/>
+                                <rect key="frame" x="12" y="77.5" width="351" height="573.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">One reason activities feel good is because they align with your values. You might enjoy spending time with your children and spouse because you value intimacy, love, and family time. 
+                                <mutableString key="text">Activities feel lousy when they either sacrifice our values or do not engage our values. Work might be boring because you value creativity, and your work is tedious. 
 
-You can bring more feel-good to your favorite activities by finding ways to bring more of your values to them. For example, if laughter is one of your values, can you find ways to bring more laughter to your family time? If you love work because of the creativity, can you also find ways to take on more creative projects? 
+You can bring more “feel-good” to lousy-feeling activities by finding ways to add your values. For instance, if all the time you spend in the car feels lousy, and you value personal growth, start listening to podcasts or audiobooks on subjects that interest you.
 
-The more values you can bring to any one activity, the more joy you will have.</string>
+The same goes with work. If you value creativity, find small ways to infuse your monotonous job with creativity. Maybe you can do something major, like ask to be transferred to a more suiting position. Perhaps you can take only a baby step, like challenging yourself to write creative, clever, and funny emails. 
+
+In short, the more values you can bring to any one activity, the more joy you will have. </mutableString>
                                 <color key="textColor" red="0.11764705882352941" green="0.16862745098039217" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -259,7 +324,109 @@ The more values you can bring to any one activity, the more joy you will have.</
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10B-J4-ut1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1343" y="-1650"/>
+            <point key="canvasLocation" x="2129" y="-904"/>
+        </scene>
+        <!--Fine Tune Item View Controller-->
+        <scene sceneID="w3p-Ge-ZeX">
+            <objects>
+                <viewController storyboardIdentifier="valuesmixed" id="Zda-PN-rXU" customClass="FineTuneItemViewController" customModule="Zilliance" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RZi-IB-xqw"/>
+                        <viewControllerLayoutGuide type="bottom" id="PxX-eA-UFS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="75I-ny-dtc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bring values" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lvp-si-CXm">
+                                <rect key="frame" x="16" y="40" width="343" height="21.5"/>
+                                <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
+                                <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="M0U-qN-kYJ">
+                                <rect key="frame" x="12" y="77.5" width="351" height="573.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">One reason why this activity feels good is because there are parts of it that align with your values. You might enjoy certain aspects of your work because those aspects match up with your values of creativity, personal development and financial security. 
+
+You can bring more feel-good to activities that feel partially good by finding ways to bring more of your values to them. For example, if laughter is one of the reasons why you enjoy spending time with your family, can you find ways to bring more laughter to family time? If you love work because of the creativity, can you also find ways to take on more creative projects? 
+
+You can even bring some feel-good to the parts of an activity that feel lousy by infusing those parts with your values, too. For instance, if there are parts of your job that bore you to tears, can you inject them with a dose of fun and pleasure? Play upbeat music while putting together that monotonous spreadsheet. Bring donuts and coffee to your work meeting or study group. 
+
+The more values you can bring to any one activity, the more joy you will have and the less negative the “not-so-good-parts” will feel.  </mutableString>
+                                <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="M0U-qN-kYJ" firstAttribute="top" secondItem="lvp-si-CXm" secondAttribute="bottom" constant="16" id="1do-FJ-dBF"/>
+                            <constraint firstItem="PxX-eA-UFS" firstAttribute="top" secondItem="M0U-qN-kYJ" secondAttribute="bottom" constant="16" id="Ahr-39-6Zo"/>
+                            <constraint firstItem="lvp-si-CXm" firstAttribute="top" secondItem="RZi-IB-xqw" secondAttribute="bottom" constant="20" id="RVj-tJ-d26"/>
+                            <constraint firstAttribute="trailing" secondItem="M0U-qN-kYJ" secondAttribute="trailing" constant="12" id="XK3-xx-wYu"/>
+                            <constraint firstItem="M0U-qN-kYJ" firstAttribute="leading" secondItem="75I-ny-dtc" secondAttribute="leading" constant="12" id="gq6-Sx-AZU"/>
+                            <constraint firstItem="lvp-si-CXm" firstAttribute="leading" secondItem="75I-ny-dtc" secondAttribute="leading" constant="16" id="tQ2-Kg-CIN"/>
+                            <constraint firstAttribute="trailing" secondItem="lvp-si-CXm" secondAttribute="trailing" constant="16" id="wHb-vK-sVu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="M0U-qN-kYJ" id="Xqo-bx-5oK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fm8-If-9ra" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2060" y="-251"/>
+        </scene>
+        <!--Fine Tune Item View Controller-->
+        <scene sceneID="Nb3-7k-Vjv">
+            <objects>
+                <viewController storyboardIdentifier="values" id="T9v-7m-raK" customClass="FineTuneItemViewController" customModule="Zilliance" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hXs-TP-OOy"/>
+                        <viewControllerLayoutGuide type="bottom" id="LH6-6x-poP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cCu-Bb-u0Y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amp up your alignment with your values" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zhk-uE-uDg">
+                                <rect key="frame" x="16" y="40" width="343" height="21.5"/>
+                                <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
+                                <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hNQ-Hu-B0a">
+                                <rect key="frame" x="12" y="77.5" width="351" height="573.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">One reason activities feel good is because they align with your values. You might enjoy spending time with your children and spouse because you value intimacy, love, and family time. 
+
+You can bring more feel-good to your favorite activities by finding ways to bring more of your values to them. For example, if laughter is one of your values, can you find ways to bring more laughter to your family time? If you love work because of the creativity, can you also find ways to take on more creative projects? 
+
+The more values you can bring to any one activity, the more joy you will have.</string>
+                                <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hNQ-Hu-B0a" firstAttribute="leading" secondItem="cCu-Bb-u0Y" secondAttribute="leading" constant="12" id="SWz-I7-rgH"/>
+                            <constraint firstItem="hNQ-Hu-B0a" firstAttribute="top" secondItem="Zhk-uE-uDg" secondAttribute="bottom" constant="16" id="b6R-fE-ZZ1"/>
+                            <constraint firstAttribute="trailing" secondItem="hNQ-Hu-B0a" secondAttribute="trailing" constant="12" id="hra-X5-ddn"/>
+                            <constraint firstItem="Zhk-uE-uDg" firstAttribute="leading" secondItem="cCu-Bb-u0Y" secondAttribute="leading" constant="16" id="ksW-Y1-Dc9"/>
+                            <constraint firstAttribute="trailing" secondItem="Zhk-uE-uDg" secondAttribute="trailing" constant="16" id="ldb-Pf-CAL"/>
+                            <constraint firstItem="Zhk-uE-uDg" firstAttribute="top" secondItem="hXs-TP-OOy" secondAttribute="bottom" constant="20" id="p1O-91-THS"/>
+                            <constraint firstItem="LH6-6x-poP" firstAttribute="top" secondItem="hNQ-Hu-B0a" secondAttribute="bottom" constant="16" id="sEj-xJ-orC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="hNQ-Hu-B0a" id="1az-DA-3lW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b7i-AM-AZx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1276" y="-1650"/>
         </scene>
         <!--Fine Tune Item View Controller-->
         <scene sceneID="aSr-1E-cD1">
@@ -274,13 +441,13 @@ The more values you can bring to any one activity, the more joy you will have.</
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keep joy flowing by giving" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gG-eR-df9">
-                                <rect key="frame" x="16" y="40" width="343" height="20"/>
+                                <rect key="frame" x="16" y="40" width="343" height="21.5"/>
                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
                                 <color key="textColor" red="0.11764705882352941" green="0.16862745098039217" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BQc-mK-3Wj">
-                                <rect key="frame" x="12" y="76" width="351" height="575"/>
+                                <rect key="frame" x="12" y="77.5" width="351" height="573.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">No matter how much you enjoy what you are doing, adding acts of kindness can increase your joy. 
 
@@ -324,13 +491,13 @@ Goodness begets goodness, and the more you fill your great-feeling activities wi
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Focus on gratitude" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vzu-A9-NH6">
-                                <rect key="frame" x="16" y="40" width="343" height="20"/>
+                                <rect key="frame" x="16" y="40" width="343" height="21.5"/>
                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
                                 <color key="textColor" red="0.11764705882352941" green="0.16862745098039217" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wJ1-NO-GjP">
-                                <rect key="frame" x="12" y="76" width="351" height="575"/>
+                                <rect key="frame" x="12" y="77.5" width="351" height="573.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Noticing and acknowledging the goodness of an activity that you already love increases the good-feelings of that activity and opens you up to experiencing even more pleasure and happiness.
 
@@ -362,6 +529,56 @@ Making a habit of practicing gratitude reinforces positive feelings and trains y
             <point key="canvasLocation" x="-119" y="-1650"/>
         </scene>
         <!--Fine Tune Item View Controller-->
+        <scene sceneID="Jhs-op-QpE">
+            <objects>
+                <viewController storyboardIdentifier="gratitudemixed" id="asy-fK-Q5W" customClass="FineTuneItemViewController" customModule="Zilliance" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bZl-qG-mle"/>
+                        <viewControllerLayoutGuide type="bottom" id="AcT-S7-56o"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sUi-DK-pbh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Focus on gratitude" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3tk-3s-9Ia">
+                                <rect key="frame" x="16" y="40" width="343" height="21.5"/>
+                                <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
+                                <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Bsv-v4-G2e">
+                                <rect key="frame" x="12" y="77.5" width="351" height="573.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">Noticing and acknowledging the parts of an activity that feel good increases the good-feelings of that activity and opens you up to experiencing even more pleasure and happiness. 
+
+When you notice you’re participating in an aspect of an activity that feels good, acknowledge your gratitude and give thanks. Tell your co-worker you enjoyed collaborating and share your appreciation for her. Let your kids know how much you love hiking with them and thank them for who they are. Thank your spouse or friend after a great day together. Say a silent prayer of gratitude for the blessings in your life. 
+
+Making a habit of practicing gratitude reinforces positive feelings and trains your brain to focus on the good parts of an activity instead of the bad. The more you do this, the more your brain will take note of positive experiences, and the better you will feel.</mutableString>
+                                <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="3tk-3s-9Ia" secondAttribute="trailing" constant="16" id="43h-nl-c0l"/>
+                            <constraint firstItem="Bsv-v4-G2e" firstAttribute="leading" secondItem="sUi-DK-pbh" secondAttribute="leading" constant="12" id="Irz-Y2-VlF"/>
+                            <constraint firstItem="3tk-3s-9Ia" firstAttribute="top" secondItem="bZl-qG-mle" secondAttribute="bottom" constant="20" id="S7y-0O-uLs"/>
+                            <constraint firstItem="3tk-3s-9Ia" firstAttribute="leading" secondItem="sUi-DK-pbh" secondAttribute="leading" constant="16" id="XBY-2d-DNj"/>
+                            <constraint firstAttribute="trailing" secondItem="Bsv-v4-G2e" secondAttribute="trailing" constant="12" id="YtE-Pi-d69"/>
+                            <constraint firstItem="AcT-S7-56o" firstAttribute="top" secondItem="Bsv-v4-G2e" secondAttribute="bottom" constant="16" id="ZVw-gf-tcz"/>
+                            <constraint firstItem="Bsv-v4-G2e" firstAttribute="top" secondItem="3tk-3s-9Ia" secondAttribute="bottom" constant="16" id="bUl-BY-Qrf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="Bsv-v4-G2e" id="2gu-2o-h8M"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ab0-jV-V97" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="575" y="-249"/>
+        </scene>
+        <!--Fine Tune Item View Controller-->
         <scene sceneID="bXA-ts-21a">
             <objects>
                 <viewController storyboardIdentifier="shift" id="G6y-qm-ZVq" customClass="FineTuneItemViewController" customModule="Zilliance" customModuleProvider="target" sceneMemberID="viewController">
@@ -373,19 +590,26 @@ Making a habit of practicing gratitude reinforces positive feelings and trains y
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shift" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sXj-q6-afx">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shift your thoughts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sXj-q6-afx">
                                 <rect key="frame" x="16" y="40" width="343" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="qQ6-yk-QFB"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cV3-U6-K1m">
                                 <rect key="frame" x="12" y="77" width="351" height="574"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <mutableString key="text">Technically, you don’t “have” to do anything. You don’t even have to pay your taxes. The only reason we do the things we say we “have” to do is because in some way they meet our needs. 
+
+We pay taxes because we need to stay out of jail. We go home for the holidays because we need to feel like we are good sons or daughters. We go to our unsatisfying jobs because we need to make money. 
+
+Thinking of these activities as obligations fosters resentment and makes lousy feeling activities feel even worse. However, thinking of these activities as choices will improve your attitude and feel a lot better. If you own your choices and realize that they all meet at least one of your needs, you can focus on trying to feel good about your choices instead of on resentment. 
+
+The next time you spend time engaging in this activity, shift your thinking so that instead of focusing on how lousy you feel, focus on what need you are meeting by engaging in this activity. </mutableString>
+                                <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -410,6 +634,61 @@ Making a habit of practicing gratitude reinforces positive feelings and trains y
             <point key="canvasLocation" x="596" y="-904"/>
         </scene>
         <!--Fine Tune Item View Controller-->
+        <scene sceneID="0nE-tR-OBv">
+            <objects>
+                <viewController storyboardIdentifier="shiftmixed" id="Hop-Jl-unq" customClass="FineTuneItemViewController" customModule="Zilliance" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nzh-Y7-ECO"/>
+                        <viewControllerLayoutGuide type="bottom" id="GMo-kG-0HS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zMH-cd-MDp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shift your thoughts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fv2-li-tO8">
+                                <rect key="frame" x="16" y="40" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="9Yf-jp-C9m"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
+                                <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Uc1-MD-0VO">
+                                <rect key="frame" x="12" y="77" width="351" height="574"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">Technically, you don’t “have” to do anything. You don’t even have to pay your taxes. The only reason we do the things we say we “have” to do is because in some way they meet our needs. 
+
+We pay taxes because we need to stay out of jail. We go home for the holidays because we need to feel like we are good sons or daughters. We go to our unsatisfying jobs because we need to make money. 
+
+Thinking of the parts of an activity that feel lousy as obligations fosters resentment and makes these lousy-feeling parts feel even worse. However, thinking of these parts as choices will improve your attitude and feel a lot better. If you own your choices and realize that they all meet at least one of your needs, you can focus on trying to feel good about your choices instead of on resentment. 
+
+The next time you spend time engaging in parts of an activity that feel bad, shift your thinking so that instead of focusing on how lousy you feel, focus on what need you are meeting by engaging in this activity.</mutableString>
+                                <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Uc1-MD-0VO" secondAttribute="trailing" constant="12" id="GUT-3R-Y8D"/>
+                            <constraint firstAttribute="trailing" secondItem="Fv2-li-tO8" secondAttribute="trailing" constant="16" id="LAu-2b-pnV"/>
+                            <constraint firstItem="Fv2-li-tO8" firstAttribute="leading" secondItem="zMH-cd-MDp" secondAttribute="leading" constant="16" id="Lqf-5U-sMa"/>
+                            <constraint firstItem="Uc1-MD-0VO" firstAttribute="top" secondItem="Fv2-li-tO8" secondAttribute="bottom" constant="16" id="X5T-nB-utF"/>
+                            <constraint firstItem="GMo-kG-0HS" firstAttribute="top" secondItem="Uc1-MD-0VO" secondAttribute="bottom" constant="16" id="fTR-zq-5bA"/>
+                            <constraint firstItem="Uc1-MD-0VO" firstAttribute="leading" secondItem="zMH-cd-MDp" secondAttribute="leading" constant="12" id="krP-0l-xQ9"/>
+                            <constraint firstItem="Fv2-li-tO8" firstAttribute="top" secondItem="nzh-Y7-ECO" secondAttribute="bottom" constant="20" id="xeA-46-gmQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="Uc1-MD-0VO" id="sUS-1R-ROb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yoq-5v-sVl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1337" y="-250"/>
+        </scene>
+        <!--Fine Tune Item View Controller-->
         <scene sceneID="gWi-8E-bPz">
             <objects>
                 <viewController storyboardIdentifier="need" id="sPc-5q-SyK" customClass="FineTuneItemViewController" customModule="Zilliance" customModuleProvider="target" sceneMemberID="viewController">
@@ -421,19 +700,24 @@ Making a habit of practicing gratitude reinforces positive feelings and trains y
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Need" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3I4-yL-J6B">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you need to feel better?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3I4-yL-J6B">
                                 <rect key="frame" x="16" y="40" width="343" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="BSJ-N9-cXz"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Xnr-pE-Uhz">
                                 <rect key="frame" x="12" y="77" width="351" height="574"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <mutableString key="text">When something feels particularly lousy, it might be that the activity is failing to meet one of your needs. A relationship can start to feel lousy if it doesn’t meet your need for adventure. A job or a course of study can feel lousy if it fails to meet your need for creativity, leadership, or teamwork. 
+
+The good news is that if you identify the need, you can always find a way to move one step closer to filling that need. For instance, you might be able to fill you need for creativity, leadership, or teamwork by volunteering at a non-profit or by starting your own side business. You might be able to fill your need for adventure by looking for new friends who like to go zip-lining and parasailing. 
+
+What do you need to feel better? </mutableString>
+                                <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -456,6 +740,57 @@ Making a habit of practicing gratitude reinforces positive feelings and trains y
                 <placeholder placeholderIdentifier="IBFirstResponder" id="niA-b2-Ctw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1378" y="-904"/>
+        </scene>
+        <!--Fine Tune Item View Controller-->
+        <scene sceneID="qDo-YT-Pc8">
+            <objects>
+                <viewController storyboardIdentifier="needmixed" id="BnO-qg-Qdj" customClass="FineTuneItemViewController" customModule="Zilliance" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PIi-GW-tcn"/>
+                        <viewControllerLayoutGuide type="bottom" id="Xrr-2C-j3Z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mRh-p0-nBZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you need to feel better?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIR-5T-kkE">
+                                <rect key="frame" x="16" y="40" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="1Qq-cd-tbX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
+                                <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OMf-1C-N2U">
+                                <rect key="frame" x="12" y="77" width="351" height="574"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">If you are like most people, you spend a lot of time making sure that other people’s needs are met, but you neglect your own. This is why we end up with so many things in our schedules that don’t feel great. 
+
+And while you certainly do have to pay attention to your loved ones’ boss’s needs, you should also pay attention to your own. You cannot be your best when you feel your worst. If you are not getting your own needs met, you will feel bored and apathetic, and eventually you might even feel powerless and hopeless. You might think you are doing your duty by selflessly giving your time and energy to your family, friends, employees, and colleagues, but you will never be able to give anyone your best if you are not fulfilled.</mutableString>
+                                <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Xrr-2C-j3Z" firstAttribute="top" secondItem="OMf-1C-N2U" secondAttribute="bottom" constant="16" id="6dT-IS-7fc"/>
+                            <constraint firstItem="OMf-1C-N2U" firstAttribute="top" secondItem="mIR-5T-kkE" secondAttribute="bottom" constant="16" id="GDD-p7-HDa"/>
+                            <constraint firstAttribute="trailing" secondItem="OMf-1C-N2U" secondAttribute="trailing" constant="12" id="OAO-cx-Cl2"/>
+                            <constraint firstAttribute="trailing" secondItem="mIR-5T-kkE" secondAttribute="trailing" constant="16" id="fLS-3p-zZl"/>
+                            <constraint firstItem="OMf-1C-N2U" firstAttribute="leading" secondItem="mRh-p0-nBZ" secondAttribute="leading" constant="12" id="fcs-QX-uNK"/>
+                            <constraint firstItem="mIR-5T-kkE" firstAttribute="leading" secondItem="mRh-p0-nBZ" secondAttribute="leading" constant="16" id="iZY-6e-g2X"/>
+                            <constraint firstItem="mIR-5T-kkE" firstAttribute="top" secondItem="PIi-GW-tcn" secondAttribute="bottom" constant="20" id="nQh-4T-ezK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="OMf-1C-N2U" id="BzC-bB-TwA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q8f-8g-cxt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2130" y="-1650"/>
         </scene>
     </scenes>
 </document>
