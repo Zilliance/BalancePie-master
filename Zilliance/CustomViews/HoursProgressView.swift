@@ -13,7 +13,7 @@ private let hoursInAWeek = CGFloat(24 * 7)
 final class HoursProgressView: UIView {
     private let filledLabel = UILabel()
     private let sleepLabel = UILabel()
-    private let progressTrack = UIView()
+    let progressTrack = UIView()
     private let progressBar = UIView()
     private var progressBarWidthConstraint: NSLayoutConstraint!
     private let sleepBar = UIView()
