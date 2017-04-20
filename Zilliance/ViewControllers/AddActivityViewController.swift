@@ -107,7 +107,7 @@ class AddActivityViewController: UIViewController, UICollectionViewDataSource, U
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "IconCell", for: indexPath) as! IconCollectionViewCell
-        cell.iconImageView.image = UIImage(named: iconNames[indexPath.row])
+        cell.iconImageView.image = UIImage(named: iconNames[indexPath.row])?.tinted(color: .darkBlueBackground)
         cell.backgroundColor = UIColor.unselectedIcon
         return cell
     }

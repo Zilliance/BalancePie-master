@@ -32,7 +32,7 @@ extension ItemSelectionViewModel {
             var image: UIImage? = nil
             
             if let iconName = activity.iconName {
-                image = UIImage(named: iconName)
+                image = UIImage(named: iconName)?.tinted(color: .darkBlueBackground)
             }
             
             let item = ItemSelectionViewModel(title: activity.name, image: image)

@@ -44,5 +44,16 @@ extension UIImage {
         let resized = resizedImage(newSize: newSize)
         return resized
     }
+    
+    /// Tints an image
+    func tinted(color: UIColor) -> UIImage {
+        let image = self.withRenderingMode(.alwaysTemplate)
+        UIGraphicsBeginImageContextWithOptions(image.size, false, image.scale)
+        color.set()
+        image.draw(in: CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height))
+        let tintedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return tintedImage ?? self
+    }
 }
 
