@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,7 +19,7 @@
         <scene sceneID="TU8-Yu-TC2">
             <objects>
                 <navigationController storyboardIdentifier="AddValue" id="5JW-J8-9eZ" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="m4I-Y6-wXW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="m4I-Y6-wXW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -352,11 +352,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X2I-TV-DhQ">
-                                <rect key="frame" x="31" y="592" width="313" height="60"/>
+                                <rect key="frame" x="16" y="601" width="343" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.73725490199999999" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="OPG-iJ-dl8"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="PAd-D5-wyK"/>
+                                    <constraint firstAttribute="height" constant="50" id="lRI-iQ-1Ls"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="23"/>
                                 <state key="normal" title="Update This Slice">
@@ -367,7 +366,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Am7-lz-Y8N">
-                                <rect key="frame" x="0.0" y="64" width="375" height="513"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="521"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="subtitleCell" textLabel="vOZ-Vu-Erl" detailTextLabel="r4A-oX-gN9" rowHeight="64" style="IBUITableViewCellStyleSubtitle" id="1dY-pU-Glm">
@@ -420,13 +419,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="X2I-TV-DhQ" secondAttribute="trailing" constant="15" id="Axm-z0-kxs"/>
-                            <constraint firstItem="iye-Wa-GuM" firstAttribute="top" secondItem="X2I-TV-DhQ" secondAttribute="bottom" constant="15" id="SfQ-vG-IGh"/>
+                            <constraint firstItem="X2I-TV-DhQ" firstAttribute="leading" secondItem="gnk-QH-tQo" secondAttribute="leading" constant="16" id="6rJ-QR-u1E"/>
+                            <constraint firstItem="iye-Wa-GuM" firstAttribute="top" secondItem="X2I-TV-DhQ" secondAttribute="bottom" constant="16" id="Mg5-j6-ECQ"/>
                             <constraint firstAttribute="trailing" secondItem="Am7-lz-Y8N" secondAttribute="trailing" id="VhX-o2-Dq4"/>
-                            <constraint firstItem="X2I-TV-DhQ" firstAttribute="top" secondItem="Am7-lz-Y8N" secondAttribute="bottom" constant="15" id="cH9-2C-9HK"/>
+                            <constraint firstAttribute="trailing" secondItem="X2I-TV-DhQ" secondAttribute="trailing" constant="16" id="cPR-Sl-yD7"/>
                             <constraint firstItem="Am7-lz-Y8N" firstAttribute="top" secondItem="a1R-en-Ac3" secondAttribute="bottom" id="hWN-kr-czb"/>
                             <constraint firstItem="Am7-lz-Y8N" firstAttribute="leading" secondItem="gnk-QH-tQo" secondAttribute="leading" id="onf-wg-Mzt"/>
-                            <constraint firstItem="X2I-TV-DhQ" firstAttribute="leading" secondItem="gnk-QH-tQo" secondAttribute="leadingMargin" constant="15" id="pVp-0n-0In"/>
+                            <constraint firstItem="X2I-TV-DhQ" firstAttribute="top" secondItem="Am7-lz-Y8N" secondAttribute="bottom" constant="16" id="r6F-gu-9KX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Slice" id="gIm-ji-UiQ">
@@ -450,7 +449,7 @@
         <scene sceneID="9Tq-nO-CK1">
             <objects>
                 <navigationController storyboardIdentifier="AddActivity" id="TN6-iY-hvU" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="atu-ye-C3t">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="atu-ye-C3t">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
