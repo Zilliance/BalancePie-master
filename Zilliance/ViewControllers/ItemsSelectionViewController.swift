@@ -45,6 +45,8 @@ extension ItemSelectionViewModel {
     }
 }
 
+// MARK: -
+
 class ItemsSelectionViewController: UIViewController {
 
     var items: [ItemSelectionViewModel] = []
@@ -77,36 +79,7 @@ class ItemsSelectionViewController: UIViewController {
     }
 }
 
-extension ItemsSelectionViewController: UITableViewDelegate
-{
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-        if (indexPath.section == 0) {
-            DispatchQueue.main.async {
-                self.createNewItemAction?()
-            }
-            return
-        }
-        
-        if !self.isMultipleSelectionEnabled {
-            if let row = self.selectedItemsIndexes.popFirst() {
-                let cell = tableView.cellForRow(at: IndexPath(row: row, section: 1))
-                cell?.accessoryType = .none
-            }
-        }
-        
-        if (!self.selectedItemsIndexes.contains(indexPath.row)) {
-            self.selectedItemsIndexes.insert(indexPath.row)
-        } else {
-            self.selectedItemsIndexes.remove(indexPath.row)
-        }
-        
-        if let cell = tableView.cellForRow(at: indexPath) {
-            cell.accessoryType = self.selectedItemsIndexes.contains(indexPath.row) ? .checkmark : .none
-        }
-    }
-}
+// MARK: - Data Source
 
 extension ItemsSelectionViewController: UITableViewDataSource {
     
@@ -145,6 +118,38 @@ extension ItemsSelectionViewController: UITableViewDataSource {
             cell.layoutMargins = .zero
             
             return cell
+        }
+    }
+}
+
+// MARK: - Delegate
+
+extension ItemsSelectionViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if (indexPath.section == 0) {
+            DispatchQueue.main.async {
+                self.createNewItemAction?()
+            }
+            return
+        }
+        
+        if !self.isMultipleSelectionEnabled {
+            if let row = self.selectedItemsIndexes.popFirst() {
+                let cell = tableView.cellForRow(at: IndexPath(row: row, section: 1))
+                cell?.accessoryType = .none
+            }
+        }
+        
+        if (!self.selectedItemsIndexes.contains(indexPath.row)) {
+            self.selectedItemsIndexes.insert(indexPath.row)
+        } else {
+            self.selectedItemsIndexes.remove(indexPath.row)
+        }
+        
+        if let cell = tableView.cellForRow(at: indexPath) {
+            cell.accessoryType = self.selectedItemsIndexes.contains(indexPath.row) ? .checkmark : .none
         }
     }
 }
