@@ -3,11 +3,11 @@ PODS:
   - Charts (3.0.2):
     - Charts/Core (= 3.0.2)
   - Charts/Core (3.0.2)
-  - Realm (2.5.1):
-    - Realm/Headers (= 2.5.1)
-  - Realm/Headers (2.5.1)
-  - RealmSwift (2.5.1):
-    - Realm (= 2.5.1)
+  - Realm (2.6.1):
+    - Realm/Headers (= 2.6.1)
+  - Realm/Headers (2.6.1)
+  - RealmSwift (2.6.1):
+    - Realm (= 2.6.1)
   - SideMenuController (0.2.4)
 
 DEPENDENCIES:
@@ -24,14 +24,14 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Charts:
-    :commit: f23e872e7573f8c79862ff4822cfc5683703d424
+    :commit: aca049170e3dc9d8d436935b96db7df8913aeaa9
     :git: https://github.com/danielgindi/Charts.git
 
 SPEC CHECKSUMS:
   ActionSheetPicker-3.0: d11a4c12c6aaf704b8a3f56d179198c99f3e41e6
   Charts: e955b9a241a14a8971d70143002c8ab1610d26b6
-  Realm: 32f86104d37c8521f864d4274050b38ba6190733
-  RealmSwift: f719e7511c902b8908593e8f143f59e47931bdb6
+  Realm: 9abfd4f87519376daa5ae3a4603155de408bf8b3
+  RealmSwift: a54d3e8931cf7d3afa5a1fac9c8f88109d7f02b3
   SideMenuController: b463d2b3aa58e2afe57f57a07938fa9a647894ca
 
 PODFILE CHECKSUM: 5d1a2f4aaf30e6fa4f6a3af8c75a0515a1faa1e6
