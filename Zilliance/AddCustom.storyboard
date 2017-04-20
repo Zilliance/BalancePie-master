@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -290,36 +289,30 @@
                                     <outlet property="delegate" destination="vev-B3-EIv" id="fmB-aq-LVL"/>
                                 </connections>
                             </tableView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="bH3-Uf-vwh">
-                                <rect key="frame" x="32" y="601" width="311" height="50"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FGy-cb-chr">
-                                        <rect key="frame" x="0.0" y="0.0" width="311" height="50"/>
-                                        <color key="backgroundColor" red="0.0" green="0.73725490199999999" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="20"/>
-                                        <state key="normal" title="Add Slice">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="addSliceAction:" destination="vev-B3-EIv" eventType="touchUpInside" id="4su-O1-kgs"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FGy-cb-chr">
+                                <rect key="frame" x="16" y="601" width="343" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.73725490199999999" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="DSd-r3-Iqn"/>
+                                    <constraint firstAttribute="height" constant="50" id="3ow-zi-QDc"/>
                                 </constraints>
-                                <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
-                            </stackView>
+                                <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="20"/>
+                                <state key="normal" title="Add Slice">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addSliceAction:" destination="vev-B3-EIv" eventType="touchUpInside" id="4su-O1-kgs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="BnA-gA-Jdc" firstAttribute="leading" secondItem="oxx-Z5-7BZ" secondAttribute="leading" id="3vZ-oR-Uvd"/>
+                            <constraint firstItem="FGy-cb-chr" firstAttribute="top" secondItem="BnA-gA-Jdc" secondAttribute="bottom" constant="10" id="CEm-iD-1xI"/>
                             <constraint firstItem="BnA-gA-Jdc" firstAttribute="top" secondItem="rXQ-hf-UO6" secondAttribute="bottom" id="IdE-hZ-Hak"/>
+                            <constraint firstAttribute="trailing" secondItem="FGy-cb-chr" secondAttribute="trailing" constant="16" id="LQW-RI-pNS"/>
                             <constraint firstAttribute="trailing" secondItem="BnA-gA-Jdc" secondAttribute="trailing" id="QMH-Qj-PsW"/>
-                            <constraint firstItem="bH3-Uf-vwh" firstAttribute="top" secondItem="BnA-gA-Jdc" secondAttribute="bottom" constant="10" id="ScH-VG-ZtU"/>
-                            <constraint firstItem="bH3-Uf-vwh" firstAttribute="leading" secondItem="oxx-Z5-7BZ" secondAttribute="leadingMargin" constant="16" id="gkm-mA-pGo"/>
-                            <constraint firstItem="AZo-k5-Gej" firstAttribute="top" secondItem="bH3-Uf-vwh" secondAttribute="bottom" constant="16" id="nIN-hY-ivl"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="bH3-Uf-vwh" secondAttribute="trailing" constant="16" id="wq9-X5-QAO"/>
+                            <constraint firstItem="AZo-k5-Gej" firstAttribute="top" secondItem="FGy-cb-chr" secondAttribute="bottom" constant="16" id="RB6-bh-xNA"/>
+                            <constraint firstItem="FGy-cb-chr" firstAttribute="leading" secondItem="oxx-Z5-7BZ" secondAttribute="leading" constant="16" id="r6B-aF-bPV"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Slice" id="f24-Tl-FWt">
