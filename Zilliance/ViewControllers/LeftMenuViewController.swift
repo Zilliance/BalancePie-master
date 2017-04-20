@@ -91,6 +91,7 @@ final class LeftMenuViewController: UIViewController, UITableViewDelegate, UITab
         
         if (!self.showingPie)
         {
+            self.sideMenuController?.toggle()
             return
         }
         
