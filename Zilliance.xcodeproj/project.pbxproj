@@ -14,6 +14,7 @@
 		041C3CCE1EA7F5A000C52195 /* WebView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 041C3CCD1EA7F5A000C52195 /* WebView.storyboard */; };
 		041C3CD01EA7F65A00C52195 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041C3CCF1EA7F65A00C52195 /* WebViewController.swift */; };
 		041C3CD81EA8062500C52195 /* zilliance privacy policy.html in Resources */ = {isa = PBXBuildFile; fileRef = 041C3CD71EA8062500C52195 /* zilliance privacy policy.html */; };
+		041C3CDC1EA9291300C52195 /* zilliance terms of service.html in Resources */ = {isa = PBXBuildFile; fileRef = 041C3CDB1EA9291300C52195 /* zilliance terms of service.html */; };
 		04647C721E97D8450040CA46 /* FineTuneActivity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04647C701E97D8450040CA46 /* FineTuneActivity.storyboard */; };
 		04647C751E97D85C0040CA46 /* FineTuneActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04647C741E97D85C0040CA46 /* FineTuneActivityViewController.swift */; };
 		04647C7D1E9BFD4B0040CA46 /* AddSliceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04647C7C1E9BFD4B0040CA46 /* AddSliceViewController.swift */; };
@@ -105,6 +106,7 @@
 		041C3CCD1EA7F5A000C52195 /* WebView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WebView.storyboard; sourceTree = "<group>"; };
 		041C3CCF1EA7F65A00C52195 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebViewController.swift; path = ViewControllers/WebViewController.swift; sourceTree = "<group>"; };
 		041C3CD71EA8062500C52195 /* zilliance privacy policy.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "zilliance privacy policy.html"; sourceTree = "<group>"; };
+		041C3CDB1EA9291300C52195 /* zilliance terms of service.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "zilliance terms of service.html"; sourceTree = "<group>"; };
 		04647C701E97D8450040CA46 /* FineTuneActivity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FineTuneActivity.storyboard; sourceTree = "<group>"; };
 		04647C741E97D85C0040CA46 /* FineTuneActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FineTuneActivityViewController.swift; path = ViewControllers/FineTuneActivityViewController.swift; sourceTree = "<group>"; };
 		04647C7C1E9BFD4B0040CA46 /* AddSliceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddSliceViewController.swift; path = ViewControllers/AddSliceViewController.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 		041C3CCA1EA7E81C00C52195 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				041C3CDB1EA9291300C52195 /* zilliance terms of service.html */,
 				041C3CD71EA8062500C52195 /* zilliance privacy policy.html */,
 			);
 			name = Resources;
@@ -600,6 +603,7 @@
 				8C3EA4901E93F85C00F56DED /* Muli-BoldItalic.ttf in Resources */,
 				8C3EA48D1E93F85C00F56DED /* Muli-Black.ttf in Resources */,
 				041C3CCE1EA7F5A000C52195 /* WebView.storyboard in Resources */,
+				041C3CDC1EA9291300C52195 /* zilliance terms of service.html in Resources */,
 				8C3EA4911E93F85C00F56DED /* Muli-ExtraBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

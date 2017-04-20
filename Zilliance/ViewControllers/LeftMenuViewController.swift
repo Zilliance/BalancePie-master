@@ -71,6 +71,16 @@ final class LeftMenuViewController: UIViewController, UITableViewDelegate, UITab
         }
     }
     
+    var showingPie: Bool {
+        guard let currentNavigation = self.sideMenuController?.centerViewController as? UINavigationController, currentNavigation.viewControllers.first is PieViewController
+        else
+        {
+            return false
+        }
+        
+        return true
+    }
+    
     func showPieView()
     {
         guard let sideMenu = self.sideMenuController else
@@ -78,6 +88,12 @@ final class LeftMenuViewController: UIViewController, UITableViewDelegate, UITab
             assertionFailure()
             return
         }
+        
+        if (!self.showingPie)
+        {
+            return
+        }
+        
         let pieNavController = UIStoryboard(name: "Pie", bundle: nil).instantiateInitialViewController() as! UINavigationController
         
         sideMenu.embed(centerViewController: pieNavController, cacheIdentifier: "PieViewController")
@@ -93,7 +109,7 @@ final class LeftMenuViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     @IBAction func termsOfServicesTapped(_ sender: Any) {
-        showHTMLView(htmlFile: "zilliance privacy policy", title: "Waiting for HTML")
+        showHTMLView(htmlFile: "zilliance terms of service", title: "Terms Of Service")
     }
     
     
