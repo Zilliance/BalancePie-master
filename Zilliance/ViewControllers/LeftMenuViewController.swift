@@ -53,13 +53,11 @@ final class LeftMenuViewController: UIViewController, UITableViewDelegate, UITab
         return cell
     }
     
-    func showHTMLView(htmlFile: String, title: String)
-    {
+    func showHTMLView(htmlFile: String, title: String) {
         let htmlFilePath = Bundle.main.path(forResource: htmlFile, ofType: "html")
         let url = URL(fileURLWithPath: htmlFilePath!)
         
-        if let webController = UIStoryboard(name: "WebView", bundle: nil).instantiateInitialViewController() as? WebViewController
-        {
+        if let webController = UIStoryboard(name: "WebView", bundle: nil).instantiateInitialViewController() as? WebViewController {
             webController.title = title
             webController.url = url
             
@@ -70,19 +68,15 @@ final class LeftMenuViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     var showingPie: Bool {
-        guard let currentNavigation = self.sideMenuController?.centerViewController as? UINavigationController, currentNavigation.viewControllers.first is PieViewController
-        else
-        {
+        guard let currentNavigation = self.sideMenuController?.centerViewController as? UINavigationController, currentNavigation.viewControllers.first is PieViewController else {
             return false
         }
         
         return true
     }
     
-    func showPieView()
-    {
-        guard let sideMenu = self.sideMenuController else
-        {
+    func showPieView() {
+        guard let sideMenu = self.sideMenuController else {
             assertionFailure()
             return
         }
@@ -97,9 +91,8 @@ final class LeftMenuViewController: UIViewController, UITableViewDelegate, UITab
         sideMenu.embed(centerViewController: pieNavController, cacheIdentifier: "PieViewController")
     }
     
-    @IBAction func pieButtonTapped()
-    {
-        showPieView()
+    @IBAction func pieButtonTapped() {
+        self.showPieView()
     }
     
     @IBAction func privacyPolicyTapped(_ sender: Any) {
@@ -109,6 +102,4 @@ final class LeftMenuViewController: UIViewController, UITableViewDelegate, UITab
     @IBAction func termsOfServicesTapped(_ sender: Any) {
         showHTMLView(htmlFile: "zilliance terms of service", title: "Terms Of Service")
     }
-    
-    
 }
