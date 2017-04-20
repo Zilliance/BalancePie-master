@@ -28,8 +28,10 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.editableTexts = [editText, editText2]
         self.setupViews()
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
