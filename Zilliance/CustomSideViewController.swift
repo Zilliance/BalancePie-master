@@ -31,4 +31,8 @@ final class CustomSideViewController: SideMenuController
         CustomSideViewController.initSideProperties()
         super.init(nibName: nil, bundle: nil)
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }
