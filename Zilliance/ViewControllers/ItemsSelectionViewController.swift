@@ -93,7 +93,7 @@ extension ItemsSelectionViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if (indexPath.section == 0) {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "createItemCell")!
+            let cell = tableView.dequeueReusableCell(withIdentifier: "createItemCell", for: indexPath)
             
             cell.textLabel?.text = self.createItemTitle
             cell.selectionStyle = .none
@@ -105,10 +105,10 @@ extension ItemsSelectionViewController: UITableViewDataSource {
             return cell
         } else {
             let item = self.items[indexPath.row]
-            let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell")!
-
-            cell.imageView?.image = item.image
-            cell.textLabel?.text = item.title
+            let cell = tableView.dequeueReusableCell(withIdentifier: "itemWithIconCell", for: indexPath) as! ItemWithIconCell
+            
+            cell.iconView?.image = item.image
+            cell.label?.text = item.title
             
             cell.accessoryType = self.selectedItemsIndexes.contains(indexPath.row) ? .checkmark : .none
             cell.selectionStyle = .none
