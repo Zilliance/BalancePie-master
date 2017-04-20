@@ -138,16 +138,7 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
         
         let fineTuneVC = UIStoryboard(name: "FineTuneActivity", bundle: nil).instantiateInitialViewController() as! FineTuneActivityViewController
         
-        let items: [FineTuneItem] = [
-            .pleasure,
-            .prioritize,
-            .gratitude,
-            .giving,
-            .values
-        ]
-        
         fineTuneVC.zUserActivity = userActivity
-        fineTuneVC.items = items
         
         let navigationFineTuneVC = UINavigationController(rootViewController: fineTuneVC)
         self.present(navigationFineTuneVC, animated: true, completion: nil)

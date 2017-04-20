@@ -122,16 +122,7 @@ final class AddSliceViewController: UIViewController, AlertsDuration
         
         let fineTuneVC = UIStoryboard(name: "FineTuneActivity", bundle: nil).instantiateInitialViewController() as! FineTuneActivityViewController
         
-         let items: [FineTuneItem] = [
-            .pleasure,
-            .prioritize,
-            .gratitude,
-            .giving,
-            .values
-        ]
-        
         fineTuneVC.zUserActivity = userActivity
-        fineTuneVC.items = items
         
         self.navigationController!.pushViewController(fineTuneVC, animated: true)
     }
