@@ -36,6 +36,12 @@ enum TableViewRow: Int
 final class LeftMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
 {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.view.backgroundColor = UIColor.darkBlueBackground
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return TableViewRow.count
     }

@@ -20,6 +20,7 @@ final class WebViewController: UIViewController, UIWebViewDelegate
         webView.loadRequest(URLRequest(url: self.url))
         
         webView.delegate = self
+        
     }
     
     @IBAction func backTapped() {
