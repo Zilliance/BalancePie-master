@@ -10,8 +10,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Roboto-Medium.ttf">
-            <string>Roboto-Medium</string>
+        <array key="Muli-SemiBold.ttf">
+            <string>Muli-SemiBold</string>
         </array>
     </customFonts>
     <scenes>
@@ -27,9 +27,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch-background" translatesAutoresizingMaskIntoConstraints="NO" id="pdq-2J-JEn">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pie" translatesAutoresizingMaskIntoConstraints="NO" id="fqB-QU-uQn">
                                 <rect key="frame" x="41" y="115" width="293" height="300"/>
                                 <constraints>
@@ -37,23 +34,19 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance Pie" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WII-F0-Rgy">
-                                <rect key="frame" x="118.5" y="437" width="138" height="30.5"/>
-                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="26"/>
+                                <rect key="frame" x="116" y="437" width="143.5" height="33"/>
+                                <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.73725490196078436" blue="0.83529411764705885" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="WII-F0-Rgy" firstAttribute="top" secondItem="fqB-QU-uQn" secondAttribute="bottom" constant="22" id="4X2-F5-EUY"/>
-                            <constraint firstAttribute="bottom" secondItem="pdq-2J-JEn" secondAttribute="bottom" id="Pcg-p2-9eP"/>
                             <constraint firstItem="fqB-QU-uQn" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="95" id="ZKR-sz-sE1"/>
-                            <constraint firstItem="pdq-2J-JEn" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="dzg-KA-KdN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fqB-QU-uQn" secondAttribute="trailing" constant="25" id="fAx-gv-vmt"/>
                             <constraint firstItem="WII-F0-Rgy" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="igW-Th-na2"/>
-                            <constraint firstAttribute="trailing" secondItem="pdq-2J-JEn" secondAttribute="trailing" id="ua6-kb-kim"/>
                             <constraint firstItem="fqB-QU-uQn" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="25" id="vaa-Qa-fUp"/>
-                            <constraint firstItem="pdq-2J-JEn" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="wzE-bl-3sw"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -63,7 +56,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="launch-background" width="375" height="667"/>
         <image name="pie" width="365" height="365"/>
     </resources>
 </document>
