@@ -16,6 +16,11 @@ class EditableTextView: UITextView
     }
 }
 
+struct TextViewContent {
+    let userActivity: UserActivity
+    let type: FineTuneType
+}
+
 class AddToCalendarViewController: UIViewController, UITextViewDelegate, UIViewControllerTransitioningDelegate {
     
     struct EditableText {
@@ -32,10 +37,10 @@ class AddToCalendarViewController: UIViewController, UITextViewDelegate, UIViewC
         case text
     }
     
-    var editText = EditableText(feeling: .great, text: "choose multiple good values", type: .value, isMultipleSelection: true, selectedIndexes: nil)
-    var editText2 = EditableText(feeling: .lousy, text: "chooose single bad value", type: .value, isMultipleSelection: false, selectedIndexes: nil)
+    var textViewContent: TextViewContent?
     
-    var editableTexts: [EditableText] = []
+    fileprivate var editableTexts: [EditableText] = []
+    fileprivate var grayTexts: [String] = []
     
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var doneButton: UIButton!
@@ -49,14 +54,16 @@ class AddToCalendarViewController: UIViewController, UITextViewDelegate, UIViewC
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupView()
-        self.editableTexts = [editText, editText2]
         
         self.bodyTextView.text = nil
-        self.setupTextView()
         
         let tapEdit = UITapGestureRecognizer(target: self, action: #selector(self.editTapped))
         self.bodyTextView.addGestureRecognizer(tapEdit)
         self.bodyTextView.isEditable = false
+        
+        if let textViewContent = self.textViewContent {
+            self.text(for: textViewContent)
+        }
 
     }
     
@@ -64,6 +71,8 @@ class AddToCalendarViewController: UIViewController, UITextViewDelegate, UIViewC
         self.bodyTextView.isEditable = false
         self.bodyTextView.dataDetectorTypes = [.all];
     }
+    
+
     
     func setupView()
     {
@@ -151,7 +160,7 @@ extension AddToCalendarViewController
         }
     }
     
-    fileprivate func setupTextView() {
+    func setupTextView() {
         
         var currentText: String = self.bodyTextView.text
         
@@ -171,6 +180,18 @@ extension AddToCalendarViewController
                 attributedString.addAttribute(NSForegroundColorAttributeName, value: UIColor.blue , range: range)
             }
         }
+        
+        var ranges: [NSRange] = []
+        
+        for gText in self.grayTexts {
+            ranges.append((currentText as NSString).range(of: gText)
+            )
+        }
+        for range in ranges {
+            
+            attributedString.addAttributes([NSForegroundColorAttributeName : UIColor.lightGray], range: range)
+        }
+        
         
         self.bodyTextView.attributedText = attributedString
         self.bodyTextView.delegate = self
@@ -337,6 +358,106 @@ extension AddToCalendarViewController
         }
         
     }
+    
+    // MARK : --
+    
+    fileprivate func text(for textView: TextViewContent) {
+        switch (textView.userActivity.feeling, textView.type) {
+        case (.great, .pleasure):
+            
+            var valuesString = textView.userActivity.values.first?.name
+            
+            let values = textView.userActivity.values.dropFirst()
+            
+            values.forEach({ (value) in
+                valuesString = valuesString! + ", \(value.name)"
+            })
+            
+            self.bodyTextView.text = "Remind myself that I love \((textView.userActivity.activity?.name)!) because of the \(valuesString!)"
+        case (.great, .prioritize):
+            self.bodyTextView.text = "Prioritze \((textView.userActivity.activity?.name)!)"
+        case (.great, .gratitude):
+            self.bodyTextView.text = "Give thanks for \((textView.userActivity.activity?.name)!). Acknowledge the gifts and blessings"
+        case (.great, .giving):
+            self.bodyTextView.text = "Do one act of kindness while engaged in \((textView.userActivity.activity?.name)!)"
+        case (.great, .values):
+            let editText = EditableText(feeling: .great, text: "choose values", type: .value, isMultipleSelection: true, selectedIndexes: nil)
+            self.editableTexts = [editText]
+            self.bodyTextView.text = "Bring more \(self.editableTexts[0].text) to \((textView.userActivity.activity?.name)!)"
+            self.setupTextView()
+        case (.lousy, .replace):
+            self.bodyTextView.text = "Replace \((textView.userActivity.activity?.name)!) with this better feeling activity: e.g. reading a book"
+            self.grayTexts = ["e.g. reading a book"]
+            self.setupTextView()
+        case (.lousy, .reduce):
+            self.bodyTextView.text = "Reduce the amount of time I spend on \((textView.userActivity.activity?.name)!) by doing this: e.g. picking up a book every time I am tempted to look at social media"
+            self.grayTexts = ["e.g. picking up a book every time I am tempted to look at social media"]
+            self.setupTextView()
+        case (.lousy, .shift):
+            let editText = EditableText(feeling: .great, text: "choose values", type: .value, isMultipleSelection: true, selectedIndexes: nil)
+            self.editableTexts = [editText]
+            self.bodyTextView.text = "Shift my thoughts about \((textView.userActivity.activity?.name)!) by focusing on the need(s) it fulfills: \(self.editableTexts[0].text) "
+            self.setupTextView()
+        case (.lousy, .values):
+            let editText = EditableText(feeling: .great, text: "choose positive value", type: .value, isMultipleSelection: false, selectedIndexes: nil)
+            self.editableTexts = [editText]
+            self.bodyTextView.text = "Bring \(self.editableTexts[0].text) to \((textView.userActivity.activity?.name)!) by: e.g. listening to podcasts or audiobooks."
+            self.grayTexts = ["e.g. listening to podcasts or audiobooks."]
+            self.setupTextView()
+        case (.lousy, .need):
+            self.bodyTextView.text = "What I need to feel better about \((textView.userActivity.activity?.name)!) that is in my control is: e.g. more adventure. To meet this need, I will take this action step: e.g. ask my friends to go mountain climbing with me"
+            self.grayTexts = ["e.g. more adventure", "e.g. ask my friends to go mountain climbing with me"]
+            self.setupTextView()
+        case (.neutral, .replace):
+            self.bodyTextView.text = "Replace or move towards replacing \((textView.userActivity.activity?.name)!) by: taking an online class about entrepreneurship"
+            self.grayTexts = ["taking an online class about entrepreneurship"]
+        case (.neutral, .reduce):
+            self.bodyTextView.text = "Reduce the amount of time I spend on  \((textView.userActivity.activity?.name)!) by doing this feel-good activity instead, even for just a few minutes: Do two minutes of sit-ups every hour"
+            self.grayTexts = ["Do two minutes of sit-ups every hour"]
+            self.setupTextView()
+        case (.neutral, .shift):
+            let editText = EditableText(feeling: .great, text: "choose values", type: .value, isMultipleSelection: true, selectedIndexes: nil)
+            self.editableTexts = [editText]
+            self.bodyTextView.text = "Shift my thoughts about \((textView.userActivity.activity?.name)!) by focusing on the need(s) it fulfills: \(self.editableTexts[0].text) "
+            self.setupTextView()
+        case (.neutral, .values):
+            let editText = EditableText(feeling: .great, text: "choose positive value", type: .value, isMultipleSelection: false, selectedIndexes: nil)
+            self.editableTexts = [editText]
+            self.bodyTextView.text = "Bring \(self.editableTexts[0].text) to \((textView.userActivity.activity?.name)!) by: e.g. listening to podcasts or audiobooks."
+            self.grayTexts = ["e.g. listening to podcasts or audiobooks."]
+            self.setupTextView()
+        case (.neutral, .need):
+            self.bodyTextView.text = "What I need to feel better about \((textView.userActivity.activity?.name)!) that is in my control is: e.g. more adventure. To meet this need, I will take this action step: e.g. ask my friends to go mountain climbing with me"
+            self.grayTexts = ["e.g. more adventure", "e.g. ask my friends to go mountain climbing with me"]
+            self.setupTextView()
+        case (.mixed, .reduce):
+            self.bodyTextView.text = "Reduce the amount of time I spend on not-so-good feeling parts of \((textView.userActivity.activity?.name)!) by doing this instead: taking a 15 minute walk in the afternoon"
+            self.grayTexts = ["taking a 15 minute walk in the afternoon"]
+            self.setupTextView()
+        case (.mixed, .gratitude):
+            self.bodyTextView.text = "Give thanks for the aspects of \((textView.userActivity.activity?.name)!) that I'm greatful for. Acknowledge the gifts and blessings"
+        case (.mixed, .shift):
+            let editText = EditableText(feeling: .great, text: "choose values", type: .value, isMultipleSelection: true, selectedIndexes: nil)
+            self.editableTexts = [editText]
+            self.bodyTextView.text = "Shift my thoughts about the non-so-good feelings parts of \((textView.userActivity.activity?.name)!) by focusing on the need(s) it fulfills: \(self.editableTexts[0].text) "
+            self.setupTextView()
+        case (.mixed, .values):
+            let editText = EditableText(feeling: .great, text: "choose positive value", type: .value, isMultipleSelection: false, selectedIndexes: nil)
+            let editText2 = EditableText(feeling: .great, text: "choose positive values", type: .value, isMultipleSelection: false, selectedIndexes: nil)
+            self.editableTexts = [editText, editText2]
+            self.bodyTextView.text = "Bring more \(self.editableTexts[0].text) to the good-feeling parts of \((textView.userActivity.activity?.name)!) by: e.g. listening to podcasts or audiobooks. \nBring more \(self.editableTexts[1].text) to the not-so-good feeling parts by: e.g. …"
+            self.grayTexts = ["e.g. listening to podcasts or audiobooks.", "e.g. …"]
+            self.setupTextView()
+        case (.mixed, .need):
+            self.bodyTextView.text = "What I need to feel better about \((textView.userActivity.activity?.name)!) that is in my control is: e.g. more adventure. To meet this need, I will take this action step: e.g. ask my friends to go mountain climbing with me"
+            self.grayTexts = ["e.g. more adventure", "e.g. ask my friends to go mountain climbing with me"]
+            self.setupTextView()
+        default:
+            break
+        }
+        
+    }
+    
     
 }
 
