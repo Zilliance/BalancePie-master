@@ -30,6 +30,8 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
         super.viewDidLoad()
         self.editableTexts = [editText, editText2]
         self.setupViews()
+        
+        self.textView.text = nil
         self.setupTextView()
         
         let tapEdit = UITapGestureRecognizer(target: self, action: #selector(self.editTapped))
