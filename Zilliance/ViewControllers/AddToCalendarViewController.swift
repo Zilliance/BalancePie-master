@@ -98,6 +98,12 @@ class AddToCalendarViewController: UIViewController, UITextViewDelegate, UIViewC
         
     }
     
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        let presentationController = PartialSizePresentationController(presentedViewController: presented, presenting: presenting, height: self.view.frame.size.height / 2.0)
+        return presentationController
+    }
+
+    
     @IBAction func onClose(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -169,7 +175,9 @@ extension AddToCalendarViewController
             currentText = "Shift my thoughts about Activity by focusing on the need(s) it fulfills: \(self.editableTexts[0].text) and another text : \(self.editableTexts[1].text)"
         }
         
-        let attributedString = NSMutableAttributedString(string: currentText)
+        let attributedString = NSMutableAttributedString(string: currentText, attributes: [
+            NSFontAttributeName : UIFont.muliRegular(size: 15.0)
+            ])
         
         for i in 0 ..< self.editableTexts.count {
             
@@ -189,7 +197,7 @@ extension AddToCalendarViewController
         }
         for range in ranges {
             
-            attributedString.addAttributes([NSForegroundColorAttributeName : UIColor.lightGray], range: range)
+            attributedString.addAttributes([NSForegroundColorAttributeName : UIColor.gray], range: range)
         }
         
         

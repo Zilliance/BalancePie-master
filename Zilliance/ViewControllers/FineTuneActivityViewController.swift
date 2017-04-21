@@ -146,7 +146,8 @@ final class FineTuneActivityViewController: UIViewController {
     // MARK: - User Actions
 
     @IBAction func scheduleButtonTapped(_ sender: Any) {
-        let scheduler = UIStoryboard(name: "Calendar", bundle: nil).instantiateInitialViewController()!
+        let scheduler = UIStoryboard(name: "Calendar", bundle: nil).instantiateInitialViewController() as! AddToCalendarViewController
+        scheduler.textViewContent = TextViewContent(userActivity: self.zUserActivity!, type: self.items[self.currentIndex].type)
         self.navigationController!.pushViewController(scheduler, animated: true)
     }
     
