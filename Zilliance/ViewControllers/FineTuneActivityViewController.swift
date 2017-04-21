@@ -127,22 +127,15 @@ final class FineTuneActivityViewController: UIViewController {
     // MARK: - User Actions
 
     @IBAction func scheduleButtonTapped(_ sender: Any) {
-        
-        guard let calendarViewController = UIStoryboard(name: "Calendar", bundle: nil).instantiateInitialViewController() else {
-            assertionFailure()
-            return
-        }
-        calendarViewController.modalPresentationStyle = .overCurrentContext
-        self.present(calendarViewController, animated: true, completion: nil)
+        let scheduler = UIStoryboard(name: "Calendar", bundle: nil).instantiateInitialViewController()!
+        self.navigationController!.pushViewController(scheduler, animated: true)
     }
-    
     
     @IBAction func cancelTapped(_ sender: Any) {
         self.dismiss(animated: true)
     }
     
-    fileprivate func showViewController(controller: UIViewController)
-    {
+    fileprivate func showViewController(controller: UIViewController) {
         if (currentViewController != nil)
         {
             currentViewController?.willMove(toParentViewController: nil)

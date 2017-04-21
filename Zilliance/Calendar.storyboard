@@ -9,18 +9,18 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Muli-Bold.ttf">
-            <string>Muli-Bold</string>
-        </array>
         <array key="Muli-Regular.ttf">
             <string>Muli-Regular</string>
         </array>
+        <array key="Muli-SemiBold.ttf">
+            <string>Muli-SemiBold</string>
+        </array>
     </customFonts>
     <scenes>
-        <!--Add To Calendar View Controller-->
+        <!--Schedule It-->
         <scene sceneID="9NS-am-6Bk">
             <objects>
-                <viewController storyboardIdentifier="AddToCalendarViewController" id="40o-Hi-Wew" customClass="AddToCalendarViewController" customModule="Zilliance" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddToCalendarViewController" title="Schedule It" id="40o-Hi-Wew" customClass="AddToCalendarViewController" customModule="Zilliance" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qS9-19-9E0"/>
                         <viewControllerLayoutGuide type="bottom" id="fR5-MD-O98"/>
@@ -30,108 +30,95 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GKA-A6-kPw">
-                                <rect key="frame" x="12" y="41" width="325" height="469"/>
+                                <rect key="frame" x="0.0" y="44" width="350" height="566"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="maC-2E-Rqj">
-                                        <rect key="frame" x="8" y="8" width="100" height="15"/>
+                                        <rect key="frame" x="16" y="8" width="117" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="i7F-2w-k69"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="12"/>
+                                        <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Qav-6a-v1r">
-                                        <rect key="frame" x="8" y="41" width="309" height="98"/>
+                                        <rect key="frame" x="16" y="31" width="318" height="201"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="98" id="2n3-IL-Q2K"/>
+                                            <constraint firstAttribute="height" constant="201" id="2n3-IL-Q2K"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date &amp; Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBf-Rg-WQ6">
-                                        <rect key="frame" x="8" y="157" width="110" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="bmI-uY-XIv"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="11"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="5TE-Dh-zm2">
-                                        <rect key="frame" x="8" y="186" width="309" height="207"/>
+                                        <rect key="frame" x="16" y="269" width="318" height="215"/>
                                         <date key="date" timeIntervalSinceReferenceDate="513112832.37409902">
                                             <!--2017-04-05 19:20:32 +0000-->
                                         </date>
                                     </datePicker>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="89b-fO-R0j">
-                                        <rect key="frame" x="4" y="415" width="317" height="50"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HV3-vp-XLw">
-                                                <rect key="frame" x="0.0" y="8" width="95.5" height="34"/>
-                                                <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
-                                                <state key="normal" title="   Cancel   ">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="onClose:" destination="40o-Hi-Wew" eventType="touchUpInside" id="Ifq-Kg-UPS"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxc-PB-GEU">
-                                                <rect key="frame" x="95.5" y="4.5" width="221.5" height="41"/>
-                                                <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="23"/>
-                                                <state key="normal" title="Add To Calendar">
-                                                    <color key="titleColor" red="0.11764705882352941" green="0.16862745098039217" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="onDone:" destination="40o-Hi-Wew" eventType="touchUpInside" id="q8X-3h-hrN"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date &amp; Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBf-Rg-WQ6">
+                                        <rect key="frame" x="16" y="240" width="127" height="21"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="M5g-Ig-ceB"/>
+                                            <constraint firstAttribute="height" constant="21" id="bmI-uY-XIv"/>
                                         </constraints>
-                                    </stackView>
+                                        <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="11"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vd0-30-aqU">
+                                        <rect key="frame" x="16" y="500" width="318" height="50"/>
+                                        <color key="backgroundColor" red="0.0" green="0.73725490199999999" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="QBw-J2-pwT"/>
+                                            <constraint firstAttribute="height" constant="50" id="sAa-IB-ChH"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="23"/>
+                                        <state key="normal" title="Add to Calendar">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onDone:" destination="40o-Hi-Wew" eventType="touchUpInside" id="oea-aI-fnU"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="Qav-6a-v1r" firstAttribute="top" secondItem="maC-2E-Rqj" secondAttribute="bottom" constant="18" id="8Wm-mV-IY3"/>
-                                    <constraint firstItem="Qav-6a-v1r" firstAttribute="leading" secondItem="GKA-A6-kPw" secondAttribute="leading" constant="8" id="Ico-5X-tio"/>
-                                    <constraint firstAttribute="trailing" secondItem="89b-fO-R0j" secondAttribute="trailing" constant="4" id="KP6-7f-o9m"/>
-                                    <constraint firstAttribute="trailing" secondItem="5TE-Dh-zm2" secondAttribute="trailing" constant="8" id="Nay-iU-fN2"/>
-                                    <constraint firstItem="XBf-Rg-WQ6" firstAttribute="leading" secondItem="GKA-A6-kPw" secondAttribute="leading" constant="8" id="PX8-Qm-b9a"/>
+                                    <constraint firstItem="Qav-6a-v1r" firstAttribute="top" secondItem="maC-2E-Rqj" secondAttribute="bottom" constant="8" id="8Wm-mV-IY3"/>
+                                    <constraint firstItem="Qav-6a-v1r" firstAttribute="leading" secondItem="GKA-A6-kPw" secondAttribute="leading" constant="16" id="Ico-5X-tio"/>
+                                    <constraint firstAttribute="bottom" secondItem="vd0-30-aqU" secondAttribute="bottom" constant="16" id="JqE-0I-P02"/>
+                                    <constraint firstAttribute="trailing" secondItem="5TE-Dh-zm2" secondAttribute="trailing" constant="16" id="Nay-iU-fN2"/>
+                                    <constraint firstItem="XBf-Rg-WQ6" firstAttribute="leading" secondItem="GKA-A6-kPw" secondAttribute="leading" constant="16" id="PX8-Qm-b9a"/>
                                     <constraint firstAttribute="trailing" secondItem="maC-2E-Rqj" secondAttribute="trailing" constant="217" id="YmD-D1-Lg2"/>
                                     <constraint firstAttribute="trailing" secondItem="XBf-Rg-WQ6" secondAttribute="trailing" constant="207" id="YuE-bS-RV0"/>
-                                    <constraint firstItem="5TE-Dh-zm2" firstAttribute="leading" secondItem="GKA-A6-kPw" secondAttribute="leading" constant="8" id="ae5-xO-7lP"/>
+                                    <constraint firstItem="5TE-Dh-zm2" firstAttribute="leading" secondItem="GKA-A6-kPw" secondAttribute="leading" constant="16" id="ae5-xO-7lP"/>
+                                    <constraint firstItem="vd0-30-aqU" firstAttribute="leading" secondItem="GKA-A6-kPw" secondAttribute="leading" constant="16" id="dHh-3H-DS6"/>
                                     <constraint firstItem="5TE-Dh-zm2" firstAttribute="top" secondItem="XBf-Rg-WQ6" secondAttribute="bottom" constant="8" id="dVd-yJ-Vv3"/>
                                     <constraint firstItem="maC-2E-Rqj" firstAttribute="top" secondItem="GKA-A6-kPw" secondAttribute="top" constant="8" id="deu-7U-28a"/>
-                                    <constraint firstItem="89b-fO-R0j" firstAttribute="leading" secondItem="GKA-A6-kPw" secondAttribute="leading" constant="4" id="djr-MI-ICU"/>
-                                    <constraint firstItem="XBf-Rg-WQ6" firstAttribute="top" secondItem="Qav-6a-v1r" secondAttribute="bottom" constant="18" id="juR-ST-hKm"/>
-                                    <constraint firstItem="maC-2E-Rqj" firstAttribute="leading" secondItem="GKA-A6-kPw" secondAttribute="leading" constant="8" id="lU1-Jz-P7q"/>
-                                    <constraint firstAttribute="trailing" secondItem="Qav-6a-v1r" secondAttribute="trailing" constant="8" id="ng0-Gi-TNI"/>
-                                    <constraint firstAttribute="bottom" secondItem="89b-fO-R0j" secondAttribute="bottom" constant="4" id="pVE-ys-QvV"/>
-                                    <constraint firstItem="89b-fO-R0j" firstAttribute="top" secondItem="5TE-Dh-zm2" secondAttribute="bottom" constant="22" id="wg1-Oz-cHz"/>
+                                    <constraint firstAttribute="trailing" secondItem="vd0-30-aqU" secondAttribute="trailing" constant="16" id="hru-ak-Obb"/>
+                                    <constraint firstItem="XBf-Rg-WQ6" firstAttribute="top" secondItem="Qav-6a-v1r" secondAttribute="bottom" constant="8" id="juR-ST-hKm"/>
+                                    <constraint firstItem="vd0-30-aqU" firstAttribute="top" secondItem="5TE-Dh-zm2" secondAttribute="bottom" constant="16" id="k7Q-eH-yjm"/>
+                                    <constraint firstItem="maC-2E-Rqj" firstAttribute="leading" secondItem="GKA-A6-kPw" secondAttribute="leading" constant="16" id="lU1-Jz-P7q"/>
+                                    <constraint firstAttribute="trailing" secondItem="Qav-6a-v1r" secondAttribute="trailing" constant="16" id="ng0-Gi-TNI"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="fR5-MD-O98" firstAttribute="top" secondItem="GKA-A6-kPw" secondAttribute="bottom" constant="100" id="KId-jf-f63"/>
-                            <constraint firstItem="GKA-A6-kPw" firstAttribute="leading" secondItem="pxg-Ww-6Au" secondAttribute="leading" constant="12" id="r5L-BT-GVc"/>
-                            <constraint firstItem="GKA-A6-kPw" firstAttribute="top" secondItem="qS9-19-9E0" secondAttribute="bottom" constant="41" id="vMz-NG-LXs"/>
-                            <constraint firstAttribute="trailing" secondItem="GKA-A6-kPw" secondAttribute="trailing" constant="13" id="wcI-bZ-TEu"/>
+                            <constraint firstItem="fR5-MD-O98" firstAttribute="top" secondItem="GKA-A6-kPw" secondAttribute="bottom" id="KId-jf-f63"/>
+                            <constraint firstItem="GKA-A6-kPw" firstAttribute="leading" secondItem="pxg-Ww-6Au" secondAttribute="leading" id="r5L-BT-GVc"/>
+                            <constraint firstItem="GKA-A6-kPw" firstAttribute="top" secondItem="qS9-19-9E0" secondAttribute="bottom" id="vMz-NG-LXs"/>
+                            <constraint firstAttribute="trailing" secondItem="GKA-A6-kPw" secondAttribute="trailing" id="wcI-bZ-TEu"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
-                    <nil key="simulatedTopBarMetrics"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="350" height="610"/>
                     <connections>
                         <outlet property="bodyTextView" destination="Qav-6a-v1r" id="JkY-ko-1em"/>
                         <outlet property="datePicker" destination="5TE-Dh-zm2" id="dKq-Bf-lBa"/>
-                        <outlet property="doneButton" destination="dxc-PB-GEU" id="Gbh-Lj-WY3"/>
+                        <outlet property="doneButton" destination="vd0-30-aqU" id="1qN-hX-DUi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gTm-IN-70x" userLabel="First Responder" sceneMemberID="firstResponder"/>

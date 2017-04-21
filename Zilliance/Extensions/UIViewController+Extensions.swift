@@ -9,6 +9,9 @@
 import UIKit
 
 extension UIViewController {
+    
+    // TODO: title should be first and message second
+    
     func showAlert(message: String, title: String?, completion: (()->Void)?=nil) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         

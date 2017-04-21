@@ -62,20 +62,14 @@ class AddToCalendarViewController: UIViewController, UITextViewDelegate {
     }
     
     @IBAction func onClose(_ sender: Any) {
-        
         self.dismiss(animated: true, completion: nil)
-        
     }
     
-    @IBAction func onDone(_ sender: Any)
-    {
-        
-        guard let body = bodyTextView.text, body.characters.count > 0 else
-        {
+    @IBAction func onDone(_ sender: Any) {
+        guard let body = bodyTextView.text, body.characters.count > 0 else {
             //is this needed?
-            if (bodyTextView.text.characters.count == 0)
-            {
-                self.showAlert(message: "Please include a Event", title: "Error")
+            if (bodyTextView.text.characters.count == 0) {
+                self.showAlert(message: "Your event text will help remind you to take this action", title: "Please Add Event Text")
                 return
             }
             
@@ -85,22 +79,21 @@ class AddToCalendarViewController: UIViewController, UITextViewDelegate {
         CalendarHelper.addEvent(with: body, notes: nil, date: self.datePicker.date) { (success, error) in
             
             guard success else {
-                if let calendarError = error {
-                    switch calendarError {
-                    case .notGranted:
-                        self.showAlert(message: "Calendar not authorized, please enable calendar in app settings", title: "Error")
-                    case .errorSavingEvent:
-                        self.showAlert(message: "There was an error saving your event to calendar", title: "Error")
-                        
-                    }
+                switch error {
+                case .notGranted?:
+                    self.showAlert(message: "Please enable access calendar in app settings", title: "Unable to Access Your Calendar")
+                case .errorSavingEvent?:
+                    self.showAlert(message: "There was an unexpected error saving your event to calendar", title: "Unable to Schedule Event")
+                default:
+                    self.showAlert(message: "There was an unexpected error saving your event to calendar", title: "Unable to Schedule Event")
                 }
-            return
+                
+                return
             }
             
-            self.dismiss(animated: true, completion: nil)
+            // TODO: show an alert that we've scheduled the event
             
+            self.navigationController!.popViewController(animated: true)
         }
-        
     }
-
 }

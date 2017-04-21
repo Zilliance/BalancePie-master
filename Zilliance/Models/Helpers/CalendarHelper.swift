@@ -31,7 +31,7 @@ class CalendarHelper {
         
         store.requestAccess(to: .event) { (granted, error) in
             guard granted else {
-                calendarClosure(false, .notGranted)
+                DispatchQueue.main.async { calendarClosure(false, .notGranted) }
                 return
             }
             
@@ -47,9 +47,9 @@ class CalendarHelper {
             event.calendar = store.defaultCalendarForNewEvents
             do {
                 try store.save(event, span: .thisEvent)
-                calendarClosure(true, nil)
+                DispatchQueue.main.async { calendarClosure(true, nil) }
             } catch {
-                calendarClosure(false, .errorSavingEvent)
+                DispatchQueue.main.async { calendarClosure(false, .errorSavingEvent) }
             }
         }
         
