@@ -147,7 +147,7 @@ class AddToCalendarViewController: UIViewController, UITextViewDelegate, UIViewC
 extension AddToCalendarViewController
 {
     
-    func replaceTappableText(index: Int, withText text: String)
+    func replaceTappableText(index: Int, withText text: String, selectedIndexes: [Int]?)
     {
         if var currentText = self.bodyTextView.text, let range = currentText.range(of: self.editableTexts[index].text)
         {
@@ -161,6 +161,7 @@ extension AddToCalendarViewController
             else
             {
                 self.editableTexts[index].text = text
+                self.editableTexts[index].selectedIndexes = selectedIndexes
             }
             self.setupTextView()
         }
@@ -268,7 +269,7 @@ extension AddToCalendarViewController
             if let indexTapped = self.tappableIndexForRange(range: range)
             {
                 //remove the tappable text
-                self.replaceTappableText(index: indexTapped, withText: "")
+                self.replaceTappableText(index: indexTapped, withText: "", selectedIndexes: nil)
                 return false
             }
         }
@@ -333,7 +334,6 @@ extension AddToCalendarViewController
                     return
                 }
                 
-                editText.selectedIndexes = indexes
                 
                 var selectedValues: [Value] = []
                 indexes.forEach({ (index) in
@@ -349,8 +349,7 @@ extension AddToCalendarViewController
                 })
                 
                 editText.text = valuesName!
-                
-                self.replaceTappableText(index: index, withText: valuesName!)
+                self.replaceTappableText(index: index, withText: valuesName!, selectedIndexes: indexes)
                 
             }
             
