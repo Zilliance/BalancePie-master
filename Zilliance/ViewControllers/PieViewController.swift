@@ -16,6 +16,7 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
         case tune = "Fine Tune Slice"
         case delete = "Delete Slice"
     }
+
     
     private let statusBarBackgroundView = UIView()
     private let hoursProgressView = HoursProgressView()
@@ -28,21 +29,8 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.editableTexts = [editText, editText2]
         self.setupViews()
-        
-        self.textView.text = nil
-        self.setupTextView()
-        
-        let tapEdit = UITapGestureRecognizer(target: self, action: #selector(self.editTapped))
-        self.textView.addGestureRecognizer(tapEdit)
-        self.textView.isEditable = false
-        
-    }
-    
-    func textViewDidEndEditing(_ textView: UITextView) {
-        self.textView.isEditable = false
-        self.textView.dataDetectorTypes = [.all];
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
