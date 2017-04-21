@@ -210,7 +210,6 @@ class Database {
             ["name": "Time commitement", "type": ValueType.bad],
             ["name": "Fraudulence", "type": ValueType.bad],
             ["name": "Dishonesty", "type": ValueType.bad],
-            ["name": "Simplicity", "type": ValueType.bad],
             ["name": "Arrogance", "type": ValueType.bad],
             ["name": "Ignorance", "type": ValueType.bad],
             ["name": "Irreverence", "type": ValueType.bad],

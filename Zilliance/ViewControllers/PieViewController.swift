@@ -30,15 +30,26 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
         super.viewDidLoad()
         self.editableTexts = [editText, editText2]
         self.setupViews()
+        self.setupTextView()
+        
+        let tapEdit = UITapGestureRecognizer(target: self, action: #selector(self.editTapped))
+        self.textView.addGestureRecognizer(tapEdit)
+        self.textView.isEditable = false
+        
     }
     
+    func textViewDidEndEditing(_ textView: UITextView) {
+        self.textView.isEditable = false
+        self.textView.dataDetectorTypes = [.all];
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.loadData()
         self.refreshHours()
     }
-    
+
+
     private func setupViews() {
     
         self.navigationController?.setNavigationBarHidden(true, animated: false)
@@ -214,4 +225,5 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
         return presentationController
     }
     
+
 }

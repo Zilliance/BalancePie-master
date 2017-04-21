@@ -42,8 +42,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Xs3-fA-vgF">
-                                <rect key="frame" x="20" y="547" width="335" height="80"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xs3-fA-vgF">
+                                <rect key="frame" x="20" y="84" width="335" height="80"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="yi9-Vh-AqO"/>
@@ -55,9 +55,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ns6-iz-iEd" firstAttribute="top" secondItem="Xs3-fA-vgF" secondAttribute="bottom" constant="40" id="JMy-DS-9QG"/>
                             <constraint firstItem="Xs3-fA-vgF" firstAttribute="leading" secondItem="tcI-s3-nxZ" secondAttribute="leading" constant="20" id="M3P-Ua-UrW"/>
                             <constraint firstAttribute="trailing" secondItem="Xs3-fA-vgF" secondAttribute="trailing" constant="20" id="Pkn-K1-aDG"/>
+                            <constraint firstItem="Xs3-fA-vgF" firstAttribute="top" secondItem="xTz-Kn-Fa3" secondAttribute="bottom" constant="20" id="bqV-rI-3s5"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="co6-uD-Fhj"/>
