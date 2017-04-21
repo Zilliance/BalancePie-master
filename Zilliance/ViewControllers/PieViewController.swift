@@ -17,7 +17,6 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
         case delete = "Delete Slice"
     }
 
-    
     private let statusBarBackgroundView = UIView()
     private let hoursProgressView = HoursProgressView()
     private let pieView = PieView()
@@ -214,6 +213,5 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
         let presentationController = PartialSizePresentationController(presentedViewController: presented, presenting: presenting, height: self.view.frame.size.height / 2.0)
         return presentationController
     }
-    
 
 }

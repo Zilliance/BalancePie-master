@@ -9,6 +9,13 @@
 import UIKit
 import SVProgressHUD
 
+class EditableTextView: UITextView
+{
+    override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        return false
+    }
+}
+
 class AddToCalendarViewController: UIViewController, UITextViewDelegate, UIViewControllerTransitioningDelegate {
     
     struct EditableText {
@@ -81,18 +88,6 @@ class AddToCalendarViewController: UIViewController, UITextViewDelegate, UIViewC
         self.bodyTextView.returnKeyType = .done
         
     }
-    
-    //simple way to hide the textview
-//    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-//        
-//        if (text == "\n")
-//        {
-//            textView.resignFirstResponder()
-//            return false
-//        }
-//        
-//        return true
-//    }
     
     @IBAction func onClose(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
