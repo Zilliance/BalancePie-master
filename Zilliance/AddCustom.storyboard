@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="Muli-Regular.ttf">
             <string>Muli-Regular</string>
+        </array>
+        <array key="Muli-SemiBold.ttf">
+            <string>Muli-SemiBold</string>
         </array>
     </customFonts>
     <scenes>
@@ -117,7 +120,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="EAE-fo-WHx"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="23"/>
                                 <state key="normal" title="Create Activity">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -295,7 +298,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="3ow-zi-QDc"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="23"/>
                                 <state key="normal" title="Add Slice">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -350,7 +353,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="lRI-iQ-1Ls"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="23"/>
+                                <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="23"/>
                                 <state key="normal" title="Update This Slice">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
