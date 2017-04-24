@@ -91,10 +91,13 @@ class AddToCalendarViewController: UIViewController, UITextViewDelegate {
                 
                 return
             }
-        
+            
             SVProgressHUD.setDefaultMaskType(.black)
+            SVProgressHUD.setMaximumDismissTimeInterval(1.0)
             SVProgressHUD.showSuccess(withStatus: "The event has been added to your calendar")
-            self.navigationController!.popViewController(animated: true)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                self.navigationController!.popViewController(animated: true)
+            })
         }
     }
 }
