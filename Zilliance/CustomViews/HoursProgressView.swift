@@ -147,8 +147,8 @@ final class HoursProgressView: UIView {
         self.filledLabel.text = "\(self.activeHours) of \(self.availableHours) hours filled"
         self.sleepLabel.text = "Asleep \(self.sleepHours) hours"
         
-        self.progressBarWidthConstraint.constant = activePercentage * width
-        self.sleepBarWidthConstraint.constant = sleepPecentage * width
+        self.progressBarWidthConstraint.constant = min(activePercentage, 1) * width
+        self.sleepBarWidthConstraint.constant = min(sleepPecentage, 1) * width
         self.layoutIfNeeded()
     }
     
