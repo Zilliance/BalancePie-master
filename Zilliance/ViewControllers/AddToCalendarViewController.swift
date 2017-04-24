@@ -93,7 +93,7 @@ class AddToCalendarViewController: UIViewController, UITextViewDelegate {
             }
         
             SVProgressHUD.setDefaultMaskType(.black)
-            SVProgressHUD.showSuccess(withStatus: "Event has been scheduled!")
+            SVProgressHUD.showSuccess(withStatus: "The event has been added to your calendar")
             self.navigationController!.popViewController(animated: true)
         }
     }
