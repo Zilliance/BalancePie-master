@@ -108,6 +108,9 @@ extension ItemsSelectionViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "itemWithIconCell", for: indexPath) as! ItemWithIconCell
             
             cell.iconView?.image = item.image
+            
+            cell.iconView.isHidden = (item.image == nil)
+            
             cell.label?.text = item.title
             
             cell.accessoryType = self.selectedItemsIndexes.contains(indexPath.row) ? .checkmark : .none
