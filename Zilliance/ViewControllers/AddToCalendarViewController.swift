@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class AddToCalendarViewController: UIViewController, UITextViewDelegate {
     
@@ -90,9 +91,9 @@ class AddToCalendarViewController: UIViewController, UITextViewDelegate {
                 
                 return
             }
-            
-            // TODO: show an alert that we've scheduled the event
-            
+        
+            SVProgressHUD.setDefaultMaskType(.black)
+            SVProgressHUD.showSuccess(withStatus: "Event has been scheduled!")
             self.navigationController!.popViewController(animated: true)
         }
     }
