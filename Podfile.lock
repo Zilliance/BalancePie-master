@@ -9,6 +9,7 @@ PODS:
   - RealmSwift (2.6.1):
     - Realm (= 2.6.1)
   - SideMenuController (0.2.4)
+  - SVProgressHUD (2.1.2)
 
 DEPENDENCIES:
   - ActionSheetPicker-3.0
@@ -16,6 +17,7 @@ DEPENDENCIES:
   - Realm
   - RealmSwift
   - SideMenuController
+  - SVProgressHUD
 
 EXTERNAL SOURCES:
   Charts:
@@ -33,7 +35,8 @@ SPEC CHECKSUMS:
   Realm: 9abfd4f87519376daa5ae3a4603155de408bf8b3
   RealmSwift: a54d3e8931cf7d3afa5a1fac9c8f88109d7f02b3
   SideMenuController: b463d2b3aa58e2afe57f57a07938fa9a647894ca
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
 
-PODFILE CHECKSUM: 5d1a2f4aaf30e6fa4f6a3af8c75a0515a1faa1e6
+PODFILE CHECKSUM: 88207fae7ce428f7a697bf4d01fee6e503ffc31c
 
 COCOAPODS: 1.2.0

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class AddToCalendarViewController: UIViewController, UITextViewDelegate {
     
@@ -91,9 +92,12 @@ class AddToCalendarViewController: UIViewController, UITextViewDelegate {
                 return
             }
             
-            // TODO: show an alert that we've scheduled the event
-            
-            self.navigationController!.popViewController(animated: true)
+            SVProgressHUD.setDefaultMaskType(.black)
+            SVProgressHUD.setMaximumDismissTimeInterval(1.0)
+            SVProgressHUD.showSuccess(withStatus: "The event has been added to your calendar")
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                self.navigationController!.popViewController(animated: true)
+            })
         }
     }
 }
