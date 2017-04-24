@@ -120,6 +120,7 @@
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="collectionView" destination="KX5-TK-PIk" id="Vkk-9V-B5M"/>
                         <outlet property="scheduleButton" destination="sey-BU-GQE" id="dxb-RD-neF"/>
                         <outlet property="vcContainerView" destination="FcF-ec-ahG" id="tfX-QF-nu9"/>
                     </connections>

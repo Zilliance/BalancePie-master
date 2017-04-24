@@ -65,6 +65,12 @@ final class FineTuneItemCell: UICollectionViewCell {
         }
     }
     
+    override var isSelected: Bool {
+        didSet {
+            self.contentView.backgroundColor = isSelected ? UIColor.lightBlueBackground : UIColor.clear
+        }
+    }
+    
 }
 
 // MARK: -
@@ -73,6 +79,7 @@ final class FineTuneActivityViewController: UIViewController {
     
     @IBOutlet weak var vcContainerView: UIView!
     @IBOutlet weak var scheduleButton: UIButton!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     fileprivate var currentViewController: UIViewController?
     
@@ -116,12 +123,10 @@ final class FineTuneActivityViewController: UIViewController {
         if self.navigationController?.viewControllers.first == self {
             self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(cancelTapped(_:)))
         }
-        
         self.showViewController(controller: items[0].viewController)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+        
+        // pre select first position
+        self.collectionView.selectItem(at: IndexPath(item: 0, section: 0), animated: true, scrollPosition: .centeredHorizontally)
     }
     
     // MARK: - User Actions
@@ -171,7 +176,6 @@ extension FineTuneActivityViewController: UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "fineTuneItemCell", for: indexPath) as! FineTuneItemCell
-        
         let item = self.items[indexPath.row]
         
         cell.label.text = item.title
@@ -185,7 +189,8 @@ extension FineTuneActivityViewController: UICollectionViewDataSource
 extension FineTuneActivityViewController: UICollectionViewDelegate
 {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+
+    
         //change view controller.
         let newViewController = self.items[indexPath.row].viewController
         
@@ -194,6 +199,7 @@ extension FineTuneActivityViewController: UICollectionViewDelegate
             self.showViewController(controller: newViewController)
         }
     }
+    
 }
 
 extension FineTuneActivityViewController: UICollectionViewDelegateFlowLayout {
