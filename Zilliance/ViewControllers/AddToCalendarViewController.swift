@@ -40,7 +40,7 @@ class AddToCalendarViewController: UIViewController, UITextViewDelegate, UIViewC
     var textViewContent: TextViewContent?
     
     fileprivate var editableTexts: [EditableText] = []
-    fileprivate var grayTexts: [String] = []
+    fileprivate var promptTexts: [String] = []
     
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var doneButton: UIButton!
@@ -174,15 +174,15 @@ extension AddToCalendarViewController
         if (currentText.characters.count == 0)
         {
             currentText = "Shift my thoughts about Activity by focusing on the need(s) it fulfills: \(self.editableTexts[0].text) and another text : \(self.editableTexts[1].text)"
+            promptTexts.append("my thoughts")
+            promptTexts.append("by focusing")
         }
         
-        let attributedString = NSMutableAttributedString(string: currentText, attributes: [
-            NSFontAttributeName : UIFont.muliLight(size: 19.0)
-            ])
+        let attributedString = NSMutableAttributedString(string: currentText)
         
-        for i in 0 ..< self.editableTexts.count {
+        for editableText in self.editableTexts {
             
-            let range = (currentText as NSString).range(of: self.editableTexts[i].text)
+            let range = (currentText as NSString).range(of: editableText.text)
             
             if (range.location != NSNotFound)
             {
@@ -190,17 +190,15 @@ extension AddToCalendarViewController
             }
         }
         
-        var ranges: [NSRange] = []
-        
-        for gText in self.grayTexts {
-            ranges.append((currentText as NSString).range(of: gText)
-            )
-        }
-        for range in ranges {
+        for promptText in self.promptTexts {
             
-            attributedString.addAttributes([NSForegroundColorAttributeName : UIColor.gray], range: range)
+            let range = (currentText as NSString).range(of: promptText)
+            
+            if (range.location != NSNotFound)
+            {
+                attributedString.addAttribute(NSForegroundColorAttributeName, value: UIColor.gray , range: range)
+            }
         }
-        
         
         self.bodyTextView.attributedText = attributedString
         self.bodyTextView.delegate = self
@@ -222,7 +220,7 @@ extension AddToCalendarViewController
         self.bodyTextView.becomeFirstResponder()
     }
     
-    func tappableIndexForRange(range: NSRange) -> Int?
+    func tappableIndexForRange(range: NSRange, textsList: [String]) -> Int?
     {
         var range = range
         range.length = 1 // when you tap it's 0 but we need to go one to the right to know if it overlaps
@@ -233,9 +231,9 @@ extension AddToCalendarViewController
             return nil
         }
         
-        for (index, element) in editableTexts.enumerated()
+        for (index, element) in textsList.enumerated()
         {
-            if let tapped = self.bodyTextView.text.range(of: element.text)?.overlaps(sRange), (tapped)
+            if let tapped = self.bodyTextView.text.range(of: element)?.overlaps(sRange), (tapped)
             {
                 return index
             }
@@ -246,11 +244,43 @@ extension AddToCalendarViewController
     
     func textViewDidChangeSelection(_ textView: UITextView) {
         
-        let range = self.bodyTextView.selectedRange
+        var range = self.bodyTextView.selectedRange
         
-        if let indexTapped = self.tappableIndexForRange(range: range)
+        if (range.length > 0)
+        {
+            //this is not a tap but an actual selection
+            return
+        }
+        
+        if (range.location > 0)
+        {
+            range = NSRange(location: range.location - 1, length: 1)
+        }
+        
+        let editableTexts = self.editableTexts.map{ $0.text }
+        
+        if let indexTapped = self.tappableIndexForRange(range: range, textsList: editableTexts)
         {
             self.handleTextEditTapped(index: indexTapped)
+        }
+        else
+        {
+            if let indexTapped = self.tappableIndexForRange(range: range, textsList: self.promptTexts)
+            {
+                self.handleTextPromptTapped(index: indexTapped)
+            }
+        }
+    }
+    
+    func handleTextPromptTapped(index: Int)
+    {
+        let prompt = self.promptTexts[index]
+        
+        let selectedRange = self.bodyTextView.text.nsRange(from: self.bodyTextView.text.range(of: prompt)!)
+        
+        if (self.bodyTextView.selectedRange.location != selectedRange.location)
+        {
+            self.bodyTextView.selectedRange = selectedRange
         }
         
     }
@@ -266,7 +296,9 @@ extension AddToCalendarViewController
         
         if (deleteTapped)
         {
-            if let indexTapped = self.tappableIndexForRange(range: range)
+            let editableTexts = self.editableTexts.map{ $0.text }
+            
+            if let indexTapped = self.tappableIndexForRange(range: range, textsList: editableTexts)
             {
                 //remove the tappable text
                 self.replaceTappableText(index: indexTapped, withText: "", selectedIndexes: nil)
@@ -298,6 +330,10 @@ extension AddToCalendarViewController
                 values = values.filter { $0.type == .bad }
             default:
                 break
+            }
+            
+            if let indexes = editText.selectedIndexes {
+                itemSelectionViewController.selectedItemsIndexes = Set(indexes)
             }
             
             if let indexes = editText.selectedIndexes {
@@ -394,11 +430,11 @@ extension AddToCalendarViewController
             self.setupTextView()
         case (.lousy, .replace):
             self.bodyTextView.text = "Replace \((textViewContent.userActivity.activity?.name)!) with this better feeling activity: e.g. reading a book"
-            self.grayTexts = ["e.g. reading a book"]
+            self.promptTexts = ["e.g. reading a book"]
             self.setupTextView()
         case (.lousy, .reduce):
             self.bodyTextView.text = "Reduce the amount of time I spend on \((textViewContent.userActivity.activity?.name)!) by doing this: e.g. picking up a book every time I am tempted to look at social media"
-            self.grayTexts = ["e.g. picking up a book every time I am tempted to look at social media"]
+            self.promptTexts = ["e.g. picking up a book every time I am tempted to look at social media"]
             self.setupTextView()
         case (.lousy, .shift):
             let editText = EditableText(feeling: .great, text: "choose values", type: .value, isMultipleSelection: true, selectedIndexes: nil)
@@ -409,18 +445,18 @@ extension AddToCalendarViewController
             let editText = EditableText(feeling: .great, text: "choose positive value", type: .value, isMultipleSelection: false, selectedIndexes: nil)
             self.editableTexts = [editText]
             self.bodyTextView.text = "Bring \(self.editableTexts[0].text) to \((textViewContent.userActivity.activity?.name)!) by: e.g. listening to podcasts or audiobooks."
-            self.grayTexts = ["e.g. listening to podcasts or audiobooks."]
+            self.promptTexts = ["e.g. listening to podcasts or audiobooks."]
             self.setupTextView()
         case (.lousy, .need):
             self.bodyTextView.text = "What I need to feel better about \((textViewContent.userActivity.activity?.name)!) that is in my control is: e.g. more adventure. To meet this need, I will take this action step: e.g. ask my friends to go mountain climbing with me"
-            self.grayTexts = ["e.g. more adventure", "e.g. ask my friends to go mountain climbing with me"]
+            self.promptTexts = ["e.g. more adventure", "e.g. ask my friends to go mountain climbing with me"]
             self.setupTextView()
         case (.neutral, .replace):
             self.bodyTextView.text = "Replace or move towards replacing \((textViewContent.userActivity.activity?.name)!) by: taking an online class about entrepreneurship"
-            self.grayTexts = ["taking an online class about entrepreneurship"]
+            self.promptTexts = ["taking an online class about entrepreneurship"]
         case (.neutral, .reduce):
             self.bodyTextView.text = "Reduce the amount of time I spend on  \((textViewContent.userActivity.activity?.name)!) by doing this feel-good activity instead, even for just a few minutes: Do two minutes of sit-ups every hour"
-            self.grayTexts = ["Do two minutes of sit-ups every hour"]
+            self.promptTexts = ["Do two minutes of sit-ups every hour"]
             self.setupTextView()
         case (.neutral, .shift):
             let editText = EditableText(feeling: .great, text: "choose values", type: .value, isMultipleSelection: true, selectedIndexes: nil)
@@ -431,15 +467,15 @@ extension AddToCalendarViewController
             let editText = EditableText(feeling: .great, text: "choose positive value", type: .value, isMultipleSelection: false, selectedIndexes: nil)
             self.editableTexts = [editText]
             self.bodyTextView.text = "Bring \(self.editableTexts[0].text) to \((textViewContent.userActivity.activity?.name)!) by: e.g. listening to podcasts or audiobooks."
-            self.grayTexts = ["e.g. listening to podcasts or audiobooks."]
+            self.promptTexts = ["e.g. listening to podcasts or audiobooks."]
             self.setupTextView()
         case (.neutral, .need):
             self.bodyTextView.text = "What I need to feel better about \((textViewContent.userActivity.activity?.name)!) that is in my control is: e.g. more adventure. To meet this need, I will take this action step: e.g. ask my friends to go mountain climbing with me"
-            self.grayTexts = ["e.g. more adventure", "e.g. ask my friends to go mountain climbing with me"]
+            self.promptTexts = ["e.g. more adventure", "e.g. ask my friends to go mountain climbing with me"]
             self.setupTextView()
         case (.mixed, .reduce):
             self.bodyTextView.text = "Reduce the amount of time I spend on not-so-good feeling parts of \((textViewContent.userActivity.activity?.name)!) by doing this instead: taking a 15 minute walk in the afternoon"
-            self.grayTexts = ["taking a 15 minute walk in the afternoon"]
+            self.promptTexts = ["taking a 15 minute walk in the afternoon"]
             self.setupTextView()
         case (.mixed, .gratitude):
             self.bodyTextView.text = "Give thanks for the aspects of \((textViewContent.userActivity.activity?.name)!) that I'm greatful for. Acknowledge the gifts and blessings"
@@ -453,11 +489,11 @@ extension AddToCalendarViewController
             let editText2 = EditableText(feeling: .great, text: "choose positive values", type: .value, isMultipleSelection: false, selectedIndexes: nil)
             self.editableTexts = [editText, editText2]
             self.bodyTextView.text = "Bring more \(self.editableTexts[0].text) to the good-feeling parts of \((textViewContent.userActivity.activity?.name)!) by: e.g. listening to podcasts or audiobooks. \nBring more \(self.editableTexts[1].text) to the not-so-good feeling parts by: e.g. …"
-            self.grayTexts = ["e.g. listening to podcasts or audiobooks.", "e.g. …"]
+            self.promptTexts = ["e.g. listening to podcasts or audiobooks.", "e.g. …"]
             self.setupTextView()
         case (.mixed, .need):
             self.bodyTextView.text = "What I need to feel better about \((textViewContent.userActivity.activity?.name)!) that is in my control is: e.g. more adventure. To meet this need, I will take this action step: e.g. ask my friends to go mountain climbing with me"
-            self.grayTexts = ["e.g. more adventure", "e.g. ask my friends to go mountain climbing with me"]
+            self.promptTexts = ["e.g. more adventure", "e.g. ask my friends to go mountain climbing with me"]
             self.setupTextView()
         default:
             break
@@ -478,5 +514,22 @@ extension String {
             else { return nil }
         return from ..< to
     }
+    
+    func nsRange(from range: Range<String.Index>) -> NSRange {
+        let from = range.lowerBound.samePosition(in: utf16)
+        let to = range.upperBound.samePosition(in: utf16)
+        return NSRange(location: utf16.distance(from: utf16.startIndex, to: from),
+                       length: utf16.distance(from: from, to: to))
+    }
 }
 
+extension NSRange {
+    static func ==(lhs: NSRange, rhs: NSRange) -> Bool {
+        return lhs.location == rhs.location && lhs.length == rhs.length
+    }
+    
+    static func !=(lhs: NSRange, rhs: NSRange) -> Bool {
+        return !(lhs == rhs)
+    }
+    
+}
