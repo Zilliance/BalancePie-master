@@ -278,9 +278,7 @@ extension AddToCalendarViewController
     {
         let prompt = self.promptTexts[index]
         
-        let selectedRange = self.bodyTextView.text.nsRange(from: self.bodyTextView.text.range(of: prompt)!)
-        
-        if (self.bodyTextView.selectedRange.location != selectedRange.location)
+        if let selectedRange = self.bodyTextView.text.nsRange(from: prompt), (self.bodyTextView.selectedRange.location != selectedRange.location)
         {
             self.bodyTextView.selectedRange = selectedRange
         }
@@ -300,12 +298,8 @@ extension AddToCalendarViewController
         {
             let editableTexts = self.editableTexts.map{ $0.text }
             
-            if let indexTapped = self.tappableIndexForRange(range: range, textsList: editableTexts)
+            if let indexTapped = self.tappableIndexForRange(range: range, textsList: editableTexts), let selectedRange = textView.text.nsRange(from: self.editableTexts[indexTapped].text)
             {
-                //need to store the selected range so it can be selected again later
-                let editableText = self.editableTexts[indexTapped].text
-                let selectedRange = textView.text.nsRange(from: textView.text.range(of: editableText)!)
-
                 //remove the tappable text
                 self.replaceTappableText(index: indexTapped, withText: "", selectedIndexes: nil)
 
@@ -325,10 +319,8 @@ extension AddToCalendarViewController
             {
                 let prompt = self.promptTexts[indexTapped]
                 
-                let selectedRange = textView.text.nsRange(from: textView.text.range(of: prompt)!)
-                
                 //selectingRange = range means it selected the prompt
-                if (selectedRange == range)
+                if let selectedRange = textView.text.nsRange(from: prompt), (selectedRange == range)
                 {
                     let attributedString = NSMutableAttributedString(attributedString: textView.attributedText)
                     attributedString.removeAttribute(NSForegroundColorAttributeName, range: range)
@@ -556,6 +548,15 @@ extension String {
         let to = range.upperBound.samePosition(in: utf16)
         return NSRange(location: utf16.distance(from: utf16.startIndex, to: from),
                        length: utf16.distance(from: from, to: to))
+    }
+    
+    func nsRange(from string: String) -> NSRange?
+    {
+        if let range = self.range(of: string)
+        {
+            return self.nsRange(from: range)
+        }
+        return nil
     }
 }
 
