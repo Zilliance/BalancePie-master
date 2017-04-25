@@ -169,14 +169,7 @@ extension AddToCalendarViewController
     
     func setupTextView() {
         
-        var currentText: String = self.bodyTextView.text
-        
-        if (currentText.characters.count == 0)
-        {
-            currentText = "Shift my thoughts about Activity by focusing on the need(s) it fulfills: \(self.editableTexts[0].text) and another text : \(self.editableTexts[1].text)"
-            promptTexts.append("my thoughts")
-            promptTexts.append("by focusing")
-        }
+        let currentText: String = self.bodyTextView.text
         
         let attributedString = NSMutableAttributedString(string: currentText, attributes: [
             NSFontAttributeName : UIFont.muliLight(size: 19.0)
@@ -211,7 +204,9 @@ extension AddToCalendarViewController
         
         let point = tap.location(in: self.bodyTextView)
         
-        let position = self.bodyTextView.closestPosition(to: point)!
+        guard let position = self.bodyTextView.closestPosition(to: point) else {
+            return
+        }
         
         let range = self.bodyTextView.textRange(from: position, to: position)
         
@@ -253,7 +248,7 @@ extension AddToCalendarViewController
             //this is not a tap but an actual selection
             return
         }
-        
+        //  this is a workaround to the fact that when you select a word sometimes iOS sets the selection at the end so it would not allow us to use the tap
         if (range.location > 0)
         {
             range = NSRange(location: range.location - 1, length: 1)
@@ -487,7 +482,7 @@ extension AddToCalendarViewController
             self.bodyTextView.text = "Shift my thoughts about the non-so-good feelings parts of \((textViewContent.userActivity.activity?.name)!) by focusing on the need(s) it fulfills: \(self.editableTexts[0].text) "
             self.setupTextView()
         case (.mixed, .values):
-            let editText = EditableText(feeling: .great, text: "choose values", type: .value, isMultipleSelection: false, selectedIndexes: nil)
+            let editText = EditableText(feeling: .great, text: "choose value", type: .value, isMultipleSelection: false, selectedIndexes: nil)
             let editText2 = EditableText(feeling: .great, text: "choose values", type: .value, isMultipleSelection: false, selectedIndexes: nil)
             self.editableTexts = [editText, editText2]
             self.bodyTextView.text = "Bring more \(self.editableTexts[0].text) to the good-feeling parts of \((textViewContent.userActivity.activity?.name)!) by: e.g. listening to podcasts or audiobooks. \nBring more \(self.editableTexts[1].text) to the not-so-good feeling parts by: …"
