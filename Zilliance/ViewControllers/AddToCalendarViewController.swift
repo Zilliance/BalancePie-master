@@ -41,6 +41,7 @@ class AddToCalendarViewController: UIViewController, UITextViewDelegate, UIViewC
     
     fileprivate var editableTexts: [EditableText] = []
     fileprivate var promptTexts: [String] = []
+    fileprivate var deletingText = false
     
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var doneButton: UIButton!
@@ -243,12 +244,16 @@ extension AddToCalendarViewController
         
         var range = self.bodyTextView.selectedRange
         
-        if (range.length > 0)
+        //range.length == 0 -> Tap OR delete. We only want a tap but not a delete
+
+        guard textView.text.characters.count > range.location && range.length == 0 && !self.deletingText
+            else
         {
-            //this is not a tap but an actual selection
+            self.deletingText = false
             return
         }
-        //  this is a workaround to the fact that when you select a word sometimes iOS sets the selection at the end so it would not allow us to use the tap
+
+        //  this is a workaround to the fact that when you select a word sometimes iOS sets the selection at the end so it would not allow us to assume it's a tap inside that word
         if (range.location > 0)
         {
             range = NSRange(location: range.location - 1, length: 1)
@@ -297,9 +302,43 @@ extension AddToCalendarViewController
             
             if let indexTapped = self.tappableIndexForRange(range: range, textsList: editableTexts)
             {
+                //need to store the selected range so it can be selected again later
+                let editableText = self.editableTexts[indexTapped].text
+                let selectedRange = textView.text.nsRange(from: textView.text.range(of: editableText)!)
+
                 //remove the tappable text
                 self.replaceTappableText(index: indexTapped, withText: "", selectedIndexes: nil)
+
+                let newSelection = NSRange(location: selectedRange.location, length: 0)
+                textView.selectedRange = newSelection
+
                 return false
+            }
+            
+            self.deletingText = true
+            
+        }
+        else
+        {
+            //if writing over the prompt, the font color should go back to black
+            if let indexTapped = self.tappableIndexForRange(range: range, textsList: self.promptTexts)
+            {
+                let prompt = self.promptTexts[indexTapped]
+                
+                let selectedRange = textView.text.nsRange(from: textView.text.range(of: prompt)!)
+                
+                //selectingRange = range means it selected the prompt
+                if (selectedRange == range)
+                {
+                    let attributedString = NSMutableAttributedString(attributedString: textView.attributedText)
+                    attributedString.removeAttribute(NSForegroundColorAttributeName, range: range)
+                    attributedString.replaceCharacters(in: range, with: "")
+                    
+                    textView.attributedText = attributedString
+                    
+                    let newSelection = NSRange(location: selectedRange.location, length: 0)
+                    textView.selectedRange = newSelection
+                }
             }
         }
         
