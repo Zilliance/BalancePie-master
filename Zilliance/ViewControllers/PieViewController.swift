@@ -16,7 +16,7 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
         case tune = "Fine Tune Slice"
         case delete = "Delete Slice"
     }
-    
+
     private let statusBarBackgroundView = UIView()
     private let hoursProgressView = HoursProgressView()
     private let pieView = PieView()
@@ -29,6 +29,7 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupViews()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,6 +37,7 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
         self.loadData()
         self.refreshHours()
     }
+
 
     private func setupViews() {
     
@@ -211,4 +213,5 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
         let presentationController = PartialSizePresentationController(presentedViewController: presented, presenting: presenting, height: self.view.frame.size.height / 2.0)
         return presentationController
     }
+
 }

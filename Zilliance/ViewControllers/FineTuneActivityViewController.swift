@@ -12,39 +12,51 @@ struct FineTuneItem {
     let title: String
     let image: UIImage
     let viewController: UIViewController
+    let type : FineTuneType
+}
+
+enum FineTuneType {
+    case pleasure
+    case prioritize
+    case gratitude
+    case giving
+    case values
+    case replace
+    case reduce
+    case shift
+    case need
 }
 
 extension FineTuneItem {
-    static var pleasure: FineTuneItem = FineTuneItem(title: "Pleasure", image: UIImage(named: "btnPlus")!, viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "pleasure"))
+    static var pleasure: FineTuneItem = FineTuneItem(title: "Pleasure", image: UIImage(named: "btnPlus")!, viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "pleasure"), type : .pleasure)
     
-    static let prioritize = FineTuneItem(title: "Prioritize", image: UIImage(named: "btnPlus")!, viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "prioritize"))
+    static let prioritize = FineTuneItem(title: "Prioritize", image: UIImage(named: "btnPlus")!, viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "prioritize"), type : .prioritize)
     
-    static var gratitude: FineTuneItem = FineTuneItem(title: "Gratitude", image: UIImage(named: "btnPlus")!, viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "gratitude"))
+    static var gratitude: FineTuneItem = FineTuneItem(title: "Gratitude", image: UIImage(named: "btnPlus")!, viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "gratitude"), type : .gratitude)
     
-    static let giving = FineTuneItem(title: "Giving", image: UIImage(named: "btnPlus")!, viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "giving"))
+    static let giving = FineTuneItem(title: "Giving", image: UIImage(named: "btnPlus")!, viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "giving"), type : .giving)
     
-    static let values = FineTuneItem(title: "Values", image: UIImage(named: "btnPlus")!, viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "values"))
+    static let values = FineTuneItem(title: "Values", image: UIImage(named: "btnPlus")!, viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "values"), type : .values)
     
-    static let replace = FineTuneItem(title: "Replace", image: UIImage(named: "btnPlus")!, viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "replace"))
+    static let replace = FineTuneItem(title: "Replace", image: UIImage(named: "btnPlus")!, viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "replace"), type : .replace)
     
-    static let reduce = FineTuneItem(title: "Reduce", image: UIImage(named: "btnPlus")!, viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "reduce"))
+    static let reduce = FineTuneItem(title: "Reduce", image: UIImage(named: "btnPlus")!, viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "reduce"), type : .reduce)
     
-    static let shift = FineTuneItem(title: "Shift", image: UIImage(named: "btnPlus")!, viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "shift"))
+    static let shift = FineTuneItem(title: "Shift", image: UIImage(named: "btnPlus")!, viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "shift"), type : .shift)
     
-    static let need = FineTuneItem(title: "Need", image: UIImage(named: "btnPlus")!, viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "need"))
+    static let need = FineTuneItem(title: "Need", image: UIImage(named: "btnPlus")!, viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "need"), type : .need)
     
-    static let valuesNeutral = FineTuneItem(title: "Values", image: UIImage(named: "btnPlus")!, viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "valuesneutral"))
+    static let valuesNeutral = FineTuneItem(title: "Values", image: UIImage(named: "btnPlus")!, viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "valuesneutral"), type : .values)
     
-    static let reduceMixed = FineTuneItem(title: "Reduce", image: UIImage(named: "btnPlus")!, viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "reducemixed"))
+    static let reduceMixed = FineTuneItem(title: "Reduce", image: UIImage(named: "btnPlus")!, viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "reducemixed"), type : .reduce)
     
-    static var gratitudeMixed: FineTuneItem = FineTuneItem(title: "Gratitude", image: UIImage(named: "btnPlus")!, viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "gratitudemixed"))
+    static var gratitudeMixed: FineTuneItem = FineTuneItem(title: "Gratitude", image: UIImage(named: "btnPlus")!, viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "gratitudemixed"), type : .gratitude)
     
-    static let shiftMixed = FineTuneItem(title: "Shift", image: UIImage(named: "btnPlus")!, viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "shiftmixed"))
+    static let shiftMixed = FineTuneItem(title: "Shift", image: UIImage(named: "btnPlus")!, viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "shiftmixed"), type : .shift)
     
-    static let valuesMixed = FineTuneItem(title: "Values", image: UIImage(named: "btnPlus")!, viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "valuesmixed"))
+    static let valuesMixed = FineTuneItem(title: "Values", image: UIImage(named: "btnPlus")!, viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "valuesmixed"), type : .values)
     
-    static let needMixed = FineTuneItem(title: "Need", image: UIImage(named: "btnPlus")!, viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "needmixed"))
-    
+    static let needMixed = FineTuneItem(title: "Need", image: UIImage(named: "btnPlus")!, viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "needmixed"), type : .need)
     
 }
 
@@ -84,6 +96,8 @@ final class FineTuneActivityViewController: UIViewController {
     fileprivate var currentViewController: UIViewController?
     
     fileprivate var items: [FineTuneItem]!
+    
+    fileprivate var currentIndex = 0
     
     private func fineTuneItems(for feeling: Feeling) -> [FineTuneItem] {
         switch feeling {
@@ -132,7 +146,8 @@ final class FineTuneActivityViewController: UIViewController {
     // MARK: - User Actions
 
     @IBAction func scheduleButtonTapped(_ sender: Any) {
-        let scheduler = UIStoryboard(name: "Calendar", bundle: nil).instantiateInitialViewController()!
+        let scheduler = UIStoryboard(name: "Calendar", bundle: nil).instantiateInitialViewController() as! AddToCalendarViewController
+        scheduler.textViewContent = TextViewContent(userActivity: self.zUserActivity!, type: self.items[self.currentIndex].type)
         self.navigationController!.pushViewController(scheduler, animated: true)
     }
     
@@ -198,6 +213,8 @@ extension FineTuneActivityViewController: UICollectionViewDelegate
         {
             self.showViewController(controller: newViewController)
         }
+        
+        self.currentIndex = indexPath.row
     }
     
 }
