@@ -444,7 +444,7 @@ extension AddToCalendarViewController
             self.bodyTextView.text = "Shift my thoughts about \((textViewContent.userActivity.activity?.name)!) by focusing on the need(s) it fulfills: \(self.editableTexts[0].text) "
             self.setupTextView()
         case (.lousy, .values):
-            let editText = EditableText(feeling: .great, text: "choose positive value", type: .value, isMultipleSelection: false, selectedIndexes: nil)
+            let editText = EditableText(feeling: .great, text: "choose value", type: .value, isMultipleSelection: false, selectedIndexes: nil)
             self.editableTexts = [editText]
             self.bodyTextView.text = "Bring \(self.editableTexts[0].text) to \((textViewContent.userActivity.activity?.name)!) by: e.g. listening to podcasts or audiobooks."
             self.promptTexts = ["e.g. listening to podcasts or audiobooks."]
@@ -454,11 +454,11 @@ extension AddToCalendarViewController
             self.promptTexts = ["e.g. more adventure", "e.g. ask my friends to go mountain climbing with me"]
             self.setupTextView()
         case (.neutral, .replace):
-            self.bodyTextView.text = "Replace or move towards replacing \((textViewContent.userActivity.activity?.name)!) by: taking an online class about entrepreneurship"
-            self.promptTexts = ["taking an online class about entrepreneurship"]
+            self.bodyTextView.text = "Replace or move towards replacing \((textViewContent.userActivity.activity?.name)!) by: e.g., taking an online class about entrepreneurship"
+            self.promptTexts = ["e.g., taking an online class about entrepreneurship"]
         case (.neutral, .reduce):
-            self.bodyTextView.text = "Reduce the amount of time I spend on  \((textViewContent.userActivity.activity?.name)!) by doing this feel-good activity instead, even for just a few minutes: Do two minutes of sit-ups every hour"
-            self.promptTexts = ["Do two minutes of sit-ups every hour"]
+            self.bodyTextView.text = "Reduce the amount of time I spend on \((textViewContent.userActivity.activity?.name)!) by doing this feel-good activity instead, even for just a few minutes: e.g., do two minutes of sit-ups every hour"
+            self.promptTexts = ["e.g, do two minutes of sit-ups every hour"]
             self.setupTextView()
         case (.neutral, .shift):
             let editText = EditableText(feeling: .great, text: "choose values", type: .value, isMultipleSelection: true, selectedIndexes: nil)
@@ -466,7 +466,7 @@ extension AddToCalendarViewController
             self.bodyTextView.text = "Shift my thoughts about \((textViewContent.userActivity.activity?.name)!) by focusing on the need(s) it fulfills: \(self.editableTexts[0].text) "
             self.setupTextView()
         case (.neutral, .values):
-            let editText = EditableText(feeling: .great, text: "choose positive value", type: .value, isMultipleSelection: false, selectedIndexes: nil)
+            let editText = EditableText(feeling: .great, text: "choose values", type: .value, isMultipleSelection: false, selectedIndexes: nil)
             self.editableTexts = [editText]
             self.bodyTextView.text = "Bring \(self.editableTexts[0].text) to \((textViewContent.userActivity.activity?.name)!) by: e.g. listening to podcasts or audiobooks."
             self.promptTexts = ["e.g. listening to podcasts or audiobooks."]
@@ -487,11 +487,11 @@ extension AddToCalendarViewController
             self.bodyTextView.text = "Shift my thoughts about the non-so-good feelings parts of \((textViewContent.userActivity.activity?.name)!) by focusing on the need(s) it fulfills: \(self.editableTexts[0].text) "
             self.setupTextView()
         case (.mixed, .values):
-            let editText = EditableText(feeling: .great, text: "choose positive value", type: .value, isMultipleSelection: false, selectedIndexes: nil)
-            let editText2 = EditableText(feeling: .great, text: "choose positive values", type: .value, isMultipleSelection: false, selectedIndexes: nil)
+            let editText = EditableText(feeling: .great, text: "choose values", type: .value, isMultipleSelection: false, selectedIndexes: nil)
+            let editText2 = EditableText(feeling: .great, text: "choose values", type: .value, isMultipleSelection: false, selectedIndexes: nil)
             self.editableTexts = [editText, editText2]
-            self.bodyTextView.text = "Bring more \(self.editableTexts[0].text) to the good-feeling parts of \((textViewContent.userActivity.activity?.name)!) by: e.g. listening to podcasts or audiobooks. \nBring more \(self.editableTexts[1].text) to the not-so-good feeling parts by: e.g. …"
-            self.promptTexts = ["e.g. listening to podcasts or audiobooks.", "e.g. …"]
+            self.bodyTextView.text = "Bring more \(self.editableTexts[0].text) to the good-feeling parts of \((textViewContent.userActivity.activity?.name)!) by: e.g. listening to podcasts or audiobooks. \nBring more \(self.editableTexts[1].text) to the not-so-good feeling parts by: …"
+            self.promptTexts = ["e.g. listening to podcasts or audiobooks.", "…"]
             self.setupTextView()
         case (.mixed, .need):
             self.bodyTextView.text = "What I need to feel better about \((textViewContent.userActivity.activity?.name)!) that is in my control is: e.g. more adventure. To meet this need, I will take this action step: e.g. ask my friends to go mountain climbing with me"
