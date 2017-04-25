@@ -178,7 +178,9 @@ extension AddToCalendarViewController
             promptTexts.append("by focusing")
         }
         
-        let attributedString = NSMutableAttributedString(string: currentText)
+        let attributedString = NSMutableAttributedString(string: currentText, attributes: [
+            NSFontAttributeName : UIFont.muliLight(size: 19.0)
+            ])
         
         for editableText in self.editableTexts {
             
