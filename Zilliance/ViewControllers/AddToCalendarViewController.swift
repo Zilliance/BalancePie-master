@@ -232,6 +232,10 @@ extension AddToCalendarViewController
     
     func tappableIndexForRange(range: NSRange, textsList: [String]) -> Int?
     {
+        guard self.bodyTextView.text.characters.count > 0 else {
+            return nil
+        }
+        
         var range = range
         range.length = 1 // when you tap it's 0 but we need to go one to the right to know if it overlaps
         
