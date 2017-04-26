@@ -55,7 +55,7 @@ class AddToCalendarViewController: UIViewController, UITextViewDelegate, UIViewC
         super.viewDidLoad()
         self.setupView()
         
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(self.closeView))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.closeView))
         
         self.bodyTextView.text = nil
         
