@@ -8,6 +8,7 @@
 
 import UIKit
 import SideMenuController
+import ActionSheetPicker_3_0
 
 class PieViewController: UIViewController, UIViewControllerTransitioningDelegate {
     
@@ -52,31 +53,6 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
         self.statusBarBackgroundView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(self.statusBarBackgroundView)
         
-        // Progress View
-        
-        self.hoursProgressView.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(self.hoursProgressView)
-        
-        self.hoursProgressView.topAnchor.constraint(equalTo: self.topLayoutGuide.bottomAnchor, constant: 0).isActive = true
-        self.hoursProgressView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0).isActive = true
-        
-        // Status Bar Background
-
-        self.statusBarBackgroundView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0).isActive = true
-        self.statusBarBackgroundView.bottomAnchor.constraint(equalTo: self.hoursProgressView.bottomAnchor, constant: 0).isActive = true
-        self.statusBarBackgroundView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0).isActive = true
-        self.statusBarBackgroundView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0).isActive = true
-        
-        // Title Label
-        
-        self.titleLabel.text = "Your Balance Pie"
-        self.titleLabel.font = .muliLight(size: 24)
-        self.titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(self.titleLabel)
-        
-        self.titleLabel.topAnchor.constraint(equalTo: self.hoursProgressView.bottomAnchor, constant: 20).isActive = true
-        self.titleLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        
         // Pie View
         
         self.pieView.translatesAutoresizingMaskIntoConstraints = false
@@ -95,19 +71,6 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
             self?.sliceAction(with: activity)
         }
         
-        let sideMenuButton = UIButton()
-        self.view.addSubview(sideMenuButton)
-        sideMenuButton.translatesAutoresizingMaskIntoConstraints = false
-        sideMenuButton.setImage(UIImage(named: "drawer-toolbar-icon"), for: .normal)
-        sideMenuButton.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 10).isActive = true
-        sideMenuButton.widthAnchor.constraint(equalToConstant: 20).isActive = true
-        sideMenuButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
-        sideMenuButton.centerYAnchor.constraint(equalTo: self.hoursProgressView.progressTrack.centerYAnchor).isActive = true
-        
-        self.hoursProgressView.leftAnchor.constraint(equalTo: sideMenuButton.rightAnchor, constant: 0).isActive = true
-        
-        sideMenuButton.addTarget(self.sideMenuController, action: #selector(SideMenuController.toggle), for: .touchUpInside)
-        
         // Legend
         
         self.view.addSubview(self.legend)
@@ -124,6 +87,51 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
         self.hintView.topAnchor.constraint(equalTo: self.legend.bottomAnchor, constant: UIDevice.isSmallerThaniPhone6 ? 10 : 20).isActive = true
         self.hintView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
         self.hintView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
+        
+        // Progress View
+        
+        self.hoursProgressView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(self.hoursProgressView)
+        
+        self.hoursProgressView.topAnchor.constraint(equalTo: self.topLayoutGuide.bottomAnchor, constant: 0).isActive = true
+        self.hoursProgressView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0).isActive = true
+        
+        self.hoursProgressView.action = { [unowned self] in
+            self.selectHoursSlept()
+        }
+        
+        // Status Bar Background
+        
+        self.statusBarBackgroundView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0).isActive = true
+        self.statusBarBackgroundView.bottomAnchor.constraint(equalTo: self.hoursProgressView.bottomAnchor, constant: 0).isActive = true
+        self.statusBarBackgroundView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0).isActive = true
+        self.statusBarBackgroundView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0).isActive = true
+        
+        // Title Label
+        
+        self.titleLabel.text = "Your Balance Pie"
+        self.titleLabel.font = .muliLight(size: 24)
+        self.titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(self.titleLabel)
+        
+        self.titleLabel.topAnchor.constraint(equalTo: self.hoursProgressView.bottomAnchor, constant: 20).isActive = true
+        self.titleLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        
+        // Side Menu
+        
+        let sideMenuButton = UIButton()
+        
+        self.view.addSubview(sideMenuButton)
+        sideMenuButton.translatesAutoresizingMaskIntoConstraints = false
+        sideMenuButton.setImage(UIImage(named: "drawer-toolbar-icon"), for: .normal)
+        sideMenuButton.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 10).isActive = true
+        sideMenuButton.widthAnchor.constraint(equalToConstant: 20).isActive = true
+        sideMenuButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        sideMenuButton.centerYAnchor.constraint(equalTo: self.hoursProgressView.progressTrack.centerYAnchor).isActive = true
+        
+        self.hoursProgressView.leftAnchor.constraint(equalTo: sideMenuButton.rightAnchor, constant: 0).isActive = true
+        
+        sideMenuButton.addTarget(self.sideMenuController, action: #selector(SideMenuController.toggle), for: .touchUpInside)
     }
     
     private func loadData() {
@@ -225,6 +233,37 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
         })
         
         self.present(actionController, animated: true, completion: nil)
+    }
+    
+    private func selectHoursSlept() {
+        let hours = Array(1...12)
+        let minutes = [0,15,30,45]
+        
+        let hoursTexts = hours.labeledArray(with: "Hour")
+        let minutesTexts = minutes.labeledArray(with: "Minute")
+        let initialHours = Database.shared.user.timeSlept / 60
+        let initialMinutes = Database.shared.user.timeSlept % 60
+        
+        let indexHours = hours.index(of: initialHours) ?? 0
+        let indexMinutes = minutes.index(of: initialMinutes) ?? 0
+        
+        ActionSheetMultipleStringPicker.show(withTitle: "Time asleep in a day", rows: [hoursTexts, minutesTexts], initialSelection: [indexHours, indexMinutes], doneBlock: {[unowned self] (picker, indexes, values) in
+            
+            guard let hourIndex = indexes?[0] as? Int, let minuteIndex = indexes?[1] as? Int else {
+                assertionFailure()
+                return
+            }
+            
+            let hoursSelected = hours[hourIndex]
+            let minutesSelected = minutes[minuteIndex]
+            
+            Database.shared.user.saveTimeSlept(hours: hoursSelected, minutes: minutesSelected)
+            
+            self.refreshHours()
+            
+            }, cancel: { (picker) in
+                
+        }, origin: UIButton())
     }
     
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
