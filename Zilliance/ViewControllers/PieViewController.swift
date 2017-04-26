@@ -10,7 +10,7 @@ import UIKit
 import SideMenuController
 import ActionSheetPicker_3_0
 
-class PieViewController: UIViewController, UIViewControllerTransitioningDelegate {
+class PieViewController: UIViewController {
     
     private enum SliceOptions: String {
         case edit = "Edit Slice"
@@ -264,11 +264,6 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
             }, cancel: { (picker) in
                 
         }, origin: UIButton())
-    }
-    
-    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-        let presentationController = PartialSizePresentationController(presentedViewController: presented, presenting: presenting, height: self.view.frame.size.height / 2.0)
-        return presentationController
     }
 
 }
