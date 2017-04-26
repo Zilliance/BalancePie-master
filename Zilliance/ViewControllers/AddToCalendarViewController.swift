@@ -174,6 +174,7 @@ extension AddToCalendarViewController
             
             let nsRange = editableText.nsRange(from: range)
             
+            //we want to position the cursor at the end of the new selection
             let newSelectionRange = NSRange(location: nsRange.location + text.characters.count + 1, length: 0)
             self.bodyTextView.selectedRange = newSelectionRange
             
