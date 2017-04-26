@@ -34,13 +34,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance Pie" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WII-F0-Rgy">
-                                <rect key="frame" x="116" y="437" width="143.5" height="33"/>
+                                <rect key="frame" x="116.5" y="437" width="143.5" height="33"/>
                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.73725490196078436" blue="0.83529411764705885" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="WII-F0-Rgy" firstAttribute="top" secondItem="fqB-QU-uQn" secondAttribute="bottom" constant="22" id="4X2-F5-EUY"/>
                             <constraint firstItem="fqB-QU-uQn" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="95" id="ZKR-sz-sE1"/>
