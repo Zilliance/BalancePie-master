@@ -110,6 +110,6 @@ final class UserActivity: Object {
 extension UIColor {
     static let feelingGreat = UIColor.color(forRed: 91.0, green: 178.0, blue: 86.0, alpha: 1)
     static let feelingNeutral = UIColor.color(forRed: 255.0, green: 206.0, blue: 7.0, alpha: 1)
-    static let feelingLousy = UIColor.color(forRed: 255.0, green: 130.0, blue: 16.0, alpha: 1)
-    static let feelingMixed = UIColor.color(forRed: 235.0, green: 60.0, blue: 67.0, alpha: 1)
+    static let feelingMixed = UIColor.color(forRed: 255.0, green: 130.0, blue: 16.0, alpha: 1)
+    static let feelingLousy = UIColor.color(forRed: 235.0, green: 60.0, blue: 67.0, alpha: 1)
 }
