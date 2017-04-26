@@ -109,6 +109,7 @@ class FavoriteActivityViewController: UIViewController, AlertsDuration {
         
         let activities: [Activity] = Array(Database.shared.allActivities())
         itemSelectionViewController.createItemTitle = "Create my own"
+        itemSelectionViewController.title = "Activities"
         itemSelectionViewController.items = ItemSelectionViewModel.items(from: activities)
         itemSelectionViewController.isMultipleSelectionEnabled = false
         let navigationController = UINavigationController(rootViewController: itemSelectionViewController)
@@ -186,6 +187,7 @@ class FavoriteActivityViewController: UIViewController, AlertsDuration {
         let values: [Value] = Array(Database.shared.allValues()).filter { $0.type == .good }
         itemSelectionViewController.createItemTitle = "Create my own"
         itemSelectionViewController.items = ItemSelectionViewModel.items(from: values)
+        itemSelectionViewController.title = "Values"
         
         let navigationController = UINavigationController(rootViewController: itemSelectionViewController)
         navigationController.modalPresentationStyle = .custom

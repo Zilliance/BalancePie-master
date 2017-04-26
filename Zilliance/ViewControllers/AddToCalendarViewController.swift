@@ -393,6 +393,7 @@ extension AddToCalendarViewController
                 itemSelectionViewController.selectedItemsIndexes = Set(indexes)
             }
             
+            itemSelectionViewController.title = "Values"
             itemSelectionViewController.createItemTitle = "Create your own"
             itemSelectionViewController.items = ItemSelectionViewModel.items(from: values)
             itemSelectionViewController.isMultipleSelectionEnabled = editText.isMultipleSelection
