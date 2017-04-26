@@ -21,6 +21,8 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
     private let hoursProgressView = HoursProgressView()
     private let pieView = PieView()
     private let titleLabel = UILabel()
+    private let legend = PieLegendView()
+    private let hintView = PieHintView()
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -83,7 +85,7 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
         self.pieView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         self.pieView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
         self.pieView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
-        self.pieView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        self.pieView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: UIDevice.isSmallerThaniPhone6 ? -10 : -40).isActive = true
         
         self.pieView.plusButtonAction = {[unowned self] in
             self.plusAction()
@@ -106,6 +108,22 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
         
         sideMenuButton.addTarget(self.sideMenuController, action: #selector(SideMenuController.toggle), for: .touchUpInside)
         
+        // Legend
+        
+        self.view.addSubview(self.legend)
+        self.legend.translatesAutoresizingMaskIntoConstraints = false
+        self.legend.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: UIDevice.isSmallerThaniPhone6 ? -60 : -80).isActive = true
+        self.legend.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        self.legend.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
+        self.legend.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
+        
+        // Hint View
+        
+        self.hintView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(self.hintView)
+        self.hintView.topAnchor.constraint(equalTo: self.legend.bottomAnchor, constant: UIDevice.isSmallerThaniPhone6 ? 10 : 20).isActive = true
+        self.hintView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
+        self.hintView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
     }
     
     private func loadData() {

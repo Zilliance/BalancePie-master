@@ -72,6 +72,8 @@
 		8CBBBE211E958B6300281C3C /* AddValuesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBBBE1F1E958B6300281C3C /* AddValuesViewController.swift */; };
 		8CBBBE231E95925700281C3C /* IconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBBBE221E95925700281C3C /* IconCollectionViewCell.swift */; };
 		8CDAB8DA1E9BF42F006BFD4B /* FavoriteActivity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CDAB8D91E9BF42F006BFD4B /* FavoriteActivity.storyboard */; };
+		E311C3321EB126A700CF23D1 /* PieLegendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E311C3311EB126A700CF23D1 /* PieLegendView.swift */; };
+		E311C3341EB135F800CF23D1 /* PieHintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E311C3331EB135F800CF23D1 /* PieHintView.swift */; };
 		E35668321E8C15BA00ED81D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35668311E8C15BA00ED81D9 /* AppDelegate.swift */; };
 		E35668391E8C15BA00ED81D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E35668381E8C15BA00ED81D9 /* Assets.xcassets */; };
 		E356683C1E8C15BA00ED81D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E356683A1E8C15BA00ED81D9 /* LaunchScreen.storyboard */; };
@@ -170,6 +172,8 @@
 		8CDAB8D91E9BF42F006BFD4B /* FavoriteActivity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FavoriteActivity.storyboard; sourceTree = "<group>"; };
 		D2CBE99AE0B6F1497DB66ABA /* Pods-ZillianceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZillianceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZillianceTests/Pods-ZillianceTests.release.xcconfig"; sourceTree = "<group>"; };
 		DE7A740D362571F85742B547 /* Pods_ZillianceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZillianceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E311C3311EB126A700CF23D1 /* PieLegendView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieLegendView.swift; sourceTree = "<group>"; };
+		E311C3331EB135F800CF23D1 /* PieHintView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieHintView.swift; sourceTree = "<group>"; };
 		E356682E1E8C15BA00ED81D9 /* Zilliance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zilliance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E35668311E8C15BA00ED81D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E35668381E8C15BA00ED81D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -290,6 +294,8 @@
 				8C3EA49D1E94274600F56DED /* PieViewController.swift */,
 				8C3EA4771E92EF9C00F56DED /* HoursProgressView.swift */,
 				8C3EA4591E92E6D000F56DED /* PieView.swift */,
+				E311C3311EB126A700CF23D1 /* PieLegendView.swift */,
+				E311C3331EB135F800CF23D1 /* PieHintView.swift */,
 			);
 			name = Pie;
 			sourceTree = "<group>";
@@ -791,6 +797,7 @@
 				8C3EA4611E92E7BF00F56DED /* Database.swift in Sources */,
 				04647C751E97D85C0040CA46 /* FineTuneActivityViewController.swift in Sources */,
 				041C3CD01EA7F65A00C52195 /* WebViewController.swift in Sources */,
+				E311C3341EB135F800CF23D1 /* PieHintView.swift in Sources */,
 				E3E80A471EA17CBB004A44AF /* FineTuneItemViewController.swift in Sources */,
 				8C3EA4641E92E7BF00F56DED /* ArrayDataSource.swift in Sources */,
 				04E6F5671E9E7FEC00EBD119 /* EmbeddedFeelingTableViewModel.swift in Sources */,
@@ -804,6 +811,7 @@
 				8C3EA4701E92E9D600F56DED /* Int+Extensions.swift in Sources */,
 				8C3EA4741E92E9D600F56DED /* UIDevice+Extensions.swift in Sources */,
 				041C3CB71EA55BA100C52195 /* CustomSideViewController.swift in Sources */,
+				E311C3321EB126A700CF23D1 /* PieLegendView.swift in Sources */,
 				8C4EAE191E9FCD3500D800E4 /* FavoriteActivityViewController.swift in Sources */,
 				041C3CBC1EA55D8D00C52195 /* LeftMenuViewController.swift in Sources */,
 				8CBBBE231E95925700281C3C /* IconCollectionViewCell.swift in Sources */,
