@@ -495,7 +495,7 @@ extension AddToCalendarViewController
             self.bodyTextView.text = "Shift my thoughts about \((textViewContent.userActivity.activity?.name)!) by focusing on the need(s) it fulfills: \(self.editableTexts[0].text) "
             self.setupTextView()
         case (.lousy, .values):
-            let editText = EditableText(feeling: .great, text: "choose value", type: .value, isMultipleSelection: false, selectedIndexes: nil)
+            let editText = EditableText(feeling: .great, text: "choose value", type: .value, isMultipleSelection: true, selectedIndexes: nil)
             self.editableTexts = [editText]
             self.bodyTextView.text = "Bring \(self.editableTexts[0].text) to \((textViewContent.userActivity.activity?.name)!) by: e.g. listening to podcasts or audiobooks."
             self.promptTexts = ["e.g. listening to podcasts or audiobooks."]
@@ -517,7 +517,7 @@ extension AddToCalendarViewController
             self.bodyTextView.text = "Shift my thoughts about \((textViewContent.userActivity.activity?.name)!) by focusing on the need(s) it fulfills: \(self.editableTexts[0].text) "
             self.setupTextView()
         case (.neutral, .values):
-            let editText = EditableText(feeling: .great, text: "choose values", type: .value, isMultipleSelection: false, selectedIndexes: nil)
+            let editText = EditableText(feeling: .great, text: "choose values", type: .value, isMultipleSelection: true, selectedIndexes: nil)
             self.editableTexts = [editText]
             self.bodyTextView.text = "Bring \(self.editableTexts[0].text) to \((textViewContent.userActivity.activity?.name)!) by: e.g. listening to podcasts or audiobooks."
             self.promptTexts = ["e.g. listening to podcasts or audiobooks."]
@@ -538,8 +538,8 @@ extension AddToCalendarViewController
             self.bodyTextView.text = "Shift my thoughts about the non-so-good feelings parts of \((textViewContent.userActivity.activity?.name)!) by focusing on the need(s) it fulfills: \(self.editableTexts[0].text) "
             self.setupTextView()
         case (.mixed, .values):
-            let editText = EditableText(feeling: .great, text: "choose value", type: .value, isMultipleSelection: false, selectedIndexes: nil)
-            let editText2 = EditableText(feeling: .great, text: "choose values", type: .value, isMultipleSelection: false, selectedIndexes: nil)
+            let editText = EditableText(feeling: .great, text: "choose value", type: .value, isMultipleSelection: true, selectedIndexes: nil)
+            let editText2 = EditableText(feeling: .great, text: "choose values", type: .value, isMultipleSelection: true, selectedIndexes: nil)
             self.editableTexts = [editText, editText2]
             self.bodyTextView.text = "Bring more \(self.editableTexts[0].text) to the good-feeling parts of \((textViewContent.userActivity.activity?.name)!) by: e.g. listening to podcasts or audiobooks. \nBring more \(self.editableTexts[1].text) to the not-so-good feeling parts by: …"
             self.promptTexts = ["e.g. listening to podcasts or audiobooks.", "…"]
