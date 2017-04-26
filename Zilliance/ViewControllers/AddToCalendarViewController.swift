@@ -56,6 +56,8 @@ class AddToCalendarViewController: UIViewController, UITextViewDelegate, UIViewC
         super.viewDidLoad()
         self.setupView()
         
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.closeView))
+        
         self.bodyTextView.text = nil
         
         let tapEdit = UITapGestureRecognizer(target: self, action: #selector(self.editTapped))
@@ -73,7 +75,10 @@ class AddToCalendarViewController: UIViewController, UITextViewDelegate, UIViewC
         self.bodyTextView.dataDetectorTypes = [.all];
     }
     
-
+    @objc func closeView()
+    {
+        self.navigationController?.popViewController(animated: true)
+    }
     
     func setupView()
     {

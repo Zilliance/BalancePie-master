@@ -117,7 +117,7 @@ class PieViewController: UIViewController, UIViewControllerTransitioningDelegate
         if let user = Database.shared.user {
             self.hoursProgressView.availableHours = user.availableHours
             self.hoursProgressView.activeHours = user.currentActivitiesDuration / 60
-            self.hoursProgressView.sleepHours = user.timeSlept / 60
+            self.hoursProgressView.sleepHours =  user.weeklyHoursTimeSlept
         }
     }
     

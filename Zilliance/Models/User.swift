@@ -41,7 +41,7 @@ final class User: Object {
     }
     
     var availableHours: Int {
-        return (24 * 7) - (self.timeSlept / 60) * 7
+        return (24 * 7) - self.weeklyHoursTimeSlept
     }
     
     var availableMinutes: Minutes {
@@ -55,7 +55,7 @@ extension User
 {
     
     var availableMinutesForActivities: Minutes {
-        return self.availableMinutes - self.timeSlept - self.currentActivitiesDuration
+        return self.availableMinutes - self.timeSlept * 7 - self.currentActivitiesDuration
     }
     
     func saveTimeSlept(hours: Int, minutes: Minutes)
@@ -89,8 +89,8 @@ extension User
         }
     }
     
-    var weeklyHours: Int {
-            return (self.timeSlept * 7) / 60
+    var weeklyHoursTimeSlept: Int {
+            return self.timeSlept * 7 / 60
     }
 
 }
