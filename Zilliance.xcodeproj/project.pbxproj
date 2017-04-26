@@ -27,6 +27,7 @@
 		04E6F56E1E9F8CDB00EBD119 /* EditActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6F56D1E9F8CDB00EBD119 /* EditActivityViewController.swift */; };
 		1E51585B238E77BA1CAA3F72 /* Pods_ZillianceUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD551A78B0B1A451D0EC85B /* Pods_ZillianceUITests.framework */; };
 		6D62B4EDFBB711AD0B00D39E /* Pods_Zilliance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 736C6E0154BDC836D0C0D4EB /* Pods_Zilliance.framework */; };
+		8C0A87C91EB12D9C000E4188 /* PartialModalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0A87C81EB12D9C000E4188 /* PartialModalTransition.swift */; };
 		8C3EA45A1E92E6D000F56DED /* PieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3EA4591E92E6D000F56DED /* PieView.swift */; };
 		8C3EA4611E92E7BF00F56DED /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3EA45C1E92E7BF00F56DED /* Database.swift */; };
 		8C3EA4621E92E7BF00F56DED /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3EA45D1E92E7BF00F56DED /* User.swift */; };
@@ -125,6 +126,7 @@
 		6023B31C79A6506116A83550 /* Pods-Zilliance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zilliance.release.xcconfig"; path = "Pods/Target Support Files/Pods-Zilliance/Pods-Zilliance.release.xcconfig"; sourceTree = "<group>"; };
 		6FED0BD8DBA2228B5E916020 /* Pods-ZillianceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZillianceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZillianceTests/Pods-ZillianceTests.debug.xcconfig"; sourceTree = "<group>"; };
 		736C6E0154BDC836D0C0D4EB /* Pods_Zilliance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zilliance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C0A87C81EB12D9C000E4188 /* PartialModalTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PartialModalTransition.swift; path = Models/Helpers/PartialModalTransition.swift; sourceTree = "<group>"; };
 		8C3EA4591E92E6D000F56DED /* PieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PieView.swift; path = CustomViews/PieView.swift; sourceTree = "<group>"; };
 		8C3EA45C1E92E7BF00F56DED /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Database.swift; path = Models/Database.swift; sourceTree = "<group>"; };
 		8C3EA45D1E92E7BF00F56DED /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = "<group>"; };
@@ -332,6 +334,7 @@
 			isa = PBXGroup;
 			children = (
 				04B29A661E97AB680090E52E /* PartialSizePresentationController.swift */,
+				8C0A87C81EB12D9C000E4188 /* PartialModalTransition.swift */,
 				8C3EA45F1E92E7BF00F56DED /* ArrayDataSource.swift */,
 				8C3EA47A1E92F0F100F56DED /* CalendarHelper.swift */,
 				8C3EA47B1E92F0F100F56DED /* LocalNotificationsHelper.swift */,
@@ -795,6 +798,7 @@
 				8C3EA47D1E92F0F100F56DED /* LocalNotificationsHelper.swift in Sources */,
 				04B29A671E97AB680090E52E /* PartialSizePresentationController.swift in Sources */,
 				8C3EA4611E92E7BF00F56DED /* Database.swift in Sources */,
+				8C0A87C91EB12D9C000E4188 /* PartialModalTransition.swift in Sources */,
 				04647C751E97D85C0040CA46 /* FineTuneActivityViewController.swift in Sources */,
 				041C3CD01EA7F65A00C52195 /* WebViewController.swift in Sources */,
 				E311C3341EB135F800CF23D1 /* PieHintView.swift in Sources */,
