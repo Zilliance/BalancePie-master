@@ -49,7 +49,7 @@ class FavoriteActivityViewController: UIViewController, AlertsDuration {
     
     fileprivate var favorite = Favorite()
     
-    private let hours = App.Appearance.maxHours.labeledArray(with: "Hour")
+    private let hours = 12.labeledArray(with: "Hour")
     private let minutes = ["0 Minutes", "15 Minutes", "30 Minutes", "45 Minutes"]
     
     private var presenting: Presenting = .none
