@@ -303,4 +303,12 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
         return presentationController
     }
     
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return PartialModalTrasition(withType: .dismissing)
+    }
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return PartialModalTrasition(withType: .presenting)
+    }
+    
 }

@@ -108,6 +108,14 @@ class AddToCalendarViewController: UIViewController, UITextViewDelegate, UIViewC
         let presentationController = PartialSizePresentationController(presentedViewController: presented, presenting: presenting, height: self.view.frame.size.height / 2.0)
         return presentationController
     }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return PartialModalTrasition(withType: .dismissing)
+    }
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return PartialModalTrasition(withType: .presenting)
+    }
 
     
     @IBAction func onClose(_ sender: Any) {
