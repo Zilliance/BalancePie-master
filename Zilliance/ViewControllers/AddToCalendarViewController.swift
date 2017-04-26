@@ -155,7 +155,8 @@ extension AddToCalendarViewController
     
     func replaceTappableText(index: Int, withText text: String, selectedIndexes: [Int]?)
     {
-        if var currentText = self.bodyTextView.text, let range = currentText.range(of: self.editableTexts[index].text)
+        let editableText = self.editableTexts[index].text
+        if var currentText = self.bodyTextView.text, let range = currentText.range(of: editableText)
         {
             currentText.replaceSubrange(range, with: text)
             self.bodyTextView.text = currentText
@@ -170,6 +171,13 @@ extension AddToCalendarViewController
                 self.editableTexts[index].selectedIndexes = selectedIndexes
             }
             self.setupTextView()
+            
+            let nsRange = editableText.nsRange(from: range)
+            
+            //we want to position the cursor at the end of the new selection
+            let newSelectionRange = NSRange(location: nsRange.location + text.characters.count + 1, length: 0)
+            self.bodyTextView.selectedRange = newSelectionRange
+            
         }
     }
     
@@ -225,6 +233,10 @@ extension AddToCalendarViewController
     
     func tappableIndexForRange(range: NSRange, textsList: [String]) -> Int?
     {
+        guard self.bodyTextView.text.characters.count > 0 else {
+            return nil
+        }
+        
         var range = range
         range.length = 1 // when you tap it's 0 but we need to go one to the right to know if it overlaps
         
