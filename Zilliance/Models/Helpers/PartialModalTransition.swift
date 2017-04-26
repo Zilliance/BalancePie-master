@@ -54,12 +54,9 @@ extension PartialModalTrasition: UIViewControllerAnimatedTransitioning {
         
         UIView.animate(withDuration: self.transitionDuration, animations: {
             toViewController?.view.transform = CGAffineTransform(translationX: 0, y: -frame.height/2)
-        }) { (_) in
-            UIView.animate(withDuration: self.transitionDuration, animations: {
-                fromViewController?.view.alpha = 0.5
-            }, completion: { (completed) in
-                transitionContext.completeTransition(completed)
-            })
+            fromViewController?.view.alpha = 0.5
+        }) { (completed) in
+            transitionContext.completeTransition(completed)
         }
 
     }
