@@ -18,7 +18,7 @@ class Value: Object {
     dynamic var name = ""
     dynamic var iconName: String?
     dynamic var type: ValueType = .good
-    dynamic var isShowingFirst = false
+    dynamic var order: Int = 0
     
     var image: UIImage? {
         if let iconName = self.iconName {
@@ -30,7 +30,7 @@ class Value: Object {
     
     func setShowFirst() {
         try! Database.shared.realm.write {
-            self.isShowingFirst = true
+            self.order = 1
         }
     }
 
