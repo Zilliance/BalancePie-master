@@ -66,6 +66,7 @@
 		8C4D28C91E96D1A400034A20 /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4D28C81E96D1A400034A20 /* OnboardingPageViewController.swift */; };
 		8C4EAE191E9FCD3500D800E4 /* FavoriteActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4EAE181E9FCD3500D800E4 /* FavoriteActivityViewController.swift */; };
 		8C4EAE1B1EA15B2F00D800E4 /* FineTuneItems.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C4EAE1A1EA15B2F00D800E4 /* FineTuneItems.storyboard */; };
+		8C51C0651EB27E1400A7BF34 /* TextViewContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C51C0641EB27E1400A7BF34 /* TextViewContainerViewController.swift */; };
 		8CBBBE181E9558D600281C3C /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CBBBE171E9558D600281C3C /* Calendar.storyboard */; };
 		8CBBBE1A1E9576F800281C3C /* AddToCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBBBE191E9576F800281C3C /* AddToCalendarViewController.swift */; };
 		8CBBBE1D1E95890700281C3C /* AddCustom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CBBBE1C1E95890700281C3C /* AddCustom.storyboard */; };
@@ -165,6 +166,7 @@
 		8C4D28C81E96D1A400034A20 /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnboardingPageViewController.swift; path = ViewControllers/OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		8C4EAE181E9FCD3500D800E4 /* FavoriteActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoriteActivityViewController.swift; path = ViewControllers/FavoriteActivityViewController.swift; sourceTree = "<group>"; };
 		8C4EAE1A1EA15B2F00D800E4 /* FineTuneItems.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FineTuneItems.storyboard; sourceTree = "<group>"; };
+		8C51C0641EB27E1400A7BF34 /* TextViewContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextViewContainerViewController.swift; path = ViewControllers/TextViewContainerViewController.swift; sourceTree = "<group>"; };
 		8CBBBE171E9558D600281C3C /* Calendar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
 		8CBBBE191E9576F800281C3C /* AddToCalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddToCalendarViewController.swift; path = ViewControllers/AddToCalendarViewController.swift; sourceTree = "<group>"; };
 		8CBBBE1C1E95890700281C3C /* AddCustom.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddCustom.storyboard; sourceTree = "<group>"; };
@@ -381,6 +383,7 @@
 			children = (
 				8CBBBE171E9558D600281C3C /* Calendar.storyboard */,
 				8CBBBE191E9576F800281C3C /* AddToCalendarViewController.swift */,
+				8C51C0641EB27E1400A7BF34 /* TextViewContainerViewController.swift */,
 			);
 			name = Calendar;
 			sourceTree = "<group>";
@@ -782,6 +785,7 @@
 				04647C7D1E9BFD4B0040CA46 /* AddSliceViewController.swift in Sources */,
 				8C3EA47C1E92F0F100F56DED /* CalendarHelper.swift in Sources */,
 				8C3EA4751E92E9D600F56DED /* UIFont+CustomFonts.swift in Sources */,
+				8C51C0651EB27E1400A7BF34 /* TextViewContainerViewController.swift in Sources */,
 				8C3EA49E1E94274600F56DED /* PieViewController.swift in Sources */,
 				8CBBBE211E958B6300281C3C /* AddValuesViewController.swift in Sources */,
 				04E6F56C1E9F804000EBD119 /* DetachableObject.swift in Sources */,
