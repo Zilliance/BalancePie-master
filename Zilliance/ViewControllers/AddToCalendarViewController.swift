@@ -379,6 +379,8 @@ extension AddToCalendarViewController
             switch editText.feeling {
             case .great:
                 values = values.filter { $0.type == .good }
+                    .sorted { $0.0.isShowingFirst }
+                
             case .lousy:
                 values = values.filter { $0.type == .bad }
             default:
