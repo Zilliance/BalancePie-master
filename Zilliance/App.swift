@@ -14,7 +14,7 @@ struct App {
         static let buttonHeight: CGFloat = 50
         static let borderWidth: CGFloat = 0.5
         
-        static let maxHours = 85
+        static let maxHours = 80
     }
     
 }

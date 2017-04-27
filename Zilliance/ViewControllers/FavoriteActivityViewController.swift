@@ -49,7 +49,8 @@ class FavoriteActivityViewController: UIViewController, AlertsDuration {
     
     fileprivate var favorite = Favorite()
     
-    private let hours = 12.labeledArray(with: "Hour")
+    private let sleepHours = 12.labeledArray(with: "Hour")
+    private let activityHours = App.Appearance.maxHours.labeled(with: "Hour")
     private let minutes = ["0 Minutes", "15 Minutes", "30 Minutes", "45 Minutes"]
     
     private var presenting: Presenting = .none
@@ -84,7 +85,7 @@ class FavoriteActivityViewController: UIViewController, AlertsDuration {
     
     fileprivate func selectSleepHours() {
         
-        ActionSheetMultipleStringPicker.show(withTitle: "Sleep Hours", rows: [self.hours, self.minutes], initialSelection: [0, 0], doneBlock: { (picker, indexes, values) in
+        ActionSheetMultipleStringPicker.show(withTitle: "Sleep Hours", rows: [self.sleepHours, self.minutes], initialSelection: [0, 0], doneBlock: { (picker, indexes, values) in
             
             let hour = indexes?[0] as! Int
             let minute = indexes?[1] as! Int * 15
@@ -146,7 +147,7 @@ class FavoriteActivityViewController: UIViewController, AlertsDuration {
     
     fileprivate func selectActivityDuration() {
         
-        ActionSheetMultipleStringPicker.show(withTitle: "Activity Duration", rows: [self.hours, self.minutes], initialSelection: [0, 0], doneBlock: { (picker, indexes, values) in
+        ActionSheetMultipleStringPicker.show(withTitle: "Activity Duration", rows: [self.activityHours, self.minutes], initialSelection: [0, 0], doneBlock: { (picker, indexes, values) in
             
             let hour = indexes?[0] as! Int
             let minute = indexes?[1] as! Int * 15
