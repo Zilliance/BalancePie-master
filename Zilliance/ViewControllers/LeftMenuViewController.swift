@@ -10,47 +10,32 @@ import Foundation
 import UIKit
 import SideMenuController
 
-final class LeftMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    enum TableViewRow: Int {
+final class LeftMenuViewController: UIViewController {
+    enum Row: Int {
         case howItWorks = 0
         case tour
         case videos
-        
-        var title: String {
-            switch self {
-            case .howItWorks:
-                return "How it works"
-            case .tour:
-                return "Tour"
-            case .videos:
-                return "Videos"
-            }
-        }
-        
-        static var count: Int{
-            return 3
-        }
+        case faq
+        case spacer
+        case about
+        case company
     }
+    
+    var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.darkBlueBackground
+        self.view.backgroundColor = .darkBlueBackground
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return TableViewRow.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "BasicCell", for: indexPath)
-        
-        if let row = TableViewRow(rawValue: indexPath.row) {
-            cell.imageView?.image = UIImage(named: "driving")
-            cell.textLabel?.text = row.title
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? UITableViewController {
+            self.tableView = vc.tableView
+            self.tableView.backgroundColor = .darkBlueBackground
+            self.tableView.tableFooterView = UIView()
+            self.tableView.delegate = self
         }
-        
-        return cell
     }
     
     func showHTMLView(htmlFile: String, title: String) {
@@ -101,5 +86,36 @@ final class LeftMenuViewController: UIViewController, UITableViewDelegate, UITab
     
     @IBAction func termsOfServicesTapped(_ sender: Any) {
         showHTMLView(htmlFile: "zilliance terms of service", title: "Terms Of Service")
+    }
+}
+
+// MARK: - Table View Delegate
+
+extension LeftMenuViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch Row(rawValue: indexPath.row) {
+        case .howItWorks?: fallthrough
+        case .about?:
+            return 30
+        case .spacer?:
+            return 20
+        default:
+            return 44
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        switch Row(rawValue: indexPath.row) {
+        case .howItWorks?: fallthrough
+        case .about?: fallthrough
+        case .spacer?:
+            cell.separatorInset = UIEdgeInsetsMake(0, 0, 0, tableView.frame.size.width)
+        default:
+            break
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
