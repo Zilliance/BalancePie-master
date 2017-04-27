@@ -22,9 +22,6 @@ class AddToCalendarViewController: UIViewController {
     private var textViewContainer: TextViewContainerViewController!
     
     var textViewContent: TextViewContent?
-    
-    static let kTopLayoutSeparation: CGFloat = 41
-    static let kMaxNumberOfDays = 14
 
     fileprivate var pickerDates: [Date] = []
 
@@ -61,11 +58,6 @@ class AddToCalendarViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        self.textViewContainer = segue.destination as! TextViewContainerViewController
-        self.textViewContainer.textViewContent = self.textViewContent
-    }
-    
     @IBAction func onDone(_ sender: Any) {
         guard let body = self.textViewContainer.textView.text, body.characters.count > 0 else {
             
@@ -94,6 +86,11 @@ class AddToCalendarViewController: UIViewController {
                 self.navigationController!.popViewController(animated: true)
             })
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        self.textViewContainer = segue.destination as! TextViewContainerViewController
+        self.textViewContainer.textViewContent = self.textViewContent
     }
 }
 
