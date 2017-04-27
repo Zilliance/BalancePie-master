@@ -415,7 +415,8 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
             
             itemsVC.selectedItemsIndexes = Set(initialIndexes)
             
-            let valuesNames = values.map({$0.name})
+            let valuesNames = values.sorted { $0.0.order == 1 }
+                .map { $0.name }
             for valueName in valuesNames
             {
                 let itemModel = ItemSelectionViewModel(title: valueName, image:nil)

@@ -64,7 +64,7 @@ extension User
             self.timeSlept = hours * 60 + minutes
         }
     }
-    
+
     func save(userActivity: UserActivity) {
         
         let realm = Database.shared.realm

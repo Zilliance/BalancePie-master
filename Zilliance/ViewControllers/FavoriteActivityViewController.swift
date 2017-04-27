@@ -257,9 +257,10 @@ class FavoriteActivityViewController: UIViewController, AlertsDuration {
         userActivity.feeling = .great
         
         self.favorite.values.forEach { (value) in
+            value.setShowFirst()
             userActivity.values.append(value)
         }
-        
+
         Database.shared.user.save(userActivity: userActivity)
         Database.shared.user.saveTimeSlept(hours: self.favorite.sleepDuration.asHoursMinutes.0 , minutes: self.favorite.sleepDuration.asHoursMinutes.1)
     }

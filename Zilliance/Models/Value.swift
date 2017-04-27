@@ -18,12 +18,19 @@ class Value: Object {
     dynamic var name = ""
     dynamic var iconName: String?
     dynamic var type: ValueType = .good
+    dynamic var order: Int = 0
     
     var image: UIImage? {
         if let iconName = self.iconName {
             return UIImage(named: iconName)
         } else {
             return nil
+        }
+    }
+    
+    func setShowFirst() {
+        try! Database.shared.realm.write {
+            self.order = 1
         }
     }
 
@@ -38,7 +45,6 @@ class Value: Object {
     override class func primaryKey() -> String? {
         return "name"
     }
-
 }
 
 extension Value {
