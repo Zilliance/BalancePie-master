@@ -415,8 +415,7 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
             
             itemsVC.selectedItemsIndexes = Set(initialIndexes)
             
-            let valuesNames = values.sorted { $0.0.order == 1 }
-                .map { $0.name }
+            let valuesNames = values.map { $0.name }
             for valueName in valuesNames
             {
                 let itemModel = ItemSelectionViewModel(title: valueName, image:nil)
@@ -477,7 +476,7 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
             self.selectHowItFeels()
             
         case .goodFeelings?:
-            let values = Value.goodValues
+            let values = Value.goodValues.sorted { $0.0.order == 1 }
             let selectedValues = values.flatMap({self.newActivity.goodValues.index(of: $0) == nil ? nil : values.index(of: $0)})
             
             self.selectValues(values: values, initialIndexes: selectedValues, completion: { (indexes) in
