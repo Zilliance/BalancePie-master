@@ -33,7 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if Database.shared.user.activities.count > 0 {
             
-            let sideMenuViewController = CustomSideViewController().sideViewControllerWithPie()!
+            let sideMenuViewController = CustomSideViewController()
+            sideMenuViewController.setupPie()
          	rootViewController = sideMenuViewController
             
         }

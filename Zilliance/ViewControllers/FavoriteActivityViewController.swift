@@ -276,7 +276,8 @@ class FavoriteActivityViewController: UIViewController, AlertsDuration {
             return
         }
         
-        let sideMenuViewController = CustomSideViewController().sideViewControllerWithPie()!
+        let sideMenuViewController = CustomSideViewController()
+        sideMenuViewController.setupPie()
         
         sideMenuViewController.view.frame = rootViewController.view.frame
         sideMenuViewController.view.layoutIfNeeded()
