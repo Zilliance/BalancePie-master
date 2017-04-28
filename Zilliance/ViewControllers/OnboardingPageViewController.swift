@@ -14,6 +14,9 @@ class OnboardingPageViewController: UIPageViewController {
         case first
         case second
         case third
+        case fourth
+        case fifth
+        case sixth
     }
     
     fileprivate(set) lazy var introViewControllers: [UIViewController]  = {
@@ -21,7 +24,10 @@ class OnboardingPageViewController: UIPageViewController {
             self.viewController(for: .first),
             self.viewController(for: .second),
             self.viewController(for: .third),
-            self.favoriteViewController
+            self.viewController(for: .fourth),
+            self.viewController(for: .fifth),
+            self.viewController(for: .sixth),
+            self.favoriteViewController,
         ]
     }()
 
