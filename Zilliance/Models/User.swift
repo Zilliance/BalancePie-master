@@ -55,7 +55,7 @@ extension User
 {
     
     var availableMinutesForActivities: Minutes {
-        return self.availableMinutes - self.timeSlept * 7 - self.currentActivitiesDuration
+        return self.availableMinutes - self.currentActivitiesDuration
     }
     
     func saveTimeSlept(hours: Int, minutes: Minutes)

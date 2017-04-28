@@ -510,8 +510,9 @@ extension AddToCalendarViewController
         case (.neutral, .replace):
             self.bodyTextView.text = "Replace or move towards replacing \((textViewContent.userActivity.activity?.name)!) by: e.g., taking an online class about entrepreneurship"
             self.promptTexts = ["e.g., taking an online class about entrepreneurship"]
+            self.setupTextView()
         case (.neutral, .reduce):
-            self.bodyTextView.text = "Reduce the amount of time I spend on \((textViewContent.userActivity.activity?.name)!) by doing this feel-good activity instead, even for just a few minutes: e.g., do two minutes of sit-ups every hour"
+            self.bodyTextView.text = "Reduce the amount of time I spend on \((textViewContent.userActivity.activity?.name)!) by doing this feel-good activity instead, even for just a few minutes: e.g, do two minutes of sit-ups every hour"
             self.promptTexts = ["e.g, do two minutes of sit-ups every hour"]
             self.setupTextView()
         case (.neutral, .shift):
