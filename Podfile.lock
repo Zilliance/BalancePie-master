@@ -26,7 +26,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Charts:
-    :commit: dc1e965dcbf25d921bc195a34adf990c550628e1
+    :commit: 5288c2500c56d18e2a166b6783cee2626e522354
     :git: https://github.com/danielgindi/Charts.git
 
 SPEC CHECKSUMS:
@@ -39,4 +39,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 88207fae7ce428f7a697bf4d01fee6e503ffc31c
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.2.1
