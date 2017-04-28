@@ -12,9 +12,7 @@ import SideMenuController
 
 final class CustomSideViewController: SideMenuController
 {
-    static func initSideProperties()
-    {
-        //SideMenuController.preferences.drawing.menuButtonImage = UIImage(named: "driving")
+    static func initSideProperties() {
         SideMenuController.preferences.drawing.sidePanelPosition = .underCenterPanelLeft
         SideMenuController.preferences.drawing.sidePanelWidth = 300
         SideMenuController.preferences.drawing.centerPanelShadow = true
@@ -26,8 +24,7 @@ final class CustomSideViewController: SideMenuController
         super.init(coder: aDecoder)
     }
     
-    init()
-    {
+    init() {
         CustomSideViewController.initSideProperties()
         super.init(nibName: nil, bundle: nil)
     }

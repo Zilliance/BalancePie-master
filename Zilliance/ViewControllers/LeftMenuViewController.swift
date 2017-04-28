@@ -87,6 +87,12 @@ final class LeftMenuViewController: UIViewController {
     @IBAction func termsOfServicesTapped(_ sender: Any) {
         showHTMLView(htmlFile: "zilliance terms of service", title: "Terms Of Service")
     }
+    
+    func showAboutCompany() {
+        let vc = UIStoryboard(name: "SideMenu", bundle: nil).instantiateViewController(withIdentifier: "AboutCompany")
+        let nav = UINavigationController(rootViewController: vc)
+        self.sideMenuController?.embed(centerViewController: nav)
+    }
 }
 
 // MARK: - Table View Delegate
@@ -117,5 +123,11 @@ extension LeftMenuViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        switch Row(rawValue: indexPath.row) {
+        case .company?:
+            self.showAboutCompany()
+        default:
+            break
+        }
     }
 }
