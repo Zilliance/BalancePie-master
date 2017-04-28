@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TextViewContainerViewController: UIViewController, UIViewControllerTransitioningDelegate {
+class ZillianceTextViewController: UIViewController, UIViewControllerTransitioningDelegate {
     
     @IBOutlet weak var textView: UITextView!
     
@@ -77,7 +77,7 @@ class TextViewContainerViewController: UIViewController, UIViewControllerTransit
 
 }
 
-extension TextViewContainerViewController: UITextViewDelegate {
+extension ZillianceTextViewController: UITextViewDelegate {
     
     func textViewDidEndEditing(_ textView: UITextView) {
         self.textView.isEditable = false

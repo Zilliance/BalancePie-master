@@ -121,10 +121,10 @@
             </objects>
             <point key="canvasLocation" x="74" y="215"/>
         </scene>
-        <!--Text View Container View Controller-->
+        <!--Zilliance Text View Controller-->
         <scene sceneID="Vfz-jK-1ck">
             <objects>
-                <viewController id="B1x-Jt-X5J" customClass="TextViewContainerViewController" customModule="Zilliance" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="B1x-Jt-X5J" customClass="ZillianceTextViewController" customModule="Zilliance" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="R7M-DF-E5p"/>
                         <viewControllerLayoutGuide type="bottom" id="ShE-FK-1zf"/>

@@ -19,7 +19,7 @@ class AddToCalendarViewController: UIViewController {
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var doneButton: UIButton!
     
-    private var textViewContainer: TextViewContainerViewController!
+    private var zillianceTextViewController: ZillianceTextViewController!
     
     var textViewContent: TextViewContent?
 
@@ -59,7 +59,7 @@ class AddToCalendarViewController: UIViewController {
     }
     
     @IBAction func onDone(_ sender: Any) {
-        guard let body = self.textViewContainer.textView.text, body.characters.count > 0 else {
+        guard let body = self.zillianceTextViewController.textView.text, body.characters.count > 0 else {
             
             return
         }
@@ -89,8 +89,8 @@ class AddToCalendarViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        self.textViewContainer = segue.destination as! TextViewContainerViewController
-        self.textViewContainer.textViewContent = self.textViewContent
+        self.zillianceTextViewController = segue.destination as! ZillianceTextViewController
+        self.zillianceTextViewController.textViewContent = self.textViewContent
     }
 }
 
