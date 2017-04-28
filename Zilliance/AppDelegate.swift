@@ -34,18 +34,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if Database.shared.user.activities.count > 0 {
             
             let sideMenuViewController = CustomSideViewController()
-            
-            // create the side controller
-            let sideController = UIStoryboard(name: "SideMenu", bundle: nil).instantiateInitialViewController()
-            
-            // embed the side and center controllers
-            sideMenuViewController.embed(sideViewController: sideController!)
-            
-            let pieNavController = UIStoryboard(name: "Pie", bundle: nil).instantiateInitialViewController() as! UINavigationController
-            
-            sideMenuViewController.embed(centerViewController: pieNavController)
-            
+            sideMenuViewController.setupPie()
          	rootViewController = sideMenuViewController
+            
         }
         else {
             rootViewController =  UIStoryboard(name: "Onboarding", bundle: nil).instantiateInitialViewController()

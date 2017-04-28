@@ -267,10 +267,6 @@ class FavoriteActivityViewController: UIViewController, AlertsDuration {
     }
     
     private func gotoPie() {
-        guard let pieViewController = UIStoryboard(name: "Pie", bundle: nil).instantiateInitialViewController() else {
-            assertionFailure()
-            return
-        }
         
         guard let window = UIApplication.shared.keyWindow else {
             return
@@ -280,11 +276,14 @@ class FavoriteActivityViewController: UIViewController, AlertsDuration {
             return
         }
         
-        pieViewController.view.frame = rootViewController.view.frame
-        pieViewController.view.layoutIfNeeded()
+        let sideMenuViewController = CustomSideViewController()
+        sideMenuViewController.setupPie()
+        
+        sideMenuViewController.view.frame = rootViewController.view.frame
+        sideMenuViewController.view.layoutIfNeeded()
         
         UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve, animations: { 
-            window.rootViewController = pieViewController
+            window.rootViewController = sideMenuViewController
         }, completion: nil)
     }
 
