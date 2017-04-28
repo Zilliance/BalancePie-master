@@ -47,6 +47,11 @@ class FavoriteActivityViewController: UIViewController, AlertsDuration {
         case values
     }
     
+    private var selectedSleepHoursIndex = [0, 0]
+    private var selectedActivityIndex: [Int]? = []
+    private var selectedValuesIndexes: [Int]? = []
+    private var selectedActivityDurationIndex = [0, 0]
+    
     fileprivate var favorite = Favorite()
     
     private let sleepHours = 12.labeledArray(with: "Hour")
@@ -85,8 +90,9 @@ class FavoriteActivityViewController: UIViewController, AlertsDuration {
     
     fileprivate func selectSleepHours() {
         
-        ActionSheetMultipleStringPicker.show(withTitle: "Sleep Hours", rows: [self.sleepHours, self.minutes], initialSelection: [0, 0], doneBlock: { (picker, indexes, values) in
+        ActionSheetMultipleStringPicker.show(withTitle: "Sleep Hours", rows: [self.sleepHours, self.minutes], initialSelection: self.selectedSleepHoursIndex, doneBlock: { (picker, indexes, values) in
             
+            self.selectedSleepHoursIndex = indexes as! [Int]
             let hour = indexes?[0] as! Int
             let minute = indexes?[1] as! Int * 15
             self.favorite.sleepDuration = hour * 60 + minute
@@ -113,6 +119,9 @@ class FavoriteActivityViewController: UIViewController, AlertsDuration {
         itemSelectionViewController.title = "Activities"
         itemSelectionViewController.items = ItemSelectionViewModel.items(from: activities)
         itemSelectionViewController.isMultipleSelectionEnabled = false
+        if let index = self.selectedActivityIndex {
+            itemSelectionViewController.selectedItemsIndexes = Set(index)
+        }
         let navigationController = UINavigationController(rootViewController: itemSelectionViewController)
         navigationController.modalPresentationStyle = .custom
         navigationController.transitioningDelegate = self
@@ -136,6 +145,7 @@ class FavoriteActivityViewController: UIViewController, AlertsDuration {
         
         itemSelectionViewController.doneAction = { indexes in
             
+            self.selectedActivityIndex = indexes
             guard indexes.count > 0 else {
                 return
             }
@@ -147,8 +157,9 @@ class FavoriteActivityViewController: UIViewController, AlertsDuration {
     
     fileprivate func selectActivityDuration() {
         
-        ActionSheetMultipleStringPicker.show(withTitle: "Activity Duration", rows: [self.activityHours, self.minutes], initialSelection: [0, 0], doneBlock: { (picker, indexes, values) in
+        ActionSheetMultipleStringPicker.show(withTitle: "Activity Duration", rows: [self.activityHours, self.minutes], initialSelection: self.selectedActivityDurationIndex, doneBlock: { (picker, indexes, values) in
             
+            self.selectedActivityDurationIndex = indexes as! [Int]
             let hour = indexes?[0] as! Int
             let minute = indexes?[1] as! Int * 15
             
@@ -190,6 +201,10 @@ class FavoriteActivityViewController: UIViewController, AlertsDuration {
         itemSelectionViewController.items = ItemSelectionViewModel.items(from: values)
         itemSelectionViewController.title = "Values"
         
+        if let index = self.selectedValuesIndexes {
+            itemSelectionViewController.selectedItemsIndexes = Set(index)
+        }
+        
         let navigationController = UINavigationController(rootViewController: itemSelectionViewController)
         navigationController.modalPresentationStyle = .custom
         navigationController.transitioningDelegate = self
@@ -216,6 +231,7 @@ class FavoriteActivityViewController: UIViewController, AlertsDuration {
                 return
             }
             
+            self.selectedValuesIndexes = indexes
             var selectedValues: [Value] = []
             
             indexes.forEach({ (index) in
