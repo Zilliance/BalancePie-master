@@ -37,6 +37,12 @@ class OnboardingPageViewController: UIPageViewController {
     
     fileprivate var shouldHideDots = false
     
+    private let backgroundImageView = UIImageView(image: #imageLiteral(resourceName: "launch-background"))
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupView()
@@ -58,6 +64,16 @@ class OnboardingPageViewController: UIPageViewController {
     }
     
     private func setupView() {
+        self.view.backgroundColor = .lightBlueBackground
+        self.backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.view.insertSubview(self.backgroundImageView, at: 0)
+        
+        self.backgroundImageView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        self.backgroundImageView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        self.backgroundImageView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
+        self.backgroundImageView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
+        
         self.dataSource = self
         self.delegate = self
         if let firstViewController = self.introViewControllers.first {
