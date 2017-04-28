@@ -35,4 +35,19 @@ final class CustomSideViewController: SideMenuController
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
+    
+    func sideViewControllerWithPie() -> SideMenuController? {
+        guard let pieViewController = UIStoryboard(name: "Pie", bundle: nil).instantiateInitialViewController(), let sideController = UIStoryboard(name: "SideMenu", bundle: nil).instantiateInitialViewController() else {
+            assertionFailure()
+            return nil
+        }
+        
+        let sideMenuViewController = CustomSideViewController()
+        
+        sideMenuViewController.embed(centerViewController: pieViewController)
+        sideMenuViewController.embed(sideViewController: sideController)
+        
+        return sideMenuViewController
+    }
+    
 }
