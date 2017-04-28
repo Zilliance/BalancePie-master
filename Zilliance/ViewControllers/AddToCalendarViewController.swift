@@ -64,6 +64,17 @@ class AddToCalendarViewController: UIViewController {
             return
         }
         
+        if let error = self.zillianceTextViewController.validation.error {
+            switch error {
+            case .value:
+                self.showAlert(message: "Please select one or more values", title: "Select Values")
+            case .placeholder:
+                self.showAlert(message: "Replace the gray placeholder text with your own plan of action", title: "Enter your action item")
+            }
+            
+            return
+        }
+        
         CalendarHelper.addEvent(with: body, notes: nil, date: self.datePicker.date) { (success, error) in
             
             guard success else {

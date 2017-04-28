@@ -26,7 +26,55 @@ class ZillianceTextViewController: UIViewController, UIViewControllerTransitioni
         case text
     }
     
+    struct Validation: OptionSet {
+        
+        let rawValue: Int
+        
+        static let none = Validation(rawValue: 1 << 0)
+        static let value1 = Validation(rawValue: 1 << 1)
+        static let value2 = Validation(rawValue: 1 << 2)
+        static let placeholder1 = Validation(rawValue: 1 << 3)
+        static let placeholder2 = Validation(rawValue: 1 << 4)
+        
+        var error: ValidationError? {
+            
+            if !self.intersection([.value1, .value2]).isEmpty {
+                return .value
+            }
+            else if !self.intersection([.placeholder1, .placeholder2]).isEmpty {
+                return .placeholder
+            }
+            else {
+                return nil
+            }
+        }
+        
+        enum ValidationError {
+            case value
+            case placeholder
+        }
+        
+        mutating func removeValues() {
+            if self.contains(.value2) {
+                self.remove(.value2)
+            }
+            else {
+                self.remove(.value1)
+            }
+        }
+        
+        mutating func removePlaceholders() {
+            if self.contains(.placeholder2) {
+                self.remove(.placeholder2)
+            }
+            else {
+                self.remove(.placeholder1)
+            }
+        }
+    }
+    
     var textViewContent: TextViewContent?
+    var validation: Validation = .none
     
     fileprivate var editableTexts: [EditableText] = []
     fileprivate var promptTexts: [String] = []
@@ -101,6 +149,7 @@ extension ZillianceTextViewController: UITextViewDelegate {
                 self.editableTexts[index].text = text
                 self.editableTexts[index].selectedIndexes = selectedIndexes
             }
+            self.validation.removeValues()
             self.setupTextView()
             
             let nsRange = editableText.nsRange(from: range)
@@ -238,6 +287,10 @@ extension ZillianceTextViewController: UITextViewDelegate {
         {
             textView.resignFirstResponder()
             return false
+        }
+        
+        if self.tappableIndexForRange(range: range, textsList: self.promptTexts) != nil {
+            self.validation.removePlaceholders()
         }
         
         let deleteTapped = (text.characters.count == 0 && range.length == 1)
@@ -406,62 +459,76 @@ extension ZillianceTextViewController: UITextViewDelegate {
             let editText = EditableText(feeling: .great, text: "choose values", type: .value, isMultipleSelection: true, selectedIndexes: nil)
             self.editableTexts = [editText]
             self.textView.text = "Bring more \(self.editableTexts[0].text) to \((textViewContent.userActivity.activity?.name)!)"
+            self.validation = .value1
             self.setupTextView()
         case (.lousy, .replace):
             self.textView.text = "Replace \((textViewContent.userActivity.activity?.name)!) with this better feeling activity: e.g. reading a book"
             self.promptTexts = ["e.g. reading a book"]
+            self.validation = .placeholder1
             self.setupTextView()
         case (.lousy, .reduce):
             self.textView.text = "Reduce the amount of time I spend on \((textViewContent.userActivity.activity?.name)!) by doing this: e.g. picking up a book every time I am tempted to look at social media"
             self.promptTexts = ["e.g. picking up a book every time I am tempted to look at social media"]
+            self.validation = .placeholder1
             self.setupTextView()
         case (.lousy, .shift):
             let editText = EditableText(feeling: .great, text: "choose values", type: .value, isMultipleSelection: true, selectedIndexes: nil)
             self.editableTexts = [editText]
-            self.textView.text = "Shift my thoughts about \((textViewContent.userActivity.activity?.name)!) by focusing on the need(s) it fulfills: \(self.editableTexts[0].text) "
+            self.textView.text = "Shift my thoughts about \((textViewContent.userActivity.activity?.name)!) by focusing on the need(s) it fulfills: \(self.editableTexts[0].text)"
+            self.validation = .value1
             self.setupTextView()
         case (.lousy, .values):
             let editText = EditableText(feeling: .great, text: "choose value", type: .value, isMultipleSelection: true, selectedIndexes: nil)
             self.editableTexts = [editText]
             self.textView.text = "Bring \(self.editableTexts[0].text) to \((textViewContent.userActivity.activity?.name)!) by: e.g. listening to podcasts or audiobooks."
             self.promptTexts = ["e.g. listening to podcasts or audiobooks."]
+            self.validation = [.value1, .placeholder1]
             self.setupTextView()
         case (.lousy, .need):
             self.textView.text = "What I need to feel better about \((textViewContent.userActivity.activity?.name)!) that is in my control is: e.g. more adventure. To meet this need, I will take this action step: e.g. ask my friends to go mountain climbing with me"
             self.promptTexts = ["e.g. more adventure", "e.g. ask my friends to go mountain climbing with me"]
+            self.validation = [.placeholder1, .placeholder2]
             self.setupTextView()
         case (.neutral, .replace):
             self.textView.text = "Replace or move towards replacing \((textViewContent.userActivity.activity?.name)!) by: e.g., taking an online class about entrepreneurship"
             self.promptTexts = ["e.g., taking an online class about entrepreneurship"]
+            self.validation = .placeholder1
+            self.setupTextView()
         case (.neutral, .reduce):
-            self.textView.text = "Reduce the amount of time I spend on \((textViewContent.userActivity.activity?.name)!) by doing this feel-good activity instead, even for just a few minutes: e.g., do two minutes of sit-ups every hour"
+            self.textView.text = "Reduce the amount of time I spend on \((textViewContent.userActivity.activity?.name)!) by doing this feel-good activity instead, even for just a few minutes: e.g, do two minutes of sit-ups every hour"
             self.promptTexts = ["e.g, do two minutes of sit-ups every hour"]
+            self.validation = .placeholder1
             self.setupTextView()
         case (.neutral, .shift):
             let editText = EditableText(feeling: .great, text: "choose values", type: .value, isMultipleSelection: true, selectedIndexes: nil)
             self.editableTexts = [editText]
-            self.textView.text = "Shift my thoughts about \((textViewContent.userActivity.activity?.name)!) by focusing on the need(s) it fulfills: \(self.editableTexts[0].text) "
+            self.textView.text = "Shift my thoughts about \((textViewContent.userActivity.activity?.name)!) by focusing on the need(s) it fulfills: \(self.editableTexts[0].text)"
+            self.validation = .value1
             self.setupTextView()
         case (.neutral, .values):
             let editText = EditableText(feeling: .great, text: "choose values", type: .value, isMultipleSelection: true, selectedIndexes: nil)
             self.editableTexts = [editText]
             self.textView.text = "Bring \(self.editableTexts[0].text) to \((textViewContent.userActivity.activity?.name)!) by: e.g. listening to podcasts or audiobooks."
             self.promptTexts = ["e.g. listening to podcasts or audiobooks."]
+            self.validation = [.value1, .placeholder1]
             self.setupTextView()
         case (.neutral, .need):
             self.textView.text = "What I need to feel better about \((textViewContent.userActivity.activity?.name)!) that is in my control is: e.g. more adventure. To meet this need, I will take this action step: e.g. ask my friends to go mountain climbing with me"
             self.promptTexts = ["e.g. more adventure", "e.g. ask my friends to go mountain climbing with me"]
+            self.validation = .placeholder1
             self.setupTextView()
         case (.mixed, .reduce):
             self.textView.text = "Reduce the amount of time I spend on not-so-good feeling parts of \((textViewContent.userActivity.activity?.name)!) by doing this instead: taking a 15 minute walk in the afternoon"
             self.promptTexts = ["taking a 15 minute walk in the afternoon"]
+            self.validation = .placeholder1
             self.setupTextView()
         case (.mixed, .gratitude):
             self.textView.text = "Give thanks for the aspects of \((textViewContent.userActivity.activity?.name)!) that I'm greatful for. Acknowledge the gifts and blessings"
         case (.mixed, .shift):
             let editText = EditableText(feeling: .great, text: "choose values", type: .value, isMultipleSelection: true, selectedIndexes: nil)
             self.editableTexts = [editText]
-            self.textView.text = "Shift my thoughts about the non-so-good feelings parts of \((textViewContent.userActivity.activity?.name)!) by focusing on the need(s) it fulfills: \(self.editableTexts[0].text) "
+            self.textView.text = "Shift my thoughts about the non-so-good feelings parts of \((textViewContent.userActivity.activity?.name)!) by focusing on the need(s) it fulfills: \(self.editableTexts[0].text)"
+            self.validation = .value1
             self.setupTextView()
         case (.mixed, .values):
             let editText = EditableText(feeling: .great, text: "choose value", type: .value, isMultipleSelection: true, selectedIndexes: nil)
@@ -469,16 +536,19 @@ extension ZillianceTextViewController: UITextViewDelegate {
             self.editableTexts = [editText, editText2]
             self.textView.text = "Bring more \(self.editableTexts[0].text) to the good-feeling parts of \((textViewContent.userActivity.activity?.name)!) by: e.g. listening to podcasts or audiobooks. \nBring more \(self.editableTexts[1].text) to the not-so-good feeling parts by: …"
             self.promptTexts = ["e.g. listening to podcasts or audiobooks.", "…"]
+            self.validation = [.placeholder1, .placeholder2, .value1, .value2]
             self.setupTextView()
         case (.mixed, .need):
             self.textView.text = "What I need to feel better about \((textViewContent.userActivity.activity?.name)!) that is in my control is: e.g. more adventure. To meet this need, I will take this action step: e.g. ask my friends to go mountain climbing with me"
             self.promptTexts = ["e.g. more adventure", "e.g. ask my friends to go mountain climbing with me"]
+            self.validation = [.placeholder1, .placeholder2]
             self.setupTextView()
         default:
             break
         }
         
     }
+    
 }
 
 //MARK -- Extensions
