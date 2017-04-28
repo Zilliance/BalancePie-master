@@ -91,62 +91,69 @@ extension EditActivityViewController: UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        var cell: UITableViewCell!
         switch (TableSection(rawValue: indexPath.section), indexPath.row) {
+        
         case (.duration?, _):
             
-            cell = tableView.dequeueReusableCell(withIdentifier: "subtitleCell")!
-            cell.textLabel?.text = "About how long now?"
-            cell.detailTextLabel?.text = self.activity.duration.userFriendlyText
+            let cell = tableView.dequeueReusableCell(withIdentifier: "activitySubtitleCell", for: indexPath) as! ActivityTableViewCell
+            cell.titleLabel.text = "About how many hours a week do you spend on this activity now?"
+            cell.subtitleLabel.text = self.activity.duration.userFriendlyText
+            cell.selectionStyle = .none
+            return cell
             
         case (.feelingType?, _):
             
-            cell = tableView.dequeueReusableCell(withIdentifier: "subtitleCell")!
-            cell.textLabel?.text = "How do you feel now?"
-            cell.detailTextLabel?.text = self.activity.feeling.string
+            let cell = tableView.dequeueReusableCell(withIdentifier: "activitySubtitleCell", for: indexPath) as! ActivityTableViewCell
+            cell.titleLabel.text = "How do you feel when you are engaged in this activity now?"
+            cell.subtitleLabel.text = self.activity.feeling.string
+            cell.selectionStyle = .none
+            return cell
 
         case (.goodFeelings?, 0):
             
-            cell = tableView.dequeueReusableCell(withIdentifier: "subtitleCell")!
-            cell.textLabel?.text = "Feels good because"
-            if (self.activity.goodValues.count == 0)
-            {
-                cell.detailTextLabel?.text = ""
-                break
+            let cell = tableView.dequeueReusableCell(withIdentifier: "activitySubtitleCell", for: indexPath) as! ActivityTableViewCell
+            cell.titleLabel.text = "This activity feels good because of:"
+            if (self.activity.goodValues.count == 0) {
+                cell.subtitleLabel.text = ""
+            } else {
+                cell.subtitleLabel.text = self.activity.goodValues[indexPath.row].name
             }
-            cell.detailTextLabel?.text = self.activity.goodValues[indexPath.row].name
+            cell.selectionStyle = .none
+            return cell
 
         case (.badFeelings?, 0):
 
-            cell = tableView.dequeueReusableCell(withIdentifier: "subtitleCell")!
-            cell.textLabel?.text = "Feels bad because"
-            if (self.activity.badValues.count == 0)
-            {
-                cell.detailTextLabel?.text = ""
-                break
+            let cell = tableView.dequeueReusableCell(withIdentifier: "activitySubtitleCell", for: indexPath) as! ActivityTableViewCell
+            cell.titleLabel.text = "This activity feels lousy because of:"
+            if (self.activity.badValues.count == 0) {
+                cell.subtitleLabel.text = ""
+            } else {
+                cell.subtitleLabel.text = self.activity.badValues[indexPath.row].name
             }
-            cell.detailTextLabel?.text = self.activity.badValues[indexPath.row].name
+            cell.selectionStyle = .none
+            return cell
             
         case (.goodFeelings?, _):
             
-            cell = tableView.dequeueReusableCell(withIdentifier: "basicCell")!
+            let cell = tableView.dequeueReusableCell(withIdentifier: "basicCell")!
             cell.textLabel?.text = self.activity.goodValues[indexPath.row].name
+            cell.selectionStyle = .none
+            return cell
 
         case (.badFeelings?, _):
             
-            cell = tableView.dequeueReusableCell(withIdentifier: "basicCell")!
+            let cell = tableView.dequeueReusableCell(withIdentifier: "basicCell")!
             cell.textLabel?.text = self.activity.badValues[indexPath.row].name
+            cell.selectionStyle = .none
+            return cell
 
         default:
             assertionFailure()
-            break
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "basicCell")!
+            cell.selectionStyle = .none
+            return cell
         }
-        
-        cell.selectionStyle = .none
-        
-        return cell
-        
     }
     
 }
@@ -155,7 +162,13 @@ extension EditActivityViewController: UITableViewDataSource
 extension EditActivityViewController: UITableViewDelegate, UIViewControllerTransitioningDelegate
 {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return indexPath.row == 0 ? 64 : 44
+        // return 100
+        switch indexPath.section {
+        case (0..<4):
+            return 100
+        default:
+            return 34
+        }
     }
     
     func selectDuration()
