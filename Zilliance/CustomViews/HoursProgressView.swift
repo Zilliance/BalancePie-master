@@ -123,8 +123,8 @@ final class HoursProgressView: UIView {
         self.button.translatesAutoresizingMaskIntoConstraints = false
         
         self.addSubview(self.button)
-        self.button.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 0).isActive = true
-        self.button.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0).isActive = true
+        self.button.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20).isActive = true
+        self.button.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 20).isActive = true
         self.button.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
         self.button.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0).isActive = true
     }
