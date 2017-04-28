@@ -9,6 +9,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Muli-Bold.ttf">
+            <string>Muli-Bold</string>
+        </array>
         <array key="Muli-Regular.ttf">
             <string>Muli-Regular</string>
         </array>
@@ -33,13 +36,13 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="300"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zilliance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JgO-fP-Vbo">
-                                        <rect key="frame" x="146" y="30" width="84.5" height="28"/>
+                                        <rect key="frame" x="148" y="30" width="81" height="26"/>
                                         <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zIn-Jk-YWg">
-                                        <rect key="frame" x="116" y="88" width="144" height="144"/>
+                                        <rect key="frame" x="116" y="86" width="144" height="144"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pie" translatesAutoresizingMaskIntoConstraints="NO" id="aua-1q-Ahj">
                                                 <rect key="frame" x="34.5" y="20" width="75" height="75"/>
@@ -49,7 +52,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance Pie" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QIp-Nu-UIR">
-                                                <rect key="frame" x="20" y="103" width="104" height="21.5"/>
+                                                <rect key="frame" x="20" y="103" width="104" height="20"/>
                                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -92,7 +95,7 @@
                                 <rect key="frame" x="0.0" y="637" width="375" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w8D-LW-O7i">
-                                        <rect key="frame" x="178" y="0.0" width="70" height="30"/>
+                                        <rect key="frame" x="181" y="0.0" width="69" height="30"/>
                                         <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="11"/>
                                         <state key="normal" title="Privacy Policy">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -102,7 +105,7 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YgF-td-iaA">
-                                        <rect key="frame" x="258" y="10" width="1" height="10"/>
+                                        <rect key="frame" x="260" y="10" width="1" height="10"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="10" id="AMT-5d-Nc8"/>
@@ -110,7 +113,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KFT-EU-m6w">
-                                        <rect key="frame" x="269" y="2" width="98" height="26"/>
+                                        <rect key="frame" x="271" y="2.5" width="96" height="25"/>
                                         <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="11"/>
                                         <state key="normal" title="Terms &amp; Conditions">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -313,7 +316,7 @@
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aEr-PW-3Ut">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.98012467619999999" green="0.98012467619999999" blue="0.98012467619999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <string key="text">At Zilliance, we create apps, courses, podcasts, and books that help people from all walks of life develop resilience.
 
 Our research-backed resiliency skills empower you to remain calm in chaos, make decisions that align with your values, bring your best self to your work and relationships, and feel inspired by the life you are creating.
@@ -347,7 +350,121 @@ Contact us at help@zilliance.com</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n8N-ol-5KX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-634.39999999999998" y="1472.1139430284859"/>
+            <point key="canvasLocation" x="-686" y="1473"/>
+        </scene>
+        <!--Tour-->
+        <scene sceneID="h1d-cP-yFq">
+            <objects>
+                <viewController storyboardIdentifier="Tour" id="n0Z-SI-BJd" customClass="PlacholderSidebarItemViewController" customModule="Zilliance" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Afd-7K-89Q"/>
+                        <viewControllerLayoutGuide type="bottom" id="EMk-nd-qUR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8Lg-GI-9R9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting for Content" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f5P-Yf-e9T">
+                                <rect key="frame" x="73" y="198" width="228" height="30.5"/>
+                                <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="24"/>
+                                <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98012467619999999" green="0.98012467619999999" blue="0.98012467619999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="f5P-Yf-e9T" firstAttribute="centerX" secondItem="8Lg-GI-9R9" secondAttribute="centerX" id="RE7-y1-5tU"/>
+                            <constraint firstItem="f5P-Yf-e9T" firstAttribute="top" secondItem="Afd-7K-89Q" secondAttribute="bottom" constant="134" id="z10-3Z-GQm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Tour" id="pRg-Gf-uih">
+                        <barButtonItem key="leftBarButtonItem" image="drawer-toolbar-icon" id="oKZ-Ly-iOp">
+                            <connections>
+                                <action selector="backTapped" destination="n0Z-SI-BJd" id="Q2B-kB-liQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JiO-0t-U5g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-36" y="1471.2143928035982"/>
+        </scene>
+        <!--Video-->
+        <scene sceneID="fIW-hB-76i">
+            <objects>
+                <viewController storyboardIdentifier="Video" id="l5S-VY-c72" customClass="PlacholderSidebarItemViewController" customModule="Zilliance" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qMU-SO-jDT"/>
+                        <viewControllerLayoutGuide type="bottom" id="Jpz-0u-46B"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mQz-TO-W5a">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting for Content" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I1W-1L-RrQ">
+                                <rect key="frame" x="73" y="198" width="228" height="30.5"/>
+                                <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="24"/>
+                                <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98012467619999999" green="0.98012467619999999" blue="0.98012467619999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="I1W-1L-RrQ" firstAttribute="centerX" secondItem="mQz-TO-W5a" secondAttribute="centerX" id="8tH-H5-m08"/>
+                            <constraint firstItem="I1W-1L-RrQ" firstAttribute="top" secondItem="qMU-SO-jDT" secondAttribute="bottom" constant="134" id="kvq-di-8oZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Video" id="rSq-sY-Plu">
+                        <barButtonItem key="leftBarButtonItem" image="drawer-toolbar-icon" id="6Eb-Yz-LTf">
+                            <connections>
+                                <action selector="backTapped" destination="l5S-VY-c72" id="ZOM-qG-vrX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pss-gj-PhP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="652" y="1471"/>
+        </scene>
+        <!--FAQ-->
+        <scene sceneID="Zog-Vi-6Ra">
+            <objects>
+                <viewController storyboardIdentifier="FAQ" id="a7p-hr-E9e" customClass="PlacholderSidebarItemViewController" customModule="Zilliance" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LTw-nQ-Wbf"/>
+                        <viewControllerLayoutGuide type="bottom" id="GHb-M4-1ed"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tti-qw-5kP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting for Content" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Yg-Zg-m1q">
+                                <rect key="frame" x="73" y="198" width="228" height="30.5"/>
+                                <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="24"/>
+                                <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98012467619999999" green="0.98012467619999999" blue="0.98012467619999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="7Yg-Zg-m1q" firstAttribute="top" secondItem="LTw-nQ-Wbf" secondAttribute="bottom" constant="134" id="TLp-c1-hcJ"/>
+                            <constraint firstItem="7Yg-Zg-m1q" firstAttribute="centerX" secondItem="tti-qw-5kP" secondAttribute="centerX" id="eXl-JA-6hu"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="FAQ" id="iuZ-WD-HuZ">
+                        <barButtonItem key="leftBarButtonItem" image="drawer-toolbar-icon" id="taB-2R-9gt">
+                            <connections>
+                                <action selector="backTapped" destination="a7p-hr-E9e" id="Njo-pO-aeg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TXb-RD-HEJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1334" y="1470"/>
         </scene>
     </scenes>
     <resources>

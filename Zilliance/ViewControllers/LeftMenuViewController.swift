@@ -93,6 +93,24 @@ final class LeftMenuViewController: UIViewController {
         let nav = UINavigationController(rootViewController: vc)
         self.sideMenuController?.embed(centerViewController: nav)
     }
+    
+    func showTour() {
+        let vc = UIStoryboard(name: "SideMenu", bundle: nil).instantiateViewController(withIdentifier: "Tour")
+        let nav = UINavigationController(rootViewController: vc)
+        self.sideMenuController?.embed(centerViewController: nav)
+    }
+    
+    func showVideo() {
+        let vc = UIStoryboard(name: "SideMenu", bundle: nil).instantiateViewController(withIdentifier: "Video")
+        let nav = UINavigationController(rootViewController: vc)
+        self.sideMenuController?.embed(centerViewController: nav)
+    }
+    
+    func showFaq() {
+        let vc = UIStoryboard(name: "SideMenu", bundle: nil).instantiateViewController(withIdentifier: "FAQ")
+        let nav = UINavigationController(rootViewController: vc)
+        self.sideMenuController?.embed(centerViewController: nav)
+    }
 }
 
 // MARK: - Table View Delegate
@@ -124,6 +142,12 @@ extension LeftMenuViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         switch Row(rawValue: indexPath.row) {
+        case .tour?:
+            self.showTour()
+        case .videos?:
+            self.showVideo()
+        case .faq?:
+            self.showFaq()
         case .company?:
             self.showAboutCompany()
         default:
