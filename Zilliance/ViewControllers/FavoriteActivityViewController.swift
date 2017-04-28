@@ -58,8 +58,8 @@ class FavoriteActivityViewController: UIViewController, AlertsDuration {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = .lightGrayBackground
-        self.tableView.backgroundColor = .lightGrayBackground
+        self.view.backgroundColor = .lightBlueBackground
+        self.tableView.backgroundColor = .clear
         self.getStartedButton.layer.cornerRadius = App.Appearance.buttonCornerRadius
     }
     
@@ -384,7 +384,7 @@ extension FavoriteActivityViewController: UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        cell.backgroundColor = .lightGrayBackground
+        cell.backgroundColor = .clear
     }
 }
 
