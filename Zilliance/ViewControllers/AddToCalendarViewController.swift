@@ -69,7 +69,7 @@ class AddToCalendarViewController: UIViewController {
             case .value:
                 self.showAlert(message: "Please select one or more values", title: "Select Values")
             case .placeholder:
-                self.showAlert(message: "Replace the gray placeholder text with your own plan of action", title: "Enter your action item")
+                self.showAlert(message: "Replace the gray placeholder text with your own plan of action", title: "Enter your action plan")
             }
             
             return
@@ -92,7 +92,7 @@ class AddToCalendarViewController: UIViewController {
             
             SVProgressHUD.setDefaultMaskType(.black)
             SVProgressHUD.setMaximumDismissTimeInterval(1.0)
-            SVProgressHUD.showSuccess(withStatus: "The event has been added to your calendar")
+            SVProgressHUD.showSuccess(withStatus: "The reminder has been added to your calendar")
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
                 self.navigationController!.popViewController(animated: true)
             })
