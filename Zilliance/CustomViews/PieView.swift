@@ -10,7 +10,7 @@ import UIKit
 import Charts
 
 extension UIColor {
-    static let emptySlice = UIColor(white: 0.9, alpha: 1.0)
+    static let emptySlice = UIColor(white: 0.85, alpha: 1.0)
 }
 
 fileprivate let imageMinimumSizePercentageThreshold: Double = 5

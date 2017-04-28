@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="u7Z-Fh-OQW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="u7Z-Fh-OQW">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -36,7 +36,18 @@
                     <view key="view" contentMode="scaleToFill" id="tcI-s3-nxZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch-background" translatesAutoresizingMaskIntoConstraints="NO" id="77a-N0-PnI">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="77a-N0-PnI" secondAttribute="trailing" id="VUo-Lk-bJ2"/>
+                            <constraint firstItem="77a-N0-PnI" firstAttribute="leading" secondItem="tcI-s3-nxZ" secondAttribute="leading" id="cQV-RN-lOM"/>
+                            <constraint firstItem="77a-N0-PnI" firstAttribute="top" secondItem="tcI-s3-nxZ" secondAttribute="top" id="hCQ-Mv-Yiu"/>
+                            <constraint firstAttribute="bottom" secondItem="77a-N0-PnI" secondAttribute="bottom" id="s8I-lq-ulI"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="co6-uD-Fhj"/>
                 </viewController>
@@ -45,4 +56,7 @@
             <point key="canvasLocation" x="517.60000000000002" y="83.208395802098963"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="launch-background" width="375" height="667"/>
+    </resources>
 </document>
