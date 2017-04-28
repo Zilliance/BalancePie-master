@@ -82,6 +82,7 @@
 		E35668471E8C15BA00ED81D9 /* ZillianceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35668461E8C15BA00ED81D9 /* ZillianceTests.swift */; };
 		E35668521E8C15BA00ED81D9 /* ZillianceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35668511E8C15BA00ED81D9 /* ZillianceUITests.swift */; };
 		E3703C561EB3DA960004C5BD /* AboutCompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3703C551EB3DA960004C5BD /* AboutCompanyViewController.swift */; };
+		E3703C581EB3E8F80004C5BD /* PlacholderSidebarItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3703C571EB3E8F80004C5BD /* PlacholderSidebarItemViewController.swift */; };
 		E38910E51EA698A5000E1511 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38910E41EA698A5000E1511 /* UIViewController+Alerts.swift */; };
 		E3E80A451EA15526004A44AF /* UserActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E80A441EA15526004A44AF /* UserActivityTableViewCell.swift */; };
 		E3E80A471EA17CBB004A44AF /* FineTuneItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E80A461EA17CBB004A44AF /* FineTuneItemViewController.swift */; };
@@ -191,6 +192,7 @@
 		E35668511E8C15BA00ED81D9 /* ZillianceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZillianceUITests.swift; sourceTree = "<group>"; };
 		E35668531E8C15BA00ED81D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3703C551EB3DA960004C5BD /* AboutCompanyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutCompanyViewController.swift; sourceTree = "<group>"; };
+		E3703C571EB3E8F80004C5BD /* PlacholderSidebarItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacholderSidebarItemViewController.swift; sourceTree = "<group>"; };
 		E38910E41EA698A5000E1511 /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+Alerts.swift"; path = "Extensions/UIViewController+Alerts.swift"; sourceTree = "<group>"; };
 		E3E80A441EA15526004A44AF /* UserActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserActivityTableViewCell.swift; path = CustomCells/UserActivityTableViewCell.swift; sourceTree = "<group>"; };
 		E3E80A461EA17CBB004A44AF /* FineTuneItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FineTuneItemViewController.swift; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 				041C3CB61EA55BA100C52195 /* CustomSideViewController.swift */,
 				041C3CBB1EA55D8D00C52195 /* LeftMenuViewController.swift */,
 				E3703C551EB3DA960004C5BD /* AboutCompanyViewController.swift */,
+				E3703C571EB3E8F80004C5BD /* PlacholderSidebarItemViewController.swift */,
 				041C3CCD1EA7F5A000C52195 /* WebView.storyboard */,
 				041C3CCF1EA7F65A00C52195 /* WebViewController.swift */,
 			);
@@ -808,6 +811,7 @@
 				8C3EA4611E92E7BF00F56DED /* Database.swift in Sources */,
 				8C0A87C91EB12D9C000E4188 /* PartialModalTransition.swift in Sources */,
 				04647C751E97D85C0040CA46 /* FineTuneActivityViewController.swift in Sources */,
+				E3703C581EB3E8F80004C5BD /* PlacholderSidebarItemViewController.swift in Sources */,
 				041C3CD01EA7F65A00C52195 /* WebViewController.swift in Sources */,
 				E311C3341EB135F800CF23D1 /* PieHintView.swift in Sources */,
 				E3E80A471EA17CBB004A44AF /* FineTuneItemViewController.swift in Sources */,
