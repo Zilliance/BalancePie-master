@@ -11,6 +11,20 @@ import UIKit
 final class ItemWithIconCell: UITableViewCell {
     @IBOutlet var iconView: UIImageView!
     @IBOutlet var label: UILabel!
+    
+    func setChosen(_ chosen: Bool, animated: Bool) {
+        if chosen {
+            self.iconView.image = self.iconView.image?.tinted(color: .lightBlueBackground)
+            self.label.textColor = .lightBlueBackground
+            self.label.font = .muliRegular(size: 15)
+            // self.accessoryType = .checkmark
+        } else {
+            self.iconView.image = self.iconView.image?.tinted(color: .darkBlueBackground)
+            self.label.textColor = .darkBlueBackground
+            self.label.font = .muliLight(size: 15)
+            // self.accessoryType = .none
+        }
+    }
 }
 
 struct ItemSelectionViewModel {
@@ -136,7 +150,8 @@ extension ItemsSelectionViewController: UITableViewDataSource {
             
             cell.label?.text = item.title
             
-            cell.accessoryType = self.selectedItemsIndexes.contains(indexPath.row) ? .checkmark : .none
+            cell.setChosen(self.selectedItemsIndexes.contains(indexPath.row), animated: true)
+            // cell.accessoryType = self.selectedItemsIndexes.contains(indexPath.row) ? .checkmark : .none
             cell.selectionStyle = .none
 
             cell.preservesSuperviewLayoutMargins = false
@@ -161,20 +176,21 @@ extension ItemsSelectionViewController: UITableViewDelegate {
         }
         
         if !self.isMultipleSelectionEnabled {
-            if let row = self.selectedItemsIndexes.popFirst() {
-                let cell = tableView.cellForRow(at: IndexPath(row: row, section: 1))
-                cell?.accessoryType = .none
+            if let row = self.selectedItemsIndexes.popFirst(), let cell = tableView.cellForRow(at: IndexPath(row: row, section: 1)) as? ItemWithIconCell {
+                cell.setChosen(false, animated: true)
+                // cell.accessoryType = .none
             }
         }
         
-        if (!self.selectedItemsIndexes.contains(indexPath.row)) {
+        if !self.selectedItemsIndexes.contains(indexPath.row) {
             self.selectedItemsIndexes.insert(indexPath.row)
         } else {
             self.selectedItemsIndexes.remove(indexPath.row)
         }
         
-        if let cell = tableView.cellForRow(at: indexPath) {
-            cell.accessoryType = self.selectedItemsIndexes.contains(indexPath.row) ? .checkmark : .none
+        if let cell = tableView.cellForRow(at: indexPath) as? ItemWithIconCell {
+            cell.setChosen(self.selectedItemsIndexes.contains(indexPath.row), animated: true)
+            //cell.accessoryType = self.selectedItemsIndexes.contains(indexPath.row) ? .checkmark : .none
         }
     }
 }
