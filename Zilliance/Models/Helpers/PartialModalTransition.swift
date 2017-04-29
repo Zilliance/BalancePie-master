@@ -43,18 +43,20 @@ extension PartialModalTrasition: UIViewControllerAnimatedTransitioning {
     
     private func presentTransition(with transitionContext: UIViewControllerContextTransitioning) {
         let containerView = transitionContext.containerView
-        let fromViewController = transitionContext.viewController(forKey: .from)
-        let toViewController = transitionContext.viewController(forKey: .to)
         
-        guard let frame = fromViewController?.view.frame else { return }
+        guard let fromViewController = transitionContext.viewController(forKey: .from),
+            let toViewController = transitionContext.viewController(forKey: .to) else {
+            return
+        }
+        
+        let finalFrame = transitionContext.finalFrame(for: toViewController)
     
-        toViewController?.view.frame = CGRect(x: 0, y: frame.height, width: frame.width, height: frame.height)
-        containerView.addSubview((toViewController?.view)!)
-        
+        toViewController.view.frame = CGRect(x: 0, y: containerView.frame.size.height + finalFrame.size.height, width: finalFrame.size.width, height: finalFrame.size.height)
+        containerView.addSubview(toViewController.view)
         
         UIView.animate(withDuration: self.transitionDuration, animations: {
-            toViewController?.view.transform = CGAffineTransform(translationX: 0, y: -frame.height/2)
-            fromViewController?.view.alpha = 0.5
+            toViewController.view.frame = finalFrame
+            fromViewController.view.alpha = 0.5
         }) { (completed) in
             transitionContext.completeTransition(completed)
         }
