@@ -48,12 +48,14 @@ extension ItemSelectionViewModel {
 // MARK: -
 
 class ItemsSelectionViewController: UIViewController {
-
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet var cancelButton: UIBarButtonItem!
+    @IBOutlet var doneButton: UIBarButtonItem!
+    
     var items: [ItemSelectionViewModel] = []
     var createItemTitle = "Create new item"
     var selectedItemsIndexes:Set<Int> = []
     
-    @IBOutlet weak var tableView: UITableView!
     var doneAction: (([Int]) -> ())?
     var createNewItemAction: (() -> ())?
     
@@ -63,6 +65,25 @@ class ItemsSelectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.navigationBar.tintColor = .darkBlueBackground
+        self.navigationController?.navigationBar.barTintColor = .groupTableViewBackground
+        self.navigationController?.navigationBar.barStyle = .black
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.titleTextAttributes = [
+            NSForegroundColorAttributeName: UIColor.darkBlueBackground,
+            NSFontAttributeName: UIFont.muliBold(size: 18)
+        ]
+        
+        self.cancelButton.setTitleTextAttributes([
+            NSForegroundColorAttributeName: UIColor.darkBlueBackground,
+            NSFontAttributeName: UIFont.muliRegular(size: 14)
+        ], for: .normal)
+        
+        self.doneButton.setTitleTextAttributes([
+            NSForegroundColorAttributeName: UIColor.darkBlueBackground,
+            NSFontAttributeName: UIFont.muliBold(size: 14)
+        ], for: .normal)
     }
 
     override func didReceiveMemoryWarning() {
@@ -99,8 +120,7 @@ extension ItemsSelectionViewController: UITableViewDataSource {
             cell.selectionStyle = .none
             
             cell.preservesSuperviewLayoutMargins = false
-            cell.separatorInset = .zero
-            cell.layoutMargins = .zero
+            cell.hideSeparatorInsets()
 
             return cell
         } else {
@@ -120,8 +140,7 @@ extension ItemsSelectionViewController: UITableViewDataSource {
             cell.selectionStyle = .none
 
             cell.preservesSuperviewLayoutMargins = false
-            cell.separatorInset = .zero
-            cell.layoutMargins = .zero
+            cell.hideSeparatorInsets()
             
             return cell
         }

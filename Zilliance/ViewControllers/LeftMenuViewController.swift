@@ -133,7 +133,7 @@ extension LeftMenuViewController: UITableViewDelegate {
         case .howItWorks?: fallthrough
         case .about?: fallthrough
         case .spacer?:
-            cell.separatorInset = UIEdgeInsetsMake(0, 0, 0, tableView.frame.size.width)
+            cell.hideSeparatorInsets()
         default:
             break
         }
