@@ -101,9 +101,11 @@ final class LeftMenuViewController: UIViewController {
     }
     
     func showVideo() {
-        let vc = UIStoryboard(name: "SideMenu", bundle: nil).instantiateViewController(withIdentifier: "Video")
-        let nav = UINavigationController(rootViewController: vc)
-        self.sideMenuController?.embed(centerViewController: nav)
+        guard let vc  = UIStoryboard(name: "VideoPlayer", bundle: nil).instantiateInitialViewController() else {
+            assertionFailure()
+            return
+        }
+        self.sideMenuController?.embed(centerViewController: vc)
     }
     
     func showFaq() {

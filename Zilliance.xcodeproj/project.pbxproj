@@ -73,6 +73,8 @@
 		8CBBBE201E958B6300281C3C /* AddActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBBBE1E1E958B6300281C3C /* AddActivityViewController.swift */; };
 		8CBBBE211E958B6300281C3C /* AddValuesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBBBE1F1E958B6300281C3C /* AddValuesViewController.swift */; };
 		8CBBBE231E95925700281C3C /* IconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBBBE221E95925700281C3C /* IconCollectionViewCell.swift */; };
+		8CC4C95D1EB7C0A0004DF0D5 /* VideoPlayer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CC4C95C1EB7C0A0004DF0D5 /* VideoPlayer.storyboard */; };
+		8CC4C95F1EB7C0E5004DF0D5 /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC4C95E1EB7C0E5004DF0D5 /* VideoPlayerViewController.swift */; };
 		8CDAB8DA1E9BF42F006BFD4B /* FavoriteActivity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CDAB8D91E9BF42F006BFD4B /* FavoriteActivity.storyboard */; };
 		E311C3321EB126A700CF23D1 /* PieLegendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E311C3311EB126A700CF23D1 /* PieLegendView.swift */; };
 		E311C3341EB135F800CF23D1 /* PieHintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E311C3331EB135F800CF23D1 /* PieHintView.swift */; };
@@ -176,6 +178,8 @@
 		8CBBBE1E1E958B6300281C3C /* AddActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddActivityViewController.swift; path = ViewControllers/AddActivityViewController.swift; sourceTree = "<group>"; };
 		8CBBBE1F1E958B6300281C3C /* AddValuesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddValuesViewController.swift; path = ViewControllers/AddValuesViewController.swift; sourceTree = "<group>"; };
 		8CBBBE221E95925700281C3C /* IconCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IconCollectionViewCell.swift; path = CustomCells/IconCollectionViewCell.swift; sourceTree = "<group>"; };
+		8CC4C95C1EB7C0A0004DF0D5 /* VideoPlayer.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = VideoPlayer.storyboard; sourceTree = "<group>"; };
+		8CC4C95E1EB7C0E5004DF0D5 /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoPlayerViewController.swift; path = ViewControllers/VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		8CDAB8D91E9BF42F006BFD4B /* FavoriteActivity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FavoriteActivity.storyboard; sourceTree = "<group>"; };
 		D2CBE99AE0B6F1497DB66ABA /* Pods-ZillianceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZillianceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZillianceTests/Pods-ZillianceTests.release.xcconfig"; sourceTree = "<group>"; };
 		DE7A740D362571F85742B547 /* Pods_ZillianceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZillianceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -239,6 +243,8 @@
 				E3703C571EB3E8F80004C5BD /* PlacholderSidebarItemViewController.swift */,
 				041C3CCD1EA7F5A000C52195 /* WebView.storyboard */,
 				041C3CCF1EA7F65A00C52195 /* WebViewController.swift */,
+				8CC4C95C1EB7C0A0004DF0D5 /* VideoPlayer.storyboard */,
+				8CC4C95E1EB7C0E5004DF0D5 /* VideoPlayerViewController.swift */,
 			);
 			name = SideMenu;
 			sourceTree = "<group>";
@@ -288,6 +294,7 @@
 		8C3EA4571E92E4FD00F56DED /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				8CC4C95B1EB7C082004DF0D5 /* New Group */,
 				041C3CB81EA55C4800C52195 /* SideMenu */,
 				04647C6F1E97D82D0040CA46 /* FineTuneActivities */,
 				04B29A611E97AB000090E52E /* ItemsSelection */,
@@ -409,6 +416,13 @@
 				04E6F56D1E9F8CDB00EBD119 /* EditActivityViewController.swift */,
 			);
 			name = AddCustom;
+			sourceTree = "<group>";
+		};
+		8CC4C95B1EB7C082004DF0D5 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "New Group";
 			sourceTree = "<group>";
 		};
 		CC4F20BFD0C98666558B4DD6 /* Frameworks */ = {
@@ -604,6 +618,7 @@
 				8C3EA4991E93F85C00F56DED /* Muli-SemiBold.ttf in Resources */,
 				8C3EA4921E93F85C00F56DED /* Muli-ExtraBoldItalic.ttf in Resources */,
 				8C3EA4951E93F85C00F56DED /* Muli-Italic.ttf in Resources */,
+				8CC4C95D1EB7C0A0004DF0D5 /* VideoPlayer.storyboard in Resources */,
 				8C3EA4971E93F85C00F56DED /* Muli-LightItalic.ttf in Resources */,
 				8CBBBE1D1E95890700281C3C /* AddCustom.storyboard in Resources */,
 				8C3EA4981E93F85C00F56DED /* Muli-Regular.ttf in Resources */,
@@ -833,6 +848,7 @@
 				041C3CB71EA55BA100C52195 /* CustomSideViewController.swift in Sources */,
 				E311C3321EB126A700CF23D1 /* PieLegendView.swift in Sources */,
 				8C4EAE191E9FCD3500D800E4 /* FavoriteActivityViewController.swift in Sources */,
+				8CC4C95F1EB7C0E5004DF0D5 /* VideoPlayerViewController.swift in Sources */,
 				041C3CBC1EA55D8D00C52195 /* LeftMenuViewController.swift in Sources */,
 				8CBBBE231E95925700281C3C /* IconCollectionViewCell.swift in Sources */,
 			);
