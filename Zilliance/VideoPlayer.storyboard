@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="65s-Ua-8O7">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="BhA-Yb-eLh">
+            <objects>
+                <navigationController id="65s-Ua-8O7" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fif-2L-bVa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="jBe-xT-UYa" kind="relationship" relationship="rootViewController" id="kO4-xR-tQZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tDh-tY-zDd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1570" y="59"/>
+        </scene>
+        <!--Video Player View Controller-->
+        <scene sceneID="JvA-ZB-Khi">
+            <objects>
+                <viewController id="jBe-xT-UYa" customClass="VideoPlayerViewController" customModule="Zilliance" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HBx-Wc-EYZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="FfN-9X-aoR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ox4-xh-fNP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hh0-fZ-a47">
+                                <rect key="frame" x="0.0" y="184" width="375" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="0WD-P0-ybp"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="2Sc-j1-5Cq" kind="embed" id="SKI-no-DFL"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Hh0-fZ-a47" firstAttribute="leading" secondItem="ox4-xh-fNP" secondAttribute="leading" id="ZMu-hQ-rtV"/>
+                            <constraint firstAttribute="trailing" secondItem="Hh0-fZ-a47" secondAttribute="trailing" id="fdN-Yh-k3r"/>
+                            <constraint firstItem="Hh0-fZ-a47" firstAttribute="centerY" secondItem="ox4-xh-fNP" secondAttribute="centerY" id="j0O-P5-PR3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="pyq-RR-dZf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mrf-Qb-pkT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-673" y="59"/>
+        </scene>
+        <!--AV Player View Controller-->
+        <scene sceneID="c2H-eH-AVG">
+            <objects>
+                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="2Sc-j1-5Cq" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gxz-e2-rIn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="65" y="14"/>
+        </scene>
+    </scenes>
+</document>
