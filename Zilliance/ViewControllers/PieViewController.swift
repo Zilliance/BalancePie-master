@@ -236,6 +236,8 @@ class PieViewController: UIViewController {
     }
     
     private func selectHoursSlept() {
+        
+        
         let hours = Array(1...12)
         let minutes = [0,15,30,45]
         
@@ -247,8 +249,16 @@ class PieViewController: UIViewController {
         let indexHours = hours.index(of: initialHours) ?? 0
         let indexMinutes = minutes.index(of: initialMinutes) ?? 0
         
-        ActionSheetMultipleStringPicker.show(withTitle: "Time asleep in a day", rows: [hoursTexts, minutesTexts], initialSelection: [indexHours, indexMinutes], doneBlock: {[unowned self] (picker, indexes, values) in
-            
+        let picker = ActionSheetMultipleStringPicker(title: "Duration", rows: [hoursTexts, minutesTexts], initialSelection: [indexHours, indexMinutes], doneBlock: nil, cancel: nil, origin: UIButton())!
+        
+        picker.toolbarBackgroundColor = UIColor.groupTableViewBackground
+        picker.toolbarButtonsColor = UIColor.darkBlueBackground
+        let style = NSMutableParagraphStyle()
+        style.alignment = .center
+        picker.pickerTextAttributes = [NSFontAttributeName: UIFont.muliLight(size: 18.0), NSParagraphStyleAttributeName: style]
+        picker.titleTextAttributes = [NSFontAttributeName: UIFont.muliBold(size: 18.0)]
+        
+        picker.onActionSheetDone = { (picker, indexes, values) in
             guard let hourIndex = indexes?[0] as? Int, let minuteIndex = indexes?[1] as? Int else {
                 assertionFailure()
                 return
@@ -260,10 +270,11 @@ class PieViewController: UIViewController {
             Database.shared.user.saveTimeSlept(hours: hoursSelected, minutes: minutesSelected)
             
             self.refreshHours()
-            
-            }, cancel: { (picker) in
-                
-        }, origin: UIButton())
+
+        }
+    
+        picker.show()
+
     }
 
 }

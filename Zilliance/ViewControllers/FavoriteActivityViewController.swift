@@ -90,18 +90,26 @@ class FavoriteActivityViewController: UIViewController, AlertsDuration {
     
     fileprivate func selectSleepHours() {
         
-        ActionSheetMultipleStringPicker.show(withTitle: "Sleep Hours", rows: [self.sleepHours, self.minutes], initialSelection: self.selectedSleepHoursIndex, doneBlock: { (picker, indexes, values) in
-            
+        let picker = ActionSheetMultipleStringPicker(title: "Duration", rows: [self.sleepHours, self.minutes], initialSelection: self.selectedSleepHoursIndex, doneBlock: nil, cancel: nil, origin: UIButton())!
+        
+        picker.toolbarBackgroundColor = UIColor.groupTableViewBackground
+        picker.toolbarButtonsColor = UIColor.darkBlueBackground
+        let style = NSMutableParagraphStyle()
+        style.alignment = .center
+        picker.pickerTextAttributes = [NSFontAttributeName: UIFont.muliLight(size: 18.0), NSParagraphStyleAttributeName: style]
+        picker.titleTextAttributes = [NSFontAttributeName: UIFont.muliBold(size: 18.0)]
+        
+        picker.onActionSheetDone = { (picker, indexes, values) in
             self.selectedSleepHoursIndex = indexes as! [Int]
             let hour = indexes?[0] as! Int
             let minute = indexes?[1] as! Int * 15
             self.favorite.sleepDuration = hour * 60 + minute
             
-             self.tableView.reloadRows(at: [IndexPath(row: 0, section: TableSection.hours.rawValue)], with: .fade)
-            
-        }, cancel: { (picker) in
-            
-        }, origin: UITableViewCell())
+            self.tableView.reloadRows(at: [IndexPath(row: 0, section: TableSection.hours.rawValue)], with: .fade)
+        }
+        
+        
+        picker.show()
         
     }
     
@@ -157,8 +165,17 @@ class FavoriteActivityViewController: UIViewController, AlertsDuration {
     
     fileprivate func selectActivityDuration() {
         
-        ActionSheetMultipleStringPicker.show(withTitle: "Activity Duration", rows: [self.activityHours, self.minutes], initialSelection: self.selectedActivityDurationIndex, doneBlock: { (picker, indexes, values) in
-            
+        
+        let picker = ActionSheetMultipleStringPicker(title: "Duration", rows: [self.activityHours, self.minutes], initialSelection: self.selectedActivityDurationIndex, doneBlock: nil, cancel: nil, origin: UIButton())!
+        
+        picker.toolbarBackgroundColor = UIColor.groupTableViewBackground
+        picker.toolbarButtonsColor = UIColor.darkBlueBackground
+        let style = NSMutableParagraphStyle()
+        style.alignment = .center
+        picker.pickerTextAttributes = [NSFontAttributeName: UIFont.muliLight(size: 18.0), NSParagraphStyleAttributeName: style]
+        picker.titleTextAttributes = [NSFontAttributeName: UIFont.muliBold(size: 18.0)]
+        
+        picker.onActionSheetDone = { (picker, indexes, values) in
             self.selectedActivityDurationIndex = indexes as! [Int]
             let hour = indexes?[0] as! Int
             let minute = indexes?[1] as! Int * 15
@@ -180,11 +197,12 @@ class FavoriteActivityViewController: UIViewController, AlertsDuration {
                 self.favorite.activityDuration = totalTimeMinutes
                 self.tableView.reloadRows(at: [IndexPath(row: 0, section: TableSection.howLong.rawValue)], with: .fade)
             }
-            
-        }, cancel: { (picker) in
-            
-        }, origin: UITableViewCell())
+        }
         
+        
+        picker.show()
+        
+
     }
     
     fileprivate func selectValues() {

@@ -7,10 +7,10 @@ target 'Zilliance' do
 
   # Pods for Zilliance
   
-  pod 'Charts', :git => 'https://github.com/danielgindi/Charts.git', :branch => 'master'
+  pod 'Charts'
   pod 'Realm'
   pod 'RealmSwift'
-  pod 'ActionSheetPicker-3.0'
+  pod 'ActionSheetPicker-3.0', :git => 'https://github.com/ricardohg/ActionSheetPicker-3.0.git', :commit => '1bb467539758e0bac35ba7b24677999a4616f6d8'
   pod 'SideMenuController'
   pod 'SVProgressHUD'
 

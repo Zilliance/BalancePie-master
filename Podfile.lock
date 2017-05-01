@@ -12,31 +12,31 @@ PODS:
   - SVProgressHUD (2.1.2)
 
 DEPENDENCIES:
-  - ActionSheetPicker-3.0
-  - Charts (from `https://github.com/danielgindi/Charts.git`, branch `master`)
+  - ActionSheetPicker-3.0 (from `https://github.com/ricardohg/ActionSheetPicker-3.0.git`, commit `1bb467539758e0bac35ba7b24677999a4616f6d8`)
+  - Charts
   - Realm
   - RealmSwift
   - SideMenuController
   - SVProgressHUD
 
 EXTERNAL SOURCES:
-  Charts:
-    :branch: master
-    :git: https://github.com/danielgindi/Charts.git
+  ActionSheetPicker-3.0:
+    :commit: 1bb467539758e0bac35ba7b24677999a4616f6d8
+    :git: https://github.com/ricardohg/ActionSheetPicker-3.0.git
 
 CHECKOUT OPTIONS:
-  Charts:
-    :commit: 5288c2500c56d18e2a166b6783cee2626e522354
-    :git: https://github.com/danielgindi/Charts.git
+  ActionSheetPicker-3.0:
+    :commit: 1bb467539758e0bac35ba7b24677999a4616f6d8
+    :git: https://github.com/ricardohg/ActionSheetPicker-3.0.git
 
 SPEC CHECKSUMS:
   ActionSheetPicker-3.0: d11a4c12c6aaf704b8a3f56d179198c99f3e41e6
-  Charts: e955b9a241a14a8971d70143002c8ab1610d26b6
+  Charts: 236d6ccdd0ce6feae151d89e829a7397381a21fd
   Realm: 29222766425b9f831228f81b63f0e38a97a4d700
   RealmSwift: d161a80f96cb91ae88391a7d5a9cf08024a7bc8e
   SideMenuController: b463d2b3aa58e2afe57f57a07938fa9a647894ca
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
 
-PODFILE CHECKSUM: 88207fae7ce428f7a697bf4d01fee6e503ffc31c
+PODFILE CHECKSUM: ccaf05ca7c15122589280651842e1e7e918035ef
 
 COCOAPODS: 1.2.1

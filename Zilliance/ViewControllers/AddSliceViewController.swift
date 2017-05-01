@@ -351,9 +351,16 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
         let selectedHour = selectedDuration.asHoursMinutes.0
         let selectedMinutes = selectedDuration.asHoursMinutes.1 / 15
         
+        let picker = ActionSheetMultipleStringPicker(title: "Duration", rows: [hours, minutes], initialSelection: [selectedHour, selectedMinutes], doneBlock: nil, cancel: nil, origin: UIButton())!
         
-        ActionSheetMultipleStringPicker.show(withTitle: "Duration", rows: [hours, minutes], initialSelection: [selectedHour, selectedMinutes], doneBlock: { (picker, indexes, values) in
-
+        picker.toolbarBackgroundColor = UIColor.groupTableViewBackground
+        picker.toolbarButtonsColor = UIColor.darkBlueBackground
+        let style = NSMutableParagraphStyle()
+        style.alignment = .center
+        picker.pickerTextAttributes = [NSFontAttributeName: UIFont.muliLight(size: 18.0), NSParagraphStyleAttributeName: style]
+        picker.titleTextAttributes = [NSFontAttributeName: UIFont.muliBold(size: 18.0)]
+        UIFont.systemFont(ofSize: 8.0)
+        picker.onActionSheetDone = { (picker, indexes, values) in
             guard let hour = indexes?[0] as? Int, var minute = indexes?[1] as? Int else {
                 assertionFailure()
                 return
@@ -381,10 +388,11 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
                 self.tableView.reloadRows(at: [IndexPath(row: 0, section: 1)], with: .fade)
                 
             }
-            
-        }, cancel: { (picker) in
-            
-        }, origin: UIButton())
+        }
+
+        
+        picker.show()
+        
     }
     
     func selectHowItFeels()
@@ -394,16 +402,27 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
         
         let initialIndex = feelings.index(of: self.newActivity.feeling) ?? 0
         
-        ActionSheetStringPicker.show(withTitle: "How do you feel about it ?", rows: feelingsNames, initialSelection: initialIndex, doneBlock: { (picker, index, name) in
+        let picker = ActionSheetStringPicker(title: "How do you feel about it?", rows: feelingsNames, initialSelection: initialIndex, doneBlock: nil, cancel: nil, origin: tableView)!
+        
+        picker.toolbarBackgroundColor = UIColor.groupTableViewBackground
+        picker.toolbarButtonsColor = UIColor.darkBlueBackground
+        let style = NSMutableParagraphStyle()
+        style.alignment = .center
+        picker.pickerTextAttributes = [NSFontAttributeName: UIFont.muliLight(size: 18.0), NSParagraphStyleAttributeName : style]
+        picker.titleTextAttributes = [NSFontAttributeName: UIFont.muliBold(size: 14.0)]
+        
+        picker.onActionSheetDone = { (picker, index, name) in
             let feelingSections: [Int] = TableSection.feelings
             
             self.newActivity.feeling = feelings[index]
             self.tableView.reloadSections(IndexSet(feelingSections), with: .fade)
             self.tableView.endUpdates()
             
-        }, cancel: { (picker) in
-            
-        }, origin: tableView)
+        }
+        
+        picker.show()
+
+        
     }
     
     func showOptionsAlert() {
