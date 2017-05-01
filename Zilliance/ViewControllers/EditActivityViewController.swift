@@ -179,12 +179,19 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
         let selectedHour = selectedDuration.asHoursMinutes.0
         let selectedMinutes = selectedDuration.asHoursMinutes.1 / 15
         
-        ActionSheetMultipleStringPicker.show(withTitle: "Duration", rows: [hours, minutes], initialSelection: [selectedHour, selectedMinutes], doneBlock: { (picker, indexes, values) in
-            
+        let picker = ActionSheetMultipleStringPicker(title: "Duration", rows: [hours, minutes], initialSelection: [selectedHour, selectedMinutes], doneBlock: nil, cancel: nil, origin: UIButton())!
+        
+        picker.toolbarBackgroundColor = UIColor.lightGray
+        picker.toolbarButtonsColor = UIColor.black
+        picker.pickerTextAttributes = [NSFontAttributeName: UIFont.muliLight(size: 18.0)]
+        picker.titleTextAttributes = [NSFontAttributeName: UIFont.muliBold(size: 18.0)]
+        
+        picker.onActionSheetDone = { (picker, indexes, values) in
             guard let hour = indexes?[0] as? Int, var minute = indexes?[1] as? Int else {
                 assertionFailure()
                 return
             }
+            
             minute *= 15
             
             let totalTimeMinutes = hour * 60 + minute
@@ -194,7 +201,7 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
                     switch option {
                     case .allowHours:
                         self.activity.duration = totalTimeMinutes
-                        self.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .fade)
+                        self.tableView.reloadRows(at: [IndexPath(row: 0, section: 1)], with: .fade)
                     case .changeHours:
                         self.selectDuration()
                     }
@@ -202,13 +209,15 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
                 }
             }
             else {
+                
                 self.activity.duration = totalTimeMinutes
-                self.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .fade)
+                self.tableView.reloadRows(at: [IndexPath(row: 0, section: 1)], with: .fade)
+                
             }
-            
-        }, cancel: { (picker) in
-            
-        }, origin: UIButton())
+        }
+        
+        
+        picker.show()
     }
     
     func selectHowItFeels() {

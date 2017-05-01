@@ -351,9 +351,14 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
         let selectedHour = selectedDuration.asHoursMinutes.0
         let selectedMinutes = selectedDuration.asHoursMinutes.1 / 15
         
+        let picker = ActionSheetMultipleStringPicker(title: "Duration", rows: [hours, minutes], initialSelection: [selectedHour, selectedMinutes], doneBlock: nil, cancel: nil, origin: UIButton())!
         
-        ActionSheetMultipleStringPicker.show(withTitle: "Duration", rows: [hours, minutes], initialSelection: [selectedHour, selectedMinutes], doneBlock: { (picker, indexes, values) in
-
+        picker.toolbarBackgroundColor = UIColor.lightGray
+        picker.toolbarButtonsColor = UIColor.black
+        picker.pickerTextAttributes = [NSFontAttributeName: UIFont.muliLight(size: 18.0)]
+        picker.titleTextAttributes = [NSFontAttributeName: UIFont.muliBold(size: 18.0)]
+        
+        picker.onActionSheetDone = { (picker, indexes, values) in
             guard let hour = indexes?[0] as? Int, var minute = indexes?[1] as? Int else {
                 assertionFailure()
                 return
@@ -381,10 +386,11 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
                 self.tableView.reloadRows(at: [IndexPath(row: 0, section: 1)], with: .fade)
                 
             }
-            
-        }, cancel: { (picker) in
-            
-        }, origin: UIButton())
+        }
+
+        
+        picker.show()
+        
     }
     
     func selectHowItFeels()
