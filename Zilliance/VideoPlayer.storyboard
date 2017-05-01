@@ -13,7 +13,7 @@
         <scene sceneID="BhA-Yb-eLh">
             <objects>
                 <navigationController id="65s-Ua-8O7" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fif-2L-bVa">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="fif-2L-bVa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -47,14 +47,20 @@
                                 </connections>
                             </containerView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Hh0-fZ-a47" firstAttribute="leading" secondItem="ox4-xh-fNP" secondAttribute="leading" id="ZMu-hQ-rtV"/>
                             <constraint firstAttribute="trailing" secondItem="Hh0-fZ-a47" secondAttribute="trailing" id="fdN-Yh-k3r"/>
                             <constraint firstItem="Hh0-fZ-a47" firstAttribute="centerY" secondItem="ox4-xh-fNP" secondAttribute="centerY" id="j0O-P5-PR3"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="pyq-RR-dZf"/>
+                    <navigationItem key="navigationItem" id="pyq-RR-dZf">
+                        <barButtonItem key="leftBarButtonItem" image="drawer-toolbar-icon" id="ckZ-Us-abL">
+                            <connections>
+                                <action selector="backTapped:" destination="jBe-xT-UYa" id="ZLp-8l-T0G"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mrf-Qb-pkT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -69,4 +75,7 @@
             <point key="canvasLocation" x="65" y="14"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="drawer-toolbar-icon" width="20" height="20"/>
+    </resources>
 </document>
