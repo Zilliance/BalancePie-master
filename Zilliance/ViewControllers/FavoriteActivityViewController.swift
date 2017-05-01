@@ -94,7 +94,9 @@ class FavoriteActivityViewController: UIViewController, AlertsDuration {
         
         picker.toolbarBackgroundColor = UIColor.groupTableViewBackground
         picker.toolbarButtonsColor = UIColor.darkBlueBackground
-        picker.pickerTextAttributes = [NSFontAttributeName: UIFont.muliLight(size: 18.0)]
+        let style = NSMutableParagraphStyle()
+        style.alignment = .center
+        picker.pickerTextAttributes = [NSFontAttributeName: UIFont.muliLight(size: 18.0), NSParagraphStyleAttributeName: style]
         picker.titleTextAttributes = [NSFontAttributeName: UIFont.muliBold(size: 18.0)]
         
         picker.onActionSheetDone = { (picker, indexes, values) in
@@ -168,7 +170,9 @@ class FavoriteActivityViewController: UIViewController, AlertsDuration {
         
         picker.toolbarBackgroundColor = UIColor.groupTableViewBackground
         picker.toolbarButtonsColor = UIColor.darkBlueBackground
-        picker.pickerTextAttributes = [NSFontAttributeName: UIFont.muliLight(size: 18.0)]
+        let style = NSMutableParagraphStyle()
+        style.alignment = .center
+        picker.pickerTextAttributes = [NSFontAttributeName: UIFont.muliLight(size: 18.0), NSParagraphStyleAttributeName: style]
         picker.titleTextAttributes = [NSFontAttributeName: UIFont.muliBold(size: 18.0)]
         
         picker.onActionSheetDone = { (picker, indexes, values) in

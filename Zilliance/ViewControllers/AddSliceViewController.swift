@@ -355,9 +355,11 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
         
         picker.toolbarBackgroundColor = UIColor.groupTableViewBackground
         picker.toolbarButtonsColor = UIColor.darkBlueBackground
-        picker.pickerTextAttributes = [NSFontAttributeName: UIFont.muliLight(size: 18.0)]
+        let style = NSMutableParagraphStyle()
+        style.alignment = .center
+        picker.pickerTextAttributes = [NSFontAttributeName: UIFont.muliLight(size: 18.0), NSParagraphStyleAttributeName: style]
         picker.titleTextAttributes = [NSFontAttributeName: UIFont.muliBold(size: 18.0)]
-        
+        UIFont.systemFont(ofSize: 8.0)
         picker.onActionSheetDone = { (picker, indexes, values) in
             guard let hour = indexes?[0] as? Int, var minute = indexes?[1] as? Int else {
                 assertionFailure()
