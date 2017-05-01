@@ -226,16 +226,26 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
         
         let initialIndex = feelings.index(of: self.activity.feeling) ?? 0
         
-        ActionSheetStringPicker.show(withTitle: "How do you feel about it ?", rows: feelingsNames, initialSelection: initialIndex, doneBlock: { (picker, index, name) in
+        let picker = ActionSheetStringPicker(title: "How do you feel about it?", rows: feelingsNames, initialSelection: initialIndex, doneBlock: nil, cancel: nil, origin: tableView)!
+        
+        picker.toolbarBackgroundColor = UIColor.groupTableViewBackground
+        picker.toolbarButtonsColor = UIColor.darkBlueBackground
+        let style = NSMutableParagraphStyle()
+        style.alignment = .center
+        picker.pickerTextAttributes = [NSFontAttributeName: UIFont.muliLight(size: 18.0), NSParagraphStyleAttributeName : style]
+        picker.titleTextAttributes = [NSFontAttributeName: UIFont.muliBold(size: 14.0)]
+        
+        picker.onActionSheetDone = { (picker, index, name) in
             let feelingSections: [Int] = TableSection.feelings
             
             self.activity.feeling = feelings[index]
             self.tableView.reloadSections(IndexSet(feelingSections), with: .fade)
             self.tableView.endUpdates()
             
-        }, cancel: { (picker) in
-            
-        }, origin: tableView)
+        }
+        
+        picker.show()
+        
     }
     
     func selectValues(values: [Value], initialIndexes: [Int], completion: @escaping ([Int])->()) {
