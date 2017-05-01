@@ -353,8 +353,8 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
         
         let picker = ActionSheetMultipleStringPicker(title: "Duration", rows: [hours, minutes], initialSelection: [selectedHour, selectedMinutes], doneBlock: nil, cancel: nil, origin: UIButton())!
         
-        picker.toolbarBackgroundColor = UIColor.lightGray
-        picker.toolbarButtonsColor = UIColor.black
+        picker.toolbarBackgroundColor = UIColor.groupTableViewBackground
+        picker.toolbarButtonsColor = UIColor.darkBlueBackground
         picker.pickerTextAttributes = [NSFontAttributeName: UIFont.muliLight(size: 18.0)]
         picker.titleTextAttributes = [NSFontAttributeName: UIFont.muliBold(size: 18.0)]
         

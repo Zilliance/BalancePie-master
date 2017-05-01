@@ -90,10 +90,10 @@ class FavoriteActivityViewController: UIViewController, AlertsDuration {
     
     fileprivate func selectSleepHours() {
         
-        let picker = ActionSheetMultipleStringPicker(title: "Sleep Hours", rows: [self.sleepHours, self.minutes], initialSelection: self.selectedSleepHoursIndex, doneBlock: nil, cancel: nil, origin: UIButton())!
+        let picker = ActionSheetMultipleStringPicker(title: "Duration", rows: [self.sleepHours, self.minutes], initialSelection: self.selectedSleepHoursIndex, doneBlock: nil, cancel: nil, origin: UIButton())!
         
-        picker.toolbarBackgroundColor = UIColor.lightGray
-        picker.toolbarButtonsColor = UIColor.black
+        picker.toolbarBackgroundColor = UIColor.groupTableViewBackground
+        picker.toolbarButtonsColor = UIColor.darkBlueBackground
         picker.pickerTextAttributes = [NSFontAttributeName: UIFont.muliLight(size: 18.0)]
         picker.titleTextAttributes = [NSFontAttributeName: UIFont.muliBold(size: 18.0)]
         
@@ -166,8 +166,8 @@ class FavoriteActivityViewController: UIViewController, AlertsDuration {
         
         let picker = ActionSheetMultipleStringPicker(title: "Duration", rows: [self.activityHours, self.minutes], initialSelection: self.selectedActivityDurationIndex, doneBlock: nil, cancel: nil, origin: UIButton())!
         
-        picker.toolbarBackgroundColor = UIColor.lightGray
-        picker.toolbarButtonsColor = UIColor.black
+        picker.toolbarBackgroundColor = UIColor.groupTableViewBackground
+        picker.toolbarButtonsColor = UIColor.darkBlueBackground
         picker.pickerTextAttributes = [NSFontAttributeName: UIFont.muliLight(size: 18.0)]
         picker.titleTextAttributes = [NSFontAttributeName: UIFont.muliBold(size: 18.0)]
         
