@@ -76,6 +76,7 @@
 		8CDAB8DA1E9BF42F006BFD4B /* FavoriteActivity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CDAB8D91E9BF42F006BFD4B /* FavoriteActivity.storyboard */; };
 		E311C3321EB126A700CF23D1 /* PieLegendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E311C3311EB126A700CF23D1 /* PieLegendView.swift */; };
 		E311C3341EB135F800CF23D1 /* PieHintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E311C3331EB135F800CF23D1 /* PieHintView.swift */; };
+		E33247971EB42A77009E112A /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33247961EB42A77009E112A /* UITableViewCell+Extensions.swift */; };
 		E35668321E8C15BA00ED81D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35668311E8C15BA00ED81D9 /* AppDelegate.swift */; };
 		E35668391E8C15BA00ED81D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E35668381E8C15BA00ED81D9 /* Assets.xcassets */; };
 		E356683C1E8C15BA00ED81D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E356683A1E8C15BA00ED81D9 /* LaunchScreen.storyboard */; };
@@ -180,6 +181,7 @@
 		DE7A740D362571F85742B547 /* Pods_ZillianceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZillianceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E311C3311EB126A700CF23D1 /* PieLegendView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieLegendView.swift; sourceTree = "<group>"; };
 		E311C3331EB135F800CF23D1 /* PieHintView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieHintView.swift; sourceTree = "<group>"; };
+		E33247961EB42A77009E112A /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
 		E356682E1E8C15BA00ED81D9 /* Zilliance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zilliance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E35668311E8C15BA00ED81D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E35668381E8C15BA00ED81D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -334,6 +336,7 @@
 				8C3EA46D1E92E9D600F56DED /* UIFont+CustomFonts.swift */,
 				8C3EA46E1E92E9D600F56DED /* UIViewController+Extensions.swift */,
 				E38910E41EA698A5000E1511 /* UIViewController+Alerts.swift */,
+				E33247961EB42A77009E112A /* UITableViewCell+Extensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -822,6 +825,7 @@
 				8C3EA4621E92E7BF00F56DED /* User.swift in Sources */,
 				04B29A651E97AB4A0090E52E /* ItemsSelectionViewController.swift in Sources */,
 				04E6F56E1E9F8CDB00EBD119 /* EditActivityViewController.swift in Sources */,
+				E33247971EB42A77009E112A /* UITableViewCell+Extensions.swift in Sources */,
 				8C3EA4761E92E9D600F56DED /* UIViewController+Extensions.swift in Sources */,
 				8C3EA45A1E92E6D000F56DED /* PieView.swift in Sources */,
 				8C3EA4701E92E9D600F56DED /* Int+Extensions.swift in Sources */,

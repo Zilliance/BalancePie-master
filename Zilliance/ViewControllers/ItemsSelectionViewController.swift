@@ -11,6 +11,20 @@ import UIKit
 final class ItemWithIconCell: UITableViewCell {
     @IBOutlet var iconView: UIImageView!
     @IBOutlet var label: UILabel!
+    
+    func setChosen(_ chosen: Bool, animated: Bool) {
+        if chosen {
+            self.iconView.image = self.iconView.image?.tinted(color: .lightBlueBackground)
+            self.label.textColor = .lightBlueBackground
+            self.label.font = .muliRegular(size: 15)
+            // self.accessoryType = .checkmark
+        } else {
+            self.iconView.image = self.iconView.image?.tinted(color: .darkBlueBackground)
+            self.label.textColor = .darkBlueBackground
+            self.label.font = .muliLight(size: 15)
+            // self.accessoryType = .none
+        }
+    }
 }
 
 struct ItemSelectionViewModel {
@@ -48,12 +62,14 @@ extension ItemSelectionViewModel {
 // MARK: -
 
 class ItemsSelectionViewController: UIViewController {
-
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet var cancelButton: UIBarButtonItem!
+    @IBOutlet var doneButton: UIBarButtonItem!
+    
     var items: [ItemSelectionViewModel] = []
     var createItemTitle = "Create new item"
     var selectedItemsIndexes:Set<Int> = []
     
-    @IBOutlet weak var tableView: UITableView!
     var doneAction: (([Int]) -> ())?
     var createNewItemAction: (() -> ())?
     
@@ -63,6 +79,25 @@ class ItemsSelectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.navigationBar.tintColor = .darkBlueBackground
+        self.navigationController?.navigationBar.barTintColor = .groupTableViewBackground
+        self.navigationController?.navigationBar.barStyle = .black
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.titleTextAttributes = [
+            NSForegroundColorAttributeName: UIColor.darkBlueBackground,
+            NSFontAttributeName: UIFont.muliBold(size: 18)
+        ]
+        
+        self.cancelButton.setTitleTextAttributes([
+            NSForegroundColorAttributeName: UIColor.darkBlueBackground,
+            NSFontAttributeName: UIFont.muliRegular(size: 14)
+        ], for: .normal)
+        
+        self.doneButton.setTitleTextAttributes([
+            NSForegroundColorAttributeName: UIColor.darkBlueBackground,
+            NSFontAttributeName: UIFont.muliBold(size: 14)
+        ], for: .normal)
     }
 
     override func didReceiveMemoryWarning() {
@@ -99,8 +134,7 @@ extension ItemsSelectionViewController: UITableViewDataSource {
             cell.selectionStyle = .none
             
             cell.preservesSuperviewLayoutMargins = false
-            cell.separatorInset = .zero
-            cell.layoutMargins = .zero
+            cell.hideSeparatorInsets()
 
             return cell
         } else {
@@ -116,12 +150,12 @@ extension ItemsSelectionViewController: UITableViewDataSource {
             
             cell.label?.text = item.title
             
-            cell.accessoryType = self.selectedItemsIndexes.contains(indexPath.row) ? .checkmark : .none
+            cell.setChosen(self.selectedItemsIndexes.contains(indexPath.row), animated: true)
+            // cell.accessoryType = self.selectedItemsIndexes.contains(indexPath.row) ? .checkmark : .none
             cell.selectionStyle = .none
 
             cell.preservesSuperviewLayoutMargins = false
-            cell.separatorInset = .zero
-            cell.layoutMargins = .zero
+            cell.hideSeparatorInsets()
             
             return cell
         }
@@ -142,20 +176,21 @@ extension ItemsSelectionViewController: UITableViewDelegate {
         }
         
         if !self.isMultipleSelectionEnabled {
-            if let row = self.selectedItemsIndexes.popFirst() {
-                let cell = tableView.cellForRow(at: IndexPath(row: row, section: 1))
-                cell?.accessoryType = .none
+            if let row = self.selectedItemsIndexes.popFirst(), let cell = tableView.cellForRow(at: IndexPath(row: row, section: 1)) as? ItemWithIconCell {
+                cell.setChosen(false, animated: true)
+                // cell.accessoryType = .none
             }
         }
         
-        if (!self.selectedItemsIndexes.contains(indexPath.row)) {
+        if !self.selectedItemsIndexes.contains(indexPath.row) {
             self.selectedItemsIndexes.insert(indexPath.row)
         } else {
             self.selectedItemsIndexes.remove(indexPath.row)
         }
         
-        if let cell = tableView.cellForRow(at: indexPath) {
-            cell.accessoryType = self.selectedItemsIndexes.contains(indexPath.row) ? .checkmark : .none
+        if let cell = tableView.cellForRow(at: indexPath) as? ItemWithIconCell {
+            cell.setChosen(self.selectedItemsIndexes.contains(indexPath.row), animated: true)
+            //cell.accessoryType = self.selectedItemsIndexes.contains(indexPath.row) ? .checkmark : .none
         }
     }
 }

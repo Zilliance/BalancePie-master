@@ -12,6 +12,8 @@ extension UIColor {
     
     static let lightBlueBackground = UIColor.color(forRed: 1, green: 188, blue: 213, alpha: 1)
     static let darkBlueBackground = UIColor(red: 30.0/255.0, green: 43.0/255.0, blue: 62.0/255.0, alpha: 1)
+    static let darkBlueBackground2 = UIColor(red: 51.0/255.0, green: 74.0/255.0, blue: 95.0/255.0, alpha: 1)
+    static let darkBlueBackground3 = UIColor(red: 74.0/255.0, green: 100.0/255.0, blue: 124.0/255.0, alpha: 1)
     static let lightGrayBackground = UIColor(white: 0.94, alpha: 1.0)
     
     
