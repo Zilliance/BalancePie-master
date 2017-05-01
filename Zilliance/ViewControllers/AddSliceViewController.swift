@@ -351,8 +351,9 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
         let selectedHour = selectedDuration.asHoursMinutes.0
         let selectedMinutes = selectedDuration.asHoursMinutes.1 / 15
         
+        
         ActionSheetMultipleStringPicker.show(withTitle: "Duration", rows: [hours, minutes], initialSelection: [selectedHour, selectedMinutes], doneBlock: { (picker, indexes, values) in
-            
+
             guard let hour = indexes?[0] as? Int, var minute = indexes?[1] as? Int else {
                 assertionFailure()
                 return
