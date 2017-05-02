@@ -63,6 +63,8 @@ final class AddSliceViewController: UIViewController, AlertsDuration
         
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 70
+        
+        self.view.backgroundColor = UIColor.lightGrayBackground
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -205,6 +207,7 @@ extension AddSliceViewController: UITableViewDataSource
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let tapToSelectText = "Tap to select"
 
         switch (TableSection(rawValue: indexPath.section)) {

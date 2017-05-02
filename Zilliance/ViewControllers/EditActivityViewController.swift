@@ -41,6 +41,12 @@ final class EditActivityViewController: UIViewController, AlertsDuration {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupViews()
+        
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 70
+        
+        self.view.backgroundColor = UIColor.lightGrayBackground
+
     }
     
     private func setupViews() {
@@ -76,7 +82,7 @@ extension EditActivityViewController: UITableViewDataSource
                 return 0
             }
             
-            return max(self.activity.goodValues.count, 1)
+            return 1
         case TableSection.badFeelings.rawValue:
             
             if (self.activity.feeling == .great)
@@ -84,76 +90,63 @@ extension EditActivityViewController: UITableViewDataSource
                 return 0
             }
             
-            return max(self.activity.badValues.count, 1)
+            return 1
         default:
             return 1
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch (TableSection(rawValue: indexPath.section), indexPath.row) {
         
-        case (.duration?, _):
-            
-            let cell = tableView.dequeueReusableCell(withIdentifier: "activitySubtitleCell", for: indexPath) as! ActivityTableViewCell
-            cell.titleLabel.text = "About how many hours a week do you spend on this activity now?"
-            cell.subtitleLabel.text = self.activity.duration.userFriendlyText ?? ""
-            cell.selectionStyle = .none
-            return cell
-            
-        case (.feelingType?, _):
-            
-            let cell = tableView.dequeueReusableCell(withIdentifier: "activitySubtitleCell", for: indexPath) as! ActivityTableViewCell
-            cell.titleLabel.text = "How do you feel when you are engaged in this activity now?"
-            cell.subtitleLabel.text = self.activity.feeling.string
-            cell.selectionStyle = .none
-            return cell
+        let tapToSelectText = "Tap to select"
 
-        case (.goodFeelings?, 0):
+        switch (TableSection(rawValue: indexPath.section)) {
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: "activitySubtitleCell", for: indexPath) as! ActivityTableViewCell
+        case (.duration?):
+            let cell = tableView.dequeueReusableCell(withIdentifier: "basicCell", for: indexPath) as! ActivityTableViewCell
+            
+            cell.titleLabel.text = "Roughly how many hours a week do you spend on this activity?"
+            cell.subtitleLabel.text = self.activity.duration.userFriendlyText ?? tapToSelectText
+            cell.selectionStyle = .none
+            
+            return cell
+            
+        case (.feelingType?):
+            let cell = tableView.dequeueReusableCell(withIdentifier: "basicCell", for: indexPath) as! ActivityTableViewCell
+            
+            cell.titleLabel.text = "How do you feel when you are engaged in this activity?"
+            cell.subtitleLabel.text = self.activity.feeling.string ?? tapToSelectText
+            cell.selectionStyle = .none
+            
+            return cell
+            
+        case (.goodFeelings?):
+            let cell = tableView.dequeueReusableCell(withIdentifier: "valuesCell", for: indexPath) as! ActivityTableViewCell
+            
+            let text = self.activity.goodValues.map{$0.name}.joined(separator: ", ")
+            
             cell.titleLabel.text = "This activity feels good because of:"
-            if (self.activity.goodValues.count == 0) {
-                cell.subtitleLabel.text = ""
-            } else {
-                cell.subtitleLabel.text = self.activity.goodValues[indexPath.row].name
-            }
+            cell.subtitleLabel.text = text.characters.count > 0 ? text : tapToSelectText
             cell.selectionStyle = .none
+            
             return cell
-
-        case (.badFeelings?, 0):
-
-            let cell = tableView.dequeueReusableCell(withIdentifier: "activitySubtitleCell", for: indexPath) as! ActivityTableViewCell
+            
+        case (.badFeelings?):
+            let cell = tableView.dequeueReusableCell(withIdentifier: "valuesCell", for: indexPath) as! ActivityTableViewCell
+            let text = self.activity.badValues.map{$0.name}.joined(separator: ", ")
+            
             cell.titleLabel.text = "This activity feels lousy because of:"
-            if (self.activity.badValues.count == 0) {
-                cell.subtitleLabel.text = ""
-            } else {
-                cell.subtitleLabel.text = self.activity.badValues[indexPath.row].name
-            }
+            cell.subtitleLabel.text = text.characters.count > 0 ? text : tapToSelectText
             cell.selectionStyle = .none
+            
             return cell
             
-        case (.goodFeelings?, _):
-            
-            let cell = tableView.dequeueReusableCell(withIdentifier: "basicCell")!
-            cell.textLabel?.text = self.activity.goodValues[indexPath.row].name
-            cell.selectionStyle = .none
-            return cell
-
-        case (.badFeelings?, _):
-            
-            let cell = tableView.dequeueReusableCell(withIdentifier: "basicCell")!
-            cell.textLabel?.text = self.activity.badValues[indexPath.row].name
-            cell.selectionStyle = .none
-            return cell
-
         default:
-            assertionFailure()
-            
-            let cell = tableView.dequeueReusableCell(withIdentifier: "basicCell")!
+            let cell = tableView.dequeueReusableCell(withIdentifier: "basicCell", for: indexPath)
             cell.selectionStyle = .none
             return cell
         }
+
     }
     
 }
@@ -161,15 +154,6 @@ extension EditActivityViewController: UITableViewDataSource
 
 extension EditActivityViewController: UITableViewDelegate, UIViewControllerTransitioningDelegate
 {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        // return 100
-        switch indexPath.section {
-        case (0..<4):
-            return 100
-        default:
-            return 34
-        }
-    }
     
     func selectDuration()
     {
