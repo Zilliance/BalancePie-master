@@ -10,8 +10,17 @@ import UIKit
 import ActionSheetPicker_3_0
 
 private let headerCellIdentifier = "headerCell"
-private let userActivityCellIdentifier = "userActivityCell"
+private let userActivityCellIdentifier = "sleepCell"
 private let valueCellIdentifier = "basicCell"
+private let activityCellIdentifier = "activityCell"
+
+class FavoriteActivityCell: UITableViewCell {
+    
+    @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet weak var questionLabel: UILabel!
+    @IBOutlet weak var answerLabel: UILabel!
+    
+}
 
 class FavoriteActivityViewController: UIViewController, AlertsDuration {
     @IBOutlet weak var tableView: UITableView!
@@ -20,11 +29,11 @@ class FavoriteActivityViewController: UIViewController, AlertsDuration {
     fileprivate enum TableSection: Int {
         case header = 0
         case hours
+        case activityTitle
         case activity
         case howLong
         case feels
-        
-        static var count = 5
+        static var count = 6
     }
     
     fileprivate struct Favorite {
@@ -63,8 +72,10 @@ class FavoriteActivityViewController: UIViewController, AlertsDuration {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = .lightBlueBackground
+        self.view.backgroundColor = .lightGrayBackground
         self.tableView.backgroundColor = .clear
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 50
         self.getStartedButton.layer.cornerRadius = App.Appearance.buttonCornerRadius
     }
     
@@ -105,7 +116,7 @@ class FavoriteActivityViewController: UIViewController, AlertsDuration {
             let minute = indexes?[1] as! Int * 15
             self.favorite.sleepDuration = hour * 60 + minute
             
-            self.tableView.reloadRows(at: [IndexPath(row: 0, section: TableSection.hours.rawValue)], with: .fade)
+            self.tableView.reloadRows(at: [IndexPath(row: TableSection.hours.rawValue, section: 0)], with: .fade)
         }
         
         
@@ -159,7 +170,7 @@ class FavoriteActivityViewController: UIViewController, AlertsDuration {
             }
             
             self.favorite.activity = activities[indexes.first!]
-               self.tableView.reloadRows(at: [IndexPath(row: 0, section: TableSection.activity.rawValue)], with: .fade)
+               self.tableView.reloadRows(at: [IndexPath(row: TableSection.activity.rawValue, section: 0)], with: .fade)
         }
     }
     
@@ -187,7 +198,7 @@ class FavoriteActivityViewController: UIViewController, AlertsDuration {
                     switch option {
                     case .allowHours:
                         self.favorite.activityDuration = totalTimeMinutes
-                        self.tableView.reloadRows(at: [IndexPath(row: 0, section: TableSection.howLong.rawValue)], with: .fade)
+                        self.tableView.reloadRows(at: [IndexPath(row: TableSection.howLong.rawValue, section: 0)], with: .fade)
                     case .changeHours:
                         self.selectActivityDuration()
                     }
@@ -195,7 +206,7 @@ class FavoriteActivityViewController: UIViewController, AlertsDuration {
             }
             else {
                 self.favorite.activityDuration = totalTimeMinutes
-                self.tableView.reloadRows(at: [IndexPath(row: 0, section: TableSection.howLong.rawValue)], with: .fade)
+                self.tableView.reloadRows(at: [IndexPath(row: TableSection.howLong.rawValue, section: 0)], with: .fade)
             }
         }
         
@@ -258,7 +269,7 @@ class FavoriteActivityViewController: UIViewController, AlertsDuration {
             
             self.favorite.values = selectedValues
             
-            self.tableView.reloadSections(IndexSet([TableSection.feels.rawValue]), with: .fade)
+            self.tableView.reloadRows(at: [IndexPath(row: TableSection.feels.rawValue, section: 0)], with: .fade)
 
         }
         
@@ -352,26 +363,20 @@ class FavoriteActivityViewController: UIViewController, AlertsDuration {
 extension FavoriteActivityViewController: UITableViewDataSource
 {
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return TableSection.count
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case TableSection.feels.rawValue:
-            return max(self.favorite.values.count, 1)
-        default:
-            return 1
-        }
+        
+        return TableSection.count
+       
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch (TableSection(rawValue: indexPath.section), indexPath.row) {
+        switch (TableSection(rawValue: indexPath.row)) {
         
-        case (.header?, _):
+        case .header?:
             return tableView.dequeueReusableCell(withIdentifier: headerCellIdentifier, for: indexPath)
             
-        case (.hours?, _):
+        case .hours?:
             let cell = tableView.dequeueReusableCell(withIdentifier: userActivityCellIdentifier, for: indexPath) as! UserActivityTableViewCell
             
             cell.titleLabel.text = "About how many hours do you sleep in a night?"
@@ -379,33 +384,43 @@ extension FavoriteActivityViewController: UITableViewDataSource
             
             return cell
             
-        case (.activity?, _):
-            let cell = tableView.dequeueReusableCell(withIdentifier: userActivityCellIdentifier, for: indexPath) as! UserActivityTableViewCell
+        case .activityTitle?:
+            return tableView.dequeueReusableCell(withIdentifier: valueCellIdentifier, for: indexPath)
             
-            cell.titleLabel.text = "What is one of your favorite activities?"
-            cell.valueLabel.text = self.favorite.activity?.name ?? ""
+        case .activity?:
+            let cell = tableView.dequeueReusableCell(withIdentifier: activityCellIdentifier, for: indexPath) as! FavoriteActivityCell
             
+            cell.questionLabel.text = "What is one of your favorite activities?"
+            cell.answerLabel.text = self.favorite.activity != nil ? self.favorite.activity?.name : " "
+            cell.iconImageView.image = #imageLiteral(resourceName: "iconActivities").tinted(color: UIColor.darkBlueBackground)
             return cell
             
-        case (.howLong?, _):
-            let cell = tableView.dequeueReusableCell(withIdentifier: userActivityCellIdentifier, for: indexPath) as! UserActivityTableViewCell
+        case .howLong?:
+            let cell = tableView.dequeueReusableCell(withIdentifier: activityCellIdentifier, for: indexPath) as! FavoriteActivityCell
            
-            cell.titleLabel.text = "Roughly how many hours a week do you spend on this activity?"
-            cell.valueLabel.text = self.favorite.activityDuration.userFriendlyText ?? ""
-            
+            cell.questionLabel.text = "Roughly how many hours a week do you spend on this activity?"
+            cell.answerLabel.text = self.favorite.activityDuration.userFriendlyText ?? ""
+            cell.iconImageView.image = #imageLiteral(resourceName: "iconBalancepieGray").tinted(color: UIColor.darkBlueBackground)
             return cell
             
-        case (.feels?, 0):
-            let cell = tableView.dequeueReusableCell(withIdentifier: userActivityCellIdentifier, for: indexPath) as! UserActivityTableViewCell
+        case .feels?:
+            let cell = tableView.dequeueReusableCell(withIdentifier: activityCellIdentifier, for: indexPath) as! FavoriteActivityCell
             
-            cell.titleLabel.text = "Why does this activity feel good?"
-            cell.valueLabel.text = self.favorite.values.count == 0 ? "" : self.favorite.values[indexPath.row].name
+            cell.questionLabel.text = "Why does this activity feel good?"
             
-            return cell
+            var valuesName = self.favorite.values.first?.name ?? " "
+            if self.favorite.values.count > 0 {
+                self.favorite.values.remove(at: 0)
+                
+                self.favorite.values.forEach({ (value) in
+                    valuesName = valuesName + ", \(value.name)"
+                    
+                })
+            }
+
             
-        case (.feels?, _):
-            let cell = tableView.dequeueReusableCell(withIdentifier: valueCellIdentifier, for: indexPath)
-            cell.textLabel?.text = self.favorite.values[indexPath.row].name
+            cell.answerLabel.text = valuesName
+            cell.iconImageView.image = #imageLiteral(resourceName: "value").tinted(color: UIColor.darkBlueBackground)
             
             return cell
     
@@ -424,18 +439,11 @@ extension FavoriteActivityViewController: UITableViewDataSource
 
 extension FavoriteActivityViewController: UITableViewDelegate, UIViewControllerTransitioningDelegate
 {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch (TableSection(rawValue: indexPath.section), indexPath.row) {
-        case (.hours?, _): return 120
-        case (_, 0): return 96
-        default: return 44
-        }
-    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        switch TableSection(rawValue: indexPath.section) {
+        switch TableSection(rawValue: indexPath.row) {
         case .hours?:
             self.selectSleepHours()
             
