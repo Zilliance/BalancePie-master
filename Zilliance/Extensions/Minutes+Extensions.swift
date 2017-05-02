@@ -23,7 +23,11 @@ extension Minutes {
         return "\(self.asHoursMinutes.0.timeText):\(self.asHoursMinutes.1.timeText)"
     }
     
-    var userFriendlyText: String {
+    var userFriendlyText: String? {
+        
+        guard self > 0 else {
+            return nil
+        }
         
         var hourText = ""
         var minText = ""

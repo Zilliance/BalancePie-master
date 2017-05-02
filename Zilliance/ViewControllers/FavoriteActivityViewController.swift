@@ -375,7 +375,7 @@ extension FavoriteActivityViewController: UITableViewDataSource
             let cell = tableView.dequeueReusableCell(withIdentifier: userActivityCellIdentifier, for: indexPath) as! UserActivityTableViewCell
             
             cell.titleLabel.text = "About how many hours do you sleep in a night?"
-            cell.valueLabel.text = self.favorite.sleepDuration >= 0 ? self.favorite.sleepDuration.userFriendlyText : ""
+            cell.valueLabel.text = self.favorite.sleepDuration.userFriendlyText ?? ""
             
             return cell
             
@@ -391,7 +391,7 @@ extension FavoriteActivityViewController: UITableViewDataSource
             let cell = tableView.dequeueReusableCell(withIdentifier: userActivityCellIdentifier, for: indexPath) as! UserActivityTableViewCell
            
             cell.titleLabel.text = "Roughly how many hours a week do you spend on this activity?"
-            cell.valueLabel.text = self.favorite.activityDuration >= 0 ? self.favorite.activityDuration.userFriendlyText : ""
+            cell.valueLabel.text = self.favorite.activityDuration.userFriendlyText ?? ""
             
             return cell
             

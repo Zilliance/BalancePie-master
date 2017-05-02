@@ -97,7 +97,7 @@ extension EditActivityViewController: UITableViewDataSource
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "activitySubtitleCell", for: indexPath) as! ActivityTableViewCell
             cell.titleLabel.text = "About how many hours a week do you spend on this activity now?"
-            cell.subtitleLabel.text = self.activity.duration.userFriendlyText
+            cell.subtitleLabel.text = self.activity.duration.userFriendlyText ?? ""
             cell.selectionStyle = .none
             return cell
             
