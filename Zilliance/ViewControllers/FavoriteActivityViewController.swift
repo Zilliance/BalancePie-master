@@ -75,6 +75,7 @@ class FavoriteActivityViewController: UIViewController, AlertsDuration {
         self.view.backgroundColor = .lightGrayBackground
         self.tableView.backgroundColor = .clear
         self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 50
         self.getStartedButton.layer.cornerRadius = App.Appearance.buttonCornerRadius
     }
     
@@ -438,10 +439,6 @@ extension FavoriteActivityViewController: UITableViewDataSource
 
 extension FavoriteActivityViewController: UITableViewDelegate, UIViewControllerTransitioningDelegate
 {
-
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
-    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
