@@ -371,6 +371,9 @@ extension FavoriteActivityViewController: UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let tapToSelectText = "Tap to select"
+        
         switch (TableSection(rawValue: indexPath.row)) {
         
         case .header?:
@@ -380,7 +383,7 @@ extension FavoriteActivityViewController: UITableViewDataSource
             let cell = tableView.dequeueReusableCell(withIdentifier: userActivityCellIdentifier, for: indexPath) as! UserActivityTableViewCell
             
             cell.titleLabel.text = "About how many hours do you sleep in a night?"
-            cell.valueLabel.text = self.favorite.sleepDuration.userFriendlyText ?? ""
+            cell.valueLabel.text = self.favorite.sleepDuration.userFriendlyText ?? tapToSelectText
             
             return cell
             
@@ -391,7 +394,7 @@ extension FavoriteActivityViewController: UITableViewDataSource
             let cell = tableView.dequeueReusableCell(withIdentifier: activityCellIdentifier, for: indexPath) as! FavoriteActivityCell
             
             cell.questionLabel.text = "What is one of your favorite activities?"
-            cell.answerLabel.text = self.favorite.activity != nil ? self.favorite.activity?.name : " "
+            cell.answerLabel.text = self.favorite.activity != nil ? self.favorite.activity?.name : tapToSelectText
             cell.iconImageView.image = #imageLiteral(resourceName: "iconActivities").tinted(color: UIColor.darkBlueBackground)
             return cell
             
@@ -399,7 +402,7 @@ extension FavoriteActivityViewController: UITableViewDataSource
             let cell = tableView.dequeueReusableCell(withIdentifier: activityCellIdentifier, for: indexPath) as! FavoriteActivityCell
            
             cell.questionLabel.text = "Roughly how many hours a week do you spend on this activity?"
-            cell.answerLabel.text = self.favorite.activityDuration.userFriendlyText ?? ""
+            cell.answerLabel.text = self.favorite.activityDuration.userFriendlyText ?? tapToSelectText
             cell.iconImageView.image = #imageLiteral(resourceName: "iconBalancepieGray").tinted(color: UIColor.darkBlueBackground)
             return cell
             
@@ -408,12 +411,14 @@ extension FavoriteActivityViewController: UITableViewDataSource
             
             cell.questionLabel.text = "Why does this activity feel good?"
             
-            var valuesName = self.favorite.values.first?.name ?? " "
-            if self.favorite.values.count > 0 {
-                self.favorite.values.remove(at: 0)
+            
+            var valuesNames = self.favorite.values.map { $0.name }
+            var valuesName = valuesNames.first ?? tapToSelectText
+            if valuesNames.count > 0 {
+                valuesNames.remove(at: 0)
                 
-                self.favorite.values.forEach({ (value) in
-                    valuesName = valuesName + ", \(value.name)"
+                valuesNames.forEach({ (value) in
+                    valuesName = valuesName + ", \(value)"
                     
                 })
             }
