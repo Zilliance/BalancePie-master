@@ -21,12 +21,12 @@ class OnboardingPageViewController: UIPageViewController {
     
     fileprivate(set) lazy var introViewControllers: [UIViewController]  = {
         return [
-//            self.viewController(for: .first),
-//            self.viewController(for: .second),
-//            self.viewController(for: .third),
-//            self.viewController(for: .fourth),
-//            self.viewController(for: .fifth),
-//            self.viewController(for: .sixth),
+            self.viewController(for: .first),
+            self.viewController(for: .second),
+            self.viewController(for: .third),
+            self.viewController(for: .fourth),
+            self.viewController(for: .fifth),
+            self.viewController(for: .sixth),
             self.favoriteViewController,
         ]
     }()

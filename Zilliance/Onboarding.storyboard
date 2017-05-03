@@ -247,7 +247,7 @@
                                 <rect key="frame" x="16" y="60" width="343" height="371"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Update a Slice" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kKl-dp-zEE">
-                                <rect key="frame" x="112.5" y="471" width="152" height="21.5"/>
+                                <rect key="frame" x="111.5" y="471" width="152" height="21.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21.5" id="Shs-LA-fxe"/>
                                 </constraints>
