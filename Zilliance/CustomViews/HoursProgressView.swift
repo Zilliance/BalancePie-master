@@ -144,7 +144,7 @@ final class HoursProgressView: UIView {
         let sleepPecentage = CGFloat(self.sleepHours) / hoursInAWeek
         let width = self.progressTrack.frame.width
         
-        self.filledLabel.text = "\(self.activeHours) of \(self.availableHours) hours filled"
+        self.filledLabel.text = "\(self.activeHours) of \(self.availableHours) weekly hours filled"
         self.sleepLabel.text = "Asleep \(self.sleepHours) hours"
         
         self.progressBarWidthConstraint.constant = min(activePercentage, 1) * width
