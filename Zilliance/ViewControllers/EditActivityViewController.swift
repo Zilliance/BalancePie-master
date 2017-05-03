@@ -96,6 +96,7 @@ extension EditActivityViewController: UITableViewDataSource
         }
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let tapToSelectText = "Tap to select"
@@ -123,7 +124,7 @@ extension EditActivityViewController: UITableViewDataSource
         case (.goodFeelings?):
             let cell = tableView.dequeueReusableCell(withIdentifier: "valuesCell", for: indexPath) as! ActivityTableViewCell
             
-            let text = self.activity.goodValues.map{$0.name}.joined(separator: ", ")
+            let text = self.activity.goodValues.map{$0.name}.joined(separator: "\n")
             
             cell.titleLabel.text = "This activity feels good because of:"
             cell.subtitleLabel.text = text.characters.count > 0 ? text : tapToSelectText
@@ -133,7 +134,7 @@ extension EditActivityViewController: UITableViewDataSource
             
         case (.badFeelings?):
             let cell = tableView.dequeueReusableCell(withIdentifier: "valuesCell", for: indexPath) as! ActivityTableViewCell
-            let text = self.activity.badValues.map{$0.name}.joined(separator: ", ")
+            let text = self.activity.badValues.map{$0.name}.joined(separator: "\n")
             
             cell.titleLabel.text = "This activity feels lousy because of:"
             cell.subtitleLabel.text = text.characters.count > 0 ? text : tapToSelectText
@@ -154,6 +155,24 @@ extension EditActivityViewController: UITableViewDataSource
 
 extension EditActivityViewController: UITableViewDelegate, UIViewControllerTransitioningDelegate
 {
+    
+    fileprivate func scrollToLastRow() {
+        
+        var lastSectionShown = TableSection.feelingType.rawValue
+        
+        if (self.activity.feeling == .lousy || self.activity.feeling == .neutral || self.activity.feeling == .mixed)
+        {
+            lastSectionShown = TableSection.badFeelings.rawValue
+        }
+        else
+        {
+            lastSectionShown = TableSection.goodFeelings.rawValue
+        }
+        
+        let lastRow = IndexPath(row: 0, section: lastSectionShown)
+        
+        self.tableView.scrollToRow(at: lastRow, at: .bottom, animated: true)
+    }
     
     func selectDuration()
     {
@@ -226,7 +245,7 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
             
             self.activity.feeling = feelings[index]
             self.tableView.reloadSections(IndexSet(feelingSections), with: .fade)
-            self.tableView.endUpdates()
+            self.scrollToLastRow()
             
         }
         
@@ -290,6 +309,8 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
                 }
                 
                 self.tableView.reloadSections(IndexSet([TableSection.goodFeelings.rawValue]), with: .fade)
+                self.scrollToLastRow()
+
             })
 
         case .badFeelings?:
@@ -306,6 +327,8 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
                 }
                 
                 self.tableView.reloadSections(IndexSet([TableSection.badFeelings.rawValue]), with: .fade)
+                self.scrollToLastRow()
+
             })
             
         default:
