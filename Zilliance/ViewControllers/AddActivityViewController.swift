@@ -15,7 +15,9 @@ class AddActivityViewController: UIViewController, UICollectionViewDataSource, U
     @IBOutlet weak var selectAnIconLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var createActivityButton: UIButton!
-    
+
+    var dismissAction: ((Activity?) -> ())?
+
     private var selectedIconName: String?
     
     private let iconNames = ["chores", "driving", "exercise", "familyTime", "hobbies", "leisureTime", "quietTime", "reading", "romance", "socialNetworking", "spiritualPractice", "talkingOnPhone", "timeWithFriends", "treatment", "tv", "volunterring", "work"]
@@ -71,8 +73,15 @@ class AddActivityViewController: UIViewController, UICollectionViewDataSource, U
         //TODO: move this to the model
         try! Database.shared.realm.write {
             Database.shared.realm.add(activity)
-            self.dismiss(animated: true, completion: nil)
         }
+        
+        self.dismiss(activity: activity)
+    }
+    
+    private func dismiss(activity: Activity?)
+    {
+        self.dismiss(animated: true, completion: nil)
+        self.dismissAction?(activity)
     }
     
     private func checkIfActivityAlreadyExists(withName name:String) -> Bool {
@@ -123,7 +132,7 @@ class AddActivityViewController: UIViewController, UICollectionViewDataSource, U
     // MARK: User Actions
     
     @IBAction func closeView(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(activity: nil)
     }
     
     @IBAction func createActivity(_ sender: Any) {

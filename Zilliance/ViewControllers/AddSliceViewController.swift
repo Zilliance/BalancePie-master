@@ -69,10 +69,6 @@ final class AddSliceViewController: UIViewController, AlertsDuration
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if self.isPresentingActivities {
-            self.selectActivityName()
-        }
-        self.isPresentingActivities = false
     }
     
     func validateValues() -> Bool
@@ -305,6 +301,12 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
         itemSelectionViewController.createItemTitle = "Create my own activity"
         itemSelectionViewController.items = ItemSelectionViewModel.items(from: activities)
         itemSelectionViewController.isMultipleSelectionEnabled = false
+        
+        if let selectedActivity = self.newActivity.activity,  let index = activities.index(of: selectedActivity)
+        {
+            itemSelectionViewController.selectedItemsIndexes = Set([index])
+        }
+        
         let navigationController = UINavigationController(rootViewController: itemSelectionViewController)
         navigationController.modalPresentationStyle = .custom
         navigationController.transitioningDelegate = self
@@ -316,13 +318,24 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
         itemSelectionViewController.createNewItemAction = {
 
             itemSelectionViewController.dismiss(animated: true, completion: {
-                guard let customActivityViewController = UIStoryboard(name: "AddCustom", bundle: nil).instantiateViewController(withIdentifier: "AddActivity") as? UINavigationController else {
+                guard let customActivityViewController = UIStoryboard(name: "AddCustom", bundle: nil).instantiateViewController(withIdentifier: "AddActivityViewController") as? AddActivityViewController else {
                     assertionFailure()
                     return
                 }
-                self.isPresentingActivities = true
+                
+                customActivityViewController.dismissAction = { newActivity in
+                    if let newActivity = newActivity {
+                        self.newActivity.activity = newActivity
+                        self.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .fade)
+                    }
+                    
+                    self.selectActivityName()
 
-                self.present(customActivityViewController, animated: true, completion: nil)
+                }
+                
+                let navigation = UINavigationController(rootViewController: customActivityViewController)
+                self.present(navigation, animated: true, completion: nil)
+
             })
             
         }
