@@ -284,7 +284,7 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
         }
 
         itemSelectionViewController.title = "Activities"
-        itemSelectionViewController.createItemTitle = "Create my own"
+        itemSelectionViewController.createItemTitle = "Create my own activity"
         itemSelectionViewController.items = ItemSelectionViewModel.items(from: activities)
         itemSelectionViewController.isMultipleSelectionEnabled = false
         let navigationController = UINavigationController(rootViewController: itemSelectionViewController)
@@ -445,7 +445,7 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
             }
             
             itemsVC.title = "Values"
-            itemsVC.createItemTitle = "Create a new Value"
+            itemsVC.createItemTitle = "Create my own value"
             itemsVC.createNewItemAction = {
                 print("this should launch a controller to show the activity creation")
             }

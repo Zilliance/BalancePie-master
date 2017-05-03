@@ -247,7 +247,7 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
             }
             
             itemsVC.title = "Values"
-            itemsVC.createItemTitle = "Create a new Value"
+            itemsVC.createItemTitle = "Create my own value"
             itemsVC.createNewItemAction = {
                 print("this should launch a controller to show the activity creation")
             }

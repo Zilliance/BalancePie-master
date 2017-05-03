@@ -134,7 +134,7 @@ class FavoriteActivityViewController: UIViewController, AlertsDuration {
         }
         
         let activities: [Activity] = Array(Database.shared.allActivities())
-        itemSelectionViewController.createItemTitle = "Create my own"
+        itemSelectionViewController.createItemTitle = "Create my own activity"
         itemSelectionViewController.title = "Activities"
         itemSelectionViewController.items = ItemSelectionViewModel.items(from: activities)
         itemSelectionViewController.isMultipleSelectionEnabled = false
@@ -226,7 +226,7 @@ class FavoriteActivityViewController: UIViewController, AlertsDuration {
         }
         
         let values: [Value] = Array(Database.shared.allValues()).filter { $0.type == .good }
-        itemSelectionViewController.createItemTitle = "Create my own"
+        itemSelectionViewController.createItemTitle = "Create my own value"
         itemSelectionViewController.items = ItemSelectionViewModel.items(from: values)
         itemSelectionViewController.title = "Values"
         
