@@ -353,7 +353,7 @@ extension ZillianceTextViewController: UITextViewDelegate {
             switch editText.feeling {
             case .great:
                 values = values.filter { $0.type == .good }
-                    .sorted { $0.0.order == 1 }
+                    .sorted { $0.order.rawValue < $1.order.rawValue }
                 
             case .lousy:
                 values = values.filter { $0.type == .bad }

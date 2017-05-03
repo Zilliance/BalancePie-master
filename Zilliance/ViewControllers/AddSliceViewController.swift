@@ -69,10 +69,6 @@ final class AddSliceViewController: UIViewController, AlertsDuration
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if self.isPresentingActivities {
-            self.selectActivityName()
-        }
-        self.isPresentingActivities = false
     }
     
     func validateValues() -> Bool
@@ -297,7 +293,7 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
         }
         
         let selectedActivities = Database.shared.user.activities.map { $0.activity }
-        let activities: [Activity] = Array(Database.shared.allActivities()).filter { activity in
+        let activities: [Activity] = Array(Database.shared.allActivities()).sorted {$0.order.rawValue < $1.order.rawValue} .filter { activity in
             return !selectedActivities.contains { $0 == activity }
         }
 
@@ -305,6 +301,12 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
         itemSelectionViewController.createItemTitle = "Create my own activity"
         itemSelectionViewController.items = ItemSelectionViewModel.items(from: activities)
         itemSelectionViewController.isMultipleSelectionEnabled = false
+        
+        if let selectedActivity = self.newActivity.activity,  let index = activities.index(of: selectedActivity)
+        {
+            itemSelectionViewController.selectedItemsIndexes = Set([index])
+        }
+        
         let navigationController = UINavigationController(rootViewController: itemSelectionViewController)
         navigationController.modalPresentationStyle = .custom
         navigationController.transitioningDelegate = self
@@ -316,13 +318,24 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
         itemSelectionViewController.createNewItemAction = {
 
             itemSelectionViewController.dismiss(animated: true, completion: {
-                guard let customActivityViewController = UIStoryboard(name: "AddCustom", bundle: nil).instantiateViewController(withIdentifier: "AddActivity") as? UINavigationController else {
+                guard let customActivityViewController = UIStoryboard(name: "AddCustom", bundle: nil).instantiateViewController(withIdentifier: "AddActivityViewController") as? AddActivityViewController else {
                     assertionFailure()
                     return
                 }
-                self.isPresentingActivities = true
+                
+                customActivityViewController.dismissAction = { newActivity in
+                    if let newActivity = newActivity {
+                        self.newActivity.activity = newActivity
+                        self.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .fade)
+                    }
+                    
+                    self.selectActivityName()
 
-                self.present(customActivityViewController, animated: true, completion: nil)
+                }
+                
+                let navigation = UINavigationController(rootViewController: customActivityViewController)
+                self.present(navigation, animated: true, completion: nil)
+
             })
             
         }
@@ -448,8 +461,18 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
 
     }
     
-    func selectValues(values: [Value], initialIndexes: [Int], completion: @escaping ([Int])->())
+    func selectValues(valueType: ValueType, completion: @escaping ([Value])->())
     {
+        
+        let values = valueType == .good ?
+            Value.goodValues.sorted { $0.order.rawValue < $1.order.rawValue } :
+            Value.badValues.sorted { $0.order.rawValue < $1.order.rawValue }
+        
+        let initialIndexes = valueType == .good ?
+            values.flatMap({self.newActivity.goodValues.index(of: $0) == nil ? nil : values.index(of: $0)}) :
+            values.flatMap({self.newActivity.badValues.index(of: $0) == nil ? nil : values.index(of: $0)})
+
+        
         let storyboard = UIStoryboard(name: "ItemsSelection", bundle: nil)
         if let itemsVC = storyboard.instantiateInitialViewController() as? ItemsSelectionViewController
         {
@@ -465,12 +488,18 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
             
             itemsVC.title = "Values"
             itemsVC.createItemTitle = "Create my own value"
-            itemsVC.createNewItemAction = {
-                print("this should launch a controller to show the activity creation")
-            }
+            
             
             itemsVC.doneAction = { indexes in
-                completion(indexes)
+                
+                var selectedValues:[Value] = []
+                for index in indexes
+                {
+                    let value = values[index]
+                    selectedValues.append(value)
+                }
+                
+                completion(selectedValues)
             }
             
             itemsVC.createNewItemAction = {
@@ -484,9 +513,14 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
                     let navigation = UINavigationController(rootViewController: customValueViewController)
                     self.present(navigation, animated: true, completion: nil)
                     
-                    customValueViewController.dismissAction = {
+                    customValueViewController.dismissAction = { value in
                         //need to go back to the values selection
-                        self.selectValues(values: values, initialIndexes: initialIndexes, completion: completion)
+                        
+                        if let value = value {
+                            self.newActivity.values.append(value)
+                        }
+                        
+                        self.selectValues(valueType: valueType, completion: completion)
                     }
                     
                 })
@@ -497,8 +531,9 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
             navigation.transitioningDelegate = self
             navigation.modalPresentationStyle = .custom
             
-            self.present(navigation, animated: true, completion: nil)
-            
+            DispatchQueue.main.async {
+                self.present(navigation, animated: true, completion: nil)
+            }
         }
     }
     
@@ -517,15 +552,12 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
             self.selectHowItFeels()
             
         case .goodFeelings?:
-            let values = Value.goodValues.sorted { $0.0.order == 1 }
-            let selectedValues = values.flatMap({self.newActivity.goodValues.index(of: $0) == nil ? nil : values.index(of: $0)})
             
-            self.selectValues(values: values, initialIndexes: selectedValues, completion: { (indexes) in
+            self.selectValues(valueType: .good, completion: { (values) in
                 self.newActivity.removeGoodValues()
                 
-                for index in indexes
+                for value in values
                 {
-                    let value = values[index]
                     self.newActivity.values.append(value)
                 }
                 
@@ -535,15 +567,12 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
             })
             
         case .badFeelings?:
-            let values = Value.badValues
-            let selectedValues = values.flatMap({self.newActivity.badValues.index(of: $0) == nil ? nil : values.index(of: $0)})
-            
-            self.selectValues(values: values, initialIndexes: selectedValues, completion: { (indexes) in
+
+            self.selectValues(valueType: .bad, completion: { (values) in
                 self.newActivity.removeBadValues()
                 
-                for index in indexes
+                for value in values
                 {
-                    let value = values[index]
                     self.newActivity.values.append(value)
                 }
                 

@@ -12,7 +12,7 @@ class AddValuesViewController: UIViewController {
     
     @IBOutlet weak var valueTextField: UITextField!
     @IBOutlet weak var createValueButton: UIButton!
-    var dismissAction: (() -> ())?
+    var dismissAction: ((Value?) -> ())?
     
     var valueText: String? {
         if let text = self.valueTextField.text {
@@ -55,12 +55,14 @@ class AddValuesViewController: UIViewController {
     }
     
     fileprivate func saveValue(name: String) {
-        let activity = Value()
-        activity.name = name
+        let value = Value()
+        value.name = name
+        value.order = .highest
         //TODO : move this to model
         try! Database.shared.realm.write {
-            Database.shared.realm.add(activity)
+            Database.shared.realm.add(value)
         }
+        dismissAction?(value)
     }
     
     fileprivate func valueAlreadyExists(name: String) -> Bool {
@@ -97,6 +99,7 @@ class AddValuesViewController: UIViewController {
         } else {
             self.saveValue(name: name)
             self.dismiss(animated: true, completion: nil)
+
         }
         
         
@@ -104,7 +107,7 @@ class AddValuesViewController: UIViewController {
     
     @IBAction func userDidTapCancel(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
-        self.dismissAction?()
+        self.dismissAction?(nil)
     }
 }
 

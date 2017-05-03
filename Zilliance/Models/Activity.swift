@@ -13,5 +13,12 @@ final class Activity: Object {
     
     dynamic var name = ""
     dynamic var iconName: String?
+    dynamic var order: OrderPriority = .normal
     
+    func setOrderPriority(priority: OrderPriority) {
+        try! Database.shared.realm.write {
+            self.order = priority
+        }
+    }
+
 }
