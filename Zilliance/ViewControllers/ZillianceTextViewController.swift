@@ -470,7 +470,7 @@ extension ZillianceTextViewController: UITextViewDelegate {
             self.validation = .placeholder1
             self.setupTextView()
         case (.lousy, .shift):
-            let editText = EditableText(feeling: .great, text: "choose values", type: .value, isMultipleSelection: true, selectedIndexes: nil)
+            let editText = EditableText(feeling: .great, text: "choose needs", type: .value, isMultipleSelection: true, selectedIndexes: nil)
             self.editableTexts = [editText]
             self.textView.text = "Shift my thoughts about \((textViewContent.userActivity.activity?.name)!) by focusing on the need(s) it fulfills: \(self.editableTexts[0].text)"
             self.validation = .value1
@@ -498,7 +498,7 @@ extension ZillianceTextViewController: UITextViewDelegate {
             self.validation = .placeholder1
             self.setupTextView()
         case (.neutral, .shift):
-            let editText = EditableText(feeling: .great, text: "choose values", type: .value, isMultipleSelection: true, selectedIndexes: nil)
+            let editText = EditableText(feeling: .great, text: "choose needs", type: .value, isMultipleSelection: true, selectedIndexes: nil)
             self.editableTexts = [editText]
             self.textView.text = "Shift my thoughts about \((textViewContent.userActivity.activity?.name)!) by focusing on the need(s) it fulfills: \(self.editableTexts[0].text)"
             self.validation = .value1
@@ -523,7 +523,7 @@ extension ZillianceTextViewController: UITextViewDelegate {
         case (.mixed, .gratitude):
             self.textView.text = "Give thanks for the aspects of \((textViewContent.userActivity.activity?.name)!) that I'm greatful for. Acknowledge the gifts and blessings"
         case (.mixed, .shift):
-            let editText = EditableText(feeling: .great, text: "choose values", type: .value, isMultipleSelection: true, selectedIndexes: nil)
+            let editText = EditableText(feeling: .great, text: "choose needs", type: .value, isMultipleSelection: true, selectedIndexes: nil)
             self.editableTexts = [editText]
             self.textView.text = "Shift my thoughts about the non-so-good feelings parts of \((textViewContent.userActivity.activity?.name)!) by focusing on the need(s) it fulfills: \(self.editableTexts[0].text)"
             self.validation = .value1
