@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zxh-Zc-UNt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zxh-Zc-UNt">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,10 +21,10 @@
         <!--Welcome to Balance Pie-->
         <scene sceneID="VD6-v7-AQB">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ahg-Kb-FeF" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <pageViewController autoresizesArchivedViewToFullSize="NO" title="Welcome to Balance Pie" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="zxh-Zc-UNt" customClass="OnboardingPageViewController" customModule="Zilliance" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="Welcome to Balance Pie" id="UbR-iq-zVi"/>
                 </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ahg-Kb-FeF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="924" y="-686"/>
         </scene>
@@ -44,7 +44,7 @@
                                 <rect key="frame" x="16" y="60" width="343" height="409"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1R-ae-JiV">
-                                <rect key="frame" x="139.5" y="509" width="97.5" height="21.5"/>
+                                <rect key="frame" x="139" y="509" width="97.5" height="21.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21.5" id="pyq-mU-tcm"/>
                                 </constraints>
@@ -94,7 +94,7 @@
                                 <rect key="frame" x="16" y="60" width="343" height="333.5"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Home" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s5V-wb-rEM">
-                                <rect key="frame" x="156.5" y="433.5" width="62" height="21.5"/>
+                                <rect key="frame" x="157" y="433.5" width="62" height="21.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21.5" id="Jqp-K0-DGN"/>
                                 </constraints>
@@ -196,7 +196,7 @@
                                 <rect key="frame" x="16" y="60" width="343" height="390"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Improve a Slice" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JIx-U5-aM5">
-                                <rect key="frame" x="108" y="490" width="159.5" height="21.5"/>
+                                <rect key="frame" x="108.5" y="490" width="159.5" height="21.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21.5" id="iCm-6F-nhH"/>
                                 </constraints>
@@ -247,7 +247,7 @@
                                 <rect key="frame" x="16" y="60" width="343" height="371"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Update a Slice" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kKl-dp-zEE">
-                                <rect key="frame" x="112" y="471" width="152" height="21.5"/>
+                                <rect key="frame" x="111.5" y="471" width="152" height="21.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21.5" id="Shs-LA-fxe"/>
                                 </constraints>
@@ -298,7 +298,7 @@
                                 <rect key="frame" x="16" y="60" width="343" height="371"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Let's Get Started" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jkZ-td-fwl">
-                                <rect key="frame" x="99.5" y="471" width="177.5" height="21.5"/>
+                                <rect key="frame" x="99" y="471" width="177.5" height="21.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21.5" id="Vys-Id-a8P"/>
                                 </constraints>
