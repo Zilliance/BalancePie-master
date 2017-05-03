@@ -14,7 +14,7 @@ class PieViewController: UIViewController {
     
     private enum SliceOptions: String {
         case edit = "Edit Slice"
-        case tune = "Fine Tune Slice"
+        case tune = "Improve Slice"
         case delete = "Delete Slice"
     }
 

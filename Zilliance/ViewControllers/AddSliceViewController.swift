@@ -410,7 +410,7 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
         
         let alertController = UIAlertController(title: title , message: message, preferredStyle: .alert)
         
-        alertController.addAction(UIAlertAction(title: "Fine Tune This Slice", style: .default) { _ in
+        alertController.addAction(UIAlertAction(title: "Improve This Slice", style: .default) { _ in
             alertController.dismiss(animated: true, completion: nil)
             self.fineTuneAction()
         })
