@@ -418,7 +418,7 @@ extension FavoriteActivityViewController: UITableViewDataSource
                 valuesNames.remove(at: 0)
                 
                 valuesNames.forEach({ (value) in
-                    valuesName = valuesName + ", \(value)"
+                    valuesName = valuesName + ",\n\(value)"
                     
                 })
             }
