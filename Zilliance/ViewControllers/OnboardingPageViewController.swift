@@ -40,7 +40,7 @@ class OnboardingPageViewController: UIPageViewController {
     private let backgroundImageView = UIImageView(image: #imageLiteral(resourceName: "launch-background"))
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+        return .default
     }
     
     override func viewDidLoad() {
