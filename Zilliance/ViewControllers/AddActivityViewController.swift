@@ -66,6 +66,7 @@ class AddActivityViewController: UIViewController, UICollectionViewDataSource, U
         let activity = Activity()
         activity.name = self.activityTextField.text!
         activity.iconName = selectedIconName!
+        activity.order = .highest
         
         //TODO: move this to the model
         try! Database.shared.realm.write {

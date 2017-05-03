@@ -14,11 +14,18 @@ import RealmSwift
     case bad
 }
 
+@objc enum OrderPriority: Int32 {
+    case highest = 0
+    case high
+    case normal
+}
+
 class Value: Object {
+    
     dynamic var name = ""
     dynamic var iconName: String?
     dynamic var type: ValueType = .good
-    dynamic var order: Int = 0
+    dynamic var order: OrderPriority = .normal
     
     var image: UIImage? {
         if let iconName = self.iconName {
@@ -28,9 +35,9 @@ class Value: Object {
         }
     }
     
-    func setShowFirst() {
+    func setOrderPriority(priority: OrderPriority) {
         try! Database.shared.realm.write {
-            self.order = 1
+            self.order = priority
         }
     }
 

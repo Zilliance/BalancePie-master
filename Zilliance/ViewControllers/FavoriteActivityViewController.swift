@@ -303,7 +303,7 @@ class FavoriteActivityViewController: UIViewController, AlertsDuration {
         userActivity.feeling = .great
         
         self.favorite.values.forEach { (value) in
-            value.setShowFirst()
+            value.setOrderPriority(priority: .high)
             userActivity.values.append(value)
         }
 
