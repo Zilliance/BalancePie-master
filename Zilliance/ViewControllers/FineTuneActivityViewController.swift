@@ -132,11 +132,8 @@ final class FineTuneActivityViewController: UIViewController {
         self.scheduleButton.layer.borderWidth = App.Appearance.borderWidth
         self.scheduleButton.layer.borderColor = UIColor.lightGray.cgColor
         
-        // Add a cancel button when we are the root view controller in the navigation stack
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(cancelTapped(_:)))
         
-        if self.navigationController?.viewControllers.first == self {
-            self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(cancelTapped(_:)))
-        }
         self.showViewController(controller: items[0].viewController)
         
         // pre select first position
@@ -144,6 +141,7 @@ final class FineTuneActivityViewController: UIViewController {
     }
     
     // MARK: - User Actions
+    
 
     @IBAction func scheduleButtonTapped(_ sender: Any) {
         let scheduler = UIStoryboard(name: "Calendar", bundle: nil).instantiateInitialViewController() as! AddToCalendarViewController
