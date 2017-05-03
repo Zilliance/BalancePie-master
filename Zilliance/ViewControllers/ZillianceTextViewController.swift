@@ -109,7 +109,7 @@ class ZillianceTextViewController: UIViewController, UIViewControllerTransitioni
     }
     
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-        let presentationController = PartialSizePresentationController(presentedViewController: presented, presenting: presenting, height: self.view.frame.size.height / 2.0)
+        let presentationController = PartialSizePresentationController(presentedViewController: presented, presenting: presenting, height: UIScreen.main.bounds.size.height / 2.0)
         return presentationController
     }
     
@@ -120,8 +120,6 @@ class ZillianceTextViewController: UIViewController, UIViewControllerTransitioni
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return PartialModalTrasition(withType: .presenting)
     }
-    
-
 
 }
 
