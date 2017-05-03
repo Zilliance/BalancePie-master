@@ -205,6 +205,24 @@ extension AddSliceViewController: UITableViewDataSource
         }
 
     }
+    
+    fileprivate func scrollToLastRow() {
+        
+        var lastSectionShown = TableSection.feelingType.rawValue
+        
+        if (self.newActivity.feeling == .lousy || self.newActivity.feeling == .neutral || self.newActivity.feeling == .mixed)
+        {
+            lastSectionShown = TableSection.badFeelings.rawValue
+        }
+        else
+        {
+            lastSectionShown = TableSection.goodFeelings.rawValue
+        }
+        
+        let lastRow = IndexPath(row: 0, section: lastSectionShown)
+        
+        self.tableView.scrollToRow(at: lastRow, at: .bottom, animated: true)
+    }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -242,7 +260,7 @@ extension AddSliceViewController: UITableViewDataSource
         case (.goodFeelings?):
             let cell = tableView.dequeueReusableCell(withIdentifier: "valuesCell", for: indexPath) as! ActivityTableViewCell
             
-            let text = self.newActivity.goodValues.map{$0.name}.joined(separator: ", ")
+            let text = self.newActivity.goodValues.map{$0.name}.joined(separator: "\n")
             
             cell.titleLabel.text = "This activity feels good because of:"
             cell.subtitleLabel.text = text.characters.count > 0 ? text : tapToSelectText
@@ -252,7 +270,7 @@ extension AddSliceViewController: UITableViewDataSource
             
         case (.badFeelings?):
             let cell = tableView.dequeueReusableCell(withIdentifier: "valuesCell", for: indexPath) as! ActivityTableViewCell
-            let text = self.newActivity.badValues.map{$0.name}.joined(separator: ", ")
+            let text = self.newActivity.badValues.map{$0.name}.joined(separator: "\n")
 
             cell.titleLabel.text = "This activity feels lousy because of:"
             cell.subtitleLabel.text = text.characters.count > 0 ? text : tapToSelectText
@@ -393,8 +411,9 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
             let feelingSections: [Int] = TableSection.feelings
             
             self.newActivity.feeling = feelings[index]
-            self.tableView.reloadSections(IndexSet(feelingSections), with: .fade)
-            self.tableView.endUpdates()
+            self.tableView.reloadSections(IndexSet(feelingSections), with: .none)
+
+            self.scrollToLastRow()
             
         }
         
@@ -511,6 +530,8 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
                 }
                 
                 self.tableView.reloadSections(IndexSet([TableSection.goodFeelings.rawValue]), with: .fade)
+                self.scrollToLastRow()
+
             })
             
         case .badFeelings?:
@@ -527,6 +548,8 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
                 }
                 
                 self.tableView.reloadSections(IndexSet([TableSection.badFeelings.rawValue]), with: .fade)
+                self.scrollToLastRow()
+
             })
             
         default:
