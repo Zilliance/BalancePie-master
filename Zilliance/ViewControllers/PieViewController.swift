@@ -14,7 +14,7 @@ class PieViewController: UIViewController {
     
     private enum SliceOptions: String {
         case edit = "Edit Slice"
-        case tune = "Fine Tune Slice"
+        case tune = "Improve Slice"
         case delete = "Delete Slice"
     }
 
@@ -109,7 +109,7 @@ class PieViewController: UIViewController {
         
         // Title Label
         
-        self.titleLabel.text = "Your Balance Pie"
+        self.titleLabel.text = "My Balance Pie"
         self.titleLabel.font = .muliLight(size: 24)
         self.titleLabel.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(self.titleLabel)

@@ -28,7 +28,7 @@ class PieHintView: UIView {
         
         // Hint Label
         
-        self.label.text = "Tap the plus button to add an activity to your pie. Tap a slice to update or fine tune it."
+        self.label.text = "Tap the plus button to add an activity to your pie. Tap a slice to update or improve it."
         self.label.font = .muliRegular(size: 12)
         self.label.textColor = .darkBlueBackground
         self.label.translatesAutoresizingMaskIntoConstraints = false
