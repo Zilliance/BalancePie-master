@@ -17,10 +17,10 @@ import RealmSwift
     case lousy
     case mixed
     
-    var string: String {
+    var string: String? {
         switch self {
         case .none:
-            return ""
+            return nil
         case .great:
             return "Great"
         case .neutral:

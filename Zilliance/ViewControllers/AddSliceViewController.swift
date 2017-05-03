@@ -60,6 +60,11 @@ final class AddSliceViewController: UIViewController, AlertsDuration
         //setup width and corner radius
 
         self.addSliceButton.layer.cornerRadius = App.Appearance.buttonCornerRadius
+        
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 70
+        
+        self.view.backgroundColor = UIColor.lightGrayBackground
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -186,7 +191,7 @@ extension AddSliceViewController: UITableViewDataSource
                 return 0
             }
             
-            return max(self.newActivity.goodValues.count, 1)
+            return 1
         case TableSection.badFeelings.rawValue:
             
             if (self.newActivity.feeling == .great || self.newActivity.feeling == .none)
@@ -194,7 +199,7 @@ extension AddSliceViewController: UITableViewDataSource
                 return 0
             }
             
-            return max(self.newActivity.badValues.count, 1)
+            return 1
         default:
             return 1
         }
@@ -202,73 +207,55 @@ extension AddSliceViewController: UITableViewDataSource
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch (TableSection(rawValue: indexPath.section), indexPath.row) {
+        
+        let tapToSelectText = "Tap to select"
+
+        switch (TableSection(rawValue: indexPath.section)) {
             
-        case (.name?, _):
-            let cell = tableView.dequeueReusableCell(withIdentifier: "activitySubtitleCell", for: indexPath) as! ActivityTableViewCell
+        case (.name?):
+            let cell = tableView.dequeueReusableCell(withIdentifier: "basicCell", for: indexPath) as! ActivityTableViewCell
             
             cell.titleLabel.text = "Name of this activity:"
-            cell.subtitleLabel.text = self.newActivity.activity?.name ?? " "
+            cell.subtitleLabel.text = self.newActivity.activity?.name ?? tapToSelectText
             cell.selectionStyle = .none
             
             return cell
             
-        case (.duration?, _):
-            
-            let cell = tableView.dequeueReusableCell(withIdentifier: "activitySubtitleCell", for: indexPath) as! ActivityTableViewCell
+        case (.duration?):
+            let cell = tableView.dequeueReusableCell(withIdentifier: "basicCell", for: indexPath) as! ActivityTableViewCell
+
             cell.titleLabel.text = "Roughly how many hours a week do you spend on this activity?"
-            cell.subtitleLabel.text = self.newActivity.duration.userFriendlyText
+            cell.subtitleLabel.text = self.newActivity.duration.userFriendlyText ?? tapToSelectText
             cell.selectionStyle = .none
 
             return cell
             
-        case (.feelingType?, _):
-            
-            let cell = tableView.dequeueReusableCell(withIdentifier: "activitySubtitleCell", for: indexPath) as! ActivityTableViewCell
+        case (.feelingType?):
+            let cell = tableView.dequeueReusableCell(withIdentifier: "basicCell", for: indexPath) as! ActivityTableViewCell
+
             cell.titleLabel.text = "How do you feel when you are engaged in this activity?"
-            cell.subtitleLabel.text = self.newActivity.feeling.string
+            cell.subtitleLabel.text = self.newActivity.feeling.string ?? tapToSelectText
             cell.selectionStyle = .none
             
             return cell
             
-        case (.goodFeelings?, 0):
+        case (.goodFeelings?):
+            let cell = tableView.dequeueReusableCell(withIdentifier: "valuesCell", for: indexPath) as! ActivityTableViewCell
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: "activitySubtitleCell", for: indexPath) as! ActivityTableViewCell
+            let text = self.newActivity.goodValues.map{$0.name}.joined(separator: ", ")
+            
             cell.titleLabel.text = "This activity feels good because of:"
-            if (self.newActivity.goodValues.count == 0) {
-                cell.subtitleLabel.text = ""
-            } else {
-                cell.subtitleLabel.text = self.newActivity.goodValues[indexPath.row].name
-            }
+            cell.subtitleLabel.text = text.characters.count > 0 ? text : tapToSelectText
             cell.selectionStyle = .none
             
             return cell
             
-        case (.badFeelings?, 0):
-            
-            let cell = tableView.dequeueReusableCell(withIdentifier: "activitySubtitleCell", for: indexPath) as! ActivityTableViewCell
+        case (.badFeelings?):
+            let cell = tableView.dequeueReusableCell(withIdentifier: "valuesCell", for: indexPath) as! ActivityTableViewCell
+            let text = self.newActivity.badValues.map{$0.name}.joined(separator: ", ")
+
             cell.titleLabel.text = "This activity feels lousy because of:"
-            if (self.newActivity.badValues.count == 0) {
-                cell.subtitleLabel.text = ""
-            } else {
-                cell.subtitleLabel.text = self.newActivity.badValues[indexPath.row].name
-            }
-            cell.selectionStyle = .none
-            
-            return cell
-            
-        case (.goodFeelings?, _):
-            
-            let cell = tableView.dequeueReusableCell(withIdentifier: "basicCell")!
-            cell.textLabel?.text = self.newActivity.goodValues[indexPath.row].name
-            cell.selectionStyle = .none
-            
-            return cell
-            
-        case (.badFeelings?, _):
-            
-            let cell = tableView.dequeueReusableCell(withIdentifier: "basicCell")!
-            cell.textLabel?.text = self.newActivity.badValues[indexPath.row].name
+            cell.subtitleLabel.text = text.characters.count > 0 ? text : tapToSelectText
             cell.selectionStyle = .none
             
             return cell
@@ -284,15 +271,6 @@ extension AddSliceViewController: UITableViewDataSource
 
 extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitioningDelegate
 {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        // return 100
-        switch indexPath.section {
-        case (0..<5):
-            return 100
-        default:
-            return 34
-        }
-    }
     
     func selectActivityName() {
         guard let itemSelectionViewController = UIStoryboard(name: "ItemsSelection", bundle: nil).instantiateInitialViewController() as? ItemsSelectionViewController else {
