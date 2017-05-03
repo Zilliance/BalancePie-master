@@ -456,8 +456,9 @@ extension ZillianceTextViewController: UITextViewDelegate {
         case (.great, .values):
             let editText = EditableText(feeling: .great, text: "choose values", type: .value, isMultipleSelection: true, selectedIndexes: nil)
             self.editableTexts = [editText]
-            self.textView.text = "Bring more \(self.editableTexts[0].text) to \((textViewContent.userActivity.activity?.name)!)"
-            self.validation = .value1
+            self.textView.text = "Bring more \(self.editableTexts[0].text) to \((textViewContent.userActivity.activity?.name)!) by: e.g. listening to my favorite music playlist."
+            self.promptTexts = ["e.g. listening to my favorite music playlist."]
+            self.validation = [.value1, .placeholder1]
             self.setupTextView()
         case (.lousy, .replace):
             self.textView.text = "Replace \((textViewContent.userActivity.activity?.name)!) with this better feeling activity: e.g. reading a book"
