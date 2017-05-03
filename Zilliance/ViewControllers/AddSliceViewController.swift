@@ -271,15 +271,6 @@ extension AddSliceViewController: UITableViewDataSource
 
 extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitioningDelegate
 {
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        // return 100
-//        switch indexPath.section {
-//        case (0..<5):
-//            return 100
-//        default:
-//            return 34
-//        }
-//    }
     
     func selectActivityName() {
         guard let itemSelectionViewController = UIStoryboard(name: "ItemsSelection", bundle: nil).instantiateInitialViewController() as? ItemsSelectionViewController else {
