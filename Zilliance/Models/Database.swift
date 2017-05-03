@@ -149,7 +149,7 @@ class Database {
         return [
             ["name": "Passion", "type": ValueType.good],
             ["name": "Purpose, meaning", "type": ValueType.good],
-            ["name": "Imact, ability to make a difference", "type": ValueType.good],
+            ["name": "Impact, ability to make a difference", "type": ValueType.good],
             ["name": "Contribution, giving back", "type": ValueType.good],
             ["name": "Personal development, learning, growth", "type": ValueType.good],
             ["name": "Leisure", "type": ValueType.good],
