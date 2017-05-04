@@ -14,10 +14,10 @@ final class PieLegendView: UIView {
     private let stackView = UIStackView()
     
     var labels = [
-        "Feeling great",
-        "Feeling neutral",
-        "Feeling lousy",
-        "Mixed feelings"
+        "I feel great",
+        "I feel neutral",
+        "I feel lousy",
+        "I feel mixed"
     ]
     var colors: [UIColor] = [
         .feelingGreat,
