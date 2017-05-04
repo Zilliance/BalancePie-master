@@ -515,6 +515,8 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
                         return
                     }
                     
+                    customValueViewController.valueType = valueType
+                    
                     let navigation = UINavigationController(rootViewController: customValueViewController)
                     self.present(navigation, animated: true, completion: nil)
                     

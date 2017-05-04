@@ -257,12 +257,25 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
         
     }
     
-    func selectValues(values: [Value], initialIndexes: [Int], completion: @escaping ([Int])->()) {
-        if let itemsVC = UIStoryboard(name: "ItemsSelection", bundle: nil).instantiateInitialViewController() as? ItemsSelectionViewController {
+    func selectValues(valueType: ValueType, completion: @escaping ([Value])->())
+    {
+        
+        let values = valueType == .good ?
+            Value.goodValues.sorted { $0.order.rawValue < $1.order.rawValue } :
+            Value.badValues.sorted { $0.order.rawValue < $1.order.rawValue }
+        
+        let initialIndexes = valueType == .good ?
+            values.flatMap({self.activity.goodValues.index(of: $0) == nil ? nil : values.index(of: $0)}) :
+            values.flatMap({self.activity.badValues.index(of: $0) == nil ? nil : values.index(of: $0)})
+        
+        
+        let storyboard = UIStoryboard(name: "ItemsSelection", bundle: nil)
+        if let itemsVC = storyboard.instantiateInitialViewController() as? ItemsSelectionViewController
+        {
             
             itemsVC.selectedItemsIndexes = Set(initialIndexes)
             
-            let valuesNames = values.map({$0.name})
+            let valuesNames = values.map { $0.name }
             for valueName in valuesNames
             {
                 let itemModel = ItemSelectionViewModel(title: valueName, image:nil)
@@ -271,20 +284,54 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
             
             itemsVC.title = "Values"
             itemsVC.createItemTitle = "Create my own value"
-            itemsVC.createNewItemAction = {
-                print("this should launch a controller to show the activity creation")
-            }
+            
             
             itemsVC.doneAction = { indexes in
-                completion(indexes)
+                
+                var selectedValues:[Value] = []
+                for index in indexes
+                {
+                    let value = values[index]
+                    selectedValues.append(value)
+                }
+                
+                completion(selectedValues)
+            }
+            
+            itemsVC.createNewItemAction = {
+                
+                itemsVC.dismiss(animated: true, completion: {
+                    guard let customValueViewController = UIStoryboard(name: "AddCustom", bundle: nil).instantiateViewController(withIdentifier: "AddValuesViewController") as? AddValuesViewController else {
+                        assertionFailure()
+                        return
+                    }
+                    
+                    customValueViewController.valueType = valueType
+                    
+                    let navigation = UINavigationController(rootViewController: customValueViewController)
+                    self.present(navigation, animated: true, completion: nil)
+                    
+                    customValueViewController.dismissAction = { value in
+                        //need to go back to the values selection
+                        
+                        if let value = value {
+                            self.activity.values.append(value)
+                        }
+                        
+                        self.selectValues(valueType: valueType, completion: completion)
+                    }
+                    
+                })
+                
             }
             
             let navigation = UINavigationController(rootViewController: itemsVC)
             navigation.transitioningDelegate = self
             navigation.modalPresentationStyle = .custom
             
-            self.present(navigation, animated: true, completion: nil)
-            
+            DispatchQueue.main.async {
+                self.present(navigation, animated: true, completion: nil)
+            }
         }
     }
     
@@ -300,39 +347,33 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
             self.selectHowItFeels()
 
         case .goodFeelings?:
-            let values = Value.goodValues
-            let selectedValues = values.flatMap({self.activity.goodValues.index(of: $0) == nil ? nil : values.index(of: $0)})
             
-            self.selectValues(values: values, initialIndexes: selectedValues, completion: { (indexes) in
+            self.selectValues(valueType: .good, completion: { (values) in
                 self.activity.removeGoodValues()
                 
-                for index in indexes
+                for value in values
                 {
-                    let value = values[index]
                     self.activity.values.append(value)
                 }
                 
                 self.tableView.reloadSections(IndexSet([TableSection.goodFeelings.rawValue]), with: .fade)
                 self.scrollToLastRow()
-
+                
             })
-
-        case .badFeelings?:
-            let values = Value.badValues
-            let selectedValues = values.flatMap({self.activity.badValues.index(of: $0) == nil ? nil : values.index(of: $0)})
             
-            self.selectValues(values: values, initialIndexes: selectedValues, completion: { (indexes) in
+        case .badFeelings?:
+            
+            self.selectValues(valueType: .bad, completion: { (values) in
                 self.activity.removeBadValues()
                 
-                for index in indexes
+                for value in values
                 {
-                    let value = values[index]
                     self.activity.values.append(value)
                 }
                 
                 self.tableView.reloadSections(IndexSet([TableSection.badFeelings.rawValue]), with: .fade)
                 self.scrollToLastRow()
-
+                
             })
             
         default:

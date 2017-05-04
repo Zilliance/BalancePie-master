@@ -13,6 +13,7 @@ class AddValuesViewController: UIViewController {
     @IBOutlet weak var valueTextField: UITextField!
     @IBOutlet weak var createValueButton: UIButton!
     var dismissAction: ((Value?) -> ())?
+    var valueType = ValueType.good
     
     var valueText: String? {
         if let text = self.valueTextField.text {
@@ -58,6 +59,7 @@ class AddValuesViewController: UIViewController {
         let value = Value()
         value.name = name
         value.order = .highest
+        value.type = self.valueType
         //TODO : move this to model
         try! Database.shared.realm.write {
             Database.shared.realm.add(value)
