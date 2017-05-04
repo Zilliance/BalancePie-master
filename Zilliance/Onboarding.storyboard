@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zxh-Zc-UNt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zxh-Zc-UNt">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -44,7 +44,7 @@
                                 <rect key="frame" x="16" y="60" width="343" height="409"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1R-ae-JiV">
-                                <rect key="frame" x="139" y="509" width="97.5" height="21.5"/>
+                                <rect key="frame" x="139.5" y="509" width="97.5" height="21.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21.5" id="pyq-mU-tcm"/>
                                 </constraints>
@@ -52,8 +52,9 @@
                                 <color key="textColor" white="0.95810850792460966" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ready to take the first few steps toward forging your own path in life?  Swipe through to start your tour." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08U-2u-3QT">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08U-2u-3QT">
                                 <rect key="frame" x="16" y="550.5" width="343" height="56.5"/>
+                                <string key="text">Ready to take the first few steps toward taking control of your time so that you feel more balanced? Swipe through to start your tour.</string>
                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                 <color key="textColor" white="0.95810850790000002" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -91,10 +92,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="253" verticalCompressionResistancePriority="749" image="onboarding2" translatesAutoresizingMaskIntoConstraints="NO" id="Hph-VL-yhS">
-                                <rect key="frame" x="16" y="60" width="343" height="333.5"/>
+                                <rect key="frame" x="16" y="60" width="343" height="352.5"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Home" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s5V-wb-rEM">
-                                <rect key="frame" x="157" y="433.5" width="62" height="21.5"/>
+                                <rect key="frame" x="156.5" y="452.5" width="62" height="21.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21.5" id="Jqp-K0-DGN"/>
                                 </constraints>
@@ -103,8 +104,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zF-3C-sCa">
-                                <rect key="frame" x="16" y="475" width="343" height="132"/>
-                                <string key="text">This is where you will see what your life looks like. You’ll see your life as a pie: All the activities in which you participate are part of your pie. From your home page, you can add pieces to your pie (Add a Slice) and discover ways to make every piece of your pie feel better (Improve a Slice).</string>
+                                <rect key="frame" x="16" y="494" width="343" height="113"/>
+                                <string key="text">This is where you will see your life as a pie: All the activities in which you participate are part of your pie. From your home page, you can add pieces to your pie (Add a Slice) and discover ways to make every piece of your pie feel better (Improve a Slice).</string>
                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                 <color key="textColor" white="0.95810850790000002" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -155,7 +156,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfN-tE-593">
                                 <rect key="frame" x="16" y="512.5" width="343" height="94.5"/>
-                                <string key="text">Here you can add all of the activities you participate in and assign them a color-code based on how they make you feel. You will also identify why these activities feel the way they feel.</string>
+                                <string key="text">Here, you can add all of the activities you participate in and assign them a color-code based on how they make you feel. You will also identify why these activities feel the way they feel. </string>
                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                 <color key="textColor" white="0.95810850790000002" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -193,10 +194,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="253" verticalCompressionResistancePriority="749" image="onboarding3" translatesAutoresizingMaskIntoConstraints="NO" id="Qd6-Iv-ELI">
-                                <rect key="frame" x="16" y="60" width="343" height="390"/>
+                                <rect key="frame" x="16" y="60" width="343" height="409"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Improve a Slice" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JIx-U5-aM5">
-                                <rect key="frame" x="108.5" y="490" width="159.5" height="21.5"/>
+                                <rect key="frame" x="108" y="509" width="159.5" height="21.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21.5" id="iCm-6F-nhH"/>
                                 </constraints>
@@ -205,8 +206,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qYm-K4-AFg">
-                                <rect key="frame" x="16" y="531.5" width="343" height="75.5"/>
-                                <string key="text">This is where you start taking control of the path you are on. Here, you can discover all the different skills you can use to take control of your life.  </string>
+                                <rect key="frame" x="16" y="550.5" width="343" height="56.5"/>
+                                <string key="text">This is where you learn skills for making small adjustments that allow you to feel more balanced about the activities you participate in.</string>
                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                 <color key="textColor" white="0.95810850790000002" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -247,7 +248,7 @@
                                 <rect key="frame" x="16" y="60" width="343" height="371"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Update a Slice" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kKl-dp-zEE">
-                                <rect key="frame" x="111.5" y="471" width="152" height="21.5"/>
+                                <rect key="frame" x="112" y="471" width="152" height="21.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21.5" id="Shs-LA-fxe"/>
                                 </constraints>
@@ -257,7 +258,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhH-AB-InI">
                                 <rect key="frame" x="16" y="512.5" width="343" height="94.5"/>
-                                <string key="text">As you apply the skills you will learn in this app, your life will start to feel better. You can always delete a slice or change the way you feel about a slice. Ultimately, we want your entire pie to feel great!</string>
+                                <string key="text">As you apply the skills you will learn in this app, your life will start to feel better. You can always delete a slice or change the way you feel about a slice. Ultimately, we want your entire pie to be green, meaning it feels great.</string>
                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                 <color key="textColor" white="0.95810850790000002" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -295,10 +296,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="253" verticalCompressionResistancePriority="749" image="onboarding3" translatesAutoresizingMaskIntoConstraints="NO" id="046-qt-Ng8">
-                                <rect key="frame" x="16" y="60" width="343" height="371"/>
+                                <rect key="frame" x="16" y="60" width="343" height="427.5"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Let's Get Started" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jkZ-td-fwl">
-                                <rect key="frame" x="99" y="471" width="177.5" height="21.5"/>
+                                <rect key="frame" x="99.5" y="527.5" width="177.5" height="21.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21.5" id="Vys-Id-a8P"/>
                                 </constraints>
@@ -306,9 +307,8 @@
                                 <color key="textColor" white="0.95810850790000002" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8UN-gw-R3E">
-                                <rect key="frame" x="16" y="512.5" width="343" height="94.5"/>
-                                <string key="text">Now it’s time to take the next small step toward living a life that feels better. (feeling like this should be more inspiring by using the words happiness or joy…”Feel better” just isn’t that exciting to me...)</string>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Now it’s time to take the next small step toward living a more balanced life." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8UN-gw-R3E">
+                                <rect key="frame" x="16" y="569" width="343" height="38"/>
                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                 <color key="textColor" white="0.95810850790000002" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
