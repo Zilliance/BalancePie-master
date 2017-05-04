@@ -416,6 +416,7 @@ extension FavoriteActivityViewController: UITableViewDataSource
             
             
             var valuesNames = self.favorite.values.map { $0.name }
+            cell.answerLabel.textColor = valuesNames.first != nil ? UIColor.lightBlueBackground : UIColor.placeholderText
             var valuesName = valuesNames.first ?? tapToSelectText
             if valuesNames.count > 0 {
                 valuesNames.remove(at: 0)
@@ -426,7 +427,6 @@ extension FavoriteActivityViewController: UITableViewDataSource
                 })
             }
 
-            cell.answerLabel.textColor = valuesNames.first != nil ? UIColor.lightBlueBackground : UIColor.placeholderText
             cell.answerLabel.text = valuesName
             cell.iconImageView.image = #imageLiteral(resourceName: "value").tinted(color: UIColor.darkBlueBackground)
             

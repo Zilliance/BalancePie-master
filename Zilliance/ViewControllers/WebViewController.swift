@@ -27,8 +27,27 @@ final class WebViewController: UIViewController, UIWebViewDelegate
         self.sideMenuController?.toggle()
     }
     
+    private func showOnBoarding() {
+        guard let onBoardingViewController = UIStoryboard(name: "Onboarding", bundle: nil).instantiateInitialViewController() as? OnboardingPageViewController else {
+            assertionFailure()
+            return
+        }
+        
+        onBoardingViewController.presentationType = .fromFaq
+        
+        let navigationController = UINavigationController(rootViewController: onBoardingViewController)
+        self.present(navigationController, animated: true, completion: nil)
+    }
+    
     func webViewDidFinishLoad(_ webView: UIWebView) {
         webView.scrollView.contentSize = CGSize(width: webView.frame.size.width, height: webView.scrollView.contentSize.height)
     }
     
+    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        if request.url?.absoluteString == "zilliance://balancepie/tour" {
+            self.showOnBoarding()
+            return false
+        }
+        return true
+    }
 }

@@ -19,16 +19,28 @@ class OnboardingPageViewController: UIPageViewController {
         case sixth
     }
     
+    enum OnboardingPresentationMode {
+        case firstTime
+        case fromFaq
+        case fromMenu
+    }
+    
     fileprivate(set) lazy var introViewControllers: [UIViewController]  = {
-        return [
+        
+        var viewControllers: [UIViewController] = [
             self.viewController(for: .first),
             self.viewController(for: .second),
             self.viewController(for: .third),
             self.viewController(for: .fourth),
             self.viewController(for: .fifth),
             self.viewController(for: .sixth),
-            self.favoriteViewController,
-        ]
+            ]
+        
+        if self.presentationType == .firstTime {
+            viewControllers.append(self.favoriteViewController)
+        }
+        return viewControllers
+        
     }()
 
     fileprivate lazy var favoriteViewController: UIViewController = {
@@ -36,6 +48,8 @@ class OnboardingPageViewController: UIPageViewController {
     }()!
     
     fileprivate var shouldHideDots = false
+    
+    var presentationType: OnboardingPresentationMode = .firstTime
     
     private let backgroundImageView = UIImageView(image: #imageLiteral(resourceName: "launch-background"))
     
@@ -47,7 +61,7 @@ class OnboardingPageViewController: UIPageViewController {
         super.viewDidLoad()
         self.setupView()
     }
-    
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
@@ -64,10 +78,19 @@ class OnboardingPageViewController: UIPageViewController {
     }
     
     private func setupView() {
+        
+        if self.presentationType == .fromFaq {
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(closeView))
+        }
+        else if self.presentationType == .fromMenu {
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "drawer-toolbar-icon"), style: .plain, target: self, action: #selector(backTapped))
+        }
+        
         self.view.backgroundColor = .lightBlueBackground
         self.backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
         
         self.view.insertSubview(self.backgroundImageView, at: 0)
+        
         
         self.backgroundImageView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         self.backgroundImageView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
@@ -87,7 +110,13 @@ class OnboardingPageViewController: UIPageViewController {
     
     }
     
-
+    @IBAction func closeView(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func backTapped() {
+        self.sideMenuController?.toggle()
+    }
 }
 
 extension OnboardingPageViewController: UIPageViewControllerDelegate {
