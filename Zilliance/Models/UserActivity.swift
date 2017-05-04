@@ -35,6 +35,41 @@ import RealmSwift
     static let all: [Feeling] = [.great, .neutral, .lousy, .mixed]
 }
 
+extension Feeling {
+    
+    var goodTitleText: String {
+        switch self {
+        case .great:
+            return "Why does this activity make you feel great?"
+        case .neutral:
+            return ""
+        case .lousy:
+            return ""
+        case .mixed:
+            return "What feels good about this activity"
+        case .none:
+            return ""
+        }
+
+    }
+    
+    var badTitleText: String {
+        switch self {
+        case .great:
+            return ""
+        case .neutral:
+            return "Why does this activity make you feel neutral?"
+        case .lousy:
+            return "Why does this activity make you feel lousy?"
+        case .mixed:
+            return "What feels not-so-good about this activity?"
+        case .none:
+            return ""
+        }
+    }
+
+}
+
 final class UserActivity: Object {
     
     dynamic var activity: Activity?
