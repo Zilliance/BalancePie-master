@@ -33,7 +33,7 @@ final class WebViewController: UIViewController, UIWebViewDelegate
             return
         }
         
-        onBoardingViewController.isTourMode = true
+        onBoardingViewController.presentationType = .fromFaq
         
         let navigationController = UINavigationController(rootViewController: onBoardingViewController)
         self.present(navigationController, animated: true, completion: nil)

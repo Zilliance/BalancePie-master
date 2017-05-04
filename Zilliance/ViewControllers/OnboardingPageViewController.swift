@@ -19,6 +19,12 @@ class OnboardingPageViewController: UIPageViewController {
         case sixth
     }
     
+    enum OnboardingPresentationMode {
+        case firstTime
+        case fromFaq
+        case fromMenu
+    }
+    
     fileprivate(set) lazy var introViewControllers: [UIViewController]  = {
         
         var viewControllers: [UIViewController] = [
@@ -28,11 +34,10 @@ class OnboardingPageViewController: UIPageViewController {
             self.viewController(for: .fourth),
             self.viewController(for: .fifth),
             self.viewController(for: .sixth),
-            self.favoriteViewController,
             ]
         
-        if self.isTourMode {
-            viewControllers.removeLast()
+        if self.presentationType == .firstTime {
+            viewControllers.append(self.favoriteViewController)
         }
         return viewControllers
         
@@ -44,7 +49,7 @@ class OnboardingPageViewController: UIPageViewController {
     
     fileprivate var shouldHideDots = false
     
-    var isTourMode = false
+    var presentationType: OnboardingPresentationMode = .firstTime
     
     private let backgroundImageView = UIImageView(image: #imageLiteral(resourceName: "launch-background"))
     
@@ -74,8 +79,11 @@ class OnboardingPageViewController: UIPageViewController {
     
     private func setupView() {
         
-        if self.isTourMode {
+        if self.presentationType == .fromFaq {
             self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(closeView))
+        }
+        else if self.presentationType == .fromMenu {
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "drawer-toolbar-icon"), style: .plain, target: self, action: #selector(backTapped))
         }
         
         self.view.backgroundColor = .lightBlueBackground
@@ -104,6 +112,10 @@ class OnboardingPageViewController: UIPageViewController {
     
     @IBAction func closeView(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func backTapped() {
+        self.sideMenuController?.toggle()
     }
 }
 

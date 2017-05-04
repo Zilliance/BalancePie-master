@@ -95,7 +95,11 @@ final class LeftMenuViewController: UIViewController {
     }
     
     func showTour() {
-        let vc = UIStoryboard(name: "SideMenu", bundle: nil).instantiateViewController(withIdentifier: "Tour")
+        guard  let vc = UIStoryboard(name: "Onboarding", bundle: nil).instantiateInitialViewController() as? OnboardingPageViewController else {
+            assertionFailure()
+            return
+        }
+        vc.presentationType = .fromMenu
         let nav = UINavigationController(rootViewController: vc)
         self.sideMenuController?.embed(centerViewController: nav)
     }
