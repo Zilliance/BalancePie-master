@@ -128,7 +128,7 @@ extension EditActivityViewController: UITableViewDataSource
             
             let text = self.activity.goodValues.map{$0.name}.joined(separator: "\n")
             
-            cell.titleLabel.text = "Why does this activity make you feel great?"
+            cell.titleLabel.text = self.activity.feeling.goodTitleText
             cell.subtitleLabel.text = text.characters.count > 0 ? text : tapToSelectText
             cell.subtitleLabel.textColor = text.characters.count > 0 ? UIColor.lightBlueBackground : UIColor.placeholderText
             cell.selectionStyle = .none
@@ -139,7 +139,7 @@ extension EditActivityViewController: UITableViewDataSource
             let cell = tableView.dequeueReusableCell(withIdentifier: "valuesCell", for: indexPath) as! ActivityTableViewCell
             let text = self.activity.badValues.map{$0.name}.joined(separator: "\n")
             
-            cell.titleLabel.text = "Why does this activity make you feel lousy?"
+            cell.titleLabel.text = self.activity.feeling.badTitleText
             cell.subtitleLabel.text = text.characters.count > 0 ? text : tapToSelectText
             cell.subtitleLabel.textColor = text.characters.count > 0 ? UIColor.lightBlueBackground : UIColor.placeholderText
             cell.selectionStyle = .none

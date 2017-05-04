@@ -261,7 +261,7 @@ extension AddSliceViewController: UITableViewDataSource
             
             let text = self.newActivity.goodValues.map{$0.name}.joined(separator: "\n")
             
-            cell.titleLabel.text = "Why does this activity make you feel great?"
+            cell.titleLabel.text = self.newActivity.feeling.goodTitleText
             cell.subtitleLabel.text = text.characters.count > 0 ? text : tapToSelectText
             cell.subtitleLabel.textColor = text.characters.count > 0 ? UIColor.lightBlueBackground : UIColor.placeholderText
             cell.selectionStyle = .none
@@ -272,7 +272,7 @@ extension AddSliceViewController: UITableViewDataSource
             let cell = tableView.dequeueReusableCell(withIdentifier: "valuesCell", for: indexPath) as! ActivityTableViewCell
             let text = self.newActivity.badValues.map{$0.name}.joined(separator: "\n")
 
-            cell.titleLabel.text = "Why does this activity make you feel lousy?"
+            cell.titleLabel.text = self.newActivity.feeling.badTitleText
             cell.subtitleLabel.text = text.characters.count > 0 ? text : tapToSelectText
             cell.subtitleLabel.textColor = text.characters.count > 0 ? UIColor.lightBlueBackground : UIColor.placeholderText
             cell.selectionStyle = .none
