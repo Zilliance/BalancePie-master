@@ -20,7 +20,8 @@ class OnboardingPageViewController: UIPageViewController {
     }
     
     fileprivate(set) lazy var introViewControllers: [UIViewController]  = {
-        return [
+        
+        var viewControllers: [UIViewController] = [
             self.viewController(for: .first),
             self.viewController(for: .second),
             self.viewController(for: .third),
@@ -28,7 +29,13 @@ class OnboardingPageViewController: UIPageViewController {
             self.viewController(for: .fifth),
             self.viewController(for: .sixth),
             self.favoriteViewController,
-        ]
+            ]
+        
+        if self.isTourMode {
+            viewControllers.removeLast()
+        }
+        return viewControllers
+        
     }()
 
     fileprivate lazy var favoriteViewController: UIViewController = {
@@ -36,6 +43,8 @@ class OnboardingPageViewController: UIPageViewController {
     }()!
     
     fileprivate var shouldHideDots = false
+    
+    var isTourMode = false
     
     private let backgroundImageView = UIImageView(image: #imageLiteral(resourceName: "launch-background"))
     
@@ -47,7 +56,7 @@ class OnboardingPageViewController: UIPageViewController {
         super.viewDidLoad()
         self.setupView()
     }
-    
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
@@ -64,10 +73,16 @@ class OnboardingPageViewController: UIPageViewController {
     }
     
     private func setupView() {
+        
+        if self.isTourMode {
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(closeView))
+        }
+        
         self.view.backgroundColor = .lightBlueBackground
         self.backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
         
         self.view.insertSubview(self.backgroundImageView, at: 0)
+        
         
         self.backgroundImageView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         self.backgroundImageView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
@@ -87,7 +102,9 @@ class OnboardingPageViewController: UIPageViewController {
     
     }
     
-
+    @IBAction func closeView(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }
 
 extension OnboardingPageViewController: UIPageViewControllerDelegate {
