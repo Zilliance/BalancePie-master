@@ -108,6 +108,7 @@ extension EditActivityViewController: UITableViewDataSource
             
             cell.titleLabel.text = "Roughly how many hours a week do you spend on this activity?"
             cell.subtitleLabel.text = self.activity.duration.userFriendlyText ?? tapToSelectText
+            cell.subtitleLabel.textColor = self.activity.duration.userFriendlyText != nil ? UIColor.lightBlueBackground : UIColor.placeholderText
             cell.selectionStyle = .none
             
             return cell
@@ -117,6 +118,7 @@ extension EditActivityViewController: UITableViewDataSource
             
             cell.titleLabel.text = "How do you feel when you are engaged in this activity?"
             cell.subtitleLabel.text = self.activity.feeling.string ?? tapToSelectText
+            cell.subtitleLabel.textColor = self.activity.feeling.string != nil ? UIColor.lightBlueBackground : UIColor.placeholderText
             cell.selectionStyle = .none
             
             return cell
@@ -128,6 +130,7 @@ extension EditActivityViewController: UITableViewDataSource
             
             cell.titleLabel.text = "This activity feels good because of:"
             cell.subtitleLabel.text = text.characters.count > 0 ? text : tapToSelectText
+            cell.subtitleLabel.textColor = text.characters.count > 0 ? UIColor.lightBlueBackground : UIColor.placeholderText
             cell.selectionStyle = .none
             
             return cell
@@ -138,6 +141,7 @@ extension EditActivityViewController: UITableViewDataSource
             
             cell.titleLabel.text = "This activity feels lousy because of:"
             cell.subtitleLabel.text = text.characters.count > 0 ? text : tapToSelectText
+            cell.subtitleLabel.textColor = text.characters.count > 0 ? UIColor.lightBlueBackground : UIColor.placeholderText
             cell.selectionStyle = .none
             
             return cell
