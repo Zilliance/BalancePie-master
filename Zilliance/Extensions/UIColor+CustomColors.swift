@@ -19,6 +19,7 @@ extension UIColor {
     
     static let lightGray = UIColor.color(forRed: 213, green: 213, blue: 213, alpha: 1)
     static let textGray = UIColor.color(forRed: 27, green: 36, blue: 48, alpha: 1)
+    static let placeholderText = UIColor.color(forRed: 120, green: 120, blue: 120, alpha: 1)
     
     static let buttonBackground = UIColor.color(forRed: 18.0, green: 44.0, blue: 77.0, alpha: 1)
     static let activityCellSeparator = UIColor.color(forRed: 255, green: 255, blue: 255, alpha: 0.49)
