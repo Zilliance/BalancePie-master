@@ -78,6 +78,7 @@
 		8CDAB8DA1E9BF42F006BFD4B /* FavoriteActivity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CDAB8D91E9BF42F006BFD4B /* FavoriteActivity.storyboard */; };
 		E311C3321EB126A700CF23D1 /* PieLegendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E311C3311EB126A700CF23D1 /* PieLegendView.swift */; };
 		E311C3341EB135F800CF23D1 /* PieHintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E311C3331EB135F800CF23D1 /* PieHintView.swift */; };
+		E314B6F21EBB93E0001D0FF5 /* faq.html in Resources */ = {isa = PBXBuildFile; fileRef = E314B6F11EBB93E0001D0FF5 /* faq.html */; };
 		E33247971EB42A77009E112A /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33247961EB42A77009E112A /* UITableViewCell+Extensions.swift */; };
 		E35668321E8C15BA00ED81D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35668311E8C15BA00ED81D9 /* AppDelegate.swift */; };
 		E35668391E8C15BA00ED81D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E35668381E8C15BA00ED81D9 /* Assets.xcassets */; };
@@ -185,6 +186,7 @@
 		DE7A740D362571F85742B547 /* Pods_ZillianceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZillianceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E311C3311EB126A700CF23D1 /* PieLegendView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieLegendView.swift; sourceTree = "<group>"; };
 		E311C3331EB135F800CF23D1 /* PieHintView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieHintView.swift; sourceTree = "<group>"; };
+		E314B6F11EBB93E0001D0FF5 /* faq.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = faq.html; sourceTree = "<group>"; };
 		E33247961EB42A77009E112A /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
 		E356682E1E8C15BA00ED81D9 /* Zilliance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zilliance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E35668311E8C15BA00ED81D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 			children = (
 				041C3CDB1EA9291300C52195 /* zilliance terms of service.html */,
 				041C3CD71EA8062500C52195 /* zilliance privacy policy.html */,
+				E314B6F11EBB93E0001D0FF5 /* faq.html */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -629,6 +632,7 @@
 				041C3CD81EA8062500C52195 /* zilliance privacy policy.html in Resources */,
 				8C3EA4931E93F85C00F56DED /* Muli-ExtraLight.ttf in Resources */,
 				8C3EA49A1E93F85C00F56DED /* Muli-SemiBoldItalic.ttf in Resources */,
+				E314B6F21EBB93E0001D0FF5 /* faq.html in Resources */,
 				8C4D28C71E96CFEE00034A20 /* Onboarding.storyboard in Resources */,
 				8C4EAE1B1EA15B2F00D800E4 /* FineTuneItems.storyboard in Resources */,
 				8C3EA49C1E9425A600F56DED /* Pie.storyboard in Resources */,

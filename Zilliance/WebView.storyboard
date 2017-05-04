@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ysj-9E-oTz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ysj-9E-oTz">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -22,16 +22,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HsR-3x-JWM">
-                                <rect key="frame" x="10" y="64" width="355" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </webView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.94117647058823528" green="0.94194877147674561" blue="0.94194877147674561" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="IED-YR-bnT" firstAttribute="top" secondItem="HsR-3x-JWM" secondAttribute="bottom" id="Dtl-94-Wv2"/>
-                            <constraint firstItem="HsR-3x-JWM" firstAttribute="leading" secondItem="eas-pJ-Fwy" secondAttribute="leading" constant="10" id="SYX-3D-cwA"/>
+                            <constraint firstItem="HsR-3x-JWM" firstAttribute="leading" secondItem="eas-pJ-Fwy" secondAttribute="leading" id="SYX-3D-cwA"/>
                             <constraint firstItem="HsR-3x-JWM" firstAttribute="top" secondItem="zjI-Qn-9LU" secondAttribute="bottom" id="kVv-5b-s7y"/>
-                            <constraint firstAttribute="trailing" secondItem="HsR-3x-JWM" secondAttribute="trailing" constant="10" id="om6-B8-dwr"/>
+                            <constraint firstAttribute="trailing" secondItem="HsR-3x-JWM" secondAttribute="trailing" id="om6-B8-dwr"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="nOr-SH-el6">
