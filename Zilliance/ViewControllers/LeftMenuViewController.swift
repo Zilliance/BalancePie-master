@@ -133,6 +133,7 @@ extension LeftMenuViewController: UITableViewDelegate {
         case .howItWorks?: fallthrough
         case .about?: fallthrough
         case .spacer?:
+            cell.selectionStyle = .none
             cell.hideSeparatorInsets()
         default:
             break
