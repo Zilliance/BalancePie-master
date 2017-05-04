@@ -257,17 +257,14 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
         
     }
     
-    func selectValues(valueType: ValueType, completion: @escaping ([Value])->())
+    func selectValues(valueType: ValueType, initialIndexes: [Int], completion: @escaping ([Value])->())
     {
         
         let values = valueType == .good ?
             Value.goodValues.sorted { $0.order.rawValue < $1.order.rawValue } :
             Value.badValues.sorted { $0.order.rawValue < $1.order.rawValue }
         
-        let initialIndexes = valueType == .good ?
-            values.flatMap({self.activity.goodValues.index(of: $0) == nil ? nil : values.index(of: $0)}) :
-            values.flatMap({self.activity.badValues.index(of: $0) == nil ? nil : values.index(of: $0)})
-        
+        let initialSelectedValues = initialIndexes.map{values[$0]}
         
         let storyboard = UIStoryboard(name: "ItemsSelection", bundle: nil)
         if let itemsVC = storyboard.instantiateInitialViewController() as? ItemsSelectionViewController
@@ -314,11 +311,17 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
                     customValueViewController.dismissAction = { value in
                         //need to go back to the values selection
                         
-                        if let value = value {
-                            self.activity.values.append(value)
+                        let values = valueType == .good ?
+                            Value.goodValues.sorted { $0.order.rawValue < $1.order.rawValue } :
+                            Value.badValues.sorted { $0.order.rawValue < $1.order.rawValue }
+                        
+                        var initialIndexes = values.flatMap({initialSelectedValues.index(of: $0) == nil ? nil : values.index(of: $0)})
+
+                        if let value = value, let indexOfValue = values.index(of: value) {
+                            initialIndexes.append(indexOfValue)
                         }
                         
-                        self.selectValues(valueType: valueType, completion: completion)
+                        self.selectValues(valueType: valueType, initialIndexes: initialIndexes, completion: completion)
                     }
                     
                 })
@@ -348,7 +351,11 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
 
         case .goodFeelings?:
             
-            self.selectValues(valueType: .good, completion: { (values) in
+            let values = Value.goodValues.sorted { $0.order.rawValue < $1.order.rawValue }
+            
+            let initialIndexes = values.flatMap({self.activity.goodValues.index(of: $0) == nil ? nil : values.index(of: $0)})
+            
+            self.selectValues(valueType: .good, initialIndexes: initialIndexes, completion: { (values) in
                 self.activity.removeGoodValues()
                 
                 for value in values
@@ -363,7 +370,11 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
             
         case .badFeelings?:
             
-            self.selectValues(valueType: .bad, completion: { (values) in
+            let values = Value.badValues.sorted { $0.order.rawValue < $1.order.rawValue }
+            
+            let initialIndexes = values.flatMap({self.activity.badValues.index(of: $0) == nil ? nil : values.index(of: $0)})
+            
+            self.selectValues(valueType: .bad, initialIndexes: initialIndexes, completion: { (values) in
                 self.activity.removeBadValues()
                 
                 for value in values
