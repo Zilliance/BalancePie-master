@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -22,7 +22,7 @@
         <scene sceneID="TU8-Yu-TC2">
             <objects>
                 <navigationController storyboardIdentifier="AddValue" id="5JW-J8-9eZ" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="m4I-Y6-wXW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="m4I-Y6-wXW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -52,7 +52,7 @@
                                     <constraint firstAttribute="height" constant="30" id="Ql8-FX-glU"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
                                 <connections>
                                     <outlet property="delegate" destination="zns-zh-lLo" id="rQ6-qw-Rmd"/>
@@ -115,6 +115,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q1Q-O7-9Fk">
+                                <rect key="frame" x="0.0" y="577" width="375" height="90"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ca-a9-5o0">
                                 <rect key="frame" x="20" y="597" width="335" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.73725490199999999" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -172,7 +176,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="sUF-6Y-YQY"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -182,7 +186,7 @@
                                     <constraint firstAttribute="height" constant="30" id="KiB-xT-N35"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
                                 <connections>
                                     <outlet property="delegate" destination="kPV-bF-Dwb" id="WBh-XN-If5"/>
@@ -198,9 +202,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="q1Q-O7-9Fk" firstAttribute="top" secondItem="Sbc-r6-ifh" secondAttribute="bottom" id="0jY-AA-G8H"/>
+                            <constraint firstItem="q1Q-O7-9Fk" firstAttribute="leading" secondItem="saA-cG-4jI" secondAttribute="leading" id="A7R-pK-Ngx"/>
                             <constraint firstAttribute="trailing" secondItem="4ca-a9-5o0" secondAttribute="trailing" constant="20" id="ASO-KY-GQa"/>
+                            <constraint firstAttribute="trailing" secondItem="q1Q-O7-9Fk" secondAttribute="trailing" id="ByY-ci-PLz"/>
                             <constraint firstItem="eNQ-zL-6Gz" firstAttribute="leading" secondItem="saA-cG-4jI" secondAttribute="leading" constant="20" id="Dz5-TH-Kzd"/>
                             <constraint firstItem="qc8-jv-Wpo" firstAttribute="top" secondItem="tSK-Sz-iXN" secondAttribute="bottom" constant="20" id="EZE-kz-LKb"/>
+                            <constraint firstItem="7T2-CM-YRd" firstAttribute="top" secondItem="q1Q-O7-9Fk" secondAttribute="bottom" id="IRk-ML-bbP"/>
                             <constraint firstItem="Sbc-r6-ifh" firstAttribute="top" secondItem="1yO-at-mJ3" secondAttribute="bottom" constant="20" id="JML-ac-ela"/>
                             <constraint firstItem="4ca-a9-5o0" firstAttribute="top" secondItem="Sbc-r6-ifh" secondAttribute="bottom" constant="20" id="Jir-Rw-Ups"/>
                             <constraint firstItem="7T2-CM-YRd" firstAttribute="top" secondItem="4ca-a9-5o0" secondAttribute="bottom" constant="20" id="Kg5-rP-Gfq"/>
@@ -228,7 +236,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yW4-Bu-C6W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="422" y="1701"/>
+            <point key="canvasLocation" x="421.60000000000002" y="1700.5997001499252"/>
         </scene>
         <!--New Slice-->
         <scene sceneID="cXY-EH-MVT">
@@ -585,7 +593,7 @@
         <scene sceneID="9Tq-nO-CK1">
             <objects>
                 <navigationController storyboardIdentifier="AddActivity" id="TN6-iY-hvU" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="atu-ye-C3t">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="atu-ye-C3t">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

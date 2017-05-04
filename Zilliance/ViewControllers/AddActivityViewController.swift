@@ -42,8 +42,9 @@ class AddActivityViewController: UIViewController, UICollectionViewDataSource, U
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(closeView))
         
-        self.selectAnIconLabel.text = "Select An Icon:"
-        self.selectAnIconLabel.font = UIFont.muliRegular(size: 16.0)
+        self.selectAnIconLabel.text = "Select an Icon"
+        self.selectAnIconLabel.font = UIFont.muliSemiBold(size: 16.0)
+        self.selectAnIconLabel.textColor = .darkBlueBackground
         
         self.createActivityButton.layer.cornerRadius = App.Appearance.buttonCornerRadius
         
