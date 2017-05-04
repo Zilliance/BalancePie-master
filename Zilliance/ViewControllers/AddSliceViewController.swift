@@ -261,7 +261,13 @@ extension AddSliceViewController: UITableViewDataSource
             
             let text = self.newActivity.goodValues.map{$0.name}.joined(separator: "\n")
             
-            cell.titleLabel.text = "Why does this activity make you feel great?"
+            var titleText = "Why does this activity make me feel great?"
+            
+            if self.newActivity.feeling == .mixed {
+                titleText = "What feels good about this activity"
+            }
+            
+            cell.titleLabel.text = titleText
             cell.subtitleLabel.text = text.characters.count > 0 ? text : tapToSelectText
             cell.subtitleLabel.textColor = text.characters.count > 0 ? UIColor.lightBlueBackground : UIColor.placeholderText
             cell.selectionStyle = .none
@@ -271,8 +277,21 @@ extension AddSliceViewController: UITableViewDataSource
         case (.badFeelings?):
             let cell = tableView.dequeueReusableCell(withIdentifier: "valuesCell", for: indexPath) as! ActivityTableViewCell
             let text = self.newActivity.badValues.map{$0.name}.joined(separator: "\n")
+            
+            var titleText = "Why does this activity make me feel lousy?"
+            
+            switch self.newActivity.feeling {
+            case .lousy:
+                titleText = "Why does this activity make me feel lousy?"
+            case .neutral:
+                titleText = "Why does this activity make me feel neutral?"
+            case .mixed:
+                titleText = "what feels not-so-good about this activity?"
+            default:
+                break
+            }
 
-            cell.titleLabel.text = "Why does this activity make you feel lousy?"
+            cell.titleLabel.text = titleText
             cell.subtitleLabel.text = text.characters.count > 0 ? text : tapToSelectText
             cell.subtitleLabel.textColor = text.characters.count > 0 ? UIColor.lightBlueBackground : UIColor.placeholderText
             cell.selectionStyle = .none
