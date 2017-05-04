@@ -384,6 +384,7 @@ extension FavoriteActivityViewController: UITableViewDataSource
             
             cell.titleLabel.text = "About how many hours do you sleep in a night?"
             cell.valueLabel.text = self.favorite.sleepDuration.userFriendlyText ?? tapToSelectText
+            cell.valueLabel.textColor = self.favorite.sleepDuration.userFriendlyText != nil ? UIColor.lightBlueBackground : UIColor.placeholderText
             
             return cell
             
@@ -395,6 +396,7 @@ extension FavoriteActivityViewController: UITableViewDataSource
             
             cell.questionLabel.text = "What is one of your favorite activities?"
             cell.answerLabel.text = self.favorite.activity != nil ? self.favorite.activity?.name : tapToSelectText
+            cell.answerLabel.textColor = self.favorite.activity != nil ? UIColor.lightBlueBackground : UIColor.placeholderText
             cell.iconImageView.image = #imageLiteral(resourceName: "iconActivities").tinted(color: UIColor.darkBlueBackground)
             return cell
             
@@ -403,6 +405,7 @@ extension FavoriteActivityViewController: UITableViewDataSource
            
             cell.questionLabel.text = "Roughly how many hours a week do you spend on this activity?"
             cell.answerLabel.text = self.favorite.activityDuration.userFriendlyText ?? tapToSelectText
+            cell.answerLabel.textColor = self.favorite.activityDuration.userFriendlyText != nil ? UIColor.lightBlueBackground : UIColor.placeholderText
             cell.iconImageView.image = #imageLiteral(resourceName: "iconBalancepieGray").tinted(color: UIColor.darkBlueBackground)
             return cell
             
@@ -423,7 +426,7 @@ extension FavoriteActivityViewController: UITableViewDataSource
                 })
             }
 
-            
+            cell.answerLabel.textColor = valuesNames.first != nil ? UIColor.lightBlueBackground : UIColor.placeholderText
             cell.answerLabel.text = valuesName
             cell.iconImageView.image = #imageLiteral(resourceName: "value").tinted(color: UIColor.darkBlueBackground)
             
