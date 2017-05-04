@@ -42,12 +42,15 @@ extension Feeling {
         case .great:
             return "Why does this activity make you feel great?"
         case .neutral:
+            assertionFailure()
             return ""
         case .lousy:
+            assertionFailure()
             return ""
         case .mixed:
             return "What feels good about this activity"
         case .none:
+            assertionFailure()
             return ""
         }
 
@@ -56,6 +59,7 @@ extension Feeling {
     var badTitleText: String {
         switch self {
         case .great:
+            assertionFailure()
             return ""
         case .neutral:
             return "Why does this activity make you feel neutral?"
@@ -64,6 +68,7 @@ extension Feeling {
         case .mixed:
             return "What feels not-so-good about this activity?"
         case .none:
+            assertionFailure()
             return ""
         }
     }
