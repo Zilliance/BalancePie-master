@@ -412,7 +412,7 @@ extension FavoriteActivityViewController: UITableViewDataSource
         case .feels?:
             let cell = tableView.dequeueReusableCell(withIdentifier: activityCellIdentifier, for: indexPath) as! FavoriteActivityCell
             
-            cell.questionLabel.text = "Why does this activity feel good?"
+            cell.questionLabel.text = "Why does this activity make me feel great?"
             
             
             var valuesNames = self.favorite.values.map { $0.name }
