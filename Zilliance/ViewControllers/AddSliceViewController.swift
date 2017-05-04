@@ -291,26 +291,26 @@ extension AddSliceViewController: UITableViewDataSource
 extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitioningDelegate
 {
     
-    func selectActivityName() {
+    func selectActivityName(initialSelection: Int?) {
         guard let itemSelectionViewController = UIStoryboard(name: "ItemsSelection", bundle: nil).instantiateInitialViewController() as? ItemsSelectionViewController else {
             assertionFailure()
             return
         }
         
         let selectedActivities = Database.shared.user.activities.map { $0.activity }
+        
         let activities: [Activity] = Array(Database.shared.allActivities()).sorted {$0.order.rawValue < $1.order.rawValue} .filter { activity in
             return !selectedActivities.contains { $0 == activity }
+        }
+        
+        if let initialSelection = initialSelection {
+            itemSelectionViewController.selectedItemsIndexes = Set([initialSelection])
         }
 
         itemSelectionViewController.title = "Activities"
         itemSelectionViewController.createItemTitle = "Create my own activity"
         itemSelectionViewController.items = ItemSelectionViewModel.items(from: activities)
         itemSelectionViewController.isMultipleSelectionEnabled = false
-        
-        if let selectedActivity = self.newActivity.activity,  let index = activities.index(of: selectedActivity)
-        {
-            itemSelectionViewController.selectedItemsIndexes = Set([index])
-        }
         
         let navigationController = UINavigationController(rootViewController: itemSelectionViewController)
         navigationController.modalPresentationStyle = .custom
@@ -330,11 +330,20 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
                 
                 customActivityViewController.dismissAction = { newActivity in
                     if let newActivity = newActivity {
-                        self.newActivity.activity = newActivity
-                        self.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .fade)
+                        
+                        let activities: [Activity] = Array(Database.shared.allActivities()).sorted {$0.order.rawValue < $1.order.rawValue} .filter { activity in
+                            return !selectedActivities.contains { $0 == activity }
+                        }
+                        
+                        if let index = activities.index(of: newActivity)
+                        {
+                            self.selectActivityName(initialSelection: index)
+                        }
                     }
-                    
-                    self.selectActivityName()
+                    else
+                    {
+                        self.selectActivityName(initialSelection: initialSelection)
+                    }
 
                 }
                 
@@ -466,17 +475,14 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
 
     }
     
-    func selectValues(valueType: ValueType, completion: @escaping ([Value])->())
+    func selectValues(valueType: ValueType, initialIndexes: [Int], completion: @escaping ([Value])->())
     {
         
         let values = valueType == .good ?
             Value.goodValues.sorted { $0.order.rawValue < $1.order.rawValue } :
             Value.badValues.sorted { $0.order.rawValue < $1.order.rawValue }
         
-        let initialIndexes = valueType == .good ?
-            values.flatMap({self.newActivity.goodValues.index(of: $0) == nil ? nil : values.index(of: $0)}) :
-            values.flatMap({self.newActivity.badValues.index(of: $0) == nil ? nil : values.index(of: $0)})
-
+        let initialSelectedValues = initialIndexes.map{values[$0]}
         
         let storyboard = UIStoryboard(name: "ItemsSelection", bundle: nil)
         if let itemsVC = storyboard.instantiateInitialViewController() as? ItemsSelectionViewController
@@ -515,17 +521,25 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
                         return
                     }
                     
+                    customValueViewController.valueType = valueType
+                    
                     let navigation = UINavigationController(rootViewController: customValueViewController)
                     self.present(navigation, animated: true, completion: nil)
                     
                     customValueViewController.dismissAction = { value in
                         //need to go back to the values selection
                         
-                        if let value = value {
-                            self.newActivity.values.append(value)
+                        let values = valueType == .good ?
+                            Value.goodValues.sorted { $0.order.rawValue < $1.order.rawValue } :
+                            Value.badValues.sorted { $0.order.rawValue < $1.order.rawValue }
+                        
+                        var initialIndexes = values.flatMap({initialSelectedValues.index(of: $0) == nil ? nil : values.index(of: $0)})
+                        
+                        if let value = value, let indexOfValue = values.index(of: value) {
+                            initialIndexes.append(indexOfValue)
                         }
                         
-                        self.selectValues(valueType: valueType, completion: completion)
+                        self.selectValues(valueType: valueType, initialIndexes: initialIndexes, completion: completion)
                     }
                     
                 })
@@ -548,7 +562,15 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
         
         switch TableSection(rawValue: indexPath.section) {
         case .name?:
-            self.selectActivityName()
+            
+            let activities: [Activity] = Array(Database.shared.allActivities()).sorted {$0.order.rawValue < $1.order.rawValue}
+            
+            var selectedIndex: Int? = nil
+            if let selectedActivity = self.newActivity.activity,  let index = activities.index(of: selectedActivity)
+            {
+                selectedIndex = index
+            }
+            self.selectActivityName(initialSelection: selectedIndex)
             
         case .duration?:
             self.selectDuration()
@@ -558,7 +580,11 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
             
         case .goodFeelings?:
             
-            self.selectValues(valueType: .good, completion: { (values) in
+            let values = Value.goodValues.sorted { $0.order.rawValue < $1.order.rawValue }
+            
+            let initialIndexes = values.flatMap({self.newActivity.goodValues.index(of: $0) == nil ? nil : values.index(of: $0)})
+            
+            self.selectValues(valueType: .good, initialIndexes: initialIndexes, completion: { (values) in
                 self.newActivity.removeGoodValues()
                 
                 for value in values
@@ -568,12 +594,16 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
                 
                 self.tableView.reloadSections(IndexSet([TableSection.goodFeelings.rawValue]), with: .fade)
                 self.scrollToLastRow()
-
+                
             })
             
         case .badFeelings?:
-
-            self.selectValues(valueType: .bad, completion: { (values) in
+            
+            let values = Value.badValues.sorted { $0.order.rawValue < $1.order.rawValue }
+            
+            let initialIndexes = values.flatMap({self.newActivity.badValues.index(of: $0) == nil ? nil : values.index(of: $0)})
+            
+            self.selectValues(valueType: .bad, initialIndexes: initialIndexes, completion: { (values) in
                 self.newActivity.removeBadValues()
                 
                 for value in values
@@ -583,7 +613,7 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
                 
                 self.tableView.reloadSections(IndexSet([TableSection.badFeelings.rawValue]), with: .fade)
                 self.scrollToLastRow()
-
+                
             })
             
         default:
