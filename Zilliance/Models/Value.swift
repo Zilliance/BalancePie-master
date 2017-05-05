@@ -54,7 +54,7 @@ class Value: Object {
     }
     
     static var neutralValues: Array<Value> {
-        return Array(Database.shared.realm.objects(Value.self).filter("type == %d", ValueType.neutral.rawValue))
+        return Array(Database.shared.realm.objects(Value.self).filter("type == %d", ValueType.neutral.rawValue).sorted(by: sortProperties))
     }
 }
 

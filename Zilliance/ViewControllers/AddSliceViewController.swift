@@ -299,7 +299,7 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
         
         let selectedActivities = Database.shared.user.activities.map { $0.activity }
         
-        let activities: [Activity] = Array(Database.shared.allActivities()).sorted {$0.order.rawValue < $1.order.rawValue} .filter { activity in
+        let activities: [Activity] = Array(Database.shared.allActivities()).filter { activity in
             return !selectedActivities.contains { $0 == activity }
         }
         
@@ -331,7 +331,7 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
                 customActivityViewController.dismissAction = { newActivity in
                     if let newActivity = newActivity {
                         
-                        let activities: [Activity] = Array(Database.shared.allActivities()).sorted {$0.order.rawValue < $1.order.rawValue} .filter { activity in
+                        let activities: [Activity] = Array(Database.shared.allActivities()).filter { activity in
                             return !selectedActivities.contains { $0 == activity }
                         }
                         
@@ -482,11 +482,11 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
         
         switch valueType {
         case .good:
-            values = Value.goodValues.sorted { $0.order.rawValue < $1.order.rawValue }
+            values = Value.goodValues
         case .bad:
-            values = Value.badValues.sorted { $0.order.rawValue < $1.order.rawValue }
+            values = Value.badValues
         case .neutral:
-            values = Value.neutralValues.sorted { $0.order.rawValue < $1.order.rawValue }
+            values = Value.neutralValues
         }
         
         
@@ -541,11 +541,11 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
                         
                         switch valueType {
                         case .good:
-                            values = Value.goodValues.sorted { $0.order.rawValue < $1.order.rawValue }
+                            values = Value.goodValues
                         case .bad:
-                            values = Value.badValues.sorted { $0.order.rawValue < $1.order.rawValue }
+                            values = Value.badValues
                         case .neutral:
-                            values = Value.neutralValues.sorted { $0.order.rawValue < $1.order.rawValue }
+                            values = Value.neutralValues
                         }
 
                         
@@ -579,8 +579,7 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
         switch TableSection(rawValue: indexPath.section) {
         case .name?:
             
-            let activities: [Activity] = Array(Database.shared.allActivities()).sorted {$0.order.rawValue < $1.order.rawValue}
-            
+            let activities: [Activity] = Array(Database.shared.allActivities())
             var selectedIndex: Int? = nil
             if let selectedActivity = self.newActivity.activity,  let index = activities.index(of: selectedActivity)
             {
@@ -596,7 +595,7 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
             
         case .goodFeelings?:
             
-            let values = Value.goodValues.sorted { $0.order.rawValue < $1.order.rawValue }
+            let values = Value.goodValues
             
             let initialIndexes = values.flatMap({self.newActivity.goodValues.index(of: $0) == nil ? nil : values.index(of: $0)})
             
@@ -616,7 +615,7 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
         case .badFeelings?:
             
             
-            let values = self.newActivity.feeling == .neutral ? Value.neutralValues.sorted { $0.order.rawValue < $1.order.rawValue } : Value.badValues.sorted { $0.order.rawValue < $1.order.rawValue }
+            let values = self.newActivity.feeling == .neutral ? Value.neutralValues : Value.badValues
             
             let initialIndexes = self.newActivity.feeling == .neutral ? values.flatMap({self.newActivity.neutralValues.index(of: $0) == nil ? nil : values.index(of: $0)}) : values.flatMap({self.newActivity.badValues.index(of: $0) == nil ? nil : values.index(of: $0)})
             let valueType: ValueType = self.newActivity.feeling == .neutral ? ValueType.neutral : ValueType.bad

@@ -263,11 +263,11 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
         
         switch valueType {
         case .good:
-            values = Value.goodValues.sorted { $0.order.rawValue < $1.order.rawValue }
+            values = Value.goodValues
         case .bad:
-            values = Value.badValues.sorted { $0.order.rawValue < $1.order.rawValue }
+            values = Value.badValues
         case .neutral:
-            values = Value.neutralValues.sorted { $0.order.rawValue < $1.order.rawValue }
+            values = Value.neutralValues
         }
         
         let initialSelectedValues = initialIndexes.map{values[$0]}
@@ -321,11 +321,11 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
                         
                         switch valueType {
                         case .good:
-                            values = Value.goodValues.sorted { $0.order.rawValue < $1.order.rawValue }
+                            values = Value.goodValues
                         case .bad:
-                            values = Value.badValues.sorted { $0.order.rawValue < $1.order.rawValue }
+                            values = Value.badValues
                         case .neutral:
-                            values = Value.neutralValues.sorted { $0.order.rawValue < $1.order.rawValue }
+                            values = Value.neutralValues
                         }
                         
                         var initialIndexes = values.flatMap({initialSelectedValues.index(of: $0) == nil ? nil : values.index(of: $0)})
@@ -364,7 +364,7 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
 
         case .goodFeelings?:
             
-            let values = Value.goodValues.sorted { $0.order.rawValue < $1.order.rawValue }
+            let values = Value.goodValues
             
             let initialIndexes = values.flatMap({self.activity.goodValues.index(of: $0) == nil ? nil : values.index(of: $0)})
             
@@ -384,7 +384,7 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
         case .badFeelings?:
             
             
-            let values = self.activity.feeling == .neutral ? Value.neutralValues.sorted { $0.order.rawValue < $1.order.rawValue } : Value.badValues.sorted { $0.order.rawValue < $1.order.rawValue }
+            let values = self.activity.feeling == .neutral ? Value.neutralValues: Value.badValues
             
             let initialIndexes = self.activity.feeling == .neutral ? values.flatMap({self.activity.neutralValues.index(of: $0) == nil ? nil : values.index(of: $0)}) : values.flatMap({self.activity.badValues.index(of: $0) == nil ? nil : values.index(of: $0)})
             let valueType: ValueType = self.activity.feeling == .neutral ? ValueType.neutral : ValueType.bad
