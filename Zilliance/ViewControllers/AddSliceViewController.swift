@@ -270,7 +270,7 @@ extension AddSliceViewController: UITableViewDataSource
             
         case (.badFeelings?):
             let cell = tableView.dequeueReusableCell(withIdentifier: "valuesCell", for: indexPath) as! ActivityTableViewCell
-            let text = self.newActivity.badValues.map{$0.name}.joined(separator: "\n")
+            let text = self.newActivity.feeling == .neutral ? self.newActivity.neutralValues.map{$0.name}.joined(separator: "\n") : self.newActivity.badValues.map{$0.name}.joined(separator: "\n")
 
             cell.titleLabel.text = self.newActivity.feeling.badTitleText
             cell.subtitleLabel.text = text.characters.count > 0 ? text : tapToSelectText
@@ -478,9 +478,17 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
     func selectValues(valueType: ValueType, initialIndexes: [Int], completion: @escaping ([Value])->())
     {
         
-        let values = valueType == .good ?
-            Value.goodValues.sorted { $0.order.rawValue < $1.order.rawValue } :
-            Value.badValues.sorted { $0.order.rawValue < $1.order.rawValue }
+        var values: [Value] = []
+        
+        switch valueType {
+        case .good:
+            values = Value.goodValues.sorted { $0.order.rawValue < $1.order.rawValue }
+        case .bad:
+            values = Value.badValues.sorted { $0.order.rawValue < $1.order.rawValue }
+        case .neutral:
+            values = Value.neutralValues.sorted { $0.order.rawValue < $1.order.rawValue }
+        }
+        
         
         let initialSelectedValues = initialIndexes.map{values[$0]}
         
@@ -529,9 +537,17 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
                     customValueViewController.dismissAction = { value in
                         //need to go back to the values selection
                         
-                        let values = valueType == .good ?
-                            Value.goodValues.sorted { $0.order.rawValue < $1.order.rawValue } :
-                            Value.badValues.sorted { $0.order.rawValue < $1.order.rawValue }
+                        var values: [Value] = []
+                        
+                        switch valueType {
+                        case .good:
+                            values = Value.goodValues.sorted { $0.order.rawValue < $1.order.rawValue }
+                        case .bad:
+                            values = Value.badValues.sorted { $0.order.rawValue < $1.order.rawValue }
+                        case .neutral:
+                            values = Value.neutralValues.sorted { $0.order.rawValue < $1.order.rawValue }
+                        }
+
                         
                         var initialIndexes = values.flatMap({initialSelectedValues.index(of: $0) == nil ? nil : values.index(of: $0)})
                         
@@ -599,12 +615,18 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
             
         case .badFeelings?:
             
-            let values = Value.badValues.sorted { $0.order.rawValue < $1.order.rawValue }
             
-            let initialIndexes = values.flatMap({self.newActivity.badValues.index(of: $0) == nil ? nil : values.index(of: $0)})
+            let values = self.newActivity.feeling == .neutral ? Value.neutralValues.sorted { $0.order.rawValue < $1.order.rawValue } : Value.badValues.sorted { $0.order.rawValue < $1.order.rawValue }
             
-            self.selectValues(valueType: .bad, initialIndexes: initialIndexes, completion: { (values) in
-                self.newActivity.removeBadValues()
+            let initialIndexes = self.newActivity.feeling == .neutral ? values.flatMap({self.newActivity.neutralValues.index(of: $0) == nil ? nil : values.index(of: $0)}) : values.flatMap({self.newActivity.badValues.index(of: $0) == nil ? nil : values.index(of: $0)})
+            let valueType: ValueType = self.newActivity.feeling == .neutral ? ValueType.neutral : ValueType.bad
+            self.selectValues(valueType: valueType, initialIndexes: initialIndexes, completion: { (values) in
+                
+                if self.newActivity.feeling == .neutral {
+                    self.newActivity.removeNeutralValues()
+                } else {
+                    self.newActivity.removeBadValues()
+                }
                 
                 for value in values
                 {

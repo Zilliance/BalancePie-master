@@ -32,7 +32,7 @@ class Database {
             // Inside your application(application:didFinishLaunchingWithOptions:)
             
             let config = Realm.Configuration(
-                schemaVersion: 3,
+                schemaVersion: 4,
                 
                 migrationBlock: { migration, oldSchemaVersion in
                     if (oldSchemaVersion < 1) {
@@ -151,21 +151,21 @@ class Database {
     private var defaultValuesData: [[String: Any]] {
         return [
             ["name": "Achievement", "type": ValueType.good],
-            ["name": "Adventure, meaning", "type": ValueType.good],
-            ["name": "Authenticity, ability to make a difference", "type": ValueType.good],
-            ["name": "Belonging, giving back", "type": ValueType.good],
-            ["name": "Benevolence, learning, growth", "type": ValueType.good],
+            ["name": "Adventure", "type": ValueType.good],
+            ["name": "Authenticity", "type": ValueType.good],
+            ["name": "Belonging", "type": ValueType.good],
+            ["name": "Benevolence", "type": ValueType.good],
             ["name": "Bravery", "type": ValueType.good],
             ["name": "Challenge", "type": ValueType.good],
             ["name": "Community", "type": ValueType.good],
             ["name": "Connection", "type": ValueType.good],
-            ["name": "Contribution, diversity", "type": ValueType.good],
-            ["name": "Creativity, friendship", "type": ValueType.good],
+            ["name": "Contribution", "type": ValueType.good],
+            ["name": "Creativity", "type": ValueType.good],
             ["name": "Ethics", "type": ValueType.good],
             ["name": "Faith", "type": ValueType.good],
             ["name": "Fame", "type": ValueType.good],
             ["name": "Family time", "type": ValueType.good],
-            ["name": "Freddom", "type": ValueType.good],
+            ["name": "Freedom", "type": ValueType.good],
             ["name": "Friendship", "type": ValueType.good],
             ["name": "Fun", "type": ValueType.good],
             ["name": "Giving back", "type": ValueType.good],
@@ -182,7 +182,7 @@ class Database {
             ["name": "Laughter", "type": ValueType.good],
             ["name": "Leadership", "type": ValueType.good],
             ["name": "Learning", "type": ValueType.good],
-            ["name": "Lesiure", "type": ValueType.good],
+            ["name": "Leisure", "type": ValueType.good],
             ["name": "Love", "type": ValueType.good],
             ["name": "Mastery", "type": ValueType.good],
             ["name": "Meaning", "type": ValueType.good],
@@ -205,6 +205,7 @@ class Database {
             ["name": "Variety", "type": ValueType.good],
             ["name": "Wisdom", "type": ValueType.good],
             ["name": "Teamwork", "type": ValueType.good],
+            
             ["name": "Arrogance", "type": ValueType.bad],
             ["name": "Boredom", "type": ValueType.bad],
             ["name": "Combativeness", "type": ValueType.bad],
@@ -230,6 +231,24 @@ class Database {
             ["name": "Stagnation", "type": ValueType.bad],
             ["name": "Submissiveness", "type": ValueType.bad],
             ["name": "Time commitment", "type": ValueType.bad],
+            
+            ["name": "Apathy", "type": ValueType.neutral],
+            ["name": "Boredom", "type": ValueType.neutral],
+            ["name": "Complexity", "type": ValueType.neutral],
+            ["name": "Compromising", "type": ValueType.neutral],
+            ["name": "Confusion", "type": ValueType.neutral],
+            ["name": "Dullness", "type": ValueType.neutral],
+            ["name": "Impatience", "type": ValueType.neutral],
+            ["name": "Loneliness", "type": ValueType.neutral],
+            ["name": "Meaninglessness", "type": ValueType.bad],
+            ["name": "Mediocrity", "type": ValueType.neutral],
+            ["name": "Monotony", "type": ValueType.neutral],
+            ["name": "Seriousness", "type": ValueType.neutral],
+            ["name": "Servitude", "type": ValueType.neutral],
+            ["name": "Solitude", "type": ValueType.neutral],
+            ["name": "Stagnation", "type": ValueType.neutral],
+            ["name": "Submissiveness", "type": ValueType.neutral],
+            ["name": "Time demands", "type": ValueType.neutral],
         ]
     }
     
@@ -245,6 +264,7 @@ class Database {
             value.type = dict["type"] as! ValueType
             
             try! self.realm.write {
+                
                 self.realm.add(value)
             }
         }

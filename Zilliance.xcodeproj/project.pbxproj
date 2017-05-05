@@ -297,7 +297,6 @@
 		8C3EA4571E92E4FD00F56DED /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				8CC4C95B1EB7C082004DF0D5 /* New Group */,
 				041C3CB81EA55C4800C52195 /* SideMenu */,
 				04647C6F1E97D82D0040CA46 /* FineTuneActivities */,
 				04B29A611E97AB000090E52E /* ItemsSelection */,
@@ -419,13 +418,6 @@
 				04E6F56D1E9F8CDB00EBD119 /* EditActivityViewController.swift */,
 			);
 			name = AddCustom;
-			sourceTree = "<group>";
-		};
-		8CC4C95B1EB7C082004DF0D5 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "New Group";
 			sourceTree = "<group>";
 		};
 		CC4F20BFD0C98666558B4DD6 /* Frameworks */ = {

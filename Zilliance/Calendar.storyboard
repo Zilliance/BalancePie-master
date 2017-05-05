@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="40o-Hi-Wew">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="40o-Hi-Wew">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -33,8 +33,9 @@
                                 <rect key="frame" x="0.0" y="44" width="350" height="566"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reminder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="maC-2E-Rqj">
-                                        <rect key="frame" x="16" y="8" width="117" height="15"/>
+                                        <rect key="frame" x="16" y="8" width="61" height="15"/>
                                         <constraints>
+                                            <constraint firstAttribute="width" constant="61" id="Cgw-wl-eih"/>
                                             <constraint firstAttribute="height" constant="15" id="i7F-2w-k69"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="12"/>
@@ -72,28 +73,43 @@
                                         </connections>
                                     </button>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="azT-HV-RuT">
-                                        <rect key="frame" x="16" y="31" width="318" height="200"/>
+                                        <rect key="frame" x="16" y="50" width="318" height="181"/>
                                         <connections>
                                             <segue destination="B1x-Jt-X5J" kind="embed" id="sHU-7N-87h"/>
                                         </connections>
                                     </containerView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use what's here or write your own" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R93-DF-uy7">
+                                        <rect key="frame" x="16" y="26" width="193.5" height="15"/>
+                                        <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="12"/>
+                                        <color key="textColor" white="0.398193359375" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Example 1 | 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HNj-FA-QW7">
+                                        <rect key="frame" x="258" y="26" width="76" height="16"/>
+                                        <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="12"/>
+                                        <color key="textColor" red="0.0039215686269999999" green="0.73725490199999999" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="HNj-FA-QW7" firstAttribute="top" secondItem="GKA-A6-kPw" secondAttribute="top" constant="26" id="1GW-cB-JDX"/>
+                                    <constraint firstItem="R93-DF-uy7" firstAttribute="leading" secondItem="GKA-A6-kPw" secondAttribute="leading" constant="16" id="8D5-BB-bRg"/>
+                                    <constraint firstItem="azT-HV-RuT" firstAttribute="top" secondItem="HNj-FA-QW7" secondAttribute="bottom" constant="8" id="Blc-MI-01A"/>
                                     <constraint firstAttribute="bottom" secondItem="vd0-30-aqU" secondAttribute="bottom" constant="16" id="JqE-0I-P02"/>
+                                    <constraint firstAttribute="trailing" secondItem="HNj-FA-QW7" secondAttribute="trailing" constant="16" id="LoQ-B5-WwB"/>
                                     <constraint firstAttribute="trailing" secondItem="5TE-Dh-zm2" secondAttribute="trailing" constant="16" id="Nay-iU-fN2"/>
                                     <constraint firstItem="XBf-Rg-WQ6" firstAttribute="top" secondItem="azT-HV-RuT" secondAttribute="bottom" constant="8" id="OpU-G0-jUs"/>
                                     <constraint firstItem="XBf-Rg-WQ6" firstAttribute="leading" secondItem="GKA-A6-kPw" secondAttribute="leading" constant="16" id="PX8-Qm-b9a"/>
-                                    <constraint firstAttribute="trailing" secondItem="maC-2E-Rqj" secondAttribute="trailing" constant="217" id="YmD-D1-Lg2"/>
                                     <constraint firstAttribute="trailing" secondItem="XBf-Rg-WQ6" secondAttribute="trailing" constant="207" id="YuE-bS-RV0"/>
                                     <constraint firstItem="5TE-Dh-zm2" firstAttribute="leading" secondItem="GKA-A6-kPw" secondAttribute="leading" constant="16" id="ae5-xO-7lP"/>
+                                    <constraint firstItem="R93-DF-uy7" firstAttribute="top" secondItem="maC-2E-Rqj" secondAttribute="bottom" constant="3" id="cyl-Zt-1I2"/>
                                     <constraint firstItem="vd0-30-aqU" firstAttribute="leading" secondItem="GKA-A6-kPw" secondAttribute="leading" constant="16" id="dHh-3H-DS6"/>
                                     <constraint firstItem="5TE-Dh-zm2" firstAttribute="top" secondItem="XBf-Rg-WQ6" secondAttribute="bottom" constant="8" id="dVd-yJ-Vv3"/>
                                     <constraint firstItem="maC-2E-Rqj" firstAttribute="top" secondItem="GKA-A6-kPw" secondAttribute="top" constant="8" id="deu-7U-28a"/>
                                     <constraint firstAttribute="trailing" secondItem="vd0-30-aqU" secondAttribute="trailing" constant="16" id="hru-ak-Obb"/>
                                     <constraint firstItem="vd0-30-aqU" firstAttribute="top" secondItem="5TE-Dh-zm2" secondAttribute="bottom" constant="16" id="k7Q-eH-yjm"/>
                                     <constraint firstItem="maC-2E-Rqj" firstAttribute="leading" secondItem="GKA-A6-kPw" secondAttribute="leading" constant="16" id="lU1-Jz-P7q"/>
-                                    <constraint firstItem="azT-HV-RuT" firstAttribute="top" secondItem="maC-2E-Rqj" secondAttribute="bottom" constant="8" id="x5a-HE-XLd"/>
                                     <constraint firstAttribute="trailing" secondItem="azT-HV-RuT" secondAttribute="trailing" constant="16" id="xFR-BL-FJD"/>
                                     <constraint firstItem="azT-HV-RuT" firstAttribute="leading" secondItem="GKA-A6-kPw" secondAttribute="leading" constant="16" id="zJs-Gk-dip"/>
                                 </constraints>
@@ -119,7 +135,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gTm-IN-70x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="74" y="215"/>
+            <point key="canvasLocation" x="73.599999999999994" y="214.99250374812596"/>
         </scene>
         <!--Zilliance Text View Controller-->
         <scene sceneID="Vfz-jK-1ck">
@@ -130,11 +146,11 @@
                         <viewControllerLayoutGuide type="bottom" id="ShE-FK-1zf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bl6-P2-eNh">
-                        <rect key="frame" x="0.0" y="0.0" width="318" height="200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="318" height="181"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OWa-x4-L3Q">
-                                <rect key="frame" x="0.0" y="0.0" width="318" height="200"/>
+                                <rect key="frame" x="0.0" y="0.0" width="318" height="181"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="19"/>

@@ -135,6 +135,8 @@ struct EmbeddedFeelingTableViewModel
         }
     }
     
+    // TODO: Is this code obsolete?
+    
     func titleForSection(section: Int) -> String?
     {
         switch self.userActivity.feeling {
