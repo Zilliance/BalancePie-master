@@ -36,7 +36,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="300"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zilliance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JgO-fP-Vbo">
-                                        <rect key="frame" x="146" y="30" width="84.5" height="28"/>
+                                        <rect key="frame" x="145.5" y="30" width="84.5" height="28"/>
                                         <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -299,8 +299,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aEr-PW-3Ut">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aEr-PW-3Ut">
+                                <rect key="frame" x="0.0" y="239" width="375" height="428"/>
                                 <color key="backgroundColor" red="0.98012467619999999" green="0.98012467619999999" blue="0.98012467619999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <string key="text">At Zilliance, we create apps, courses, podcasts, and books that help people from all walks of life develop resilience.
 
@@ -308,17 +308,26 @@ Our research-backed resiliency skills empower you to remain calm in chaos, make 
 
 Contact us at help@zilliance.com</string>
                                 <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="2aA-CK-ve1">
+                                <rect key="frame" x="123" y="93" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="0h1-Bb-Cjh"/>
+                                    <constraint firstAttribute="height" constant="128" id="2Lz-pe-XGz"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.98012467619999999" green="0.98012467619999999" blue="0.98012467619999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="aEr-PW-3Ut" firstAttribute="leading" secondItem="fJX-7k-r7w" secondAttribute="leading" id="J7o-a7-K4C"/>
                             <constraint firstItem="MnD-pH-AVT" firstAttribute="top" secondItem="aEr-PW-3Ut" secondAttribute="bottom" id="Lg6-9N-GIc"/>
+                            <constraint firstItem="2aA-CK-ve1" firstAttribute="centerX" secondItem="fJX-7k-r7w" secondAttribute="centerX" id="Mub-eG-lKn"/>
+                            <constraint firstItem="2aA-CK-ve1" firstAttribute="top" secondItem="Hag-tp-686" secondAttribute="bottom" constant="29" id="Qeq-KE-wCB"/>
                             <constraint firstAttribute="trailing" secondItem="aEr-PW-3Ut" secondAttribute="trailing" id="Qfm-tG-O7l"/>
-                            <constraint firstItem="aEr-PW-3Ut" firstAttribute="top" secondItem="Hag-tp-686" secondAttribute="bottom" id="Xq1-3W-8u5"/>
+                            <constraint firstItem="aEr-PW-3Ut" firstAttribute="top" secondItem="2aA-CK-ve1" secondAttribute="bottom" constant="18" id="cqI-06-n1I"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="About Zilliance" id="7y8-ii-EMa">
@@ -335,7 +344,7 @@ Contact us at help@zilliance.com</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n8N-ol-5KX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-686" y="1473"/>
+            <point key="canvasLocation" x="-687.20000000000005" y="1472.1139430284859"/>
         </scene>
         <!--Tour-->
         <scene sceneID="h1d-cP-yFq">
@@ -416,6 +425,7 @@ Contact us at help@zilliance.com</string>
     </scenes>
     <resources>
         <image name="drawer-toolbar-icon" width="20" height="20"/>
+        <image name="logo" width="183" height="183"/>
         <image name="pie" width="365" height="365"/>
     </resources>
 </document>
