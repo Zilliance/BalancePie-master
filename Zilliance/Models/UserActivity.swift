@@ -119,9 +119,25 @@ final class UserActivity: Object {
         return self.values.filter{$0.type == .bad}
     }
     
+    var neutralValues: Array<Value> {
+        return self.values.filter{$0.type == .neutral}
+    }
+
+    
     func removeBadValues()
     {
         self.badValues.forEach{
+            if let index = self.values.index(of: $0)
+            {
+                self.values.remove(objectAtIndex: index)
+            }
+        }
+    }
+    
+    
+    func removeNeutralValues()
+    {
+        self.neutralValues.forEach{
             if let index = self.values.index(of: $0)
             {
                 self.values.remove(objectAtIndex: index)

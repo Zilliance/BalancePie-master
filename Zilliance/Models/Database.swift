@@ -32,7 +32,7 @@ class Database {
             // Inside your application(application:didFinishLaunchingWithOptions:)
             
             let config = Realm.Configuration(
-                schemaVersion: 3,
+                schemaVersion: 4,
                 
                 migrationBlock: { migration, oldSchemaVersion in
                     if (oldSchemaVersion < 1) {
@@ -227,6 +227,23 @@ class Database {
             ["name": "Stagnation", "type": ValueType.bad],
             ["name": "Submissiveness", "type": ValueType.bad],
             ["name": "Time commitment", "type": ValueType.bad],
+            ["name": "Apathy", "type": ValueType.neutral],
+            ["name": "Boredom", "type": ValueType.neutral],
+            ["name": "Complexity", "type": ValueType.neutral],
+            ["name": "Compromising", "type": ValueType.neutral],
+            ["name": "Confusion", "type": ValueType.neutral],
+            ["name": "Dullness", "type": ValueType.neutral],
+            ["name": "Impatience", "type": ValueType.neutral],
+            ["name": "Loneliness", "type": ValueType.neutral],
+            ["name": "Meaninglessness", "type": ValueType.bad],
+            ["name": "Mediocrity", "type": ValueType.neutral],
+            ["name": "Monotony", "type": ValueType.neutral],
+            ["name": "Seriousness", "type": ValueType.neutral],
+            ["name": "Servitude", "type": ValueType.neutral],
+            ["name": "Solitude", "type": ValueType.neutral],
+            ["name": "Stagnation", "type": ValueType.neutral],
+            ["name": "Submissiveness", "type": ValueType.neutral],
+            ["name": "Time demands", "type": ValueType.neutral],
         ]
     }
     
@@ -242,6 +259,7 @@ class Database {
             value.type = dict["type"] as! ValueType
             
             try! self.realm.write {
+                
                 self.realm.add(value)
             }
         }
