@@ -40,13 +40,16 @@ class Value: Object {
             self.order = priority
         }
     }
+    
+    static let sortProperties = [SortDescriptor(keyPath: "order", ascending: true), SortDescriptor(keyPath: "name", ascending: true)]
 
     static var goodValues: Array<Value> {
-        return Array(Database.shared.realm.objects(Value.self).filter("type == %d", ValueType.good.rawValue))
+        
+        return Array(Database.shared.realm.objects(Value.self).filter("type == %d", ValueType.good.rawValue).sorted(by: sortProperties))
     }
 
     static var badValues: Array<Value> {
-        return Array(Database.shared.realm.objects(Value.self).filter("type == %d", ValueType.bad.rawValue))
+        return Array(Database.shared.realm.objects(Value.self).filter("type == %d", ValueType.bad.rawValue).sorted(by: sortProperties))
     }
     
     override class func primaryKey() -> String? {
