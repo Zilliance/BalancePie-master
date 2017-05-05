@@ -27,6 +27,7 @@ class AboutCompanyViewController: UIViewController {
         self.textView.attributedText = NSAttributedString(string: self.textView.text, attributes:attributes)
         self.textView.textContainerInset = UIEdgeInsetsMake(10, 10, 10, 10)
         self.textView.backgroundColor = .lightGrayBackground
+        self.view.backgroundColor = .lightGrayBackground
     }
 
     override func didReceiveMemoryWarning() {
