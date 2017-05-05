@@ -12,6 +12,7 @@ import RealmSwift
 @objc enum ValueType: Int32 {
     case good
     case bad
+    case neutral
 }
 
 @objc enum OrderPriority: Int32 {
@@ -49,8 +50,8 @@ class Value: Object {
         return Array(Database.shared.realm.objects(Value.self).filter("type == %d", ValueType.bad.rawValue))
     }
     
-    override class func primaryKey() -> String? {
-        return "name"
+    static var neutralValues: Array<Value> {
+        return Array(Database.shared.realm.objects(Value.self).filter("type == %d", ValueType.neutral.rawValue))
     }
 }
 

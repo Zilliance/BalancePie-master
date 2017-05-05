@@ -137,8 +137,7 @@ extension EditActivityViewController: UITableViewDataSource
             
         case (.badFeelings?):
             let cell = tableView.dequeueReusableCell(withIdentifier: "valuesCell", for: indexPath) as! ActivityTableViewCell
-            let text = self.activity.badValues.map{$0.name}.joined(separator: "\n")
-            
+            let text = self.activity.feeling == .neutral ? self.activity.neutralValues.map{$0.name}.joined(separator: "\n") : self.activity.badValues.map{$0.name}.joined(separator: "\n")
             cell.titleLabel.text = self.activity.feeling.badTitleText
             cell.subtitleLabel.text = text.characters.count > 0 ? text : tapToSelectText
             cell.subtitleLabel.textColor = text.characters.count > 0 ? UIColor.lightBlueBackground : UIColor.placeholderText
@@ -260,9 +259,16 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
     func selectValues(valueType: ValueType, initialIndexes: [Int], completion: @escaping ([Value])->())
     {
         
-        let values = valueType == .good ?
-            Value.goodValues.sorted { $0.order.rawValue < $1.order.rawValue } :
-            Value.badValues.sorted { $0.order.rawValue < $1.order.rawValue }
+        var values: [Value] = []
+        
+        switch valueType {
+        case .good:
+            values = Value.goodValues.sorted { $0.order.rawValue < $1.order.rawValue }
+        case .bad:
+            values = Value.badValues.sorted { $0.order.rawValue < $1.order.rawValue }
+        case .neutral:
+            values = Value.neutralValues.sorted { $0.order.rawValue < $1.order.rawValue }
+        }
         
         let initialSelectedValues = initialIndexes.map{values[$0]}
         
@@ -311,9 +317,16 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
                     customValueViewController.dismissAction = { value in
                         //need to go back to the values selection
                         
-                        let values = valueType == .good ?
-                            Value.goodValues.sorted { $0.order.rawValue < $1.order.rawValue } :
-                            Value.badValues.sorted { $0.order.rawValue < $1.order.rawValue }
+                        var values: [Value] = []
+                        
+                        switch valueType {
+                        case .good:
+                            values = Value.goodValues.sorted { $0.order.rawValue < $1.order.rawValue }
+                        case .bad:
+                            values = Value.badValues.sorted { $0.order.rawValue < $1.order.rawValue }
+                        case .neutral:
+                            values = Value.neutralValues.sorted { $0.order.rawValue < $1.order.rawValue }
+                        }
                         
                         var initialIndexes = values.flatMap({initialSelectedValues.index(of: $0) == nil ? nil : values.index(of: $0)})
 
@@ -370,12 +383,19 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
             
         case .badFeelings?:
             
-            let values = Value.badValues.sorted { $0.order.rawValue < $1.order.rawValue }
             
-            let initialIndexes = values.flatMap({self.activity.badValues.index(of: $0) == nil ? nil : values.index(of: $0)})
+            let values = self.activity.feeling == .neutral ? Value.neutralValues.sorted { $0.order.rawValue < $1.order.rawValue } : Value.badValues.sorted { $0.order.rawValue < $1.order.rawValue }
             
-            self.selectValues(valueType: .bad, initialIndexes: initialIndexes, completion: { (values) in
-                self.activity.removeBadValues()
+            let initialIndexes = self.activity.feeling == .neutral ? values.flatMap({self.activity.neutralValues.index(of: $0) == nil ? nil : values.index(of: $0)}) : values.flatMap({self.activity.badValues.index(of: $0) == nil ? nil : values.index(of: $0)})
+            let valueType: ValueType = self.activity.feeling == .neutral ? ValueType.neutral : ValueType.bad
+
+            self.selectValues(valueType: valueType, initialIndexes: initialIndexes, completion: { (values) in
+                
+                if self.activity.feeling == .neutral {
+                    self.activity.removeNeutralValues()
+                } else {
+                    self.activity.removeBadValues()
+                }
                 
                 for value in values
                 {
