@@ -477,7 +477,7 @@ extension ZillianceTextViewController: UITextViewDelegate {
             self.validation = .value1
             self.setupTextView()
         case (.lousy, .values):
-            let editText = EditableText(feeling: .great, text: "choose value", type: .value, isMultipleSelection: true, selectedIndexes: nil)
+            let editText = EditableText(feeling: .great, text: "choose values", type: .value, isMultipleSelection: true, selectedIndexes: nil)
             self.editableTexts = [editText]
             self.textView.text = "Bring \(self.editableTexts[0].text) to \((textViewContent.userActivity.activity?.name)!) by: e.g. listening to podcasts or audiobooks."
             self.promptTexts = ["e.g. listening to podcasts or audiobooks."]
@@ -530,7 +530,7 @@ extension ZillianceTextViewController: UITextViewDelegate {
             self.validation = .value1
             self.setupTextView()
         case (.mixed, .values):
-            let editText = EditableText(feeling: .great, text: "choose value", type: .value, isMultipleSelection: true, selectedIndexes: nil)
+            let editText = EditableText(feeling: .great, text: "choose values", type: .value, isMultipleSelection: true, selectedIndexes: nil)
             let editText2 = EditableText(feeling: .great, text: "choose values", type: .value, isMultipleSelection: true, selectedIndexes: nil)
             self.editableTexts = [editText, editText2]
             self.textView.text = "Bring more \(self.editableTexts[0].text) to the good-feeling parts of \((textViewContent.userActivity.activity?.name)!) by: e.g. listening to podcasts or audiobooks. \nBring more \(self.editableTexts[1].text) to the not-so-good feeling parts by: …"
