@@ -178,7 +178,7 @@ class PieViewController: UIViewController {
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        alert.addAction(UIAlertAction(title: "Delete Slice", style: .default) { _ in
+        alert.addAction(UIAlertAction(title: "Delete Slice", style: .destructive) { _ in
             Database.shared.user.remove(userActivity: userActivity)
             self.loadData()
             self.refreshHours()
