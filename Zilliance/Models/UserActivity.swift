@@ -112,18 +112,23 @@ final class UserActivity: Object {
     }
     
     var goodValues: Array<Value> {
-        return self.values.filter{$0.type == .good}
+        return self.values.filter{$0.type == .good}.sorted {
+            $0.order == $1.order ? $0.name < $1.name : $0.order.rawValue < $1.order.rawValue
+        }
     }
 
     var badValues: Array<Value> {
-        return self.values.filter{$0.type == .bad}
+        return self.values.filter{$0.type == .bad}.sorted {
+            $0.order == $1.order ? $0.name < $1.name : $0.order.rawValue < $1.order.rawValue
+        }
     }
     
     var neutralValues: Array<Value> {
-        return self.values.filter{$0.type == .neutral}
+        return self.values.filter{$0.type == .neutral}.sorted {
+            $0.order == $1.order ? $0.name < $1.name : $0.order.rawValue < $1.order.rawValue
+        }
     }
 
-    
     func removeBadValues()
     {
         self.badValues.forEach{
