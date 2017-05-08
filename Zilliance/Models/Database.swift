@@ -240,7 +240,7 @@ class Database {
             ["name": "Dullness", "type": ValueType.neutral],
             ["name": "Impatience", "type": ValueType.neutral],
             ["name": "Loneliness", "type": ValueType.neutral],
-            ["name": "Meaninglessness", "type": ValueType.bad],
+            ["name": "Meaninglessness", "type": ValueType.neutral],
             ["name": "Mediocrity", "type": ValueType.neutral],
             ["name": "Monotony", "type": ValueType.neutral],
             ["name": "Seriousness", "type": ValueType.neutral],
