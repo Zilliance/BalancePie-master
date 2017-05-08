@@ -88,7 +88,7 @@
                                         <rect key="frame" x="234" y="23.5" width="100" height="20"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T0d-EF-u29">
-                                                <rect key="frame" x="12" y="0.0" width="70" height="20"/>
+                                                <rect key="frame" x="16" y="0.0" width="70" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="70" id="NO7-SN-nQO"/>
                                                 </constraints>
@@ -101,16 +101,16 @@
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dOi-u7-Wm0">
-                                                <rect key="frame" x="84" y="0.0" width="1" height="20"/>
+                                                <rect key="frame" x="86" y="0.0" width="1" height="20"/>
                                                 <color key="backgroundColor" red="0.0039215686269999999" green="0.73725490199999999" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="1" id="tyX-Ot-vSd"/>
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cmZ-ZG-6cQ">
-                                                <rect key="frame" x="85" y="0.0" width="15" height="20"/>
+                                                <rect key="frame" x="87" y="0.0" width="13" height="20"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="15" id="6NK-WU-mnq"/>
+                                                    <constraint firstAttribute="width" constant="13" id="6NK-WU-mnq"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="12"/>
                                                 <state key="normal" title="2">
@@ -132,7 +132,7 @@
                                             <constraint firstAttribute="height" constant="20" id="lYz-dU-KMj"/>
                                             <constraint firstItem="cmZ-ZG-6cQ" firstAttribute="leading" secondItem="dOi-u7-Wm0" secondAttribute="trailing" id="lxm-EE-73k"/>
                                             <constraint firstItem="dOi-u7-Wm0" firstAttribute="top" secondItem="7jE-hM-Y41" secondAttribute="top" id="o7D-Qq-o0r"/>
-                                            <constraint firstItem="dOi-u7-Wm0" firstAttribute="leading" secondItem="T0d-EF-u29" secondAttribute="trailing" constant="2" id="xJh-KS-YfY"/>
+                                            <constraint firstItem="dOi-u7-Wm0" firstAttribute="leading" secondItem="T0d-EF-u29" secondAttribute="trailing" id="xJh-KS-YfY"/>
                                             <constraint firstAttribute="trailing" secondItem="cmZ-ZG-6cQ" secondAttribute="trailing" id="xbU-28-FSM"/>
                                         </constraints>
                                     </view>
