@@ -209,7 +209,7 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
                     switch option {
                     case .allowHours:
                         self.activity.duration = totalTimeMinutes
-                        self.tableView.reloadRows(at: [IndexPath(row: 0, section: 1)], with: .fade)
+                        self.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .fade)
                     case .changeHours:
                         self.selectDuration()
                     }
@@ -219,7 +219,7 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
             else {
                 
                 self.activity.duration = totalTimeMinutes
-                self.tableView.reloadRows(at: [IndexPath(row: 0, section: 1)], with: .fade)
+                self.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .fade)
                 
             }
         }
