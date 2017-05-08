@@ -115,7 +115,7 @@ class AddToCalendarViewController: UIViewController {
         exampleViewController.textViewContent = self.textViewContent
         exampleViewController.exampleNumber = ExamplePopUpViewController.ExampleNumber(rawValue: number)!
         
-        exampleViewController.doneAction = { text in
+        exampleViewController.doneAction = {[unowned self] text in
             self.zillianceTextViewController.setupForExample(with: text)
         }
         
