@@ -21,12 +21,17 @@ final class LeftMenuViewController: UIViewController {
         case company
     }
     
+    @IBOutlet var logoViewWidthConstraint: NSLayoutConstraint!
     var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = .darkBlueBackground
+        
+        if UIDevice.isSmallerThaniPhone6 {
+            self.logoViewWidthConstraint.constant = 60
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
