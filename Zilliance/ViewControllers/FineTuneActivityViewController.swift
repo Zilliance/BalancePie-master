@@ -15,7 +15,7 @@ struct FineTuneItem {
     let type : FineTuneType
 }
 
-enum FineTuneType {
+enum FineTuneType: String {
     case pleasure
     case prioritize
     case gratitude
