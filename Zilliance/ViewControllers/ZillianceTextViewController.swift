@@ -522,7 +522,7 @@ extension ZillianceTextViewController: UITextViewDelegate {
             self.validation = .placeholder1
             self.setupTextView()
         case (.mixed, .gratitude):
-            self.textView.text = "Give thanks for the aspects of \((textViewContent.userActivity.activity?.name)!) that I'm greatful for. Acknowledge the gifts and blessings"
+            self.textView.text = "Give thanks for the aspects of \((textViewContent.userActivity.activity?.name)!) that I'm grateful for. Acknowledge the gifts and blessings"
         case (.mixed, .shift):
             let editText = EditableText(feeling: .great, text: "choose needs", type: .value, isMultipleSelection: true, selectedIndexes: nil)
             self.editableTexts = [editText]
