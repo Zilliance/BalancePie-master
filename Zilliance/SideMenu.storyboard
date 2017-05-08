@@ -36,7 +36,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="300"/>
                                 <subviews>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zilliance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JgO-fP-Vbo">
-                                        <rect key="frame" x="146" y="30" width="84.5" height="28"/>
+                                        <rect key="frame" x="145.5" y="30" width="84.5" height="28"/>
                                         <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -122,11 +122,11 @@
                                             <action selector="termsOfServicesTapped:" destination="pfF-eJ-xck" eventType="touchUpInside" id="elQ-2p-Off"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="eng-fz-NHk">
-                                        <rect key="frame" x="8" y="5" width="20" height="20"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-text" translatesAutoresizingMaskIntoConstraints="NO" id="eng-fz-NHk">
+                                        <rect key="frame" x="8" y="5" width="74" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="b9A-Lw-UUo"/>
-                                            <constraint firstAttribute="width" constant="20" id="fnm-EG-0wh"/>
+                                            <constraint firstAttribute="width" constant="74" id="fnm-EG-0wh"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
@@ -165,6 +165,9 @@
                             <constraint firstAttribute="trailing" secondItem="rMB-R8-uYM" secondAttribute="trailing" id="xam-YV-J7f"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="logoViewWidthConstraint" destination="fnm-EG-0wh" id="UM6-Bk-x8F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OAb-o4-11R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -435,6 +438,7 @@ Contact us at help@zilliance.com</string>
     <resources>
         <image name="drawer-toolbar-icon" width="20" height="20"/>
         <image name="logo" width="183" height="183"/>
+        <image name="logo-text" width="600" height="127"/>
         <image name="pie" width="365" height="365"/>
     </resources>
 </document>

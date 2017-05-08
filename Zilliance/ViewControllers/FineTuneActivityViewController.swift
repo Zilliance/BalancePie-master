@@ -28,6 +28,9 @@ enum FineTuneType: String {
 }
 
 extension FineTuneItem {
+    
+    // Great
+    
     static var pleasure: FineTuneItem = FineTuneItem(title: "Pleasure", image: UIImage(named: "fine-tune-pleasure")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "pleasure"), type : .pleasure)
     
     static let prioritize = FineTuneItem(title: "Prioritize", image: UIImage(named: "fine-tune-prioritize")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "prioritize"), type : .prioritize)
@@ -38,6 +41,8 @@ extension FineTuneItem {
     
     static let values = FineTuneItem(title: "Values", image: UIImage(named: "fine-tune-values")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "values"), type : .values)
     
+    // Lousy
+    
     static let replace = FineTuneItem(title: "Replace", image: UIImage(named: "fine-tune-replace")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "replace"), type : .replace)
     
     static let reduce = FineTuneItem(title: "Reduce", image: UIImage(named: "fine-tune-reduce")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "reduce"), type : .reduce)
@@ -46,7 +51,21 @@ extension FineTuneItem {
     
     static let need = FineTuneItem(title: "Need", image: UIImage(named: "fine-tune-need")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "need"), type : .need)
     
+    static let valuesLousy = FineTuneItem(title: "Values", image: UIImage(named: "fine-tune-values")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "valueslousy"), type : .values)
+    
+    // Neutral
+    
+    static let replaceNeutral = FineTuneItem(title: "Replace", image: UIImage(named: "fine-tune-replace")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "replaceneutral"), type : .replace)
+    
+    static let reduceNeutral = FineTuneItem(title: "Reduce", image: UIImage(named: "fine-tune-reduce")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "reduceneutral"), type : .reduce)
+    
+    static let shiftNeutral = FineTuneItem(title: "Shift", image: UIImage(named: "fine-tune-shift")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "shiftneutral"), type : .shift)
+    
+    static let needNeutral = FineTuneItem(title: "Need", image: UIImage(named: "fine-tune-need")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "needneutral"), type : .need)
+    
     static let valuesNeutral = FineTuneItem(title: "Values", image: UIImage(named: "fine-tune-values")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "valuesneutral"), type : .values)
+    
+    // Mixed
     
     static let reduceMixed = FineTuneItem(title: "Reduce", image: UIImage(named: "fine-tune-reduce")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "reducemixed"), type : .reduce)
     
@@ -116,9 +135,9 @@ final class FineTuneActivityViewController: UIViewController {
         case .great:
             return [.pleasure, .prioritize, .gratitude, .giving, .values]
         case .lousy:
-            return [.shift, .valuesNeutral, .replace, .need, .reduce]
+            return [.shift, .valuesLousy, .replace, .need, .reduce]
         case .neutral:
-            return [.replace, .reduce, .shift, .valuesNeutral, . need]
+            return [.replaceNeutral, .reduceNeutral, .shiftNeutral, .valuesNeutral, .needNeutral]
         case .mixed:
             return [.reduceMixed, .gratitudeMixed, .shiftMixed, .valuesMixed, .needMixed]
         default:
