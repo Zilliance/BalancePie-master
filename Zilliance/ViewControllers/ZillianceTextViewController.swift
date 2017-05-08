@@ -437,16 +437,11 @@ extension ZillianceTextViewController: UITextViewDelegate {
     fileprivate func text(for textViewContent: TextViewContent) {
         switch (textViewContent.userActivity.feeling, textViewContent.type) {
         case (.great, .pleasure):
-            
-            var valuesString = textViewContent.userActivity.values.first?.name ?? ""
-            
-            let values = textViewContent.userActivity.values.dropFirst()
-            
-            values.forEach({ (value) in
-                valuesString = valuesString + ", \(value.name)"
-            })
-            
-            self.textView.text = "Remind myself that I love \((textViewContent.userActivity.activity?.name)!) because of the \(valuesString)"
+            let editText = EditableText(feeling: .great, text: "choose values", type: .value, isMultipleSelection: true, selectedIndexes: nil)
+            self.editableTexts = [editText]
+            self.textView.text = "Remind myself that I love \((textViewContent.userActivity.activity?.name)!) because of the \(self.editableTexts[0].text)"
+            self.validation = .value1
+            self.setupTextView()
         case (.great, .prioritize):
             self.textView.text = "Prioritze \((textViewContent.userActivity.activity?.name)!)"
         case (.great, .gratitude):
