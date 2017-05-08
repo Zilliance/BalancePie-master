@@ -8,6 +8,7 @@
 
 import UIKit
 import SVProgressHUD
+import MZFormSheetController
 
 struct TextViewContent {
     let userActivity: UserActivity
@@ -104,12 +105,37 @@ class AddToCalendarViewController: UIViewController {
         self.zillianceTextViewController.textViewContent = self.textViewContent
     }
     
+    private func showExample(number: Int) {
+        
+        guard let exampleViewController = UIStoryboard(name: "ExamplePopUp", bundle: nil).instantiateInitialViewController() as? ExamplePopUpViewController else {
+            assertionFailure()
+            return
+        }
+        
+        let formSheet = MZFormSheetController(viewController: exampleViewController)
+        formSheet.shouldDismissOnBackgroundViewTap = true
+        formSheet.presentedFormSheetSize = CGSize(width: 300, height: 400)
+        formSheet.transitionStyle = .bounce
+        formSheet.willPresentCompletionHandler  = { form  in
+//            let infoController = form as! InformationViewController
+//            infoController.informationText = "Choose the activities you spend time on during a typical week, including weekends"
+        }
+        
+        
+        self.mz_present(formSheet, animated: true, completionHandler: nil)
+
+        
+    }
+    
     // MARK: -- User Actions
     
     @IBAction func exampleOneAction(_ sender: Any) {
+        
+      showExample(number: 1)
     }
     
     @IBAction func exampleTwoAction(_ sender: Any) {
+        showExample(number: 2)
     }
 }
 

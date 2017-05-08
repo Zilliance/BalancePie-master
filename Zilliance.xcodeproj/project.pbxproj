@@ -77,6 +77,8 @@
 		8CBBBE231E95925700281C3C /* IconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBBBE221E95925700281C3C /* IconCollectionViewCell.swift */; };
 		8CC4C95D1EB7C0A0004DF0D5 /* VideoPlayer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CC4C95C1EB7C0A0004DF0D5 /* VideoPlayer.storyboard */; };
 		8CC4C95F1EB7C0E5004DF0D5 /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC4C95E1EB7C0E5004DF0D5 /* VideoPlayerViewController.swift */; };
+		8CC4C9621EC1165C004DF0D5 /* ExamplePopUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CC4C9611EC1165C004DF0D5 /* ExamplePopUp.storyboard */; };
+		8CC4C9641EC11889004DF0D5 /* ExamplePopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC4C9631EC11889004DF0D5 /* ExamplePopUpViewController.swift */; };
 		8CDAB8DA1E9BF42F006BFD4B /* FavoriteActivity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CDAB8D91E9BF42F006BFD4B /* FavoriteActivity.storyboard */; };
 		E311C3321EB126A700CF23D1 /* PieLegendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E311C3311EB126A700CF23D1 /* PieLegendView.swift */; };
 		E311C3341EB135F800CF23D1 /* PieHintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E311C3331EB135F800CF23D1 /* PieHintView.swift */; };
@@ -185,6 +187,8 @@
 		8CBBBE221E95925700281C3C /* IconCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IconCollectionViewCell.swift; path = CustomCells/IconCollectionViewCell.swift; sourceTree = "<group>"; };
 		8CC4C95C1EB7C0A0004DF0D5 /* VideoPlayer.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = VideoPlayer.storyboard; sourceTree = "<group>"; };
 		8CC4C95E1EB7C0E5004DF0D5 /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoPlayerViewController.swift; path = ViewControllers/VideoPlayerViewController.swift; sourceTree = "<group>"; };
+		8CC4C9611EC1165C004DF0D5 /* ExamplePopUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ExamplePopUp.storyboard; sourceTree = "<group>"; };
+		8CC4C9631EC11889004DF0D5 /* ExamplePopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExamplePopUpViewController.swift; path = ViewControllers/ExamplePopUpViewController.swift; sourceTree = "<group>"; };
 		8CDAB8D91E9BF42F006BFD4B /* FavoriteActivity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FavoriteActivity.storyboard; sourceTree = "<group>"; };
 		D2CBE99AE0B6F1497DB66ABA /* Pods-ZillianceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZillianceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZillianceTests/Pods-ZillianceTests.release.xcconfig"; sourceTree = "<group>"; };
 		DE7A740D362571F85742B547 /* Pods_ZillianceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZillianceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -301,6 +305,7 @@
 		8C3EA4571E92E4FD00F56DED /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				8CC4C9601EC11617004DF0D5 /* ExamplePopup */,
 				041C3CB81EA55C4800C52195 /* SideMenu */,
 				04647C6F1E97D82D0040CA46 /* FineTuneActivities */,
 				04B29A611E97AB000090E52E /* ItemsSelection */,
@@ -424,6 +429,15 @@
 				04E6F56D1E9F8CDB00EBD119 /* EditActivityViewController.swift */,
 			);
 			name = AddCustom;
+			sourceTree = "<group>";
+		};
+		8CC4C9601EC11617004DF0D5 /* ExamplePopup */ = {
+			isa = PBXGroup;
+			children = (
+				8CC4C9611EC1165C004DF0D5 /* ExamplePopUp.storyboard */,
+				8CC4C9631EC11889004DF0D5 /* ExamplePopUpViewController.swift */,
+			);
+			name = ExamplePopup;
 			sourceTree = "<group>";
 		};
 		CC4F20BFD0C98666558B4DD6 /* Frameworks */ = {
@@ -619,6 +633,7 @@
 				8C3EA4991E93F85C00F56DED /* Muli-SemiBold.ttf in Resources */,
 				8C3EA4921E93F85C00F56DED /* Muli-ExtraBoldItalic.ttf in Resources */,
 				042576FF1EC10D27003C465F /* TextImprovementsExamples.plist in Resources */,
+				8CC4C9621EC1165C004DF0D5 /* ExamplePopUp.storyboard in Resources */,
 				8C3EA4951E93F85C00F56DED /* Muli-Italic.ttf in Resources */,
 				8CC4C95D1EB7C0A0004DF0D5 /* VideoPlayer.storyboard in Resources */,
 				8C3EA4971E93F85C00F56DED /* Muli-LightItalic.ttf in Resources */,
@@ -844,6 +859,7 @@
 				8C3EA4621E92E7BF00F56DED /* User.swift in Sources */,
 				04B29A651E97AB4A0090E52E /* ItemsSelectionViewController.swift in Sources */,
 				04E6F56E1E9F8CDB00EBD119 /* EditActivityViewController.swift in Sources */,
+				8CC4C9641EC11889004DF0D5 /* ExamplePopUpViewController.swift in Sources */,
 				E33247971EB42A77009E112A /* UITableViewCell+Extensions.swift in Sources */,
 				8C3EA4761E92E9D600F56DED /* UIViewController+Extensions.swift in Sources */,
 				8C3EA45A1E92E6D000F56DED /* PieView.swift in Sources */,
