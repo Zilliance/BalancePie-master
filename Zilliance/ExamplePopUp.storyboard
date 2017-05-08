@@ -9,11 +9,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Roboto-Medium.ttf">
-            <string>Roboto-Medium</string>
-        </array>
-        <array key="Roboto-Regular.ttf">
-            <string>Roboto-Regular</string>
+        <array key="Muli-Regular.ttf">
+            <string>Muli-Regular</string>
         </array>
     </customFonts>
     <scenes>
@@ -33,16 +30,20 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Example" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihn-fW-57o">
-                                        <rect key="frame" x="10" y="0.0" width="91" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <rect key="frame" x="10" y="0.0" width="68" height="50"/>
+                                        <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8v-Ky-GGi">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8v-Ky-GGi">
                                         <rect key="frame" x="321" y="10" width="46" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                        <state key="normal" title="Close"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="46" id="K0i-3f-rU5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
+                                        <state key="normal" title="Close">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
                                             <action selector="closeAction:" destination="6nR-Xs-jSm" eventType="touchUpInside" id="76o-Jf-FKz"/>
                                         </connections>
@@ -51,55 +52,58 @@
                                 <color key="backgroundColor" red="0.0039215686269999999" green="0.73725490199999999" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="ihn-fW-57o" firstAttribute="top" secondItem="I0x-wm-tZ7" secondAttribute="top" id="HaJ-TV-aG1"/>
+                                    <constraint firstAttribute="bottom" secondItem="e8v-Ky-GGi" secondAttribute="bottom" constant="10" id="Jzt-BE-65S"/>
+                                    <constraint firstAttribute="trailing" secondItem="e8v-Ky-GGi" secondAttribute="trailing" constant="8" id="Tvy-Sq-7yi"/>
+                                    <constraint firstItem="e8v-Ky-GGi" firstAttribute="top" secondItem="I0x-wm-tZ7" secondAttribute="top" constant="10" id="dCn-aj-hvC"/>
                                     <constraint firstAttribute="bottom" secondItem="ihn-fW-57o" secondAttribute="bottom" id="fV9-k9-al7"/>
                                     <constraint firstItem="ihn-fW-57o" firstAttribute="leading" secondItem="I0x-wm-tZ7" secondAttribute="leading" constant="10" id="k4T-s7-GdM"/>
                                     <constraint firstAttribute="height" constant="50" id="sKh-bQ-lhd"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gSg-lz-KtJ">
-                                <rect key="frame" x="309" y="617" width="46" height="30"/>
+                                <rect key="frame" x="20" y="617" width="335" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="46" id="Ltm-jy-ZDV"/>
                                     <constraint firstAttribute="height" constant="30" id="gu5-Mz-6J0"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="18"/>
-                                <state key="normal" title="OK">
+                                <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
+                                <state key="normal" title="Use Example">
                                     <color key="titleColor" red="0.0039215686269999999" green="0.73725490199999999" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="okAction:" destination="6nR-Xs-jSm" eventType="touchUpInside" id="Wdv-8A-1kc"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pSU-eM-NLn">
-                                <rect key="frame" x="10" y="557" width="355" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="n5h-D0-d2d"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9Gn-jV-zaD">
+                                <rect key="frame" x="16" y="82" width="343" height="523"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="I0x-wm-tZ7" firstAttribute="leading" secondItem="TOT-Zs-7Ww" secondAttribute="leading" id="4eW-xf-gS0"/>
                             <constraint firstItem="TQO-M3-B3u" firstAttribute="top" secondItem="gSg-lz-KtJ" secondAttribute="bottom" constant="20" id="6Wf-eF-re8"/>
-                            <constraint firstItem="gSg-lz-KtJ" firstAttribute="top" secondItem="pSU-eM-NLn" secondAttribute="bottom" constant="20" id="AEh-rg-MO4"/>
+                            <constraint firstItem="gSg-lz-KtJ" firstAttribute="top" secondItem="9Gn-jV-zaD" secondAttribute="bottom" constant="12" id="ShZ-1T-VbY"/>
                             <constraint firstAttribute="trailing" secondItem="gSg-lz-KtJ" secondAttribute="trailing" constant="20" id="dZF-Jr-I46"/>
                             <constraint firstItem="I0x-wm-tZ7" firstAttribute="top" secondItem="dQc-GH-l2x" secondAttribute="bottom" id="jLo-we-X7u"/>
                             <constraint firstAttribute="trailing" secondItem="I0x-wm-tZ7" secondAttribute="trailing" id="nI0-17-LQ5"/>
-                            <constraint firstAttribute="trailing" secondItem="pSU-eM-NLn" secondAttribute="trailing" constant="10" id="rJA-Yp-g8y"/>
-                            <constraint firstItem="pSU-eM-NLn" firstAttribute="leading" secondItem="TOT-Zs-7Ww" secondAttribute="leading" constant="10" id="txd-Cg-uah"/>
+                            <constraint firstItem="9Gn-jV-zaD" firstAttribute="leading" secondItem="TOT-Zs-7Ww" secondAttribute="leading" constant="16" id="qFL-F4-ols"/>
+                            <constraint firstAttribute="trailing" secondItem="9Gn-jV-zaD" secondAttribute="trailing" constant="16" id="rpP-QQ-99r"/>
+                            <constraint firstItem="gSg-lz-KtJ" firstAttribute="leading" secondItem="TOT-Zs-7Ww" secondAttribute="leading" constant="20" id="tu4-JE-zAh"/>
+                            <constraint firstItem="9Gn-jV-zaD" firstAttribute="top" secondItem="I0x-wm-tZ7" secondAttribute="bottom" constant="12" id="vEi-gd-lnO"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="exampleLabel" destination="pSU-eM-NLn" id="VbZ-IP-mf9"/>
+                        <outlet property="exampleTextView" destination="9Gn-jV-zaD" id="313-Gm-glT"/>
                         <outlet property="titleLabel" destination="ihn-fW-57o" id="h97-De-cKH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JPZ-3p-hFq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2126" y="-198"/>
+            <point key="canvasLocation" x="-2127.1999999999998" y="-198.35082458770617"/>
         </scene>
     </scenes>
 </document>

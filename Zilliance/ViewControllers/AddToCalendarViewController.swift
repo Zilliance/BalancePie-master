@@ -112,15 +112,17 @@ class AddToCalendarViewController: UIViewController {
             return
         }
         
+        exampleViewController.textViewContent = self.textViewContent
+        exampleViewController.exampleNumber = ExamplePopUpViewController.ExampleNumber(rawValue: number)!
+        
+        exampleViewController.doneAction = { text in
+            self.zillianceTextViewController.setupForExample(with: text)
+        }
+        
         let formSheet = MZFormSheetController(viewController: exampleViewController)
         formSheet.shouldDismissOnBackgroundViewTap = true
         formSheet.presentedFormSheetSize = CGSize(width: 300, height: 400)
         formSheet.transitionStyle = .bounce
-        formSheet.willPresentCompletionHandler  = { form  in
-//            let infoController = form as! InformationViewController
-//            infoController.informationText = "Choose the activities you spend time on during a typical week, including weekends"
-        }
-        
         
         self.mz_present(formSheet, animated: true, completionHandler: nil)
 
@@ -131,11 +133,11 @@ class AddToCalendarViewController: UIViewController {
     
     @IBAction func exampleOneAction(_ sender: Any) {
         
-      showExample(number: 1)
+      showExample(number: 0)
     }
     
     @IBAction func exampleTwoAction(_ sender: Any) {
-        showExample(number: 2)
+        showExample(number: 1)
     }
 }
 
