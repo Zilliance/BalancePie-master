@@ -22,13 +22,13 @@ import RealmSwift
         case .none:
             return nil
         case .great:
-            return "😀 Great"
+            return "🙂 Great"
         case .neutral:
-            return "😕 Neutral"
+            return "😐 Neutral"
         case .lousy:
-            return "😔 Lousy"
+            return "☹️ Lousy"
         case .mixed:
-            return "😬 Mixed"
+            return "😕 Mixed"
         }
     }
     
