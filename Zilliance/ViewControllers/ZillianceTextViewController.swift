@@ -79,6 +79,14 @@ class ZillianceTextViewController: UIViewController, UIViewControllerTransitioni
     fileprivate var editableTexts: [EditableText] = []
     fileprivate var promptTexts: [String] = []
     fileprivate var deletingText = false
+    
+    func setupForExample(with text:String) {
+        self.textView.textColor = UIColor.darkBlueBackground
+        self.validation = .none
+        self.editableTexts.removeAll()
+        self.promptTexts.removeAll()
+        self.textView.text = text
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

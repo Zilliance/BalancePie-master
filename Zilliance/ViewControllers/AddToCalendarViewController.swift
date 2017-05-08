@@ -8,6 +8,7 @@
 
 import UIKit
 import SVProgressHUD
+import MZFormSheetController
 
 struct TextViewContent {
     let userActivity: UserActivity
@@ -102,6 +103,41 @@ class AddToCalendarViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         self.zillianceTextViewController = segue.destination as! ZillianceTextViewController
         self.zillianceTextViewController.textViewContent = self.textViewContent
+    }
+    
+    private func showExample(number: Int) {
+        
+        guard let exampleViewController = UIStoryboard(name: "ExamplePopUp", bundle: nil).instantiateInitialViewController() as? ExamplePopUpViewController else {
+            assertionFailure()
+            return
+        }
+        
+        exampleViewController.textViewContent = self.textViewContent
+        exampleViewController.exampleNumber = ExamplePopUpViewController.ExampleNumber(rawValue: number)!
+        
+        exampleViewController.doneAction = {[unowned self] text in
+            self.zillianceTextViewController.setupForExample(with: text)
+        }
+        
+        let formSheet = MZFormSheetController(viewController: exampleViewController)
+        formSheet.shouldDismissOnBackgroundViewTap = true
+        formSheet.presentedFormSheetSize = CGSize(width: 300, height: 400)
+        formSheet.transitionStyle = .bounce
+        
+        self.mz_present(formSheet, animated: true, completionHandler: nil)
+
+        
+    }
+    
+    // MARK: -- User Actions
+    
+    @IBAction func exampleOneAction(_ sender: Any) {
+        
+      showExample(number: 0)
+    }
+    
+    @IBAction func exampleTwoAction(_ sender: Any) {
+        showExample(number: 1)
     }
 }
 
