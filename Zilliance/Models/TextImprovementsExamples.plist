@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>🙂 Great</key>
+	<dict>
+		<key>pleasure</key>
+		<array>
+			<string>This is an example 1</string>
+			<string>This is an example 2</string>
+		</array>
+		<key>prioritize</key>
+		<array>
+			<string>This is an example 1</string>
+			<string>This is an example 2</string>
+		</array>
+		<key>gratitude</key>
+		<array>
+			<string>This is an example 1</string>
+			<string>This is an example 2</string>
+		</array>
+		<key>giving</key>
+		<array>
+			<string>This is an example 2</string>
+			<string>This is an example 1</string>
+		</array>
+		<key>values</key>
+		<array>
+			<string>This is an example 2</string>
+			<string>This is an example 1</string>
+		</array>
+		<key>shift</key>
+		<array>
+			<string>This is an example 1</string>
+			<string>This is an example 2</string>
+		</array>
+		<key>need</key>
+		<array>
+			<string>This is an example 1</string>
+			<string>This is an example 2</string>
+		</array>
+		<key>reduce</key>
+		<array>
+			<string>This is an example 1</string>
+			<string>This is an example 2</string>
+		</array>
+		<key>replace</key>
+		<array>
+			<string>This is an example 1</string>
+			<string>This is an example 2</string>
+		</array>
+	</dict>
+	<key>😐 Neutral</key>
+	<dict>
+		<key>pleasure</key>
+		<array>
+			<string>This is an example 1</string>
+			<string>This is an example 2</string>
+		</array>
+		<key>prioritize</key>
+		<array>
+			<string>This is an example 1</string>
+			<string>This is an example 2</string>
+		</array>
+		<key>gratitude</key>
+		<array>
+			<string>This is an example 1</string>
+			<string>This is an example 2</string>
+		</array>
+		<key>giving</key>
+		<array>
+			<string>This is an example 2</string>
+			<string>This is an example 1</string>
+		</array>
+		<key>values</key>
+		<array>
+			<string>This is an example 2</string>
+			<string>This is an example 1</string>
+		</array>
+		<key>shift</key>
+		<array>
+			<string>This is an example 1</string>
+			<string>This is an example 2</string>
+		</array>
+		<key>need</key>
+		<array>
+			<string>This is an example 1</string>
+			<string>This is an example 2</string>
+		</array>
+		<key>reduce</key>
+		<array>
+			<string>This is an example 1</string>
+			<string>This is an example 2</string>
+		</array>
+		<key>replace</key>
+		<array>
+			<string>This is an example 1</string>
+			<string>This is an example 2</string>
+		</array>
+	</dict>
+	<key>☹️ Lousy</key>
+	<dict>
+		<key>pleasure</key>
+		<array>
+			<string>This is an example 1</string>
+			<string>This is an example 2</string>
+		</array>
+		<key>prioritize</key>
+		<array>
+			<string>This is an example 1</string>
+			<string>This is an example 2</string>
+		</array>
+		<key>gratitude</key>
+		<array>
+			<string>This is an example 1</string>
+			<string>This is an example 2</string>
+		</array>
+		<key>giving</key>
+		<array>
+			<string>This is an example 2</string>
+			<string>This is an example 1</string>
+		</array>
+		<key>values</key>
+		<array>
+			<string>This is an example 2</string>
+			<string>This is an example 1</string>
+		</array>
+		<key>shift</key>
+		<array>
+			<string>This is an example 1</string>
+			<string>This is an example 2</string>
+		</array>
+		<key>need</key>
+		<array>
+			<string>This is an example 1</string>
+			<string>This is an example 2</string>
+		</array>
+		<key>reduce</key>
+		<array>
+			<string>This is an example 1</string>
+			<string>This is an example 2</string>
+		</array>
+		<key>replace</key>
+		<array>
+			<string>This is an example 1</string>
+			<string>This is an example 2</string>
+		</array>
+	</dict>
+	<key>😕 Mixed</key>
+	<dict>
+		<key>pleasure</key>
+		<array>
+			<string>This is an example 1</string>
+			<string>This is an example 2</string>
+		</array>
+		<key>prioritize</key>
+		<array>
+			<string>This is an example 1</string>
+			<string>This is an example 2</string>
+		</array>
+		<key>gratitude</key>
+		<array>
+			<string>This is an example 1</string>
+			<string>This is an example 2</string>
+		</array>
+		<key>giving</key>
+		<array>
+			<string>This is an example 2</string>
+			<string>This is an example 1</string>
+		</array>
+		<key>values</key>
+		<array>
+			<string>This is an example 2</string>
+			<string>This is an example 1</string>
+		</array>
+		<key>shift</key>
+		<array>
+			<string>This is an example 1</string>
+			<string>This is an example 2</string>
+		</array>
+		<key>need</key>
+		<array>
+			<string>This is an example 1</string>
+			<string>This is an example 2</string>
+		</array>
+		<key>reduce</key>
+		<array>
+			<string>This is an example 1</string>
+			<string>This is an example 2</string>
+		</array>
+		<key>replace</key>
+		<array>
+			<string>This is an example 1</string>
+			<string>This is an example 2</string>
+		</array>
+	</dict>
+</dict>
+</plist>

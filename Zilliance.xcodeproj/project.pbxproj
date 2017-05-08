@@ -15,6 +15,8 @@
 		041C3CD01EA7F65A00C52195 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041C3CCF1EA7F65A00C52195 /* WebViewController.swift */; };
 		041C3CD81EA8062500C52195 /* zilliance privacy policy.html in Resources */ = {isa = PBXBuildFile; fileRef = 041C3CD71EA8062500C52195 /* zilliance privacy policy.html */; };
 		041C3CDC1EA9291300C52195 /* zilliance terms of service.html in Resources */ = {isa = PBXBuildFile; fileRef = 041C3CDB1EA9291300C52195 /* zilliance terms of service.html */; };
+		042576FF1EC10D27003C465F /* TextImprovementsExamples.plist in Resources */ = {isa = PBXBuildFile; fileRef = 042576FE1EC10D27003C465F /* TextImprovementsExamples.plist */; };
+		042577011EC10D44003C465F /* TextImprovementsExamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042577001EC10D44003C465F /* TextImprovementsExamples.swift */; };
 		04647C721E97D8450040CA46 /* FineTuneActivity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04647C701E97D8450040CA46 /* FineTuneActivity.storyboard */; };
 		04647C751E97D85C0040CA46 /* FineTuneActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04647C741E97D85C0040CA46 /* FineTuneActivityViewController.swift */; };
 		04647C7D1E9BFD4B0040CA46 /* AddSliceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04647C7C1E9BFD4B0040CA46 /* AddSliceViewController.swift */; };
@@ -117,6 +119,8 @@
 		041C3CCF1EA7F65A00C52195 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebViewController.swift; path = ViewControllers/WebViewController.swift; sourceTree = "<group>"; };
 		041C3CD71EA8062500C52195 /* zilliance privacy policy.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "zilliance privacy policy.html"; sourceTree = "<group>"; };
 		041C3CDB1EA9291300C52195 /* zilliance terms of service.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "zilliance terms of service.html"; sourceTree = "<group>"; };
+		042576FE1EC10D27003C465F /* TextImprovementsExamples.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = TextImprovementsExamples.plist; path = Models/TextImprovementsExamples.plist; sourceTree = "<group>"; };
+		042577001EC10D44003C465F /* TextImprovementsExamples.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextImprovementsExamples.swift; path = Models/TextImprovementsExamples.swift; sourceTree = "<group>"; };
 		04647C701E97D8450040CA46 /* FineTuneActivity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FineTuneActivity.storyboard; sourceTree = "<group>"; };
 		04647C741E97D85C0040CA46 /* FineTuneActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FineTuneActivityViewController.swift; path = ViewControllers/FineTuneActivityViewController.swift; sourceTree = "<group>"; };
 		04647C7C1E9BFD4B0040CA46 /* AddSliceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddSliceViewController.swift; path = ViewControllers/AddSliceViewController.swift; sourceTree = "<group>"; };
@@ -359,6 +363,8 @@
 				8C3EA47A1E92F0F100F56DED /* CalendarHelper.swift */,
 				8C3EA47B1E92F0F100F56DED /* LocalNotificationsHelper.swift */,
 				04E6F56B1E9F804000EBD119 /* DetachableObject.swift */,
+				042576FE1EC10D27003C465F /* TextImprovementsExamples.plist */,
+				042577001EC10D44003C465F /* TextImprovementsExamples.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -612,6 +618,7 @@
 				8CBBBE181E9558D600281C3C /* Calendar.storyboard in Resources */,
 				8C3EA4991E93F85C00F56DED /* Muli-SemiBold.ttf in Resources */,
 				8C3EA4921E93F85C00F56DED /* Muli-ExtraBoldItalic.ttf in Resources */,
+				042576FF1EC10D27003C465F /* TextImprovementsExamples.plist in Resources */,
 				8C3EA4951E93F85C00F56DED /* Muli-Italic.ttf in Resources */,
 				8CC4C95D1EB7C0A0004DF0D5 /* VideoPlayer.storyboard in Resources */,
 				8C3EA4971E93F85C00F56DED /* Muli-LightItalic.ttf in Resources */,
@@ -814,6 +821,7 @@
 				E35668321E8C15BA00ED81D9 /* AppDelegate.swift in Sources */,
 				8C3EA4731E92E9D600F56DED /* UIColor+CustomColors.swift in Sources */,
 				8C4D28C41E9694F800034A20 /* App.swift in Sources */,
+				042577011EC10D44003C465F /* TextImprovementsExamples.swift in Sources */,
 				8CBBBE1A1E9576F800281C3C /* AddToCalendarViewController.swift in Sources */,
 				8C3EA4721E92E9D600F56DED /* String+Extensions.swift in Sources */,
 				E38910E51EA698A5000E1511 /* UIViewController+Alerts.swift in Sources */,
