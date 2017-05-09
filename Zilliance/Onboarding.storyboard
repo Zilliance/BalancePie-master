@@ -106,7 +106,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zF-3C-sCa">
                                 <rect key="frame" x="16" y="531.5" width="343" height="75.5"/>
-                                <string key="text">Here, you see the activities in which you participate are part of a pie. From your home, you can add pieces to your pie and discover ways to make every piece feel better.</string>
+                                <string key="text">Here, you see the activities in which you participate as part of a pie. From your home, you can add pieces to your pie and discover ways to make every piece feel better.</string>
                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                 <color key="textColor" white="0.95810850790000002" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
