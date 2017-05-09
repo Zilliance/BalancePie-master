@@ -48,6 +48,10 @@ final class WebViewController: UIViewController, UIWebViewDelegate
             self.showOnBoarding()
             return false
         }
+        if navigationType == UIWebViewNavigationType.linkClicked {
+            UIApplication.shared.openURL(request.url!)
+            return false
+        }
         return true
     }
 }
