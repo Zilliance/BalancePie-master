@@ -13,7 +13,7 @@ import ActionSheetPicker_3_0
 class PieViewController: UIViewController {
     
     private enum SliceOptions: String {
-        case edit = "Edit Slice"
+        case edit = "Update Slice"
         case tune = "Improve Slice"
         case delete = "Delete Slice"
     }
