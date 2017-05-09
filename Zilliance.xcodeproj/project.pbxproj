@@ -92,6 +92,7 @@
 		E3703C561EB3DA960004C5BD /* AboutCompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3703C551EB3DA960004C5BD /* AboutCompanyViewController.swift */; };
 		E3703C581EB3E8F80004C5BD /* PlacholderSidebarItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3703C571EB3E8F80004C5BD /* PlacholderSidebarItemViewController.swift */; };
 		E38910E51EA698A5000E1511 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38910E41EA698A5000E1511 /* UIViewController+Alerts.swift */; };
+		E39915DB1EC22EC500E9EE26 /* OnboardingPopover.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39915DA1EC22EC500E9EE26 /* OnboardingPopover.swift */; };
 		E3E80A451EA15526004A44AF /* UserActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E80A441EA15526004A44AF /* UserActivityTableViewCell.swift */; };
 		E3E80A471EA17CBB004A44AF /* FineTuneItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E80A461EA17CBB004A44AF /* FineTuneItemViewController.swift */; };
 /* End PBXBuildFile section */
@@ -210,6 +211,7 @@
 		E3703C551EB3DA960004C5BD /* AboutCompanyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutCompanyViewController.swift; sourceTree = "<group>"; };
 		E3703C571EB3E8F80004C5BD /* PlacholderSidebarItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacholderSidebarItemViewController.swift; sourceTree = "<group>"; };
 		E38910E41EA698A5000E1511 /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+Alerts.swift"; path = "Extensions/UIViewController+Alerts.swift"; sourceTree = "<group>"; };
+		E39915DA1EC22EC500E9EE26 /* OnboardingPopover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPopover.swift; sourceTree = "<group>"; };
 		E3E80A441EA15526004A44AF /* UserActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserActivityTableViewCell.swift; path = CustomCells/UserActivityTableViewCell.swift; sourceTree = "<group>"; };
 		E3E80A461EA17CBB004A44AF /* FineTuneItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FineTuneItemViewController.swift; sourceTree = "<group>"; };
 		FEC5A0602B35F92656E0CD4F /* Pods-ZillianceUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZillianceUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZillianceUITests/Pods-ZillianceUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -370,6 +372,7 @@
 				04E6F56B1E9F804000EBD119 /* DetachableObject.swift */,
 				042576FE1EC10D27003C465F /* TextImprovementsExamples.plist */,
 				042577001EC10D44003C465F /* TextImprovementsExamples.swift */,
+				E39915DA1EC22EC500E9EE26 /* OnboardingPopover.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -856,6 +859,7 @@
 				04E6F5671E9E7FEC00EBD119 /* EmbeddedFeelingTableViewModel.swift in Sources */,
 				8C3EA4781E92EF9C00F56DED /* HoursProgressView.swift in Sources */,
 				8C3EA46F1E92E9D600F56DED /* UIImage+Extensions.swift in Sources */,
+				E39915DB1EC22EC500E9EE26 /* OnboardingPopover.swift in Sources */,
 				8C3EA4621E92E7BF00F56DED /* User.swift in Sources */,
 				04B29A651E97AB4A0090E52E /* ItemsSelectionViewController.swift in Sources */,
 				04E6F56E1E9F8CDB00EBD119 /* EditActivityViewController.swift in Sources */,

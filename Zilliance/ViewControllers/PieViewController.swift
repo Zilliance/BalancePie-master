@@ -24,6 +24,7 @@ class PieViewController: UIViewController {
     private let titleLabel = UILabel()
     private let legend = PieLegendView()
     private let hintView = PieHintView()
+    private var improveHint: OnboardingPopover?
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -39,8 +40,8 @@ class PieViewController: UIViewController {
         super.viewWillAppear(animated)
         self.loadData()
         self.refreshHours()
+        self.showImproveHint()
     }
-
 
     private func setupViews() {
     
@@ -147,6 +148,36 @@ class PieViewController: UIViewController {
         }
     }
     
+    private func showImproveHint() {
+        if Database.shared.user.activities.count >= 4 && !UserDefaults.standard.bool(forKey: "ImproveHintShown") {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
+                guard let ss = self, ss.view.window != nil else {
+                    return
+                }
+                
+                var center = ss.view.center
+                center.y += 80
+                
+                ss.improveHint = OnboardingPopover()
+                
+                ss.improveHint?.title = "Great job building your pie! \n\nDon't forget to start improving your slices. Tap a slice and select Improve Slice."
+                ss.improveHint?.hasShadow = true
+                ss.improveHint?.shadowColor = UIColor(white: 0, alpha: 0.4)
+                ss.improveHint?.present(in: ss.view, at: center, from: .below)
+                
+                UserDefaults.standard.set(true, forKey: "ImproveHintShown")
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 10) { [weak self] in
+                    self?.dismissImproveHint()
+                }
+            }
+        }
+    }
+    
+    private func dismissImproveHint() {
+        self.improveHint?.dismiss()
+    }
+    
     // MARK: Slice Options
     
     private func edit(_ userActivity: UserActivity) {
@@ -195,6 +226,8 @@ class PieViewController: UIViewController {
     // MARK: - User Actions
     
     func plusAction() {
+        self.dismissImproveHint()
+        
         guard let addActivityVC = UIStoryboard(name: "AddCustom", bundle: nil).instantiateViewController(withIdentifier: "AddSliceViewController") as? AddSliceViewController else{
             assertionFailure()
             return
@@ -205,6 +238,8 @@ class PieViewController: UIViewController {
     }
     
     func sliceAction(with activity: UserActivity) {
+        self.dismissImproveHint()
+
         let title = "\(activity.activity!.name) Slice"
         let message = "What would you like to do?"
         
@@ -236,7 +271,7 @@ class PieViewController: UIViewController {
     }
     
     private func selectHoursSlept() {
-        
+        self.dismissImproveHint()
         
         let hours = Array(1...12)
         let minutes = [0,15,30,45]
@@ -270,11 +305,8 @@ class PieViewController: UIViewController {
             Database.shared.user.saveTimeSlept(hours: hoursSelected, minutes: minutesSelected)
             
             self.refreshHours()
-
         }
     
         picker.show()
-
     }
-
 }
