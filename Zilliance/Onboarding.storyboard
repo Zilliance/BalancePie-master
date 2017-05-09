@@ -93,10 +93,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="253" verticalCompressionResistancePriority="749" image="onboarding-home" translatesAutoresizingMaskIntoConstraints="NO" id="Hph-VL-yhS">
-                                <rect key="frame" x="16" y="60" width="343" height="352.5"/>
+                                <rect key="frame" x="16" y="60" width="343" height="390"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Home" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s5V-wb-rEM">
-                                <rect key="frame" x="157" y="452.5" width="62" height="21.5"/>
+                                <rect key="frame" x="157" y="490" width="62" height="21.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21.5" id="Jqp-K0-DGN"/>
                                 </constraints>
@@ -105,8 +105,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zF-3C-sCa">
-                                <rect key="frame" x="16" y="494" width="343" height="113"/>
-                                <string key="text">This is where you will see your life as a pie: All the activities in which you participate are part of your pie. From your home page, you can add pieces to your pie (Add a Slice) and discover ways to make every piece of your pie feel better (Improve a Slice).</string>
+                                <rect key="frame" x="16" y="531.5" width="343" height="75.5"/>
+                                <string key="text">Here, you see the activities in which you participate are part of a pie. From your home, you can add pieces to your pie and discover ways to make every piece feel better.</string>
                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                 <color key="textColor" white="0.95810850790000002" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -147,7 +147,7 @@
                                 <rect key="frame" x="16" y="60" width="343" height="371"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Add a Slice" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="REF-G5-9EK">
-                                <rect key="frame" x="129" y="471" width="118.5" height="21.5"/>
+                                <rect key="frame" x="128.5" y="471" width="118.5" height="21.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21.5" id="mmF-Ty-nKW"/>
                                 </constraints>
@@ -246,10 +246,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="253" verticalCompressionResistancePriority="749" image="onboarding-update-slice" translatesAutoresizingMaskIntoConstraints="NO" id="TSn-6i-jj8">
-                                <rect key="frame" x="16" y="60" width="343" height="371"/>
+                                <rect key="frame" x="16" y="60" width="343" height="390"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Update a Slice" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kKl-dp-zEE">
-                                <rect key="frame" x="112" y="471" width="152" height="21.5"/>
+                                <rect key="frame" x="112" y="490" width="152" height="21.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21.5" id="Shs-LA-fxe"/>
                                 </constraints>
@@ -258,8 +258,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhH-AB-InI">
-                                <rect key="frame" x="16" y="512.5" width="343" height="94.5"/>
-                                <string key="text">As you apply the skills you will learn in this app, your life will start to feel better. You can always delete a slice or change the way you feel about a slice. Ultimately, we want your entire pie to be green, meaning it feels great.</string>
+                                <rect key="frame" x="16" y="531.5" width="343" height="75.5"/>
+                                <string key="text">As you apply the skills you will learn in this app, your life will start to feel better. You can always delete or change the way you feel about a slice. Ultimately, we want your entire pie to feel great.</string>
                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                 <color key="textColor" white="0.95810850790000002" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -297,7 +297,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Let's Get Started" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jkZ-td-fwl">
-                                <rect key="frame" x="99.5" y="527.5" width="177.5" height="21.5"/>
+                                <rect key="frame" x="99" y="527.5" width="177.5" height="21.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21.5" id="Vys-Id-a8P"/>
                                 </constraints>
@@ -337,10 +337,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="onboarding-add-slice" width="1181" height="2093"/>
-        <image name="onboarding-home" width="1181" height="2093"/>
-        <image name="onboarding-improve-slice" width="1181" height="2093"/>
-        <image name="onboarding-update-slice" width="1181" height="2093"/>
+        <image name="onboarding-add-slice" width="928" height="1792"/>
+        <image name="onboarding-home" width="928" height="1792"/>
+        <image name="onboarding-improve-slice" width="928" height="1792"/>
+        <image name="onboarding-update-slice" width="928" height="1792"/>
         <image name="pie" width="365" height="365"/>
     </resources>
 </document>
