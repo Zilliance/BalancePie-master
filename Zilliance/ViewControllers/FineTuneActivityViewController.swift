@@ -251,7 +251,8 @@ extension FineTuneActivityViewController: UICollectionViewDelegate
 extension FineTuneActivityViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.bounds.size.width / CGFloat(self.items.count), height: 84)
+        let itemRatio = UIDevice.isSmallerThaniPhone6 ? self.items.count + 1 : self.items.count
+        return CGSize(width: collectionView.bounds.size.width / CGFloat(itemRatio) , height: 84)
     }
     
 }
