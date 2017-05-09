@@ -85,10 +85,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7jE-hM-Y41">
-                                        <rect key="frame" x="234" y="23.5" width="100" height="20"/>
+                                        <rect key="frame" x="254" y="24" width="88" height="20"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T0d-EF-u29">
-                                                <rect key="frame" x="16" y="0.0" width="70" height="20"/>
+                                                <rect key="frame" x="-4" y="0.0" width="70" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="70" id="NO7-SN-nQO"/>
                                                 </constraints>
@@ -101,16 +101,16 @@
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dOi-u7-Wm0" userLabel="Separator">
-                                                <rect key="frame" x="86" y="3" width="1" height="14"/>
+                                                <rect key="frame" x="66" y="3" width="1" height="14"/>
                                                 <color key="backgroundColor" red="0.0039215686269999999" green="0.73725490199999999" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="1" id="tyX-Ot-vSd"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cmZ-ZG-6cQ">
-                                                <rect key="frame" x="87" y="0.0" width="13" height="20"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cmZ-ZG-6cQ">
+                                                <rect key="frame" x="67" y="0.0" width="21" height="20"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="13" id="6NK-WU-mnq"/>
+                                                    <constraint firstAttribute="width" constant="21" id="6NK-WU-mnq"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="12"/>
                                                 <state key="normal" title="2">
@@ -121,13 +121,13 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="dOi-u7-Wm0" secondAttribute="bottom" constant="3" id="8oM-VW-yqF"/>
                                             <constraint firstItem="T0d-EF-u29" firstAttribute="top" secondItem="7jE-hM-Y41" secondAttribute="top" id="K0a-Pn-WIX"/>
                                             <constraint firstAttribute="bottom" secondItem="T0d-EF-u29" secondAttribute="bottom" id="LyL-Hj-hfa"/>
                                             <constraint firstItem="cmZ-ZG-6cQ" firstAttribute="top" secondItem="7jE-hM-Y41" secondAttribute="top" id="Mrr-bh-TxI"/>
-                                            <constraint firstAttribute="width" constant="100" id="fT2-Fl-gHw"/>
+                                            <constraint firstAttribute="width" constant="88" id="fT2-Fl-gHw"/>
                                             <constraint firstAttribute="bottom" secondItem="cmZ-ZG-6cQ" secondAttribute="bottom" id="lUM-gX-5uP"/>
                                             <constraint firstAttribute="height" constant="20" id="lYz-dU-KMj"/>
                                             <constraint firstItem="cmZ-ZG-6cQ" firstAttribute="leading" secondItem="dOi-u7-Wm0" secondAttribute="trailing" id="lxm-EE-73k"/>
@@ -139,7 +139,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="7jE-hM-Y41" secondAttribute="trailing" constant="16" id="1t3-5y-0p1"/>
+                                    <constraint firstAttribute="trailing" secondItem="7jE-hM-Y41" secondAttribute="trailing" constant="8" id="1t3-5y-0p1"/>
                                     <constraint firstItem="azT-HV-RuT" firstAttribute="top" secondItem="R93-DF-uy7" secondAttribute="bottom" constant="8" id="6A2-AG-Ty5"/>
                                     <constraint firstItem="R93-DF-uy7" firstAttribute="leading" secondItem="GKA-A6-kPw" secondAttribute="leading" constant="16" id="8D5-BB-bRg"/>
                                     <constraint firstAttribute="bottom" secondItem="vd0-30-aqU" secondAttribute="bottom" constant="16" id="JqE-0I-P02"/>
