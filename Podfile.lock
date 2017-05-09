@@ -9,11 +9,11 @@ PODS:
     - MZFormSheetController/Core (= 3.1.3)
   - MZFormSheetController/Core (3.1.3):
     - MZAppearance
-  - Realm (2.6.2):
-    - Realm/Headers (= 2.6.2)
-  - Realm/Headers (2.6.2)
-  - RealmSwift (2.6.2):
-    - Realm (= 2.6.2)
+  - Realm (2.7.0):
+    - Realm/Headers (= 2.7.0)
+  - Realm/Headers (2.7.0)
+  - RealmSwift (2.7.0):
+    - Realm (= 2.7.0)
   - SideMenuController (0.2.4)
   - SVProgressHUD (2.1.2)
 
@@ -41,8 +41,8 @@ SPEC CHECKSUMS:
   Charts: 236d6ccdd0ce6feae151d89e829a7397381a21fd
   MZAppearance: 0c06d3fa9cc55142f1da14bc8631fbe8fd6e19d5
   MZFormSheetController: da2df509805d757e04b052915057d8e1a338b050
-  Realm: 29222766425b9f831228f81b63f0e38a97a4d700
-  RealmSwift: d161a80f96cb91ae88391a7d5a9cf08024a7bc8e
+  Realm: 07e5d3a9e0e41d65fd5f9f05150ed6295d0f093b
+  RealmSwift: 6d06425d3900c86473c4f323bf6949b43fca22bc
   SideMenuController: b463d2b3aa58e2afe57f57a07938fa9a647894ca
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
 
