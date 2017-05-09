@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zxh-Zc-UNt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zxh-Zc-UNt">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -40,8 +40,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="253" verticalCompressionResistancePriority="749" image="onboarding1" translatesAutoresizingMaskIntoConstraints="NO" id="bvy-Th-MLk">
-                                <rect key="frame" x="16" y="60" width="343" height="409"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="253" verticalCompressionResistancePriority="749" image="pie" translatesAutoresizingMaskIntoConstraints="NO" id="bvy-Th-MLk">
+                                <rect key="frame" x="41" y="115" width="293" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="kBm-W3-29w"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1R-ae-JiV">
                                 <rect key="frame" x="139" y="509" width="97.5" height="21.5"/>
@@ -62,16 +65,14 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="bvy-Th-MLk" firstAttribute="leading" secondItem="9pH-L4-YYv" secondAttribute="leadingMargin" id="2Mx-5M-oDc"/>
                             <constraint firstItem="08U-2u-3QT" firstAttribute="top" secondItem="z1R-ae-JiV" secondAttribute="bottom" constant="20" id="46X-hg-wQd"/>
-                            <constraint firstItem="bvy-Th-MLk" firstAttribute="trailing" secondItem="9pH-L4-YYv" secondAttribute="trailingMargin" id="5cY-6r-xuY"/>
-                            <constraint firstItem="bvy-Th-MLk" firstAttribute="centerX" secondItem="9pH-L4-YYv" secondAttribute="centerX" id="AZ1-TQ-LVo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bvy-Th-MLk" secondAttribute="trailing" constant="25" id="BgK-2l-fez"/>
                             <constraint firstItem="YSd-0G-HW3" firstAttribute="top" secondItem="08U-2u-3QT" secondAttribute="bottom" constant="60" id="OT4-1k-ezs"/>
+                            <constraint firstItem="bvy-Th-MLk" firstAttribute="top" secondItem="MAO-IY-aQX" secondAttribute="bottom" constant="95" id="a68-ed-dJt"/>
                             <constraint firstItem="08U-2u-3QT" firstAttribute="trailing" secondItem="9pH-L4-YYv" secondAttribute="trailingMargin" id="bVz-eg-LCY"/>
                             <constraint firstItem="z1R-ae-JiV" firstAttribute="centerX" secondItem="9pH-L4-YYv" secondAttribute="centerX" id="fW7-RY-gDv"/>
-                            <constraint firstItem="z1R-ae-JiV" firstAttribute="top" secondItem="bvy-Th-MLk" secondAttribute="bottom" constant="40" id="jwY-G2-iZ4"/>
+                            <constraint firstItem="bvy-Th-MLk" firstAttribute="leading" secondItem="9pH-L4-YYv" secondAttribute="leadingMargin" constant="25" id="j19-62-VdC"/>
                             <constraint firstItem="08U-2u-3QT" firstAttribute="leading" secondItem="9pH-L4-YYv" secondAttribute="leadingMargin" id="kEE-oQ-1W5"/>
-                            <constraint firstItem="bvy-Th-MLk" firstAttribute="top" secondItem="MAO-IY-aQX" secondAttribute="bottom" constant="40" id="rRn-DW-Sfk"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -91,7 +92,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="253" verticalCompressionResistancePriority="749" image="onboarding2" translatesAutoresizingMaskIntoConstraints="NO" id="Hph-VL-yhS">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="253" verticalCompressionResistancePriority="749" image="onboarding-home" translatesAutoresizingMaskIntoConstraints="NO" id="Hph-VL-yhS">
                                 <rect key="frame" x="16" y="60" width="343" height="352.5"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Home" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s5V-wb-rEM">
@@ -142,7 +143,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="253" verticalCompressionResistancePriority="749" image="onboarding3" translatesAutoresizingMaskIntoConstraints="NO" id="fY8-JW-vhe">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="253" verticalCompressionResistancePriority="749" image="onboarding-add-slice" translatesAutoresizingMaskIntoConstraints="NO" id="fY8-JW-vhe">
                                 <rect key="frame" x="16" y="60" width="343" height="371"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Add a Slice" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="REF-G5-9EK">
@@ -193,11 +194,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="253" verticalCompressionResistancePriority="749" image="onboarding3" translatesAutoresizingMaskIntoConstraints="NO" id="Qd6-Iv-ELI">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="253" verticalCompressionResistancePriority="749" image="onboarding-improve-slice" translatesAutoresizingMaskIntoConstraints="NO" id="Qd6-Iv-ELI">
                                 <rect key="frame" x="16" y="60" width="343" height="409"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Improve a Slice" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JIx-U5-aM5">
-                                <rect key="frame" x="108.5" y="509" width="159.5" height="21.5"/>
+                                <rect key="frame" x="108" y="509" width="159.5" height="21.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21.5" id="iCm-6F-nhH"/>
                                 </constraints>
@@ -244,11 +245,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="253" verticalCompressionResistancePriority="749" image="onboarding3" translatesAutoresizingMaskIntoConstraints="NO" id="TSn-6i-jj8">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="253" verticalCompressionResistancePriority="749" image="onboarding-update-slice" translatesAutoresizingMaskIntoConstraints="NO" id="TSn-6i-jj8">
                                 <rect key="frame" x="16" y="60" width="343" height="371"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Update a Slice" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kKl-dp-zEE">
-                                <rect key="frame" x="112.5" y="471" width="152" height="21.5"/>
+                                <rect key="frame" x="112" y="471" width="152" height="21.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21.5" id="Shs-LA-fxe"/>
                                 </constraints>
@@ -295,11 +296,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="253" verticalCompressionResistancePriority="749" image="onboarding3" translatesAutoresizingMaskIntoConstraints="NO" id="046-qt-Ng8">
-                                <rect key="frame" x="16" y="60" width="343" height="427.5"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Let's Get Started" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jkZ-td-fwl">
-                                <rect key="frame" x="99" y="527.5" width="177.5" height="21.5"/>
+                                <rect key="frame" x="99.5" y="527.5" width="177.5" height="21.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21.5" id="Vys-Id-a8P"/>
                                 </constraints>
@@ -313,19 +311,23 @@
                                 <color key="textColor" white="0.95810850790000002" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="253" verticalCompressionResistancePriority="749" image="pie" translatesAutoresizingMaskIntoConstraints="NO" id="HMM-jF-Fbn">
+                                <rect key="frame" x="41" y="115" width="293" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="oJf-6y-agF"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="046-qt-Ng8" firstAttribute="top" secondItem="plQ-1u-Rkb" secondAttribute="bottom" constant="40" id="1bi-wx-gLt"/>
                             <constraint firstItem="8UN-gw-R3E" firstAttribute="trailing" secondItem="i2Q-Uh-VJg" secondAttribute="trailingMargin" id="2Iu-C9-e1d"/>
-                            <constraint firstItem="046-qt-Ng8" firstAttribute="centerX" secondItem="i2Q-Uh-VJg" secondAttribute="centerX" id="8Wb-aE-JtX"/>
-                            <constraint firstItem="046-qt-Ng8" firstAttribute="trailing" secondItem="i2Q-Uh-VJg" secondAttribute="trailingMargin" id="DaS-5y-OYd"/>
+                            <constraint firstItem="HMM-jF-Fbn" firstAttribute="top" secondItem="plQ-1u-Rkb" secondAttribute="bottom" constant="95" id="Hjr-hM-CGh"/>
                             <constraint firstItem="8UN-gw-R3E" firstAttribute="leading" secondItem="i2Q-Uh-VJg" secondAttribute="leadingMargin" id="I2T-Zg-gOu"/>
-                            <constraint firstItem="jkZ-td-fwl" firstAttribute="top" secondItem="046-qt-Ng8" secondAttribute="bottom" constant="40" id="PMy-vc-Fp2"/>
                             <constraint firstItem="8UN-gw-R3E" firstAttribute="top" secondItem="jkZ-td-fwl" secondAttribute="bottom" constant="20" id="PXn-Mo-AaK"/>
                             <constraint firstItem="Elw-U7-bSk" firstAttribute="top" secondItem="8UN-gw-R3E" secondAttribute="bottom" constant="60" id="SO1-dZ-8QY"/>
+                            <constraint firstItem="HMM-jF-Fbn" firstAttribute="leading" secondItem="i2Q-Uh-VJg" secondAttribute="leadingMargin" constant="25" id="UHr-M4-UIH"/>
                             <constraint firstItem="jkZ-td-fwl" firstAttribute="centerX" secondItem="i2Q-Uh-VJg" secondAttribute="centerX" id="caJ-CJ-j9Y"/>
-                            <constraint firstItem="046-qt-Ng8" firstAttribute="leading" secondItem="i2Q-Uh-VJg" secondAttribute="leadingMargin" id="dKa-N7-FHK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HMM-jF-Fbn" secondAttribute="trailing" constant="25" id="oEu-Dk-lDc"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -335,8 +337,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="onboarding1" width="500" height="1008"/>
-        <image name="onboarding2" width="498" height="1010"/>
-        <image name="onboarding3" width="486" height="1004"/>
+        <image name="onboarding-add-slice" width="1181" height="2093"/>
+        <image name="onboarding-home" width="1181" height="2093"/>
+        <image name="onboarding-improve-slice" width="1181" height="2093"/>
+        <image name="onboarding-update-slice" width="1181" height="2093"/>
+        <image name="pie" width="365" height="365"/>
     </resources>
 </document>
