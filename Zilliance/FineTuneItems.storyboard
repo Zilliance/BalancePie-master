@@ -717,9 +717,9 @@ This act of self-discovery can also be enlightening. By identifying your needs, 
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OMf-1C-N2U">
                                 <rect key="frame" x="12" y="77" width="351" height="574"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">If you are like most people, you might spend a lot of time making sure that other people’s needs are met, but you neglect your own. This can cause a downward spiral. 
+                                <string key="text">If you are like most people, you might spend a lot of time making sure that other people’s needs are met, but you neglect your own. This can cause a downward spiral. 
 
-The great thing about activities that leave you feeling mixed is that you likely can identify what need is being met during the parts that feel good, and then apply this to the parts that feel not-so good. Remember, you cannot be your best when you don’t feel your best, so identify your needs, and then give  yourself permission to get your needs met.</mutableString>
+The great thing about activities that leave you feeling mixed is that you likely can identify what need is being met during the parts that feel good, and then apply this to the parts that feel not-so good. Remember, you cannot be your best when you don’t feel your best, so identify your needs, and then give  yourself permission to get your needs met.</string>
                                 <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -767,7 +767,7 @@ The great thing about activities that leave you feeling mixed is that you likely
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">This one is obvious: Replace something that doesn’t feel great with something that does feel great. But it’s not always that easy. After all, can you really just up and quit your job and replace it with your dream job tomorrow? Probably not.
 
-But you probably can find a way to replace it something that feels just a little bit better. The key is to start taking small steps in the right direction.</string>
+But you probably can find a way to replace it with something that feels just a little bit better. The key is to start taking small steps in the right direction.</string>
                                 <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
