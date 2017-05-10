@@ -299,7 +299,7 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
         
         let selectedActivities = Database.shared.user.activities.map { $0.activity }
         
-        let activities: [Activity] = Array(Database.shared.allActivities()).filter { activity in
+        let activities: [Activity] = Array(Database.shared.allActivities).filter { activity in
             return !selectedActivities.contains { $0 == activity }
         }
         
@@ -331,7 +331,7 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
                 customActivityViewController.dismissAction = { newActivity in
                     if let newActivity = newActivity {
                         
-                        let activities: [Activity] = Array(Database.shared.allActivities()).filter { activity in
+                        let activities: [Activity] = Array(Database.shared.allActivities).filter { activity in
                             return !selectedActivities.contains { $0 == activity }
                         }
                         
@@ -579,7 +579,7 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
         switch TableSection(rawValue: indexPath.section) {
         case .name?:
             
-            let activities: [Activity] = Array(Database.shared.allActivities())
+            let activities: [Activity] = Array(Database.shared.allActivities)
             var selectedIndex: Int? = nil
             if let selectedActivity = self.newActivity.activity,  let index = activities.index(of: selectedActivity)
             {

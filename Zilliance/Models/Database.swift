@@ -66,16 +66,13 @@ class Database {
         }
     }
     
-    func allActivities() -> Results<Activity>
-    {
-        
+    var allActivities: Results<Activity> {
         let sortProperties = [SortDescriptor(keyPath: "order", ascending: true), SortDescriptor(keyPath: "name", ascending: true)]
         
         return self.realm.objects(Activity.self).sorted(by: sortProperties)
     }
     
-    func allValues() -> Results<Value>
-    {
+    var allValues: Results<Value> {
         return self.realm.objects(Value.self)
     }
 

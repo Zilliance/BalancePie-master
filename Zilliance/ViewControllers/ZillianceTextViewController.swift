@@ -356,18 +356,16 @@ extension ZillianceTextViewController: UITextViewDelegate {
         
         if editText.type == .value {
             
-            var values: [Value] = Array(Database.shared.allValues())
-            
-            switch editText.feeling {
-            case .great:
-                values = values.filter { $0.type == .good }
-                    .sorted { $0.order.rawValue < $1.order.rawValue }
-                
-            case .lousy:
-                values = values.filter { $0.type == .bad }
-            default:
-                break
-            }
+            let values: [Value] = {
+                switch editText.feeling {
+                case .great:
+                    return Value.goodValues
+                case .lousy:
+                    return Value.badValues
+                default:
+                    return Array(Database.shared.allValues)
+                }
+            }()
             
             if let indexes = editText.selectedIndexes {
                 itemSelectionViewController.selectedItemsIndexes = Set(indexes)

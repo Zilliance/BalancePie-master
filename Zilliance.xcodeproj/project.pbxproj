@@ -245,7 +245,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		041C3CB81EA55C4800C52195 /* SideMenu */ = {
+		041C3CB81EA55C4800C52195 /* Side Menu */ = {
 			isa = PBXGroup;
 			children = (
 				041C3CB91EA55C6400C52195 /* SideMenu.storyboard */,
@@ -258,7 +258,7 @@
 				8CC4C95C1EB7C0A0004DF0D5 /* VideoPlayer.storyboard */,
 				8CC4C95E1EB7C0E5004DF0D5 /* VideoPlayerViewController.swift */,
 			);
-			name = SideMenu;
+			name = "Side Menu";
 			sourceTree = "<group>";
 		};
 		041C3CCA1EA7E81C00C52195 /* Resources */ = {
@@ -271,7 +271,7 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		04647C6F1E97D82D0040CA46 /* FineTuneActivities */ = {
+		04647C6F1E97D82D0040CA46 /* Fine Tune Activity */ = {
 			isa = PBXGroup;
 			children = (
 				04647C701E97D8450040CA46 /* FineTuneActivity.storyboard */,
@@ -279,16 +279,16 @@
 				04647C741E97D85C0040CA46 /* FineTuneActivityViewController.swift */,
 				E3E80A461EA17CBB004A44AF /* FineTuneItemViewController.swift */,
 			);
-			name = FineTuneActivities;
+			name = "Fine Tune Activity";
 			sourceTree = "<group>";
 		};
-		04B29A611E97AB000090E52E /* ItemsSelection */ = {
+		04B29A611E97AB000090E52E /* Item Selection */ = {
 			isa = PBXGroup;
 			children = (
 				04B29A641E97AB4A0090E52E /* ItemsSelectionViewController.swift */,
 				04B29A621E97AB340090E52E /* ItemsSelection.storyboard */,
 			);
-			name = ItemsSelection;
+			name = "Item Selection";
 			sourceTree = "<group>";
 		};
 		5C16863DDD8A6468C22F4373 /* Pods */ = {
@@ -307,12 +307,12 @@
 		8C3EA4571E92E4FD00F56DED /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				8CC4C9601EC11617004DF0D5 /* ExamplePopup */,
-				041C3CB81EA55C4800C52195 /* SideMenu */,
-				04647C6F1E97D82D0040CA46 /* FineTuneActivities */,
-				04B29A611E97AB000090E52E /* ItemsSelection */,
+				041C3CB81EA55C4800C52195 /* Side Menu */,
+				04647C6F1E97D82D0040CA46 /* Fine Tune Activity */,
+				8CC4C9601EC11617004DF0D5 /* Fine Tune Example */,
+				04B29A611E97AB000090E52E /* Item Selection */,
 				8C4D28C51E96CFC300034A20 /* Onboarding */,
-				8CBBBE1B1E9588E700281C3C /* AddCustom */,
+				8CBBBE1B1E9588E700281C3C /* Add-Edit Activity */,
 				8CBBBE161E9558A300281C3C /* Calendar */,
 				8C3EA4581E92E50600F56DED /* Pie */,
 			);
@@ -420,27 +420,27 @@
 			name = Calendar;
 			sourceTree = "<group>";
 		};
-		8CBBBE1B1E9588E700281C3C /* AddCustom */ = {
+		8CBBBE1B1E9588E700281C3C /* Add-Edit Activity */ = {
 			isa = PBXGroup;
 			children = (
+				04647C7C1E9BFD4B0040CA46 /* AddSliceViewController.swift */,
+				04E6F56D1E9F8CDB00EBD119 /* EditActivityViewController.swift */,
 				8CBBBE1C1E95890700281C3C /* AddCustom.storyboard */,
 				8CBBBE1E1E958B6300281C3C /* AddActivityViewController.swift */,
 				8CBBBE221E95925700281C3C /* IconCollectionViewCell.swift */,
 				8CBBBE1F1E958B6300281C3C /* AddValuesViewController.swift */,
-				04647C7C1E9BFD4B0040CA46 /* AddSliceViewController.swift */,
 				04E6F5661E9E7FEC00EBD119 /* EmbeddedFeelingTableViewModel.swift */,
-				04E6F56D1E9F8CDB00EBD119 /* EditActivityViewController.swift */,
 			);
-			name = AddCustom;
+			name = "Add-Edit Activity";
 			sourceTree = "<group>";
 		};
-		8CC4C9601EC11617004DF0D5 /* ExamplePopup */ = {
+		8CC4C9601EC11617004DF0D5 /* Fine Tune Example */ = {
 			isa = PBXGroup;
 			children = (
 				8CC4C9611EC1165C004DF0D5 /* ExamplePopUp.storyboard */,
 				8CC4C9631EC11889004DF0D5 /* ExamplePopUpViewController.swift */,
 			);
-			name = ExamplePopup;
+			name = "Fine Tune Example";
 			sourceTree = "<group>";
 		};
 		CC4F20BFD0C98666558B4DD6 /* Frameworks */ = {
