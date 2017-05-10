@@ -90,7 +90,9 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ubR-La-fNf">
                                 <rect key="frame" x="12" y="77" width="351" height="574"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">We often find ourselves doing things that don’t feel as good as we would like them to, but we keep doing them in order to keep our jobs, obtain our degrees, or achieve some other desired outcome. While we might not be able to eliminate the lousy-feeling parts of activities, we can reduce the amount of time we spend on them, focusing our energy on the parts that feel happier.</string>
+                                <string key="text">We often find ourselves doing things that don’t feel as good as we would like them to, but we keep doing them in order to keep our jobs, obtain our degrees, or achieve some other desired outcome. 
+
+While we might not be able to eliminate the lousy-feeling parts of activities, we can reduce the amount of time we spend on them, focusing our energy on the parts that feel happier.</string>
                                 <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -717,9 +719,9 @@ This act of self-discovery can also be enlightening. By identifying your needs, 
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OMf-1C-N2U">
                                 <rect key="frame" x="12" y="77" width="351" height="574"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">If you are like most people, you might spend a lot of time making sure that other people’s needs are met, but you neglect your own. This can cause a downward spiral. 
+                                <mutableString key="text">If you are like most people, you might spend a lot of time making sure that other people’s needs are met, but you neglect your own. This can cause a downward spiral. 
 
-The great thing about activities that leave you feeling mixed is that you likely can identify what need is being met during the parts that feel good, and then apply this to the parts that feel not-so good. Remember, you cannot be your best when you don’t feel your best, so identify your needs, and then give  yourself permission to get your needs met.</string>
+The great thing about activities that leave you feeling mixed is that you likely can identify what need is being met during the parts that feel good, and then apply this to the parts that feel not-so good. Remember, you cannot be your best when you don’t feel your best, so identify your needs, and then give yourself permission to get your needs met.</mutableString>
                                 <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -815,8 +817,7 @@ But you probably can find a way to replace it with something that feels just a l
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">We often find ourselves doing things that don’t feel as good as we thought they would, but we keep doing them out of habit, and then we stop noticing how they feel and how much time they suck away from us. 
 
-Reduce the amount of time in time-suck activities and replace them with activities that feel great!
-The more values you can add, the more joy you will have.</string>
+Reduce the amount of time in time-suck activities and replace them with activities that feel great!</string>
                                 <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

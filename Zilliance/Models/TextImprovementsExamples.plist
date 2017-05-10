@@ -90,7 +90,7 @@ To get this need met, I will take this action step: I will allow myself the guil
 		</array>
 		<key>reduce</key>
 		<array>
-			<string>Reduce the amount of time I spend on Housework by doing this feel-good activity instead turning on my favorite music and getting my kids to help me with the chores while we dance around the house. This will take less time, and it will add joy and laughter.</string>
+			<string>Reduce the amount of time I spend on Housework by doing this feel-good activity instead: turning on my favorite music and getting my kids to help me with the chores while we dance around this house. This will take less time, and it will add more joy and laughter.</string>
 			<string>Early bed time! Remember, I always feel crabby when I stay up late spending time on social media. Social media makes me feel bad about myself and insecure about my relationships. I would be happier if I turned the lights off an hour earlier and got an extra hour of sleep.</string>
 		</array>
 		<key>replace</key>
@@ -123,7 +123,7 @@ To get this need met, I will take this action step: I will allow myself the guil
 		</array>
 		<key>values</key>
 		<array>
-			<string>Bring personal growth to driving by listening to podcasts or audiobooks.</string>
+			<string>Bring personal growth to chores by listening to podcasts or audiobooks.</string>
 			<string>My drive time is really frustrating. I get so mad at the traffic. That said, I value romance, so I am going to give myself permission to listen to a trashy romance novel while I drive to work.</string>
 		</array>
 		<key>shift</key>
@@ -133,7 +133,8 @@ To get this need met, I will take this action step: I will allow myself the guil
 		</array>
 		<key>need</key>
 		<array>
-			<string>What I need to feel better about time with time with friends that’s in my control is this: More adventure. To get this need met, I will take this action step: Ask some of my friends to join me in climbing Mt. Whitney.</string>
+			<string>What I need to feel better about time with friends that’s in my control is: more adventure. 
+To meet this need, I will take this action step: ask some of my friends to join me in climbing Mt. Whitney. </string>
 			<string>My job feels meaningless. I need to feel like I’m giving back and impacting the world. I need to feel like I am making a contribution.  I probably cannot meet this need through work, but I could find a way to start volunteering my time at a non-profit.</string>
 		</array>
 		<key>reduce</key>
