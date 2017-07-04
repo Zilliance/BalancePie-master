@@ -155,8 +155,8 @@ struct EmbeddedFeelingTableViewModel
             {
                 return "Bad values"
             }
-        case .neutral:
-            return "Feels neutral because"
+        case .good:
+            return "Feels good because"
         }
         
     }
