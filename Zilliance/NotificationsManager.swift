@@ -8,8 +8,6 @@
 
 import Foundation
 
-
-
 struct Notification {
     
     var notificationId: String?
@@ -35,9 +33,14 @@ struct Notification {
 
 final class NotificationsStore {
     
+    enum Error {
+        case calendarNotAvailable
+        case unknown
+    }
+    
     let sharedInstance = NotificationsStore()
     
-    func storeNotification(notification: Notification, completion: ((Notification) -> ())?) {
+    func storeNotification(notification: Notification, completion: ((Notification?, Error?) -> ())?) {
         
         switch notification.type {
         case .calendar:
@@ -85,17 +88,22 @@ final class NotificationsStore {
 //calendar methods
 extension NotificationsStore {
     
-    fileprivate func addCalendarNotification(notification: Notification, completion: ((Notification) -> ())?) {
+    fileprivate func addCalendarNotification(notification: Notification, completion: ((Notification?, Error?) -> ())?) {
         
         CalendarHelper.addEvent(with: notification.title, notes: notification.body, date: notification.startDate) { (eventId, error) in
             guard let eventId = eventId, error == nil else {
                 print(error ?? "unknown error")
+                
+                let error: NotificationsStore.Error = error == .notGranted ? .calendarNotAvailable : .unknown
+                    
+                completion?(nil, error)
+                
                 return
             }
             
             var notification = notification
             notification.notificationId = eventId
-            completion?(notification)
+            completion?(notification, nil)
             
         }
     
@@ -113,7 +121,7 @@ extension NotificationsStore {
 //local notifications
 extension NotificationsStore {
 
-    fileprivate func addLocalNotification(notification: Notification, completion: ((Notification) -> ())?) {
+    fileprivate func addLocalNotification(notification: Notification, completion: ((Notification, Error) -> ())?) {
         
     }
     
