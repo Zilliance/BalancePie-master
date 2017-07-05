@@ -76,9 +76,9 @@ class AddToCalendarViewController: UIViewController {
             return
         }
         
-        CalendarHelper.addEvent(with: body, notes: nil, date: self.datePicker.date) { (success, error) in
+        CalendarHelper.addEvent(with: body, notes: nil, date: self.datePicker.date) { (eventId, error) in
             
-            guard success else {
+            guard eventId != nil else {
                 switch error {
                 case .notGranted?:
                     self.showAlert(message: "Please enable access calendar in app settings", title: "Unable to Access Your Calendar")

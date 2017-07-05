@@ -16,7 +16,7 @@ enum CalendarError {
 
 class CalendarHelper {
     
-    typealias CalendarClosure = (Bool, CalendarError?) -> Void
+    typealias CalendarClosure = (String?, CalendarError?) -> Void
     
     
     /// adds an event to calendar
@@ -25,13 +25,13 @@ class CalendarHelper {
     ///   - title: the title of the event
     ///   - date: the date of the event
     ///   - calendarClosure: completion closure
-    class func addEvent(with title: String, notes: String?, date:Date, calendarClosure: @escaping CalendarClosure) {
+    static func addEvent(with title: String, notes: String?, date:Date, calendarClosure: @escaping CalendarClosure) {
         
         let store = EKEventStore()
         
         store.requestAccess(to: .event) { (granted, error) in
             guard granted else {
-                DispatchQueue.main.async { calendarClosure(false, .notGranted) }
+                DispatchQueue.main.async { calendarClosure(nil, .notGranted) }
                 return
             }
             
@@ -47,10 +47,31 @@ class CalendarHelper {
             event.calendar = store.defaultCalendarForNewEvents
             do {
                 try store.save(event, span: .thisEvent)
-                DispatchQueue.main.async { calendarClosure(true, nil) }
+                DispatchQueue.main.async { calendarClosure(event.eventIdentifier, nil) }
             } catch {
-                DispatchQueue.main.async { calendarClosure(false, .errorSavingEvent) }
+                DispatchQueue.main.async { calendarClosure(nil, .errorSavingEvent) }
             }
+        }
+        
+    }
+    
+    static func removeEvent(eventId: String) {
+        
+        let store = EKEventStore()
+        
+        guard let event = store.event(withIdentifier: eventId) else {
+            return assertionFailure()
+        }
+        
+        do {
+            
+            try store.remove(event, span: .futureEvents)
+            
+        } catch {
+            
+            print("error removing an event")
+            assertionFailure()
+            
         }
         
     }
