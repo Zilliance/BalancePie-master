@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="g2D-Vj-zn3">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Muli-Regular.ttf">
+            <string>Muli-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Intro View Controller-->
+        <scene sceneID="07S-eG-EiJ">
+            <objects>
+                <viewController id="qNL-OK-pi6" customClass="IntroViewController" customModule="Zilliance" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nKd-j3-SPX"/>
+                        <viewControllerLayoutGuide type="bottom" id="Mk6-9h-qms"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jwo-K6-2Qk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pie" translatesAutoresizingMaskIntoConstraints="NO" id="vKn-XH-niC">
+                                <rect key="frame" x="45" y="40" width="284" height="232"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="232" id="jxI-rN-EQb"/>
+                                    <constraint firstAttribute="width" constant="284" id="wYk-M4-vi8"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUX-GW-rcB">
+                                <rect key="frame" x="19" y="587" width="337" height="60"/>
+                                <color key="backgroundColor" red="0.0" green="0.72156862745098038" blue="0.90588235294117647" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="pMn-ta-YTm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="18"/>
+                                <state key="normal" title="CONTINUE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="continueAction:" destination="qNL-OK-pi6" eventType="touchUpInside" id="6Db-KG-ZFV"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="747" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="V0B-vU-tQU">
+                                <rect key="frame" x="21" y="280" width="333" height="299"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <string key="text">The Balance Pie helps you squeeze the most enjoyment out of all the activities you spend time doing, even the ones you don’t like. Tuning into how certain activities feel and whether or not they align with your values helps you be more intentional with your time and create a more balanced life.
+
+The output of the Balance Pie is an action plan for taking each activity you choose to spend time on and infusing it with as many positive qualities as possible.
+
+Check the Tour in the main menu for more info!</string>
+                                <color key="textColor" red="0.1215686275" green="0.19215686269999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="vKn-XH-niC" firstAttribute="centerX" secondItem="Jwo-K6-2Qk" secondAttribute="centerX" id="2yw-hn-uhM"/>
+                            <constraint firstItem="Mk6-9h-qms" firstAttribute="top" secondItem="ZUX-GW-rcB" secondAttribute="bottom" constant="20" id="AFZ-QT-rRc"/>
+                            <constraint firstAttribute="trailing" secondItem="ZUX-GW-rcB" secondAttribute="trailing" constant="19" id="ApV-Ha-lr8"/>
+                            <constraint firstItem="ZUX-GW-rcB" firstAttribute="leading" secondItem="Jwo-K6-2Qk" secondAttribute="leading" constant="19" id="MFd-Uc-VuQ"/>
+                            <constraint firstAttribute="trailing" secondItem="V0B-vU-tQU" secondAttribute="trailing" constant="21" id="MYy-fk-CKz"/>
+                            <constraint firstItem="V0B-vU-tQU" firstAttribute="top" secondItem="vKn-XH-niC" secondAttribute="bottom" constant="8" id="NWM-Q8-iXd"/>
+                            <constraint firstItem="ZUX-GW-rcB" firstAttribute="top" secondItem="V0B-vU-tQU" secondAttribute="bottom" constant="8" id="YOW-lM-fMn"/>
+                            <constraint firstItem="vKn-XH-niC" firstAttribute="top" secondItem="nKd-j3-SPX" secondAttribute="bottom" constant="20" id="l0L-ZB-hcq"/>
+                            <constraint firstItem="V0B-vU-tQU" firstAttribute="leading" secondItem="Jwo-K6-2Qk" secondAttribute="leading" constant="21" id="ztz-3s-yaF"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="1eK-ba-65Q"/>
+                    <connections>
+                        <outlet property="continueButton" destination="ZUX-GW-rcB" id="ni4-vG-Wsp"/>
+                        <outlet property="imageHeightContraint" destination="jxI-rN-EQb" id="C6O-UH-hOC"/>
+                        <outlet property="textView" destination="V0B-vU-tQU" id="1De-Rp-DIH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Frh-x2-HIt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="225" y="90"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5zj-9q-qjP">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="g2D-Vj-zn3" sceneMemberID="viewController">
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Zr3-ma-SUb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="qNL-OK-pi6" kind="relationship" relationship="rootViewController" id="Hzl-68-W59"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kgh-EU-1rH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-430" y="90"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="pie" width="365" height="365"/>
+    </resources>
+</document>

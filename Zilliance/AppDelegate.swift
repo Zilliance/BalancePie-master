@@ -39,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         }
         else {
-            rootViewController =  UIStoryboard(name: "Onboarding", bundle: nil).instantiateInitialViewController()
+            rootViewController =  UIStoryboard(name: "Intro", bundle: nil).instantiateInitialViewController()
         }
 
         window = UIWindow(frame: UIScreen.main.bounds)
