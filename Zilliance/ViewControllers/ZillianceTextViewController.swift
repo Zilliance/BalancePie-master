@@ -359,7 +359,7 @@ extension ZillianceTextViewController: UITextViewDelegate {
             let values: [Value] = {
                 switch editText.feeling {
                 case .great:
-                    return Value.goodValues
+                    return Value.greatValues
                 case .lousy:
                     return Value.badValues
                 default:

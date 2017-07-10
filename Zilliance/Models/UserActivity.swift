@@ -111,8 +111,8 @@ final class UserActivity: Object {
         return "id"
     }
     
-    var goodValues: Array<Value> {
-        return self.values.filter{$0.type == .good}.sorted {
+    var greatValues: Array<Value> {
+        return self.values.filter{$0.type == .great}.sorted {
             $0.order == $1.order ? $0.name < $1.name : $0.order.rawValue < $1.order.rawValue
         }
     }
@@ -123,8 +123,8 @@ final class UserActivity: Object {
         }
     }
     
-    var neutralValues: Array<Value> {
-        return self.values.filter{$0.type == .neutral}.sorted {
+    var goodValues: Array<Value> {
+        return self.values.filter{$0.type == .good}.sorted {
             $0.order == $1.order ? $0.name < $1.name : $0.order.rawValue < $1.order.rawValue
         }
     }
@@ -140,9 +140,9 @@ final class UserActivity: Object {
     }
     
     
-    func removeNeutralValues()
+    func removeGoodValues()
     {
-        self.neutralValues.forEach{
+        self.goodValues.forEach{
             if let index = self.values.index(of: $0)
             {
                 self.values.remove(objectAtIndex: index)
@@ -150,9 +150,9 @@ final class UserActivity: Object {
         }
     }
     
-    func removeGoodValues()
+    func removeGreatValues()
     {
-        self.goodValues.forEach{
+        self.greatValues.forEach{
             if let index = self.values.index(of: $0)
             {
                 self.values.remove(objectAtIndex: index)
