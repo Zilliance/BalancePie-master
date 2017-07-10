@@ -34,10 +34,10 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUX-GW-rcB">
-                                <rect key="frame" x="19" y="587" width="337" height="60"/>
+                                <rect key="frame" x="19" y="597" width="337" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.72156862745098038" blue="0.90588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="pMn-ta-YTm"/>
+                                    <constraint firstAttribute="height" constant="50" id="pMn-ta-YTm"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="18"/>
                                 <state key="normal" title="CONTINUE">
@@ -48,13 +48,13 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="747" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="V0B-vU-tQU">
-                                <rect key="frame" x="21" y="280" width="333" height="299"/>
+                                <rect key="frame" x="21" y="280" width="333" height="309"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <string key="text">The Balance Pie helps you squeeze the most enjoyment out of all the activities you spend time doing, even the ones you don’t like. Tuning into how certain activities feel and whether or not they align with your values helps you be more intentional with your time and create a more balanced life.
+                                <mutableString key="text">The Balance Pie helps you squeeze the most enjoyment out of all the activities you spend time doing, even the ones you don’t like. Tuning into how certain activities feel and whether or not they align with your values helps you be more intentional with your time and create a more balanced life.
 
 The output of the Balance Pie is an action plan for taking each activity you choose to spend time on and infusing it with as many positive qualities as possible.
 
-Check the Tour in the main menu for more info!</string>
+Check the Tour and the Balance Pie video in the main menu for more info!</mutableString>
                                 <color key="textColor" red="0.1215686275" green="0.19215686269999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -89,7 +89,7 @@ Check the Tour in the main menu for more info!</string>
             <objects>
                 <navigationController navigationBarHidden="YES" id="g2D-Vj-zn3" sceneMemberID="viewController">
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Zr3-ma-SUb">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Zr3-ma-SUb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
