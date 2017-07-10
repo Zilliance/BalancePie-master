@@ -18,11 +18,21 @@ class PieViewController: UIViewController {
         case delete = "Delete Slice"
     }
 
+    private let actionPlanButton = UIButton()
     private let statusBarBackgroundView = UIView()
     private let hoursProgressView = HoursProgressView()
     private let pieView = PieView()
     private let titleLabel = UILabel()
-    private let legend = PieLegendView()
+    private let legend1 = PieLegendView(legends: [
+        Legend(text: "I feel great", color: .feelingGreat),
+        Legend(text: "I feel mixed", color: .feelingMixed),
+        ]
+    )
+    private let legend2 = PieLegendView(legends:  [
+        Legend(text: "I feel good", color: .feelingNeutral),
+        Legend(text: "I feel lousy", color: .feelingLousy),
+        ]
+    )
     private let hintView = PieHintView()
     private var improveHint: OnboardingPopover?
     
@@ -72,20 +82,27 @@ class PieViewController: UIViewController {
             self?.sliceAction(with: activity)
         }
         
-        // Legend
+        // Legends
         
-        self.view.addSubview(self.legend)
-        self.legend.translatesAutoresizingMaskIntoConstraints = false
-        self.legend.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: UIDevice.isSmallerThaniPhone6 ? -60 : -80).isActive = true
-        self.legend.heightAnchor.constraint(equalToConstant: 80).isActive = true
-        self.legend.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
-        self.legend.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
+        self.view.addSubview(self.legend1)
+        self.legend1.translatesAutoresizingMaskIntoConstraints = false
+        self.legend1.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: UIDevice.isSmallerThaniPhone6 ? -140 : -170).isActive = true
+        self.legend1.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        self.legend1.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
+        self.legend1.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
+        
+        self.view.addSubview(self.legend2)
+        self.legend2.translatesAutoresizingMaskIntoConstraints = false
+        self.legend2.topAnchor.constraint(equalTo: self.legend1.bottomAnchor).isActive = true
+        self.legend2.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        self.legend2.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
+        self.legend2.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
         
         // Hint View
         
         self.hintView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(self.hintView)
-        self.hintView.topAnchor.constraint(equalTo: self.legend.bottomAnchor, constant: UIDevice.isSmallerThaniPhone6 ? 10 : 20).isActive = true
+        self.hintView.topAnchor.constraint(equalTo: self.legend2.bottomAnchor, constant: UIDevice.isSmallerThaniPhone6 ? 10 : 20).isActive = true
         self.hintView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
         self.hintView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
         
@@ -133,6 +150,23 @@ class PieViewController: UIViewController {
         self.hoursProgressView.leftAnchor.constraint(equalTo: sideMenuButton.rightAnchor, constant: 0).isActive = true
         
         sideMenuButton.addTarget(self.sideMenuController, action: #selector(SideMenuController.toggle), for: .touchUpInside)
+        
+        // Action Plan Button
+        
+        self.actionPlanButton.addTarget(self, action: #selector(showActionPlan), for: .touchUpInside)
+        self.actionPlanButton.backgroundColor = .lightBlueBackground
+        self.actionPlanButton.layer.cornerRadius = App.Appearance.buttonCornerRadius
+        self.actionPlanButton.setTitle("See Action Plan", for: .normal)
+        self.actionPlanButton.titleLabel?.font = UIFont.muliRegular(size: 20)
+        
+        self.view.addSubview(self.actionPlanButton)
+        
+        self.actionPlanButton.translatesAutoresizingMaskIntoConstraints = false
+        self.actionPlanButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 20).isActive = true
+        self.actionPlanButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20).isActive = true
+        self.actionPlanButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -20).isActive = true
+        self.actionPlanButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
     }
     
     private func loadData() {
@@ -224,6 +258,10 @@ class PieViewController: UIViewController {
     }
     
     // MARK: - User Actions
+    
+    @objc func showActionPlan() {
+    
+    }
     
     func plusAction() {
         self.dismissImproveHint()
