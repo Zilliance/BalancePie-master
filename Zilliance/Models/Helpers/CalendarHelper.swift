@@ -9,15 +9,21 @@
 import Foundation
 import EventKit
 
-enum CalendarError {
+enum CalendarError: Error {
     case notGranted
     case errorSavingEvent
+    case noCalendar
 }
 
 class CalendarHelper {
     
-    typealias CalendarClosure = (String?, CalendarError?) -> Void
+    static let shared = CalendarHelper()
     
+    typealias CalendarClosure = (String?, CalendarError?) -> Void
+    typealias EventsClosure = ([EKEvent]?, CalendarError?) -> Void
+    
+    static let calendarName = "Balance Pie"
+
     
     /// adds an event to calendar
     ///
@@ -25,13 +31,13 @@ class CalendarHelper {
     ///   - title: the title of the event
     ///   - date: the date of the event
     ///   - calendarClosure: completion closure
-    static func addEvent(with title: String, notes: String?, date:Date, calendarClosure: @escaping CalendarClosure) {
+    func addEvent(with title: String, notes: String?, date:Date, calendarClosure: @escaping CalendarClosure) {
         
         let store = EKEventStore()
         
         store.requestAccess(to: .event) { (granted, error) in
             guard granted else {
-                DispatchQueue.main.async { calendarClosure(nil, .notGranted) }
+                calendarClosure(nil, .notGranted)
                 return
             }
             
@@ -39,9 +45,12 @@ class CalendarHelper {
             event.title = title
             event.startDate = date
             
+            event.addRecurrenceRule(EKRecurrenceRule(recurrenceWith: .daily, interval: 1, end: nil))
+            
             if let eventNotes = notes {
                 event.notes = eventNotes
             }
+
             
             event.endDate = event.startDate.addingTimeInterval(3600) // 1 hour event
             event.calendar = store.defaultCalendarForNewEvents
@@ -55,7 +64,25 @@ class CalendarHelper {
         
     }
     
-    static func removeEvent(eventId: String) {
+    func getEvents(completion: EventsClosure? = nil) {
+        let store = EKEventStore()
+        store.requestAccess(to: .event) { (granted, error) in
+            
+            guard granted else {
+                completion?(nil, .notGranted)
+                return
+            }
+            
+            let predicate = store.predicateForEvents(withStart: Date().addingTimeInterval(-60 * 60 * 24 * 1000), end: Date().addingTimeInterval(60 * 60 * 24 * 1000), calendars: nil)
+            
+            let events = store.events(matching: predicate)
+            
+            completion?(events,  nil)
+
+        }
+    }
+    
+    func removeEvent(eventId: String) {
         
         let store = EKEventStore()
         

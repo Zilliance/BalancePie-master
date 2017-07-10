@@ -76,7 +76,7 @@ class AddToCalendarViewController: UIViewController {
             return
         }
         
-        CalendarHelper.addEvent(with: body, notes: nil, date: self.datePicker.date) { (eventId, error) in
+        CalendarHelper.shared.addEvent(with: body, notes: nil, date: self.datePicker.date) { (eventId, error) in
             
             guard eventId != nil else {
                 switch error {
