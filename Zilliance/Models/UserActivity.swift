@@ -32,7 +32,7 @@ import RealmSwift
         }
     }
     
-    static let all: [Feeling] = [.great, .good, .lousy, .mixed]
+    static let all: [Feeling] = [.great, .good, .mixed, .lousy]
 }
 
 extension Feeling {
