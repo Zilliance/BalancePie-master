@@ -29,6 +29,8 @@
 		1E51585B238E77BA1CAA3F72 /* Pods_ZillianceUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD551A78B0B1A451D0EC85B /* Pods_ZillianceUITests.framework */; };
 		6D62B4EDFBB711AD0B00D39E /* Pods_Zilliance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 736C6E0154BDC836D0C0D4EB /* Pods_Zilliance.framework */; };
 		8C0A87C91EB12D9C000E4188 /* PartialModalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0A87C81EB12D9C000E4188 /* PartialModalTransition.swift */; };
+		8C37CF001F0E94850083F38C /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C37CEFF1F0E94850083F38C /* Intro.storyboard */; };
+		8C37CF021F0EAEEB0083F38C /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C37CF011F0EAEEB0083F38C /* IntroViewController.swift */; };
 		8C3EA45A1E92E6D000F56DED /* PieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3EA4591E92E6D000F56DED /* PieView.swift */; };
 		8C3EA4611E92E7BF00F56DED /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3EA45C1E92E7BF00F56DED /* Database.swift */; };
 		8C3EA4621E92E7BF00F56DED /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3EA45D1E92E7BF00F56DED /* User.swift */; };
@@ -140,6 +142,8 @@
 		6FED0BD8DBA2228B5E916020 /* Pods-ZillianceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZillianceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZillianceTests/Pods-ZillianceTests.debug.xcconfig"; sourceTree = "<group>"; };
 		736C6E0154BDC836D0C0D4EB /* Pods_Zilliance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zilliance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C0A87C81EB12D9C000E4188 /* PartialModalTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PartialModalTransition.swift; path = Models/Helpers/PartialModalTransition.swift; sourceTree = "<group>"; };
+		8C37CEFF1F0E94850083F38C /* Intro.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Intro.storyboard; sourceTree = "<group>"; };
+		8C37CF011F0EAEEB0083F38C /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IntroViewController.swift; path = ViewControllers/IntroViewController.swift; sourceTree = "<group>"; };
 		8C3EA4591E92E6D000F56DED /* PieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PieView.swift; path = CustomViews/PieView.swift; sourceTree = "<group>"; };
 		8C3EA45C1E92E7BF00F56DED /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Database.swift; path = Models/Database.swift; sourceTree = "<group>"; };
 		8C3EA45D1E92E7BF00F56DED /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = "<group>"; };
@@ -304,9 +308,19 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		8C37CEFE1F0E94460083F38C /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				8C37CEFF1F0E94850083F38C /* Intro.storyboard */,
+				8C37CF011F0EAEEB0083F38C /* IntroViewController.swift */,
+			);
+			name = Intro;
+			sourceTree = "<group>";
+		};
 		8C3EA4571E92E4FD00F56DED /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				8C37CEFE1F0E94460083F38C /* Intro */,
 				041C3CB81EA55C4800C52195 /* Side Menu */,
 				04647C6F1E97D82D0040CA46 /* Fine Tune Activity */,
 				8CC4C9601EC11617004DF0D5 /* Fine Tune Example */,
@@ -650,6 +664,7 @@
 				041C3CD81EA8062500C52195 /* zilliance privacy policy.html in Resources */,
 				8C3EA4931E93F85C00F56DED /* Muli-ExtraLight.ttf in Resources */,
 				8C3EA49A1E93F85C00F56DED /* Muli-SemiBoldItalic.ttf in Resources */,
+				8C37CF001F0E94850083F38C /* Intro.storyboard in Resources */,
 				E314B6F21EBB93E0001D0FF5 /* faq.html in Resources */,
 				8C4D28C71E96CFEE00034A20 /* Onboarding.storyboard in Resources */,
 				8C4EAE1B1EA15B2F00D800E4 /* FineTuneItems.storyboard in Resources */,
@@ -851,6 +866,7 @@
 				8C3EA4611E92E7BF00F56DED /* Database.swift in Sources */,
 				8C0A87C91EB12D9C000E4188 /* PartialModalTransition.swift in Sources */,
 				04647C751E97D85C0040CA46 /* FineTuneActivityViewController.swift in Sources */,
+				8C37CF021F0EAEEB0083F38C /* IntroViewController.swift in Sources */,
 				E3703C581EB3E8F80004C5BD /* PlacholderSidebarItemViewController.swift in Sources */,
 				041C3CD01EA7F65A00C52195 /* WebViewController.swift in Sources */,
 				E311C3341EB135F800CF23D1 /* PieHintView.swift in Sources */,
