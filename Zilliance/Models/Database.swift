@@ -26,16 +26,19 @@ class Database {
     
     private(set) var user: User!
     
+    private var needToAddGoodValues = false
+    
     init() {
         do {
             
             // Inside your application(application:didFinishLaunchingWithOptions:)
             
             let config = Realm.Configuration(
-                schemaVersion: 4,
+                schemaVersion: 10,
                 
                 migrationBlock: { migration, oldSchemaVersion in
-                    if (oldSchemaVersion < 1) {
+                    if (oldSchemaVersion < 9) {
+                        self.needToAddGoodValues = true
                         // Nothing to do!
                         // Realm will automatically detect new properties and removed properties
                         // And will update the schema on disk automatically
@@ -53,6 +56,9 @@ class Database {
             if let user = self.realm.objects(User.self).first
             {
                 self.user = user
+                if self.needToAddGoodValues {
+                    self.addGoodValues()
+                }
             }
             else
             {
@@ -288,6 +294,35 @@ class Database {
             ["name": "Wealth", "type": ValueType.good],
             ["name": "Wisdom", "type": ValueType.good],
         ]
+    }
+    
+    private func addGoodValues() {
+        
+        let goodValues = self.allValues.filter { $0.type == .good }
+        
+        self.defaultValuesData.forEach { (dict) in
+            let value = Value()
+            
+            value.name = dict["name"] as! String
+            value.type = dict["type"] as! ValueType
+            
+            if value.type == .good {
+                
+                let alreadyHasValue = goodValues.filter { $0.name == value.name }.count > 0
+                
+                if !alreadyHasValue {
+                    
+                    try! self.realm.write {
+                        
+                        self.realm.add(value)
+                    }
+                    
+                }
+                
+                
+            }
+            
+        }
     }
     
     private func bootstrapValues() {
