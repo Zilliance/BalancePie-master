@@ -15,6 +15,8 @@ class IntroViewController: UIViewController {
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var imageHeightContraint: NSLayoutConstraint!
     
+    var didLayout = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,12 +28,17 @@ class IntroViewController: UIViewController {
     }
     
     
+    // Fix text view not starting with text at top (!)
+    // http://stackoverflow.com/questions/33979214/uitextview-text-starts-from-the-middle-and-not-the-top
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.textView.scrollRangeToVisible(NSMakeRange(0, 0))
         
+        if self.didLayout == false {
+            self.textView.setContentOffset(CGPoint.zero, animated: false)
+            self.didLayout = true
+        }
     }
-    
     
     @IBAction func continueAction(_ sender: UIButton) {
         
