@@ -29,7 +29,7 @@ class PieViewController: UIViewController {
         ]
     )
     private let legend2 = PieLegendView(legends:  [
-        Legend(text: "I feel good", color: .feelingNeutral),
+        Legend(text: "I feel good", color: .feelingGood),
         Legend(text: "I feel lousy", color: .feelingLousy),
         ]
     )
