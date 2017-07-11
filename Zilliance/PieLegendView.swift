@@ -17,7 +17,6 @@ struct Legend {
 
 final class PieLegendView: UIView {
     private let stackView = UIStackView()
-    
     var legends: [Legend] = []
     
     // MARK: -

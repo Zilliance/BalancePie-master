@@ -13,7 +13,7 @@ class AddValuesViewController: UIViewController {
     @IBOutlet weak var valueTextField: UITextField!
     @IBOutlet weak var createValueButton: UIButton!
     var dismissAction: ((Value?) -> ())?
-    var valueType = ValueType.good
+    var valueType = ValueType.great
     
     var valueText: String? {
         if let text = self.valueTextField.text {
