@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(*, deprecated)
 class PieHintView: UIView {
     private let imageView = UIImageView()
     private let label = UILabel()
