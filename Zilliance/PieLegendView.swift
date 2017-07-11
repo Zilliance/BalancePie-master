@@ -15,13 +15,13 @@ final class PieLegendView: UIView {
     
     var labels = [
         "I feel great",
-        "I feel neutral",
+        "I feel good",
         "I feel lousy",
         "I feel mixed"
     ]
     var colors: [UIColor] = [
         .feelingGreat,
-        .feelingNeutral,
+        .feelingGood,
         .feelingLousy,
         .feelingMixed
     ]

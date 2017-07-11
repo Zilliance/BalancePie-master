@@ -13,7 +13,7 @@ import RealmSwift
 @objc enum Feeling: Int32 {
     case none
     case great
-    case neutral
+    case good
     case lousy
     case mixed
     
@@ -22,9 +22,9 @@ import RealmSwift
         case .none:
             return nil
         case .great:
-            return "🙂 Great"
-        case .neutral:
-            return "😐 Neutral"
+            return "😄 Great"
+        case .good:
+            return "🙂 Good"
         case .lousy:
             return "☹️ Lousy"
         case .mixed:
@@ -32,7 +32,7 @@ import RealmSwift
         }
     }
     
-    static let all: [Feeling] = [.great, .neutral, .lousy, .mixed]
+    static let all: [Feeling] = [.great, .good, .mixed, .lousy]
 }
 
 extension Feeling {
@@ -41,7 +41,7 @@ extension Feeling {
         switch self {
         case .great:
             return "Why does this activity make you feel great?"
-        case .neutral:
+        case .good:
             assertionFailure()
             return ""
         case .lousy:
@@ -61,8 +61,8 @@ extension Feeling {
         case .great:
             assertionFailure()
             return ""
-        case .neutral:
-            return "Why does this activity make you feel neutral?"
+        case .good:
+            return "Why does this activity make you feel good?"
         case .lousy:
             return "Why does this activity make you feel lousy?"
         case .mixed:
@@ -96,8 +96,8 @@ final class UserActivity: Object {
         switch(feeling){
         case .great:
             return .feelingGreat
-        case .neutral:
-            return .feelingNeutral
+        case .good:
+            return .feelingGood
         case .lousy:
             return .feelingLousy
         case .mixed:
@@ -111,8 +111,8 @@ final class UserActivity: Object {
         return "id"
     }
     
-    var goodValues: Array<Value> {
-        return self.values.filter{$0.type == .good}.sorted {
+    var greatValues: Array<Value> {
+        return self.values.filter{$0.type == .great}.sorted {
             $0.order == $1.order ? $0.name < $1.name : $0.order.rawValue < $1.order.rawValue
         }
     }
@@ -123,8 +123,8 @@ final class UserActivity: Object {
         }
     }
     
-    var neutralValues: Array<Value> {
-        return self.values.filter{$0.type == .neutral}.sorted {
+    var goodValues: Array<Value> {
+        return self.values.filter{$0.type == .good}.sorted {
             $0.order == $1.order ? $0.name < $1.name : $0.order.rawValue < $1.order.rawValue
         }
     }
@@ -140,9 +140,9 @@ final class UserActivity: Object {
     }
     
     
-    func removeNeutralValues()
+    func removeGoodValues()
     {
-        self.neutralValues.forEach{
+        self.goodValues.forEach{
             if let index = self.values.index(of: $0)
             {
                 self.values.remove(objectAtIndex: index)
@@ -150,9 +150,9 @@ final class UserActivity: Object {
         }
     }
     
-    func removeGoodValues()
+    func removeGreatValues()
     {
-        self.goodValues.forEach{
+        self.greatValues.forEach{
             if let index = self.values.index(of: $0)
             {
                 self.values.remove(objectAtIndex: index)
@@ -170,7 +170,7 @@ final class UserActivity: Object {
 
 extension UIColor {
     static let feelingGreat = UIColor.color(forRed: 91.0, green: 178.0, blue: 86.0, alpha: 1)
-    static let feelingNeutral = UIColor.color(forRed: 255.0, green: 206.0, blue: 7.0, alpha: 1)
+    static let feelingGood = UIColor.color(forRed: 255.0, green: 206.0, blue: 7.0, alpha: 1)
     static let feelingMixed = UIColor.color(forRed: 255.0, green: 130.0, blue: 16.0, alpha: 1)
     static let feelingLousy = UIColor.color(forRed: 235.0, green: 60.0, blue: 67.0, alpha: 1)
 }

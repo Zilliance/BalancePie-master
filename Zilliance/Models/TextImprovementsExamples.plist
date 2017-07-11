@@ -2,7 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>🙂 Great</key>
+	<key>😄 Great</key>
 	<dict>
 		<key>pleasure</key>
 		<array>
@@ -50,7 +50,7 @@
 			<string>-</string>
 		</array>
 	</dict>
-	<key>😐 Neutral</key>
+	<key>🙂 Good</key>
 	<dict>
 		<key>pleasure</key>
 		<array>

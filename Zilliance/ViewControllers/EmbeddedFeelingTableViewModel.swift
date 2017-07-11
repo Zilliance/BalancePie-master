@@ -91,7 +91,7 @@ struct EmbeddedFeelingTableViewModel
         let internalSection = self.initialSection - section
         switch (internalSection, self.userActivity.feeling) {
         case (0, .great), (0, .mixed):
-            return Value.goodValues
+            return Value.greatValues
         default:
             return Value.badValues
         }
@@ -155,8 +155,8 @@ struct EmbeddedFeelingTableViewModel
             {
                 return "Bad values"
             }
-        case .neutral:
-            return "Feels neutral because"
+        case .good:
+            return "Feels good because"
         }
         
     }

@@ -26,16 +26,19 @@ class Database {
     
     private(set) var user: User!
     
+    private var needToAddGoodValues = false
+    
     init() {
         do {
             
             // Inside your application(application:didFinishLaunchingWithOptions:)
             
             let config = Realm.Configuration(
-                schemaVersion: 4,
+                schemaVersion: 10,
                 
                 migrationBlock: { migration, oldSchemaVersion in
-                    if (oldSchemaVersion < 1) {
+                    if (oldSchemaVersion < 9) {
+                        self.needToAddGoodValues = true
                         // Nothing to do!
                         // Realm will automatically detect new properties and removed properties
                         // And will update the schema on disk automatically
@@ -53,6 +56,9 @@ class Database {
             if let user = self.realm.objects(User.self).first
             {
                 self.user = user
+                if self.needToAddGoodValues {
+                    self.addGoodValues()
+                }
             }
             else
             {
@@ -147,61 +153,61 @@ class Database {
     
     private var defaultValuesData: [[String: Any]] {
         return [
-            ["name": "Achievement", "type": ValueType.good],
-            ["name": "Adventure", "type": ValueType.good],
-            ["name": "Authenticity", "type": ValueType.good],
-            ["name": "Belonging", "type": ValueType.good],
-            ["name": "Benevolence", "type": ValueType.good],
-            ["name": "Bravery", "type": ValueType.good],
-            ["name": "Challenge", "type": ValueType.good],
-            ["name": "Community", "type": ValueType.good],
-            ["name": "Connection", "type": ValueType.good],
-            ["name": "Contribution", "type": ValueType.good],
-            ["name": "Creativity", "type": ValueType.good],
-            ["name": "Ethics", "type": ValueType.good],
-            ["name": "Faith", "type": ValueType.good],
-            ["name": "Fame", "type": ValueType.good],
-            ["name": "Family time", "type": ValueType.good],
-            ["name": "Freedom", "type": ValueType.good],
-            ["name": "Friendship", "type": ValueType.good],
-            ["name": "Fun", "type": ValueType.good],
-            ["name": "Giving back", "type": ValueType.good],
-            ["name": "Growth", "type": ValueType.good],
-            ["name": "Happiness", "type": ValueType.good],
-            ["name": "Harmony", "type": ValueType.good],
-            ["name": "Healthiness", "type": ValueType.good],
-            ["name": "Honesty", "type": ValueType.good],
-            ["name": "Impact", "type": ValueType.good],
-            ["name": "Independence", "type": ValueType.good],
-            ["name": "Influence", "type": ValueType.good],
-            ["name": "Intimacy", "type": ValueType.good],
-            ["name": "Joy", "type": ValueType.good],
-            ["name": "Laughter", "type": ValueType.good],
-            ["name": "Leadership", "type": ValueType.good],
-            ["name": "Learning", "type": ValueType.good],
-            ["name": "Leisure", "type": ValueType.good],
-            ["name": "Love", "type": ValueType.good],
-            ["name": "Mastery", "type": ValueType.good],
-            ["name": "Meaning", "type": ValueType.good],
-            ["name": "Money", "type": ValueType.good],
-            ["name": "Nurturance", "type": ValueType.good],
-            ["name": "Optimism", "type": ValueType.good],
-            ["name": "Passion", "type": ValueType.good],
-            ["name": "Personal development", "type": ValueType.good],
-            ["name": "Power", "type": ValueType.good],
-            ["name": "Privacy", "type": ValueType.good],
-            ["name": "Respect", "type": ValueType.good],
-            ["name": "Romance", "type": ValueType.good],
-            ["name": "Security", "type": ValueType.good],
-            ["name": "Self-care", "type": ValueType.good],
-            ["name": "Self-expression", "type": ValueType.good],
-            ["name": "Simplicity", "type": ValueType.good],
-            ["name": "Spirituality", "type": ValueType.good],
-            ["name": "Spontaneity", "type": ValueType.good],
-            ["name": "Stability", "type": ValueType.good],
-            ["name": "Variety", "type": ValueType.good],
-            ["name": "Wisdom", "type": ValueType.good],
-            ["name": "Teamwork", "type": ValueType.good],
+            ["name": "Achievement", "type": ValueType.great],
+            ["name": "Adventure", "type": ValueType.great],
+            ["name": "Authenticity", "type": ValueType.great],
+            ["name": "Belonging", "type": ValueType.great],
+            ["name": "Benevolence", "type": ValueType.great],
+            ["name": "Bravery", "type": ValueType.great],
+            ["name": "Challenge", "type": ValueType.great],
+            ["name": "Community", "type": ValueType.great],
+            ["name": "Connection", "type": ValueType.great],
+            ["name": "Contribution", "type": ValueType.great],
+            ["name": "Creativity", "type": ValueType.great],
+            ["name": "Ethics", "type": ValueType.great],
+            ["name": "Faith", "type": ValueType.great],
+            ["name": "Fame", "type": ValueType.great],
+            ["name": "Family time", "type": ValueType.great],
+            ["name": "Freedom", "type": ValueType.great],
+            ["name": "Friendship", "type": ValueType.great],
+            ["name": "Fun", "type": ValueType.great],
+            ["name": "Giving back", "type": ValueType.great],
+            ["name": "Growth", "type": ValueType.great],
+            ["name": "Happiness", "type": ValueType.great],
+            ["name": "Harmony", "type": ValueType.great],
+            ["name": "Healthiness", "type": ValueType.great],
+            ["name": "Honesty", "type": ValueType.great],
+            ["name": "Impact", "type": ValueType.great],
+            ["name": "Independence", "type": ValueType.great],
+            ["name": "Influence", "type": ValueType.great],
+            ["name": "Intimacy", "type": ValueType.great],
+            ["name": "Joy", "type": ValueType.great],
+            ["name": "Laughter", "type": ValueType.great],
+            ["name": "Leadership", "type": ValueType.great],
+            ["name": "Learning", "type": ValueType.great],
+            ["name": "Leisure", "type": ValueType.great],
+            ["name": "Love", "type": ValueType.great],
+            ["name": "Mastery", "type": ValueType.great],
+            ["name": "Meaning", "type": ValueType.great],
+            ["name": "Money", "type": ValueType.great],
+            ["name": "Nurturance", "type": ValueType.great],
+            ["name": "Optimism", "type": ValueType.great],
+            ["name": "Passion", "type": ValueType.great],
+            ["name": "Personal development", "type": ValueType.great],
+            ["name": "Power", "type": ValueType.great],
+            ["name": "Privacy", "type": ValueType.great],
+            ["name": "Respect", "type": ValueType.great],
+            ["name": "Romance", "type": ValueType.great],
+            ["name": "Security", "type": ValueType.great],
+            ["name": "Self-care", "type": ValueType.great],
+            ["name": "Self-expression", "type": ValueType.great],
+            ["name": "Simplicity", "type": ValueType.great],
+            ["name": "Spirituality", "type": ValueType.great],
+            ["name": "Spontaneity", "type": ValueType.great],
+            ["name": "Stability", "type": ValueType.great],
+            ["name": "Variety", "type": ValueType.great],
+            ["name": "Wisdom", "type": ValueType.great],
+            ["name": "Teamwork", "type": ValueType.great],
             
             ["name": "Arrogance", "type": ValueType.bad],
             ["name": "Boredom", "type": ValueType.bad],
@@ -229,24 +235,94 @@ class Database {
             ["name": "Submissiveness", "type": ValueType.bad],
             ["name": "Time commitment", "type": ValueType.bad],
             
-            ["name": "Apathy", "type": ValueType.neutral],
-            ["name": "Boredom", "type": ValueType.neutral],
-            ["name": "Complexity", "type": ValueType.neutral],
-            ["name": "Compromising", "type": ValueType.neutral],
-            ["name": "Confusion", "type": ValueType.neutral],
-            ["name": "Dullness", "type": ValueType.neutral],
-            ["name": "Impatience", "type": ValueType.neutral],
-            ["name": "Loneliness", "type": ValueType.neutral],
-            ["name": "Meaninglessness", "type": ValueType.neutral],
-            ["name": "Mediocrity", "type": ValueType.neutral],
-            ["name": "Monotony", "type": ValueType.neutral],
-            ["name": "Seriousness", "type": ValueType.neutral],
-            ["name": "Servitude", "type": ValueType.neutral],
-            ["name": "Solitude", "type": ValueType.neutral],
-            ["name": "Stagnation", "type": ValueType.neutral],
-            ["name": "Submissiveness", "type": ValueType.neutral],
-            ["name": "Time demands", "type": ValueType.neutral],
+            ["name": "Achievement", "type": ValueType.good],
+            ["name": "Adventure", "type": ValueType.good],
+            ["name": "Authenticity", "type": ValueType.good],
+            ["name": "Belonging", "type": ValueType.good],
+            ["name": "Boredom", "type": ValueType.good],
+            ["name": "Camaraderie", "type": ValueType.good],
+            ["name": "Challenge", "type": ValueType.good],
+            ["name": "Community", "type": ValueType.good],
+            ["name": "Complexity", "type": ValueType.good],
+            ["name": "Connection", "type": ValueType.good],
+            ["name": "Constraints", "type": ValueType.good],
+            ["name": "Creativity", "type": ValueType.good],
+            ["name": "Family time", "type": ValueType.good],
+            ["name": "Feelings of inadequacy", "type": ValueType.good],
+            ["name": "Formality", "type": ValueType.good],
+            ["name": "Freedom", "type": ValueType.good],
+            ["name": "Friendship", "type": ValueType.good],
+            ["name": "Fun", "type": ValueType.good],
+            ["name": "Giving back", "type": ValueType.good],
+            ["name": "Happiness", "type": ValueType.good],
+            ["name": "Harmony", "type": ValueType.good],
+            ["name": "Healthiness", "type": ValueType.good],
+            ["name": "Honesty", "type": ValueType.good],
+            ["name": "Impact", "type": ValueType.good],
+            ["name": "Independence", "type": ValueType.good],
+            ["name": "Integrity", "type": ValueType.good],
+            ["name": "Intimacy", "type": ValueType.good],
+            ["name": "Joy", "type": ValueType.good],
+            ["name": "Lack of compensation", "type": ValueType.good],
+            ["name": "Laughter", "type": ValueType.good],
+            ["name": "Leadership", "type": ValueType.good],
+            ["name": "Leisure", "type": ValueType.good],
+            ["name": "Loneliness", "type": ValueType.good],
+            ["name": "Love", "type": ValueType.good],
+            ["name": "Meekness", "type": ValueType.good],
+            ["name": "Monotony", "type": ValueType.good],
+            ["name": "Nurturance", "type": ValueType.good],
+            ["name": "Optimism", "type": ValueType.good],
+            ["name": "Pain", "type": ValueType.good],
+            ["name": "Passion", "type": ValueType.good],
+            ["name": "Personal development", "type": ValueType.good],
+            ["name": "Power", "type": ValueType.good],
+            ["name": "Purpose", "type": ValueType.good],
+            ["name": "Respect", "type": ValueType.good],
+            ["name": "Restraints", "type": ValueType.good],
+            ["name": "Romance", "type": ValueType.good],
+            ["name": "Self-care", "type": ValueType.good],
+            ["name": "Seriousness", "type": ValueType.good],
+            ["name": "Simplicity", "type": ValueType.good],
+            ["name": "Solitude", "type": ValueType.good],
+            ["name": "Spontaneity", "type": ValueType.good],
+            ["name": "Stability", "type": ValueType.good],
+            ["name": "Stagnation", "type": ValueType.good],
+            ["name": "Teamwork", "type": ValueType.good],
+            ["name": "Time commitment", "type": ValueType.good],
+            ["name": "Variety", "type": ValueType.good],
+            ["name": "Wealth", "type": ValueType.good],
+            ["name": "Wisdom", "type": ValueType.good],
         ]
+    }
+    
+    private func addGoodValues() {
+        
+        let goodValues = self.allValues.filter { $0.type == .good }
+        
+        self.defaultValuesData.forEach { (dict) in
+            let value = Value()
+            
+            value.name = dict["name"] as! String
+            value.type = dict["type"] as! ValueType
+            
+            if value.type == .good {
+                
+                let alreadyHasValue = goodValues.filter { $0.name == value.name }.count > 0
+                
+                if !alreadyHasValue {
+                    
+                    try! self.realm.write {
+                        
+                        self.realm.add(value)
+                    }
+                    
+                }
+                
+                
+            }
+            
+        }
     }
     
     private func bootstrapValues() {
