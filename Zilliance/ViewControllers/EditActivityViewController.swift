@@ -77,7 +77,7 @@ extension EditActivityViewController: UITableViewDataSource
         switch section {
         case TableSection.goodFeelings.rawValue:
             
-            if (self.activity.feeling == .lousy || self.activity.feeling == .neutral)
+            if (self.activity.feeling == .lousy || self.activity.feeling == .good)
             {
                 return 0
             }
@@ -137,7 +137,7 @@ extension EditActivityViewController: UITableViewDataSource
             
         case (.badFeelings?):
             let cell = tableView.dequeueReusableCell(withIdentifier: "valuesCell", for: indexPath) as! ActivityTableViewCell
-            let text = self.activity.feeling == .neutral ? self.activity.neutralValues.map{$0.name}.joined(separator: "\n") : self.activity.badValues.map{$0.name}.joined(separator: "\n")
+            let text = self.activity.feeling == .good ? self.activity.goodValues.map{$0.name}.joined(separator: "\n") : self.activity.badValues.map{$0.name}.joined(separator: "\n")
             cell.titleLabel.text = self.activity.feeling.badTitleText
             cell.subtitleLabel.text = text.characters.count > 0 ? text : tapToSelectText
             cell.subtitleLabel.textColor = text.characters.count > 0 ? UIColor.lightBlueBackground : UIColor.placeholderText
@@ -163,7 +163,7 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
         
         var lastSectionShown = TableSection.feelingType.rawValue
         
-        if (self.activity.feeling == .lousy || self.activity.feeling == .neutral || self.activity.feeling == .mixed)
+        if (self.activity.feeling == .lousy || self.activity.feeling == .good || self.activity.feeling == .mixed)
         {
             lastSectionShown = TableSection.badFeelings.rawValue
         }
@@ -262,12 +262,12 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
         var values: [Value] = []
         
         switch valueType {
-        case .good:
-            values = Value.goodValues
+        case .great:
+            values = Value.greatValues
         case .bad:
             values = Value.badValues
-        case .neutral:
-            values = Value.neutralValues
+        case .good:
+            values = Value.goodValues
         }
         
         let initialSelectedValues = initialIndexes.map{values[$0]}
@@ -320,12 +320,12 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
                         var values: [Value] = []
                         
                         switch valueType {
-                        case .good:
-                            values = Value.goodValues
+                        case .great:
+                            values = Value.greatValues
                         case .bad:
                             values = Value.badValues
-                        case .neutral:
-                            values = Value.neutralValues
+                        case .good:
+                            values = Value.goodValues
                         }
                         
                         var initialIndexes = values.flatMap({initialSelectedValues.index(of: $0) == nil ? nil : values.index(of: $0)})
@@ -364,12 +364,12 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
 
         case .goodFeelings?:
             
-            let values = Value.goodValues
+            let values = Value.greatValues
             
             let initialIndexes = values.flatMap({self.activity.goodValues.index(of: $0) == nil ? nil : values.index(of: $0)})
             
-            self.selectValues(valueType: .good, initialIndexes: initialIndexes, completion: { (values) in
-                self.activity.removeGoodValues()
+            self.selectValues(valueType: .great, initialIndexes: initialIndexes, completion: { (values) in
+                self.activity.removeGreatValues()
                 
                 for value in values
                 {
@@ -384,15 +384,15 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
         case .badFeelings?:
             
             
-            let values = self.activity.feeling == .neutral ? Value.neutralValues: Value.badValues
+            let values = self.activity.feeling == .good ? Value.goodValues: Value.badValues
             
-            let initialIndexes = self.activity.feeling == .neutral ? values.flatMap({self.activity.neutralValues.index(of: $0) == nil ? nil : values.index(of: $0)}) : values.flatMap({self.activity.badValues.index(of: $0) == nil ? nil : values.index(of: $0)})
-            let valueType: ValueType = self.activity.feeling == .neutral ? ValueType.neutral : ValueType.bad
+            let initialIndexes = self.activity.feeling == .good ? values.flatMap({self.activity.goodValues.index(of: $0) == nil ? nil : values.index(of: $0)}) : values.flatMap({self.activity.badValues.index(of: $0) == nil ? nil : values.index(of: $0)})
+            let valueType: ValueType = self.activity.feeling == .good ? ValueType.good : ValueType.bad
 
             self.selectValues(valueType: valueType, initialIndexes: initialIndexes, completion: { (values) in
                 
-                if self.activity.feeling == .neutral {
-                    self.activity.removeNeutralValues()
+                if self.activity.feeling == .good {
+                    self.activity.removeGoodValues()
                 } else {
                     self.activity.removeBadValues()
                 }
