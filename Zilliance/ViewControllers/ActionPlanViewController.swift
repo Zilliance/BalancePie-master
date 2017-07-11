@@ -33,3 +33,17 @@ class ActionPlanViewController: UIViewController {
     */
 
 }
+
+extension ActionPlanViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        1
+    }
+}

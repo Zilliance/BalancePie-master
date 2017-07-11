@@ -44,7 +44,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="notificationItemCell" id="z66-Ji-nho">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="notificationItemCell" id="z66-Ji-nho" customClass="ActionPlanCell" customModule="Zilliance" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="108" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z66-Ji-nho" id="EPl-dt-ALg">
@@ -59,7 +59,7 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SUN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oaC-h9-PVF">
-                                                    <rect key="frame" x="17.5" y="11" width="26" height="15"/>
+                                                    <rect key="frame" x="17.5" y="11" width="26" height="15.5"/>
                                                     <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="12"/>
                                                     <color key="textColor" red="0.45882352941176469" green="0.46666666666666667" blue="0.48627450980392156" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -71,7 +71,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="11:30 AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m4L-f7-WCV">
-                                                    <rect key="frame" x="56" y="13" width="41" height="11.5"/>
+                                                    <rect key="frame" x="56" y="13" width="40.5" height="11.5"/>
                                                     <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="9"/>
                                                     <color key="textColor" red="0.45882352941176469" green="0.46666666666666667" blue="0.48627450980392156" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -104,7 +104,7 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Raz-xw-TQo">
-                                                    <rect key="frame" x="22" y="27" width="17" height="35"/>
+                                                    <rect key="frame" x="22" y="27.5" width="17" height="35.5"/>
                                                     <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="28"/>
                                                     <color key="textColor" red="0.45882352941176469" green="0.46666666666666667" blue="0.48627450980392156" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -130,6 +130,16 @@
                                                 <constraint firstItem="Gax-IX-ne5" firstAttribute="top" secondItem="1j0-5e-8Ig" secondAttribute="bottom" constant="5" id="pek-TY-2LO"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="m4L-f7-WCV" id="pwO-Ov-9LZ"/>
+                                            <outlet property="dayLabel" destination="oaC-h9-PVF" id="CiP-8r-luO"/>
+                                            <outlet property="dayNumberLabel" destination="Raz-xw-TQo" id="QCk-F7-yoq"/>
+                                            <outlet property="notificationType" destination="1j0-5e-8Ig" id="3gB-cb-VNs"/>
+                                            <outlet property="recurrenceContainer" destination="Gax-IX-ne5" id="bgv-fR-2Cu"/>
+                                            <outlet property="recurrenceIndicatorView" destination="iNa-BI-auG" id="0mr-LB-vHJ"/>
+                                            <outlet property="recurrenceLabel" destination="fO7-mY-fBl" id="p2z-rJ-y5h"/>
+                                            <outlet property="textLabel" destination="SMH-nW-ahj" id="dpg-6X-v5m"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
