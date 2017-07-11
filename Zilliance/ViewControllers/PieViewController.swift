@@ -33,8 +33,11 @@ class PieViewController: UIViewController {
         Legend(text: "I feel lousy", color: .feelingLousy),
         ]
     )
+    
+    @available(*, deprecated)
     private let hintView = PieHintView()
     private var improveHint: OnboardingPopover?
+    private let learnMoreLabel = UILabel()
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -86,7 +89,7 @@ class PieViewController: UIViewController {
         
         self.view.addSubview(self.legend1)
         self.legend1.translatesAutoresizingMaskIntoConstraints = false
-        self.legend1.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: UIDevice.isSmallerThaniPhone6 ? -140 : -170).isActive = true
+        self.legend1.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: UIDevice.isSmallerThaniPhone6 ? -120 : -150).isActive = true
         self.legend1.heightAnchor.constraint(equalToConstant: 20).isActive = true
         self.legend1.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
         self.legend1.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
@@ -100,11 +103,28 @@ class PieViewController: UIViewController {
         
         // Hint View
         
-        self.hintView.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(self.hintView)
-        self.hintView.topAnchor.constraint(equalTo: self.legend2.bottomAnchor, constant: UIDevice.isSmallerThaniPhone6 ? 10 : 20).isActive = true
-        self.hintView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
-        self.hintView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
+//        self.hintView.translatesAutoresizingMaskIntoConstraints = false
+//        self.view.addSubview(self.hintView)
+//        self.hintView.topAnchor.constraint(equalTo: self.legend2.bottomAnchor, constant: UIDevice.isSmallerThaniPhone6 ? 10 : 20).isActive = true
+//        self.hintView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
+//        self.hintView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
+        
+        // Learn More Label
+        
+        self.learnMoreLabel.font = .muliItalic(size: 14)
+        self.learnMoreLabel.textColor = .lightBlueBackground
+        self.learnMoreLabel.text = "Learn More"
+        self.learnMoreLabel.textAlignment = .center
+        self.learnMoreLabel.isUserInteractionEnabled = true
+        
+        self.learnMoreLabel.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(self.learnMoreLabel)
+        
+        self.learnMoreLabel.topAnchor.constraint(equalTo: self.legend2.bottomAnchor, constant: UIDevice.isSmallerThaniPhone6 ? 10 : 20).isActive = true
+        self.learnMoreLabel.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
+        self.learnMoreLabel.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
+        
+        self.learnMoreLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showLearnMoreHint)))
         
         // Progress View
         
@@ -210,6 +230,10 @@ class PieViewController: UIViewController {
     
     private func dismissImproveHint() {
         self.improveHint?.dismiss()
+    }
+    
+    @objc private func showLearnMoreHint() {
+        print("show learn more hint")
     }
     
     // MARK: Slice Options
