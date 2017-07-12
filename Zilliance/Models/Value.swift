@@ -10,9 +10,9 @@ import Foundation
 import RealmSwift
 
 @objc enum ValueType: Int32 {
-    case good
+    case great
     case bad
-    case neutral
+    case good
 }
 
 @objc enum OrderPriority: Int32 {
@@ -25,7 +25,7 @@ class Value: Object {
     
     dynamic var name = ""
     dynamic var iconName: String?
-    dynamic var type: ValueType = .good
+    dynamic var type: ValueType = .great
     dynamic var order: OrderPriority = .normal
     
     var image: UIImage? {
@@ -44,17 +44,17 @@ class Value: Object {
     
     static let sortProperties = [SortDescriptor(keyPath: "order", ascending: true), SortDescriptor(keyPath: "name", ascending: true)]
 
-    static var goodValues: Array<Value> {
+    static var greatValues: Array<Value> {
         
-        return Array(Database.shared.realm.objects(Value.self).filter("type == %d", ValueType.good.rawValue).sorted(by: sortProperties))
+        return Array(Database.shared.realm.objects(Value.self).filter("type == %d", ValueType.great.rawValue).sorted(by: sortProperties))
     }
 
     static var badValues: Array<Value> {
         return Array(Database.shared.realm.objects(Value.self).filter("type == %d", ValueType.bad.rawValue).sorted(by: sortProperties))
     }
     
-    static var neutralValues: Array<Value> {
-        return Array(Database.shared.realm.objects(Value.self).filter("type == %d", ValueType.neutral.rawValue).sorted(by: sortProperties))
+    static var goodValues: Array<Value> {
+        return Array(Database.shared.realm.objects(Value.self).filter("type == %d", ValueType.good.rawValue).sorted(by: sortProperties))
     }
 }
 

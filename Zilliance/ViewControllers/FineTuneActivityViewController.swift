@@ -136,7 +136,7 @@ final class FineTuneActivityViewController: UIViewController {
             return [.pleasure, .prioritize, .gratitude, .giving, .values]
         case .lousy:
             return [.shift, .valuesLousy, .replace, .need, .reduce]
-        case .neutral:
+        case .good:
             return [.replaceNeutral, .reduceNeutral, .shiftNeutral, .valuesNeutral, .needNeutral]
         case .mixed:
             return [.reduceMixed, .gratitudeMixed, .shiftMixed, .valuesMixed, .needMixed]

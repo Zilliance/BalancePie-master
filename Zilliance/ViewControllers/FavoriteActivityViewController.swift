@@ -225,7 +225,7 @@ class FavoriteActivityViewController: UIViewController, AlertsDuration {
             return
         }
         
-        let values: [Value] = Value.goodValues
+        let values: [Value] = Value.badValues
         itemSelectionViewController.createItemTitle = "Create my own value"
         itemSelectionViewController.items = ItemSelectionViewModel.items(from: values)
         itemSelectionViewController.title = "Values"
@@ -300,7 +300,7 @@ class FavoriteActivityViewController: UIViewController, AlertsDuration {
         let userActivity = UserActivity()
         userActivity.activity = self.favorite.activity
         userActivity.duration = self.favorite.activityDuration
-        userActivity.feeling = .great
+        userActivity.feeling = .lousy
         
         self.favorite.values.forEach { (value) in
             value.setOrderPriority(priority: .high)
@@ -394,7 +394,7 @@ extension FavoriteActivityViewController: UITableViewDataSource
         case .activity?:
             let cell = tableView.dequeueReusableCell(withIdentifier: activityCellIdentifier, for: indexPath) as! FavoriteActivityCell
             
-            cell.questionLabel.text = "What is one of your favorite activities?"
+            cell.questionLabel.text = "What is one of your least favorite activities?"
             cell.answerLabel.text = self.favorite.activity != nil ? self.favorite.activity?.name : tapToSelectText
             cell.answerLabel.textColor = self.favorite.activity != nil ? UIColor.lightBlueBackground : UIColor.placeholderText
             cell.iconImageView.image = #imageLiteral(resourceName: "iconActivities").tinted(color: UIColor.darkBlueBackground)
@@ -412,7 +412,7 @@ extension FavoriteActivityViewController: UITableViewDataSource
         case .feels?:
             let cell = tableView.dequeueReusableCell(withIdentifier: activityCellIdentifier, for: indexPath) as! FavoriteActivityCell
             
-            cell.questionLabel.text = "Why does this activity make you feel great?"
+            cell.questionLabel.text = "Why does this activity make you feel lousy?"
             
             
             var valuesNames = self.favorite.values.map { $0.name }
