@@ -64,7 +64,7 @@ class CalendarHelper {
         
     }
     
-    func getEvents(completion: EventsClosure? = nil) {
+    func getEvents(numberOfDays: Int, completion: EventsClosure? = nil) {
         let store = EKEventStore()
         store.requestAccess(to: .event) { (granted, error) in
             
@@ -73,7 +73,9 @@ class CalendarHelper {
                 return
             }
             
-            let predicate = store.predicateForEvents(withStart: Date().addingTimeInterval(-60 * 60 * 24 * 1000), end: Date().addingTimeInterval(60 * 60 * 24 * 1000), calendars: nil)
+            let endDate = Date().addingTimeInterval(TimeInterval(60 * 60 * 24 * numberOfDays)).endOfDay()
+            
+            let predicate = store.predicateForEvents(withStart: Date(), end: endDate, calendars: nil)
             
             let events = store.events(matching: predicate)
             

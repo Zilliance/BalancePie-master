@@ -31,6 +31,7 @@
 		4F6FBFEB1F15166100305E4E /* Plan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F6FBFEA1F15166100305E4E /* Plan.storyboard */; };
 		4F6FBFED1F1516C600305E4E /* ActionPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6FBFEC1F1516C600305E4E /* ActionPlanViewController.swift */; };
 		4F6FBFEF1F15213B00305E4E /* ActionPlanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6FBFEE1F15213B00305E4E /* ActionPlanCell.swift */; };
+		4F6FC0781F1656D800305E4E /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6FC0771F1656D800305E4E /* Date+Extensions.swift */; };
 		6D62B4EDFBB711AD0B00D39E /* Pods_Zilliance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 736C6E0154BDC836D0C0D4EB /* Pods_Zilliance.framework */; };
 		8C0A87C91EB12D9C000E4188 /* PartialModalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0A87C81EB12D9C000E4188 /* PartialModalTransition.swift */; };
 		8C3EA45A1E92E6D000F56DED /* PieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3EA4591E92E6D000F56DED /* PieView.swift */; };
@@ -144,6 +145,7 @@
 		4F6FBFEA1F15166100305E4E /* Plan.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Plan.storyboard; sourceTree = "<group>"; };
 		4F6FBFEC1F1516C600305E4E /* ActionPlanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionPlanViewController.swift; path = ViewControllers/ActionPlanViewController.swift; sourceTree = "<group>"; };
 		4F6FBFEE1F15213B00305E4E /* ActionPlanCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionPlanCell.swift; path = ViewControllers/ActionPlanCell.swift; sourceTree = "<group>"; };
+		4F6FC0771F1656D800305E4E /* Date+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Date+Extensions.swift"; path = "Extensions/Date+Extensions.swift"; sourceTree = "<group>"; };
 		6023B31C79A6506116A83550 /* Pods-Zilliance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zilliance.release.xcconfig"; path = "Pods/Target Support Files/Pods-Zilliance/Pods-Zilliance.release.xcconfig"; sourceTree = "<group>"; };
 		6FED0BD8DBA2228B5E916020 /* Pods-ZillianceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZillianceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZillianceTests/Pods-ZillianceTests.debug.xcconfig"; sourceTree = "<group>"; };
 		736C6E0154BDC836D0C0D4EB /* Pods_Zilliance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zilliance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -376,6 +378,7 @@
 				8C3EA46E1E92E9D600F56DED /* UIViewController+Extensions.swift */,
 				E38910E41EA698A5000E1511 /* UIViewController+Alerts.swift */,
 				E33247961EB42A77009E112A /* UITableViewCell+Extensions.swift */,
+				4F6FC0771F1656D800305E4E /* Date+Extensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -868,6 +871,7 @@
 				8CBBBE201E958B6300281C3C /* AddActivityViewController.swift in Sources */,
 				8C3EA4651E92E7BF00F56DED /* Value.swift in Sources */,
 				0469D0AE1E944B700024EA39 /* UserActivity.swift in Sources */,
+				4F6FC0781F1656D800305E4E /* Date+Extensions.swift in Sources */,
 				8C3EA47D1E92F0F100F56DED /* LocalNotificationsHelper.swift in Sources */,
 				4F6FBFEF1F15213B00305E4E /* ActionPlanCell.swift in Sources */,
 				04B29A671E97AB680090E52E /* PartialSizePresentationController.swift in Sources */,
