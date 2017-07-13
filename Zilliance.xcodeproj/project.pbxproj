@@ -73,6 +73,7 @@
 		8C4EAE1B1EA15B2F00D800E4 /* FineTuneItems.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C4EAE1A1EA15B2F00D800E4 /* FineTuneItems.storyboard */; };
 		8C51C0651EB27E1400A7BF34 /* ZillianceTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C51C0641EB27E1400A7BF34 /* ZillianceTextViewController.swift */; };
 		8CA6156D1F1680B000C07F57 /* ScheduleNotificationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA6156C1F1680B000C07F57 /* ScheduleNotificationTableViewController.swift */; };
+		8CA615711F1817A100C07F57 /* CustomDatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA615701F1817A100C07F57 /* CustomDatePickerViewController.swift */; };
 		8CBBBE181E9558D600281C3C /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CBBBE171E9558D600281C3C /* Calendar.storyboard */; };
 		8CBBBE1A1E9576F800281C3C /* AddToCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBBBE191E9576F800281C3C /* AddToCalendarViewController.swift */; };
 		8CBBBE1D1E95890700281C3C /* AddCustom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CBBBE1C1E95890700281C3C /* AddCustom.storyboard */; };
@@ -189,6 +190,7 @@
 		8C4EAE1A1EA15B2F00D800E4 /* FineTuneItems.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FineTuneItems.storyboard; sourceTree = "<group>"; };
 		8C51C0641EB27E1400A7BF34 /* ZillianceTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZillianceTextViewController.swift; path = ViewControllers/ZillianceTextViewController.swift; sourceTree = "<group>"; };
 		8CA6156C1F1680B000C07F57 /* ScheduleNotificationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScheduleNotificationTableViewController.swift; path = ViewControllers/ScheduleNotificationTableViewController.swift; sourceTree = "<group>"; };
+		8CA615701F1817A100C07F57 /* CustomDatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomDatePickerViewController.swift; path = ViewControllers/CustomDatePickerViewController.swift; sourceTree = "<group>"; };
 		8CBBBE171E9558D600281C3C /* Calendar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
 		8CBBBE191E9576F800281C3C /* AddToCalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddToCalendarViewController.swift; path = ViewControllers/AddToCalendarViewController.swift; sourceTree = "<group>"; };
 		8CBBBE1C1E95890700281C3C /* AddCustom.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddCustom.storyboard; sourceTree = "<group>"; };
@@ -439,6 +441,7 @@
 				8C51C0641EB27E1400A7BF34 /* ZillianceTextViewController.swift */,
 				8C37CF051F156C830083F38C /* ScheduleViewController.swift */,
 				8CA6156C1F1680B000C07F57 /* ScheduleNotificationTableViewController.swift */,
+				8CA615701F1817A100C07F57 /* CustomDatePickerViewController.swift */,
 			);
 			name = Schedule;
 			sourceTree = "<group>";
@@ -876,6 +879,7 @@
 				8C3EA4611E92E7BF00F56DED /* Database.swift in Sources */,
 				8C0A87C91EB12D9C000E4188 /* PartialModalTransition.swift in Sources */,
 				04647C751E97D85C0040CA46 /* FineTuneActivityViewController.swift in Sources */,
+				8CA615711F1817A100C07F57 /* CustomDatePickerViewController.swift in Sources */,
 				8C37CF021F0EAEEB0083F38C /* IntroViewController.swift in Sources */,
 				8C37CF061F156C830083F38C /* ScheduleViewController.swift in Sources */,
 				E3703C581EB3E8F80004C5BD /* PlacholderSidebarItemViewController.swift in Sources */,

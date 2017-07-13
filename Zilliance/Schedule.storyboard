@@ -323,6 +323,7 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="dateLabel" destination="dGi-8I-bW1" id="52Q-EF-zBn"/>
                         <outlet property="daysSegment" destination="zMM-pw-uYl" id="Is4-HL-aSq"/>
                         <outlet property="weeklySwitch" destination="d35-IC-Bm6" id="0bW-Vf-iPI"/>
                     </connections>
@@ -512,6 +513,85 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GHH-bo-Fmf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1122" y="695"/>
+        </scene>
+        <!--Custom Date Picker View Controller-->
+        <scene sceneID="e81-ze-s5X">
+            <objects>
+                <viewController storyboardIdentifier="datePicker" id="h1F-fi-g2d" customClass="CustomDatePickerViewController" customModule="Zilliance" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="w0B-on-bTA"/>
+                        <viewControllerLayoutGuide type="bottom" id="aA4-WY-aKQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QyV-MT-8Rw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="pHw-0h-79D">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <date key="date" timeIntervalSinceReferenceDate="521672275.32631302">
+                                    <!--2017-07-13 20:57:55 +0000-->
+                                </date>
+                            </datePicker>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hov-a4-m12">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="udd-Z2-3LB">
+                                        <rect key="frame" x="20" y="7" width="65" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="0sA-QG-TFt"/>
+                                            <constraint firstAttribute="width" constant="65" id="hej-CI-IrG"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="15"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelAction:" destination="h1F-fi-g2d" eventType="touchUpInside" id="XEf-nw-fWn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1U-e0-eUQ">
+                                        <rect key="frame" x="309" y="7" width="46" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="46" id="dyN-ZH-yiE"/>
+                                            <constraint firstAttribute="height" constant="30" id="ucD-sP-P01"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="15"/>
+                                        <state key="normal" title="Done">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doneAction:" destination="h1F-fi-g2d" eventType="touchUpInside" id="2Ym-2S-KQV"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.12549019610000001" green="0.19215686269999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="udd-Z2-3LB" firstAttribute="leading" secondItem="hov-a4-m12" secondAttribute="leading" constant="20" id="DDP-pY-NXc"/>
+                                    <constraint firstAttribute="height" constant="44" id="J4g-q9-j1q"/>
+                                    <constraint firstAttribute="trailing" secondItem="r1U-e0-eUQ" secondAttribute="trailing" constant="20" id="kA2-2j-h4G"/>
+                                    <constraint firstItem="r1U-e0-eUQ" firstAttribute="centerY" secondItem="hov-a4-m12" secondAttribute="centerY" id="mHW-k1-M67"/>
+                                    <constraint firstItem="udd-Z2-3LB" firstAttribute="centerY" secondItem="hov-a4-m12" secondAttribute="centerY" id="xTe-Cb-stn"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="pHw-0h-79D" secondAttribute="trailing" id="177-uq-edD"/>
+                            <constraint firstItem="aA4-WY-aKQ" firstAttribute="top" secondItem="pHw-0h-79D" secondAttribute="bottom" id="5Fr-7f-Ash"/>
+                            <constraint firstAttribute="trailing" secondItem="hov-a4-m12" secondAttribute="trailing" id="5vH-c1-B89"/>
+                            <constraint firstItem="hov-a4-m12" firstAttribute="leading" secondItem="QyV-MT-8Rw" secondAttribute="leading" id="Cwc-0x-Bx5"/>
+                            <constraint firstItem="pHw-0h-79D" firstAttribute="leading" secondItem="QyV-MT-8Rw" secondAttribute="leading" id="E93-NF-zDL"/>
+                            <constraint firstItem="hov-a4-m12" firstAttribute="top" secondItem="QyV-MT-8Rw" secondAttribute="top" id="XEA-hD-CAv"/>
+                            <constraint firstItem="pHw-0h-79D" firstAttribute="top" secondItem="hov-a4-m12" secondAttribute="bottom" id="rg3-s8-1yV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="datePicker" destination="pHw-0h-79D" id="YkL-Ni-zYI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KMX-lJ-gZV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1844" y="676.91154422788611"/>
         </scene>
         <!--Zilliance Text View Controller-->
         <scene sceneID="6rO-6T-WKc">

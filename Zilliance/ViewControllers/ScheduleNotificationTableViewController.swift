@@ -14,11 +14,13 @@ class ScheduleNotificationTableViewController: UITableViewController {
     
     private let hoursRow = 2
 
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var weeklySwitch: UISwitch!
     @IBOutlet weak var daysSegment: MultiSelectSegmentedControl!
     
     var textViewContent: TextViewContent?
     
+    private let dateFormatter = DateFormatter()
 
     private var zillianceTextViewController: ZillianceTextViewController!
     
@@ -28,6 +30,10 @@ class ScheduleNotificationTableViewController: UITableViewController {
     }
 
     private func setupView() {
+        
+        self.dateFormatter.dateFormat = "h:mm a"
+        self.dateFormatter.amSymbol = "AM"
+        self.dateFormatter.pmSymbol = "PM"
         
         self.daysSegment.tintColor = UIColor.switchBlueColor
         self.daysSegment.setTitleTextAttributes([NSFontAttributeName: UIFont.muliRegular(size: 10.0), NSForegroundColorAttributeName: UIColor.white] , for: .selected)
@@ -81,8 +87,23 @@ class ScheduleNotificationTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == hoursRow {
-            // show date picker
+          
+            guard let datePicker = UIStoryboard(name: "Schedule", bundle: nil).instantiateViewController(withIdentifier: "datePicker") as? CustomDatePickerViewController else {
+                    assertionFailure()
+                    return
+            }
             
+            datePicker.date = { [unowned self] date in
+                self.dateLabel.text = self.dateFormatter.string(from: date)
+            }
+            
+            let formSheet = MZFormSheetController(viewController: datePicker)
+            formSheet.shouldDismissOnBackgroundViewTap = true
+            formSheet.presentedFormSheetSize = CGSize(width: self.view.bounds.width, height: 300)
+            formSheet.shouldCenterVertically = true
+            formSheet.transitionStyle = .slideFromBottom
+            
+            self.mz_present(formSheet, animated: true, completionHandler: nil)
         }
     }
     
