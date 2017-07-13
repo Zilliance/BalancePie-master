@@ -18,7 +18,8 @@ extension UIColor {
     static let switchBlueColor = UIColor.color(forRed: 0, green: 184, blue: 231, alpha: 1)
     
     
-    
+
+    static let scheduleTextColor = UIColor.color(forRed: 66, green: 93, blue: 114, alpha: 1)
     static let lightGray = UIColor.color(forRed: 213, green: 213, blue: 213, alpha: 1)
     static let textGray = UIColor.color(forRed: 27, green: 36, blue: 48, alpha: 1)
     static let placeholderText = UIColor.color(forRed: 120, green: 120, blue: 120, alpha: 1)

@@ -14,6 +14,7 @@ target 'Zilliance' do
   pod 'ActionSheetPicker-3.0', :git => 'https://github.com/ricardohg/ActionSheetPicker-3.0.git', :commit => '1bb467539758e0bac35ba7b24677999a4616f6d8'
   pod 'SideMenuController'
   pod 'SVProgressHUD'
+  pod 'MultiSelectSegmentedControl'
 
   target 'ZillianceTests' do
     inherit! :search_paths

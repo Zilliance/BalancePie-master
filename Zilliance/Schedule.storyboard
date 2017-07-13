@@ -264,7 +264,7 @@
                                                     <color key="textColor" red="0.25882352939999997" green="0.36470588240000001" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <segmentedControl opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="zMM-pw-uYl">
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="zMM-pw-uYl" customClass="MultiSelectSegmentedControl">
                                                     <rect key="frame" x="69" y="11" width="286" height="29"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="28" id="ftg-7v-gjr"/>
@@ -300,6 +300,7 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="daysSegment" destination="zMM-pw-uYl" id="Is4-HL-aSq"/>
                         <outlet property="weeklySwitch" destination="d35-IC-Bm6" id="0bW-Vf-iPI"/>
                     </connections>
                 </tableViewController>

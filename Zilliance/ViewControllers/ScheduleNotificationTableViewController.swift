@@ -7,13 +7,16 @@
 //
 
 import UIKit
+import MultiSelectSegmentedControl
 
 class ScheduleNotificationTableViewController: UITableViewController {
     
     private let hoursRow = 2
 
     @IBOutlet weak var weeklySwitch: UISwitch!
+    @IBOutlet weak var daysSegment: MultiSelectSegmentedControl!
     
+
     private var zillianceTextViewController: ZillianceTextViewController!
     
     override func viewDidLoad() {
@@ -23,7 +26,11 @@ class ScheduleNotificationTableViewController: UITableViewController {
 
     private func setupView() {
         
+        self.daysSegment.tintColor = UIColor.switchBlueColor
+        self.daysSegment.setTitleTextAttributes([NSFontAttributeName: UIFont.muliRegular(size: 10.0), NSForegroundColorAttributeName: UIColor.white] , for: .selected)
+        self.daysSegment.setTitleTextAttributes([NSFontAttributeName: UIFont.muliRegular(size: 10.0), NSForegroundColorAttributeName: UIColor.scheduleTextColor] , for: .normal)
         self.tableView.tableFooterView = UIView()
+        
         self.weeklySwitch.onTintColor = UIColor.switchBlueColor
         
     }
