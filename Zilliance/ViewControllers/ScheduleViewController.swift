@@ -19,16 +19,34 @@ class ScheduleViewController: UIViewController {
         case calendar
     }
     
+    var textViewContent: TextViewContent?
+    
     fileprivate var currentViewController: UIViewController?
     
-    fileprivate var viewControllers: [UIViewController] = [UIStoryboard(name: "Schedule", bundle: nil).instantiateViewController(withIdentifier: "notification"), UIStoryboard(name: "Schedule", bundle: nil).instantiateViewController(withIdentifier: "calendar")
-    ]
+    fileprivate var viewControllers: [UIViewController] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.loadViewControllers()
         self.setupView()
         self.showViewController(controller: viewControllers.first!)
         self.segmentedControl.addTarget(self, action: #selector(segmentChanged), for: .valueChanged)
+    }
+    
+    private func loadViewControllers() {
+
+        guard let notificationsViewController = UIStoryboard(name: "Schedule", bundle: nil).instantiateViewController(withIdentifier: "notification") as? ScheduleNotificationTableViewController,
+        let calendarViewController = UIStoryboard(name: "Schedule", bundle: nil).instantiateViewController(withIdentifier: "calendar") as? AddToCalendarViewController
+            else {
+                assertionFailure()
+            return
+        }
+        
+        notificationsViewController.textViewContent = self.textViewContent
+        calendarViewController.textViewContent = self.textViewContent
+        self.viewControllers.append(notificationsViewController)
+        self.viewControllers.append(calendarViewController)
+        
         
     }
     

@@ -16,6 +16,8 @@ class ScheduleNotificationTableViewController: UITableViewController {
     @IBOutlet weak var weeklySwitch: UISwitch!
     @IBOutlet weak var daysSegment: MultiSelectSegmentedControl!
     
+    var textViewContent: TextViewContent?
+    
 
     private var zillianceTextViewController: ZillianceTextViewController!
     
@@ -37,7 +39,7 @@ class ScheduleNotificationTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         self.zillianceTextViewController = segue.destination as! ZillianceTextViewController
-        //self.zillianceTextViewController.textViewContent = self.textViewContent
+        self.zillianceTextViewController.textViewContent = self.textViewContent
     }
     
 

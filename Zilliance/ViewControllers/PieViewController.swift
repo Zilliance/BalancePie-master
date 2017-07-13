@@ -285,12 +285,6 @@ class PieViewController: UIViewController {
     
     @objc func showActionPlan() {
      
-        guard let vc = UIStoryboard(name: "Schedule", bundle: nil).instantiateInitialViewController() else {
-            assertionFailure()
-            return
-        }
-    
-        self.present(vc, animated: true, completion: nil)
     }
     
     func plusAction() {
