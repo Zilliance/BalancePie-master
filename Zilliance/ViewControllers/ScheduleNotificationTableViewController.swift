@@ -7,14 +7,14 @@
 //
 
 import UIKit
-import KMPlaceholderTextView
 
 class ScheduleNotificationTableViewController: UITableViewController {
     
     private let hoursRow = 2
 
-    @IBOutlet weak var textView: KMPlaceholderTextView!
     @IBOutlet weak var weeklySwitch: UISwitch!
+    
+    private var zillianceTextViewController: ZillianceTextViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,13 +26,13 @@ class ScheduleNotificationTableViewController: UITableViewController {
         self.tableView.tableFooterView = UIView()
         self.weeklySwitch.onTintColor = UIColor.switchBlueColor
         
-        self.textView.layer.cornerRadius = App.Appearance.buttonCornerRadius
-        self.textView.layer.borderWidth = App.Appearance.borderWidth
-        self.textView.layer.borderColor = UIColor.lightGray.cgColor
-        
-        self.textView.placeholder = "Reduce the amount of time spent on social media by doing this: e.g picking up a book every time I am tempted to look at social media"
-        
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        self.zillianceTextViewController = segue.destination as! ZillianceTextViewController
+        //self.zillianceTextViewController.textViewContent = self.textViewContent
+    }
+    
 
     // MARK - User Actions
     
