@@ -46,8 +46,14 @@ class ScheduleNotificationTableViewController: UITableViewController {
 
     // MARK - User Actions
     
-    @IBAction func exampleAction(_ sender: UIButton) {
-        
+    @IBAction func example1Action(_ sender: UIButton) {
+        self.showExample(number: 0)
+    }
+    @IBAction func example2Action(_ sender: UIButton) {
+        self.showExample(number: 1)
+    }
+    
+    private func showExample(number: Int) {
         
         guard let exampleViewController = UIStoryboard(name: "ExamplePopUp", bundle: nil).instantiateInitialViewController() as? ExamplePopUpViewController else {
             assertionFailure()
@@ -55,7 +61,7 @@ class ScheduleNotificationTableViewController: UITableViewController {
         }
         
         exampleViewController.textViewContent = self.textViewContent
-        exampleViewController.exampleNumber = ExamplePopUpViewController.ExampleNumber(rawValue: 0)!
+        exampleViewController.exampleNumber = ExamplePopUpViewController.ExampleNumber(rawValue: number)!
         
         exampleViewController.doneAction = {[unowned self] text in
             self.zillianceTextViewController.setupForExample(with: text)
@@ -67,10 +73,10 @@ class ScheduleNotificationTableViewController: UITableViewController {
         formSheet.transitionStyle = .bounce
         
         self.mz_present(formSheet, animated: true, completionHandler: nil)
-
+        
         
     }
-    
+
     // MARK - Table View Delegate
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
