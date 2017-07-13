@@ -8,6 +8,7 @@
 
 import UIKit
 import MultiSelectSegmentedControl
+import MZFormSheetController
 
 class ScheduleNotificationTableViewController: UITableViewController {
     
@@ -46,6 +47,27 @@ class ScheduleNotificationTableViewController: UITableViewController {
     // MARK - User Actions
     
     @IBAction func exampleAction(_ sender: UIButton) {
+        
+        
+        guard let exampleViewController = UIStoryboard(name: "ExamplePopUp", bundle: nil).instantiateInitialViewController() as? ExamplePopUpViewController else {
+            assertionFailure()
+            return
+        }
+        
+        exampleViewController.textViewContent = self.textViewContent
+        exampleViewController.exampleNumber = ExamplePopUpViewController.ExampleNumber(rawValue: 0)!
+        
+        exampleViewController.doneAction = {[unowned self] text in
+            self.zillianceTextViewController.setupForExample(with: text)
+        }
+        
+        let formSheet = MZFormSheetController(viewController: exampleViewController)
+        formSheet.shouldDismissOnBackgroundViewTap = true
+        formSheet.presentedFormSheetSize = CGSize(width: 300, height: 400)
+        formSheet.transitionStyle = .bounce
+        
+        self.mz_present(formSheet, animated: true, completionHandler: nil)
+
         
     }
     
