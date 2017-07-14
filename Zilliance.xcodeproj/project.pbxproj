@@ -32,6 +32,8 @@
 		4F6FBFED1F1516C600305E4E /* ActionPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6FBFEC1F1516C600305E4E /* ActionPlanViewController.swift */; };
 		4F6FBFEF1F15213B00305E4E /* ActionPlanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6FBFEE1F15213B00305E4E /* ActionPlanCell.swift */; };
 		4F6FC0781F1656D800305E4E /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6FC0771F1656D800305E4E /* Date+Extensions.swift */; };
+		4F900E241F18ECBC005A910D /* MeditationPlanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F900E231F18ECBC005A910D /* MeditationPlanCell.swift */; };
+		4F900E261F18FA62005A910D /* PlanImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F900E251F18FA62005A910D /* PlanImages.xcassets */; };
 		6D62B4EDFBB711AD0B00D39E /* Pods_Zilliance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 736C6E0154BDC836D0C0D4EB /* Pods_Zilliance.framework */; };
 		8C0A87C91EB12D9C000E4188 /* PartialModalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0A87C81EB12D9C000E4188 /* PartialModalTransition.swift */; };
 		8C37CF001F0E94850083F38C /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C37CEFF1F0E94850083F38C /* Intro.storyboard */; };
@@ -148,6 +150,8 @@
 		4F6FBFEC1F1516C600305E4E /* ActionPlanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionPlanViewController.swift; path = ViewControllers/ActionPlanViewController.swift; sourceTree = "<group>"; };
 		4F6FBFEE1F15213B00305E4E /* ActionPlanCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionPlanCell.swift; path = ViewControllers/ActionPlanCell.swift; sourceTree = "<group>"; };
 		4F6FC0771F1656D800305E4E /* Date+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Date+Extensions.swift"; path = "Extensions/Date+Extensions.swift"; sourceTree = "<group>"; };
+		4F900E231F18ECBC005A910D /* MeditationPlanCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MeditationPlanCell.swift; path = CustomCells/MeditationPlanCell.swift; sourceTree = "<group>"; };
+		4F900E251F18FA62005A910D /* PlanImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = PlanImages.xcassets; path = ../PlanImages.xcassets; sourceTree = "<group>"; };
 		6023B31C79A6506116A83550 /* Pods-Zilliance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zilliance.release.xcconfig"; path = "Pods/Target Support Files/Pods-Zilliance/Pods-Zilliance.release.xcconfig"; sourceTree = "<group>"; };
 		6FED0BD8DBA2228B5E916020 /* Pods-ZillianceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZillianceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZillianceTests/Pods-ZillianceTests.debug.xcconfig"; sourceTree = "<group>"; };
 		736C6E0154BDC836D0C0D4EB /* Pods_Zilliance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zilliance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -311,6 +315,7 @@
 				4F6FBFEA1F15166100305E4E /* Plan.storyboard */,
 				4F6FBFEC1F1516C600305E4E /* ActionPlanViewController.swift */,
 				4F6FBFEE1F15213B00305E4E /* ActionPlanCell.swift */,
+				4F900E231F18ECBC005A910D /* MeditationPlanCell.swift */,
 			);
 			name = Plan;
 			sourceTree = "<group>";
@@ -515,6 +520,7 @@
 		E35668301E8C15BA00ED81D9 /* Zilliance */ = {
 			isa = PBXGroup;
 			children = (
+				4F900E251F18FA62005A910D /* PlanImages.xcassets */,
 				041C3CCA1EA7E81C00C52195 /* Resources */,
 				8C4D28C31E9694F800034A20 /* App.swift */,
 				E35668311E8C15BA00ED81D9 /* AppDelegate.swift */,
@@ -671,6 +677,7 @@
 				04B29A631E97AB340090E52E /* ItemsSelection.storyboard in Resources */,
 				8CBBBE181E9558D600281C3C /* Calendar.storyboard in Resources */,
 				8C3EA4991E93F85C00F56DED /* Muli-SemiBold.ttf in Resources */,
+				4F900E261F18FA62005A910D /* PlanImages.xcassets in Resources */,
 				8C3EA4921E93F85C00F56DED /* Muli-ExtraBoldItalic.ttf in Resources */,
 				042576FF1EC10D27003C465F /* TextImprovementsExamples.plist in Resources */,
 				8CC4C9621EC1165C004DF0D5 /* ExamplePopUp.storyboard in Resources */,
@@ -908,6 +915,7 @@
 				04B29A651E97AB4A0090E52E /* ItemsSelectionViewController.swift in Sources */,
 				04E6F56E1E9F8CDB00EBD119 /* EditActivityViewController.swift in Sources */,
 				8CC4C9641EC11889004DF0D5 /* ExamplePopUpViewController.swift in Sources */,
+				4F900E241F18ECBC005A910D /* MeditationPlanCell.swift in Sources */,
 				E33247971EB42A77009E112A /* UITableViewCell+Extensions.swift in Sources */,
 				8C3EA4761E92E9D600F56DED /* UIViewController+Extensions.swift in Sources */,
 				8C3EA45A1E92E6D000F56DED /* PieView.swift in Sources */,

@@ -89,7 +89,8 @@ class CalendarHelper {
         let store = EKEventStore()
         
         guard let event = store.event(withIdentifier: eventId) else {
-            return assertionFailure()
+//            return assertionFailure()
+            return
         }
         
         do {

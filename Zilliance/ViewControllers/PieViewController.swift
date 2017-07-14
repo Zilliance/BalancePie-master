@@ -284,19 +284,26 @@ class PieViewController: UIViewController {
     // MARK: - User Actions
     
     @objc func showActionPlan() {
-    
+        
+        guard let planVC = UIStoryboard(name: "Plan", bundle: nil).instantiateViewController(withIdentifier: "ActionPlanViewController") as? ActionPlanViewController else{
+            assertionFailure()
+            return
+        }
+        let navigation = UINavigationController(rootViewController: planVC)
+
+        self.present(navigation, animated: true)
+        
     }
     
     func plusAction() {
         self.dismissImproveHint()
         
-        guard let addActivityVC = UIStoryboard(name: "AddCustom", bundle: nil).instantiateViewController(withIdentifier: "AddSliceViewController") as? AddSliceViewController else{
+        guard let addActivityVC = UIStoryboard(name: "AddCustom", bundle: nil).instantiateInitialViewController() else {
             assertionFailure()
             return
         }
         
-        let navigation = UINavigationController(rootViewController: addActivityVC)
-        self.present(navigation, animated: true)
+        self.present(addActivityVC, animated: true)
     }
     
     func sliceAction(with activity: UserActivity) {
@@ -371,4 +378,6 @@ class PieViewController: UIViewController {
     
         picker.show()
     }
+    
+    
 }

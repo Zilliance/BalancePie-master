@@ -10,48 +10,69 @@ import Foundation
 import UserNotifications
 import RealmSwift
 
-class Notification: Object{
+
+@objc enum dayOfTheWeek: Int32 {
+    case sun = 0
+    case mon
+    case tue
+    case wed
+    case thu
+    case fri
+    case sat
     
-    var notificationId: String?
+}
+
+class DayObject: Object{
+    dynamic var internalValue: dayOfTheWeek = .sun
     
-    enum daysOfTheWeek: Int {
-        case sun = 0
-        case mon
-        case tue
-        case wed
-        case thu
-        case fri
-        case sat
+    var rawValue: Int {
+        return Int(internalValue.rawValue)
     }
     
-    enum Recurrence {
+    convenience init(internalValue: dayOfTheWeek) {
+        self.init()
+        self.internalValue = internalValue
+    }
+    
+}
+
+class Notification: Object{
+
+    
+    @objc enum NotificationType: Int32 {
+        case local
+        case calendar
+    }
+    
+    @objc enum Recurrence: Int32 {
         case daily
         case weekly
         case none
     }
     
-    enum NotificationType {
-        case local
-        case calendar
+    dynamic var notificationId: String?
+
+    override class func primaryKey() -> String? {
+        return "notificationId"
     }
     
-    var startDate: Date?
-    var type: NotificationType = .local
-    var recurrence: Recurrence = .none
+    dynamic var startDate: Date?
+    dynamic var type: NotificationType = .local
+    dynamic var recurrence: Recurrence = .none
     
-    var dateAdded = Date()
+    dynamic var dateAdded = Date()
     
-    var title: String = ""
-    var body: String = ""
+    dynamic var title: String = ""
+    dynamic var body: String = ""
     
-    var weekDays: [daysOfTheWeek]?
+    let weekDays = List<DayObject>()
     
     //if there's one day for the weekdays selected that is after today, select that one.
     //if not, the first one can be
     
     func getNextWeekDate() -> Date? {
         
-        guard let weekDays = weekDays, weekDays.count > 0 else {
+        guard weekDays.count > 0 else {
             return nil
         }
         
@@ -137,30 +158,40 @@ final class NotificationsManager: NotificationStore {
     
     var realmDB: Realm!
     
-    let sharedInstance = NotificationsManager()
+    static let sharedInstance = NotificationsManager()
     
     func storeNotification(notification: Notification, completion: ((Notification?, Error?) -> ())?) {
         
-        do {
-            try realmDB.write({
-                realmDB.add(notification, update: true)
-            })
-        }
-        catch let error {
-            print(error)
-        }
         
         let finalStore: NotificationStore = notification.type == .calendar ? self.calendarNotifications : self.localNotifications
-        finalStore.storeNotification(notification: notification, completion: completion)
+        finalStore.storeNotification(notification: notification) {[unowned self] (notification, error) in
+            guard let notification = notification else {
+                completion?(nil, error)
+                return
+            }
+            do {
+
+                try self.realmDB.write({
+                    self.realmDB.add(notification)
+                    
+                    completion?(notification, nil)
+                })
+            }
+            catch let error {
+                print(error)
+                completion?(nil, error)
+            }
+
+        }
             
     }
     
 
     func removeNotification(notification: Notification) {
     
-        let finalStore: NotificationStore = notification.type == .calendar ? self.calendarNotifications : self.localNotifications
+        let internalStore: NotificationStore = notification.type == .calendar ? self.calendarNotifications : self.localNotifications
 
-        finalStore.removeNotification(notification: notification)
+        internalStore.removeNotification(notification: notification)
         
         do {
             try realmDB.write({
@@ -174,47 +205,84 @@ final class NotificationsManager: NotificationStore {
     }
     
     func purgeNotifications() {
+        
+//        try! realmDB.write {
+//            realmDB.delete(realmDB.objects(Notification.self))
+//        }
+        
         let storedNotifications = realmDB.objects(Notification.self)
-        let pendingNotificationIds = getNotifications().flatMap{ $0.notificationId }
         
-        let notificationsToDelete = storedNotifications.filter { pendingNotificationIds.contains(($0.notificationId) ?? "") }
+        storedNotifications.forEach {
+            removeNotification(notification: $0)
+        }
         
-        do {
-            try realmDB.write {
-                for notification in notificationsToDelete {
-                    realmDB.delete(notification)
-                }
-            }
-        }
-        catch let error {
-            print(error)
-        }
+        //todo: remove notifications
+        
+//        let pendingNotificationIds = getNotifications().flatMap{ $0.notificationId }
+//        
+//        let notificationsToDelete = storedNotifications.filter { pendingNotificationIds.contains(($0.notificationId) ?? "") }
+//        
+//        do {
+//            try realmDB.write {
+//                for notification in notificationsToDelete {
+//                    realmDB.delete(notification)
+//                }
+//            }
+//        }
+//        catch let error {
+//            print(error)
+//        }
         
     }
     
     func getNotifications(numberOfDays: Int = 7) -> [Notification] {
         
-        let storedNotifications = Array(realmDB.objects(Notification.self))
+        if let firstNotification = realmDB.objects(Notification.self).first {
+            print(firstNotification)
+        }
+        
+        realmDB.refresh()
+        
+        let storedNotifications = realmDB.objects(Notification.self)
         
         let storedCalendarNotificationsIds = calendarNotifications.getNotifications().flatMap { $0.notificationId }
         
-        //filter notifications
-        let finalNotifications = storedNotifications.filter {
-            guard let notificationId = $0.notificationId else {
-                return false
+        var notifications: [Notification] = []
+        
+        for storedNotification in storedNotifications {
+            guard let notificationId = storedNotification.notificationId else {
+                continue
             }
             
-            guard $0.nextNotificationDate != nil else {
-                return false
+            guard storedNotification.nextNotificationDate != nil else {
+                continue
             }
             
             //it could have been removed from outside the app.
-            return ($0.type == .local || storedCalendarNotificationsIds.index(of: notificationId) != nil)
+            if (storedNotification.type == .local || storedCalendarNotificationsIds.index(of: notificationId) != nil) {
+                notifications.append(storedNotification)
+            }
+            
         }
+
+        //filter not working?
+//        //filter notifications
+//        let finalNotifications = storedNotifications.filter {
+//            guard let notificationId = $0.notificationId else {
+//                return false
+//            }
+//            
+//            guard $0.nextNotificationDate != nil else {
+//                return false
+//            }
+//            
+//            //it could have been removed from outside the app.
+//            return ($0.type == .local || storedCalendarNotificationsIds.index(of: notificationId) != nil)
+//        }
         
         //todo: order notifications.
         
-        return finalNotifications
+        return notifications
         
     }
     
@@ -235,6 +303,7 @@ extension NotificationsManager: NotificationTableViewModel {
         
         let futureNotifications: [NotificationTableItemViewModel] = getNotifications(numberOfDays: 7).flatMap {
             
+            print($0)
             guard let nextDate = $0.nextNotificationDate, let notificationId = $0.notificationId else {
                 return nil
             }
@@ -330,9 +399,7 @@ extension LocalNotificationsHelper: NotificationStore {
     }
     
     func getAllNotifications() -> [Notification] {
-        
-        
-        
+                
         if #available(iOS 10.0, *) {
             let center = UNUserNotificationCenter.current()
             
@@ -392,10 +459,11 @@ extension LocalNotificationsHelper: NotificationStore {
             }
             
             notification.notificationId = notificationId
-            completion?(notification, nil)
+            DispatchQueue.main.async {
+                completion?(notification, nil)
+            }
             
         }
-        
         
     }
     
