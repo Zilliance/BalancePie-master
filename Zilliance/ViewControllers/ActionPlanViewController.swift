@@ -47,12 +47,24 @@ class ActionPlanViewController: UIViewController {
 
         let notification = Notification()
         notification.body = "Reduce the amount of time spent on social media by reading a book instead."
-        notification.startDate = Date().addingTimeInterval(180)
+        notification.startDate = Date().addingTimeInterval(60 * 60 * 24 * 2)
         notification.type = .calendar
         
         NotificationsManager.sharedInstance.storeNotification(notification: notification) { (newNotification, error) in
             waitingGroup.leave()
 
+        }
+        
+        waitingGroup.enter()
+        
+        let notificationC2 = Notification()
+        notificationC2.body = "Plan a new trip."
+        notificationC2.startDate = Date().addingTimeInterval(60 * 60 * 24 * 5)
+        notificationC2.type = .calendar
+        
+        NotificationsManager.sharedInstance.storeNotification(notification: notificationC2) { (newNotification, error) in
+            waitingGroup.leave()
+            
         }
         
         //local notifications
@@ -67,19 +79,33 @@ class ActionPlanViewController: UIViewController {
                 return
             }
             
-            let notification2 = Notification()
-            notification2.body = "Spend more time with my family"
-            notification2.startDate = Date().addingTimeInterval(-60 * 60 * 24 * 14)
-            notification2.dateAdded = Date().addingTimeInterval(-60 * 60 * 24 * 14)
-            notification2.type = .local
-            notification2.weekDays.append(DayObject(internalValue: .mon))
-            notification2.weekDays.append(DayObject(internalValue: .tue))
-            notification2.recurrence = .weekly
+            let notificationL = Notification()
+            notificationL.body = "Spend more time with my family"
+            notificationL.startDate = Date().addingTimeInterval(60 * 60 * 24 * 3)
+            notificationL.type = .local
             
-            NotificationsManager.sharedInstance.storeNotification(notification: notification2) { (newNotification, error) in
+            NotificationsManager.sharedInstance.storeNotification(notification: notificationL) { (newNotification, error) in
                 
                 waitingGroup.leave()
             }
+            
+            
+            waitingGroup.enter()
+
+            let notificationL2 = Notification()
+            notificationL2.body = "Go the gym"
+            notificationL2.startDate = Date().addingTimeInterval(-60 * 60 * 24 * 10)
+            notificationL2.type = .local
+            notificationL2.weekDays.append(DayObject(internalValue: .mon))
+            notificationL2.weekDays.append(DayObject(internalValue: .wed))
+            notificationL2.weekDays.append(DayObject(internalValue: .fri))
+            notificationL2.recurrence = .weekly
+            
+            NotificationsManager.sharedInstance.storeNotification(notification: notificationL2) { (newNotification, error) in
+                
+                waitingGroup.leave()
+            }
+            
         }
         
         
