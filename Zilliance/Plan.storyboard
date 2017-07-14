@@ -50,17 +50,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="j6f-fi-hvn">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="j6f-fi-hvn">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MeditationPlanCell" rowHeight="93" id="BBj-N4-aDD" customClass="MeditationPlanCell" customModule="Zilliance" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="93"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="BBj-N4-aDD" id="FWq-uj-E5d">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="93"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="92.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cvg-FU-MEk">
+                                                    <rect key="frame" x="126" y="78" width="122" height="7"/>
+                                                    <color key="backgroundColor" red="0.88235294117647056" green="0.88235294117647056" blue="0.89411764705882346" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="bHh-ox-FiT"/>
+                                                        <constraint firstAttribute="width" constant="122" id="hAm-kM-o9b"/>
+                                                    </constraints>
+                                                </view>
                                                 <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tUo-bu-nsJ">
                                                     <rect key="frame" x="15" y="10" width="345" height="60"/>
                                                     <subviews>
@@ -94,6 +103,8 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="tUo-bu-nsJ" firstAttribute="top" secondItem="FWq-uj-E5d" secondAttribute="topMargin" constant="15" id="0Zs-my-Vsm"/>
+                                                <constraint firstItem="Cvg-FU-MEk" firstAttribute="centerX" secondItem="FWq-uj-E5d" secondAttribute="centerX" id="SuP-8A-yZK"/>
+                                                <constraint firstAttribute="bottom" secondItem="Cvg-FU-MEk" secondAttribute="bottom" constant="8.5999999999999996" id="VSr-Yw-q1s"/>
                                                 <constraint firstItem="tUo-bu-nsJ" firstAttribute="leading" secondItem="FWq-uj-E5d" secondAttribute="leading" constant="15" id="iaE-Lf-yOU"/>
                                                 <constraint firstAttribute="trailing" secondItem="tUo-bu-nsJ" secondAttribute="trailing" constant="15" id="qVj-EX-fWk"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="tUo-bu-nsJ" secondAttribute="bottom" constant="18" id="vLp-0T-GUd"/>
@@ -108,7 +119,7 @@
                                         <rect key="frame" x="0.0" y="121" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z66-Ji-nho" id="EPl-dt-ALg">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iNa-BI-auG">
@@ -230,7 +241,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JEy-Wm-PgV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="104.5" y="-87.5"/>
+            <point key="canvasLocation" x="103.2" y="-87.706146926536732"/>
         </scene>
     </scenes>
     <resources>

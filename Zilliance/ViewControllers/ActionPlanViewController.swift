@@ -19,7 +19,7 @@ class ActionPlanViewController: UIViewController {
 
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 80
-
+        self.tableView.separatorColor = UIColor.color(forRed: 249, green: 249, blue: 250, alpha: 1)
         // Do any additional setup after loading the view.
         addTestingNotifications()
     }
