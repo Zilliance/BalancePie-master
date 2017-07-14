@@ -21,7 +21,7 @@ extension Date {
         
         let weekDayForToday = self.weekDay()
         
-        var difference = weekDay - weekDayForToday
+        var difference = weekDay - weekDayForToday + 1
         if (weekDay < weekDayForToday) {
             difference += 7
         }
