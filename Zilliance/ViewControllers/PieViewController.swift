@@ -298,12 +298,13 @@ class PieViewController: UIViewController {
     func plusAction() {
         self.dismissImproveHint()
         
-        guard let addActivityVC = UIStoryboard(name: "AddCustom", bundle: nil).instantiateInitialViewController() else {
+        guard let addActivityVC = UIStoryboard(name: "AddCustom", bundle: nil).instantiateViewController(withIdentifier: "AddSliceViewController") as? AddSliceViewController else{
             assertionFailure()
             return
         }
         
-        self.present(addActivityVC, animated: true)
+        let navigation = UINavigationController(rootViewController: addActivityVC)
+        self.present(navigation, animated: true)
     }
     
     func sliceAction(with activity: UserActivity) {

@@ -104,10 +104,10 @@
                                             <constraints>
                                                 <constraint firstItem="tUo-bu-nsJ" firstAttribute="top" secondItem="FWq-uj-E5d" secondAttribute="topMargin" constant="15" id="0Zs-my-Vsm"/>
                                                 <constraint firstItem="Cvg-FU-MEk" firstAttribute="centerX" secondItem="FWq-uj-E5d" secondAttribute="centerX" id="SuP-8A-yZK"/>
-                                                <constraint firstAttribute="bottom" secondItem="Cvg-FU-MEk" secondAttribute="bottom" constant="8.5999999999999996" id="VSr-Yw-q1s"/>
+                                                <constraint firstItem="Cvg-FU-MEk" firstAttribute="top" secondItem="tUo-bu-nsJ" secondAttribute="bottom" constant="8" id="UaQ-9v-QAd"/>
+                                                <constraint firstAttribute="bottom" secondItem="Cvg-FU-MEk" secondAttribute="bottom" constant="8" id="VSr-Yw-q1s"/>
                                                 <constraint firstItem="tUo-bu-nsJ" firstAttribute="leading" secondItem="FWq-uj-E5d" secondAttribute="leading" constant="15" id="iaE-Lf-yOU"/>
                                                 <constraint firstAttribute="trailing" secondItem="tUo-bu-nsJ" secondAttribute="trailing" constant="15" id="qVj-EX-fWk"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="tUo-bu-nsJ" secondAttribute="bottom" constant="18" id="vLp-0T-GUd"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
