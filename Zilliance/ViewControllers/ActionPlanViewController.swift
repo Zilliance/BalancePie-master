@@ -51,22 +51,24 @@ class ActionPlanViewController: UIViewController {
         notification.type = .calendar
         
         NotificationsManager.sharedInstance.storeNotification(notification: notification) { (newNotification, error) in
-            waitingGroup.leave()
-
-        }
-        
-        waitingGroup.enter()
-        
-        let notificationC2 = Notification()
-        notificationC2.body = "Plan a new trip."
-        notificationC2.startDate = Date().addingTimeInterval(60 * 60 * 24 * 5)
-        notificationC2.type = .calendar
-        
-        NotificationsManager.sharedInstance.storeNotification(notification: notificationC2) { (newNotification, error) in
-            waitingGroup.leave()
+//            waitingGroup.leave()
+//
+//            
+//            waitingGroup.enter()
+            
+            let notificationC2 = Notification()
+            notificationC2.body = "Plan a new trip."
+            notificationC2.startDate = Date().addingTimeInterval(60 * 60 * 24 * 5)
+            notificationC2.type = .calendar
+            
+            NotificationsManager.sharedInstance.storeNotification(notification: notificationC2) { (newNotification, error) in
+                waitingGroup.leave()
+                
+            }
             
         }
         
+
         //local notifications
 
         

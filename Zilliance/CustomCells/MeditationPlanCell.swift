@@ -17,7 +17,7 @@ class MeditationPlanCell: UITableViewCell {
         
         self.viewContainer.layer.cornerRadius = 4
         self.contentView.backgroundColor = UIColor.clear
-
+        self.selectionStyle = .none
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

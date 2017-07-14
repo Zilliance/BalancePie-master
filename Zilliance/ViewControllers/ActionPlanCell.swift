@@ -23,6 +23,7 @@ class ActionPlanCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         self.contentView.backgroundColor = UIColor.clear
+        self.selectionStyle = .none
     }
 
     

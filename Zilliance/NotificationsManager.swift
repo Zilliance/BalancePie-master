@@ -70,28 +70,19 @@ class Notification: Object{
     //if there's one day for the weekdays selected that is after today, select that one.
     //if not, the first one can be
     
-    func getNextWeekDate() -> Date? {
+    func getNextWeekDate(fromDate: Date) -> Date? {
         
         guard weekDays.count > 0 else {
             return nil
         }
         
-        let now = Date()
-        
-        for weekDay in weekDays {
-            let nextDay = dateAdded.nextDateWithWeekDate(weekDay: weekDay.rawValue)
-            if (nextDay > now) {
-                return nextDay
-            }
-        }
-        
         if (recurrence == .weekly) {
-            let today = now.weekDay()
+            let fromDateDay = fromDate.weekDay()
             
-            //if there's a day after today, let's take that day this week.
+            //if there's a day after the start day, let's take that day this week.
             for weekDay in weekDays {
-                if (today < weekDay.rawValue) {
-                    return now.nextDateWithWeekDate(weekDay: weekDay.rawValue)
+                if (fromDateDay < weekDay.rawValue) {
+                    return fromDate.nextDateWithWeekDate(weekDay: weekDay.rawValue)
                 }
             }
             
@@ -102,7 +93,7 @@ class Notification: Object{
             }
             
             //if can't find a day after today this week let's use the first day for next week
-            return now.nextDateWithWeekDate(weekDay: firstDay.rawValue)
+            return fromDate.nextDateWithWeekDate(weekDay: firstDay.rawValue)
             
         }
 
@@ -110,17 +101,17 @@ class Notification: Object{
         
     }
     
-    var nextNotificationDate: Date? {
+    func nextNotificationDate(fromDate: Date = Date()) -> Date? {
         
         guard let startDate = startDate else {
             return nil
         }
         
-        if (startDate > Date()) {
+        if (startDate > fromDate) {
             return startDate
         }
         
-        guard let nextWeekDate = getNextWeekDate() else {
+        guard let nextWeekDate = getNextWeekDate(fromDate: fromDate) else {
             return nil
         }
         
@@ -254,7 +245,7 @@ final class NotificationsManager: NotificationStore {
                 continue
             }
             
-            guard storedNotification.nextNotificationDate != nil else {
+            guard storedNotification.nextNotificationDate() != nil else {
                 continue
             }
             
@@ -280,7 +271,6 @@ final class NotificationsManager: NotificationStore {
 //            return ($0.type == .local || storedCalendarNotificationsIds.index(of: notificationId) != nil)
 //        }
         
-        //todo: order notifications.
         
         return notifications
         
@@ -301,16 +291,35 @@ extension NotificationsManager: NotificationTableViewModel {
     
     func getNextNotifications() -> [NotificationTableItemViewModel] {
         
-        let futureNotifications: [NotificationTableItemViewModel] = getNotifications(numberOfDays: 7).flatMap {
+        let numberOfDays = 7
+        
+        var futureNotifications: [NotificationTableItemViewModel] = []
+        
+        let endDate = Date().addingTimeInterval(TimeInterval(60 * 60 * 24 * numberOfDays)).endOfDay()
+        
+        let notifications = getNotifications(numberOfDays: numberOfDays)
+        
+        notifications.forEach({ (notification) in
             
-            print($0)
-            guard let nextDate = $0.nextNotificationDate, let notificationId = $0.notificationId else {
-                return nil
+            guard let notificationId = notification.notificationId else {
+                assertionFailure()
+                return
             }
             
-            return NotificationTableItemViewModel(type: $0.type, recurrence: $0.recurrence, title: $0.title, body: $0.body, nextDate: nextDate, notificationId: notificationId)
+            var newDate = Date()
             
-        }.sorted { $0.0.nextDate < $0.1.nextDate }
+            while let nextDate = notification.nextNotificationDate(fromDate: newDate), nextDate < endDate {
+                
+                let newItem = NotificationTableItemViewModel(type: notification.type, recurrence: notification.recurrence, title: notification.title, body: notification.body, nextDate: nextDate, notificationId: notificationId)
+                
+                futureNotifications.append(newItem)
+                
+                newDate = nextDate
+            }
+            
+        })
+        
+        futureNotifications = futureNotifications.sorted { $0.0.nextDate < $0.1.nextDate }
         
         return futureNotifications
         
