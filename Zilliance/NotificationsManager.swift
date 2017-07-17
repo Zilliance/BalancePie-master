@@ -11,135 +11,10 @@ import UserNotifications
 import RealmSwift
 
 
-@objc enum dayOfTheWeek: Int32 {
-    case sun = 0
-    case mon
-    case tue
-    case wed
-    case thu
-    case fri
-    case sat
-    
-}
-
-class DayObject: Object{
-    dynamic var internalValue: dayOfTheWeek = .sun
-    
-    var rawValue: Int {
-        return Int(internalValue.rawValue)
-    }
-    
-    convenience init(internalValue: dayOfTheWeek) {
-        self.init()
-        self.internalValue = internalValue
-    }
-    
-}
-
-class Notification: Object{
-
-    
-    @objc enum NotificationType: Int32 {
-        case local
-        case calendar
-    }
-    
-    @objc enum Recurrence: Int32 {
-        case daily
-        case weekly
-        case none
-    }
-    
-    dynamic var notificationId: String?
-
-    override class func primaryKey() -> String? {
-        return "notificationId"
-    }
-    
-    dynamic var startDate: Date?
-    dynamic var type: NotificationType = .local
-    dynamic var recurrence: Recurrence = .none
-    
-    dynamic var dateAdded = Date()
-    
-    dynamic var title: String = ""
-    dynamic var body: String = ""
-    
-    let weekDays = List<DayObject>()
-    
-    //if there's one day for the weekdays selected that is after today, select that one.
-    //if not, the first one can be
-    
-    func getNextWeekDate(fromDate: Date) -> Date? {
-        
-        guard weekDays.count > 0 else {
-            return nil
-        }
-        
-        if (recurrence == .weekly) {
-            let fromDateDay = fromDate.weekDay()
-            
-            //if there's a day after the start day, let's take that day this week.
-            for weekDay in weekDays {
-                if (fromDateDay < weekDay.rawValue) {
-                    return fromDate.nextDateWithWeekDate(weekDay: weekDay.rawValue)
-                }
-            }
-            
-            //there should be at least 1 weekday
-            guard let firstDay = weekDays.first else {
-                assertionFailure()
-                return nil
-            }
-            
-            //if can't find a day after today this week let's use the first day for next week
-            return fromDate.nextDateWithWeekDate(weekDay: firstDay.rawValue)
-            
-        }
-
-        return nil
-        
-    }
-    
-    func nextNotificationDate(fromDate: Date = Date()) -> Date? {
-        
-        guard let startDate = startDate else {
-            return nil
-        }
-        
-        if (startDate > fromDate) {
-            return startDate
-        }
-        
-        guard let nextWeekDate = getNextWeekDate(fromDate: fromDate) else {
-            return nil
-        }
-        
-        return nextWeekDate
-        
-    }
-    
-}
-
-struct NotificationTableItemViewModel {
-    var type: Notification.NotificationType = .local
-    var recurrence: Notification.Recurrence = .none
-    var title: String = ""
-    var body: String = ""
-    var nextDate: Date!
-    var notificationId: String
-}
-
 protocol NotificationStore {
     func storeNotification(notification: Notification, completion: ((Notification?, Error?) -> ())?)
     func getNotifications(numberOfDays: Int) -> [Notification]
     func removeNotification(notification: Notification)
-}
-
-protocol NotificationTableViewModel {
-    
-    func getNextNotifications() -> [NotificationTableItemViewModel]
-
 }
 
 final class NotificationsManager: NotificationStore {
@@ -197,32 +72,29 @@ final class NotificationsManager: NotificationStore {
     
     func purgeNotifications() {
         
-//        try! realmDB.write {
-//            realmDB.delete(realmDB.objects(Notification.self))
-//        }
-        
         let storedNotifications = realmDB.objects(Notification.self)
-        
-        storedNotifications.forEach {
-            removeNotification(notification: $0)
-        }
+
+        //uncomment to remove all (testing)
+//        storedNotifications.forEach {
+//            removeNotification(notification: $0)
+//        }
         
         //todo: remove notifications
         
-//        let pendingNotificationIds = getNotifications().flatMap{ $0.notificationId }
-//        
-//        let notificationsToDelete = storedNotifications.filter { pendingNotificationIds.contains(($0.notificationId) ?? "") }
-//        
-//        do {
-//            try realmDB.write {
-//                for notification in notificationsToDelete {
-//                    realmDB.delete(notification)
-//                }
-//            }
-//        }
-//        catch let error {
-//            print(error)
-//        }
+        let pendingNotificationIds = getNotifications().flatMap{ $0.notificationId }
+        
+        let notificationsToDelete = storedNotifications.filter { pendingNotificationIds.contains(($0.notificationId) ?? "") }
+        
+        do {
+            try realmDB.write {
+                for notification in notificationsToDelete {
+                    realmDB.delete(notification)
+                }
+            }
+        }
+        catch let error {
+            print(error)
+        }
         
     }
     
@@ -255,22 +127,6 @@ final class NotificationsManager: NotificationStore {
             }
             
         }
-
-        //filter not working?
-//        //filter notifications
-//        let finalNotifications = storedNotifications.filter {
-//            guard let notificationId = $0.notificationId else {
-//                return false
-//            }
-//            
-//            guard $0.nextNotificationDate != nil else {
-//                return false
-//            }
-//            
-//            //it could have been removed from outside the app.
-//            return ($0.type == .local || storedCalendarNotificationsIds.index(of: notificationId) != nil)
-//        }
-        
         
         return notifications
         
@@ -287,50 +143,8 @@ final class NotificationsManager: NotificationStore {
     
 }
 
-extension NotificationsManager: NotificationTableViewModel {
-    
-    func getNextNotifications() -> [NotificationTableItemViewModel] {
-        
-        let numberOfDays = 7
-        
-        var futureNotifications: [NotificationTableItemViewModel] = []
-        
-        let endDate = Date().addingTimeInterval(TimeInterval(60 * 60 * 24 * numberOfDays)).endOfDay()
-        
-        let notifications = getNotifications(numberOfDays: numberOfDays)
-        
-        notifications.forEach({ (notification) in
-            
-            guard let notificationId = notification.notificationId else {
-                assertionFailure()
-                return
-            }
-            
-            var newDate = Date()
-            
-            while let nextDate = notification.nextNotificationDate(fromDate: newDate), nextDate < endDate {
-                
-                let newItem = NotificationTableItemViewModel(type: notification.type, recurrence: notification.recurrence, title: notification.title, body: notification.body, nextDate: nextDate, notificationId: notificationId)
-                
-                futureNotifications.append(newItem)
-                
-                newDate = nextDate
-            }
-            
-        })
-        
-        futureNotifications = futureNotifications.sorted { $0.0.nextDate < $0.1.nextDate }
-        
-        return futureNotifications
-        
-    }
-
-}
-
 //calendar methods
 extension CalendarHelper: NotificationStore {
-    
-    //storing the ids internally since the user can edit the calendar from outside the app.
     
     func removeNotification(notification: Notification) {
         guard let notificationId = notification.notificationId else {
