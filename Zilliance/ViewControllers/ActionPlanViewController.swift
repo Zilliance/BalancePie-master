@@ -38,9 +38,7 @@ class ActionPlanViewController: UIViewController {
         let waitingGroup = DispatchGroup()
         
         //calendar notifications
-        
-        NotificationsManager.sharedInstance.realmDB = Database.shared.realm
-        
+                
         NotificationsManager.sharedInstance.purgeNotifications()
         
         waitingGroup.enter()

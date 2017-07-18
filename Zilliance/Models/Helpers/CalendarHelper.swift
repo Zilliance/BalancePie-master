@@ -50,7 +50,6 @@ class CalendarHelper {
             if let eventNotes = notes {
                 event.notes = eventNotes
             }
-
             
             event.endDate = event.startDate.addingTimeInterval(3600) // 1 hour event
             event.calendar = store.defaultCalendarForNewEvents

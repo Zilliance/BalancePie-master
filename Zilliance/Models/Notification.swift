@@ -20,7 +20,7 @@ import RealmSwift
     
 }
 
-class DayObject: Object{
+class DayObject: Object {
     dynamic var internalValue: dayOfTheWeek = .sun
     
     var rawValue: Int {
@@ -32,6 +32,17 @@ class DayObject: Object{
         self.internalValue = internalValue
     }
     
+}
+
+class RecurrentInstance: Object {
+    dynamic var id: String?
+    dynamic var date: Date?
+    
+    convenience init(id: String, date: Date) {
+        self.init()
+        self.id = id
+        self.date = date
+    }
 }
 
 class Notification: Object{
@@ -64,6 +75,8 @@ class Notification: Object{
     dynamic var body: String = ""
     
     let weekDays = List<DayObject>()
+    
+    let scheduledInstances = List<RecurrentInstance>()
     
     //if there's one day for the weekdays selected that is after today, select that one.
     //if not, the first one can be

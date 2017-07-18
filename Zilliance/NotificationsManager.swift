@@ -22,12 +22,27 @@ final class NotificationsManager: NotificationStore {
     let localNotifications = LocalNotificationsHelper.shared
     let calendarNotifications = CalendarHelper.shared
     
-    var realmDB: Realm!
+    var realmDB: Realm! {
+        didSet {
+            let localStoredNotifications = realmDB.objects(Notification.self).filter { (notification) -> Bool in
+                return notification.type == .local
+            }
+            
+            localStoredNotifications.forEach {
+                localNotifications.scheduleNextMonth(notification: $0, completion: nil)
+            }
+
+        }
+    }
     
     static let sharedInstance = NotificationsManager()
     
+    func updateNotification(notification: Notification, completion: ((Notification?, Error?) -> ())?) {
+        removeNotification(notification: notification)
+        storeNotification(notification: notification, completion: completion)
+    }
+    
     func storeNotification(notification: Notification, completion: ((Notification?, Error?) -> ())?) {
-        
         
         let finalStore: NotificationStore = notification.type == .calendar ? self.calendarNotifications : self.localNotifications
         finalStore.storeNotification(notification: notification) {[unowned self] (notification, error) in
@@ -213,11 +228,16 @@ extension CalendarHelper: NotificationStore {
 extension LocalNotificationsHelper: NotificationStore {
     
     func removeNotification(notification: Notification) {
-        guard let notificationId = notification.notificationId else {
-            return assertionFailure()
-        }
         
-        LocalNotificationsHelper.removeNotificationsForIdentifier(identifier: notificationId)
+        for scheduledInstance in notification.scheduledInstances {
+            
+            guard let id = scheduledInstance.id else {
+                return assertionFailure()
+            }
+            
+            LocalNotificationsHelper.removeNotificationsForIdentifier(identifier: id)
+            
+        }
         
     }
     
@@ -266,27 +286,87 @@ extension LocalNotificationsHelper: NotificationStore {
         
     }
     
-    func storeNotification(notification: Notification, completion: ((Notification?, Error?) -> ())?) {
-        guard let startDate = notification.startDate else {
+    func scheduleNextMonth(notification: Notification, completion: ((Notification?, Error?) -> ())?) {
+        
+        guard var startDate = notification.startDate else {
             assertionFailure()
             return
         }
         
-        let notificationId = UUID().uuidString
+        //scheduling a minute in the past since we search for the next date in the repeating series and we have to include the start date.
+        startDate = startDate.addingTimeInterval(-60)
         
-        LocalNotificationsHelper.scheduleLocalNotification(title: notification.title, body: notification.body, date: startDate, identifier: notificationId) { (error) in
+        let nextMonth = Date().addingTimeInterval(60 * 60 * 24 * 30)
+        
+        let group = DispatchGroup()
+        
+        var anError: Error? = nil
+                
+        let alreadyScheduledDates = Array(notification.scheduledInstances.flatMap {
+            Int($0.date?.timeIntervalSince1970 ?? 0)
+        })
+        
+        let calendar = NSCalendar.current
+        
+        let previousComponents = calendar.dateComponents([.hour, .minute, .second], from: startDate)
+        
+        var components = calendar.dateComponents([.year, .month, .day], from: Date())
+        components.minute = previousComponents.minute
+        components.second = previousComponents.second
+        components.hour = previousComponents.hour
+        
+        guard var previousDate = calendar.date(from: components) else {
+            return assertionFailure()
+        }
+        
+        while anError == nil, let nextDate = notification.nextNotificationDate(fromDate: previousDate), nextDate < nextMonth {
             
-            guard error == nil else {
-                completion?(nil, error)
-                return
+            defer {
+                previousDate = nextDate
             }
             
-            notification.notificationId = notificationId
-            DispatchQueue.main.async {
-                completion?(notification, nil)
+            guard alreadyScheduledDates.index(of: Int(nextDate.timeIntervalSince1970)) == nil else {
+                continue
+            }
+            
+            group.enter()
+            
+            let newNotificationId = UUID().uuidString
+            
+            LocalNotificationsHelper.scheduleLocalNotification(title: notification.title, body: notification.body, date: nextDate, identifier: newNotificationId) { (error) in
+                
+                defer {
+                    group.leave()
+                }
+                
+                guard error == nil else {
+                    anError = error
+                    completion?(nil, error)
+                    return
+                }
+                
+                notification.scheduledInstances.append(RecurrentInstance(id: newNotificationId, date: nextDate))
+                
             }
             
         }
+        
+        group.notify(queue: DispatchQueue.main) {
+            if (anError == nil) {
+                completion?(notification, nil)
+            }
+            else {
+                completion?(nil, anError)
+            }
+        }
+        
+    }
+    
+    func storeNotification(notification: Notification, completion: ((Notification?, Error?) -> ())?) {
+        
+        notification.notificationId = UUID().uuidString
+        
+        scheduleNextMonth(notification: notification, completion: completion)
         
     }
     

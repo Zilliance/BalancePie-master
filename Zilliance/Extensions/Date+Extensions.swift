@@ -44,4 +44,15 @@ extension Date {
         
     }
     
+    func secondsPrecision() -> Date {
+        let calendar = NSCalendar.current
+        var components = calendar.dateComponents([.year, .month, .day, .minute, .second, .hour], from: self)
+        components.minute = 59
+        components.second = 59
+        components.hour = 23
+        
+        //this should never be nil
+        return calendar.date(from: components)!
+    }
+    
 }
