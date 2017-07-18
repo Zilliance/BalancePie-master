@@ -36,7 +36,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="124"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set Reminder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2RK-Q1-izJ">
-                                        <rect key="frame" x="125.5" y="31" width="124.5" height="25.5"/>
+                                        <rect key="frame" x="126" y="31" width="124.5" height="25.5"/>
                                         <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="20"/>
                                         <color key="textColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -597,6 +597,10 @@
         <scene sceneID="6rO-6T-WKc">
             <objects>
                 <viewController id="B3s-Re-taZ" customClass="ZillianceTextViewController" customModule="Zilliance" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NAC-bs-feL"/>
+                        <viewControllerLayoutGuide type="bottom" id="A6W-W7-SgH"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Hyc-hx-Ycv">
                         <rect key="frame" x="0.0" y="0.0" width="335" height="119.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

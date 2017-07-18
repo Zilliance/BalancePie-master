@@ -74,7 +74,6 @@
 		8C51C0651EB27E1400A7BF34 /* ZillianceTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C51C0641EB27E1400A7BF34 /* ZillianceTextViewController.swift */; };
 		8CA6156D1F1680B000C07F57 /* ScheduleNotificationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA6156C1F1680B000C07F57 /* ScheduleNotificationTableViewController.swift */; };
 		8CA615711F1817A100C07F57 /* CustomDatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA615701F1817A100C07F57 /* CustomDatePickerViewController.swift */; };
-		8CBBBE181E9558D600281C3C /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CBBBE171E9558D600281C3C /* Calendar.storyboard */; };
 		8CBBBE1A1E9576F800281C3C /* AddToCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBBBE191E9576F800281C3C /* AddToCalendarViewController.swift */; };
 		8CBBBE1D1E95890700281C3C /* AddCustom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CBBBE1C1E95890700281C3C /* AddCustom.storyboard */; };
 		8CBBBE201E958B6300281C3C /* AddActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBBBE1E1E958B6300281C3C /* AddActivityViewController.swift */; };
@@ -191,7 +190,6 @@
 		8C51C0641EB27E1400A7BF34 /* ZillianceTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZillianceTextViewController.swift; path = ViewControllers/ZillianceTextViewController.swift; sourceTree = "<group>"; };
 		8CA6156C1F1680B000C07F57 /* ScheduleNotificationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScheduleNotificationTableViewController.swift; path = ViewControllers/ScheduleNotificationTableViewController.swift; sourceTree = "<group>"; };
 		8CA615701F1817A100C07F57 /* CustomDatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomDatePickerViewController.swift; path = ViewControllers/CustomDatePickerViewController.swift; sourceTree = "<group>"; };
-		8CBBBE171E9558D600281C3C /* Calendar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
 		8CBBBE191E9576F800281C3C /* AddToCalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddToCalendarViewController.swift; path = ViewControllers/AddToCalendarViewController.swift; sourceTree = "<group>"; };
 		8CBBBE1C1E95890700281C3C /* AddCustom.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddCustom.storyboard; sourceTree = "<group>"; };
 		8CBBBE1E1E958B6300281C3C /* AddActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddActivityViewController.swift; path = ViewControllers/AddActivityViewController.swift; sourceTree = "<group>"; };
@@ -435,7 +433,6 @@
 		8CBBBE161E9558A300281C3C /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
-				8CBBBE171E9558D600281C3C /* Calendar.storyboard */,
 				8C37CF031F1569800083F38C /* Schedule.storyboard */,
 				8CBBBE191E9576F800281C3C /* AddToCalendarViewController.swift */,
 				8C51C0641EB27E1400A7BF34 /* ZillianceTextViewController.swift */,
@@ -658,7 +655,6 @@
 			files = (
 				8CDAB8DA1E9BF42F006BFD4B /* FavoriteActivity.storyboard in Resources */,
 				04B29A631E97AB340090E52E /* ItemsSelection.storyboard in Resources */,
-				8CBBBE181E9558D600281C3C /* Calendar.storyboard in Resources */,
 				8C3EA4991E93F85C00F56DED /* Muli-SemiBold.ttf in Resources */,
 				8C3EA4921E93F85C00F56DED /* Muli-ExtraBoldItalic.ttf in Resources */,
 				042576FF1EC10D27003C465F /* TextImprovementsExamples.plist in Resources */,
