@@ -29,14 +29,6 @@ class AddToCalendarViewController: UIViewController {
         super.viewDidLoad()
         self.setupView()
         
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.closeView))
-        
-    }
-    
-    
-    @objc func closeView()
-    {
-        self.navigationController?.popViewController(animated: true)
     }
     
     func setupView()
@@ -52,51 +44,7 @@ class AddToCalendarViewController: UIViewController {
 
         
     }
-    
-    @IBAction func onClose(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func onDone(_ sender: Any) {
-        guard let body = self.zillianceTextViewController.textView.text, body.characters.count > 0 else {
-            
-            return
-        }
-        
-        if let error = self.zillianceTextViewController.validation.error {
-            switch error {
-            case .value:
-                self.showAlert(message: "Please select one or more values", title: "Select Values")
-            case .placeholder:
-                self.showAlert(message: "Replace the gray placeholder text with your own plan of action", title: "Enter your action plan")
-            }
-            
-            return
-        }
-        
-        CalendarHelper.addEvent(with: body, notes: nil, date: self.datePicker.date) { (success, error) in
-            
-            guard success else {
-                switch error {
-                case .notGranted?:
-                    self.showAlert(message: "Please enable access calendar in app settings", title: "Unable to Access Your Calendar")
-                case .errorSavingEvent?:
-                    self.showAlert(message: "There was an unexpected error saving your event to calendar", title: "Unable to Schedule Event")
-                default:
-                    self.showAlert(message: "There was an unexpected error saving your event to calendar", title: "Unable to Schedule Event")
-                }
-                
-                return
-            }
-            
-            SVProgressHUD.setDefaultMaskType(.black)
-            SVProgressHUD.setMaximumDismissTimeInterval(1.0)
-            SVProgressHUD.showSuccess(withStatus: "The reminder has been added to your calendar")
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
-                self.navigationController!.popViewController(animated: true)
-            })
-        }
-    }
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         self.zillianceTextViewController = segue.destination as! ZillianceTextViewController
