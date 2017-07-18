@@ -3,6 +3,7 @@ PODS:
   - Charts (3.0.2):
     - Charts/Core (= 3.0.2)
   - Charts/Core (3.0.2)
+  - MultiSelectSegmentedControl (1.1.0)
   - MZAppearance (1.1.6)
   - MZFormSheetController (3.1.3):
     - MZAppearance
@@ -20,6 +21,7 @@ PODS:
 DEPENDENCIES:
   - ActionSheetPicker-3.0 (from `https://github.com/ricardohg/ActionSheetPicker-3.0.git`, commit `1bb467539758e0bac35ba7b24677999a4616f6d8`)
   - Charts
+  - MultiSelectSegmentedControl
   - MZFormSheetController
   - Realm
   - RealmSwift
@@ -39,6 +41,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   ActionSheetPicker-3.0: d11a4c12c6aaf704b8a3f56d179198c99f3e41e6
   Charts: 236d6ccdd0ce6feae151d89e829a7397381a21fd
+  MultiSelectSegmentedControl: 54fb23c997b971eff621cfcf965ff1613d99c3d2
   MZAppearance: 0c06d3fa9cc55142f1da14bc8631fbe8fd6e19d5
   MZFormSheetController: da2df509805d757e04b052915057d8e1a338b050
   Realm: 07e5d3a9e0e41d65fd5f9f05150ed6295d0f093b
@@ -46,6 +49,6 @@ SPEC CHECKSUMS:
   SideMenuController: b463d2b3aa58e2afe57f57a07938fa9a647894ca
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
 
-PODFILE CHECKSUM: af7f43e6da77c232582488b622f9d1140829ed1a
+PODFILE CHECKSUM: 37fb6a9ad80933a99e6fbdd5e120d0f611ea2e88
 
 COCOAPODS: 1.2.1
