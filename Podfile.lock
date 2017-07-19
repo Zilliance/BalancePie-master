@@ -17,6 +17,7 @@ PODS:
     - Realm (= 2.7.0)
   - SideMenuController (0.2.4)
   - SVProgressHUD (2.1.2)
+  - YouTubePlayer (0.4.0)
 
 DEPENDENCIES:
   - ActionSheetPicker-3.0 (from `https://github.com/ricardohg/ActionSheetPicker-3.0.git`, commit `1bb467539758e0bac35ba7b24677999a4616f6d8`)
@@ -27,6 +28,7 @@ DEPENDENCIES:
   - RealmSwift
   - SideMenuController
   - SVProgressHUD
+  - YouTubePlayer
 
 EXTERNAL SOURCES:
   ActionSheetPicker-3.0:
@@ -48,7 +50,8 @@ SPEC CHECKSUMS:
   RealmSwift: 6d06425d3900c86473c4f323bf6949b43fca22bc
   SideMenuController: b463d2b3aa58e2afe57f57a07938fa9a647894ca
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
+  YouTubePlayer: 028451f6772f372d4759866db99824c676ac1473
 
-PODFILE CHECKSUM: 37fb6a9ad80933a99e6fbdd5e120d0f611ea2e88
+PODFILE CHECKSUM: e04414e23421a1788f65fe9b9891ef8c8e4c2e85
 
 COCOAPODS: 1.2.1
