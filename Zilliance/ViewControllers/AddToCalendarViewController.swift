@@ -18,7 +18,6 @@ struct TextViewContent {
 class AddToCalendarViewController: UIViewController {
     
     @IBOutlet weak var datePicker: UIDatePicker!
-    @IBOutlet weak var doneButton: UIButton!
     
     private var zillianceTextViewController: ZillianceTextViewController!
     
@@ -30,21 +29,12 @@ class AddToCalendarViewController: UIViewController {
         super.viewDidLoad()
         self.setupView()
         
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.closeView))
-        
-    }
-    
-    
-    @objc func closeView()
-    {
-        self.navigationController?.popViewController(animated: true)
     }
     
     func setupView()
     {
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         
-        self.doneButton.layer.cornerRadius = App.Appearance.buttonCornerRadius
         
         // date picker
 
