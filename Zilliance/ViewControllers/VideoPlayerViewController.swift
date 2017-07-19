@@ -27,7 +27,7 @@ class VideoPlayerViewController: UIViewController {
     }
     
     private func configureVideo() {
-        let url = URL(string: "https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4")
+        let url = URL(string: "https://www.youtube.com/embed/df-bjimboXc")
         if let movieURL = url {
             self.videoPlayer.player = AVPlayer(url: movieURL)
             self.videoPlayer.player?.play()
