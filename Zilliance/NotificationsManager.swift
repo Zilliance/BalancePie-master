@@ -28,8 +28,32 @@ final class NotificationsManager: NotificationStore {
                 return notification.type == .local
             }
             
+            var newNotifications: [Notification] = []
+            
+            let waitingGroup = DispatchGroup()
+            
             localStoredNotifications.forEach {
-                localNotifications.scheduleNextMonth(notification: $0, completion: nil)
+                
+                waitingGroup.enter()
+                
+                let notificationCopy = $0.detached()
+                
+                localNotifications.scheduleNextMonth(notification: notificationCopy, completion: { (_, _) in
+                    waitingGroup.leave()
+                })
+                
+                newNotifications.append(notificationCopy)
+            }
+            
+            waitingGroup.notify(queue: DispatchQueue.main) { 
+                do {
+                    try self.realmDB.write({
+                        self.realmDB.add(newNotifications, update: true)
+                    })
+                }
+                catch let error {
+                    print(error)
+                }
             }
 
         }
@@ -340,6 +364,7 @@ extension LocalNotificationsHelper: NotificationStore {
                 }
                 
                 guard error == nil else {
+
                     anError = error
                     completion?(nil, error)
                     return
