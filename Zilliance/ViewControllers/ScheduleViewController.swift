@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol NotificationEditor {
+    func getNotification() -> Notification?
+}
+
 class ScheduleViewController: UIViewController {
 
     @IBOutlet weak var containerView: UIView!
@@ -95,7 +99,41 @@ class ScheduleViewController: UIViewController {
         
         currentViewController = controller
     }
+    
 
     @IBAction func notifyAction(_ sender: UIButton) {
+        
+        guard let notificationEditor = currentViewController as? NotificationEditor else {
+            assertionFailure()
+            return
+        }
+        
+        guard let notification = notificationEditor.getNotification() else {
+            self.showAlert(message: "Please fill the missing fields", title: nil)
+            return
+        }
+        
+        LocalNotificationsHelper.shared.requestAuthorization(inViewController: self) { (authorized) in
+            
+            guard authorized == true else {
+                self.showAlert(message: "Please allow the app to send notifications", title: nil)
+                return
+            }
+        
+            NotificationsManager.sharedInstance.storeNotification(notification: notification) { (notification, error) in
+                
+                if let error = error {
+                    print(error)
+                } else {
+                    
+                    self.dismiss(animated: true, completion: nil)
+                    
+                }
+                
+            }
+        }
+        
+
+        
     }
 }

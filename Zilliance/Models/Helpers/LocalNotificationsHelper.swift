@@ -133,7 +133,7 @@ final class LocalNotificationsHelper: NSObject
             content.body = body
             content.sound = UNNotificationSound.default()
             
-            let dateComponents = Calendar.current.dateComponents([.day, .hour, .minute], from: date)
+            let dateComponents = Calendar.current.dateComponents([.day, .hour, .minute, .year, .month], from: date)
             let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
             
             let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)

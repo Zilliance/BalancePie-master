@@ -86,12 +86,9 @@ final class NotificationsManager: NotificationStore {
                 print(error)
                 completion?(nil, error)
             }
-
         }
-            
     }
     
-
     func removeNotification(notification: Notification) {
     
         let internalStore: NotificationStore = notification.type == .calendar ? self.calendarNotifications : self.localNotifications
@@ -343,7 +340,7 @@ extension LocalNotificationsHelper: NotificationStore {
             return assertionFailure()
         }
         
-        while anError == nil, let nextDate = notification.nextNotificationDate(fromDate: previousDate), nextDate < nextMonth {
+        while anError == nil, let nextDate = notification.nextNotificationDate(fromDate: previousDate), nextDate < nextMonth, nextDate > previousDate {
             
             defer {
                 previousDate = nextDate

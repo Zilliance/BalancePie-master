@@ -87,28 +87,26 @@ class Notification: Object{
             return nil
         }
         
-        if (recurrence == .weekly) {
-            let fromDateDay = fromDate.weekDay()
-            
-            //if there's a day after the start day, let's take that day this week.
-            for weekDay in weekDays {
-                if (fromDateDay < weekDay.rawValue) {
-                    return fromDate.nextDateWithWeekDate(weekDay: weekDay.rawValue)
+//        if (recurrence == .weekly) {
+        let fromDateDay = fromDate.weekDay()
+        
+        //if there's a day after the start day, let's take that day this week.
+        for weekDay in weekDays {
+            if (fromDateDay <= weekDay.rawValue) {
+                let nextInstance = fromDate.nextDateWithWeekDate(weekDay: weekDay.rawValue)
+                if (nextInstance > fromDate) {
+                    return nextInstance
                 }
             }
-            
-            //there should be at least 1 weekday
-            guard let firstDay = weekDays.first else {
-                assertionFailure()
-                return nil
-            }
-            
-            //if can't find a day after today this week let's use the first day for next week
-            return fromDate.nextDateWithWeekDate(weekDay: firstDay.rawValue)
-            
         }
         
-        return nil
+        guard let firstDay = weekDays.first else {
+            return nil
+        }
+        
+        //if can't find a day after today this week let's use the first day for next week
+        return fromDate.nextDateWithWeekDate(weekDay: firstDay.rawValue)
+        
         
     }
     

@@ -21,8 +21,10 @@ class ScheduleNotificationTableViewController: UITableViewController {
     var textViewContent: TextViewContent?
     
     private let dateFormatter = DateFormatter()
+    
+    fileprivate var selectedTime: Date?
 
-    private var zillianceTextViewController: ZillianceTextViewController!
+    fileprivate var zillianceTextViewController: ZillianceTextViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,6 +96,7 @@ class ScheduleNotificationTableViewController: UITableViewController {
             }
             
             datePicker.date = { [unowned self] date in
+                self.selectedTime = date
                 self.dateLabel.text = self.dateFormatter.string(from: date)
             }
             
@@ -109,3 +112,35 @@ class ScheduleNotificationTableViewController: UITableViewController {
     
 }
 
+extension ScheduleNotificationTableViewController: NotificationEditor {
+    func getNotification() -> Notification? {
+        
+        guard let selectedTime = selectedTime, daysSegment.selectedSegmentTitles.count > 0 else {
+            return nil
+        }
+        
+        let notification = Notification()
+        
+        notification.body = self.zillianceTextViewController.textView.text
+        notification.recurrence = weeklySwitch.isOn ? .weekly : .none
+        notification.type = .local
+        
+        for selectedDay in Array(daysSegment.selectedSegmentIndexes)
+        {
+            guard let weekDay = dayOfTheWeek(rawValue: Int32(selectedDay)) else {
+                assertionFailure()
+                continue
+            }
+            
+            let day = DayObject(internalValue: weekDay)
+            notification.weekDays.append(day)
+        }
+        
+        let initialDate = selectedTime
+
+        notification.startDate = notification.getNextWeekDate(fromDate: initialDate)
+
+        return notification
+        
+    }
+}

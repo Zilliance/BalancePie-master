@@ -19,7 +19,7 @@ class AddToCalendarViewController: UIViewController {
     
     @IBOutlet weak var datePicker: UIDatePicker!
     
-    private var zillianceTextViewController: ZillianceTextViewController!
+    fileprivate var zillianceTextViewController: ZillianceTextViewController!
     
     var textViewContent: TextViewContent?
 
@@ -128,6 +128,21 @@ class AddToCalendarViewController: UIViewController {
     
     @IBAction func exampleTwoAction(_ sender: Any) {
         showExample(number: 1)
+    }
+}
+
+extension AddToCalendarViewController: NotificationEditor {
+
+    func getNotification() -> Notification? {
+        
+        let notification = Notification()
+        
+        notification.body = self.zillianceTextViewController.textView.text
+        notification.type = .calendar
+        notification.startDate = self.datePicker.date
+        
+        return notification
+        
     }
 }
 

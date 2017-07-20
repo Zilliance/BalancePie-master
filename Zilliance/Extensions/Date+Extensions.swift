@@ -14,14 +14,14 @@ extension Date {
         let components = calendar.dateComponents([.weekday], from: self)
         
         //this should never be nil
-        return components.weekday!
+        return components.weekday! - 1
     }
     
     func nextDateWithWeekDate(weekDay: Int) -> Date {
         
         let weekDayForToday = self.weekDay()
         
-        var difference = weekDay - weekDayForToday + 1
+        var difference = weekDay - weekDayForToday
         if (weekDay < weekDayForToday) {
             difference += 7
         }
