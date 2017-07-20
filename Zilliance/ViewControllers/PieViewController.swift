@@ -245,7 +245,7 @@ class PieViewController: UIViewController {
         }
         
         editActivtyVC.activity = userActivity
-        let navigation = UINavigationController(rootViewController: editActivtyVC)
+        let navigation = CustomNavigationController(rootViewController: editActivtyVC)
         self.present(navigation, animated: true)
     }
     
@@ -256,7 +256,7 @@ class PieViewController: UIViewController {
         
         fineTuneVC.zUserActivity = userActivity
         
-        let navigationFineTuneVC = UINavigationController(rootViewController: fineTuneVC)
+        let navigationFineTuneVC = CustomNavigationController(rootViewController: fineTuneVC)
         self.present(navigationFineTuneVC, animated: true, completion: nil)
     }
     
@@ -302,7 +302,7 @@ class PieViewController: UIViewController {
             return
         }
         
-        let navigation = UINavigationController(rootViewController: addActivityVC)
+        let navigation = CustomNavigationController(rootViewController: addActivityVC)
         self.present(navigation, animated: true)
     }
     

@@ -84,10 +84,10 @@ Check the Tour and the Balance Pie video in the main menu for more info!</string
             </objects>
             <point key="canvasLocation" x="225" y="90"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Custom Navigation Controller-->
         <scene sceneID="5zj-9q-qjP">
             <objects>
-                <navigationController navigationBarHidden="YES" id="g2D-Vj-zn3" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="g2D-Vj-zn3" customClass="CustomNavigationController" customModule="Zilliance" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Zr3-ma-SUb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
