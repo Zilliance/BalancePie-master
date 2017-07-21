@@ -141,6 +141,8 @@ extension ScheduleNotificationTableViewController: NotificationEditor {
         notification.recurrence = weeklySwitch.isOn ? .weekly : .none
         notification.type = .local
         
+        notification.weekDays.removeAll()
+        
         for selectedDay in Array(daysSegment.selectedSegmentIndexes)
         {
             guard let weekDay = dayOfTheWeek(rawValue: Int32(selectedDay)) else {
