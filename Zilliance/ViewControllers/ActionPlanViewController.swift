@@ -20,8 +20,9 @@ class ActionPlanViewController: UIViewController {
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 80
         self.tableView.separatorColor = UIColor.color(forRed: 249, green: 249, blue: 250, alpha: 1)
-        // Do any additional setup after loading the view.
 //        addTestingNotifications()
+        self.notifications = NotificationsManager.sharedInstance.getNextNotifications()
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -159,4 +160,20 @@ extension ActionPlanViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return section == 0 ? 1 : self.notifications.count
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return indexPath.section == 1
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            
+            let notification = notifications[indexPath.row]
+            NotificationsManager.sharedInstance.removeNotification(withId: notification.notificationId)
+            notifications.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            
+        }
+    }
+    
 }

@@ -21,10 +21,7 @@ extension Date {
         
         let weekDayForToday = self.weekDay()
         
-        var difference = weekDay - weekDayForToday
-        if (weekDay < weekDayForToday) {
-            difference += 7
-        }
+        let difference = weekDay - weekDayForToday
         
         return self.addingTimeInterval(TimeInterval(60 * 60 * 24 * difference))
         

@@ -82,21 +82,20 @@ class Notification: Object{
     //if not, the first one can be
     
     func getNextWeekDate(fromDate: Date) -> Date? {
-        
+
         guard weekDays.count > 0 else {
             return nil
         }
         
-//        if (recurrence == .weekly) {
-        let fromDateDay = fromDate.weekDay()
-        
-        //if there's a day after the start day, let's take that day this week.
+        let nextWeekFromCreation = dateAdded.addingTimeInterval(7 * 60 * 60 * 24)
+
         for weekDay in weekDays {
-            if (fromDateDay <= weekDay.rawValue) {
-                let nextInstance = fromDate.nextDateWithWeekDate(weekDay: weekDay.rawValue)
-                if (nextInstance > fromDate) {
-                    return nextInstance
+            let nextInstance = dateAdded.nextDateWithWeekDate(weekDay: weekDay.rawValue)
+            if (nextInstance > fromDate) {
+                if (nextInstance > nextWeekFromCreation && self.recurrence == .none) {
+                    return nil
                 }
+                return nextInstance
             }
         }
         
@@ -104,9 +103,13 @@ class Notification: Object{
             return nil
         }
         
-        //if can't find a day after today this week let's use the first day for next week
-        return fromDate.nextDateWithWeekDate(weekDay: firstDay.rawValue)
+        let nextDate = dateAdded.nextDateWithWeekDate(weekDay: firstDay.rawValue).addingTimeInterval(60 * 60 * 24 * 7)
         
+        if (nextDate > nextWeekFromCreation && self.recurrence == .none || nextDate <= fromDate) {
+            return nil
+        }
+        
+        return nextDate
         
     }
     
@@ -120,7 +123,7 @@ class Notification: Object{
             return startDate
         }
         
-        guard let nextWeekDate = getNextWeekDate(fromDate: fromDate) else {
+        guard let nextWeekDate = getNextWeekDate(fromDate: fromDate), (nextWeekDate > startDate || recurrence == .weekly) else {
             return nil
         }
         

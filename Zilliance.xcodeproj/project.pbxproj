@@ -646,7 +646,7 @@
 				TargetAttributes = {
 					E356682D1E8C15BA00ED81D9 = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = GFYH5G57YM;
+						DevelopmentTeam = CPQJ47YZ3M;
 						ProvisioningStyle = Automatic;
 					};
 					E35668411E8C15BA00ED81D9 = {
@@ -1091,11 +1091,11 @@
 			baseConfigurationReference = 2D5A61EEA6A77027635EDAC1 /* Pods-Zilliance.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = GFYH5G57YM;
+				DEVELOPMENT_TEAM = CPQJ47YZ3M;
 				INFOPLIST_FILE = Zilliance/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.zilliance.balance-pie";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zilliance.balance-piemine";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -1106,11 +1106,11 @@
 			baseConfigurationReference = 6023B31C79A6506116A83550 /* Pods-Zilliance.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = GFYH5G57YM;
+				DEVELOPMENT_TEAM = CPQJ47YZ3M;
 				INFOPLIST_FILE = Zilliance/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.zilliance.balance-pie";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zilliance.balance-piemine";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

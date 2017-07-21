@@ -89,6 +89,15 @@ final class NotificationsManager: NotificationStore {
         }
     }
     
+    func removeNotification(withId id: String) {
+        if let notification = realmDB.object(ofType: Notification.self, forPrimaryKey: id) {
+            removeNotification(notification: notification)
+        }
+        else {
+            assertionFailure()
+        }
+    }
+    
     func removeNotification(notification: Notification) {
     
         let internalStore: NotificationStore = notification.type == .calendar ? self.calendarNotifications : self.localNotifications

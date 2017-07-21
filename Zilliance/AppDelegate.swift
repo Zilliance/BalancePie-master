@@ -48,7 +48,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         NotificationsManager.sharedInstance.realmDB = Database.shared.realm
         
+        LocalNotificationsHelper.shared.listenToNotifications()
+        
         return true
+    }
+    
+    func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
+        
+        guard application.applicationState == .active else {
+            return
+        }
+        
+        //this will only be exectuted on iOS 9. On iOS 10 we use the UNUserNotificationCenter methods
+        let alert = UIAlertController(title: notification.alertTitle, message: notification.alertBody, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        window?.rootViewController?.present(alert, animated: true, completion: nil)
     }
 
 }

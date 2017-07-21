@@ -12,10 +12,6 @@ import Foundation
 import UserNotifications
 import UIKit
 
-enum LocalnotificationError: Error {
-    case notGranted
-}
-
 final class LocalNotificationsHelper: NSObject
 {
     static let notificationCategory = "reminderNotification"
@@ -133,20 +129,19 @@ final class LocalNotificationsHelper: NSObject
             content.body = body
             content.sound = UNNotificationSound.default()
             
-            let dateComponents = Calendar.current.dateComponents([.day, .hour, .minute, .year, .month], from: date)
+            let dateComponents = Calendar.current.dateComponents([.day, .hour, .minute, .second], from: date)
             let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
             
             let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
             
+            print(request)
             // Schedule the notification.
             center.add(request) { (error) in
                 completion?(error)
             }
             
         } else {
-            
             guard let settings = UIApplication.shared.currentUserNotificationSettings, settings.types != .none else {
-                completion?(LocalnotificationError.notGranted)
                 return
             }
             
@@ -230,6 +225,7 @@ final class LocalNotificationsHelper: NSObject
         
     }
     
+    
 }
 
 
@@ -258,4 +254,3 @@ extension LocalNotificationsHelper: UNUserNotificationCenterDelegate {
     }
     
 }
-
