@@ -34,8 +34,16 @@ class ScheduleViewController: UIViewController {
         super.viewDidLoad()
         self.loadViewControllers()
         self.setupView()
-        self.showViewController(controller: viewControllers.first!)
         self.segmentedControl.addTarget(self, action: #selector(segmentChanged), for: .valueChanged)
+
+        if let preloadedNotification = preloadedNotification, preloadedNotification.type == .calendar {
+            self.showViewController(controller: viewControllers.last!)
+            self.segmentedControl.selectedSegmentIndex = 1
+        }
+        else {
+            self.showViewController(controller: viewControllers.first!)
+        }
+
     }
     
     private func loadViewControllers() {
