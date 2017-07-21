@@ -288,7 +288,7 @@ class PieViewController: UIViewController {
             assertionFailure()
             return
         }
-        let navigation = UINavigationController(rootViewController: planVC)
+        let navigation = CustomNavigationController(rootViewController: planVC)
 
         self.present(navigation, animated: true)
         
