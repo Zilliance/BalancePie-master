@@ -17,6 +17,7 @@ class ScheduleViewController: UIViewController {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var notifyMeButton: UIButton!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
+    var preloadedNotification: Notification?
     
     fileprivate enum ViewControllerSegments: Int {
         case notification = 0
@@ -48,6 +49,10 @@ class ScheduleViewController: UIViewController {
         
         notificationsViewController.textViewContent = self.textViewContent
         calendarViewController.textViewContent = self.textViewContent
+        
+        notificationsViewController.preloadedNotification = self.preloadedNotification
+        calendarViewController.preloadedNotification = self.preloadedNotification
+        
         self.viewControllers.append(notificationsViewController)
         self.viewControllers.append(calendarViewController)
         

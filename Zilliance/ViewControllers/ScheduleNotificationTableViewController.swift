@@ -18,6 +18,8 @@ class ScheduleNotificationTableViewController: UITableViewController {
     @IBOutlet weak var weeklySwitch: UISwitch!
     @IBOutlet weak var daysSegment: MultiSelectSegmentedControl!
     
+    var preloadedNotification: Notification?
+    
     var textViewContent: TextViewContent?
     
     private let dateFormatter = DateFormatter()
@@ -43,6 +45,20 @@ class ScheduleNotificationTableViewController: UITableViewController {
         self.tableView.tableFooterView = UIView()
         
         self.weeklySwitch.onTintColor = UIColor.switchBlueColor
+        
+        if let preloadedNotification = self.preloadedNotification, let startDate = preloadedNotification.startDate {
+            self.zillianceTextViewController.textView.text = preloadedNotification.body
+            self.weeklySwitch.isOn = preloadedNotification.recurrence == .weekly
+            
+            let days = IndexSet(Array(preloadedNotification.weekDays).map { return Int($0.internalValue.rawValue) }) as NSIndexSet
+            
+            self.daysSegment.selectedSegmentIndexes = days
+            
+            self.dateLabel.text = self.dateFormatter.string(from: startDate)
+            
+            self.selectedTime = startDate
+            
+        }
         
     }
     
@@ -119,7 +135,7 @@ extension ScheduleNotificationTableViewController: NotificationEditor {
             return nil
         }
         
-        let notification = Notification()
+        let notification = (self.preloadedNotification?.detached()) ?? Notification()
         
         notification.body = self.zillianceTextViewController.textView.text
         notification.recurrence = weeklySwitch.isOn ? .weekly : .none

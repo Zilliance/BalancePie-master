@@ -20,7 +20,7 @@ class AddToCalendarViewController: UIViewController {
     @IBOutlet weak var datePicker: UIDatePicker!
     
     fileprivate var zillianceTextViewController: ZillianceTextViewController!
-    
+    var preloadedNotification: Notification?
     var textViewContent: TextViewContent?
 
     fileprivate var pickerDates: [Date] = []
@@ -42,7 +42,10 @@ class AddToCalendarViewController: UIViewController {
         self.datePicker.layer.borderWidth = App.Appearance.borderWidth
         self.datePicker.layer.borderColor = UIColor.lightGray.cgColor
 
-        
+        if let preloadedNotification = preloadedNotification {
+            self.zillianceTextViewController.textView.text = preloadedNotification.body
+            self.datePicker.date = preloadedNotification.startDate ?? Date()
+        }
     }
     
     @IBAction func onClose(_ sender: Any) {
@@ -135,7 +138,7 @@ extension AddToCalendarViewController: NotificationEditor {
 
     func getNotification() -> Notification? {
         
-        let notification = Notification()
+        let notification = (self.preloadedNotification?.detached()) ?? Notification()
         
         notification.body = self.zillianceTextViewController.textView.text
         notification.type = .calendar

@@ -21,8 +21,11 @@ class ActionPlanViewController: UIViewController {
         self.tableView.estimatedRowHeight = 80
         self.tableView.separatorColor = UIColor.color(forRed: 249, green: 249, blue: 250, alpha: 1)
 //        addTestingNotifications()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         self.notifications = NotificationsManager.sharedInstance.getNextNotifications()
-
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -177,4 +180,34 @@ extension ActionPlanViewController: UITableViewDataSource {
         }
     }
     
+}
+
+extension ActionPlanViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard indexPath.section == 1 else {
+            return
+        }
+        
+        guard let notification = NotificationsManager.sharedInstance.getNotification(withId: notifications[indexPath.row].notificationId) else {
+            assertionFailure()
+            return
+        }
+        
+        showNotificationView(notification: notification)
+
+    }
+    
+    private func showNotificationView(notification: Notification) {
+        
+        guard let scheduler = UIStoryboard(name: "Schedule", bundle: nil).instantiateInitialViewController() as? ScheduleViewController else {
+            assertionFailure()
+            return
+        }
+        
+        scheduler.preloadedNotification = notification
+                
+        self.navigationController!.pushViewController(scheduler, animated: true)
+        
+    }
 }

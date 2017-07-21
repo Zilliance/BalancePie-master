@@ -61,12 +61,11 @@ final class NotificationsManager: NotificationStore {
     
     static let sharedInstance = NotificationsManager()
     
-    func updateNotification(notification: Notification, completion: ((Notification?, Error?) -> ())?) {
-        removeNotification(notification: notification)
-        storeNotification(notification: notification, completion: completion)
-    }
-    
     func storeNotification(notification: Notification, completion: ((Notification?, Error?) -> ())?) {
+        
+        if let notificationId = notification.notificationId {
+            removeNotification(withId: notificationId)
+        }
         
         let finalStore: NotificationStore = notification.type == .calendar ? self.calendarNotifications : self.localNotifications
         finalStore.storeNotification(notification: notification) {[unowned self] (notification, error) in
@@ -97,6 +96,10 @@ final class NotificationsManager: NotificationStore {
             print("notification already removed")
 //            assertionFailure()
         }
+    }
+    
+    func getNotification(withId id: String) -> Notification? {
+        return realmDB.object(ofType: Notification.self, forPrimaryKey: id)
     }
     
     func removeNotification(notification: Notification) {
