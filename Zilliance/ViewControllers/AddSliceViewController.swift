@@ -312,7 +312,7 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
         itemSelectionViewController.items = ItemSelectionViewModel.items(from: activities)
         itemSelectionViewController.isMultipleSelectionEnabled = false
         
-        let navigationController = UINavigationController(rootViewController: itemSelectionViewController)
+        let navigationController = CustomNavigationController(rootViewController: itemSelectionViewController)
         navigationController.modalPresentationStyle = .custom
         navigationController.transitioningDelegate = self
         DispatchQueue.main.async {
@@ -347,7 +347,7 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
 
                 }
                 
-                let navigation = UINavigationController(rootViewController: customActivityViewController)
+                let navigation = CustomNavigationController(rootViewController: customActivityViewController)
                 self.present(navigation, animated: true, completion: nil)
 
             })
@@ -531,7 +531,7 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
                     
                     customValueViewController.valueType = valueType
                     
-                    let navigation = UINavigationController(rootViewController: customValueViewController)
+                    let navigation = CustomNavigationController(rootViewController: customValueViewController)
                     self.present(navigation, animated: true, completion: nil)
                     
                     customValueViewController.dismissAction = { value in
@@ -562,7 +562,7 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
                 
             }
             
-            let navigation = UINavigationController(rootViewController: itemsVC)
+            let navigation = CustomNavigationController(rootViewController: itemsVC)
             navigation.transitioningDelegate = self
             navigation.modalPresentationStyle = .custom
             

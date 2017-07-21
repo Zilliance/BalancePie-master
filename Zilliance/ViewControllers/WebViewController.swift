@@ -35,7 +35,7 @@ final class WebViewController: UIViewController, UIWebViewDelegate
         
         onBoardingViewController.presentationType = .fromFaq
         
-        let navigationController = UINavigationController(rootViewController: onBoardingViewController)
+        let navigationController = CustomNavigationController(rootViewController: onBoardingViewController)
         self.present(navigationController, animated: true, completion: nil)
     }
     

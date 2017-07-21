@@ -15,6 +15,7 @@ target 'Zilliance' do
   pod 'SideMenuController'
   pod 'SVProgressHUD'
   pod 'MultiSelectSegmentedControl'
+  pod 'YouTubePlayer'
 
   target 'ZillianceTests' do
     inherit! :search_paths

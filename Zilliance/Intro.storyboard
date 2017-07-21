@@ -47,14 +47,14 @@
                                     <action selector="continueAction:" destination="qNL-OK-pi6" eventType="touchUpInside" id="6Db-KG-ZFV"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="747" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="V0B-vU-tQU">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="747" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0B-vU-tQU">
                                 <rect key="frame" x="21" y="280" width="333" height="309"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">The Balance Pie helps you squeeze the most enjoyment out of all the activities you spend time doing, even the ones you don’t like. Tuning into how certain activities feel and whether or not they align with your values helps you be more intentional with your time and create a more balanced life.
+                                <string key="text">The Balance Pie helps you squeeze the most enjoyment out of all the activities you spend time doing, even the ones you don’t like. Tuning into how certain activities feel and whether or not they align with your values helps you be more intentional with your time and create a more balanced life.
 
 The output of the Balance Pie is an action plan for taking each activity you choose to spend time on and infusing it with as many positive qualities as possible.
 
-Check the Tour and the Balance Pie video in the main menu for more info!</mutableString>
+Check the Tour and the Balance Pie video in the main menu for more info!</string>
                                 <color key="textColor" red="0.1215686275" green="0.19215686269999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -84,10 +84,10 @@ Check the Tour and the Balance Pie video in the main menu for more info!</mutabl
             </objects>
             <point key="canvasLocation" x="225" y="90"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Custom Navigation Controller-->
         <scene sceneID="5zj-9q-qjP">
             <objects>
-                <navigationController navigationBarHidden="YES" id="g2D-Vj-zn3" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="g2D-Vj-zn3" customClass="CustomNavigationController" customModule="Zilliance" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Zr3-ma-SUb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

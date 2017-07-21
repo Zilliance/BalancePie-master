@@ -141,7 +141,7 @@ class FavoriteActivityViewController: UIViewController, AlertsDuration {
         if let index = self.selectedActivityIndex {
             itemSelectionViewController.selectedItemsIndexes = Set(index)
         }
-        let navigationController = UINavigationController(rootViewController: itemSelectionViewController)
+        let navigationController = CustomNavigationController(rootViewController: itemSelectionViewController)
         navigationController.modalPresentationStyle = .custom
         navigationController.transitioningDelegate = self
         DispatchQueue.main.async {
@@ -152,7 +152,7 @@ class FavoriteActivityViewController: UIViewController, AlertsDuration {
         itemSelectionViewController.createNewItemAction = {
             
             itemSelectionViewController.dismiss(animated: true, completion: {
-                guard let customActivityViewController = UIStoryboard(name: "AddCustom", bundle: nil).instantiateViewController(withIdentifier: "AddActivity") as? UINavigationController else {
+                guard let customActivityViewController = UIStoryboard(name: "AddCustom", bundle: nil).instantiateViewController(withIdentifier: "AddActivity") as? CustomNavigationController else {
                     assertionFailure()
                     return
                 }
@@ -234,7 +234,7 @@ class FavoriteActivityViewController: UIViewController, AlertsDuration {
             itemSelectionViewController.selectedItemsIndexes = Set(index)
         }
         
-        let navigationController = UINavigationController(rootViewController: itemSelectionViewController)
+        let navigationController = CustomNavigationController(rootViewController: itemSelectionViewController)
         navigationController.modalPresentationStyle = .custom
         navigationController.transitioningDelegate = self
         DispatchQueue.main.async {
@@ -244,7 +244,7 @@ class FavoriteActivityViewController: UIViewController, AlertsDuration {
         itemSelectionViewController.createNewItemAction = {
             
             itemSelectionViewController.dismiss(animated: true, completion: {
-                guard let customValueViewController = UIStoryboard(name: "AddCustom", bundle: nil).instantiateViewController(withIdentifier: "AddValue") as? UINavigationController else {
+                guard let customValueViewController = UIStoryboard(name: "AddCustom", bundle: nil).instantiateViewController(withIdentifier: "AddValue") as? CustomNavigationController else {
                     assertionFailure()
                     return
                 }

@@ -311,7 +311,7 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
                     
                     customValueViewController.valueType = valueType
                     
-                    let navigation = UINavigationController(rootViewController: customValueViewController)
+                    let navigation = CustomNavigationController(rootViewController: customValueViewController)
                     self.present(navigation, animated: true, completion: nil)
                     
                     customValueViewController.dismissAction = { value in
@@ -341,7 +341,7 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
                 
             }
             
-            let navigation = UINavigationController(rootViewController: itemsVC)
+            let navigation = CustomNavigationController(rootViewController: itemsVC)
             navigation.transitioningDelegate = self
             navigation.modalPresentationStyle = .custom
             

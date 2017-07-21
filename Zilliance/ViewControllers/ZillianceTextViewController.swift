@@ -380,7 +380,7 @@ extension ZillianceTextViewController: UITextViewDelegate {
             itemSelectionViewController.items = ItemSelectionViewModel.items(from: values)
             itemSelectionViewController.isMultipleSelectionEnabled = editText.isMultipleSelection
             
-            let navigationController = UINavigationController(rootViewController: itemSelectionViewController)
+            let navigationController = CustomNavigationController(rootViewController: itemSelectionViewController)
             navigationController.modalPresentationStyle = .custom
             navigationController.transitioningDelegate = self
             navigationController.title = "Choose Values"
@@ -391,7 +391,7 @@ extension ZillianceTextViewController: UITextViewDelegate {
             itemSelectionViewController.createNewItemAction = {[unowned self] in
                 
                 itemSelectionViewController.dismiss(animated: true, completion: {
-                    guard let customValueViewController = UIStoryboard(name: "AddCustom", bundle: nil).instantiateViewController(withIdentifier: "AddValue") as? UINavigationController else {
+                    guard let customValueViewController = UIStoryboard(name: "AddCustom", bundle: nil).instantiateViewController(withIdentifier: "AddValue") as? CustomNavigationController else {
                         assertionFailure()
                         return
                     }
