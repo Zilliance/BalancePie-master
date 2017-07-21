@@ -9,15 +9,21 @@
 import Foundation
 import EventKit
 
-enum CalendarError {
+enum CalendarError: Error {
     case notGranted
     case errorSavingEvent
+    case noCalendar
 }
 
 class CalendarHelper {
     
-    typealias CalendarClosure = (Bool, CalendarError?) -> Void
+    static let shared = CalendarHelper()
     
+    typealias CalendarClosure = (String?, CalendarError?) -> Void
+    typealias EventsClosure = ([EKEvent]?, CalendarError?) -> Void
+    
+    static let calendarName = "Balance Pie"
+
     
     /// adds an event to calendar
     ///
@@ -25,19 +31,21 @@ class CalendarHelper {
     ///   - title: the title of the event
     ///   - date: the date of the event
     ///   - calendarClosure: completion closure
-    class func addEvent(with title: String, notes: String?, date:Date, calendarClosure: @escaping CalendarClosure) {
+    func addEvent(with title: String, notes: String?, date:Date, calendarClosure: @escaping CalendarClosure) {
         
         let store = EKEventStore()
         
         store.requestAccess(to: .event) { (granted, error) in
             guard granted else {
-                DispatchQueue.main.async { calendarClosure(false, .notGranted) }
+                calendarClosure(nil, .notGranted)
                 return
             }
             
             let event = EKEvent(eventStore: store)
             event.title = title
             event.startDate = date
+            
+            event.addRecurrenceRule(EKRecurrenceRule(recurrenceWith: .daily, interval: 1, end: nil))
             
             if let eventNotes = notes {
                 event.notes = eventNotes
@@ -47,10 +55,52 @@ class CalendarHelper {
             event.calendar = store.defaultCalendarForNewEvents
             do {
                 try store.save(event, span: .thisEvent)
-                DispatchQueue.main.async { calendarClosure(true, nil) }
+                DispatchQueue.main.async { calendarClosure(event.eventIdentifier, nil) }
             } catch {
-                DispatchQueue.main.async { calendarClosure(false, .errorSavingEvent) }
+                DispatchQueue.main.async { calendarClosure(nil, .errorSavingEvent) }
             }
+        }
+        
+    }
+    
+    func getEvents(numberOfDays: Int, completion: EventsClosure? = nil) {
+        let store = EKEventStore()
+        store.requestAccess(to: .event) { (granted, error) in
+            
+            guard granted else {
+                completion?(nil, .notGranted)
+                return
+            }
+            
+            let endDate = Date().addingTimeInterval(TimeInterval(60 * 60 * 24 * numberOfDays)).endOfDay()
+            
+            let predicate = store.predicateForEvents(withStart: Date(), end: endDate, calendars: nil)
+            
+            let events = store.events(matching: predicate)
+            
+            completion?(events,  nil)
+
+        }
+    }
+    
+    func removeEvent(eventId: String) {
+        
+        let store = EKEventStore()
+        
+        guard let event = store.event(withIdentifier: eventId) else {
+//            return assertionFailure()
+            return
+        }
+        
+        do {
+            
+            try store.remove(event, span: .futureEvents)
+            
+        } catch {
+            
+            print("error removing an event")
+            assertionFailure()
+            
         }
         
     }

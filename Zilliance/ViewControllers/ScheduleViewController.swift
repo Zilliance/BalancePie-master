@@ -8,11 +8,16 @@
 
 import UIKit
 
+protocol NotificationEditor {
+    func getNotification() -> Notification?
+}
+
 class ScheduleViewController: UIViewController {
 
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var notifyMeButton: UIButton!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
+    var preloadedNotification: Notification?
     
     fileprivate enum ViewControllerSegments: Int {
         case notification = 0
@@ -29,8 +34,16 @@ class ScheduleViewController: UIViewController {
         super.viewDidLoad()
         self.loadViewControllers()
         self.setupView()
-        self.showViewController(controller: viewControllers.first!)
         self.segmentedControl.addTarget(self, action: #selector(segmentChanged), for: .valueChanged)
+
+        if let preloadedNotification = preloadedNotification, preloadedNotification.type == .calendar {
+            self.showViewController(controller: viewControllers.last!)
+            self.segmentedControl.selectedSegmentIndex = 1
+        }
+        else {
+            self.showViewController(controller: viewControllers.first!)
+        }
+
     }
     
     private func loadViewControllers() {
@@ -44,6 +57,10 @@ class ScheduleViewController: UIViewController {
         
         notificationsViewController.textViewContent = self.textViewContent
         calendarViewController.textViewContent = self.textViewContent
+        
+        notificationsViewController.preloadedNotification = self.preloadedNotification
+        calendarViewController.preloadedNotification = self.preloadedNotification
+        
         self.viewControllers.append(notificationsViewController)
         self.viewControllers.append(calendarViewController)
         
@@ -95,7 +112,41 @@ class ScheduleViewController: UIViewController {
         
         currentViewController = controller
     }
+    
 
     @IBAction func notifyAction(_ sender: UIButton) {
+        
+        guard let notificationEditor = currentViewController as? NotificationEditor else {
+            assertionFailure()
+            return
+        }
+        
+        guard let notification = notificationEditor.getNotification() else {
+            self.showAlert(message: "Please fill the missing fields", title: nil)
+            return
+        }
+        
+        LocalNotificationsHelper.shared.requestAuthorization(inViewController: self) { (authorized) in
+            
+            guard authorized == true else {
+                self.showAlert(message: "Please allow the app to send notifications", title: nil)
+                return
+            }
+        
+            NotificationsManager.sharedInstance.storeNotification(notification: notification) { (notification, error) in
+                
+                if let error = error {
+                    print(error)
+                } else {
+                    
+                    self.dismiss(animated: true, completion: nil)
+                    
+                }
+                
+            }
+        }
+        
+
+        
     }
 }

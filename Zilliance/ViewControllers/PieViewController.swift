@@ -46,7 +46,6 @@ class PieViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupViews()
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -284,7 +283,15 @@ class PieViewController: UIViewController {
     // MARK: - User Actions
     
     @objc func showActionPlan() {
-     
+        
+        guard let planVC = UIStoryboard(name: "Plan", bundle: nil).instantiateViewController(withIdentifier: "ActionPlanViewController") as? ActionPlanViewController else{
+            assertionFailure()
+            return
+        }
+        let navigation = UINavigationController(rootViewController: planVC)
+
+        self.present(navigation, animated: true)
+        
     }
     
     func plusAction() {
@@ -371,4 +378,6 @@ class PieViewController: UIViewController {
     
         picker.show()
     }
+    
+    
 }

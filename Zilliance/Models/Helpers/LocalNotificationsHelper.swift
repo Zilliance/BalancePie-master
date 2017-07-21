@@ -1,16 +1,18 @@
 //
-//  LocalNotificationsUtils.swift
-//  Balance Pie
+//  LocalNotificationsHelper.swift
+//  Personal-Compass
 //
-//  Created by Ignacio Zunino on 21-03-17.
-//  Copyright © 2017 Phil Dow. All rights reserved.
+//  Created by Ignacio Zunino on 05-06-17.
+//  Copyright © 2017 Zilliance. All rights reserved.
 //
+
+import Foundation
 
 import Foundation
 import UserNotifications
 import UIKit
 
-final class LocalNotificationsHelper
+final class LocalNotificationsHelper: NSObject
 {
     static let notificationCategory = "reminderNotification"
     
@@ -21,7 +23,7 @@ final class LocalNotificationsHelper
     private func ownAuthorization(vc: UIViewController, completion: @escaping (Bool) -> ())
     {
         
-        let alert = UIAlertController(title: "Allow Notifications", message: "Balance Pie would like to send you a notification reminder", preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "Allow Notifications", message: "Personal Compass would like to send you a notification reminder", preferredStyle: UIAlertControllerStyle.alert)
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (_) in
             completion(false)
@@ -70,8 +72,6 @@ final class LocalNotificationsHelper
                     }
                     
                 }
-
-
             })
             
         } else {
@@ -86,7 +86,7 @@ final class LocalNotificationsHelper
             {
                 ownAuthorization()
             }
-
+            
             
         }
     }
@@ -98,9 +98,9 @@ final class LocalNotificationsHelper
             let center = UNUserNotificationCenter.current()
             
             center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
-                
-                completion?(granted)
-                
+                DispatchQueue.main.async {
+                    completion?(granted)
+                }
             }
         } else {
             
@@ -116,13 +116,12 @@ final class LocalNotificationsHelper
         waitingAuthorizationCompletion?(authorized)
     }
     
-    static func scheduleLocalNotification(title: String, body: String, date: Date)
+    static func scheduleLocalNotification(title: String, body: String, date: Date, identifier: String, completion: ((Error?) -> ())? = nil)
     {
         if #available(iOS 10.0, *) {
+            // no need to remove in iOS 10 since it's automatically updated using the identifier information
             
             let center = UNUserNotificationCenter.current()
-            
-            center.removeAllPendingNotificationRequests()
             
             let content = UNMutableNotificationContent()
             content.categoryIdentifier = notificationCategory
@@ -130,13 +129,15 @@ final class LocalNotificationsHelper
             content.body = body
             content.sound = UNNotificationSound.default()
             
-            let dateComponents = Calendar.current.dateComponents([.day, .hour, .minute], from: date)
+            let dateComponents = Calendar.current.dateComponents([.day, .hour, .minute, .second], from: date)
             let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
             
-            let request = UNNotificationRequest(identifier: "reminder", content: content, trigger: trigger)
+            let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
             
+            print(request)
             // Schedule the notification.
             center.add(request) { (error) in
+                completion?(error)
             }
             
         } else {
@@ -144,21 +145,26 @@ final class LocalNotificationsHelper
                 return
             }
             
-            UIApplication.shared.cancelAllLocalNotifications()
+            removeNotificationsForIdentifier(identifier: identifier)
+            
             let notification = UILocalNotification()
             notification.fireDate = date
             notification.alertTitle = title
             notification.alertBody = body
             notification.soundName = UILocalNotificationDefaultSoundName
+            
+            notification.userInfo = ["identifier": identifier]
+            
             UIApplication.shared.scheduleLocalNotification(notification)
             
         }
     }
-
-    static func getPreviousNotificationInformation() -> (String, String, Date)?
-    {
+    
+    static func getInformationForStoredNotification(identifier: String) -> (String, Date)? {
+        
         if #available(iOS 10.0, *) {
             let center = UNUserNotificationCenter.current()
+            
             
             let dispatchGroup = DispatchGroup()
             var previousRequest:UNNotificationRequest?
@@ -173,24 +179,73 @@ final class LocalNotificationsHelper
             
             dispatchGroup.wait()
             
-            if let previousRequest = previousRequest, let trigger = previousRequest.trigger as? UNCalendarNotificationTrigger, let date = trigger.nextTriggerDate()
-            {
-                return (previousRequest.content.title, previousRequest.content.body, date)
+            if let previousRequest = previousRequest, let trigger = previousRequest.trigger as? UNCalendarNotificationTrigger, let date = trigger.nextTriggerDate() {
+                
+                return (previousRequest.content.body, date)
             }
             
             
         } else {
             
-            if let notification = UIApplication.shared.scheduledLocalNotifications?.first, let date = notification.fireDate, let title = notification.alertTitle, let body = notification.alertBody
-            {
-                return (title, body, date)
+            let notifications = UIApplication.shared.scheduledLocalNotifications?.filter({ (notification) -> Bool in
+                guard let userInfo = notification.userInfo, let nIdentifier = userInfo["identifier"] as? String else { return false }
+                return nIdentifier == identifier
+            })
+            
+            if let notification = notifications?.first, let text = notification.alertBody, let date = notification.fireDate {
+                return (text, date)
             }
             
         }
         
         return nil
+        
     }
-
     
+    static func removeNotificationsForIdentifier(identifier: String) {
+        
+        if #available(iOS 10.0, *) {
+            let center = UNUserNotificationCenter.current()
+            
+            center.removePendingNotificationRequests(withIdentifiers: [identifier])
+            
+            
+        } else {
+            
+            let notifications = UIApplication.shared.scheduledLocalNotifications?.filter({ (notification) -> Bool in
+                guard let userInfo = notification.userInfo, let nIdentifier = userInfo["identifier"] as? String else { return false }
+                return nIdentifier == identifier
+            })
+            
+            if let notification = notifications?.first {
+                UIApplication.shared.cancelLocalNotification(notification)
+            }
+        }
+    }
 }
 
+extension LocalNotificationsHelper: UNUserNotificationCenterDelegate {
+    
+    func listenToNotifications() {
+        
+        if #available(iOS 10.0, *) {
+            UNUserNotificationCenter.current().delegate = self
+        }
+        
+    }
+    
+    //for displaying notification when app is in foreground
+    @available(iOS 10.0, *)
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        
+        completionHandler([.alert,.badge])
+    }
+    
+    // For handling tap and user actions. We need to have this here if not the local notification is received and we would show an alert as in iOS 9
+    @available(iOS 10.0, *)
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        
+        completionHandler()
+    }
+    
+}

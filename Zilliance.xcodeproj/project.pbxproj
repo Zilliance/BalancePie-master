@@ -27,6 +27,15 @@
 		04E6F56C1E9F804000EBD119 /* DetachableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6F56B1E9F804000EBD119 /* DetachableObject.swift */; };
 		04E6F56E1E9F8CDB00EBD119 /* EditActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6F56D1E9F8CDB00EBD119 /* EditActivityViewController.swift */; };
 		1E51585B238E77BA1CAA3F72 /* Pods_ZillianceUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD551A78B0B1A451D0EC85B /* Pods_ZillianceUITests.framework */; };
+		4F6D09DE1F0D305200A985F6 /* NotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6D09DD1F0D305200A985F6 /* NotificationsManager.swift */; };
+		4F6FBFEB1F15166100305E4E /* Plan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F6FBFEA1F15166100305E4E /* Plan.storyboard */; };
+		4F6FBFED1F1516C600305E4E /* ActionPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6FBFEC1F1516C600305E4E /* ActionPlanViewController.swift */; };
+		4F6FBFEF1F15213B00305E4E /* ActionPlanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6FBFEE1F15213B00305E4E /* ActionPlanCell.swift */; };
+		4F6FC0781F1656D800305E4E /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6FC0771F1656D800305E4E /* Date+Extensions.swift */; };
+		4F7A82191F1CDE98002CA745 /* NotificationsManager+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7A82181F1CDE98002CA745 /* NotificationsManager+ViewModel.swift */; };
+		4F7A821B1F1CDF36002CA745 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7A821A1F1CDF36002CA745 /* Notification.swift */; };
+		4F900E241F18ECBC005A910D /* MeditationPlanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F900E231F18ECBC005A910D /* MeditationPlanCell.swift */; };
+		4F900E261F18FA62005A910D /* PlanImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F900E251F18FA62005A910D /* PlanImages.xcassets */; };
 		6D62B4EDFBB711AD0B00D39E /* Pods_Zilliance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 736C6E0154BDC836D0C0D4EB /* Pods_Zilliance.framework */; };
 		8C0A87C91EB12D9C000E4188 /* PartialModalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0A87C81EB12D9C000E4188 /* PartialModalTransition.swift */; };
 		8C37CF001F0E94850083F38C /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C37CEFF1F0E94850083F38C /* Intro.storyboard */; };
@@ -141,6 +150,15 @@
 		1BD551A78B0B1A451D0EC85B /* Pods_ZillianceUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZillianceUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D5A61EEA6A77027635EDAC1 /* Pods-Zilliance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zilliance.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Zilliance/Pods-Zilliance.debug.xcconfig"; sourceTree = "<group>"; };
 		3770342A51232B23DA4673E7 /* Pods-ZillianceUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZillianceUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZillianceUITests/Pods-ZillianceUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4F6D09DD1F0D305200A985F6 /* NotificationsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsManager.swift; sourceTree = "<group>"; };
+		4F6FBFEA1F15166100305E4E /* Plan.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Plan.storyboard; sourceTree = "<group>"; };
+		4F6FBFEC1F1516C600305E4E /* ActionPlanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionPlanViewController.swift; path = ViewControllers/ActionPlanViewController.swift; sourceTree = "<group>"; };
+		4F6FBFEE1F15213B00305E4E /* ActionPlanCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionPlanCell.swift; path = ViewControllers/ActionPlanCell.swift; sourceTree = "<group>"; };
+		4F6FC0771F1656D800305E4E /* Date+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Date+Extensions.swift"; path = "Extensions/Date+Extensions.swift"; sourceTree = "<group>"; };
+		4F7A82181F1CDE98002CA745 /* NotificationsManager+ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NotificationsManager+ViewModel.swift"; path = "ViewControllers/NotificationsManager+ViewModel.swift"; sourceTree = "<group>"; };
+		4F7A821A1F1CDF36002CA745 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Notification.swift; path = Models/Notification.swift; sourceTree = "<group>"; };
+		4F900E231F18ECBC005A910D /* MeditationPlanCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MeditationPlanCell.swift; path = CustomCells/MeditationPlanCell.swift; sourceTree = "<group>"; };
+		4F900E251F18FA62005A910D /* PlanImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = PlanImages.xcassets; path = ../PlanImages.xcassets; sourceTree = "<group>"; };
 		6023B31C79A6506116A83550 /* Pods-Zilliance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zilliance.release.xcconfig"; path = "Pods/Target Support Files/Pods-Zilliance/Pods-Zilliance.release.xcconfig"; sourceTree = "<group>"; };
 		6FED0BD8DBA2228B5E916020 /* Pods-ZillianceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZillianceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZillianceTests/Pods-ZillianceTests.debug.xcconfig"; sourceTree = "<group>"; };
 		736C6E0154BDC836D0C0D4EB /* Pods_Zilliance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zilliance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -301,6 +319,18 @@
 			name = "Item Selection";
 			sourceTree = "<group>";
 		};
+		4F6FBFE91F15164100305E4E /* Plan */ = {
+			isa = PBXGroup;
+			children = (
+				4F6FBFEA1F15166100305E4E /* Plan.storyboard */,
+				4F6FBFEC1F1516C600305E4E /* ActionPlanViewController.swift */,
+				4F6FBFEE1F15213B00305E4E /* ActionPlanCell.swift */,
+				4F900E231F18ECBC005A910D /* MeditationPlanCell.swift */,
+				4F7A82181F1CDE98002CA745 /* NotificationsManager+ViewModel.swift */,
+			);
+			name = Plan;
+			sourceTree = "<group>";
+		};
 		5C16863DDD8A6468C22F4373 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -326,6 +356,7 @@
 		8C3EA4571E92E4FD00F56DED /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				4F6FBFE91F15164100305E4E /* Plan */,
 				8C37CEFE1F0E94460083F38C /* Intro */,
 				041C3CB81EA55C4800C52195 /* Side Menu */,
 				04647C6F1E97D82D0040CA46 /* Fine Tune Activity */,
@@ -360,6 +391,7 @@
 				8C3EA45E1E92E7BF00F56DED /* Activity.swift */,
 				8C3EA4601E92E7BF00F56DED /* Value.swift */,
 				0469D0AD1E944B700024EA39 /* UserActivity.swift */,
+				4F7A821A1F1CDF36002CA745 /* Notification.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -377,6 +409,7 @@
 				8C3EA46E1E92E9D600F56DED /* UIViewController+Extensions.swift */,
 				E38910E41EA698A5000E1511 /* UIViewController+Alerts.swift */,
 				E33247961EB42A77009E112A /* UITableViewCell+Extensions.swift */,
+				4F6FC0771F1656D800305E4E /* Date+Extensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -393,6 +426,7 @@
 				042576FE1EC10D27003C465F /* TextImprovementsExamples.plist */,
 				042577001EC10D44003C465F /* TextImprovementsExamples.swift */,
 				E39915DA1EC22EC500E9EE26 /* OnboardingPopover.swift */,
+				4F6D09DD1F0D305200A985F6 /* NotificationsManager.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -501,6 +535,7 @@
 		E35668301E8C15BA00ED81D9 /* Zilliance */ = {
 			isa = PBXGroup;
 			children = (
+				4F900E251F18FA62005A910D /* PlanImages.xcassets */,
 				041C3CCA1EA7E81C00C52195 /* Resources */,
 				8C4D28C31E9694F800034A20 /* App.swift */,
 				E35668311E8C15BA00ED81D9 /* AppDelegate.swift */,
@@ -611,7 +646,7 @@
 				TargetAttributes = {
 					E356682D1E8C15BA00ED81D9 = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = GFYH5G57YM;
+						DevelopmentTeam = CPQJ47YZ3M;
 						ProvisioningStyle = Automatic;
 					};
 					E35668411E8C15BA00ED81D9 = {
@@ -656,6 +691,7 @@
 				8CDAB8DA1E9BF42F006BFD4B /* FavoriteActivity.storyboard in Resources */,
 				04B29A631E97AB340090E52E /* ItemsSelection.storyboard in Resources */,
 				8C3EA4991E93F85C00F56DED /* Muli-SemiBold.ttf in Resources */,
+				4F900E261F18FA62005A910D /* PlanImages.xcassets in Resources */,
 				8C3EA4921E93F85C00F56DED /* Muli-ExtraBoldItalic.ttf in Resources */,
 				042576FF1EC10D27003C465F /* TextImprovementsExamples.plist in Resources */,
 				8CC4C9621EC1165C004DF0D5 /* ExamplePopUp.storyboard in Resources */,
@@ -684,6 +720,7 @@
 				8C3EA48E1E93F85C00F56DED /* Muli-BlackItalic.ttf in Resources */,
 				8C3EA4901E93F85C00F56DED /* Muli-BoldItalic.ttf in Resources */,
 				8C3EA48D1E93F85C00F56DED /* Muli-Black.ttf in Resources */,
+				4F6FBFEB1F15166100305E4E /* Plan.storyboard in Resources */,
 				041C3CCE1EA7F5A000C52195 /* WebView.storyboard in Resources */,
 				8C3EA4911E93F85C00F56DED /* Muli-ExtraBold.ttf in Resources */,
 			);
@@ -858,6 +895,7 @@
 				8C51C0651EB27E1400A7BF34 /* ZillianceTextViewController.swift in Sources */,
 				8C3EA49E1E94274600F56DED /* PieViewController.swift in Sources */,
 				8CBBBE211E958B6300281C3C /* AddValuesViewController.swift in Sources */,
+				4F6D09DE1F0D305200A985F6 /* NotificationsManager.swift in Sources */,
 				04E6F56C1E9F804000EBD119 /* DetachableObject.swift in Sources */,
 				8C3EA4711E92E9D600F56DED /* Minutes+Extensions.swift in Sources */,
 				E35668321E8C15BA00ED81D9 /* AppDelegate.swift in Sources */,
@@ -870,15 +908,19 @@
 				8CBBBE201E958B6300281C3C /* AddActivityViewController.swift in Sources */,
 				8C3EA4651E92E7BF00F56DED /* Value.swift in Sources */,
 				0469D0AE1E944B700024EA39 /* UserActivity.swift in Sources */,
+				4F6FC0781F1656D800305E4E /* Date+Extensions.swift in Sources */,
 				8C3EA47D1E92F0F100F56DED /* LocalNotificationsHelper.swift in Sources */,
+				4F6FBFEF1F15213B00305E4E /* ActionPlanCell.swift in Sources */,
 				04B29A671E97AB680090E52E /* PartialSizePresentationController.swift in Sources */,
 				8C3EA4611E92E7BF00F56DED /* Database.swift in Sources */,
+				4F6FBFED1F1516C600305E4E /* ActionPlanViewController.swift in Sources */,
 				8C0A87C91EB12D9C000E4188 /* PartialModalTransition.swift in Sources */,
 				04647C751E97D85C0040CA46 /* FineTuneActivityViewController.swift in Sources */,
 				8CA615711F1817A100C07F57 /* CustomDatePickerViewController.swift in Sources */,
 				8C37CF021F0EAEEB0083F38C /* IntroViewController.swift in Sources */,
 				8C37CF061F156C830083F38C /* ScheduleViewController.swift in Sources */,
 				E3703C581EB3E8F80004C5BD /* PlacholderSidebarItemViewController.swift in Sources */,
+				4F7A82191F1CDE98002CA745 /* NotificationsManager+ViewModel.swift in Sources */,
 				041C3CD01EA7F65A00C52195 /* WebViewController.swift in Sources */,
 				E311C3341EB135F800CF23D1 /* PieHintView.swift in Sources */,
 				E3E80A471EA17CBB004A44AF /* FineTuneItemViewController.swift in Sources */,
@@ -891,9 +933,11 @@
 				04B29A651E97AB4A0090E52E /* ItemsSelectionViewController.swift in Sources */,
 				04E6F56E1E9F8CDB00EBD119 /* EditActivityViewController.swift in Sources */,
 				8CC4C9641EC11889004DF0D5 /* ExamplePopUpViewController.swift in Sources */,
+				4F900E241F18ECBC005A910D /* MeditationPlanCell.swift in Sources */,
 				E33247971EB42A77009E112A /* UITableViewCell+Extensions.swift in Sources */,
 				8C3EA4761E92E9D600F56DED /* UIViewController+Extensions.swift in Sources */,
 				8C3EA45A1E92E6D000F56DED /* PieView.swift in Sources */,
+				4F7A821B1F1CDF36002CA745 /* Notification.swift in Sources */,
 				8C3EA4701E92E9D600F56DED /* Int+Extensions.swift in Sources */,
 				8C3EA4741E92E9D600F56DED /* UIDevice+Extensions.swift in Sources */,
 				041C3CB71EA55BA100C52195 /* CustomSideViewController.swift in Sources */,
@@ -1047,11 +1091,11 @@
 			baseConfigurationReference = 2D5A61EEA6A77027635EDAC1 /* Pods-Zilliance.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = GFYH5G57YM;
+				DEVELOPMENT_TEAM = CPQJ47YZ3M;
 				INFOPLIST_FILE = Zilliance/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.zilliance.balance-pie";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zilliance.balance-piemine";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -1062,11 +1106,11 @@
 			baseConfigurationReference = 6023B31C79A6506116A83550 /* Pods-Zilliance.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = GFYH5G57YM;
+				DEVELOPMENT_TEAM = CPQJ47YZ3M;
 				INFOPLIST_FILE = Zilliance/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.zilliance.balance-pie";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zilliance.balance-piemine";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

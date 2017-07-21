@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="u7Z-Fh-OQW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="u7Z-Fh-OQW">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,7 +13,7 @@
         <scene sceneID="AFM-xS-8B1">
             <objects>
                 <navigationController id="u7Z-Fh-OQW" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ssS-hN-FLr">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ssS-hN-FLr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -40,10 +40,19 @@
                             <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch-background" translatesAutoresizingMaskIntoConstraints="NO" id="77a-N0-PnI">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cqj-x6-XIw">
+                                <rect key="frame" x="172" y="617" width="30" height="30"/>
+                                <state key="normal" title="Plan"/>
+                                <connections>
+                                    <action selector="planTapped:" destination="fcr-7n-tkM" eventType="touchUpInside" id="rYW-bQ-dfV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Cqj-x6-XIw" firstAttribute="centerX" secondItem="tcI-s3-nxZ" secondAttribute="centerX" id="Njf-PN-7HL"/>
                             <constraint firstAttribute="trailing" secondItem="77a-N0-PnI" secondAttribute="trailing" id="VUo-Lk-bJ2"/>
+                            <constraint firstItem="ns6-iz-iEd" firstAttribute="top" secondItem="Cqj-x6-XIw" secondAttribute="bottom" constant="20" id="aMk-4s-ktb"/>
                             <constraint firstItem="77a-N0-PnI" firstAttribute="leading" secondItem="tcI-s3-nxZ" secondAttribute="leading" id="cQV-RN-lOM"/>
                             <constraint firstItem="77a-N0-PnI" firstAttribute="top" secondItem="tcI-s3-nxZ" secondAttribute="top" id="hCQ-Mv-Yiu"/>
                             <constraint firstAttribute="bottom" secondItem="77a-N0-PnI" secondAttribute="bottom" id="s8I-lq-ulI"/>
