@@ -220,14 +220,9 @@ final class LocalNotificationsHelper: NSObject
             if let notification = notifications?.first {
                 UIApplication.shared.cancelLocalNotification(notification)
             }
-            
         }
-        
     }
-    
-    
 }
-
 
 extension LocalNotificationsHelper: UNUserNotificationCenterDelegate {
     

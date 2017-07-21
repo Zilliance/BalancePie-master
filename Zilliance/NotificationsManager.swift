@@ -94,7 +94,8 @@ final class NotificationsManager: NotificationStore {
             removeNotification(notification: notification)
         }
         else {
-            assertionFailure()
+            print("notification already removed")
+//            assertionFailure()
         }
     }
     

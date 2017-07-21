@@ -27,7 +27,7 @@ extension NotificationsManager: NotificationTableViewModel {
     
     func getNextNotifications() -> [NotificationTableItemViewModel] {
         
-        let numberOfDays = 7
+        let numberOfDays = 6
         
         var futureNotifications: [NotificationTableItemViewModel] = []
         

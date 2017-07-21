@@ -170,8 +170,9 @@ extension ActionPlanViewController: UITableViewDataSource {
             
             let notification = notifications[indexPath.row]
             NotificationsManager.sharedInstance.removeNotification(withId: notification.notificationId)
-            notifications.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .automatic)
+            
+            self.notifications = NotificationsManager.sharedInstance.getNextNotifications()
+            self.tableView.reloadData()
             
         }
     }
