@@ -90,7 +90,7 @@ class Notification: Object{
         let nextWeekFromCreation = dateAdded.addingTimeInterval(7 * 60 * 60 * 24)
 
         for weekDay in weekDays {
-            let nextInstance = dateAdded.nextDateWithWeekDate(weekDay: weekDay.rawValue)
+            let nextInstance = fromDate.nextDateWithWeekDate(weekDay: weekDay.rawValue)
             if (nextInstance > fromDate) {
                 if (nextInstance > nextWeekFromCreation && self.recurrence == .none) {
                     return nil
@@ -103,9 +103,10 @@ class Notification: Object{
             return nil
         }
         
-        let nextDate = dateAdded.nextDateWithWeekDate(weekDay: firstDay.rawValue).addingTimeInterval(60 * 60 * 24 * 7)
+        let nextDate = fromDate.nextDateWithWeekDate(weekDay: firstDay.rawValue).addingTimeInterval(60 * 60 * 24 * 7)
         
-        if (nextDate > nextWeekFromCreation && self.recurrence == .none || nextDate <= fromDate) {
+        
+        if (nextDate > nextWeekFromCreation && self.recurrence == .none) {
             return nil
         }
         
