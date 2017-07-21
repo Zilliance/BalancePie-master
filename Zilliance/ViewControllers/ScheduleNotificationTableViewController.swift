@@ -137,8 +137,18 @@ extension ScheduleNotificationTableViewController: NotificationEditor {
         }
         
         let initialDate = selectedTime
-
-        notification.startDate = notification.getNextWeekDate(fromDate: initialDate)
+        
+        notification.startDate = Date()
+        
+        let startDate = notification.getNextWeekDate(fromDate: initialDate) ?? initialDate
+        
+        let nextWeek = Date().addingTimeInterval(60 * 60 * 24 * 7)
+        
+        if (nextWeek < startDate) {
+            notification.startDate = initialDate
+        } else {
+            notification.startDate = startDate
+        }
 
         return notification
         
