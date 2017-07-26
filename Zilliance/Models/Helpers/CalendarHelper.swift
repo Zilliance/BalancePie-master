@@ -46,6 +46,7 @@ class CalendarHelper {
             event.startDate = date
             
             event.addRecurrenceRule(EKRecurrenceRule(recurrenceWith: .daily, interval: 1, end: nil))
+            event.addAlarm(EKAlarm(relativeOffset: 0))
             
             if let eventNotes = notes {
                 event.notes = eventNotes
