@@ -52,7 +52,7 @@ class ScheduleNotificationTableViewController: UITableViewController {
             
             let days = IndexSet(Array(preloadedNotification.weekDays).map { return Int($0.internalValue.rawValue) }) as NSIndexSet
             
-            self.daysSegment.selectedSegmentIndexes = days
+            self.daysSegment.selectedSegmentIndexes = days as IndexSet!
             
             self.dateLabel.text = self.dateFormatter.string(from: startDate)
             
