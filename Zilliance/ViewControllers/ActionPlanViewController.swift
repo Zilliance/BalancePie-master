@@ -8,11 +8,14 @@
 
 import UIKit
 import SVProgressHUD
+import AVFoundation
 
 class ActionPlanViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     fileprivate var notifications: [NotificationTableItemViewModel] = []
+    
+    fileprivate var audioPlayer: AVAudioPlayer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +23,8 @@ class ActionPlanViewController: UIViewController {
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 80
         self.tableView.separatorColor = UIColor.color(forRed: 249, green: 249, blue: 250, alpha: 1)
-//        addTestingNotifications()
+        
+        self.setupAudioPlayer()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -131,8 +135,37 @@ class ActionPlanViewController: UIViewController {
         self.dismiss(animated: true)
         
     }
-
-
+    
+    private func setupAudioPlayer() {
+        
+        let url = URL.init(fileURLWithPath: Bundle.main.path(
+            forResource: "The Raft",
+            ofType: "m4a")!)
+        
+        do {
+            try audioPlayer = AVAudioPlayer(contentsOf: url)
+            audioPlayer?.delegate = self
+            audioPlayer?.prepareToPlay()
+            
+        } catch let error as NSError {
+            print("audioPlayer error \(error.localizedDescription)")
+        }
+        
+        // background audio
+        
+        let session = AVAudioSession.sharedInstance()
+        do {
+            try session.setCategory(AVAudioSessionCategoryPlayback)
+            try session.setActive(true)
+        } catch let error as NSError {
+            print("audio session error \(error.localizedDescription)")
+        }
+    }
+    
+    deinit {
+        self.stopAudio()
+    }
+    
 }
 
 extension ActionPlanViewController: UITableViewDataSource {
@@ -140,7 +173,10 @@ extension ActionPlanViewController: UITableViewDataSource {
         
         if (indexPath.section == 0) {
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: "MeditationPlanCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "MeditationPlanCell", for: indexPath) as! MeditationPlanCell
+            
+            cell.viewContainer.backgroundColor = (self.audioPlayer?.isPlaying ?? false) ? .lightBlueBackground : .white
+            
             return cell
             
         }
@@ -185,10 +221,14 @@ extension ActionPlanViewController: UITableViewDataSource {
 extension ActionPlanViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        guard indexPath.section == 1 else {
+        if (indexPath.section == 0) {
+            self.playPauseMeditation()
+            
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+
             return
         }
-        
+
         guard let notification = NotificationsManager.sharedInstance.getNotification(withId: notifications[indexPath.row].notificationId) else {
             assertionFailure()
             return
@@ -210,4 +250,34 @@ extension ActionPlanViewController: UITableViewDelegate {
         self.navigationController!.pushViewController(scheduler, animated: true)
         
     }
+}
+
+
+extension ActionPlanViewController: AVAudioPlayerDelegate {
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        
+        
+        
+    }
+    
+    func stopAudio() {
+        self.audioPlayer?.stop()
+        self.audioPlayer?.currentTime = 0
+    }
+    
+    func playPauseMeditation() {
+        
+        guard let player = self.audioPlayer else {
+            return
+        }
+        
+        if !player.isPlaying {
+            self.audioPlayer?.play()
+        }
+        else {
+            self.audioPlayer?.stop()
+        }
+    }
+
 }

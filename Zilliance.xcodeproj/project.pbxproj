@@ -36,6 +36,7 @@
 		4F7A821B1F1CDF36002CA745 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7A821A1F1CDF36002CA745 /* Notification.swift */; };
 		4F900E241F18ECBC005A910D /* MeditationPlanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F900E231F18ECBC005A910D /* MeditationPlanCell.swift */; };
 		4F900E261F18FA62005A910D /* PlanImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F900E251F18FA62005A910D /* PlanImages.xcassets */; };
+		4FE59AFB1F2A423F00AAE778 /* The Raft.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4FE59AFA1F2A423F00AAE778 /* The Raft.m4a */; };
 		6D62B4EDFBB711AD0B00D39E /* Pods_Zilliance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 736C6E0154BDC836D0C0D4EB /* Pods_Zilliance.framework */; };
 		8C0A87C91EB12D9C000E4188 /* PartialModalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0A87C81EB12D9C000E4188 /* PartialModalTransition.swift */; };
 		8C37CF001F0E94850083F38C /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C37CEFF1F0E94850083F38C /* Intro.storyboard */; };
@@ -160,6 +161,7 @@
 		4F7A821A1F1CDF36002CA745 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Notification.swift; path = Models/Notification.swift; sourceTree = "<group>"; };
 		4F900E231F18ECBC005A910D /* MeditationPlanCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MeditationPlanCell.swift; path = CustomCells/MeditationPlanCell.swift; sourceTree = "<group>"; };
 		4F900E251F18FA62005A910D /* PlanImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = PlanImages.xcassets; path = ../PlanImages.xcassets; sourceTree = "<group>"; };
+		4FE59AFA1F2A423F00AAE778 /* The Raft.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "The Raft.m4a"; sourceTree = "<group>"; };
 		6023B31C79A6506116A83550 /* Pods-Zilliance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zilliance.release.xcconfig"; path = "Pods/Target Support Files/Pods-Zilliance/Pods-Zilliance.release.xcconfig"; sourceTree = "<group>"; };
 		6FED0BD8DBA2228B5E916020 /* Pods-ZillianceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZillianceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZillianceTests/Pods-ZillianceTests.debug.xcconfig"; sourceTree = "<group>"; };
 		736C6E0154BDC836D0C0D4EB /* Pods_Zilliance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zilliance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -294,6 +296,7 @@
 		041C3CCA1EA7E81C00C52195 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4FE59AFA1F2A423F00AAE778 /* The Raft.m4a */,
 				E39915DC1EC23BD700E9EE26 /* zilliance terms of service.html */,
 				041C3CD71EA8062500C52195 /* zilliance privacy policy.html */,
 				E314B6F11EBB93E0001D0FF5 /* faq.html */,
@@ -651,6 +654,11 @@
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = GFYH5G57YM;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					E35668411E8C15BA00ED81D9 = {
 						CreatedOnToolsVersion = 8.3;
@@ -697,6 +705,7 @@
 				4F900E261F18FA62005A910D /* PlanImages.xcassets in Resources */,
 				8C3EA4921E93F85C00F56DED /* Muli-ExtraBoldItalic.ttf in Resources */,
 				042576FF1EC10D27003C465F /* TextImprovementsExamples.plist in Resources */,
+				4FE59AFB1F2A423F00AAE778 /* The Raft.m4a in Resources */,
 				8CC4C9621EC1165C004DF0D5 /* ExamplePopUp.storyboard in Resources */,
 				8C3EA4951E93F85C00F56DED /* Muli-Italic.ttf in Resources */,
 				8CC4C95D1EB7C0A0004DF0D5 /* VideoPlayer.storyboard in Resources */,
