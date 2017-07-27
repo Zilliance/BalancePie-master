@@ -240,7 +240,7 @@ extension CalendarHelper: NotificationStore {
             return
         }
         
-        self.addEvent(with: notification.title, notes: notification.body, date: startDate) {(eventId, error) in
+        self.addEvent(with: notification.body, notes: nil, date: startDate) {(eventId, error) in
             guard let eventId = eventId, error == nil else {
                 print(error ?? "unknown error")
                 
