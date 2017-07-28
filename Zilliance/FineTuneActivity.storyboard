@@ -84,7 +84,7 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sey-BU-GQE">
-                                <rect key="frame" x="16" y="601" width="343" height="50"/>
+                                <rect key="frame" x="12" y="601" width="351" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.73725490199999999" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Dhf-W4-yfW"/>
@@ -108,8 +108,8 @@
                             <constraint firstItem="sey-BU-GQE" firstAttribute="top" secondItem="FcF-ec-ahG" secondAttribute="bottom" constant="10" id="KtK-nb-KwG"/>
                             <constraint firstItem="KX5-TK-PIk" firstAttribute="leading" secondItem="XpX-7Y-cm2" secondAttribute="leading" id="Lhr-Di-c5B"/>
                             <constraint firstItem="inF-Nl-Ji4" firstAttribute="top" secondItem="sey-BU-GQE" secondAttribute="bottom" constant="16" id="X6x-rP-vER"/>
-                            <constraint firstAttribute="trailing" secondItem="sey-BU-GQE" secondAttribute="trailing" constant="16" id="XBl-6u-65p"/>
-                            <constraint firstItem="sey-BU-GQE" firstAttribute="leading" secondItem="XpX-7Y-cm2" secondAttribute="leading" constant="16" id="bzK-3p-Cim"/>
+                            <constraint firstAttribute="trailing" secondItem="sey-BU-GQE" secondAttribute="trailing" constant="12" id="XBl-6u-65p"/>
+                            <constraint firstItem="sey-BU-GQE" firstAttribute="leading" secondItem="XpX-7Y-cm2" secondAttribute="leading" constant="12" id="bzK-3p-Cim"/>
                             <constraint firstItem="FcF-ec-ahG" firstAttribute="leading" secondItem="XpX-7Y-cm2" secondAttribute="leading" id="c5w-1c-m54"/>
                             <constraint firstItem="KX5-TK-PIk" firstAttribute="top" secondItem="wPo-x2-w9Q" secondAttribute="bottom" id="dFZ-4g-YsO"/>
                             <constraint firstItem="FcF-ec-ahG" firstAttribute="top" secondItem="KX5-TK-PIk" secondAttribute="bottom" id="dHH-qS-lS0"/>

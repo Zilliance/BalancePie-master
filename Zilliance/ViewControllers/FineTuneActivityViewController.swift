@@ -11,7 +11,7 @@ import UIKit
 struct FineTuneItem {
     let title: String
     let image: UIImage
-    let viewController: UIViewController
+    let viewController: FineTuneItemViewController
     let type : FineTuneType
 }
 
@@ -31,52 +31,131 @@ extension FineTuneItem {
     
     // Great
     
-    static var pleasure: FineTuneItem = FineTuneItem(title: "Pleasure", image: UIImage(named: "fine-tune-pleasure")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "pleasure"), type : .pleasure)
+    static var greatPleasure: FineTuneItem = {
+        let item = FineTuneItem(title: "Pleasure", image: UIImage(named: "fine-tune-pleasure")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "great-pleasure") as! FineTuneItemViewController, type : .pleasure)
+        item.viewController.item = item
+        return item
+    }()
     
-    static let prioritize = FineTuneItem(title: "Prioritize", image: UIImage(named: "fine-tune-prioritize")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "prioritize"), type : .prioritize)
+    static let greatPrioritize: FineTuneItem = {
+        let item = FineTuneItem(title: "Prioritize", image: UIImage(named: "fine-tune-prioritize")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "great-prioritize") as! FineTuneItemViewController, type : .prioritize)
+        item.viewController.item = item
+        return item
+    }()
     
-    static var gratitude: FineTuneItem = FineTuneItem(title: "Gratitude", image: UIImage(named: "fine-tune-gratitude")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "gratitude"), type : .gratitude)
+    static var greatGratitude: FineTuneItem = {
+        let item = FineTuneItem(title: "Gratitude", image: UIImage(named: "fine-tune-gratitude")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "great-gratitude") as! FineTuneItemViewController, type : .gratitude)
+        item.viewController.item = item
+        return item
+    }()
     
-    static let giving = FineTuneItem(title: "Giving", image: UIImage(named: "fine-tune-giving")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "giving"), type : .giving)
+    static let greatGiving: FineTuneItem = {
+        let item = FineTuneItem(title: "Giving", image: UIImage(named: "fine-tune-giving")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "great-giving") as! FineTuneItemViewController, type : .giving)
+        item.viewController.item = item
+        return item
+    }()
     
-    static let values = FineTuneItem(title: "Values", image: UIImage(named: "fine-tune-values")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "values"), type : .values)
+    static let greatValues: FineTuneItem = {
+        let item = FineTuneItem(title: "Values", image: UIImage(named: "fine-tune-values")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "great-values") as! FineTuneItemViewController, type : .values)
+        item.viewController.item = item
+        return item
+    }()
     
-    // Lousy
+    // Good
     
-    static let replace = FineTuneItem(title: "Replace", image: UIImage(named: "fine-tune-replace")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "replace"), type : .replace)
+    static let goodGratitude: FineTuneItem = {
+        let item = FineTuneItem(title: "Replace", image: UIImage(named: "fine-tune-replace")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "good-gratitude") as! FineTuneItemViewController, type : .replace)
+        item.viewController.item = item
+        return item
+    }()
     
-    static let reduce = FineTuneItem(title: "Reduce", image: UIImage(named: "fine-tune-reduce")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "reduce"), type : .reduce)
+    static let goodPleasure: FineTuneItem = {
+        let item = FineTuneItem(title: "Reduce", image: UIImage(named: "fine-tune-reduce")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "good-pleasure") as! FineTuneItemViewController, type : .reduce)
+        item.viewController.item = item
+        return item
+    }()
     
-    static let shift = FineTuneItem(title: "Shift", image: UIImage(named: "fine-tune-shift")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "shift"), type : .shift)
+    static let goodPrioritize: FineTuneItem = {
+        let item = FineTuneItem(title: "Shift", image: UIImage(named: "fine-tune-shift")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "good-prioritize") as! FineTuneItemViewController, type : .shift)
+        item.viewController.item = item
+        return item
+    }()
     
-    static let need = FineTuneItem(title: "Need", image: UIImage(named: "fine-tune-need")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "need"), type : .need)
+    static let goodNeed: FineTuneItem = {
+        let item = FineTuneItem(title: "Need", image: UIImage(named: "fine-tune-need")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "good-need") as! FineTuneItemViewController, type : .need)
+        item.viewController.item = item
+        return item
+    }()
     
-    static let valuesLousy = FineTuneItem(title: "Values", image: UIImage(named: "fine-tune-values")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "valueslousy"), type : .values)
-    
-    // Neutral
-    
-    static let replaceNeutral = FineTuneItem(title: "Replace", image: UIImage(named: "fine-tune-replace")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "replaceneutral"), type : .replace)
-    
-    static let reduceNeutral = FineTuneItem(title: "Reduce", image: UIImage(named: "fine-tune-reduce")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "reduceneutral"), type : .reduce)
-    
-    static let shiftNeutral = FineTuneItem(title: "Shift", image: UIImage(named: "fine-tune-shift")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "shiftneutral"), type : .shift)
-    
-    static let needNeutral = FineTuneItem(title: "Need", image: UIImage(named: "fine-tune-need")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "needneutral"), type : .need)
-    
-    static let valuesNeutral = FineTuneItem(title: "Values", image: UIImage(named: "fine-tune-values")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "valuesneutral"), type : .values)
+    static let goodValues: FineTuneItem = {
+        let item = FineTuneItem(title: "Values", image: UIImage(named: "fine-tune-values")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "good-values") as! FineTuneItemViewController, type : .values)
+        item.viewController.item = item
+        return item
+    }()
     
     // Mixed
     
-    static let reduceMixed = FineTuneItem(title: "Reduce", image: UIImage(named: "fine-tune-reduce")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "reducemixed"), type : .reduce)
+    static var mixedReplace: FineTuneItem = {
+        let item = FineTuneItem(title: "Gratitude", image: UIImage(named: "fine-tune-replace")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "mixed-replace") as! FineTuneItemViewController, type : .gratitude)
+        item.viewController.item = item
+        return item
+    }()
     
-    static var gratitudeMixed: FineTuneItem = FineTuneItem(title: "Gratitude", image: UIImage(named: "fine-tune-gratitude")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "gratitudemixed"), type : .gratitude)
+    static let mixedReduce: FineTuneItem = {
+        let item = FineTuneItem(title: "Reduce", image: UIImage(named: "fine-tune-reduce")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "mixed-reduce") as! FineTuneItemViewController, type : .reduce)
+        item.viewController.item = item
+        return item
+    }()
     
-    static let shiftMixed = FineTuneItem(title: "Shift", image: UIImage(named: "fine-tune-shift")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "shiftmixed"), type : .shift)
+    static let mixedShift: FineTuneItem = {
+        let item = FineTuneItem(title: "Shift", image: UIImage(named: "fine-tune-shift")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "mixed-shift") as! FineTuneItemViewController, type : .shift)
+        item.viewController.item = item
+        return item
+    }()
     
-    static let valuesMixed = FineTuneItem(title: "Values", image: UIImage(named: "fine-tune-values")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "valuesmixed"), type : .values)
+    static let mixedValues: FineTuneItem = {
+        let item = FineTuneItem(title: "Values", image: UIImage(named: "fine-tune-values")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "mixed-values") as! FineTuneItemViewController, type : .values)
+        item.viewController.item = item
+        return item
+    }()
     
-    static let needMixed = FineTuneItem(title: "Need", image: UIImage(named: "fine-tune-need")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "needmixed"), type : .need)
+    static let mixedNeed: FineTuneItem = {
+        let item = FineTuneItem(title: "Need", image: UIImage(named: "fine-tune-need")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "mixed-need") as! FineTuneItemViewController, type : .need)
+        item.viewController.item = item
+        return item
+    }()
     
+    // Lousy
+    
+    static let lousyReplace: FineTuneItem = {
+        let item = FineTuneItem(title: "Replace", image: UIImage(named: "fine-tune-replace")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "lousy-replace") as! FineTuneItemViewController, type : .replace)
+        item.viewController.item = item
+        return item
+    }()
+    
+    static let lousyReduce: FineTuneItem = {
+        let item = FineTuneItem(title: "Reduce", image: UIImage(named: "fine-tune-reduce")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "lousy-reduce") as! FineTuneItemViewController, type : .reduce)
+        item.viewController.item = item
+        return item
+    }()
+    
+    static let lousyShift: FineTuneItem = {
+        let item = FineTuneItem(title: "Shift", image: UIImage(named: "fine-tune-shift")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "lousy-shift") as! FineTuneItemViewController, type : .shift)
+        item.viewController.item = item
+        return item
+    }()
+    
+    static let lousyNeed: FineTuneItem = {
+        let item = FineTuneItem(title: "Need", image: UIImage(named: "fine-tune-need")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "lousy-need") as! FineTuneItemViewController, type : .need)
+        item.viewController.item = item
+        return item
+    }()
+    
+    static let lousyValues: FineTuneItem = {
+        let item = FineTuneItem(title: "Values", image: UIImage(named: "fine-tune-values")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "lousy-values") as! FineTuneItemViewController, type : .values)
+        item.viewController.item = item
+        return item
+    }()
 }
 
 // MARK: -
@@ -133,14 +212,14 @@ final class FineTuneActivityViewController: UIViewController {
     private func fineTuneItems(for feeling: Feeling) -> [FineTuneItem] {
         switch feeling {
         case .great:
-            return [.pleasure, .prioritize, .gratitude, .giving, .values]
+            return [.greatPleasure, .greatPrioritize, .greatGratitude, .greatGiving, .greatValues]
         case .lousy:
-            return [.shift, .valuesLousy, .replace, .need, .reduce]
+            return [.lousyShift, .lousyValues, .lousyReplace, .lousyNeed, .lousyReduce]
         case .good:
-            return [.replaceNeutral, .reduceNeutral, .shiftNeutral, .valuesNeutral, .needNeutral]
+            return [.goodGratitude, .goodPleasure, .goodPrioritize, .goodNeed, .goodValues]
         case .mixed:
-            return [.reduceMixed, .gratitudeMixed, .shiftMixed, .valuesMixed, .needMixed]
-        default:
+            return [.mixedReplace, .mixedReduce, .mixedShift, .mixedValues, .mixedNeed]
+        case .none:
             return []
         }
     }
@@ -191,7 +270,7 @@ final class FineTuneActivityViewController: UIViewController {
         self.dismiss(animated: true)
     }
     
-    fileprivate func showViewController(controller: UIViewController) {
+    fileprivate func showViewController(controller: FineTuneItemViewController) {
         if (currentViewController != nil)
         {
             currentViewController?.willMove(toParentViewController: nil)
@@ -214,6 +293,9 @@ final class FineTuneActivityViewController: UIViewController {
         controller.didMove(toParentViewController: self)
         
         currentViewController = controller
+        
+        // Ensure the view controller has access to the user activity
+        controller.zUserActivity = self.zUserActivity
     }
 
 }

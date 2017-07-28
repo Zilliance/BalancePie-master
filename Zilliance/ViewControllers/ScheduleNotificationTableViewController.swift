@@ -97,8 +97,6 @@ class ScheduleNotificationTableViewController: UITableViewController {
         formSheet.transitionStyle = .bounce
         
         self.mz_present(formSheet, animated: true, completionHandler: nil)
-        
-        
     }
 
     // MARK - Table View Delegate
