@@ -259,7 +259,7 @@ extension AddSliceViewController: UITableViewDataSource
         case (.goodFeelings?):
             let cell = tableView.dequeueReusableCell(withIdentifier: "valuesCell", for: indexPath) as! ActivityTableViewCell
             
-            let text = self.newActivity.goodValues.map{$0.name}.joined(separator: "\n")
+            let text = self.newActivity.greatValues.map{$0.name}.joined(separator: "\n")
             
             cell.titleLabel.text = self.newActivity.feeling.goodTitleText
             cell.subtitleLabel.text = text.characters.count > 0 ? text : tapToSelectText
@@ -597,7 +597,7 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
             
             let values = Value.greatValues
             
-            let initialIndexes = values.flatMap({self.newActivity.goodValues.index(of: $0) == nil ? nil : values.index(of: $0)})
+            let initialIndexes = values.flatMap({self.newActivity.greatValues.index(of: $0) == nil ? nil : values.index(of: $0)})
             
             self.selectValues(valueType: .great, initialIndexes: initialIndexes, completion: { (values) in
                 self.newActivity.removeGreatValues()
