@@ -88,6 +88,16 @@ final class NotificationsManager: NotificationStore {
         }
     }
     
+    func removeNotifications(withAssociatedObjectId id: String) {
+        
+        let notifications = realmDB.objects(Notification.self).filter { $0.associatedObjectId == id }
+        
+        notifications.forEach { (notification) in
+            removeNotification(notification: notification)
+        }
+        
+    }
+    
     func removeNotification(withId id: String) {
         if let notification = realmDB.object(ofType: Notification.self, forPrimaryKey: id) {
             removeNotification(notification: notification)

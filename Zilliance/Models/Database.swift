@@ -34,7 +34,7 @@ class Database {
             // Inside your application(application:didFinishLaunchingWithOptions:)
             
             let config = Realm.Configuration(
-                schemaVersion: 11,
+                schemaVersion: 12,
                 
                 migrationBlock: { migration, oldSchemaVersion in
                     if (oldSchemaVersion < 9) {
