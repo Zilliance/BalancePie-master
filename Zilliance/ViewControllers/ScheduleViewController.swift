@@ -126,6 +126,8 @@ class ScheduleViewController: UIViewController {
             return
         }
         
+        notification.associatedObjectId = self.textViewContent?.userActivity.id
+        
         LocalNotificationsHelper.shared.requestAuthorization(inViewController: self) { (authorized) in
             
             guard authorized == true else {

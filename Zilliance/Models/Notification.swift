@@ -65,6 +65,8 @@ class Notification: Object{
         return "notificationId"
     }
     
+    dynamic var associatedObjectId: String?
+    
     dynamic var startDate: Date?
     dynamic var type: NotificationType = .local
     dynamic var recurrence: Recurrence = .none
