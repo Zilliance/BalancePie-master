@@ -1003,28 +1003,28 @@ The more values you can add, the more joy you will have.</string>
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9DK-K9-ZtW">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="449"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="385"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="improve-good-pleasure" translatesAutoresizingMaskIntoConstraints="NO" id="Dv1-dd-yYI">
-                                                <rect key="frame" x="0.0" y="16" width="375" height="256"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="improve-good-pleasure" translatesAutoresizingMaskIntoConstraints="NO" id="Dv1-dd-yYI">
+                                                <rect key="frame" x="0.0" y="16" width="375" height="192"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="256" id="iYg-uP-xEP"/>
+                                                    <constraint firstAttribute="height" constant="192" id="iYg-uP-xEP"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Identify why it's pleasurable" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MCi-CQ-qfv">
-                                                <rect key="frame" x="12" y="302" width="351" height="21.5"/>
+                                                <rect key="frame" x="12" y="238" width="351" height="21.5"/>
                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
                                                 <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When an activity feels great, identify why so you can intentionally preserve those great feelings. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HDk-Vc-Kw4">
-                                                <rect key="frame" x="12" y="333.5" width="351" height="64.5"/>
+                                                <rect key="frame" x="12" y="269.5" width="351" height="64.5"/>
                                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
                                                 <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ROh-Ug-ZsK">
-                                                <rect key="frame" x="16" y="418" width="91" height="31"/>
+                                                <rect key="frame" x="16" y="354" width="91" height="31"/>
                                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                                 <state key="normal" title="See Example">
                                                     <color key="titleColor" red="0.0039215686269999999" green="0.73725490199999999" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -1034,7 +1034,7 @@ The more values you can add, the more joy you will have.</string>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qfQ-Bb-LDI">
-                                                <rect key="frame" x="115" y="418" width="152" height="31"/>
+                                                <rect key="frame" x="115" y="354" width="152" height="31"/>
                                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                                 <state key="normal" title="See Another Example">
                                                     <color key="titleColor" red="0.0039215686269999999" green="0.73725490199999999" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -1105,29 +1105,29 @@ The more values you can add, the more joy you will have.</string>
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MFF-yH-saF">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="534"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="470"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="improve-good-prioritize" translatesAutoresizingMaskIntoConstraints="NO" id="ZRA-Vd-1mi">
-                                                <rect key="frame" x="0.0" y="16" width="375" height="256"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="improve-good-prioritize" translatesAutoresizingMaskIntoConstraints="NO" id="ZRA-Vd-1mi">
+                                                <rect key="frame" x="0.0" y="16" width="375" height="192"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="256" id="XKV-pN-NGa"/>
+                                                    <constraint firstAttribute="height" constant="192" id="XKV-pN-NGa"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prioritize feel-good activities" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGo-zk-DLT">
-                                                <rect key="frame" x="12" y="302" width="351" height="21.5"/>
+                                                <rect key="frame" x="12" y="238" width="351" height="21.5"/>
                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
                                                 <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mga-Pg-LSE">
-                                                <rect key="frame" x="12" y="333.5" width="351" height="149.5"/>
+                                                <rect key="frame" x="12" y="269.5" width="351" height="149.5"/>
                                                 <string key="text">Oftentimes, favorite activities take the backburner to activities that we think we should be doing. Prioritize pleasurable activities by putting them in your calendar so they don’t disappear from your life. The more you spend time on what feels great, the happier you will be. </string>
                                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
                                                 <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJy-Lf-bON">
-                                                <rect key="frame" x="16" y="503" width="91" height="31"/>
+                                                <rect key="frame" x="16" y="439" width="91" height="31"/>
                                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                                 <state key="normal" title="See Example">
                                                     <color key="titleColor" red="0.0039215686269999999" green="0.73725490199999999" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -1137,7 +1137,7 @@ The more values you can add, the more joy you will have.</string>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x7U-bx-FGs">
-                                                <rect key="frame" x="115" y="503" width="152" height="31"/>
+                                                <rect key="frame" x="115" y="439" width="152" height="31"/>
                                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                                 <state key="normal" title="See Another Example">
                                                     <color key="titleColor" red="0.0039215686269999999" green="0.73725490199999999" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -1208,29 +1208,29 @@ The more values you can add, the more joy you will have.</string>
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OM4-yc-Tno">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="577"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="513"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="improve-good-gratitude" translatesAutoresizingMaskIntoConstraints="NO" id="bdy-GT-Idi">
-                                                <rect key="frame" x="0.0" y="16" width="375" height="256"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="improve-good-gratitude" translatesAutoresizingMaskIntoConstraints="NO" id="bdy-GT-Idi">
+                                                <rect key="frame" x="0.0" y="16" width="375" height="192"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="256" id="kRa-Gf-Kpj"/>
+                                                    <constraint firstAttribute="height" constant="192" id="kRa-Gf-Kpj"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Focus on gratitude" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fja-ev-4cT">
-                                                <rect key="frame" x="12" y="302" width="351" height="21.5"/>
+                                                <rect key="frame" x="12" y="238" width="351" height="21.5"/>
                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
                                                 <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fwd-NB-KIl">
-                                                <rect key="frame" x="12" y="333.5" width="351" height="192.5"/>
+                                                <rect key="frame" x="12" y="269.5" width="351" height="192.5"/>
                                                 <string key="text">When you notice that you are participating in an activity that feels great, acknowledge the aspects of that activity for which you are grateful, and give thanks. Making a habit of focusing on gratitude reinforces positive feelings and trains your brain to focus on the good. The more you do this, the more your brain will take note of positive experiences, and the better you will feel. </string>
                                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
                                                 <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5SZ-jl-2b7">
-                                                <rect key="frame" x="16" y="546" width="91" height="31"/>
+                                                <rect key="frame" x="16" y="482" width="91" height="31"/>
                                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                                 <state key="normal" title="See Example">
                                                     <color key="titleColor" red="0.0039215686269999999" green="0.73725490199999999" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -1240,7 +1240,7 @@ The more values you can add, the more joy you will have.</string>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQ5-cP-ccb">
-                                                <rect key="frame" x="115" y="546" width="152" height="31"/>
+                                                <rect key="frame" x="115" y="482" width="152" height="31"/>
                                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                                 <state key="normal" title="See Another Example">
                                                     <color key="titleColor" red="0.0039215686269999999" green="0.73725490199999999" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -1311,29 +1311,29 @@ The more values you can add, the more joy you will have.</string>
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vmh-tX-v0e">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="534"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="470"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="improve-great-giving" translatesAutoresizingMaskIntoConstraints="NO" id="BTa-Zn-cr1">
-                                                <rect key="frame" x="0.0" y="16" width="375" height="256"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="improve-great-giving" translatesAutoresizingMaskIntoConstraints="NO" id="BTa-Zn-cr1">
+                                                <rect key="frame" x="0.0" y="16" width="375" height="192"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="256" id="MW9-HU-nfr"/>
+                                                    <constraint firstAttribute="height" constant="192" id="MW9-HU-nfr"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keep joy flowing by giving" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z8N-yY-K7e">
-                                                <rect key="frame" x="12" y="302" width="351" height="21.5"/>
+                                                <rect key="frame" x="12" y="238" width="351" height="21.5"/>
                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
                                                 <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y49-rq-L0V">
-                                                <rect key="frame" x="12" y="333.5" width="351" height="149.5"/>
+                                                <rect key="frame" x="12" y="269.5" width="351" height="149.5"/>
                                                 <string key="text">No matter how much you enjoy what you are doing, adding acts of kindness can increase your joy. Goodness begets goodness. The more you fill your great-feeling activities with even more great feelings, the more you will seek these activities out.</string>
                                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
                                                 <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bfW-Wa-Kkj">
-                                                <rect key="frame" x="16" y="503" width="91" height="31"/>
+                                                <rect key="frame" x="16" y="439" width="91" height="31"/>
                                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                                 <state key="normal" title="See Example">
                                                     <color key="titleColor" red="0.0039215686269999999" green="0.73725490199999999" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -1343,7 +1343,7 @@ The more values you can add, the more joy you will have.</string>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Cp-Hb-zdW">
-                                                <rect key="frame" x="115" y="503" width="152" height="31"/>
+                                                <rect key="frame" x="115" y="439" width="152" height="31"/>
                                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                                 <state key="normal" title="See Another Example">
                                                     <color key="titleColor" red="0.0039215686269999999" green="0.73725490199999999" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -1414,29 +1414,29 @@ The more values you can add, the more joy you will have.</string>
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NNx-3L-iOj">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="513"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="449"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="improve-good-values" translatesAutoresizingMaskIntoConstraints="NO" id="aGK-dc-BeG">
-                                                <rect key="frame" x="0.0" y="16" width="375" height="256"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="improve-good-values" translatesAutoresizingMaskIntoConstraints="NO" id="aGK-dc-BeG">
+                                                <rect key="frame" x="0.0" y="16" width="375" height="192"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="256" id="fau-79-wNV"/>
+                                                    <constraint firstAttribute="height" constant="192" id="fau-79-wNV"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amp up your alignment with your values" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DNf-ue-jzn">
-                                                <rect key="frame" x="12" y="302" width="351" height="21.5"/>
+                                                <rect key="frame" x="12" y="238" width="351" height="21.5"/>
                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
                                                 <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ha-gP-BbJ">
-                                                <rect key="frame" x="12" y="333.5" width="351" height="128.5"/>
+                                                <rect key="frame" x="12" y="269.5" width="351" height="128.5"/>
                                                 <string key="text">Activities feel great when they align with your values, so you can bring even more feel-good to your favorite activities by finding ways to bring more of your values to them. The more values you can bring to any one activity, the more joy you will have. </string>
                                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
                                                 <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qLj-st-rBm">
-                                                <rect key="frame" x="16" y="482" width="91" height="31"/>
+                                                <rect key="frame" x="16" y="418" width="91" height="31"/>
                                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                                 <state key="normal" title="See Example">
                                                     <color key="titleColor" red="0.0039215686269999999" green="0.73725490199999999" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -1446,7 +1446,7 @@ The more values you can add, the more joy you will have.</string>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DHD-xg-F0c">
-                                                <rect key="frame" x="115" y="482" width="152" height="31"/>
+                                                <rect key="frame" x="115" y="418" width="152" height="31"/>
                                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                                 <state key="normal" title="See Another Example">
                                                     <color key="titleColor" red="0.0039215686269999999" green="0.73725490199999999" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -1517,29 +1517,29 @@ The more values you can add, the more joy you will have.</string>
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X3w-T1-8ro">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="534"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="470"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="improve-lousy-replace" translatesAutoresizingMaskIntoConstraints="NO" id="hVm-yR-pEq">
-                                                <rect key="frame" x="0.0" y="16" width="375" height="256"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="improve-lousy-replace" translatesAutoresizingMaskIntoConstraints="NO" id="hVm-yR-pEq">
+                                                <rect key="frame" x="0.0" y="16" width="375" height="192"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="256" id="Cbq-bq-qVn"/>
+                                                    <constraint firstAttribute="height" constant="192" id="Cbq-bq-qVn"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Replace this activity" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w8Q-gp-5P6">
-                                                <rect key="frame" x="12" y="302" width="351" height="21.5"/>
+                                                <rect key="frame" x="12" y="238" width="351" height="21.5"/>
                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
                                                 <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uvh-KR-2bw">
-                                                <rect key="frame" x="12" y="333.5" width="351" height="149.5"/>
+                                                <rect key="frame" x="12" y="269.5" width="351" height="149.5"/>
                                                 <string key="text">Can you replace this activity with something that feels better? If so, Take Action. Of course, this option is not always practical. If parenting feels lousy to you, you probably cannot replace your kids with new kids. Because this option isn’t always practical, we invite you to explore other options.  </string>
                                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
                                                 <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePA-Nk-XkB">
-                                                <rect key="frame" x="16" y="503" width="91" height="31"/>
+                                                <rect key="frame" x="16" y="439" width="91" height="31"/>
                                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                                 <state key="normal" title="See Example">
                                                     <color key="titleColor" red="0.0039215686269999999" green="0.73725490199999999" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -1549,7 +1549,7 @@ The more values you can add, the more joy you will have.</string>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PCO-cG-y3K">
-                                                <rect key="frame" x="115" y="503" width="152" height="31"/>
+                                                <rect key="frame" x="115" y="439" width="152" height="31"/>
                                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                                 <state key="normal" title="See Another Example">
                                                     <color key="titleColor" red="0.0039215686269999999" green="0.73725490199999999" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -1620,29 +1620,29 @@ The more values you can add, the more joy you will have.</string>
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KRu-28-kaX">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="513"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="449"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="improve-lousy-reduce" translatesAutoresizingMaskIntoConstraints="NO" id="hcu-nm-f3m">
-                                                <rect key="frame" x="0.0" y="16" width="375" height="256"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="improve-lousy-reduce" translatesAutoresizingMaskIntoConstraints="NO" id="hcu-nm-f3m">
+                                                <rect key="frame" x="0.0" y="16" width="375" height="192"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="256" id="1Mu-9Y-gWz"/>
+                                                    <constraint firstAttribute="height" constant="192" id="1Mu-9Y-gWz"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reduce the time you spend on it" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pnZ-1X-clF">
-                                                <rect key="frame" x="12" y="302" width="351" height="21.5"/>
+                                                <rect key="frame" x="12" y="238" width="351" height="21.5"/>
                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
                                                 <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXB-lM-6cH">
-                                                <rect key="frame" x="12" y="333.5" width="351" height="128.5"/>
+                                                <rect key="frame" x="12" y="269.5" width="351" height="128.5"/>
                                                 <string key="text">Most people have quite a few activities they don’t like doing, but for whatever reason, they still continue doing them. If you start paying attention, though, you might be able to find small ways here and there to trim the amount of time you spend on them. </string>
                                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
                                                 <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="18G-7O-6SF">
-                                                <rect key="frame" x="16" y="482" width="91" height="31"/>
+                                                <rect key="frame" x="16" y="418" width="91" height="31"/>
                                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                                 <state key="normal" title="See Example">
                                                     <color key="titleColor" red="0.0039215686269999999" green="0.73725490199999999" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -1652,7 +1652,7 @@ The more values you can add, the more joy you will have.</string>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50m-HR-xBN">
-                                                <rect key="frame" x="115" y="482" width="152" height="31"/>
+                                                <rect key="frame" x="115" y="418" width="152" height="31"/>
                                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                                 <state key="normal" title="See Another Example">
                                                     <color key="titleColor" red="0.0039215686269999999" green="0.73725490199999999" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -1723,29 +1723,29 @@ The more values you can add, the more joy you will have.</string>
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wbc-bR-aSG">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="598"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="534"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="improve-lousy-shift" translatesAutoresizingMaskIntoConstraints="NO" id="WCF-7B-BSW">
-                                                <rect key="frame" x="0.0" y="16" width="375" height="256"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="improve-lousy-shift" translatesAutoresizingMaskIntoConstraints="NO" id="WCF-7B-BSW">
+                                                <rect key="frame" x="0.0" y="16" width="375" height="192"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="256" id="HRS-Qf-ZET"/>
+                                                    <constraint firstAttribute="height" constant="192" id="HRS-Qf-ZET"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shift your thoughts" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPi-Wf-OdV">
-                                                <rect key="frame" x="12" y="302" width="351" height="21.5"/>
+                                                <rect key="frame" x="12" y="238" width="351" height="21.5"/>
                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
                                                 <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUW-gH-dsV">
-                                                <rect key="frame" x="12" y="333.5" width="351" height="213.5"/>
+                                                <rect key="frame" x="12" y="269.5" width="351" height="213.5"/>
                                                 <string key="text">Technically, you don’t “have” to do anything. The only reason we do the things we say we “have” to do is because in some way, they meet our needs and align with our values. When we focus on “having” to do something, we reinforce our lousy feelings. If you identify why you participate in the activities that feel lousy, and shift your thinking in a more positive direction, your feelings will shift accordingly. </string>
                                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
                                                 <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S6Z-il-VeR">
-                                                <rect key="frame" x="16" y="567" width="91" height="31"/>
+                                                <rect key="frame" x="16" y="503" width="91" height="31"/>
                                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                                 <state key="normal" title="See Example">
                                                     <color key="titleColor" red="0.0039215686269999999" green="0.73725490199999999" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -1755,7 +1755,7 @@ The more values you can add, the more joy you will have.</string>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KhT-2D-d6J">
-                                                <rect key="frame" x="115" y="567" width="152" height="31"/>
+                                                <rect key="frame" x="115" y="503" width="152" height="31"/>
                                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                                 <state key="normal" title="See Another Example">
                                                     <color key="titleColor" red="0.0039215686269999999" green="0.73725490199999999" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -1826,29 +1826,29 @@ The more values you can add, the more joy you will have.</string>
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fkk-7O-hM5">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="513"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="449"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="improve-lousy-values" translatesAutoresizingMaskIntoConstraints="NO" id="VPp-k1-7dW">
-                                                <rect key="frame" x="0.0" y="16" width="375" height="256"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="improve-lousy-values" translatesAutoresizingMaskIntoConstraints="NO" id="VPp-k1-7dW">
+                                                <rect key="frame" x="0.0" y="16" width="375" height="192"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="256" id="n47-s0-98A"/>
+                                                    <constraint firstAttribute="height" constant="192" id="n47-s0-98A"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bring values" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTb-L5-DBY">
-                                                <rect key="frame" x="12" y="302" width="351" height="21.5"/>
+                                                <rect key="frame" x="12" y="238" width="351" height="21.5"/>
                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
                                                 <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fbu-qu-WTm">
-                                                <rect key="frame" x="12" y="333.5" width="351" height="128.5"/>
+                                                <rect key="frame" x="12" y="269.5" width="351" height="128.5"/>
                                                 <string key="text">Usually, activities feel lousy because they fail to engage a value, or because they violate a value. If you can pinpoint a way to engage a value, you can make the lousy-feeling activity feel a little better. The more values you can add, the more joy you will have. </string>
                                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
                                                 <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xch-st-pFi">
-                                                <rect key="frame" x="16" y="482" width="91" height="31"/>
+                                                <rect key="frame" x="16" y="418" width="91" height="31"/>
                                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                                 <state key="normal" title="See Example">
                                                     <color key="titleColor" red="0.0039215686269999999" green="0.73725490199999999" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -1858,7 +1858,7 @@ The more values you can add, the more joy you will have.</string>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="34U-dn-6sh">
-                                                <rect key="frame" x="115" y="482" width="152" height="31"/>
+                                                <rect key="frame" x="115" y="418" width="152" height="31"/>
                                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                                 <state key="normal" title="See Another Example">
                                                     <color key="titleColor" red="0.0039215686269999999" green="0.73725490199999999" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -1929,29 +1929,29 @@ The more values you can add, the more joy you will have.</string>
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qv8-fd-TGu">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="577"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="513"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="improve-lousy-need" translatesAutoresizingMaskIntoConstraints="NO" id="ZTV-bi-3mI">
-                                                <rect key="frame" x="0.0" y="16" width="375" height="256"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="improve-lousy-need" translatesAutoresizingMaskIntoConstraints="NO" id="ZTV-bi-3mI">
+                                                <rect key="frame" x="0.0" y="16" width="375" height="192"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="256" id="PKZ-6e-PYk"/>
+                                                    <constraint firstAttribute="height" constant="192" id="PKZ-6e-PYk"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you need to feel better?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qua-CN-sqS">
-                                                <rect key="frame" x="12" y="302" width="351" height="21.5"/>
+                                                <rect key="frame" x="12" y="238" width="351" height="21.5"/>
                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
                                                 <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhR-Kb-2Zp">
-                                                <rect key="frame" x="12" y="333.5" width="351" height="192.5"/>
+                                                <rect key="frame" x="12" y="269.5" width="351" height="192.5"/>
                                                 <string key="text">Anything can start to feel lousy—a relationship, a job, or even a hobby—if it stops meeting your needs. The good news is that if you can identify the need, you can always move one step closer to filling that need. And, if you identify the need, you can always look for other ways to get the need met, even if you continue engaging in the lousy-feeling activity. </string>
                                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
                                                 <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L6g-VW-xi2">
-                                                <rect key="frame" x="16" y="546" width="91" height="31"/>
+                                                <rect key="frame" x="16" y="482" width="91" height="31"/>
                                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                                 <state key="normal" title="See Example">
                                                     <color key="titleColor" red="0.0039215686269999999" green="0.73725490199999999" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -1961,7 +1961,7 @@ The more values you can add, the more joy you will have.</string>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVp-oi-h0u">
-                                                <rect key="frame" x="115" y="546" width="152" height="31"/>
+                                                <rect key="frame" x="115" y="482" width="152" height="31"/>
                                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                                 <state key="normal" title="See Another Example">
                                                     <color key="titleColor" red="0.0039215686269999999" green="0.73725490199999999" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -2032,29 +2032,29 @@ The more values you can add, the more joy you will have.</string>
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KdH-sG-MBf">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="555.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="491.5"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="improve-mixed-reduce" translatesAutoresizingMaskIntoConstraints="NO" id="5Aq-qd-Z0K">
-                                                <rect key="frame" x="0.0" y="16" width="375" height="256"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="improve-mixed-reduce" translatesAutoresizingMaskIntoConstraints="NO" id="5Aq-qd-Z0K">
+                                                <rect key="frame" x="0.0" y="16" width="375" height="192"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="256" id="zRs-aG-745"/>
+                                                    <constraint firstAttribute="height" constant="192" id="zRs-aG-745"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reduce the time you spend on it" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OMJ-8B-GFh">
-                                                <rect key="frame" x="12" y="302" width="351" height="21.5"/>
+                                                <rect key="frame" x="12" y="238" width="351" height="21.5"/>
                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
                                                 <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDn-DA-duY">
-                                                <rect key="frame" x="12" y="333.5" width="351" height="171"/>
+                                                <rect key="frame" x="12" y="269.5" width="351" height="171"/>
                                                 <string key="text">We often find ourselves doing things that don’t feel as good as we thought they would, but we keep doing them out of habit, and then we stop noticing how they feel and how much time they suck away from us. Reduce the amount of time in time-suck activities and replace them with activities that feel great! </string>
                                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
                                                 <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3b-Aj-a25">
-                                                <rect key="frame" x="16" y="524.5" width="91" height="31"/>
+                                                <rect key="frame" x="16" y="460.5" width="91" height="31"/>
                                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                                 <state key="normal" title="See Example">
                                                     <color key="titleColor" red="0.0039215686269999999" green="0.73725490199999999" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -2064,7 +2064,7 @@ The more values you can add, the more joy you will have.</string>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3b-H4-GGJ">
-                                                <rect key="frame" x="115" y="524.5" width="152" height="31"/>
+                                                <rect key="frame" x="115" y="460.5" width="152" height="31"/>
                                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                                 <state key="normal" title="See Another Example">
                                                     <color key="titleColor" red="0.0039215686269999999" green="0.73725490199999999" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -2135,22 +2135,22 @@ The more values you can add, the more joy you will have.</string>
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MAC-GC-zMr">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="619.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="555.5"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="improve-mixed-replace" translatesAutoresizingMaskIntoConstraints="NO" id="VX3-VW-jjL">
-                                                <rect key="frame" x="0.0" y="16" width="375" height="256"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="improve-mixed-replace" translatesAutoresizingMaskIntoConstraints="NO" id="VX3-VW-jjL">
+                                                <rect key="frame" x="0.0" y="16" width="375" height="192"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="256" id="yp8-KM-Rp6"/>
+                                                    <constraint firstAttribute="height" constant="192" id="yp8-KM-Rp6"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Replace this activity" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z6d-bs-3Hf">
-                                                <rect key="frame" x="12" y="302" width="351" height="21.5"/>
+                                                <rect key="frame" x="12" y="238" width="351" height="21.5"/>
                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
                                                 <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9lb-YY-3mQ">
-                                                <rect key="frame" x="12" y="333.5" width="351" height="235"/>
+                                                <rect key="frame" x="12" y="269.5" width="351" height="235"/>
                                                 <string key="text">It’s not always easy to replace something that doesn’t feel great with something that does, like quitting your job that you just feel mixed about and replacing it with your dream job tomorrow!  
 
 But you probably can find a way to replace it, or move towards replacing it, with something that feels just a little bit better, and closer to your goal. The key is to start taking small steps in the right direction. </string>
@@ -2159,7 +2159,7 @@ But you probably can find a way to replace it, or move towards replacing it, wit
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kaz-8V-2To">
-                                                <rect key="frame" x="16" y="588.5" width="91" height="31"/>
+                                                <rect key="frame" x="16" y="524.5" width="91" height="31"/>
                                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                                 <state key="normal" title="See Example">
                                                     <color key="titleColor" red="0.0039215686269999999" green="0.73725490199999999" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -2169,7 +2169,7 @@ But you probably can find a way to replace it, or move towards replacing it, wit
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hmn-a4-jzI">
-                                                <rect key="frame" x="115" y="588.5" width="152" height="31"/>
+                                                <rect key="frame" x="115" y="524.5" width="152" height="31"/>
                                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                                 <state key="normal" title="See Another Example">
                                                     <color key="titleColor" red="0.0039215686269999999" green="0.73725490199999999" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -2240,22 +2240,22 @@ But you probably can find a way to replace it, or move towards replacing it, wit
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZYt-WC-fvp">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="662"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="598"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="improve-mixed-shift" translatesAutoresizingMaskIntoConstraints="NO" id="Hs7-5T-uO4">
-                                                <rect key="frame" x="0.0" y="16" width="375" height="256"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="improve-mixed-shift" translatesAutoresizingMaskIntoConstraints="NO" id="Hs7-5T-uO4">
+                                                <rect key="frame" x="0.0" y="16" width="375" height="192"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="256" id="Ml3-f3-aUe"/>
+                                                    <constraint firstAttribute="height" constant="192" id="Ml3-f3-aUe"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shift your thoughts" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xRm-Hz-meD">
-                                                <rect key="frame" x="12" y="302" width="351" height="21.5"/>
+                                                <rect key="frame" x="12" y="238" width="351" height="21.5"/>
                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
                                                 <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fwe-td-PcC">
-                                                <rect key="frame" x="12" y="333.5" width="351" height="277.5"/>
+                                                <rect key="frame" x="12" y="269.5" width="351" height="277.5"/>
                                                 <string key="text">The only reason we do things we say we “have” to do is because in some way, they meet our needs and align with our values. We pay taxes, for instance, because doing so meets our need to stay out of jail and aligns with our value of freedom.
 
 Thinking of these activities as obligations fosters resentment. Shifting your thinking to own your choices will improve your attitude and allow you to focus on trying to feel good about getting a need met rather than on the resentment.</string>
@@ -2264,7 +2264,7 @@ Thinking of these activities as obligations fosters resentment. Shifting your th
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LEe-Zu-SmF">
-                                                <rect key="frame" x="16" y="631" width="91" height="31"/>
+                                                <rect key="frame" x="16" y="567" width="91" height="31"/>
                                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                                 <state key="normal" title="See Example">
                                                     <color key="titleColor" red="0.0039215686269999999" green="0.73725490199999999" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -2274,7 +2274,7 @@ Thinking of these activities as obligations fosters resentment. Shifting your th
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8lG-3u-PZi">
-                                                <rect key="frame" x="115" y="631" width="152" height="31"/>
+                                                <rect key="frame" x="115" y="567" width="152" height="31"/>
                                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                                 <state key="normal" title="See Another Example">
                                                     <color key="titleColor" red="0.0039215686269999999" green="0.73725490199999999" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -2345,29 +2345,29 @@ Thinking of these activities as obligations fosters resentment. Shifting your th
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CmG-q1-R18">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="513"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="449"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="improve-mixed-values" translatesAutoresizingMaskIntoConstraints="NO" id="xPK-u8-390">
-                                                <rect key="frame" x="0.0" y="16" width="375" height="256"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="improve-mixed-values" translatesAutoresizingMaskIntoConstraints="NO" id="xPK-u8-390">
+                                                <rect key="frame" x="0.0" y="16" width="375" height="192"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="256" id="qEV-a5-t5a"/>
+                                                    <constraint firstAttribute="height" constant="192" id="qEV-a5-t5a"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bring values" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ck-DS-7wf">
-                                                <rect key="frame" x="12" y="302" width="351" height="21.5"/>
+                                                <rect key="frame" x="12" y="238" width="351" height="21.5"/>
                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
                                                 <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14m-PW-MZq">
-                                                <rect key="frame" x="12" y="333.5" width="351" height="128.5"/>
+                                                <rect key="frame" x="12" y="269.5" width="351" height="128.5"/>
                                                 <string key="text">Activities feel not-so-good when they either sacrifice a value or fail to engage a value. You can bring more feel-good to an activity by finding ways to engage your values. The more values you can bring, the more joy you will have. </string>
                                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
                                                 <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lay-89-j0F">
-                                                <rect key="frame" x="16" y="482" width="91" height="31"/>
+                                                <rect key="frame" x="16" y="418" width="91" height="31"/>
                                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                                 <state key="normal" title="See Example">
                                                     <color key="titleColor" red="0.0039215686269999999" green="0.73725490199999999" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -2377,7 +2377,7 @@ Thinking of these activities as obligations fosters resentment. Shifting your th
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Isw-jr-LDI">
-                                                <rect key="frame" x="115" y="482" width="152" height="31"/>
+                                                <rect key="frame" x="115" y="418" width="152" height="31"/>
                                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                                 <state key="normal" title="See Another Example">
                                                     <color key="titleColor" red="0.0039215686269999999" green="0.73725490199999999" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -2448,31 +2448,31 @@ Thinking of these activities as obligations fosters resentment. Shifting your th
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6YH-rA-gSw">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="683.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="619.5"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="improve-mixed-need" translatesAutoresizingMaskIntoConstraints="NO" id="rIN-vJ-9hP">
-                                                <rect key="frame" x="0.0" y="16" width="375" height="256"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="improve-mixed-need" translatesAutoresizingMaskIntoConstraints="NO" id="rIN-vJ-9hP">
+                                                <rect key="frame" x="0.0" y="16" width="375" height="192"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="256" id="sMT-aE-7Df"/>
+                                                    <constraint firstAttribute="height" constant="192" id="sMT-aE-7Df"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you need to feel better?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eK9-X7-RRh">
-                                                <rect key="frame" x="12" y="302" width="351" height="21.5"/>
+                                                <rect key="frame" x="12" y="238" width="351" height="21.5"/>
                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
                                                 <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NLX-VV-gja">
-                                                <rect key="frame" x="12" y="333.5" width="351" height="299"/>
-                                                <mutableString key="text">If you are like most people, you might spend a lot of time making sure that other people’s needs are met, but you neglect your own. This can cause a downward spiral. 
+                                                <rect key="frame" x="12" y="269.5" width="351" height="299"/>
+                                                <string key="text">If you are like most people, you might spend a lot of time making sure that other people’s needs are met, but you neglect your own. This can cause a downward spiral. 
 
-The great thing about activities that leave you feeling mixed is that you likely can identify what need is being met during the parts that feel good, and then apply this to the parts that feel not-so good. Remember, you cannot be your best when you don’t feel your best, so identify your needs, and then give yourself permission to get your needs met.</mutableString>
+The great thing about activities that leave you feeling mixed is that you likely can identify what need is being met during the parts that feel good, and then apply this to the parts that feel not-so good. Remember, you cannot be your best when you don’t feel your best, so identify your needs, and then give yourself permission to get your needs met.</string>
                                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
                                                 <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xaj-Fa-ODN">
-                                                <rect key="frame" x="16" y="652.5" width="91" height="31"/>
+                                                <rect key="frame" x="16" y="588.5" width="91" height="31"/>
                                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                                 <state key="normal" title="See Example">
                                                     <color key="titleColor" red="0.0039215686269999999" green="0.73725490199999999" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -2482,7 +2482,7 @@ The great thing about activities that leave you feeling mixed is that you likely
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQz-an-Nho">
-                                                <rect key="frame" x="115" y="652.5" width="152" height="31"/>
+                                                <rect key="frame" x="115" y="588.5" width="152" height="31"/>
                                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                                 <state key="normal" title="See Another Example">
                                                     <color key="titleColor" red="0.0039215686269999999" green="0.73725490199999999" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -2553,22 +2553,22 @@ The great thing about activities that leave you feeling mixed is that you likely
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="13i-4R-7Fi">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="577"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="513"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="improve-good-gratitude" translatesAutoresizingMaskIntoConstraints="NO" id="MR3-v8-Lg7">
-                                                <rect key="frame" x="0.0" y="16" width="375" height="256"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="improve-good-gratitude" translatesAutoresizingMaskIntoConstraints="NO" id="MR3-v8-Lg7">
+                                                <rect key="frame" x="0.0" y="16" width="375" height="192"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="256" id="AZv-uL-MYF"/>
+                                                    <constraint firstAttribute="height" constant="192" id="AZv-uL-MYF"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Focus on gratitude" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7t-tM-2wX">
-                                                <rect key="frame" x="12" y="302" width="351" height="21.5"/>
+                                                <rect key="frame" x="12" y="238" width="351" height="21.5"/>
                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
                                                 <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KH3-FK-lRI">
-                                                <rect key="frame" x="12" y="333.5" width="351" height="192.5"/>
+                                                <rect key="frame" x="12" y="269.5" width="351" height="192.5"/>
                                                 <string key="text">Noticing and acknowledging the parts of an activity that feel good increases the good-feelings of that activity and opens you up to experiencing even more pleasure and happiness. 
 
 Make a habit of highlighting the good-feeling parts and train your brain to focus on the good instead of the not so good! </string>
@@ -2577,7 +2577,7 @@ Make a habit of highlighting the good-feeling parts and train your brain to focu
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rHe-Z7-LJ9">
-                                                <rect key="frame" x="16" y="546" width="91" height="31"/>
+                                                <rect key="frame" x="16" y="482" width="91" height="31"/>
                                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                                 <state key="normal" title="See Example">
                                                     <color key="titleColor" red="0.0039215686269999999" green="0.73725490199999999" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -2587,7 +2587,7 @@ Make a habit of highlighting the good-feeling parts and train your brain to focu
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h80-rl-sxg">
-                                                <rect key="frame" x="115" y="546" width="152" height="31"/>
+                                                <rect key="frame" x="115" y="482" width="152" height="31"/>
                                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                                 <state key="normal" title="See Another Example">
                                                     <color key="titleColor" red="0.0039215686269999999" green="0.73725490199999999" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -2658,28 +2658,28 @@ Make a habit of highlighting the good-feeling parts and train your brain to focu
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Opr-dS-N9C">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="449"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="385"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="improve-good-pleasure" translatesAutoresizingMaskIntoConstraints="NO" id="NaJ-tZ-1eB">
-                                                <rect key="frame" x="0.0" y="16" width="375" height="256"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="improve-good-pleasure" translatesAutoresizingMaskIntoConstraints="NO" id="NaJ-tZ-1eB">
+                                                <rect key="frame" x="0.0" y="16" width="375" height="192"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="256" id="ns7-fe-Ntf"/>
+                                                    <constraint firstAttribute="height" constant="192" id="ns7-fe-Ntf"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Identify why it’s pleasurable" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2d-I0-HvF">
-                                                <rect key="frame" x="12" y="302" width="351" height="21.5"/>
+                                                <rect key="frame" x="12" y="238" width="351" height="21.5"/>
                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
                                                 <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When an activity feels good, identify why so you can intentionally preserve those feelings, and potentially make it great!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oNg-0I-wfi">
-                                                <rect key="frame" x="12" y="333.5" width="351" height="64.5"/>
+                                                <rect key="frame" x="12" y="269.5" width="351" height="64.5"/>
                                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
                                                 <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eEh-WS-frN">
-                                                <rect key="frame" x="16" y="418" width="91" height="31"/>
+                                                <rect key="frame" x="16" y="354" width="91" height="31"/>
                                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                                 <state key="normal" title="See Example">
                                                     <color key="titleColor" red="0.0039215686269999999" green="0.73725490199999999" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -2689,7 +2689,7 @@ Make a habit of highlighting the good-feeling parts and train your brain to focu
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y1E-ea-ubO">
-                                                <rect key="frame" x="115" y="418" width="152" height="31"/>
+                                                <rect key="frame" x="115" y="354" width="152" height="31"/>
                                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                                 <state key="normal" title="See Another Example">
                                                     <color key="titleColor" red="0.0039215686269999999" green="0.73725490199999999" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -2760,29 +2760,29 @@ Make a habit of highlighting the good-feeling parts and train your brain to focu
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZcQ-6z-xXp">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="555.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="491.5"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="improve-good-prioritize" translatesAutoresizingMaskIntoConstraints="NO" id="k5n-7K-BfY">
-                                                <rect key="frame" x="0.0" y="16" width="375" height="256"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="improve-good-prioritize" translatesAutoresizingMaskIntoConstraints="NO" id="k5n-7K-BfY">
+                                                <rect key="frame" x="0.0" y="16" width="375" height="192"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="256" id="pY9-pH-TQW"/>
+                                                    <constraint firstAttribute="height" constant="192" id="pY9-pH-TQW"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prioritize feel-good activities" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7xt-1Z-bg2">
-                                                <rect key="frame" x="12" y="302" width="351" height="21.5"/>
+                                                <rect key="frame" x="12" y="238" width="351" height="21.5"/>
                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
                                                 <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qgv-We-15a">
-                                                <rect key="frame" x="12" y="333.5" width="351" height="171"/>
+                                                <rect key="frame" x="12" y="269.5" width="351" height="171"/>
                                                 <string key="text">Sometimes we neglect to prioritize good-feeling activities to make room for not so good but necessary ones, and they fade into the background. Prioritize pleasurable activities by putting them in your calendar so they don’t disappear from your life. The more you spend time on what feels good, the happier you will be. </string>
                                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
                                                 <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCc-pv-bpK">
-                                                <rect key="frame" x="16" y="524.5" width="91" height="31"/>
+                                                <rect key="frame" x="16" y="460.5" width="91" height="31"/>
                                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                                 <state key="normal" title="See Example">
                                                     <color key="titleColor" red="0.0039215686269999999" green="0.73725490199999999" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -2792,7 +2792,7 @@ Make a habit of highlighting the good-feeling parts and train your brain to focu
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gi-Tq-9gr">
-                                                <rect key="frame" x="115" y="524.5" width="152" height="31"/>
+                                                <rect key="frame" x="115" y="460.5" width="152" height="31"/>
                                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                                 <state key="normal" title="See Another Example">
                                                     <color key="titleColor" red="0.0039215686269999999" green="0.73725490199999999" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -2863,29 +2863,29 @@ Make a habit of highlighting the good-feeling parts and train your brain to focu
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pqk-TP-bHw">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="513"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="449"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="improve-good-values" translatesAutoresizingMaskIntoConstraints="NO" id="gxy-wC-Vbz">
-                                                <rect key="frame" x="0.0" y="16" width="375" height="256"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="improve-good-values" translatesAutoresizingMaskIntoConstraints="NO" id="gxy-wC-Vbz">
+                                                <rect key="frame" x="0.0" y="16" width="375" height="192"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="256" id="lJO-Jd-wjh"/>
+                                                    <constraint firstAttribute="height" constant="192" id="lJO-Jd-wjh"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bring values" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gy9-0g-B9C">
-                                                <rect key="frame" x="12" y="302" width="351" height="21.5"/>
+                                                <rect key="frame" x="12" y="238" width="351" height="21.5"/>
                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
                                                 <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RFd-GT-mlF">
-                                                <rect key="frame" x="12" y="333.5" width="351" height="128.5"/>
+                                                <rect key="frame" x="12" y="269.5" width="351" height="128.5"/>
                                                 <string key="text">Here is the good news about good-feeling activities: most parts of them align with your values. If you can find a way to bring more of your values to the parts that don’t feel great, the more joy you will have, and the less “meh” the other parts will feel. </string>
                                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
                                                 <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wsq-cA-4ic">
-                                                <rect key="frame" x="16" y="482" width="91" height="31"/>
+                                                <rect key="frame" x="16" y="418" width="91" height="31"/>
                                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                                 <state key="normal" title="See Example">
                                                     <color key="titleColor" red="0.0039215686269999999" green="0.73725490199999999" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -2895,7 +2895,7 @@ Make a habit of highlighting the good-feeling parts and train your brain to focu
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Brk-l8-gqF">
-                                                <rect key="frame" x="115" y="482" width="152" height="31"/>
+                                                <rect key="frame" x="115" y="418" width="152" height="31"/>
                                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                                 <state key="normal" title="See Another Example">
                                                     <color key="titleColor" red="0.0039215686269999999" green="0.73725490199999999" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -2966,29 +2966,29 @@ Make a habit of highlighting the good-feeling parts and train your brain to focu
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EoQ-UB-O32">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="577"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="513"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="improve-good-need" translatesAutoresizingMaskIntoConstraints="NO" id="q1B-Do-GyL">
-                                                <rect key="frame" x="0.0" y="16" width="375" height="256"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="improve-good-need" translatesAutoresizingMaskIntoConstraints="NO" id="q1B-Do-GyL">
+                                                <rect key="frame" x="0.0" y="16" width="375" height="192"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="256" id="HRq-Ih-Vr3"/>
+                                                    <constraint firstAttribute="height" constant="192" id="HRq-Ih-Vr3"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you need to feel better?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2O-TJ-bJ5">
-                                                <rect key="frame" x="12" y="302" width="351" height="21.5"/>
+                                                <rect key="frame" x="12" y="238" width="351" height="21.5"/>
                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="17"/>
                                                 <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WGn-qc-REg">
-                                                <rect key="frame" x="12" y="333.5" width="351" height="192.5"/>
+                                                <rect key="frame" x="12" y="269.5" width="351" height="192.5"/>
                                                 <string key="text">Even when an activity feels good, if you are like most people, you might spend a lot of time making sure that other people’s needs are met, neglecting your own. This can cause a downward spiral. Remember, you cannot be your best when you don’t feel your best, so identify your needs, and then give yourself permission to get your needs met. </string>
                                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
                                                 <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kkO-8e-BPW">
-                                                <rect key="frame" x="16" y="546" width="91" height="31"/>
+                                                <rect key="frame" x="16" y="482" width="91" height="31"/>
                                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                                 <state key="normal" title="See Example">
                                                     <color key="titleColor" red="0.0039215686269999999" green="0.73725490199999999" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -2998,7 +2998,7 @@ Make a habit of highlighting the good-feeling parts and train your brain to focu
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Is8-9p-LSK">
-                                                <rect key="frame" x="115" y="546" width="152" height="31"/>
+                                                <rect key="frame" x="115" y="482" width="152" height="31"/>
                                                 <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="15"/>
                                                 <state key="normal" title="See Another Example">
                                                     <color key="titleColor" red="0.0039215686269999999" green="0.73725490199999999" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
