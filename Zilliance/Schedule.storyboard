@@ -36,7 +36,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="124"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set Reminder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2RK-Q1-izJ">
-                                        <rect key="frame" x="125.5" y="31" width="124.5" height="25.5"/>
+                                        <rect key="frame" x="126" y="31" width="124.5" height="25.5"/>
                                         <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="20"/>
                                         <color key="textColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -144,13 +144,13 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use what’s here or write your own" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QwS-fk-TZA">
-                                                    <rect key="frame" x="20" y="73" width="158.5" height="13"/>
-                                                    <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="10"/>
+                                                    <rect key="frame" x="20" y="73" width="193" height="15.5"/>
+                                                    <fontDescription key="fontDescription" name="Muli-SemiBold" family="Muli" pointSize="12"/>
                                                     <color key="textColor" red="0.25882352941176467" green="0.36470588235294116" blue="0.44705882352941173" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zxa-ps-UMJ">
-                                                    <rect key="frame" x="20" y="94" width="335" height="119.5"/>
+                                                    <rect key="frame" x="20" y="96.5" width="335" height="117"/>
                                                     <connections>
                                                         <segue destination="B3s-Re-taZ" kind="embed" id="rQe-yA-qgb"/>
                                                     </connections>
@@ -602,11 +602,11 @@
                         <viewControllerLayoutGuide type="bottom" id="A6W-W7-SgH"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Hyc-hx-Ycv">
-                        <rect key="frame" x="0.0" y="0.0" width="335" height="119.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="335" height="117"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JFs-l7-pn0">
-                                <rect key="frame" x="0.0" y="0.0" width="335" height="119.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="335" height="117"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="11"/>
