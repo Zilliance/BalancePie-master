@@ -34,7 +34,7 @@ class Database {
             // Inside your application(application:didFinishLaunchingWithOptions:)
             
             let config = Realm.Configuration(
-                schemaVersion: 10,
+                schemaVersion: 11,
                 
                 migrationBlock: { migration, oldSchemaVersion in
                     if (oldSchemaVersion < 9) {
@@ -68,7 +68,7 @@ class Database {
             
             
         } catch {
-            print("realm initialization failed, aborting")
+            print("realm initialization failed, aborting", error)
         }
     }
     
