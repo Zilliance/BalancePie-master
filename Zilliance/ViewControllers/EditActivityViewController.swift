@@ -126,7 +126,7 @@ extension EditActivityViewController: UITableViewDataSource
         case (.goodFeelings?):
             let cell = tableView.dequeueReusableCell(withIdentifier: "valuesCell", for: indexPath) as! ActivityTableViewCell
             
-            let text = self.activity.goodValues.map{$0.name}.joined(separator: "\n")
+            let text = self.activity.greatValues.map{$0.name}.joined(separator: "\n")
             
             cell.titleLabel.text = self.activity.feeling.goodTitleText
             cell.subtitleLabel.text = text.characters.count > 0 ? text : tapToSelectText
@@ -366,7 +366,7 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
             
             let values = Value.greatValues
             
-            let initialIndexes = values.flatMap({self.activity.goodValues.index(of: $0) == nil ? nil : values.index(of: $0)})
+            let initialIndexes = values.flatMap({self.activity.greatValues.index(of: $0) == nil ? nil : values.index(of: $0)})
             
             self.selectValues(valueType: .great, initialIndexes: initialIndexes, completion: { (values) in
                 self.activity.removeGreatValues()
