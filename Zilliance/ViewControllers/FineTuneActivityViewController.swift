@@ -64,19 +64,19 @@ extension FineTuneItem {
     // Good
     
     static let goodGratitude: FineTuneItem = {
-        let item = FineTuneItem(title: "Gratitude", image: UIImage(named: "fine-tune-gratitude")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "good-gratitude") as! FineTuneItemViewController, type : .replace)
+        let item = FineTuneItem(title: "Gratitude", image: UIImage(named: "fine-tune-gratitude")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "good-gratitude") as! FineTuneItemViewController, type : .gratitude)
         item.viewController.item = item
         return item
     }()
     
     static let goodPleasure: FineTuneItem = {
-        let item = FineTuneItem(title: "Pleasure", image: UIImage(named: "fine-tune-pleasure")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "good-pleasure") as! FineTuneItemViewController, type : .reduce)
+        let item = FineTuneItem(title: "Pleasure", image: UIImage(named: "fine-tune-pleasure")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "good-pleasure") as! FineTuneItemViewController, type : .pleasure)
         item.viewController.item = item
         return item
     }()
     
     static let goodPrioritize: FineTuneItem = {
-        let item = FineTuneItem(title: "Prioritize", image: UIImage(named: "fine-tune-prioritize")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "good-prioritize") as! FineTuneItemViewController, type : .shift)
+        let item = FineTuneItem(title: "Prioritize", image: UIImage(named: "fine-tune-prioritize")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "good-prioritize") as! FineTuneItemViewController, type : .prioritize)
         item.viewController.item = item
         return item
     }()
@@ -96,7 +96,7 @@ extension FineTuneItem {
     // Mixed
     
     static var mixedReplace: FineTuneItem = {
-        let item = FineTuneItem(title: "Replace", image: UIImage(named: "fine-tune-replace")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "mixed-replace") as! FineTuneItemViewController, type : .gratitude)
+        let item = FineTuneItem(title: "Replace", image: UIImage(named: "fine-tune-replace")!.tinted(color: .darkBlueBackground), viewController: UIStoryboard(name: "FineTuneItems", bundle: nil).instantiateViewController(withIdentifier: "mixed-replace") as! FineTuneItemViewController, type : .replace)
         item.viewController.item = item
         return item
     }()

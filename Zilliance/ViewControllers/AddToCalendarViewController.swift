@@ -31,8 +31,7 @@ class AddToCalendarViewController: UIViewController {
         
     }
     
-    func setupView()
-    {
+    func setupView() {
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         
         
