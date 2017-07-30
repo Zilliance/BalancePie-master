@@ -7,7 +7,7 @@
 		<key>pleasure</key>
 		<array>
 			<string>Remind myself that I love yoga because of the solitude.</string>
-			<string>Remember that I love spending time with my partner because we make each other laugh. Tonight, I’m going to brainstorm for some new ways to make each other laugh, like going to stand-up comedy shows together.</string>
+			<string>Remember that I love spending time with my partner because we make each other laugh.</string>
 		</array>
 		<key>prioritize</key>
 		<array>
@@ -16,8 +16,8 @@
 		</array>
 		<key>gratitude</key>
 		<array>
-			<string>Give thanks for my family. Acknowledge the gifts and blessings by saying a silent prayer during dinner.</string>
-			<string>Call Shelly and tell her that I appreciate talking to her about my career. She always has such interesting ideas, and she seems to enjoy brainstorming with me.</string>
+			<string>Give thanks for my family. Acknowledge the gifts and blessings by saying a silent prayer during dinner</string>
+			<string>Call Shelly and tell her that I appreciate talking to her about my career.</string>
 		</array>
 		<key>giving</key>
 		<array>
@@ -26,175 +26,93 @@
 		</array>
 		<key>values</key>
 		<array>
-			<string>Bring more laughter to family time by teaching my kids a few jokes.</string>
-			<string>Get more creative at work by asking Laura if I can join the creative breakthrough meetings.</string>
-		</array>
-		<key>shift</key>
-		<array>
-			<string>-</string>
-			<string>-</string>
-		</array>
-		<key>need</key>
-		<array>
-			<string>-</string>
-			<string>-</string>
-		</array>
-		<key>reduce</key>
-		<array>
-			<string>-</string>
-			<string>-</string>
-		</array>
-		<key>replace</key>
-		<array>
-			<string>-</string>
-			<string>-</string>
+			<string>Bring more laughter to family time by teaching my kids a few jokes. </string>
+			<string>Get more creative at work by asking Laura if I can join the creative breakthrough meetings. </string>
 		</array>
 	</dict>
 	<key>🙂 Good</key>
 	<dict>
 		<key>pleasure</key>
 		<array>
-			<string>-</string>
-			<string>-</string>
+			<string>Remind myself that I love yoga because of the solitude. </string>
+			<string>Remember that I love spending time with Alex because she makes me laugh. </string>
 		</array>
 		<key>prioritize</key>
 		<array>
-			<string>-</string>
-			<string>-</string>
+			<string>Prioritize exercise by putting it in my calendar.</string>
+			<string>Prioritize meditation in the morning by making it the very first thing I do when I wake up.</string>
 		</array>
 		<key>gratitude</key>
 		<array>
-			<string>-</string>
-			<string>-</string>
-		</array>
-		<key>giving</key>
-		<array>
-			<string>-</string>
-			<string>-</string>
+			<string>Give thanks for the aspects of chores I’m grateful for. Acknowledge the gifts and blessings. </string>
+			<string>Thank Clara for collaborating on the work project with me. I love teamwork, and I think we have been a great team. </string>
 		</array>
 		<key>values</key>
 		<array>
-			<string>Bring exercise to Work by: challenging myself to walk the stairs instead of taking the elevator (and timing it). </string>
-			<string>Work is boring because I value creativity, and my work is tedious. Therefore, I’m going to challenge myself to write clever, funny, and creative emails all day at work tomorrow. That should feel better!</string>
+			<string>Bring more personal growth to the “meh” feeling parts of driving by: listening to podcasts or audio books.</string>
+			<string>When doing homework I can pair up with another student so that I can honor my values of teamwork, camaraderie and collaboration. </string>
+		</array>
+		<key>need</key>
+		<array>
+			<string>What I need to feel better about Work that’s in my control is: Eat lunch away from my desk. To meet this need, I will take this action step: Ask Mary to join me for lunch outside. </string>
+			<string>I need to feel engaged, supported and harmonious in my relationship. I am going to look for new communication models so that we can keep our spirited debates friendly.</string>
+		</array>
+	</dict>
+	<key>☹️ Lousy</key>
+	<dict>
+		<key>values</key>
+		<array>
+			<string>Bring personal growth to driving by listening to podcasts or audiobooks.</string>
+			<string>Bring freedom to exercise by taking hikes vs going to the gym.</string>
 		</array>
 		<key>shift</key>
 		<array>
-			<string>Shift my thoughts about Work by focusing on the needs it fulfills: financial stability, creativity, achievement.</string>
+			<string>Shift my thoughts about attending graduate school by focusing on the need(s) it fulfills: career, personal growth.   </string>
+			<string>Shift my thinking about going to Mark’s social gathering and focus on the needs it fulfills: supporting my spouse.</string>
+		</array>
+		<key>need</key>
+		<array>
+			<string>What I need to feel better about time with friends that’s in my control is this: More adventure. To get this need met, I will take this action step: Ask some of my friends to join me in climbing Mt. Whitney. </string>
+			<string>I need to feel like I’m impacting the world. I don’t see how I can achieve this at my job right now, so I’ll volunteer at a non-profit a few days a week after work.  </string>
+		</array>
+		<key>reduce</key>
+		<array>
+			<string>Reduce the amount of time I spend with my cousin by doing this: telling her that I have a tight schedule and will reach out when I have more time. </string>
+			<string>Reduce stressful holiday time with family by booking a shorter trip and spending the rest of the holidays with friends.   </string>
+		</array>
+		<key>replace</key>
+		<array>
+			<string>Replace watching TV with this better-feeling activity: reading a book.</string>
+			<string>Instead of watching all of the kid’s soccer practice, I am going to go next door to the coffee shop and answer emails for part of it.  </string>
+		</array>
+	</dict>
+	<key>😕 Mixed</key>
+	<dict>
+		<key>values</key>
+		<array>
+			<string>Bring exercise to Work by: challenging myself to walk the stairs instead of taking the elevator.</string>
+			<string>Bring fun to Chores by blasting music and singing while I clean. </string>
+		</array>
+		<key>shift</key>
+		<array>
+			<string>Shift my thoughts about Work by focusing on the needs it fulfills: financial stability, creativity, achievement. </string>
 			<string>When I drive to work tomorrow, remind myself that even though my job is boring, it meets my need to make money.</string>
 		</array>
 		<key>need</key>
 		<array>
 			<string>What I need to feel better about Traveling that’s in my control is: More excitement.  
-To get this need met, I will take this action step: I will allow myself the guilty pleasure of reading airport fiction while I am flying.</string>
-			<string>My relationship with my significant other feels stagnant I need more adventure. Maybe we can book a trip to go zip-lining together. If my partner doesn’t want to do this, I can ask a friend. That way, my need gets met either way.</string>
+To get this need met, I will take this action step: I will try activities I’ve never tried before.</string>
+			<string>My relationship with my significant other feels stagnant and I need more adventure. I will book a trip to go zip-lining together.</string>
 		</array>
 		<key>reduce</key>
 		<array>
-			<string>Reduce the amount of time I spend on Housework by doing this feel-good activity instead: turning on my favorite music and getting my kids to help me with the chores while we dance around this house. This will take less time, and it will add more joy and laughter.</string>
-			<string>Early bed time! Remember, I always feel crabby when I stay up late spending time on social media. Social media makes me feel bad about myself and insecure about my relationships. I would be happier if I turned the lights off an hour earlier and got an extra hour of sleep.</string>
+			<string>Reduce the amount of time I spend on Housework by doing this feel-good activity instead:  engaging my kids to help me while dancing to great music.</string>
+			<string>Spend less time on Social Media at bed time by going to sleep one hour earlier and getting more sleep.</string>
 		</array>
 		<key>replace</key>
 		<array>
-			<string>Move toward replacing work by taking an online class about entrepreneurship.</string>
-			<string>Ask my boss if I can move to a new position within the same company. No matter what, this won’t be my dream career, but at least I can start taking small steps to feel better a little at a time.</string>
-		</array>
-	</dict>
-	<key>☹️ Lousy</key>
-	<dict>
-		<key>pleasure</key>
-		<array>
-			<string>-</string>
-			<string>-</string>
-		</array>
-		<key>prioritize</key>
-		<array>
-			<string>-</string>
-			<string>-</string>
-		</array>
-		<key>gratitude</key>
-		<array>
-			<string>-</string>
-			<string>-</string>
-		</array>
-		<key>giving</key>
-		<array>
-			<string>-</string>
-			<string>-</string>
-		</array>
-		<key>values</key>
-		<array>
-			<string>Bring personal growth to chores by listening to podcasts or audiobooks.</string>
-			<string>My drive time is really frustrating. I get so mad at the traffic. That said, I value romance, so I am going to give myself permission to listen to a trashy romance novel while I drive to work.</string>
-		</array>
-		<key>shift</key>
-		<array>
-			<string>Shift my thoughts about attending graduate school by focusing on the need(s) it fulfills: career, personal growth. </string>
-			<string>I don’t like all the time I spend at my spouse’s various social events. It feels like a waste of time. However, going to the events meets my need to be a good partner and to support my spouse. I’m going to shift my thinking and focus on the strength of our relationship instead.</string>
-		</array>
-		<key>need</key>
-		<array>
-			<string>What I need to feel better about time with friends that’s in my control is: more adventure. 
-To meet this need, I will take this action step: ask some of my friends to join me in climbing Mt. Whitney. </string>
-			<string>My job feels meaningless. I need to feel like I’m giving back and impacting the world. I need to feel like I am making a contribution.  I probably cannot meet this need through work, but I could find a way to start volunteering my time at a non-profit.</string>
-		</array>
-		<key>reduce</key>
-		<array>
-			<string>Reduce the amount of time I spend with my cousin by doing this: letting her know that I have a tight schedule and will reach out to her when I have more time.</string>
-			<string>Every Christmas, I spend an entire ten days with my family, and I don’t feel good about it. In fact, I dread it. This year when I book my ticket, then, I’m going to book my trip for six days so that I can be home with friends for New Year’s Eve.</string>
-		</array>
-		<key>replace</key>
-		<array>
-			<string>Replace watching TV with this better-feeling activity: reading a book.</string>
-			<string>I feel irritated when I’m watching my kids during sports practices. They don’t listen to the coach, and I feel like a failure as a parent. Instead of watching practice, I am going to go next door to the coffee shop and answer emails.</string>
-		</array>
-	</dict>
-	<key>😕 Mixed</key>
-	<dict>
-		<key>pleasure</key>
-		<array>
-			<string>-</string>
-			<string>-</string>
-		</array>
-		<key>prioritize</key>
-		<array>
-			<string>-</string>
-			<string>-</string>
-		</array>
-		<key>gratitude</key>
-		<array>
-			<string>Give thanks for the aspects of chores I’m grateful for. Acknowledge the gifts and blessings.</string>
-			<string>This project is really time consuming and frustrating, but I also feel accomplished. I’m going to thank Clara for collaborating with me. I love teamwork, and I think we have been a great team.</string>
-		</array>
-		<key>giving</key>
-		<array>
-			<string>-</string>
-			<string>-</string>
-		</array>
-		<key>values</key>
-		<array>
-			<string>Bring more personal growth to the not-so-good feeling parts of driving by: listening to podcasts or audio books.</string>
-			<string>I love school when I get to work on projects. I don’t like school when I have to spend a lot of time with fact-finding. I know that I value teamwork, so maybe I can pair up with another student for the fact-finding missions so that I can honor my values of teamwork, camaraderie and collaboration.</string>
-		</array>
-		<key>shift</key>
-		<array>
-			<string>Shift my thoughts about the not-so-good feeling parts of Work by focusing on the need(s) it fulfills: security, creativity, achievement.</string>
-			<string>I feel mixed about my time with Shelly. She’s my sister, and she is the only person who understands me, and I have a need to be understood. But she can be so negative and judgmental! I am going to shift my thinking and remember that I have a need to be understood, and she meets this need.</string>
-		</array>
-		<key>need</key>
-		<array>
-			<string>What I need to feel better about Work that’s in my control is: Eat lunch away from my desk
-To meet this need, I will take this action step: Ask a co-worker to join me for lunch outside of the office.</string>
-			<string>I feel mixed about my relationship. I love the philosophical debates I have with my partner, but I dislike when they turn combative. I need to feel engaged, I need to feel like I am learning and growing, and both of those needs are being met. However, I also need to feel supported and in harmony. Sometimes, a spirited debate turns into a fight with my partner. I am going to look for new communication models so that we can keep our spirited debates friendly.</string>
-		</array>
-		<key>reduce</key>
-		<array>
-			<string>Reduce the amount of time I spend on the not-so-good feeling parts of School by doing this instead: Taking a break in the middle of class and sending my partner a fun-loving text.</string>
-			<string>Reminder: I have mixed feelings about spending time with Terry. On the one hand, he is creative and funny. On the other hand, he is gossipy. I can reduce the amount of time with the gossipy side of him by excusing myself to use the restroom when he starts gossiping.</string>
-		</array>
-		<key>replace</key>
-		<array>
-			<string>-</string>
-			<string>-</string>
+			<string>Move towards replacing bartending job by taking an online class about entrepreneurship. </string>
+			<string>Replace social media consumption with taking photographs.</string>
 		</array>
 	</dict>
 </dict>
