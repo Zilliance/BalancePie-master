@@ -172,7 +172,7 @@ extension ZillianceTextViewController: UITextViewDelegate {
         let currentText: String = self.textView.text
         
         let attributedString = NSMutableAttributedString(string: currentText, attributes: [
-            NSFontAttributeName : UIFont.muliSemiBold(size: 11)
+            NSFontAttributeName : UIFont.muliRegular(size: 15)
             ])
         
         for editableText in self.editableTexts {
