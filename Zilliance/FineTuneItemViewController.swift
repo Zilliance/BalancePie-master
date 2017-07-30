@@ -10,30 +10,10 @@ import UIKit
 import MZFormSheetController
 
 class FineTuneItemViewController: UIViewController {
-    @IBOutlet var scrollView: UIScrollView?
+    @IBOutlet var scrollView: UIScrollView!
     
     var zUserActivity: UserActivity?
     var item: FineTuneItem?
-    
-    @available(*,deprecated)
-    @IBOutlet var textView: UITextView?
-    @available(*,deprecated)
-    var didLayout = false
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
-    // Fix text view not starting with text at top (!)
-    // http://stackoverflow.com/questions/33979214/uitextview-text-starts-from-the-middle-and-not-the-top
-    
-    @available(*,deprecated)
-    override func viewDidLayoutSubviews() {
-        if self.didLayout == false {
-            self.textView?.setContentOffset(CGPoint.zero, animated: false)
-            self.didLayout = true
-        }
-    }
     
     // MARK: -
     
