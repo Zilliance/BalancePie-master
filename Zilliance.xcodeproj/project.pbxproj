@@ -361,16 +361,16 @@
 		8C3EA4571E92E4FD00F56DED /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				4F6FBFE91F15164100305E4E /* Plan */,
 				8C37CEFE1F0E94460083F38C /* Intro */,
+				8C4D28C51E96CFC300034A20 /* Onboarding */,
+				8C3EA4581E92E50600F56DED /* Pie */,
+				4F6FBFE91F15164100305E4E /* Plan */,
 				041C3CB81EA55C4800C52195 /* Side Menu */,
 				04647C6F1E97D82D0040CA46 /* Fine Tune Activity */,
 				8CC4C9601EC11617004DF0D5 /* Fine Tune Example */,
 				04B29A611E97AB000090E52E /* Item Selection */,
-				8C4D28C51E96CFC300034A20 /* Onboarding */,
 				8CBBBE1B1E9588E700281C3C /* Add-Edit Activity */,
 				8CBBBE161E9558A300281C3C /* Schedule */,
-				8C3EA4581E92E50600F56DED /* Pie */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
