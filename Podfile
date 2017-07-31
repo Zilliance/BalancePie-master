@@ -16,6 +16,7 @@ target 'Zilliance' do
   pod 'SVProgressHUD'
   pod 'MultiSelectSegmentedControl'
   pod 'YouTubePlayer'
+  pod 'PDFGenerator', '~> 2.0.1'
 
   target 'ZillianceTests' do
     inherit! :search_paths

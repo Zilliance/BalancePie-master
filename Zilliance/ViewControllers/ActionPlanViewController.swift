@@ -9,6 +9,7 @@
 import UIKit
 import SVProgressHUD
 import AVFoundation
+import PDFGenerator
 
 class ActionPlanViewController: UIViewController {
     
@@ -16,6 +17,8 @@ class ActionPlanViewController: UIViewController {
     fileprivate var notifications: [NotificationTableItemViewModel] = []
     
     fileprivate var audioPlayer: AVAudioPlayer?
+    
+    var showMeditationCell = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -136,6 +139,54 @@ class ActionPlanViewController: UIViewController {
         
     }
     
+    @IBAction func shareAction(_ sender: Any?) {
+
+        self.generatePDF { [unowned self] (destinationURL,error) in
+            
+            if let destinationURL = destinationURL {
+                
+                let activityViewController = UIActivityViewController(activityItems: [destinationURL] , applicationActivities: nil)
+                
+                self.present(activityViewController,
+                             animated: true,
+                             completion: nil)
+            }
+            else {
+                
+                //todo handle errors?
+                
+            }
+            
+        }
+        
+    }
+    
+    func generatePDF(completion: (URL?, Error?) -> ()) {
+        
+        let planVC = UIStoryboard(name: "Plan", bundle: nil).instantiateViewController(withIdentifier: "ActionPlanViewController") as! ActionPlanViewController
+        
+        planVC.notifications = notifications
+        planVC.showMeditationCell = false
+        planVC.view.frame = self.view.frame
+        planVC.tableView.reloadData()
+
+        planVC.tableView.layoutIfNeeded()
+
+        let dst = URL(fileURLWithPath: NSTemporaryDirectory().appending(("ActionPlan") + ".pdf"))
+        
+        // writes to Disk directly.
+        do {
+            try PDFGenerator.generate([planVC.tableView], to: dst)
+            
+            print("PDF sample saved in: " + dst.absoluteString)
+            completion(dst, nil)
+            
+        } catch (let error) {
+            print(error)
+            completion(nil, error)
+        }
+    }
+    
     private func setupAudioPlayer() {
         
         let url = URL.init(fileURLWithPath: Bundle.main.path(
@@ -171,7 +222,7 @@ class ActionPlanViewController: UIViewController {
 extension ActionPlanViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if (indexPath.section == 0) {
+        if (indexPath.section == 0 && showMeditationCell) {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "MeditationPlanCell", for: indexPath) as! MeditationPlanCell
             
@@ -193,11 +244,11 @@ extension ActionPlanViewController: UITableViewDataSource {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return self.showMeditationCell ? 2 : 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 0 ? 1 : self.notifications.count
+        return (section == 0 && self.showMeditationCell) ? 1 : self.notifications.count
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -221,7 +272,7 @@ extension ActionPlanViewController: UITableViewDataSource {
 extension ActionPlanViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if (indexPath.section == 0) {
+        if (indexPath.section == 0 && self.showMeditationCell) {
             self.playPauseMeditation()
             
             tableView.reloadRows(at: [indexPath], with: .automatic)

@@ -10,6 +10,7 @@ PODS:
     - MZFormSheetController/Core (= 3.1.3)
   - MZFormSheetController/Core (3.1.3):
     - MZAppearance
+  - PDFGenerator (2.0.1)
   - Realm (2.8.3):
     - Realm/Headers (= 2.8.3)
   - Realm/Headers (2.8.3)
@@ -24,6 +25,7 @@ DEPENDENCIES:
   - Charts
   - MultiSelectSegmentedControl
   - MZFormSheetController
+  - PDFGenerator (~> 2.0.1)
   - Realm
   - RealmSwift
   - SideMenuController
@@ -46,12 +48,13 @@ SPEC CHECKSUMS:
   MultiSelectSegmentedControl: 20e36a54b72350dcfd43b3bbdb1c1984b332d177
   MZAppearance: 0c06d3fa9cc55142f1da14bc8631fbe8fd6e19d5
   MZFormSheetController: da2df509805d757e04b052915057d8e1a338b050
+  PDFGenerator: 69cf0787767d501a10b6b85492b1f27fd23b00e8
   Realm: 3601ef091c8c499a31101d8563b991e75546cdce
   RealmSwift: 8183818515471b01a99abdd2970f8e4fd52b6f4a
   SideMenuController: b463d2b3aa58e2afe57f57a07938fa9a647894ca
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   YouTubePlayer: 028451f6772f372d4759866db99824c676ac1473
 
-PODFILE CHECKSUM: e04414e23421a1788f65fe9b9891ef8c8e4c2e85
+PODFILE CHECKSUM: 2abeeb713da8c245f8f36b1dfc1590d135898564
 
 COCOAPODS: 1.2.1
