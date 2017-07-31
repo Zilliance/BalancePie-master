@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 protocol NotificationEditor {
     func getNotification() -> Notification?
@@ -140,6 +141,12 @@ class ScheduleViewController: UIViewController {
                 if let error = error {
                     print(error)
                 } else {
+                    
+                    let alert = notification?.type == .calendar ? "Added event to calendar" : "Added reminder"
+                    
+                    SVProgressHUD.setDefaultMaskType(.black)
+                    SVProgressHUD.setMaximumDismissTimeInterval(1.0)
+                    SVProgressHUD.showSuccess(withStatus: alert)
                     
                     self.dismiss(animated: true, completion: nil)
                     
