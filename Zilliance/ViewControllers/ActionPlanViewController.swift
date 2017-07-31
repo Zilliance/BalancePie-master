@@ -136,6 +136,11 @@ class ActionPlanViewController: UIViewController {
         
     }
     
+    @IBAction func shareAction(_ sender: Any?) {
+        // TODO: @ignacio take screenshot of entire action plan table and share as pdf, same as we do in Personal Compass for the summary table
+        print("implement share action")
+    }
+    
     private func setupAudioPlayer() {
         
         let url = URL.init(fileURLWithPath: Bundle.main.path(
