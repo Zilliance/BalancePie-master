@@ -204,10 +204,10 @@ final class FineTuneActivityViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     fileprivate var currentViewController: UIViewController?
-    
     fileprivate var items: [FineTuneItem]!
-    
     fileprivate var currentIndex = 0
+    
+    fileprivate var takeActionHint: OnboardingPopover?
     
     private func fineTuneItems(for feeling: Feeling) -> [FineTuneItem] {
         switch feeling {
@@ -274,6 +274,11 @@ final class FineTuneActivityViewController: UIViewController {
         self.collectionView.selectItem(at: IndexPath(item: 0, section: 0), animated: true, scrollPosition: .centeredHorizontally)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.showTakeActionHint()
+    }
+    
     // MARK: - User Actions
     
 
@@ -322,6 +327,55 @@ final class FineTuneActivityViewController: UIViewController {
         controller.zUserActivity = self.zUserActivity
     }
 
+    // MARK: - Hints
+    
+    fileprivate func showTakeActionHint() {
+        guard !UserDefaults.standard.bool(forKey: "TakeActionHintShown") else {
+            return
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+            guard let ss = self, ss.view.window != nil else {
+                return
+            }
+            guard ss.takeActionHint == nil else {
+                return
+            }
+            
+            var location = ss.scheduleButton.center
+            location.y -= 40
+            
+            ss.takeActionHint = OnboardingPopover()
+            
+            ss.takeActionHint?.title = "Tap take action to improve your life, one step at a time. Schedule reminders and/or notifications that will help you solidify habits over time."
+            ss.takeActionHint?.hasShadow = true
+            ss.takeActionHint?.shadowColor = UIColor(white: 0, alpha: 0.4)
+            ss.takeActionHint?.arrowLocation = .centeredOnTarget
+            ss.takeActionHint?.present(in: ss.view, at: location, from: .above)
+            ss.takeActionHint?.delegate = self
+            
+            UserDefaults.standard.set(true, forKey: "TakeActionHintShown")
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 10) { [weak self] in
+                self?.dismissTakeActionHint()
+            }
+        }
+    }
+    
+    fileprivate func dismissTakeActionHint() {
+        self.takeActionHint?.dismiss()
+        self.takeActionHint = nil
+    }
+}
+
+// MARK: - Onboarding Popover Delegate
+
+extension FineTuneActivityViewController: OnboardingPopoverDelegate {
+    func didTap(popover: OnboardingPopover) {
+        if popover == self.takeActionHint {
+            self.dismissTakeActionHint()
+        }
+    }
 }
 
 extension FineTuneActivityViewController: UICollectionViewDataSource

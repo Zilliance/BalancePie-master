@@ -27,7 +27,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pie" translatesAutoresizingMaskIntoConstraints="NO" id="vKn-XH-niC">
-                                <rect key="frame" x="45" y="40" width="284" height="232"/>
+                                <rect key="frame" x="45.5" y="40" width="284" height="232"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="232" id="jxI-rN-EQb"/>
                                     <constraint firstAttribute="width" constant="284" id="wYk-M4-vi8"/>
@@ -92,7 +92,7 @@ Check the Tour and the Balance Pie video in the main menu for more info!</string
             <objects>
                 <navigationController navigationBarHidden="YES" id="g2D-Vj-zn3" customClass="CustomNavigationController" customModule="Zilliance" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Zr3-ma-SUb">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Zr3-ma-SUb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

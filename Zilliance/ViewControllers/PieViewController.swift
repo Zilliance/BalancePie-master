@@ -18,6 +18,7 @@ class PieViewController: UIViewController {
         case delete = "Delete Slice"
     }
 
+    private let learnMoreLabel = UILabel()
     private let actionPlanButton = UIButton()
     private let statusBarBackgroundView = UIView()
     private let hoursProgressView = HoursProgressView()
@@ -36,8 +37,10 @@ class PieViewController: UIViewController {
     
     @available(*, deprecated)
     private let hintView = PieHintView()
-    private var improveHint: OnboardingPopover?
-    private let learnMoreLabel = UILabel()
+    
+    fileprivate var improveHint: OnboardingPopover?
+    fileprivate var addHint: OnboardingPopover?
+    fileprivate var learnMoreHint: OnboardingPopover?
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -201,27 +204,44 @@ class PieViewController: UIViewController {
         }
     }
     
-    private func showImproveHint() {
-        if Database.shared.user.activities.count >= 4 && !UserDefaults.standard.bool(forKey: "ImproveHintShown") {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
-                guard let ss = self, ss.view.window != nil else {
-                    return
-                }
-                
-                var center = ss.view.center
-                center.y += 80
-                
-                ss.improveHint = OnboardingPopover()
-                
-                ss.improveHint?.title = "Great job building your pie! \n\nDon't forget to start improving your slices. Tap a slice and select Improve Slice."
-                ss.improveHint?.hasShadow = true
-                ss.improveHint?.shadowColor = UIColor(white: 0, alpha: 0.4)
-                ss.improveHint?.present(in: ss.view, at: center, from: .below)
-                
-                UserDefaults.standard.set(true, forKey: "ImproveHintShown")
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 10) { [weak self] in
-                    self?.dismissImproveHint()
+    // MARK: - Hints
+    
+    // Improve Hint
+    
+    fileprivate func showImproveHint() {
+        guard Database.shared.user.activities.count < 4 else {
+            return
+        }
+        guard !UserDefaults.standard.bool(forKey: "ImproveHintShown") else {
+            return
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
+            guard let ss = self, ss.view.window != nil else {
+                return
+            }
+            guard self?.learnMoreHint == nil else {
+                return
+            }
+            
+            var center = ss.view.center
+            center.y -= 100
+            center.x += 20
+            
+            ss.improveHint = OnboardingPopover()
+            
+            ss.improveHint?.title = "Tap on the slice to see how you can take concrete action to improve it. The goal is for all your activities to ultimately feel great. You can improve, update, or even delete an activity."
+            ss.improveHint?.hasShadow = true
+            ss.improveHint?.shadowColor = UIColor(white: 0, alpha: 0.4)
+            ss.improveHint?.present(in: ss.view, at: center, from: .below)
+            ss.improveHint?.delegate = self
+            
+            UserDefaults.standard.set(true, forKey: "ImproveHintShown")
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 15) { [weak self] in
+                self?.dismissImproveHint()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+                    self?.showAddHint()
                 }
             }
         }
@@ -229,10 +249,87 @@ class PieViewController: UIViewController {
     
     private func dismissImproveHint() {
         self.improveHint?.dismiss()
+        self.improveHint = nil
     }
     
-    @objc private func showLearnMoreHint() {
-        print("show learn more hint")
+    // Add Hint
+    
+    fileprivate func showAddHint() {
+        guard Database.shared.user.activities.count < 4 else {
+            return
+        }
+        guard !UserDefaults.standard.bool(forKey: "AddHintShown") else {
+            return
+        }
+        
+        guard self.view.window != nil else {
+            return
+        }
+        guard self.addHint == nil else {
+            return
+        }
+        
+        var center = self.view.center
+        center.y += 40
+        
+        self.addHint = OnboardingPopover()
+        
+        self.addHint?.title = "You can add more activities to your weekly pie by tapping the + button. Remember: All activities (slices), even the ones that already feel great, can be improved by tapping each slice."
+        self.addHint?.hasShadow = true
+        self.addHint?.shadowColor = UIColor(white: 0, alpha: 0.4)
+        self.addHint?.present(in: self.view, at: center, from: .below)
+        self.addHint?.delegate = self
+        
+        UserDefaults.standard.set(true, forKey: "AddHintShown")
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 15) { [weak self] in
+            self?.dismissAddHint()
+        }
+    }
+    
+    fileprivate func dismissAddHint() {
+        self.addHint?.dismiss()
+        self.addHint = nil
+    }
+    
+    // Learn More Hint
+    
+    @objc fileprivate func showLearnMoreHint() {
+        guard self.learnMoreHint == nil else {
+            return
+        }
+        
+        let hint = OnboardingPopover()
+        var location = self.actionPlanButton.center
+        
+        location.y -= 40
+        
+        hint.title = "Find concrete ways to improve how you feel about the activities you spend time doing. As you do this, your action plan will take shape to reflect the steps you’re committing to on a weekly basis."
+        hint.hasShadow = true
+        hint.shadowColor = UIColor(white: 0, alpha: 0.4)
+        hint.delegate = self
+        
+        hint.present(in: self.view, at: location, from: .above)
+        self.learnMoreHint = hint
+        
+        UserDefaults.standard.set(true, forKey: "LearnMoreHintShown")
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 15) { [weak self] in
+            self?.dismissLearnMoreHint()
+        }
+    }
+    
+    fileprivate func dismissLearnMoreHint() {
+        self.learnMoreHint?.dismiss()
+        self.learnMoreHint = nil
+    }
+    
+    // All Popovers
+    
+    fileprivate func dismissPopovers() {
+        self.dismissImproveHint()
+        self.dismissAddHint()
+        self.dismissLearnMoreHint()
     }
     
     // MARK: Slice Options
@@ -296,7 +393,7 @@ class PieViewController: UIViewController {
     }
     
     func plusAction() {
-        self.dismissImproveHint()
+        self.dismissPopovers()
         
         guard let addActivityVC = UIStoryboard(name: "AddCustom", bundle: nil).instantiateViewController(withIdentifier: "AddSliceViewController") as? AddSliceViewController else{
             assertionFailure()
@@ -341,7 +438,7 @@ class PieViewController: UIViewController {
     }
     
     private func selectHoursSlept() {
-        self.dismissImproveHint()
+        self.dismissPopovers()
         
         let hours = Array(1...12)
         let minutes = [0,15,30,45]
@@ -380,5 +477,21 @@ class PieViewController: UIViewController {
         picker.show()
     }
     
-    
+}
+
+extension PieViewController: OnboardingPopoverDelegate {
+    func didTap(popover: OnboardingPopover) {
+        popover.dismiss()
+        
+        if popover == self.learnMoreHint {
+            self.learnMoreHint = nil
+        } else if popover == self.improveHint {
+            self.improveHint = nil
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+                self?.showAddHint()
+            }
+        } else if popover == self.addHint {
+            self.addHint = nil
+        }
+    }
 }
