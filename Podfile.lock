@@ -3,7 +3,7 @@ PODS:
   - Charts (3.0.2):
     - Charts/Core (= 3.0.2)
   - Charts/Core (3.0.2)
-  - MultiSelectSegmentedControl (1.1.1)
+  - MultiSelectSegmentedControl (1.1.2)
   - MZAppearance (1.1.6)
   - MZFormSheetController (3.1.3):
     - MZAppearance
@@ -11,11 +11,11 @@ PODS:
   - MZFormSheetController/Core (3.1.3):
     - MZAppearance
   - PDFGenerator (2.0.1)
-  - Realm (2.8.3):
-    - Realm/Headers (= 2.8.3)
-  - Realm/Headers (2.8.3)
-  - RealmSwift (2.8.3):
-    - Realm (= 2.8.3)
+  - Realm (2.9.0):
+    - Realm/Headers (= 2.9.0)
+  - Realm/Headers (2.9.0)
+  - RealmSwift (2.9.0):
+    - Realm (= 2.9.0)
   - SideMenuController (0.2.4)
   - SVProgressHUD (2.1.2)
   - YouTubePlayer (0.4.0)
@@ -45,12 +45,12 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   ActionSheetPicker-3.0: d11a4c12c6aaf704b8a3f56d179198c99f3e41e6
   Charts: 236d6ccdd0ce6feae151d89e829a7397381a21fd
-  MultiSelectSegmentedControl: 20e36a54b72350dcfd43b3bbdb1c1984b332d177
+  MultiSelectSegmentedControl: 24844861c16dd6e3c36a80043494daa7855494f1
   MZAppearance: 0c06d3fa9cc55142f1da14bc8631fbe8fd6e19d5
   MZFormSheetController: da2df509805d757e04b052915057d8e1a338b050
   PDFGenerator: 69cf0787767d501a10b6b85492b1f27fd23b00e8
-  Realm: 3601ef091c8c499a31101d8563b991e75546cdce
-  RealmSwift: 8183818515471b01a99abdd2970f8e4fd52b6f4a
+  Realm: f14ab1673502559cb16592ddb8f383c474c13e05
+  RealmSwift: 16ad2c187042c4934f49750375582fe508627dcb
   SideMenuController: b463d2b3aa58e2afe57f57a07938fa9a647894ca
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   YouTubePlayer: 028451f6772f372d4759866db99824c676ac1473
