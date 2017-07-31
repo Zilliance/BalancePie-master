@@ -772,7 +772,7 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUW-gH-dsV">
                                                 <rect key="frame" x="12" y="269.5" width="351" height="213.5"/>
-                                                <string key="text">Technically, you don’t “have” to do anything. The only reason we do the things we say we “have” to do is because in some way, they meet our needs and align with our values. When we focus on “having” to do something, we reinforce our lousy feelings. If you identify why you participate in the activities that feel lousy, and shift your thinking in a more positive direction, your feelings will shift accordingly. </string>
+                                                <string key="text">Technically, you don’t “have” to do anything. The only reason we do the things we say we “have” to do is because in some way, they meet our needs and align with our values. When we focus on “having” to do something, we reinforce our lousy feelings. If you identify why you participate in the activities that feel lousy and shift your thinking in a more positive direction, your feelings will shift accordingly. </string>
                                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
                                                 <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -875,7 +875,7 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fbu-qu-WTm">
                                                 <rect key="frame" x="12" y="269.5" width="351" height="128.5"/>
-                                                <string key="text">Usually, activities feel lousy because they fail to engage a value, or because they violate a value. If you can pinpoint a way to engage a value, you can make the lousy-feeling activity feel a little better. The more values you can add, the more joy you will have. </string>
+                                                <string key="text">Usually, activities feel lousy because they fail to engage a value or because they violate a value. If you can pinpoint a way to engage a value, you can make the lousy-feeling activity feel a little better. The more values you can add, the more joy you will have. </string>
                                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
                                                 <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1912,7 +1912,7 @@ Make a habit of highlighting the good-feeling parts and train your brain to focu
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RFd-GT-mlF">
                                                 <rect key="frame" x="12" y="269.5" width="351" height="128.5"/>
-                                                <string key="text">Here is the good news about good-feeling activities: most parts of them align with your values. If you can find a way to bring more of your values to the parts that don’t feel great, the more joy you will have, and the less “meh” the other parts will feel. </string>
+                                                <string key="text">Here is the good news about good-feeling activities: most parts of them align with your values. If you can find a way to bring more of your values to the parts that don’t feel great, the more joy you will have and the less “meh” the other parts will feel. </string>
                                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="17"/>
                                                 <color key="textColor" red="0.1176470588" green="0.16862745100000001" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>

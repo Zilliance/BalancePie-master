@@ -290,7 +290,10 @@ extension ActionPlanViewController: UITableViewDataSource {
             return cell
             
         }
-        else {
+        else if self.notifications.count == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PlaceholderCell", for: indexPath)
+            return cell
+        } else {
             
             let item = notifications[indexPath.row]
             
@@ -302,16 +305,19 @@ extension ActionPlanViewController: UITableViewDataSource {
         
     }
     
+    // First section: mediation cell unless not showing it for pdf generation
+    // Second section: notification cells or placeholder if we have none
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return self.showMeditationCell ? 2 : 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (section == 0 && self.showMeditationCell) ? 1 : self.notifications.count
+        return (section == 0 && self.showMeditationCell) ? 1 : ( self.notifications.count > 0 ? self.notifications.count : 1)
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return indexPath.section == 1
+        return indexPath.section == 1 && self.notifications.count > 0
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
@@ -333,9 +339,11 @@ extension ActionPlanViewController: UITableViewDelegate {
         
         if (indexPath.section == 0 && self.showMeditationCell) {
             self.playPauseMeditation()
-            
             tableView.reloadRows(at: [indexPath], with: .automatic)
-
+            return
+        }
+        
+        guard self.notifications.count > 0 else {
             return
         }
 
