@@ -10,6 +10,10 @@ import UIKit
 
 private let OnboardingScreenMargin = CGFloat(5)
 
+protocol OnboardingPopoverDelegate {
+    func didTap(popover: OnboardingPopover)
+}
+
 class OnboardingPopover: UIView {
     enum Direction {
         case above
@@ -41,6 +45,8 @@ class OnboardingPopover: UIView {
     fileprivate var label = UILabel()
     
     // Values should be set before presenting popover
+    
+    var delegate: OnboardingPopoverDelegate?
     
     var arrowLocation = ArrowLocation.centeredOnPopover
     var margins = UIEdgeInsets(top: 16, left: 20, bottom: 16, right: 20)
@@ -158,6 +164,12 @@ class OnboardingPopover: UIView {
         self.label.rightAnchor.constraint(equalTo: self.roundedRectView.rightAnchor, constant: -self.margins.right).isActive = true
         self.label.topAnchor.constraint(equalTo: self.roundedRectView.topAnchor, constant: self.margins.top).isActive = true
         self.label.bottomAnchor.constraint(equalTo: self.roundedRectView.bottomAnchor, constant: -self.margins.bottom).isActive = true
+        
+        // Gesture Recognizer
+        
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(didTap(_:)))
+        self.isUserInteractionEnabled = true
+        self.addGestureRecognizer(recognizer)
     }
     
     // MARK: - Layout
@@ -368,5 +380,9 @@ class OnboardingPopover: UIView {
         }
         
         self.arrowView.transform = CGAffineTransform.identity.translatedBy(x: transX, y: transY).rotated(by: rotation)
+    }
+    
+    @IBAction func didTap(_ sender: Any?) {
+        self.delegate?.didTap(popover: self)
     }
 }

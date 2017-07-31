@@ -16,10 +16,15 @@ class ActionPlanViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     fileprivate var notifications: [NotificationTableItemViewModel] = []
     
+    fileprivate var actionSheetHint: OnboardingPopover?
     fileprivate var audioPlayer: AVAudioPlayer?
     
     var showMeditationCell = true
 
+    deinit {
+        self.stopAudio()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,6 +38,11 @@ class ActionPlanViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.notifications = NotificationsManager.sharedInstance.getNextNotifications()
         self.tableView.reloadData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.showActionSheetHint()
     }
 
     override func didReceiveMemoryWarning() {
@@ -213,10 +223,59 @@ class ActionPlanViewController: UIViewController {
         }
     }
     
-    deinit {
-        self.stopAudio()
+    // MARK: - Hints
+    
+    fileprivate func showActionSheetHint() {
+        guard !UserDefaults.standard.bool(forKey: "ActionSheetHintShown") else {
+            return
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
+            guard let ss = self, ss.view.window != nil else {
+                return
+            }
+            guard let view = self?.navigationItem.rightBarButtonItem?.value(forKey: "view") as? UIView, let superview = view.superview else {
+                return
+            }
+            guard ss.actionSheetHint == nil else {
+                return
+            }
+            
+            let viewFrame = ss.view.convert(view.frame, from: superview)
+            var center = CGPoint(x: viewFrame.midX, y: viewFrame.midY)
+            center.y += 10
+            
+            ss.actionSheetHint = OnboardingPopover()
+            
+            ss.actionSheetHint?.title = "Tap to print, email or text your action plan. Having a list of reminders at a glance improves your chances of forming good habits and improving your life."
+            ss.actionSheetHint?.hasShadow = true
+            ss.actionSheetHint?.shadowColor = UIColor(white: 0, alpha: 0.4)
+            ss.actionSheetHint?.arrowLocation = .centeredOnTarget
+            ss.actionSheetHint?.present(in: ss.view, at: center, from: .below)
+            ss.actionSheetHint?.delegate = self
+            
+            UserDefaults.standard.set(true, forKey: "ActionSheetHintShown")
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 8) { [weak self] in
+                self?.dismissActionSheetHint()
+            }
+        }
     }
     
+    fileprivate func dismissActionSheetHint() {
+        self.actionSheetHint?.dismiss()
+        self.actionSheetHint = nil
+    }
+}
+
+// MARK: - Onboarding Popover Delegate
+
+extension ActionPlanViewController: OnboardingPopoverDelegate {
+    func didTap(popover: OnboardingPopover) {
+        if popover == self.actionSheetHint {
+            self.dismissActionSheetHint()
+        }
+    }
 }
 
 extension ActionPlanViewController: UITableViewDataSource {
