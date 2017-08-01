@@ -114,6 +114,7 @@ class ScheduleViewController: UIViewController {
         currentViewController = controller
     }
     
+    // MARK: - User Action
 
     @IBAction func notifyAction(_ sender: UIButton) {
         
@@ -135,7 +136,9 @@ class ScheduleViewController: UIViewController {
                 self.showAlert(message: "Please allow the app to send notifications", title: nil)
                 return
             }
-        
+            
+            self.notifyMeButton.isEnabled = false
+            
             NotificationsManager.sharedInstance.storeNotification(notification: notification) { (notification, error) in
                 
                 if let error = error {
@@ -151,7 +154,6 @@ class ScheduleViewController: UIViewController {
                     self.dismiss(animated: true, completion: nil)
                     
                 }
-                
             }
         }
         
