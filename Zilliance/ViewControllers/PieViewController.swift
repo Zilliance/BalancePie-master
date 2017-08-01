@@ -35,9 +35,6 @@ class PieViewController: UIViewController {
         ]
     )
     
-    @available(*, deprecated)
-    private let hintView = PieHintView()
-    
     fileprivate var improveHint: OnboardingPopover?
     fileprivate var addHint: OnboardingPopover?
     fileprivate var learnMoreHint: OnboardingPopover?
@@ -103,30 +100,38 @@ class PieViewController: UIViewController {
         self.legend2.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
         self.legend2.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
         
-        // Hint View
-        
-//        self.hintView.translatesAutoresizingMaskIntoConstraints = false
-//        self.view.addSubview(self.hintView)
-//        self.hintView.topAnchor.constraint(equalTo: self.legend2.bottomAnchor, constant: UIDevice.isSmallerThaniPhone6 ? 10 : 20).isActive = true
-//        self.hintView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
-//        self.hintView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
-        
         // Learn More Label
         
-        self.learnMoreLabel.font = .muliItalic(size: 14)
-        self.learnMoreLabel.textColor = .lightBlueBackground
-        self.learnMoreLabel.text = "Learn More"
+        let text = "Find concrete ways to improve how you feel about your activities.  "
+        let learn = "Learn more."
+        
+        let textAttr = NSAttributedString(string: text, attributes: [
+            NSFontAttributeName: UIFont.muliItalic(size: UIDevice.isSmallerThaniPhone6 ? 10 : 14),
+            NSForegroundColorAttributeName: UIColor.darkBlueBackground
+            ])
+        
+        let learnAttr = NSAttributedString(string: learn, attributes: [
+            NSFontAttributeName: UIFont.muliItalic(size: UIDevice.isSmallerThaniPhone6 ? 10 : 14),
+            NSForegroundColorAttributeName: UIColor.lightBlueBackground
+            ])
+        
+        let attrString = NSMutableAttributedString()
+        attrString.append(textAttr)
+        attrString.append(learnAttr)
+        
+        self.learnMoreLabel.attributedText = attrString
+        self.learnMoreLabel.numberOfLines = 0
+        
         self.learnMoreLabel.textAlignment = .center
         self.learnMoreLabel.isUserInteractionEnabled = true
+        self.learnMoreLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showLearnMoreHint)))
         
         self.learnMoreLabel.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(self.learnMoreLabel)
         
-        self.learnMoreLabel.topAnchor.constraint(equalTo: self.legend2.bottomAnchor, constant: UIDevice.isSmallerThaniPhone6 ? 10 : 20).isActive = true
-        self.learnMoreLabel.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
-        self.learnMoreLabel.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
-        
-        self.learnMoreLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showLearnMoreHint)))
+        self.learnMoreLabel.topAnchor.constraint(equalTo: self.legend2.bottomAnchor, constant: UIDevice.isSmallerThaniPhone6 ? 4 : 20).isActive = true
+        self.learnMoreLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 20).isActive = true
+        self.learnMoreLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20).isActive = true
         
         // Progress View
         

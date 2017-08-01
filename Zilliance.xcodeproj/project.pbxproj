@@ -106,6 +106,7 @@
 		E35668521E8C15BA00ED81D9 /* ZillianceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35668511E8C15BA00ED81D9 /* ZillianceUITests.swift */; };
 		E3703C561EB3DA960004C5BD /* AboutCompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3703C551EB3DA960004C5BD /* AboutCompanyViewController.swift */; };
 		E3703C581EB3E8F80004C5BD /* PlacholderSidebarItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3703C571EB3E8F80004C5BD /* PlacholderSidebarItemViewController.swift */; };
+		E37E971A1F2FDEEF00F048FF /* FineTuneItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37E97191F2FDEEF00F048FF /* FineTuneItem.swift */; };
 		E38910E51EA698A5000E1511 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38910E41EA698A5000E1511 /* UIViewController+Alerts.swift */; };
 		E39915DB1EC22EC500E9EE26 /* OnboardingPopover.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39915DA1EC22EC500E9EE26 /* OnboardingPopover.swift */; };
 		E39915DD1EC23BD700E9EE26 /* zilliance terms of service.html in Resources */ = {isa = PBXBuildFile; fileRef = E39915DC1EC23BD700E9EE26 /* zilliance terms of service.html */; };
@@ -241,6 +242,7 @@
 		E35668531E8C15BA00ED81D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3703C551EB3DA960004C5BD /* AboutCompanyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutCompanyViewController.swift; sourceTree = "<group>"; };
 		E3703C571EB3E8F80004C5BD /* PlacholderSidebarItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacholderSidebarItemViewController.swift; sourceTree = "<group>"; };
+		E37E97191F2FDEEF00F048FF /* FineTuneItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FineTuneItem.swift; sourceTree = "<group>"; };
 		E38910E41EA698A5000E1511 /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+Alerts.swift"; path = "Extensions/UIViewController+Alerts.swift"; sourceTree = "<group>"; };
 		E39915DA1EC22EC500E9EE26 /* OnboardingPopover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPopover.swift; sourceTree = "<group>"; };
 		E39915DC1EC23BD700E9EE26 /* zilliance terms of service.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "zilliance terms of service.html"; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 			children = (
 				04647C701E97D8450040CA46 /* FineTuneActivity.storyboard */,
 				8C4EAE1A1EA15B2F00D800E4 /* FineTuneItems.storyboard */,
+				E37E97191F2FDEEF00F048FF /* FineTuneItem.swift */,
 				04647C741E97D85C0040CA46 /* FineTuneActivityViewController.swift */,
 				E3E80A461EA17CBB004A44AF /* FineTuneItemViewController.swift */,
 			);
@@ -923,6 +926,7 @@
 				0469D0AE1E944B700024EA39 /* UserActivity.swift in Sources */,
 				4F6FC0781F1656D800305E4E /* Date+Extensions.swift in Sources */,
 				8C3EA47D1E92F0F100F56DED /* LocalNotificationsHelper.swift in Sources */,
+				E37E971A1F2FDEEF00F048FF /* FineTuneItem.swift in Sources */,
 				4F6FBFEF1F15213B00305E4E /* ActionPlanCell.swift in Sources */,
 				04B29A671E97AB680090E52E /* PartialSizePresentationController.swift in Sources */,
 				8C3EA4611E92E7BF00F56DED /* Database.swift in Sources */,
