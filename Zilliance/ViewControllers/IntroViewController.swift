@@ -36,12 +36,12 @@ class IntroViewController: UIViewController {
         let attrText = self.textView.attributedText.mutableCopy() as! NSMutableAttributedString
         
         let tourAttributes: [String: Any] = [
-            NSFontAttributeName: UIFont.muliItalic(size: 13),
+            NSFontAttributeName: UIFont.muliItalic(size: 14),
             NSForegroundColorAttributeName: UIColor.lightBlueBackground,
             NSLinkAttributeName: tourURL
         ]
         let videoAttributes: [String: Any] = [
-            NSFontAttributeName: UIFont.muliItalic(size: 13),
+            NSFontAttributeName: UIFont.muliItalic(size: 14),
             NSForegroundColorAttributeName: UIColor.lightBlueBackground,
             NSLinkAttributeName: videoURL
         ]
