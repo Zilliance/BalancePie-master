@@ -23,7 +23,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCalendarsUsageDescription</key>
-	<string>Zilliance would like to add a reminder to your calendar</string>
+	<string>Reminders to improve a slice are added to your calendar and appear in your action plan</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Muli-Black.ttf</string>
