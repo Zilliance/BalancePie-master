@@ -330,6 +330,17 @@ extension LocalNotificationsHelper: NotificationStore {
         
     }
     
+    static var dateFormatterIdentifier: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM.yy"
+        return dateFormatter
+    }()
+    
+    private func formatDateIdentifier(date: Date) -> String {
+        let formatter = LocalNotificationsHelper.dateFormatterIdentifier
+        return formatter.string(from: date)
+    }
+    
     func scheduleNextMonth(notification: Notification, completion: ((Notification?, Error?) -> ())?) {
         
         guard var startDate = notification.startDate else {
@@ -346,8 +357,9 @@ extension LocalNotificationsHelper: NotificationStore {
         
         var anError: Error? = nil
                 
-        let alreadyScheduledDates = Array(notification.scheduledInstances.flatMap {
-            Int($0.date?.timeIntervalSince1970 ?? 0)
+        let alreadyScheduledDates: [String] = Array(notification.scheduledInstances.flatMap {
+            guard let date = $0.date else { return nil }
+            return self.formatDateIdentifier(date: date)
         })
         
         let calendar = NSCalendar.current
@@ -369,7 +381,9 @@ extension LocalNotificationsHelper: NotificationStore {
                 previousDate = nextDate
             }
             
-            guard alreadyScheduledDates.index(of: Int(nextDate.timeIntervalSince1970)) == nil else {
+            let dateIdentifier = self.formatDateIdentifier(date: nextDate)
+            
+            guard alreadyScheduledDates.index(of: dateIdentifier) == nil else {
                 continue
             }
             
@@ -378,7 +392,7 @@ extension LocalNotificationsHelper: NotificationStore {
             let newNotificationId = UUID().uuidString
             
             LocalNotificationsHelper.scheduleLocalNotification(title: notification.title, body: notification.body, date: nextDate, identifier: newNotificationId) { (error) in
-                
+
                 defer {
                     group.leave()
                 }
