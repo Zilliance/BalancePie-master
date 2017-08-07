@@ -36,6 +36,20 @@ final class LocalNotificationsHelper: NSObject
         
     }
     
+    func getNotifications() {
+        if #available(iOS 10.0, *) {
+            let center = UNUserNotificationCenter.current()
+            
+            center.getPendingNotificationRequests(completionHandler: { (notifications) in
+                print(notifications)
+            })
+        } else {
+            
+            print(UIApplication.shared.scheduledLocalNotifications ?? "[]")
+            
+        }
+    }
+    
     func requestAuthorization(inViewController viewController: UIViewController, completion: @escaping (Bool) -> ())
     {
         

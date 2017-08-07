@@ -25,7 +25,12 @@ final class NotificationsManager: NotificationStore {
     var needsNotificationsReset: Bool {
         let currentVersionNotifications = 1 // user defaults returns 0 when not found
         let previousVersion = UserDefaults.standard.integer(forKey: "previousVersionNotification")
+
+        #if DEBUG
+        localNotifications.getNotifications()
+        #endif
         
+        // user defaults returns 0 when not found
         if previousVersion != 0 &&  previousVersion == currentVersionNotifications {
         
             return false
@@ -47,14 +52,12 @@ final class NotificationsManager: NotificationStore {
                 return notification.type == .local
             }
             
-            if (needsNotificationsReset) {
+            if (self.needsNotificationsReset) {
                 localNotifications.removePendingNotifications()
-                if (needsNotificationsReset) {
                     
-                    try? realmDB.write {
-                        for notification in localStoredNotifications {
-                            notification.scheduledInstances.removeAll()
-                        }
+                try? realmDB.write {
+                    for notification in localStoredNotifications {
+                        notification.scheduledInstances.removeAll()
                     }
                 }
             }
