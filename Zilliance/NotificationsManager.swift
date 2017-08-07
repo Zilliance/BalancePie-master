@@ -22,10 +22,41 @@ final class NotificationsManager: NotificationStore {
     let localNotifications = LocalNotificationsHelper.shared
     let calendarNotifications = CalendarHelper.shared
     
+    var needsNotificationsReset: Bool {
+        let currentVersionNotifications = 1 // user defaults returns 0 when not found
+        let previousVersion = UserDefaults.standard.integer(forKey: "previousVersionNotification")
+        
+        if previousVersion != 0 &&  previousVersion == currentVersionNotifications {
+        
+            return false
+            
+        } else {
+            
+            UserDefaults.standard.set(currentVersionNotifications, forKey: "previousVersionNotification")
+            UserDefaults.standard.synchronize()
+            
+            return true
+            
+        }
+        
+    }
+    
     var realmDB: Realm! {
         didSet {
             let localStoredNotifications = realmDB.objects(Notification.self).filter { (notification) -> Bool in
                 return notification.type == .local
+            }
+            
+            if (needsNotificationsReset) {
+                localNotifications.removePendingNotifications()
+                if (needsNotificationsReset) {
+                    
+                    try? realmDB.write {
+                        for notification in localStoredNotifications {
+                            notification.scheduledInstances.removeAll()
+                        }
+                    }
+                }
             }
             
             var newNotifications: [Notification] = []
