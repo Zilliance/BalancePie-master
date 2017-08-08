@@ -36,6 +36,20 @@ final class LocalNotificationsHelper: NSObject
         
     }
     
+    func getNotifications() {
+        if #available(iOS 10.0, *) {
+            let center = UNUserNotificationCenter.current()
+            
+            center.getPendingNotificationRequests(completionHandler: { (notifications) in
+                print(notifications)
+            })
+        } else {
+            
+            print(UIApplication.shared.scheduledLocalNotifications ?? "[]")
+            
+        }
+    }
+    
     func requestAuthorization(inViewController viewController: UIViewController, completion: @escaping (Bool) -> ())
     {
         
@@ -115,6 +129,18 @@ final class LocalNotificationsHelper: NSObject
     {
         waitingAuthorizationCompletion?(authorized)
     }
+
+    
+    func removePendingNotifications() {
+        if #available(iOS 10.0, *) {
+            let center = UNUserNotificationCenter.current()
+            center.removeAllPendingNotificationRequests()
+
+        } else {
+            // Fallback on earlier versions
+            UIApplication.shared.cancelAllLocalNotifications()
+        }
+    }
     
     static func scheduleLocalNotification(title: String, body: String, date: Date, identifier: String, completion: ((Error?) -> ())? = nil)
     {
@@ -129,7 +155,7 @@ final class LocalNotificationsHelper: NSObject
             content.body = body
             content.sound = UNNotificationSound.default()
             
-            let dateComponents = Calendar.current.dateComponents([.day, .hour, .minute], from: date)
+            let dateComponents = Calendar.current.dateComponents([.day, .hour, .minute, .month, .year], from: date)
             let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
             
             let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
