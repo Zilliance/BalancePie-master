@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import ZillianceShared
 
 protocol NotificationTableViewModel {
     
@@ -15,8 +16,8 @@ protocol NotificationTableViewModel {
 }
 
 struct NotificationTableItemViewModel {
-    var type: Notification.NotificationType = .local
-    var recurrence: Notification.Recurrence = .none
+    var type: ZillianceShared.Notification.NotificationType = .local
+    var recurrence: ZillianceShared.Notification.Recurrence = .none
     var title: String = ""
     var body: String = ""
     var nextDate: Date!

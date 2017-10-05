@@ -9,6 +9,7 @@
 import UIKit
 import SVProgressHUD
 import MZFormSheetController
+import ZillianceShared
 
 struct TextViewContent {
     let userActivity: UserActivity
@@ -20,7 +21,7 @@ class AddToCalendarViewController: UIViewController {
     @IBOutlet weak var datePicker: UIDatePicker!
     
     fileprivate var zillianceTextViewController: ZillianceTextViewController!
-    var preloadedNotification: Notification?
+    var preloadedNotification: ZillianceShared.Notification?
     var textViewContent: TextViewContent?
 
     fileprivate var pickerDates: [Date] = []
@@ -135,7 +136,7 @@ class AddToCalendarViewController: UIViewController {
 
 extension AddToCalendarViewController: NotificationEditor {
 
-    func getNotification() -> Notification? {
+    func getNotification() -> ZillianceShared.Notification? {
         
         let notification = (self.preloadedNotification?.detached()) ?? Notification()
         

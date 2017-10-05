@@ -8,9 +8,10 @@
 
 import UIKit
 import SVProgressHUD
+import ZillianceShared
 
 protocol NotificationEditor {
-    func getNotification() -> Notification?
+    func getNotification() -> ZillianceShared.Notification?
 }
 
 class ScheduleViewController: UIViewController {
@@ -18,7 +19,7 @@ class ScheduleViewController: UIViewController {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var notifyMeButton: UIButton!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
-    var preloadedNotification: Notification?
+    var preloadedNotification: ZillianceShared.Notification?
     
     fileprivate enum ViewControllerSegments: Int {
         case notification = 0

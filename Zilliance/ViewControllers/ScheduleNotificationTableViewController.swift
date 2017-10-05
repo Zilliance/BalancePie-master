@@ -9,6 +9,7 @@
 import UIKit
 import MultiSelectSegmentedControl
 import MZFormSheetController
+import ZillianceShared
 
 class ScheduleNotificationTableViewController: UITableViewController {
     
@@ -18,7 +19,7 @@ class ScheduleNotificationTableViewController: UITableViewController {
     @IBOutlet weak var weeklySwitch: UISwitch!
     @IBOutlet weak var daysSegment: MultiSelectSegmentedControl!
     
-    var preloadedNotification: Notification?
+    var preloadedNotification: ZillianceShared.Notification?
     
     var textViewContent: TextViewContent?
     
@@ -127,7 +128,7 @@ class ScheduleNotificationTableViewController: UITableViewController {
 }
 
 extension ScheduleNotificationTableViewController: NotificationEditor {
-    func getNotification() -> Notification? {
+    func getNotification() -> ZillianceShared.Notification? {
         
         guard let selectedTime = selectedTime, daysSegment.selectedSegmentTitles.count > 0 else {
             return nil

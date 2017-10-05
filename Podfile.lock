@@ -1,8 +1,26 @@
 PODS:
   - ActionSheetPicker-3.0 (2.2.0)
+  - Amplitude-iOS (3.14.1)
+  - Answers (1.3.6):
+    - Fabric (~> 1.6.3)
   - Charts (3.0.2):
     - Charts/Core (= 3.0.2)
   - Charts/Core (3.0.2)
+  - Fabric (1.6.13)
+  - Firebase/Core (3.17.0):
+    - FirebaseAnalytics (= 3.9.0)
+    - FirebaseCore (= 3.6.0)
+  - FirebaseAnalytics (3.9.0):
+    - FirebaseCore (~> 3.6)
+    - FirebaseInstanceID (~> 1.0)
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseCore (3.6.0):
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseInstanceID (1.0.10):
+    - FirebaseCore (~> 3.6)
+  - GoogleToolboxForMac/Defines (2.1.1)
+  - GoogleToolboxForMac/NSData+zlib (2.1.1):
+    - GoogleToolboxForMac/Defines (= 2.1.1)
   - MultiSelectSegmentedControl (1.1.2)
   - MZAppearance (1.1.6)
   - MZFormSheetController (3.1.3):
@@ -19,10 +37,19 @@ PODS:
   - SideMenuController (0.2.4)
   - SVProgressHUD (2.1.2)
   - YouTubePlayer (0.4.0)
+  - ZillianceShared (0.1.3):
+    - PDFGenerator
+    - Realm
+    - RealmSwift
+    - SVProgressHUD
 
 DEPENDENCIES:
   - ActionSheetPicker-3.0 (from `https://github.com/ricardohg/ActionSheetPicker-3.0.git`, commit `1bb467539758e0bac35ba7b24677999a4616f6d8`)
+  - Amplitude-iOS (~> 3.14.1)
+  - Answers
   - Charts
+  - Fabric
+  - Firebase/Core (~> 3.0)
   - MultiSelectSegmentedControl
   - MZFormSheetController
   - PDFGenerator (~> 2.0.1)
@@ -31,20 +58,34 @@ DEPENDENCIES:
   - SideMenuController
   - SVProgressHUD
   - YouTubePlayer
+  - ZillianceShared (from `https://github.com/ScalablePath/ZillianceShared.git`)
 
 EXTERNAL SOURCES:
   ActionSheetPicker-3.0:
     :commit: 1bb467539758e0bac35ba7b24677999a4616f6d8
     :git: https://github.com/ricardohg/ActionSheetPicker-3.0.git
+  ZillianceShared:
+    :git: https://github.com/ScalablePath/ZillianceShared.git
 
 CHECKOUT OPTIONS:
   ActionSheetPicker-3.0:
     :commit: 1bb467539758e0bac35ba7b24677999a4616f6d8
     :git: https://github.com/ricardohg/ActionSheetPicker-3.0.git
+  ZillianceShared:
+    :commit: e7e6370268f5b0d466f9c9f74103b803c2eb9834
+    :git: https://github.com/ScalablePath/ZillianceShared.git
 
 SPEC CHECKSUMS:
   ActionSheetPicker-3.0: d11a4c12c6aaf704b8a3f56d179198c99f3e41e6
+  Amplitude-iOS: 4a3c8807b2ea5369dc11e87e23825bff01e5a922
+  Answers: ef6af16bc75366334db6323a87f37ea54e2dab71
   Charts: 236d6ccdd0ce6feae151d89e829a7397381a21fd
+  Fabric: 2fb5676bc811af011a04513451f463dac6803206
+  Firebase: 4b66b5b59c43edac745b87f0c87e42cdd0279c13
+  FirebaseAnalytics: e5fe8486efc01bec33f6bf82e2fa9fce4b124052
+  FirebaseCore: 9691ee2ade70c098d7cf92440f4303f16d83ca75
+  FirebaseInstanceID: b9eedd6846fb5e1f0f7279e1deaa7a7e4cf8392e
+  GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   MultiSelectSegmentedControl: 24844861c16dd6e3c36a80043494daa7855494f1
   MZAppearance: 0c06d3fa9cc55142f1da14bc8631fbe8fd6e19d5
   MZFormSheetController: da2df509805d757e04b052915057d8e1a338b050
@@ -54,7 +95,8 @@ SPEC CHECKSUMS:
   SideMenuController: b463d2b3aa58e2afe57f57a07938fa9a647894ca
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   YouTubePlayer: 028451f6772f372d4759866db99824c676ac1473
+  ZillianceShared: a448660bb6d06f4ea053e8705be8371eb507add1
 
-PODFILE CHECKSUM: 2abeeb713da8c245f8f36b1dfc1590d135898564
+PODFILE CHECKSUM: a852a5792f757c5e003196fe77d15537dde629d1
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.3.1
