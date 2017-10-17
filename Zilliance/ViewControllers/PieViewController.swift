@@ -11,7 +11,7 @@ import SideMenuController
 import ActionSheetPicker_3_0
 import ZillianceShared
 
-class PieViewController: UIViewController {
+class PieViewController: AnalyzedViewController {
     
     private enum SliceOptions: String {
         case edit = "Update Slice"
@@ -364,12 +364,14 @@ class PieViewController: UIViewController {
     }
     
     private func delete(_ userActivity: UserActivity) {
+        
         let title = "Delete \(userActivity.activity!.name) Slice"
         let message = "Deleting this slice will remove it from your pie"
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Delete Slice", style: .destructive) { _ in
+            Analytics.shared.send(event: BalancePieAnalytics.BalancePieEvent.didDeleteSlice)
             NotificationsManager.sharedInstance.removeNotifications(withAssociatedObjectId: userActivity.id)
             Database.shared.user.remove(userActivity: userActivity)
             self.loadData()

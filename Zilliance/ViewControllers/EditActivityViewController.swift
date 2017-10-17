@@ -355,6 +355,8 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
         
         //activity name
         
+        Analytics.shared.send(event: BalancePieAnalytics.BalancePieEvent.didEditSlice)
+        
         switch TableSection(rawValue: indexPath.section) {
         case .duration?:
             self.selectDuration()

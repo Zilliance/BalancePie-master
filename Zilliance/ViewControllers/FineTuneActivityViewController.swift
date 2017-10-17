@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ZillianceShared
 
 // MARK: -
 
@@ -47,7 +48,7 @@ final class FineTuneItemCell: UICollectionViewCell {
 
 // MARK: -
 
-final class FineTuneActivityViewController: UIViewController {
+final class FineTuneActivityViewController: AnalyzedViewController {
     
     @IBOutlet weak var vcContainerView: UIView!
     @IBOutlet weak var scheduleButton: UIButton!

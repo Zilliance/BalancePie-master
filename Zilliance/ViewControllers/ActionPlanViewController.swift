@@ -12,7 +12,7 @@ import AVFoundation
 import PDFGenerator
 import ZillianceShared
 
-class ActionPlanViewController: UIViewController {
+class ActionPlanViewController: AnalyzedViewController {
     
     @IBOutlet weak var tableView: UITableView!
     fileprivate var notifications: [NotificationTableItemViewModel] = []

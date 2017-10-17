@@ -144,6 +144,7 @@ final class AddSliceViewController: UIViewController, AlertsDuration
         
         if (self.validateValues())
         {
+            Analytics.shared.send(event: BalancePieAnalytics.BalancePieEvent.didAddSlice)
             self.saveActivity()
             self.showOptionsAlert()
         }

@@ -85,6 +85,8 @@
 		8CBBBE201E958B6300281C3C /* AddActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBBBE1E1E958B6300281C3C /* AddActivityViewController.swift */; };
 		8CBBBE211E958B6300281C3C /* AddValuesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBBBE1F1E958B6300281C3C /* AddValuesViewController.swift */; };
 		8CBBBE231E95925700281C3C /* IconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBBBE221E95925700281C3C /* IconCollectionViewCell.swift */; };
+		8CC0D1201F968A3F001D2A3A /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC0D11F1F968A3F001D2A3A /* Analytics.swift */; };
+		8CC0D1231F968C44001D2A3A /* Analytics+BalancePie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC0D1221F968C44001D2A3A /* Analytics+BalancePie.swift */; };
 		8CC4C95D1EB7C0A0004DF0D5 /* VideoPlayer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CC4C95C1EB7C0A0004DF0D5 /* VideoPlayer.storyboard */; };
 		8CC4C95F1EB7C0E5004DF0D5 /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC4C95E1EB7C0E5004DF0D5 /* VideoPlayerViewController.swift */; };
 		8CC4C9621EC1165C004DF0D5 /* ExamplePopUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CC4C9611EC1165C004DF0D5 /* ExamplePopUp.storyboard */; };
@@ -208,6 +210,8 @@
 		8CBBBE1E1E958B6300281C3C /* AddActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddActivityViewController.swift; path = ViewControllers/AddActivityViewController.swift; sourceTree = "<group>"; };
 		8CBBBE1F1E958B6300281C3C /* AddValuesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = AddValuesViewController.swift; path = ViewControllers/AddValuesViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		8CBBBE221E95925700281C3C /* IconCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IconCollectionViewCell.swift; path = CustomCells/IconCollectionViewCell.swift; sourceTree = "<group>"; };
+		8CC0D11F1F968A3F001D2A3A /* Analytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
+		8CC0D1221F968C44001D2A3A /* Analytics+BalancePie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Analytics+BalancePie.swift"; sourceTree = "<group>"; };
 		8CC4C95C1EB7C0A0004DF0D5 /* VideoPlayer.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = VideoPlayer.storyboard; sourceTree = "<group>"; };
 		8CC4C95E1EB7C0E5004DF0D5 /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoPlayerViewController.swift; path = ViewControllers/VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		8CC4C9611EC1165C004DF0D5 /* ExamplePopUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ExamplePopUp.storyboard; sourceTree = "<group>"; };
@@ -485,6 +489,15 @@
 			name = "Add-Edit Activity";
 			sourceTree = "<group>";
 		};
+		8CC0D11E1F968A28001D2A3A /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				8CC0D11F1F968A3F001D2A3A /* Analytics.swift */,
+				8CC0D1221F968C44001D2A3A /* Analytics+BalancePie.swift */,
+			);
+			name = Analytics;
+			sourceTree = "<group>";
+		};
 		8CC4C9601EC11617004DF0D5 /* Fine Tune Example */ = {
 			isa = PBXGroup;
 			children = (
@@ -529,6 +542,7 @@
 		E35668301E8C15BA00ED81D9 /* Zilliance */ = {
 			isa = PBXGroup;
 			children = (
+				8CC0D11E1F968A28001D2A3A /* Analytics */,
 				4F900E251F18FA62005A910D /* PlanImages.xcassets */,
 				041C3CCA1EA7E81C00C52195 /* Resources */,
 				8C4D28C31E9694F800034A20 /* App.swift */,
@@ -576,6 +590,7 @@
 				E356682C1E8C15BA00ED81D9 /* Resources */,
 				AF912AD82B1A11D552E45AA7 /* [CP] Embed Pods Frameworks */,
 				CC96D57B1A0C8E46B6E821FD /* [CP] Copy Pods Resources */,
+				8CC0D1211F968ACA001D2A3A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -821,6 +836,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZillianceTests/Pods-ZillianceTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		8CC0D1211F968ACA001D2A3A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 6631633fac45777f880b67875f93e5e1579ebe94 aec2a948527f13b65a38d774981ab57095364ffaa7d0212f03068fa5856444d1";
+		};
 		AF912AD82B1A11D552E45AA7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -961,6 +989,8 @@
 				E311C3341EB135F800CF23D1 /* PieHintView.swift in Sources */,
 				E3E80A471EA17CBB004A44AF /* FineTuneItemViewController.swift in Sources */,
 				8C3EA4641E92E7BF00F56DED /* ArrayDataSource.swift in Sources */,
+				8CC0D1201F968A3F001D2A3A /* Analytics.swift in Sources */,
+				8CC0D1231F968C44001D2A3A /* Analytics+BalancePie.swift in Sources */,
 				04E6F5671E9E7FEC00EBD119 /* EmbeddedFeelingTableViewModel.swift in Sources */,
 				8C3EA4781E92EF9C00F56DED /* HoursProgressView.swift in Sources */,
 				8C3EA46F1E92E9D600F56DED /* UIImage+Extensions.swift in Sources */,
