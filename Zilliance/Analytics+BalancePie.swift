@@ -17,12 +17,27 @@ class BalancePieAnalytics: ZillianceAnalytics {
         case enterTour
         case favoriteActivitySelected
         
+        // custom activity
+        
+        case customActivityAdded
+        
         // slices
         
         case didAddSlice
         case didEditSlice
         case didDeleteSlice
         
+        case addedSliceName
+        case addedSliceHours
+        case addedSliceFeeling
+        case addedSliceGoodFeeling
+        case addedSliceBadFeeling
+        
+        case editedSliceName
+        case editedSliceHours
+        case editedSliceFeeling
+        case editedSliceGoodFeeling
+        case editedSliceBadFeeling
     }
     
 }

@@ -580,6 +580,8 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
         switch TableSection(rawValue: indexPath.section) {
         case .name?:
             
+            Analytics.shared.send(event: BalancePieAnalytics.BalancePieEvent.addedSliceName)
+            
             let activities: [Activity] = Array(Database.shared.allActivities)
             var selectedIndex: Int? = nil
             if let selectedActivity = self.newActivity.activity,  let index = activities.index(of: selectedActivity)
@@ -589,12 +591,16 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
             self.selectActivityName(initialSelection: selectedIndex)
             
         case .duration?:
+            Analytics.shared.send(event: BalancePieAnalytics.BalancePieEvent.addedSliceHours)
             self.selectDuration()
             
         case .feelingType?:
+            Analytics.shared.send(event: BalancePieAnalytics.BalancePieEvent.addedSliceFeeling)
             self.selectHowItFeels()
             
         case .goodFeelings?:
+            
+            Analytics.shared.send(event: BalancePieAnalytics.BalancePieEvent.addedSliceGoodFeeling)
             
             let values = Value.greatValues
             
@@ -615,6 +621,7 @@ extension AddSliceViewController: UITableViewDelegate, UIViewControllerTransitio
             
         case .badFeelings?:
             
+            Analytics.shared.send(event: BalancePieAnalytics.BalancePieEvent.addedSliceBadFeeling)
             
             let values = self.newActivity.feeling == .good ? Value.goodValues : Value.badValues
             
