@@ -8,6 +8,7 @@
 
 import UIKit
 import SideMenuController
+import ZillianceShared
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

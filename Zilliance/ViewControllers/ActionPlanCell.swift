@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ZillianceShared
 
 class ActionPlanCell: UITableViewCell {
 

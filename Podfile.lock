@@ -37,7 +37,7 @@ PODS:
   - SideMenuController (0.2.4)
   - SVProgressHUD (2.1.2)
   - YouTubePlayer (0.4.0)
-  - ZillianceShared (0.1.3):
+  - ZillianceShared (0.1.5):
     - PDFGenerator
     - Realm
     - RealmSwift
@@ -72,7 +72,7 @@ CHECKOUT OPTIONS:
     :commit: 1bb467539758e0bac35ba7b24677999a4616f6d8
     :git: https://github.com/ricardohg/ActionSheetPicker-3.0.git
   ZillianceShared:
-    :commit: e7e6370268f5b0d466f9c9f74103b803c2eb9834
+    :commit: 2e29be998e040bf9dc1b4945d7c0f558fe6ae607
     :git: https://github.com/ScalablePath/ZillianceShared.git
 
 SPEC CHECKSUMS:
@@ -95,8 +95,8 @@ SPEC CHECKSUMS:
   SideMenuController: b463d2b3aa58e2afe57f57a07938fa9a647894ca
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   YouTubePlayer: 028451f6772f372d4759866db99824c676ac1473
-  ZillianceShared: a448660bb6d06f4ea053e8705be8371eb507add1
+  ZillianceShared: dbdbc3b0d983137dbc4337654826e06c615f5863
 
-PODFILE CHECKSUM: a852a5792f757c5e003196fe77d15537dde629d1
+PODFILE CHECKSUM: 5e6c199e8b541e183bc4eb1ea34a29f0a755baab
 
 COCOAPODS: 1.3.1
