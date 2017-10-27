@@ -22,7 +22,7 @@ final class Analytics: AnalyticsService {
         Fabric.with([Answers.self])
         
         //Amplitude
-        Amplitude.instance().initializeApiKey("73314cf65e614adhb6504fd607d91c30")
+        Amplitude.instance().initializeApiKey("73314cf65e614ad5b6504fd607d91c30")
         
         ZillianceAnalytics.initialize(projectName: "Balance.Pie.", analyticsService: self)
         

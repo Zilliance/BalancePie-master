@@ -9,6 +9,7 @@
 import UIKit
 import SideMenuController
 import ZillianceShared
+import FacebookCore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -64,6 +65,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let alert = UIAlertController(title: notification.alertTitle, message: notification.alertBody, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         window?.rootViewController?.present(alert, animated: true, completion: nil)
+    }
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        
+        AppEventsLogger.activate(application)
+        
     }
 
 }
