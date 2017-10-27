@@ -59,6 +59,9 @@ class OnboardingPageViewController: UIPageViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Analytics.shared.send(event: BalancePieAnalytics.BalancePieEvent.enterTour)
+        
         self.setupView()
     }
 

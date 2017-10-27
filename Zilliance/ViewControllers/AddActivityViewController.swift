@@ -141,6 +141,8 @@ class AddActivityViewController: UIViewController, UICollectionViewDataSource, U
             return
         }
         
+        Analytics.shared.send(event: BalancePieAnalytics.BalancePieEvent.customActivityAdded)
+
         self.saveActivity()
     }
     

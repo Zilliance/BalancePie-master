@@ -159,12 +159,12 @@ final class UserActivity: Object {
             }
         }
     }
-    
-    override func detached() -> UserActivity {
-        let detachedActivity = UserActivity(value: self)
-        detachedActivity.values = List<Value>(self.values)
-        return detachedActivity
-    }
+//    
+//    override func detached() -> UserActivity {
+//        let detachedActivity = UserActivity(value: self)
+//        detachedActivity.values = List<Value>(self.values)
+//        return detachedActivity
+//    }
 
 }
 

@@ -313,6 +313,8 @@ class FavoriteActivityViewController: UIViewController, AlertsDuration {
     
     private func gotoPie() {
         
+        Analytics.shared.send(event: BalancePieAnalytics.BalancePieEvent.favoriteActivitySelected)
+        
         guard let window = UIApplication.shared.keyWindow else {
             return
         }

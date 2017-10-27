@@ -17,7 +17,12 @@ target 'Zilliance' do
   pod 'MultiSelectSegmentedControl'
   pod 'YouTubePlayer'
   pod 'PDFGenerator', '~> 2.0.1'
-
+  pod 'Firebase/Core', '~> 3.0'
+  pod 'Fabric'
+  pod 'Answers'
+  pod 'Amplitude-iOS', '~> 3.14.1'
+  pod 'ZillianceShared', :git => 'https://github.com/ScalablePath/ZillianceShared.git'
+  #pod 'ZillianceShared', :path => '../ZillianceShared'
   target 'ZillianceTests' do
     inherit! :search_paths
     # Pods for testing

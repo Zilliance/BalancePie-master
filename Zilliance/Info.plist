@@ -18,6 +18,20 @@
 	<string>1.1.1</string>
 	<key>CFBundleVersion</key>
 	<string>20</string>
+    <key>Fabric</key>
+    <dict>
+        <key>APIKey</key>
+        <string>6631633fac45777f880b67875f93e5e1579ebe94</string>
+        <key>Kits</key>
+        <array>
+            <dict>
+                <key>KitInfo</key>
+                <dict/>
+                <key>KitName</key>
+                <string>Answers</string>
+            </dict>
+        </array>
+    </dict>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>LSRequiresIPhoneOS</key>

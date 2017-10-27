@@ -355,15 +355,19 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
         
         //activity name
         
+        Analytics.shared.send(event: BalancePieAnalytics.BalancePieEvent.didEditSlice)
+        
         switch TableSection(rawValue: indexPath.section) {
         case .duration?:
+            Analytics.shared.send(event: BalancePieAnalytics.BalancePieEvent.editedSliceHours)
             self.selectDuration()
 
         case .feelingType?:
+            Analytics.shared.send(event: BalancePieAnalytics.BalancePieEvent.editedSliceFeeling)
             self.selectHowItFeels()
 
         case .goodFeelings?:
-            
+            Analytics.shared.send(event: BalancePieAnalytics.BalancePieEvent.editedSliceGoodFeeling)
             let values = Value.greatValues
             
             let initialIndexes = values.flatMap({self.activity.greatValues.index(of: $0) == nil ? nil : values.index(of: $0)})
@@ -383,7 +387,7 @@ extension EditActivityViewController: UITableViewDelegate, UIViewControllerTrans
             
         case .badFeelings?:
             
-            
+            Analytics.shared.send(event: BalancePieAnalytics.BalancePieEvent.editedSliceBadFeeling)
             let values = self.activity.feeling == .good ? Value.goodValues: Value.badValues
             
             let initialIndexes = self.activity.feeling == .good ? values.flatMap({self.activity.goodValues.index(of: $0) == nil ? nil : values.index(of: $0)}) : values.flatMap({self.activity.badValues.index(of: $0) == nil ? nil : values.index(of: $0)})

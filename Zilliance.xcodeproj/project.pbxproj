@@ -24,16 +24,12 @@
 		04B29A651E97AB4A0090E52E /* ItemsSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B29A641E97AB4A0090E52E /* ItemsSelectionViewController.swift */; };
 		04B29A671E97AB680090E52E /* PartialSizePresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B29A661E97AB680090E52E /* PartialSizePresentationController.swift */; };
 		04E6F5671E9E7FEC00EBD119 /* EmbeddedFeelingTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6F5661E9E7FEC00EBD119 /* EmbeddedFeelingTableViewModel.swift */; };
-		04E6F56C1E9F804000EBD119 /* DetachableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6F56B1E9F804000EBD119 /* DetachableObject.swift */; };
 		04E6F56E1E9F8CDB00EBD119 /* EditActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6F56D1E9F8CDB00EBD119 /* EditActivityViewController.swift */; };
 		1E51585B238E77BA1CAA3F72 /* Pods_ZillianceUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD551A78B0B1A451D0EC85B /* Pods_ZillianceUITests.framework */; };
-		4F6D09DE1F0D305200A985F6 /* NotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6D09DD1F0D305200A985F6 /* NotificationsManager.swift */; };
 		4F6FBFEB1F15166100305E4E /* Plan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F6FBFEA1F15166100305E4E /* Plan.storyboard */; };
 		4F6FBFED1F1516C600305E4E /* ActionPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6FBFEC1F1516C600305E4E /* ActionPlanViewController.swift */; };
 		4F6FBFEF1F15213B00305E4E /* ActionPlanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6FBFEE1F15213B00305E4E /* ActionPlanCell.swift */; };
 		4F6FC0781F1656D800305E4E /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6FC0771F1656D800305E4E /* Date+Extensions.swift */; };
-		4F7A82191F1CDE98002CA745 /* NotificationsManager+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7A82181F1CDE98002CA745 /* NotificationsManager+ViewModel.swift */; };
-		4F7A821B1F1CDF36002CA745 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7A821A1F1CDF36002CA745 /* Notification.swift */; };
 		4F900E241F18ECBC005A910D /* MeditationPlanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F900E231F18ECBC005A910D /* MeditationPlanCell.swift */; };
 		4F900E261F18FA62005A910D /* PlanImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F900E251F18FA62005A910D /* PlanImages.xcassets */; };
 		4FE59AFB1F2A423F00AAE778 /* The Raft.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4FE59AFA1F2A423F00AAE778 /* The Raft.m4a */; };
@@ -59,7 +55,6 @@
 		8C3EA4761E92E9D600F56DED /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3EA46E1E92E9D600F56DED /* UIViewController+Extensions.swift */; };
 		8C3EA4781E92EF9C00F56DED /* HoursProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3EA4771E92EF9C00F56DED /* HoursProgressView.swift */; };
 		8C3EA47C1E92F0F100F56DED /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3EA47A1E92F0F100F56DED /* CalendarHelper.swift */; };
-		8C3EA47D1E92F0F100F56DED /* LocalNotificationsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3EA47B1E92F0F100F56DED /* LocalNotificationsHelper.swift */; };
 		8C3EA48D1E93F85C00F56DED /* Muli-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C3EA47F1E93F85C00F56DED /* Muli-Black.ttf */; };
 		8C3EA48E1E93F85C00F56DED /* Muli-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C3EA4801E93F85C00F56DED /* Muli-BlackItalic.ttf */; };
 		8C3EA48F1E93F85C00F56DED /* Muli-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C3EA4811E93F85C00F56DED /* Muli-Bold.ttf */; };
@@ -90,6 +85,8 @@
 		8CBBBE201E958B6300281C3C /* AddActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBBBE1E1E958B6300281C3C /* AddActivityViewController.swift */; };
 		8CBBBE211E958B6300281C3C /* AddValuesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBBBE1F1E958B6300281C3C /* AddValuesViewController.swift */; };
 		8CBBBE231E95925700281C3C /* IconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBBBE221E95925700281C3C /* IconCollectionViewCell.swift */; };
+		8CC0D1201F968A3F001D2A3A /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC0D11F1F968A3F001D2A3A /* Analytics.swift */; };
+		8CC0D1231F968C44001D2A3A /* Analytics+BalancePie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC0D1221F968C44001D2A3A /* Analytics+BalancePie.swift */; };
 		8CC4C95D1EB7C0A0004DF0D5 /* VideoPlayer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CC4C95C1EB7C0A0004DF0D5 /* VideoPlayer.storyboard */; };
 		8CC4C95F1EB7C0E5004DF0D5 /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC4C95E1EB7C0E5004DF0D5 /* VideoPlayerViewController.swift */; };
 		8CC4C9621EC1165C004DF0D5 /* ExamplePopUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CC4C9611EC1165C004DF0D5 /* ExamplePopUp.storyboard */; };
@@ -148,18 +145,14 @@
 		04B29A641E97AB4A0090E52E /* ItemsSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemsSelectionViewController.swift; path = ViewControllers/ItemsSelectionViewController.swift; sourceTree = "<group>"; };
 		04B29A661E97AB680090E52E /* PartialSizePresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartialSizePresentationController.swift; sourceTree = "<group>"; };
 		04E6F5661E9E7FEC00EBD119 /* EmbeddedFeelingTableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmbeddedFeelingTableViewModel.swift; path = ViewControllers/EmbeddedFeelingTableViewModel.swift; sourceTree = "<group>"; };
-		04E6F56B1E9F804000EBD119 /* DetachableObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetachableObject.swift; path = Models/DetachableObject.swift; sourceTree = "<group>"; };
 		04E6F56D1E9F8CDB00EBD119 /* EditActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditActivityViewController.swift; path = ViewControllers/EditActivityViewController.swift; sourceTree = "<group>"; };
 		1BD551A78B0B1A451D0EC85B /* Pods_ZillianceUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZillianceUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D5A61EEA6A77027635EDAC1 /* Pods-Zilliance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zilliance.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Zilliance/Pods-Zilliance.debug.xcconfig"; sourceTree = "<group>"; };
 		3770342A51232B23DA4673E7 /* Pods-ZillianceUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZillianceUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZillianceUITests/Pods-ZillianceUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		4F6D09DD1F0D305200A985F6 /* NotificationsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsManager.swift; sourceTree = "<group>"; };
 		4F6FBFEA1F15166100305E4E /* Plan.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Plan.storyboard; sourceTree = "<group>"; };
 		4F6FBFEC1F1516C600305E4E /* ActionPlanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionPlanViewController.swift; path = ViewControllers/ActionPlanViewController.swift; sourceTree = "<group>"; };
 		4F6FBFEE1F15213B00305E4E /* ActionPlanCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionPlanCell.swift; path = ViewControllers/ActionPlanCell.swift; sourceTree = "<group>"; };
 		4F6FC0771F1656D800305E4E /* Date+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Date+Extensions.swift"; path = "Extensions/Date+Extensions.swift"; sourceTree = "<group>"; };
-		4F7A82181F1CDE98002CA745 /* NotificationsManager+ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NotificationsManager+ViewModel.swift"; path = "ViewControllers/NotificationsManager+ViewModel.swift"; sourceTree = "<group>"; };
-		4F7A821A1F1CDF36002CA745 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Notification.swift; path = Models/Notification.swift; sourceTree = "<group>"; };
 		4F900E231F18ECBC005A910D /* MeditationPlanCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MeditationPlanCell.swift; path = CustomCells/MeditationPlanCell.swift; sourceTree = "<group>"; };
 		4F900E251F18FA62005A910D /* PlanImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = PlanImages.xcassets; path = ../PlanImages.xcassets; sourceTree = "<group>"; };
 		4FE59AFA1F2A423F00AAE778 /* The Raft.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "The Raft.m4a"; sourceTree = "<group>"; };
@@ -187,7 +180,6 @@
 		8C3EA46E1E92E9D600F56DED /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+Extensions.swift"; path = "Extensions/UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		8C3EA4771E92EF9C00F56DED /* HoursProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HoursProgressView.swift; path = CustomViews/HoursProgressView.swift; sourceTree = "<group>"; };
 		8C3EA47A1E92F0F100F56DED /* CalendarHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarHelper.swift; path = Models/Helpers/CalendarHelper.swift; sourceTree = "<group>"; };
-		8C3EA47B1E92F0F100F56DED /* LocalNotificationsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocalNotificationsHelper.swift; path = Models/Helpers/LocalNotificationsHelper.swift; sourceTree = "<group>"; };
 		8C3EA47F1E93F85C00F56DED /* Muli-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Muli-Black.ttf"; path = "Fonts/Muli-Black.ttf"; sourceTree = "<group>"; };
 		8C3EA4801E93F85C00F56DED /* Muli-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Muli-BlackItalic.ttf"; path = "Fonts/Muli-BlackItalic.ttf"; sourceTree = "<group>"; };
 		8C3EA4811E93F85C00F56DED /* Muli-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Muli-Bold.ttf"; path = "Fonts/Muli-Bold.ttf"; sourceTree = "<group>"; };
@@ -218,6 +210,8 @@
 		8CBBBE1E1E958B6300281C3C /* AddActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddActivityViewController.swift; path = ViewControllers/AddActivityViewController.swift; sourceTree = "<group>"; };
 		8CBBBE1F1E958B6300281C3C /* AddValuesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = AddValuesViewController.swift; path = ViewControllers/AddValuesViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		8CBBBE221E95925700281C3C /* IconCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IconCollectionViewCell.swift; path = CustomCells/IconCollectionViewCell.swift; sourceTree = "<group>"; };
+		8CC0D11F1F968A3F001D2A3A /* Analytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
+		8CC0D1221F968C44001D2A3A /* Analytics+BalancePie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Analytics+BalancePie.swift"; sourceTree = "<group>"; };
 		8CC4C95C1EB7C0A0004DF0D5 /* VideoPlayer.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = VideoPlayer.storyboard; sourceTree = "<group>"; };
 		8CC4C95E1EB7C0E5004DF0D5 /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoPlayerViewController.swift; path = ViewControllers/VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		8CC4C9611EC1165C004DF0D5 /* ExamplePopUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ExamplePopUp.storyboard; sourceTree = "<group>"; };
@@ -334,7 +328,6 @@
 				4F6FBFEC1F1516C600305E4E /* ActionPlanViewController.swift */,
 				4F6FBFEE1F15213B00305E4E /* ActionPlanCell.swift */,
 				4F900E231F18ECBC005A910D /* MeditationPlanCell.swift */,
-				4F7A82181F1CDE98002CA745 /* NotificationsManager+ViewModel.swift */,
 			);
 			name = "Action Plan";
 			sourceTree = "<group>";
@@ -399,7 +392,6 @@
 				8C3EA45E1E92E7BF00F56DED /* Activity.swift */,
 				8C3EA4601E92E7BF00F56DED /* Value.swift */,
 				0469D0AD1E944B700024EA39 /* UserActivity.swift */,
-				4F7A821A1F1CDF36002CA745 /* Notification.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -429,12 +421,9 @@
 				8C0A87C81EB12D9C000E4188 /* PartialModalTransition.swift */,
 				8C3EA45F1E92E7BF00F56DED /* ArrayDataSource.swift */,
 				8C3EA47A1E92F0F100F56DED /* CalendarHelper.swift */,
-				8C3EA47B1E92F0F100F56DED /* LocalNotificationsHelper.swift */,
-				04E6F56B1E9F804000EBD119 /* DetachableObject.swift */,
 				042576FE1EC10D27003C465F /* TextImprovementsExamples.plist */,
 				042577001EC10D44003C465F /* TextImprovementsExamples.swift */,
 				E39915DA1EC22EC500E9EE26 /* OnboardingPopover.swift */,
-				4F6D09DD1F0D305200A985F6 /* NotificationsManager.swift */,
 				8CA615AC1F21372100C07F57 /* CustomNavigationController.swift */,
 			);
 			name = Helpers;
@@ -500,6 +489,15 @@
 			name = "Add-Edit Activity";
 			sourceTree = "<group>";
 		};
+		8CC0D11E1F968A28001D2A3A /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				8CC0D11F1F968A3F001D2A3A /* Analytics.swift */,
+				8CC0D1221F968C44001D2A3A /* Analytics+BalancePie.swift */,
+			);
+			name = Analytics;
+			sourceTree = "<group>";
+		};
 		8CC4C9601EC11617004DF0D5 /* Fine Tune Example */ = {
 			isa = PBXGroup;
 			children = (
@@ -544,6 +542,7 @@
 		E35668301E8C15BA00ED81D9 /* Zilliance */ = {
 			isa = PBXGroup;
 			children = (
+				8CC0D11E1F968A28001D2A3A /* Analytics */,
 				4F900E251F18FA62005A910D /* PlanImages.xcassets */,
 				041C3CCA1EA7E81C00C52195 /* Resources */,
 				8C4D28C31E9694F800034A20 /* App.swift */,
@@ -591,6 +590,7 @@
 				E356682C1E8C15BA00ED81D9 /* Resources */,
 				AF912AD82B1A11D552E45AA7 /* [CP] Embed Pods Frameworks */,
 				CC96D57B1A0C8E46B6E821FD /* [CP] Copy Pods Resources */,
+				8CC0D1211F968ACA001D2A3A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -794,13 +794,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZillianceTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		79A1724027275C1F76FBFEEC /* [CP] Embed Pods Frameworks */ = {
@@ -833,15 +836,57 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZillianceTests/Pods-ZillianceTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AF912AD82B1A11D552E45AA7 /* [CP] Embed Pods Frameworks */ = {
+		8CC0D1211F968ACA001D2A3A /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 6631633fac45777f880b67875f93e5e1579ebe94 aec2a948527f13b65a38d774981ab57095364ffaa7d0212f03068fa5856444d1";
+		};
+		AF912AD82B1A11D552E45AA7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Zilliance/Pods-Zilliance-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ActionSheetPicker-3.0/ActionSheetPicker_3_0.framework",
+				"${BUILT_PRODUCTS_DIR}/Amplitude-iOS/Amplitude_iOS.framework",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/MZAppearance/MZAppearance.framework",
+				"${BUILT_PRODUCTS_DIR}/MZFormSheetController/MZFormSheetController.framework",
+				"${BUILT_PRODUCTS_DIR}/MultiSelectSegmentedControl/MultiSelectSegmentedControl.framework",
+				"${BUILT_PRODUCTS_DIR}/PDFGenerator/PDFGenerator.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SideMenuController/SideMenuController.framework",
+				"${BUILT_PRODUCTS_DIR}/YouTubePlayer/YouTubePlayer.framework",
+				"${BUILT_PRODUCTS_DIR}/ZillianceShared/ZillianceShared.framework",
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ActionSheetPicker_3_0.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Amplitude_iOS.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MZAppearance.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MZFormSheetController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MultiSelectSegmentedControl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PDFGenerator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenuController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YouTubePlayer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZillianceShared.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -854,13 +899,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZillianceUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CC96D57B1A0C8E46B6E821FD /* [CP] Copy Pods Resources */ = {
@@ -884,13 +932,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Zilliance-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -910,8 +961,6 @@
 				8C51C0651EB27E1400A7BF34 /* ZillianceTextViewController.swift in Sources */,
 				8C3EA49E1E94274600F56DED /* PieViewController.swift in Sources */,
 				8CBBBE211E958B6300281C3C /* AddValuesViewController.swift in Sources */,
-				4F6D09DE1F0D305200A985F6 /* NotificationsManager.swift in Sources */,
-				04E6F56C1E9F804000EBD119 /* DetachableObject.swift in Sources */,
 				8C3EA4711E92E9D600F56DED /* Minutes+Extensions.swift in Sources */,
 				E35668321E8C15BA00ED81D9 /* AppDelegate.swift in Sources */,
 				8C3EA4731E92E9D600F56DED /* UIColor+CustomColors.swift in Sources */,
@@ -925,7 +974,6 @@
 				8C3EA4651E92E7BF00F56DED /* Value.swift in Sources */,
 				0469D0AE1E944B700024EA39 /* UserActivity.swift in Sources */,
 				4F6FC0781F1656D800305E4E /* Date+Extensions.swift in Sources */,
-				8C3EA47D1E92F0F100F56DED /* LocalNotificationsHelper.swift in Sources */,
 				E37E971A1F2FDEEF00F048FF /* FineTuneItem.swift in Sources */,
 				4F6FBFEF1F15213B00305E4E /* ActionPlanCell.swift in Sources */,
 				04B29A671E97AB680090E52E /* PartialSizePresentationController.swift in Sources */,
@@ -937,11 +985,12 @@
 				8C37CF021F0EAEEB0083F38C /* IntroViewController.swift in Sources */,
 				8C37CF061F156C830083F38C /* ScheduleViewController.swift in Sources */,
 				E3703C581EB3E8F80004C5BD /* PlacholderSidebarItemViewController.swift in Sources */,
-				4F7A82191F1CDE98002CA745 /* NotificationsManager+ViewModel.swift in Sources */,
 				041C3CD01EA7F65A00C52195 /* WebViewController.swift in Sources */,
 				E311C3341EB135F800CF23D1 /* PieHintView.swift in Sources */,
 				E3E80A471EA17CBB004A44AF /* FineTuneItemViewController.swift in Sources */,
 				8C3EA4641E92E7BF00F56DED /* ArrayDataSource.swift in Sources */,
+				8CC0D1201F968A3F001D2A3A /* Analytics.swift in Sources */,
+				8CC0D1231F968C44001D2A3A /* Analytics+BalancePie.swift in Sources */,
 				04E6F5671E9E7FEC00EBD119 /* EmbeddedFeelingTableViewModel.swift in Sources */,
 				8C3EA4781E92EF9C00F56DED /* HoursProgressView.swift in Sources */,
 				8C3EA46F1E92E9D600F56DED /* UIImage+Extensions.swift in Sources */,
@@ -954,7 +1003,6 @@
 				E33247971EB42A77009E112A /* UITableViewCell+Extensions.swift in Sources */,
 				8C3EA4761E92E9D600F56DED /* UIViewController+Extensions.swift in Sources */,
 				8C3EA45A1E92E6D000F56DED /* PieView.swift in Sources */,
-				4F7A821B1F1CDF36002CA745 /* Notification.swift in Sources */,
 				8C3EA4701E92E9D600F56DED /* Int+Extensions.swift in Sources */,
 				8C3EA4741E92E9D600F56DED /* UIDevice+Extensions.swift in Sources */,
 				041C3CB71EA55BA100C52195 /* CustomSideViewController.swift in Sources */,

@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import ZillianceShared
 
 fileprivate let tourURL = URL(string: "balancepie://tour")!
 fileprivate let videoURL = URL(string: "balancepie://video")!
 
-class IntroViewController: UIViewController {
+class IntroViewController: AnalyzedViewController {
     
     @IBOutlet weak var continueButton: UIButton!
     @IBOutlet weak var textView: UITextView!

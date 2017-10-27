@@ -8,6 +8,7 @@
 
 import UIKit
 import SideMenuController
+import ZillianceShared
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -47,7 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
 
         NotificationsManager.sharedInstance.realmDB = Database.shared.realm
-        
+        Analytics.shared.initialize()
         LocalNotificationsHelper.shared.listenToNotifications()
         
         return true
